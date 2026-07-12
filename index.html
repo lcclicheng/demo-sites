@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Live Demos — Web Design for UK Small Businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#6b6b6b; --line:#e7e3dc; --bg:#faf8f4;
+    --card:#ffffff; --accent:#8a6d3b; --accent-soft:#f3ece0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  header{padding:72px 0 40px;text-align:center;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(30px,5vw,48px);line-height:1.12;margin:14px 0 12px}
+  .lede{max-width:620px;margin:0 auto;color:var(--muted);font-size:17px}
+  .async-note{display:inline-block;margin-top:18px;font-size:13px;color:var(--accent);background:var(--accent-soft);padding:7px 14px;border-radius:999px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;padding:48px 0 24px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.07)}
+  .ind{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .card h3{font-family:'Playfair Display',Georgia,serif;font-size:23px;font-weight:600;margin:8px 0 6px}
+  .card p{color:var(--muted);font-size:14.5px;flex:1}
+  .btn{margin-top:18px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14px;border-bottom:2px solid var(--accent);padding-bottom:2px}
+  .btn:hover{gap:10px;transition:gap .18s ease}
+  footer{border-top:1px solid var(--line);padding:40px 0 72px;text-align:center;color:var(--muted);font-size:14px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media(max-width:520px){header{padding:52px 0 32px}.grid{gap:16px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Li Chengcheng — Web Design</div>
+    <h1>Live demos for UK small businesses</h1>
+    <p class="lede">Hand-built, mobile-first websites for restaurants, cafés, salons, clinics, hotels and home services. Every site opens enquiries straight in your inbox — no backend to manage.</p>
+    <div class="async-note">All communication by email &amp; form — no cold calls</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="grid">
+    <article class="card"><div class="ind">Salon · Hair</div><h3>Atelier</h3><p>A private studio site with a booking-led layout and calm, editorial feel.</p><a class="btn" href="./atelier/index.html">View live demo →</a></article>
+    <article class="card"><div class="ind">Yoga · Wellness</div><h3>Breath</h3><p>A calm, class-enquiry focused studio site built for retention.</p><a class="btn" href="./breath/index.html">View live demo →</a></article>
+    <article class="card"><div class="ind">Law · Practice</div><h3>Chambers</h3><p>A professional, trust-first practice site for solicitors and consultants.</p><a class="btn" href="./chambers/index.html">View live demo →</a></article>
+    <article class="card"><div class="ind">Dessert · Patisserie</div><h3>Crème</h3><p>A sweet, image-led dessert shop site that puts the product first.</p><a class="btn" href="./cr-me/index.html">View live demo →</a></article>
+    <article class="card"><div class="ind">Trades · Services</div><h3>Forge</h3><p>A quote-request driven site for trades and home services.</p><a class="btn" href="./forge/index.html">View live demo →</a></article>
+    <article class="card"><div class="ind">Restaurant · Italian</div><h3>Mario's Pizzeria</h3><p>A menu-plus-reservation restaurant site that turns views into bookings.</p><a class="btn" href="./mario/index.html">View live demo →</a></article>
+    <article class="card"><div class="ind">Coffee · Café</div><h3>Mono</h3><p>A minimal café site with a clean online-order flow.</p><a class="btn" href="./mono/index.html">View live demo →</a></article>
+    <article class="card"><div class="ind">Dessert · v2</div><h3>Patisserie</h3><p>A refined patisserie showcase with generous photography.</p><a class="btn" href="./patisserie/index.html">View live demo →</a></article>
+    <article class="card"><div class="ind">Restaurant · Fine dining</div><h3>Sotto Sotto</h3><p>An elegant fine-dining site for a premium evening out.</p><a class="btn" href="./sotto-sotto/index.html">View live demo →</a></article>
+    <article class="card"><div class="ind">Hotel · Boutique</div><h3>The Vault</h3><p>A booking-led boutique-stay site with room-led navigation.</p><a class="btn" href="./the-vault/index.html">View live demo →</a></article>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>All demos are mobile-first and GDPR-aware. Enquiry forms open in your email client — nothing is stored on a server.</p>
+    <p style="margin-top:8px">Interested in a site like these? Email <a href="mailto:lic28790@gmail.com">lic28790@gmail.com</a> and we'll take it from there.</p>
+  </div>
+</footer>
+</body>
+</html>
