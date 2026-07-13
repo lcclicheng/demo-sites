@@ -1,0 +1,64 @@
+name: Deploy demo sites to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# 仅用 GITHUB_TOKEN 发布 Pages，不依赖任何明文 PAT
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一个部署，避免并发覆盖
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build all 10 demo sites
+        run: bash build-clean.sh
+
+      - name: Assemble public/ artifact
+        run: |
+          rm -rf public
+          mkdir -p public
+          # 门户页 + 禁用 Jekyll
+          cp index.html public/ 2>/dev/null || true
+          cp .nojekyll public/ 2>/dev/null || true
+          # 每个构建产物 -> public/<site>
+          for d in output/*/; do
+            name=$(basename "$d")
+            mkdir -p "public/$name"
+            cp -r "output/$name/dist/." "public/$name/"
+          done
+          echo "=== public/ 内容 ==="
+          ls -la public
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
