@@ -14,3 +14,15 @@ gen8*.log
 # 系统文件
 .DS_Store
 Thumbs.db
+
+# 旧的根级站点目录（已被 Actions 部署的 public/ 取代，仅本地残留，不纳入版本管理）
+/atelier/
+/cr-me/
+/breath/
+/chambers/
+/forge/
+/mario/
+/mono/
+/patisserie/
+/sotto-sotto/
+/the-vault/
