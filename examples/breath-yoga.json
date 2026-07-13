@@ -1,0 +1,176 @@
+{
+  "template": "yoga",
+  "name": "BREATH",
+  "subtitle": "Yoga & Wellness",
+  "tagline": "Find stillness in movement. Classes for every body, every level, every journey.",
+  "established": "2017",
+  "location": "Bath, UK",
+  "street": "15 Walcot Street, Bath BA1 5BG",
+  "registeredAddress": "15 Walcot Street, Bath BA1 5BG, United Kingdom",
+  "phone": "+44 1225 345678",
+  "email": "breathe@santoshayoga.co.uk",
+  "googleRating": "4.9",
+  "googleReviews": "230+ reviews",
+  "pageTitle": "BREATH — Yoga & Wellness",
+  "heroLine1": "Breathe.",
+  "heroLine2": "Move.",
+  "heroLine3": "Be.",
+  "heroSubtitle": "Classes for every body, every level.",
+  "heroCta1": {
+    "text": "View Classes",
+    "href": "#classes"
+  },
+  "heroCta2": {
+    "text": "Book a Session",
+    "href": "#book"
+  },
+  "phoneDisplay": "+44 1225 345678",
+  "hoursCompact": "Mon—Fri 6:30—20:30 · Sat—Sun 8:00—18:00",
+  "hours": "Mon—Fri 6:30—20:30 · Sat—Sun 8:00—18:00",
+  "hoursItems": [
+    {
+      "days": "Mon—Fri",
+      "hours": "6:30—20:30"
+    },
+    {
+      "days": "Sat—Sun",
+      "hours": "8:00—18:00"
+    }
+  ],
+  "classTitle": "Our Practice",
+  "classSubtitle": "Something for everyone.",
+  "classes": [
+    {
+      "name": "Vinyasa Flow",
+      "desc": "Dynamic sequence linking breath with movement.",
+      "price": "£14",
+      "time": "60 min",
+      "level": "All Levels"
+    },
+    {
+      "name": "Yin & Restore",
+      "desc": "Deep, passive stretches held for 3-5 minutes.",
+      "price": "£12",
+      "time": "75 min",
+      "level": "Beginner"
+    },
+    {
+      "name": "Hatha Foundations",
+      "desc": "Classic postures with detailed alignment cues.",
+      "price": "£12",
+      "time": "60 min",
+      "level": "Beginner"
+    },
+    {
+      "name": "Power Yoga",
+      "desc": "Athletic, challenging flow to build heat and endurance.",
+      "price": "£14",
+      "time": "60 min",
+      "level": "Intermediate"
+    },
+    {
+      "name": "Sunrise Meditation",
+      "desc": "Guided meditation and gentle movement.",
+      "price": "£8",
+      "time": "30 min",
+      "level": "All Levels"
+    },
+    {
+      "name": "Prenatal Yoga",
+      "desc": "Safe, nurturing practice for expectant mothers.",
+      "price": "£14",
+      "time": "75 min",
+      "level": "Pregnancy"
+    }
+  ],
+  "classDescription": "From gentle restoration to athletic flow.",
+  "classLevelColors": {
+    "All Levels": "bg-emerald/10 text-emerald",
+    "Beginner": "bg-sage-100 text-sage-700",
+    "Intermediate": "bg-sage-200 text-sage-800",
+    "Pregnancy": "bg-blush text-plum"
+  },
+  "teachersTitle": "Our Teachers",
+  "teachersSubtitle": [
+    "Guides on your",
+    "journey."
+  ],
+  "teachersDescription": "Each teacher brings a unique perspective to your practice.",
+  "teachers": [
+    {
+      "name": "Priya Sharma",
+      "role": "Founder & Lead Teacher",
+      "specialty": "Vinyasa, Meditation, Teacher Training",
+      "initials": "PS"
+    },
+    {
+      "name": "Luna Johansson",
+      "role": "Senior Teacher",
+      "specialty": "Yin, Restorative, Sound Healing",
+      "initials": "LJ"
+    },
+    {
+      "name": "Marcus Webb",
+      "role": "Teacher",
+      "specialty": "Power Yoga, Mobility, Breathwork",
+      "initials": "MW"
+    },
+    {
+      "name": "Aiko Tanaka",
+      "role": "Teacher",
+      "specialty": "Hatha, Prenatal, Kids Yoga",
+      "initials": "AT"
+    }
+  ],
+  "bookTitle": "Book a Class",
+  "bookSubtitle": "Begin your",
+  "bookHighlight": "practice.",
+  "bookDescription": "New students get their first class free.",
+  "bookFields": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "name": "cls",
+      "label": "Class",
+      "type": "select",
+      "required": true
+    },
+    {
+      "name": "date",
+      "label": "Date",
+      "type": "date",
+      "required": true
+    }
+  ],
+  "bookSubmitLabel": "Reserve Spot",
+  "bookSubmittedLabel": "Booked!",
+  "footerDescription": "Find stillness in movement.",
+  "footerTagline": "A sanctuary for movement and mindfulness.",
+  "footerCopyright": "All rights reserved.",
+  "footerAddress": "15 Walcot Street, Bath BA1 5BG",
+  "cardBookLabel": "Book",
+  "footerHeadings": {
+    "classes": "Classes",
+    "hours": "Hours",
+    "findUs": "Find Us"
+  },
+  "nav": {
+    "links": [
+      "Classes",
+      "Teachers",
+      "Book"
+    ],
+    "cta": "Book Now"
+  },
+  "slug": "breath"
+}

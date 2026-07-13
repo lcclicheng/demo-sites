@@ -1,0 +1,229 @@
+{
+  "template": "restaurant",
+  "name": "Mario's Pizzeria",
+  "subtitle": "Wood-Fired Pizza",
+  "tagline": "48-hour fermented dough, San Marzano tomatoes, and fresh mozzarella — straight from Naples to Leeds.",
+  "established": "2012",
+  "location": "Leeds, UK",
+  "street": "47 Briggate, Leeds LS1 6HF",
+  "registeredAddress": "47 Briggate, Leeds LS1 6HF, United Kingdom",
+  "phone": "+44 113 234 5678",
+  "email": "ciao@mariospizzeria.co.uk",
+  "googleRating": "4.7",
+  "googleReviews": "180+ reviews",
+  "pageTitle": "Mario's Pizzeria — Wood-Fired Pizza in Leeds",
+  "heroLine1": "Mario's",
+  "heroLine2": "PIZZERIA",
+  "heroBadge": "Authentic Neapolitan",
+  "heroCta1": {
+    "text": "View Menu",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Book a Table",
+    "href": "#reserve"
+  },
+  "heroStats": [
+    {
+      "val": "2012",
+      "label": "Established"
+    },
+    {
+      "val": "4.7",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "48h",
+      "label": "Dough Fermentation"
+    },
+    {
+      "val": "485°C",
+      "label": "Oven Temperature"
+    }
+  ],
+  "infoTicker": [
+    {
+      "icon": "MapPin",
+      "text": "47 Briggate, Leeds LS1 6HF"
+    },
+    {
+      "icon": "Clock",
+      "text": "Wed–Sun · 17:00—22:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 113 234 5678"
+    },
+    {
+      "icon": "Wine",
+      "text": "Fully Licensed"
+    }
+  ],
+  "certifications": [
+    "Associazione Verace Pizza Napoletana",
+    "5★ Food Hygiene",
+    "Fully Licensed"
+  ],
+  "menuIntroTitle": "Naples in Leeds",
+  "menuIntroText": "Wood-fired, hand-stretched, and baked at 485°C in 90 seconds. Honest Neapolitan pizza, no shortcuts.",
+  "menuSections": [
+    {
+      "title": "Pizza Rossa",
+      "icon": "Flame",
+      "items": [
+        {
+          "name": "Margherita",
+          "desc": "San Marzano tomato, fresh mozzarella, basil, extra virgin olive oil",
+          "price": "11.50",
+          "pair": "Lager Italiana"
+        },
+        {
+          "name": "Diavola",
+          "desc": "Tomato, mozzarella, spicy salami, Calabrian chili, honey drizzle",
+          "price": "14",
+          "pair": "Chianti Classico"
+        }
+      ]
+    },
+    {
+      "title": "Pizza Bianca",
+      "icon": "UtensilsCrossed",
+      "items": [
+        {
+          "name": "Funghi & Truffle",
+          "desc": "Mixed wild mushrooms, truffle cream, mozzarella, fresh thyme",
+          "price": "15.50",
+          "pair": "Barbera d'Alba"
+        },
+        {
+          "name": "Prosciutto e Rucola",
+          "desc": "Mozzarella base, Parma ham, rocket, shaved Parmesan",
+          "price": "14.50",
+          "pair": "Pinot Grigio"
+        }
+      ]
+    },
+    {
+      "title": "Dolci",
+      "icon": "Sparkles",
+      "items": [
+        {
+          "name": "Tiramisu della Casa",
+          "desc": "Our family recipe — espresso-soaked savoiardi, mascarpone, cocoa",
+          "price": "8",
+          "pair": "Vin Santo"
+        },
+        {
+          "name": "Cannoli Siciliani",
+          "desc": "Crispy shells filled with sweet ricotta, pistachio, candied orange",
+          "price": "7.50",
+          "pair": "Moscato d'Asti"
+        }
+      ]
+    }
+  ],
+  "galleryItems": [
+    {
+      "gradient": "from-amber-900/80 via-amber-700/60 to-amber-900/80",
+      "emoji": "🍕",
+      "title": "The Oven"
+    },
+    {
+      "gradient": "from-stone-800/80 via-stone-700/60 to-stone-800/80",
+      "emoji": "🔥",
+      "title": "The Flame"
+    },
+    {
+      "gradient": "from-zinc-800/80 via-zinc-700/50 to-zinc-800/80",
+      "emoji": "🍝",
+      "title": "Pasta Fresca"
+    },
+    {
+      "gradient": "from-amber-800/80 via-yellow-700/50 to-amber-800/80",
+      "emoji": "🕯️",
+      "title": "The Table"
+    },
+    {
+      "gradient": "from-stone-900/80 via-amber-800/50 to-stone-900/80",
+      "emoji": "🍷",
+      "title": "The Cellar"
+    },
+    {
+      "gradient": "from-zinc-900/80 via-amber-700/40 to-zinc-900/80",
+      "emoji": "🧀",
+      "title": "Antipasti"
+    }
+  ],
+  "occasionOptions": [
+    "Birthday",
+    "Anniversary",
+    "Date Night",
+    "Just Because"
+  ],
+  "reservationNote": "We release tables 30 days in advance. Friday and Saturday typically fill within 48 hours.",
+  "footerNote": "Proud members of the Associazione Verace Pizza Napoletana.",
+  "aboutTitle": "From Naples to Leeds",
+  "aboutSubtitle": "Pizza · Passion · Family",
+  "aboutParagraphs": [
+    "Mario brought his grandfather's pizza recipe from a tiny shop in Naples to the heart of Leeds in 2012. What started as a single wood-fired oven has grown into one of Yorkshire's most beloved pizzerias.",
+    "We make everything from scratch — our dough ferments for 48 hours, our mozzarella is stretched by hand, and every pizza is baked at 485°C for exactly 90 seconds.",
+    "No shortcuts. No compromises. Just honest, incredible pizza."
+  ],
+  "aboutStats": [
+    {
+      "value": "12+",
+      "label": "Years"
+    },
+    {
+      "value": "485°C",
+      "label": "Oven Temp"
+    },
+    {
+      "value": "4.7",
+      "label": "Rating"
+    }
+  ],
+  "whyChooseItems": [
+    {
+      "icon": "Timer",
+      "text": "48-hour cold fermentation — maximum flavour, easy digestion"
+    },
+    {
+      "icon": "ThumbsUp",
+      "text": "AVPN certified — the gold standard for Neapolitan pizza"
+    },
+    {
+      "icon": "Shield",
+      "text": "5★ Food Hygiene rating — inspected every 6 months"
+    },
+    {
+      "icon": "Award",
+      "text": "180+ five-star reviews — check our Google profile"
+    }
+  ],
+  "hoursDetail": {
+    "wedFri": "17:00—22:00",
+    "saturday": "12:00—23:00",
+    "sunday": "12:00—21:00",
+    "closedDays": "Mon—Tue"
+  },
+  "reviews": [
+    {
+      "name": "Tom Harrison",
+      "text": "Best pizza outside of Italy. The crust is absolutely perfect — charred, chewy, and impossibly light.",
+      "rating": 5
+    },
+    {
+      "name": "Anna Kowalski",
+      "text": "We drive 40 minutes for Mario's. The Diavola with honey is life-changing. Worth every mile.",
+      "rating": 5
+    },
+    {
+      "name": "The Patels",
+      "text": "Took the kids here for a birthday dinner and Mario himself came out to say hello. Proper family-run gem.",
+      "rating": 5
+    }
+  ],
+  "slug": "mario"
+}

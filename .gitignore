@@ -1,0 +1,16 @@
+# 依赖（每个 output 站点会在构建时独立 npm install）
+node_modules/
+
+# 构建产物（由 generate.mjs 生成，不纳入版本管理）
+output/
+dist/
+public/
+
+# 构建日志
+build-logs/
+*.log
+gen8*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db

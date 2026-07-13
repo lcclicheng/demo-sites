@@ -1,0 +1,181 @@
+{
+  "template": "salon",
+  "name": "ATELIER",
+  "subtitle": "Hair Design Studio",
+  "tagline": "A private studio in Bath for those who understand that great hair is architecture, not decoration.",
+  "heroTagline": "Architecture for hair.",
+  "heroBadge": "Editorial · Precision · Craft",
+  "heroLine1": "ATELIER",
+  "heroLine2": "Hair as Art",
+  "heroRating": "4.9",
+  "heroReviews": "280+ reviews",
+  "established": "2016",
+  "location": "Bath, UK",
+  "street": "24 Milsom Street, Bath BA1 1DG",
+  "registeredAddress": "24 Milsom Street, Bath BA1 1DG, United Kingdom",
+  "phone": "+44 1225 789012",
+  "email": "hello@atelierhair.co.uk",
+  "googleRating": "4.9",
+  "googleReviews": "280+ reviews",
+  "hours": "Tue—Sat · 9:00—18:00",
+  "pageTitle": "ATELIER — Hair Design Studio",
+  "heroCta1": {
+    "text": "Book Consultation",
+    "href": "#book"
+  },
+  "heroCta2": {
+    "text": "View Services",
+    "href": "#services"
+  },
+  "serviceCategories": [
+    {
+      "category": "Hair",
+      "items": [
+        {
+          "name": "Signature Cut & Style",
+          "desc": "Consultation, precision cut, blow-dry & finish",
+          "price": "£85",
+          "time": "60 min",
+          "span": 2
+        },
+        {
+          "name": "Balayage / Highlights",
+          "desc": "Hand-painted colour tailored to your skin tone",
+          "price": "£140",
+          "time": "2—3 hrs",
+          "span": 1
+        },
+        {
+          "name": "Full Colour Transformation",
+          "desc": "Complete colour change with Olaplex treatment",
+          "price": "£110",
+          "time": "2 hrs",
+          "span": 1
+        },
+        {
+          "name": "Keratin Smoothing",
+          "desc": "Frizz elimination, up to 12 weeks of silkiness",
+          "price": "£165",
+          "time": "90 min",
+          "span": 1
+        },
+        {
+          "name": "Event Styling",
+          "desc": "Updo, waves, or sleek styling for special occasions",
+          "price": "£65",
+          "time": "45 min",
+          "span": 1
+        },
+        {
+          "name": "Brow Sculpt",
+          "desc": "Lamination + tint for perfectly shaped brows",
+          "price": "£45",
+          "time": "30 min",
+          "span": 1
+        }
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "name": "Isabelle Moreau",
+      "role": "Creative Director · 15 yrs",
+      "specialty": "Precision cuts, editorial styling, razor work",
+      "initials": "IM"
+    },
+    {
+      "name": "Clara Jensen",
+      "role": "Senior Colourist · 10 yrs",
+      "specialty": "Balayage, colour correction, icy blondes",
+      "initials": "CJ"
+    },
+    {
+      "name": "Maya Okonkwo",
+      "role": "Master Stylist · 8 yrs",
+      "specialty": "Textured cuts, curly hair, bridal & events",
+      "initials": "MO"
+    }
+  ],
+  "galleryItems": [
+    {
+      "gradient": "from-rose-200 to-blush",
+      "emoji": "💇‍♀️",
+      "title": "The Cut"
+    },
+    {
+      "gradient": "from-plum/30 to-blush",
+      "emoji": "💆‍♀️",
+      "title": "The Ritual"
+    },
+    {
+      "gradient": "from-amber-100 to-gold/30",
+      "emoji": "✨",
+      "title": "The Colour"
+    },
+    {
+      "gradient": "from-blush to-rose-100",
+      "emoji": "💄",
+      "title": "The Finish"
+    },
+    {
+      "gradient": "from-sage-200 to-sage/30",
+      "emoji": "🌿",
+      "title": "The Products"
+    },
+    {
+      "gradient": "from-stone-200 to-sand",
+      "emoji": "🕯️",
+      "title": "The Studio"
+    }
+  ],
+  "bookingFields": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "name": "service",
+      "label": "Service",
+      "type": "select",
+      "required": true
+    },
+    {
+      "name": "stylist",
+      "label": "Stylist",
+      "type": "select"
+    },
+    {
+      "name": "date",
+      "label": "Date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "time",
+      "label": "Time",
+      "type": "select"
+    },
+    {
+      "name": "note",
+      "label": "Notes",
+      "type": "textarea"
+    }
+  ],
+  "bookingTitle": "BEGIN YOUR TRANSFORMATION",
+  "bookingDescription": "New clients receive a complimentary consultation.",
+  "bookingCta": "Confirm Booking",
+  "brand": "ATELIER",
+  "brandDescription": "A private hair design studio. Architecture for hair.",
+  "hoursNote": "Mon—Sun · Closed",
+  "address": "24 Milsom Street, Bath BA1 1DG",
+  "establishedText": "Est. 2016 · Bath, UK",
+  "slug": "atelier"
+}

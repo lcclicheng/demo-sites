@@ -1,0 +1,27 @@
+[
+  {
+    "template": "coffee",
+    "name": "Dark Roast",
+    "subtitle": "Specialty Coffee Bar",
+    "tagline": "Single-origin coffee roasted in small batches in the heart of Manchester",
+    "established": "2020",
+    "location": "Manchester, UK",
+    "street": "12 Northern Quarter, Manchester M4 1LQ",
+    "postcode": "M4 1LQ",
+    "phone": "+44 161 234 5678",
+    "email": "hello@darkroast.coffee",
+    "hours": "Mon—Fri: 7:30—18:00 · Sat—Sun: 8:30—17:00",
+    "heroLine1": "Deep roots,",
+    "heroLine2": "bold flavour.",
+    "menuTitle": "Brew Bar",
+    "menuSubtitle": "Carefully Curated Origins",
+    "heroCta1": { "text": "See Our Menu", "href": "#menu" },
+    "heroCta2": { "text": "Order Online", "href": "#order" },
+    "menuItems": [
+      { "name": "Brazil Santos", "origin": "Brazil", "notes": "Chocolate · Nutty · Caramel", "roast": "Medium-Dark", "price": "£3.80", "desc": "Classic Brazilian profile. Smooth, low acidity, perfect as an everyday brew.", "roastLevel": 4 },
+      { "name": "Kenya AA", "origin": "Kenya", "notes": "Blackcurrant · Grapefruit · Brown Sugar", "roast": "Light", "price": "£4.50", "desc": "Vibrant and complex. Washed process from Nyeri. Bright, juicy acidity.", "roastLevel": 1 },
+      { "name": "Costa Rica Tarrazu", "origin": "Costa Rica", "notes": "Honey · Orange · Milk Chocolate", "roast": "Medium", "price": "£4.20", "desc": "Honey-processed from the Tarrazu region. Sweet, clean, beautifully balanced.", "roastLevel": 3 }
+    ],
+    "pageTitle": "Dark Roast — Specialty Coffee in Manchester"
+  }
+]

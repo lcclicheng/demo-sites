@@ -1,0 +1,100 @@
+{
+  "template": "coffee",
+  "name": "MONO",
+  "subtitle": "Specialty Coffee",
+  "tagline": "Single-origin coffee sourced directly from farms, roasted in 15kg batches, brewed with obsessive precision.",
+  "established": "2019",
+  "location": "Shoreditch, London",
+  "street": "47 Redchurch Street, Shoreditch, London E2 7DJ",
+  "registeredAddress": "47 Redchurch Street, Shoreditch, London E2 7DJ, United Kingdom",
+  "phone": "+44 20 7123 4567",
+  "email": "hello@monocoffee.co.uk",
+  "googleRating": "4.9",
+  "googleReviews": "320+ reviews",
+  "hours": "Every day · 7:00—19:00",
+  "pageTitle": "MONO — Specialty Coffee",
+  "heroLine1": "COFFEE IS A",
+  "heroLine2": "RITUAL",
+  "menuTitle": "Pour Over",
+  "menuSubtitle": "Single Origins, Hand-Brewed",
+  "heroCta1": {
+    "text": "Explore Our Menu",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Order Online",
+    "href": "#order"
+  },
+  "menuItems": [
+    {
+      "name": "Ethiopia Yirgacheffe",
+      "origin": "Ethiopia",
+      "notes": "Jasmine · Bergamot · Honey",
+      "roast": "Light",
+      "price": "£4.50",
+      "desc": "Washed process from the Gedeb district. Floral, tea-like body with a clean citrus finish.",
+      "roastLevel": 1,
+      "process": "Washed"
+    },
+    {
+      "name": "Colombia El Paraiso",
+      "origin": "Colombia",
+      "notes": "Red Apple · Caramel · Cacao",
+      "roast": "Medium",
+      "price": "£4.20",
+      "desc": "Double anaerobic fermentation from Cauca. Juicy and complex with a syrupy body.",
+      "roastLevel": 3,
+      "process": "Anaerobic"
+    },
+    {
+      "name": "Sumatra Mandheling",
+      "origin": "Indonesia",
+      "notes": "Dark Chocolate · Cedar · Spice",
+      "roast": "Dark",
+      "price": "£4.00",
+      "desc": "Wet-hulled process from Northern Sumatra. Earthy, full-bodied with low acidity.",
+      "roastLevel": 5,
+      "process": "Wet-Hulled"
+    },
+    {
+      "name": "Guatemala Antigua",
+      "origin": "Guatemala",
+      "notes": "Toffee · Orange · Walnut",
+      "roast": "Medium",
+      "price": "£4.30",
+      "desc": "Volcanic soil grown in the Antigua valley. Balanced with a smooth, buttery finish.",
+      "roastLevel": 3,
+      "process": "Washed"
+    }
+  ],
+  "roasteryTitle": "THE ROASTERY",
+  "roasteryDescription": "Every bean is roasted in 15kg batches. 12 roast profiles. 72 hours of rest before first brew.",
+  "orderTitle": "ORDER AHEAD",
+  "orderSubtitle": "Skip the queue.",
+  "orderConfirmationTitle": "Order Placed",
+  "orderConfirmationMessage": "Ready in 8-10 minutes.",
+  "orderFormLabels": {
+    "item": "Your Coffee",
+    "name": "Name",
+    "phone": "Phone",
+    "note": "Notes"
+  },
+  "orderFormPlaceholders": {
+    "item": "Select your brew",
+    "name": "Your name",
+    "phone": "+44 7xxx",
+    "note": "Oat milk? Extra shot?"
+  },
+  "orderButtonText": "Place Order",
+  "footerTagline": "Specialty coffee roasters. Direct trade. Small batch. Obsessive precision.",
+  "footerBottomText": "Crafted in Shoreditch, London.",
+  "footerHoursLabel": "Hours",
+  "footerContactLabel": "Find Us",
+  "navLinks": [
+    "Menu",
+    "Roastery",
+    "Order"
+  ],
+  "navCtaText": "Order Now",
+  "slug": "mono"
+}

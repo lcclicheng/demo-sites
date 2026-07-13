@@ -1,0 +1,219 @@
+{
+  "template": "trades",
+  "name": "FORGE",
+  "subtitle": "Plumbing · Heating · Electrical",
+  "tagline": "Same-day response. No call-out fee. 20 years of trusted service across West Yorkshire.",
+  "established": "2005",
+  "location": "Leeds, UK",
+  "street": "Unit 12, Wellington Industrial Estate, Leeds LS12 2UA",
+  "registeredAddress": "Unit 12, Wellington Industrial Estate, Leeds LS12 2UA, United Kingdom",
+  "phone": "+44 113 234 5678",
+  "emergency": true,
+  "emergencyPhone": "+44 113 234 9999",
+  "email": "hello@forgeservices.co.uk",
+  "googleRating": "4.9",
+  "googleReviews": "480+ reviews",
+  "hours": "Mon—Fri: 7:00—19:00 · Sat: 8:00—16:00 · 24/7 Emergency",
+  "certs": [
+    "Gas Safe Registered",
+    "NICEIC Approved",
+    "Which? Trusted Trader",
+    "CHAS Accredited"
+  ],
+  "pageTitle": "FORGE — Plumbing · Heating · Electrical",
+  "heroLine1": "Fixed right,",
+  "heroLine2": "first time.",
+  "heroBadge": "20 Years · 480+ Reviews",
+  "heroCta1": {
+    "text": "Get a Free Quote",
+    "href": "#contact"
+  },
+  "heroCta2": {
+    "text": "24/7 Emergency",
+    "href": "#emergency"
+  },
+  "heroStats": [
+    {
+      "value": "20+",
+      "label": "Years"
+    },
+    {
+      "value": "480+",
+      "label": "Reviews"
+    },
+    {
+      "value": "4.9",
+      "label": "Rating"
+    },
+    {
+      "value": "60min",
+      "label": "Response"
+    }
+  ],
+  "stats": [
+    {
+      "value": "20+",
+      "label": "Years"
+    },
+    {
+      "value": "480+",
+      "label": "Reviews"
+    },
+    {
+      "value": "4.9",
+      "label": "Rating"
+    },
+    {
+      "value": "60min",
+      "label": "Response"
+    }
+  ],
+  "heroTrustBadges": [
+    "Gas Safe Registered",
+    "Fully Insured",
+    "NICEIC Approved",
+    "Which? Trusted Trader"
+  ],
+  "services": [
+    {
+      "name": "Emergency Repairs",
+      "desc": "Burst pipes, gas leaks, no heating — we arrive within 60 minutes. Available 24/7, 365 days a year.",
+      "priceFrom": "£85",
+      "emergency": true
+    },
+    {
+      "name": "Boiler Installation & Service",
+      "desc": "Full boiler replacement, annual servicing, and landlord safety certificates. All work Gas Safe certified.",
+      "priceFrom": "£1,950",
+      "emergency": false
+    },
+    {
+      "name": "Bathroom Fitting",
+      "desc": "Complete bathroom renovations — plumbing, tiling, installation. Free design consultation included.",
+      "priceFrom": "£3,500",
+      "emergency": false
+    },
+    {
+      "name": "Central Heating",
+      "desc": "Radiator installation, power flushing, underfloor heating, and smart thermostat upgrades.",
+      "priceFrom": "£450",
+      "emergency": false
+    },
+    {
+      "name": "Drainage & Blockages",
+      "desc": "High-pressure jetting, CCTV drain surveys, and root removal. No-dig solutions where possible.",
+      "priceFrom": "£95",
+      "emergency": false
+    },
+    {
+      "name": "Landlord Services",
+      "desc": "Gas safety certificates (CP12), EICR electrical reports, and planned maintenance for rental properties.",
+      "priceFrom": "£75",
+      "emergency": false
+    }
+  ],
+  "about": {
+    "title": "Three generations of getting it right.",
+    "paragraphs": [
+      "FORGE started in 2005 when Dave Thompson left the corporate plumbing world to serve his local community. What began as a single van and a reputation for showing up on time has grown into West Yorkshire's most trusted trades team.",
+      "We don't do call-out fees. We don't do hidden charges. We do clear quotes, clean work, and a 12-month guarantee on every job — no exceptions.",
+      "Every engineer on our team is fully qualified, background-checked, and trained to explain the work in plain English. No jargon, no upsells, no surprises."
+    ],
+    "certifications": [
+      "Gas Safe Registered",
+      "NICEIC Approved",
+      "Which? Trusted Trader",
+      "CHAS Accredited"
+    ],
+    "whyChoose": [
+      {
+        "icon": "Timer",
+        "text": "60-minute emergency response — we aim to arrive faster than anyone else in West Yorkshire"
+      },
+      {
+        "icon": "ThumbsUp",
+        "text": "12-month guarantee on all workmanship — if something isn't right, we come back free of charge"
+      },
+      {
+        "icon": "Shield",
+        "text": "Fully insured and accredited — Gas Safe, NICEIC, Which? Trusted Trader, CHAS"
+      },
+      {
+        "icon": "Award",
+        "text": "480+ five-star reviews — check our Google profile and see what our customers say"
+      }
+    ]
+  },
+  "aboutParagraphs": [
+    "FORGE started in 2005 when Dave Thompson left the corporate plumbing world to serve his local community. What began as a single van and a reputation for showing up on time has grown into West Yorkshire's most trusted trades team.",
+    "We don't do call-out fees. We don't do hidden charges. We do clear quotes, clean work, and a 12-month guarantee on every job — no exceptions.",
+    "Every engineer on our team is fully qualified, background-checked, and trained to explain the work in plain English. No jargon, no upsells, no surprises."
+  ],
+  "reviews": [
+    {
+      "name": "Sarah Mitchell",
+      "text": "Had a burst pipe at 2am on a Sunday. FORGE arrived in 40 minutes and had it sorted by 3:30. Absolute lifesavers.",
+      "rating": 5
+    },
+    {
+      "name": "Tom Bradley",
+      "text": "New boiler installed last month. The engineer was clean, professional, and explained everything. Best price out of 4 quotes too.",
+      "rating": 5
+    },
+    {
+      "name": "The Nguyens",
+      "text": "Used FORGE for our bathroom renovation. They handled everything — plumbing, tiling, electrics. One point of contact, zero stress.",
+      "rating": 5
+    }
+  ],
+  "contact": {
+    "labels": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "service": "Service",
+      "urgency": "Urgency",
+      "message": "Describe the job"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "phone": "Best number to reach you",
+      "email": "you@email.com",
+      "service": "Select service",
+      "message": "e.g. Boiler not working, leak under sink, bathroom renovation..."
+    },
+    "submit": "Get My Free Quote",
+    "success": "Quote request received! We'll call you within 2 hours."
+  },
+  "urgencyOptions": [
+    {
+      "value": "routine",
+      "label": "Routine",
+      "icon": "Clock"
+    },
+    {
+      "value": "urgent",
+      "label": "Urgent",
+      "icon": "Timer"
+    },
+    {
+      "value": "emergency",
+      "label": "Emergency",
+      "icon": "Timer"
+    }
+  ],
+  "footer": {
+    "tagline": "Fixed right, first time. Since 2005.",
+    "copyright": "All rights reserved."
+  },
+  "nav": {
+    "links": [
+      "Services",
+      "About",
+      "Reviews",
+      "Contact"
+    ],
+    "cta": "Get Quote"
+  },
+  "slug": "forge"
+}

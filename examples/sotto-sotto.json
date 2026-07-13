@@ -1,0 +1,259 @@
+{
+  "template": "restaurant",
+  "name": "Sotto Sotto",
+  "subtitle": "Italian Restaurant",
+  "tagline": "Authentic Italian cooking in the heart of Bath. Handmade pasta, slow-simmered ragu, and classic tiramisu — served just below street level since 2002.",
+  "established": "2002",
+  "location": "Bath, UK",
+  "street": "10 N Parade, Bath BA2 4AL",
+  "registeredAddress": "10 N Parade, Bath BA2 4AL, United Kingdom",
+  "phone": "+44 1225 330236",
+  "email": "info@sottosotto.co.uk",
+  "googleRating": "4.6",
+  "googleReviews": "1,200+ reviews",
+  "pageTitle": "Sotto Sotto — Italian Restaurant in Bath",
+  "heroLine1": "Sotto",
+  "heroLine2": "SOTTO",
+  "heroBadge": "Bath's Hidden Italian Gem",
+  "heroCta1": {
+    "text": "View Menu",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Book a Table",
+    "href": "#reserve"
+  },
+  "heroStats": [
+    {
+      "val": "2002",
+      "label": "Established"
+    },
+    {
+      "val": "4.6",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "£20-60",
+      "label": "Per Person"
+    },
+    {
+      "val": "Dine In",
+      "label": "Book a Table"
+    }
+  ],
+  "infoTicker": [
+    {
+      "icon": "MapPin",
+      "text": "10 N Parade, Bath BA2 4AL"
+    },
+    {
+      "icon": "Clock",
+      "text": "Tue–Sun · 12:00—22:30"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 1225 330236"
+    },
+    {
+      "icon": "Wine",
+      "text": "Fully Licensed"
+    }
+  ],
+  "certifications": [
+    "AA Rosette",
+    "5★ Food Hygiene",
+    "Fully Licensed"
+  ],
+  "menuIntroTitle": "Bath, on a Plate",
+  "menuIntroText": "Hand-rolled pasta, slow-braised sauces, and desserts made fresh each morning — a taste of Italy, tucked just beneath the streets of Bath.",
+  "menuSections": [
+    {
+      "title": "Pasta & Risotto",
+      "icon": "UtensilsCrossed",
+      "items": [
+        {
+          "name": "Linguine con gamberi",
+          "desc": "Linguine tossed with prawns, sun-dried tomatoes, anchovies, black olives, capers, garlic and EVO oil",
+          "price": "12.75",
+          "pair": "Greco di Tufo",
+          "image": "./images/2.jpg"
+        },
+        {
+          "name": "Fettuccine al ragù d'agnello",
+          "desc": "Fresh homemade fettuccine with lamb ragout on a bed of Pecorino cheese fondue",
+          "price": "12.50",
+          "pair": "Primitivo di Manduria",
+          "image": "./images/3.jpg"
+        },
+        {
+          "name": "Fettuccine alla crema di zucca",
+          "desc": "Fresh homemade fettuccine, sage, chilli, roasted butternut squash, pancetta and truffle cream",
+          "price": "10.50",
+          "pair": "Pinot Grigio Alto Adige",
+          "image": "./images/6.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Risotto & Secondi",
+      "icon": "Flame",
+      "items": [
+        {
+          "name": "Risotto al Barbera",
+          "desc": "Italian Arborio risotto with Barbera wine, sausage and cream of Taleggio cheese",
+          "price": "11.75",
+          "pair": "Barbera d'Alba",
+          "image": "./images/4.jpg"
+        },
+        {
+          "name": "Carré di agnello in crosta di pistacchi",
+          "desc": "Pistachio crusted rack of lamb with mixed roasted root vegetables and Primitivo red wine sauce",
+          "price": "24.25",
+          "pair": "Chianti Classico",
+          "image": "./images/5.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Dolci",
+      "icon": "Sparkles",
+      "items": [
+        {
+          "name": "Tiramisu della Casa",
+          "desc": "Espresso-soaked savoiardi, mascarpone, and cocoa — made fresh every morning",
+          "price": "8.50",
+          "pair": "Vin Santo",
+          "image": "./images/1.jpg"
+        },
+        {
+          "name": "Panna Cotta",
+          "desc": "Vanilla bean panna cotta with raspberry coulis and fresh mint",
+          "price": "8.50",
+          "pair": "Moscato d'Asti"
+        }
+      ]
+    }
+  ],
+  "galleryItems": [
+    {
+      "image": "./images/1.jpg",
+      "title": "Tiramisu",
+      "sub": "Made fresh each morning"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "Linguine con gamberi",
+      "sub": "Prawns, olives, capers, EVO oil"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "Fettuccine al ragù d'agnello",
+      "sub": "Lamb ragout, Pecorino fondue"
+    },
+    {
+      "image": "./images/4.jpg",
+      "title": "Risotto al Barbera",
+      "sub": "Sausage & Taleggio cream"
+    },
+    {
+      "image": "./images/5.jpg",
+      "title": "Carré di agnello",
+      "sub": "Pistachio crusted rack of lamb"
+    },
+    {
+      "image": "./images/6.jpg",
+      "title": "Fettuccine alla crema di zucca",
+      "sub": "Butternut squash, pancetta, truffle"
+    }
+  ],
+  "screenshotsIntro": "Tucked beneath the streets of Bath — candlelight, stone arches, and the hum of a full dining room.",
+  "screenshots": [
+    {
+      "image": "./images/screenshot-1.jpg",
+      "title": "The Vaulted Room",
+      "sub": "Candlelit stone arches"
+    },
+    {
+      "image": "./images/screenshot-2.jpg",
+      "title": "By the Window",
+      "sub": "Bath stone & warm light"
+    },
+    {
+      "image": "./images/screenshot-3.jpg",
+      "title": "A Table for Two",
+      "sub": "Date-night corner"
+    }
+  ],
+  "occasionOptions": [
+    "Birthday",
+    "Anniversary",
+    "Date Night",
+    "Business Dinner"
+  ],
+  "reservationNote": "We recommend booking at least 7 days in advance. Friday and Saturday tables fill quickly.",
+  "footerNote": "Proudly independent. Italian ingredients. Bath soul.",
+  "aboutTitle": "Beneath the Streets of Bath",
+  "aboutSubtitle": "Italian Roots · Local Heart",
+  "aboutParagraphs": [
+    "Sotto Sotto has been a Bath institution for over two decades. Tucked beneath the arches of North Parade, our candlelit dining room feels a world away from the city above.",
+    "We cook the dishes our families grew up with — slow-braised ragus, hand-rolled pasta, and desserts that arrive at the table with the quiet confidence of recipes that have travelled through generations.",
+    "Every ingredient is chosen for flavour, not fuss. The result is honest Italian food in a room that makes you want to stay all evening."
+  ],
+  "aboutStats": [
+    {
+      "value": "20+",
+      "label": "Years"
+    },
+    {
+      "value": "4.6",
+      "label": "Rating"
+    },
+    {
+      "value": "Bath",
+      "label": "City Centre"
+    }
+  ],
+  "whyChooseItems": [
+    {
+      "icon": "Timer",
+      "text": "Slow-cooked sauces and fresh pasta made daily in our kitchen"
+    },
+    {
+      "icon": "ThumbsUp",
+      "text": "Over 1,200 Google reviews with a consistent 4.6-star rating"
+    },
+    {
+      "icon": "Shield",
+      "text": "5★ Food Hygiene rating and AA Rosette recognition"
+    },
+    {
+      "icon": "Award",
+      "text": "Independent Bath favourite — no chains, no shortcuts"
+    }
+  ],
+  "hoursDetail": {
+    "wedThu": "17:00—22:00",
+    "friSat": "12:00—22:30",
+    "sunday": "12:00—21:00",
+    "closedDays": "Mon—Tue"
+  },
+  "reviews": [
+    {
+      "name": "Emily Richardson",
+      "text": "The lamb ragu is the best I've had outside Italy. Intimate, candlelit, and completely unforgettable.",
+      "rating": 5
+    },
+    {
+      "name": "James & Olivia",
+      "text": "We celebrated our anniversary here and the team made it feel truly special. Tiramisu is mandatory.",
+      "rating": 5
+    },
+    {
+      "name": "Luca B.",
+      "text": "As an Italian living in Bath, this is the only place that reminds me of home. Authentic, warm, and delicious.",
+      "rating": 5
+    }
+  ],
+  "slug": "sotto-sotto"
+}

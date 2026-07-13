@@ -1,0 +1,26 @@
+[
+  {
+    "template": "yoga",
+    "name": "SANTOSHA",
+    "subtitle": "Yoga & Wellness Studio",
+    "tagline": "Find stillness in movement. Classes for every body, every level, every journey.",
+    "established": "2017", "location": "Bath, UK",
+    "street": "15 Walcot Street, Bath BA1 5BG", "phone": "+44 1225 345678", "email": "breathe@santoshayoga.co.uk",
+    "googleRating": "4.9", "googleReviews": "230+ reviews",
+    "hours": "Mon—Fri: 6:30—20:30 · Sat—Sun: 8:00—18:00",
+    "heroLine1": "Breathe.", "heroLine2": "Move.", "heroLine3": "Be.",
+    "heroCta1": { "text": "View Classes", "href": "#classes" },
+    "heroCta2": { "text": "Book a Session", "href": "#book" },
+    "classTitle": "Our Practice", "classSubtitle": "Something for everyone.",
+    "classes": [
+      { "name": "Vinyasa Flow", "desc": "Dynamic sequence linking breath with movement.", "price": "£14", "time": "60 min", "level": "All Levels" },
+      { "name": "Yin & Restore", "desc": "Deep, passive stretches held for 3-5 minutes.", "price": "£12", "time": "75 min", "level": "Beginner" },
+      { "name": "Power Yoga", "desc": "Athletic, challenging flow to build heat and endurance.", "price": "£14", "time": "60 min", "level": "Intermediate" }
+    ],
+    "teachers": [
+      { "name": "Priya Sharma", "role": "Founder", "specialty": "Vinyasa, Meditation", "initials": "PS" },
+      { "name": "Luna Johansson", "role": "Senior Teacher", "specialty": "Yin, Sound Healing", "initials": "LJ" }
+    ],
+    "pageTitle": "SANTOSHA — Yoga & Wellness Studio in Bath"
+  }
+]
