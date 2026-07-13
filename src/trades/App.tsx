@@ -282,81 +282,6 @@ function PrivacyPolicy({ businessName, email, phone, address }: { businessName: 
 
 
 
-function RegisteredAddressInfo({ businessName, email, phone, address }: { businessName: string; email: string; phone: string; address: string }) {
-  useEffect(() => { window.scrollTo(0, 0) }, [])
-  const s = {
-    page: { minHeight: '100vh', background: '#ffffff', color: '#1a1a1a', fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', lineHeight: 1.5 },
-    bar: { maxWidth: '820px', margin: '0 auto', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #ececec' },
-    brand: { fontWeight: 700, fontSize: '15px', color: '#111' },
-    back: { fontSize: '14px', color: '#2563eb', textDecoration: 'none', cursor: 'pointer' },
-    wrap: { maxWidth: '760px', margin: '0 auto', padding: '36px 24px 80px' },
-    h1: { fontSize: '30px', fontWeight: 800, margin: '0 0 4px', letterSpacing: '-0.02em', color: '#0f172a' },
-    sub: { fontSize: '13px', color: '#94a3b8', margin: '0 0 28px' },
-    h2: { fontSize: '19px', fontWeight: 700, margin: '28px 0 8px', color: '#0f172a' },
-    p: { fontSize: '15px', lineHeight: 1.75, color: '#475569', margin: '0 0 12px' },
-    addr: { fontSize: '16px', fontWeight: 600, color: '#0f172a', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '14px 16px', margin: '0 0 12px' },
-  }
-  const fill = (str: string) => str
-    .replace(/\{name\}/g, businessName)
-    .replace(/\{email\}/g, email)
-    .replace(/\{phone\}/g, phone)
-    .replace(/\{address\}/g, address)
-  const updated = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
-  const sections: Array<{ h: string; p: string[] }> = [
-    { h: 'Registered Office Address', p: [
-      'This website belongs to {name}, a company registered in the United Kingdom. The address below is our registered office — the official legal address recorded on the public Companies House register, and the address where we receive official correspondence from Companies House and HMRC:',
-      '{address}',
-      'Our registered office is not necessarily where our services are delivered. The location where customers visit or where we trade is shown elsewhere on this site.',
-    ]},
-    { h: 'Why This Address Is Public', p: [
-      'Under UK company law, a registered office address appears on the public Companies House register and can be viewed by anyone. This transparency is a legal requirement and helps customers, suppliers and public authorities reach the company.',
-    ]},
-    { h: 'If You Are Setting This Up For Your Own Business', p: [
-      'If you are using this template for your own company, any of the following can serve as your registered office, as long as it meets the rules below:',
-      '• Your own business premises',
-      '• Your home address — free, but it will appear on the public register',
-      '• Your accountant’s or solicitor’s address, with their permission',
-      '• A virtual office or registered-agent service (typically £30–£150 per year) — keeps your home address private and looks professional',
-    ]},
-    { h: 'Rules You Must Follow (ECCTA 2024)', p: [
-      'Since 4 March 2024 the registered office must be an “appropriate address”: a real UK location where post is received and can be acknowledged. A standalone PO box no longer qualifies. The address must also be in the same UK jurisdiction as your company (England & Wales, Scotland, or Northern Ireland).',
-      'A company that does not keep a valid registered office can be struck off the Companies House register.',
-    ]},
-    { h: 'Sole Trader Alternative', p: [
-      'If you trade as a sole trader you do not register with Companies House and are not required to have a registered office address — you only need a business address for HMRC. This keeps setup simple, but you take on unlimited personal liability for the business.',
-    ]},
-    { h: 'Keeping This Page Up To Date', p: [
-      'If your registered office changes, update it at Companies House (free to file) and update the address shown here so the two match. This page is generated automatically from your business profile.',
-    ]},
-  ]
-  return (
-    <div style={s.page}>
-      <div style={s.bar}>
-        <span style={s.brand}>{businessName}</span>
-        <a href="#" onClick={(e) => { e.preventDefault(); window.location.hash = '' }} style={s.back}>← Back to site</a>
-      </div>
-      <div style={s.wrap}>
-        <h1 style={s.h1}>Registered Office Address</h1>
-        <p style={s.sub}>Information page · {updated}</p>
-        {sections.map((sec, i) => (
-          <div key={i}>
-            <h2 style={s.h2}>{sec.h}</h2>
-            {sec.p.map((para, j) => (
-              <p key={j} style={sec.h === 'Registered Office Address' && j === 1 ? s.addr : s.p}>{fill(para)}</p>
-            ))}
-          </div>
-        ))}
-        <p style={{ ...s.p, marginTop: 28, fontSize: 13, color: '#94a3b8' }}>
-          This page is provided as a general guide and is not legal advice. Seek professional guidance for your specific circumstances.
-        </p>
-      </div>
-    </div>
-  )
-}
-
-
-
-
 function Invoice({ businessName, email, phone, address }: { businessName: string; email: string; phone: string; address: string }) {
   useEffect(() => { window.scrollTo(0, 0) }, [])
   const s = {
@@ -499,6 +424,84 @@ function Contract({ businessName, email, phone, address }: { businessName: strin
         </div>
         <p style={{ ...s.p, marginTop: 20, fontSize: 12, color: '#94a3b8' }}>
           This is a sample service agreement provided for demonstration. It is not legal advice — have it reviewed by a qualified solicitor before use.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+
+
+
+function RegisteredAddressInfo({ businessName, email, phone, address }: { businessName: string; email: string; phone: string; address: string }) {
+  useEffect(() => { window.scrollTo(0, 0) }, [])
+  const s = {
+    page: { minHeight: '100vh', background: '#ffffff', color: '#1a1a1a', fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', lineHeight: 1.5 },
+    bar: { maxWidth: '820px', margin: '0 auto', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #ececec' },
+    brand: { fontWeight: 700, fontSize: '15px', color: '#111' },
+    back: { fontSize: '14px', color: '#2563eb', textDecoration: 'none', cursor: 'pointer' },
+    wrap: { maxWidth: '760px', margin: '0 auto', padding: '36px 24px 80px' },
+    h1: { fontSize: '30px', fontWeight: 800, margin: '0 0 4px', letterSpacing: '-0.02em', color: '#0f172a' },
+    sub: { fontSize: '13px', color: '#94a3b8', margin: '0 0 28px' },
+    h2: { fontSize: '19px', fontWeight: 700, margin: '28px 0 8px', color: '#0f172a' },
+    p: { fontSize: '15px', lineHeight: 1.75, color: '#475569', margin: '0 0 12px' },
+    addr: { fontSize: '16px', fontWeight: 600, color: '#0f172a', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '14px 16px', margin: '0 0 12px' },
+  }
+  const fill = (str: string) => str
+    .replace(/\{name\}/g, businessName)
+    .replace(/\{email\}/g, email)
+    .replace(/\{phone\}/g, phone)
+    .replace(/\{address\}/g, address)
+  const updated = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+  const sections: Array<{ h: string; p: string[] }> = [
+    { h: 'Registered Office Address', p: [
+      'This website belongs to {name}, a company registered in the United Kingdom. The address below is our registered office — the official legal address recorded on the public Companies House register, and the address where we receive official correspondence from Companies House and HMRC:',
+      '{address}',
+      'Our registered office is not necessarily where our services are delivered. The location where customers visit or where we trade is shown elsewhere on this site.',
+    ]},
+    { h: 'Sole Trader? No Registered Office Needed', p: [
+      'If the business behind this site trades as a sole trader, there is no registered office requirement at all. Sole traders are not registered with Companies House and only need a business (trading) address for HMRC. In that case the address shown above does not apply, and no registered-office entry is expected on this page.',
+    ]},
+    { h: 'Why This Address Is Public', p: [
+      'Under UK company law, a registered office address appears on the public Companies House register and can be viewed by anyone. This transparency is a legal requirement and helps customers, suppliers and public authorities reach the company.',
+    ]},
+    { h: 'If You Are Setting This Up For Your Own Business', p: [
+      'If you are using this template for your own company, any of the following can serve as your registered office, as long as it meets the rules below:',
+      '• Your own business premises',
+      '• Your home address — free, but it will appear on the public register',
+      '• Your accountant’s or solicitor’s address, with their permission',
+      '• A virtual office or registered-agent service (typically £30–£150 per year) — keeps your home address private and looks professional',
+    ]},
+    { h: 'Rules You Must Follow (ECCTA 2024)', p: [
+      'Since 4 March 2024 the registered office must be an “appropriate address”: a real UK location where post is received and can be acknowledged. A standalone PO box no longer qualifies. The address must also be in the same UK jurisdiction as your company (England & Wales, Scotland, or Northern Ireland).',
+      'A company that does not keep a valid registered office can be struck off the Companies House register.',
+    ]},
+    { h: 'Sole Trader Alternative', p: [
+      'If you trade as a sole trader you do not register with Companies House and are not required to have a registered office address — you only need a business address for HMRC. This keeps setup simple, but you take on unlimited personal liability for the business.',
+    ]},
+    { h: 'Keeping This Page Up To Date', p: [
+      'If your registered office changes, update it at Companies House (free to file) and update the address shown here so the two match. This page is generated automatically from your business profile.',
+    ]},
+  ]
+  return (
+    <div style={s.page}>
+      <div style={s.bar}>
+        <span style={s.brand}>{businessName}</span>
+        <a href="#" onClick={(e) => { e.preventDefault(); window.location.hash = '' }} style={s.back}>← Back to site</a>
+      </div>
+      <div style={s.wrap}>
+        <h1 style={s.h1}>Registered Office Address</h1>
+        <p style={s.sub}>Information page · {updated}</p>
+        {sections.map((sec, i) => (
+          <div key={i}>
+            <h2 style={s.h2}>{sec.h}</h2>
+            {sec.p.map((para, j) => (
+              <p key={j} style={sec.h === 'Registered Office Address' && j === 1 ? s.addr : s.p}>{fill(para)}</p>
+            ))}
+          </div>
+        ))}
+        <p style={{ ...s.p, marginTop: 28, fontSize: 13, color: '#94a3b8' }}>
+          This page is provided as a general guide and is not legal advice. Seek professional guidance for your specific circumstances.
         </p>
       </div>
     </div>

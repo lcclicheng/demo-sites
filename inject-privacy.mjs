@@ -135,6 +135,9 @@ function RegisteredAddressInfo({ businessName, email, phone, address }: { busine
       '{address}',
       'Our registered office is not necessarily where our services are delivered. The location where customers visit or where we trade is shown elsewhere on this site.',
     ]},
+    { h: 'Sole Trader? No Registered Office Needed', p: [
+      'If the business behind this site trades as a sole trader, there is no registered office requirement at all. Sole traders are not registered with Companies House and only need a business (trading) address for HMRC. In that case the address shown above does not apply, and no registered-office entry is expected on this page.',
+    ]},
     { h: 'Why This Address Is Public', p: [
       'Under UK company law, a registered office address appears on the public Companies House register and can be viewed by anyone. This transparency is a legal requirement and helps customers, suppliers and public authorities reach the company.',
     ]},

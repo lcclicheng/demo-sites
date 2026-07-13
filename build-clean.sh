@@ -30,6 +30,6 @@ done
 echo "=== 干净全量重建结束 $(date) ===" | tee -a "$LOG_DIR/_clean.log"
 echo "--- 最终 dist 检查 ---" | tee -a "$LOG_DIR/_clean.log"
 for f in "${PROJS[@]}"; do
-  pn=$(node -e "const d=require('./examples/$f.json');console.log(d.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-\$)/g,''))" 2>/dev/null)
+  pn=$(node -e "const d=require('./examples/$f.json');console.log((d.slug||d.name).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-\$)/g,''))" 2>/dev/null)
   if [ -f "output/$pn/dist/index.html" ]; then echo "  OK   $f" | tee -a "$LOG_DIR/_clean.log"; else echo "  MISS $f" | tee -a "$LOG_DIR/_clean.log"; fi
 done
