@@ -111,7 +111,7 @@ export default function App() {
           <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.7}} className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4"><div className="flex gap-0.5">{Array(5).fill(0).map((_,i)=><Star key={i} className="w-4 h-4 fill-orange text-orange"/>)}</div><span className="text-sm text-slate-300">{d.googleRating} · {d.googleReviews}</span></div>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-4 break-words">{d.heroLine1}<br/><span className="text-orange"><GradientText>{d.heroLine2}</GradientText></span></h1>
-            <p className="text-lg text-slate-300 max-w-lg mb-8 leading-relaxed">{d.tagline}</p>
+            <p className="text-lg text-slate-300 measure-lg mb-8 leading-relaxed">{d.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#contact" className="px-8 py-4 rounded-md bg-orange text-white font-bold text-sm hover:bg-orange-600 inline-flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">{d?.heroCta1?.text} <ArrowRight className="w-4 h-4"/></a>
               <a href={`tel:${d.emergencyPhone||d.phone}`} className="px-8 py-4 rounded-md border-2 border-white/20 text-white font-bold text-sm hover:border-white/40 inline-flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">{d?.heroCta2?.text}</a>
@@ -131,7 +131,7 @@ export default function App() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-20 sm:py-28 bg-white"><div className="max-w-6xl mx-auto px-5 sm:px-8">
+      <section id="services" className="py-20 sm:py-28 bg-white section-rule"><div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div {...fadeView(0)} className="text-center mb-14"><Eyebrow className="text-orange mb-4">{d.servicesTitle}</Eyebrow><h2 className="text-3xl sm:text-4xl font-extrabold text-navy mb-4">{d.servicesSubtitle}</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {(d.services || []).map((s,i)=><motion.div key={i} {...fadeView(i*0.06)} className={`group bg-light rounded-xl p-6 border ${s.emergency?'border-orange/30 bg-orange/5':'border-slate-200'} hover:border-orange/50 hover:-translate-y-1 transition-all duration-300 relative`}>
@@ -144,7 +144,7 @@ export default function App() {
       </div></section>
 
       {/* ABOUT */}
-      <section id="about" className="py-20 sm:py-28 bg-light"><div className="max-w-6xl mx-auto px-5 sm:px-8"><div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section id="about" className="py-20 sm:py-28 bg-light section-rule"><div className="max-w-6xl mx-auto px-5 sm:px-8"><div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <motion.div {...fadeView(0)}>
           <Eyebrow className="text-orange mb-4">{d.subtitle}</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-navy mb-6">{d.aboutTitle}</h2>
@@ -160,7 +160,7 @@ export default function App() {
       </div></div></section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="py-20 sm:py-28 bg-white"><div className="max-w-5xl mx-auto px-5 sm:px-8"><motion.div {...fadeView(0)} className="text-center mb-12"><Eyebrow className="text-orange mb-4">Reviews</Eyebrow><h2 className="text-3xl sm:text-4xl font-extrabold text-navy">What our customers say</h2></motion.div>
+      <section id="reviews" className="py-20 sm:py-28 bg-white section-rule"><div className="max-w-5xl mx-auto px-5 sm:px-8"><motion.div {...fadeView(0)} className="text-center mb-12"><Eyebrow className="text-orange mb-4">Reviews</Eyebrow><h2 className="text-3xl sm:text-4xl font-extrabold text-navy">What our customers say</h2></motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">{(d.reviews || []).map((r,i)=><motion.div key={i} {...fadeView(i*0.1)} className="rounded-xl">
           <GlassCard className="h-full">
           <div className="flex gap-0.5 mb-3">{Array(r.rating).fill(0).map((_,j)=><Star key={j} className="w-4 h-4 fill-orange text-orange"/>)}</div>
@@ -170,8 +170,8 @@ export default function App() {
         </motion.div>)}</div></div></section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-20 sm:py-28 bg-navy text-white"><div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-        <motion.div {...fadeView(0)} className="mb-10"><Eyebrow className="text-orange mb-4">Get in Touch</Eyebrow><h2 className="text-3xl sm:text-4xl font-extrabold mb-4">Ready to get it <span className="text-orange">fixed</span>?</h2><p className="text-slate-300">Free, no-obligation quote. We'll get back to you within 2 hours.</p></motion.div>
+      <section id="contact" className="py-20 sm:py-28 bg-navy text-white section-rule"><div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+        <motion.div {...fadeView(0)} className="mb-10"><Eyebrow className="text-orange mb-4">Get in Touch</Eyebrow><h2 className="text-3xl sm:text-4xl font-extrabold mb-4">Ready to get it <span className="text-orange">fixed</span>?</h2><p className="text-slate-300 lead">Free, no-obligation quote. We'll get back to you within 2 hours.</p></motion.div>
         <motion.form {...fadeView(0.1)} onSubmit={submit} className="bg-white rounded-xl p-6 sm:p-8 text-left">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4"><div><label className="block text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2">Name</label><input className="w-full h-12 rounded-md border border-slate-300 px-4 text-sm text-slate-900 focus:outline-none focus:border-orange/50" value={f.name} onChange={e=>setF({...f,name:e.target.value})} required/></div><div><label className="block text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2">Phone</label><input className="w-full h-12 rounded-md border border-slate-300 px-4 text-sm text-slate-900 focus:outline-none focus:border-orange/50" value={f.phone} onChange={e=>setF({...f,phone:e.target.value})} required/></div></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4"><div><label className="block text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2">Email</label><input type="email" className="w-full h-12 rounded-md border border-slate-300 px-4 text-sm text-slate-900 focus:outline-none focus:border-orange/50" value={f.email} onChange={e=>setF({...f,email:e.target.value})}/></div><div><label className="block text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2">Service</label><select className="w-full h-12 rounded-md border border-slate-300 px-4 text-sm text-slate-900 focus:outline-none focus:border-orange/50" value={f.service} onChange={e=>setF({...f,service:e.target.value})} required><option value="">Select</option>{(d.services || []).map(s=><option key={s.name}>{s.name}</option>)}</select></div></div>

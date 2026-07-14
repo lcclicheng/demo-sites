@@ -109,7 +109,7 @@ export default function App() {
             <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl font-light italic leading-[0.92] mb-6 break-words">
               <GradientText>{d.heroLine1}</GradientText><br/><span className="text-sage-700 not-italic font-normal">{d.heroLine2}</span><br/><span className="text-sage-800 not-italic font-normal">{d.heroLine3}</span>
             </h1>
-            <p className="text-lg text-sage-600 leading-relaxed max-w-md mb-10">{d.tagline}</p>
+            <p className="text-lg text-sage-600 leading-relaxed measure-lg mb-10">{d.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#classes" className="px-8 py-4 rounded-full bg-sage-800 text-white text-sm font-medium hover:bg-sage-700 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta1?.text} <ArrowRight className="w-4 h-4"/></a>
               <a href="#book" className="px-8 py-4 rounded-full border-2 border-sage-200 text-sage-800 text-sm font-medium hover:border-sage-400 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text}</a>
@@ -129,7 +129,7 @@ export default function App() {
       </div></div>
 
       {/* CLASSES */}
-      <section id="classes" className="py-24 sm:py-32 bg-white"><div className="max-w-6xl mx-auto px-5 sm:px-8">
+      <section id="classes" className="py-24 sm:py-32 bg-white section-rule"><div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div {...fadeView(0)} className="text-center mb-14"><Eyebrow className="text-sage-500 mb-4">{d.classTitle}</Eyebrow><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">{d.classSubtitle}</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {(d.classes || []).map((c,i)=><motion.div key={i} {...fadeView(i*0.05)} className="group bg-cream rounded-3xl p-6 border border-sage-100 hover:border-emerald-200 hover:-translate-y-1 transition-all duration-300">
@@ -142,7 +142,7 @@ export default function App() {
       </div></section>
 
       {/* TEACHERS */}
-      <section id="teachers" className="py-24 sm:py-32 bg-sage-50/50"><div className="max-w-6xl mx-auto px-5 sm:px-8">
+      <section id="teachers" className="py-24 sm:py-32 bg-sage-50/50 section-rule"><div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div {...fadeView(0)} className="text-center mb-14"><Eyebrow className="text-sage-500 mb-4">Our Teachers</Eyebrow><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">Guides on your <span className="not-italic text-sage-700">journey</span>.</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {(d.teachers || []).map((t,i)=><motion.div key={i} {...fadeView(i*0.1)} className="bg-white rounded-2xl p-6 text-center hover:-translate-y-1 transition-all duration-300">
@@ -153,7 +153,7 @@ export default function App() {
       </div></section>
 
       {/* BOOK */}
-      <section id="book" className="py-24 sm:py-32 bg-white relative overflow-hidden">
+      <section id="book" className="py-24 sm:py-32 bg-white relative overflow-hidden section-rule">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/30 rounded-full blur-[120px]"/>
         <div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center"><motion.div {...fadeView(0)} className="mb-10"><Eyebrow className="text-sage-500 mb-4">Book a Class</Eyebrow><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">Begin your <span className="not-italic text-sage-700">practice</span>.</h2></motion.div>
           <motion.form {...fadeView(0.1)} onSubmit={submit} className="bg-cream rounded-3xl p-6 sm:p-8 border border-sage-100">

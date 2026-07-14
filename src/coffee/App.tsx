@@ -118,7 +118,7 @@ export default function App() {
           <motion.div initial={{opacity:0,y:60}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}} className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6"><div className="h-px w-12 bg-vermillion"/><Eyebrow className="text-vermillion">{d.subtitle}</Eyebrow></div>
             <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-6 break-words"><GradientText>{d.heroLine1}</GradientText><br/><span className="text-vermillion">{d.heroLine2}</span></h1>
-            <p className="text-lg sm:text-xl text-stone max-w-lg mb-10 leading-relaxed">{d.tagline}</p>
+            <p className="text-lg sm:text-xl text-stone measure-lg mb-10 leading-relaxed">{d.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#menu" className="px-8 py-4 rounded-full bg-ink text-cream text-sm font-semibold hover:bg-ink/90 transition-colors inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta1?.text} <ArrowRight className="w-4 h-4"/></a>
               <a href="#order" className="px-8 py-4 rounded-full border-2 border-ink/20 text-ink text-sm font-semibold hover:border-ink/40 transition-colors inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text} <Bean className="w-4 h-4"/></a>
@@ -141,7 +141,7 @@ export default function App() {
       </div>
 
       {/* MENU */}
-      <section id="menu" className="py-24 sm:py-32 bg-white">
+      <section id="menu" className="py-24 sm:py-32 bg-white section-rule">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <motion.div {...fadeView(0)} className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-vermillion"/><Eyebrow className="text-vermillion">{d.menuTitle}</Eyebrow><div className="h-px w-8 bg-vermillion"/></div>
@@ -162,7 +162,7 @@ export default function App() {
       </section>
 
       {/* ORDER */}
-      <section id="order" className="py-24 sm:py-32 relative overflow-hidden">
+      <section id="order" className="py-24 sm:py-32 relative overflow-hidden section-rule">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full border border-vermillion/10 -translate-y-1/2 translate-x-1/4"/>
         <div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center">
           <motion.div {...fadeView(0)}>

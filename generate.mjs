@@ -94,6 +94,22 @@ const VISUAL_CSS = `
 @keyframes shimmer{0%,100%{opacity:.25}50%{opacity:.6}}
 `
 
+// ── 编辑排版层（v0.9.9：从 20 个旧站提炼的编辑排版规律，统一 8 模板观感） ──
+// 主题自适应：currentColor + color-mix，亮暗模板通用；显示级大标题已自带 leading-none/tight 不受影响。
+const EDITORIAL_CSS = `
+/* === Editorial Typography Layer (injected by generate.mjs, v0.9.9) === */
+/* 全局正文放松行高：提升长文可读性（hero/section 大标题已自带 leading-none/tight，不受影响） */
+body{line-height:1.7}
+/* 阅读宽度：正文/导语限宽，避免文字拉满整行（≈65ch / ≈80ch） */
+.measure{max-width:44rem}
+.measure-lg{max-width:56rem}
+/* 导语段落：section 标题下的引导段，略大于正文、保留模板文字色 */
+.lead{font-size:1.125rem;line-height:1.6}
+/* 发丝分隔线：独立元素 <hr class="rule"/>，或作为区块顶边 .section-rule */
+.rule{height:1px;background:color-mix(in srgb,currentColor 14%,transparent);border:0;margin:0}
+.section-rule{border-top:1px solid color-mix(in srgb,currentColor 10%,transparent)}
+`
+
 // ── 共享依赖安装（v0.6：一次性安装到工程根 node_modules，配合 CI 的 setup-node npm 缓存） ──
 // 每个站点构建时复用根 node_modules（符号链接），避免每站重复 npm install（10 站只装 1 次）。
 // CI 每次 runner 全新（checkout 不含 node_modules），故必跑一次 npm ci，但命中 ~/.npm 缓存极快；
@@ -357,7 +373,7 @@ async function generateOne(jsonPath) {
 
   // 模板特定文件
   fs.writeFileSync(path.join(outputDir,'index.html'),t.html.replace('__TITLE__',data.pageTitle||data.name))
-  fs.writeFileSync(path.join(outputDir,'src','index.css'),t.css + '\n' + VISUAL_CSS)
+  fs.writeFileSync(path.join(outputDir,'src','index.css'),t.css + '\n' + VISUAL_CSS + '\n' + EDITORIAL_CSS)
   fs.writeFileSync(path.join(outputDir,'tailwind.config.js'),t.twConfig)
   for (const f of t.files) { const s=path.join(__dirname,f);if(fs.existsSync(s)){const d=path.join(outputDir,'src',path.basename(f));ensureDir(path.dirname(d));fs.copyFileSync(s,d)}}
 

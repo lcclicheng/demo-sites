@@ -163,7 +163,7 @@ export default function App() {
             </h1>
             <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8 tracking-wide">{d.heroLine2}</p>
 
-            <p className="text-lg text-espresso/50 max-w-lg mb-10 leading-relaxed">{d.tagline}</p>
+            <p className="text-lg text-espresso/50 measure-lg mb-10 leading-relaxed">{d.tagline}</p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#pastries" className="px-8 py-4 rounded-full bg-espresso text-ivory text-sm font-medium hover:bg-espresso/90 transition-colors inline-flex items-center justify-center gap-2 group w-full sm:w-auto">
@@ -189,7 +189,7 @@ export default function App() {
       </div>
 
       {/* PASTRIES */}
-      <section id="pastries" className="py-28 bg-ivory">
+      <section id="pastries" className="py-28 bg-ivory section-rule">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <motion.div {...fadeIn} className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -197,7 +197,7 @@ export default function App() {
               <Eyebrow className="text-gold">{d.pastriesTitle}</Eyebrow>
               <div className="h-px w-8 bg-gold/40" />
             </div>
-            <p className="text-sm text-espresso/40">{d.pastriesSubtitle}</p>
+            <p className="text-sm text-espresso/40 lead">{d.pastriesSubtitle}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -218,7 +218,7 @@ export default function App() {
       </section>
 
       {/* CAKES */}
-      <section id="cakes" className="py-28 bg-espresso/3 relative">
+      <section id="cakes" className="py-28 bg-espresso/3 relative section-rule">
         <div className="absolute inset-0 thread-pattern opacity-50" />
         <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <motion.div {...fadeIn} className="text-center mb-14">
@@ -226,7 +226,7 @@ export default function App() {
               <Cake className="w-5 h-5 text-gold" />
               <Eyebrow className="text-gold">{d.cakesTitle}</Eyebrow>
             </div>
-            <p className="text-sm text-espresso/40">{d.cakesSubtitle}</p>
+            <p className="text-sm text-espresso/40 lead">{d.cakesSubtitle}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -247,7 +247,7 @@ export default function App() {
       </section>
 
       {/* CHOCOLATES */}
-      <section id="chocolates" className="py-28 bg-espresso text-ivory relative">
+      <section id="chocolates" className="py-28 bg-espresso text-ivory relative section-rule">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(184,147,90,0.06),transparent_70%)]" />
         <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <motion.div {...fadeIn} className="text-center mb-14">
@@ -256,7 +256,7 @@ export default function App() {
               <Eyebrow className="text-gold">{d.chocolateTitle}</Eyebrow>
               <div className="h-px w-8 bg-gold/30" />
             </div>
-            <p className="text-sm text-ivory/40">{d.chocolateSubtitle}</p>
+            <p className="text-sm text-ivory/40 lead">{d.chocolateSubtitle}</p>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
@@ -273,7 +273,7 @@ export default function App() {
       </section>
 
       {/* ORDER */}
-      <section id="order" className="py-28 bg-ivory relative overflow-hidden">
+      <section id="order" className="py-28 bg-ivory relative overflow-hidden section-rule">
         <ConfettiBg />
         <div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px]" />
         <div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center">

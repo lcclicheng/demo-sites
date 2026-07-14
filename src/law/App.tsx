@@ -125,7 +125,7 @@ export default function App() {
               ))}
             </h1>
 
-            <p className="text-lg text-navy/50 max-w-xl mb-10 leading-relaxed">{d.tagline}</p>
+            <p className="text-lg text-navy/50 measure-lg mb-10 leading-relaxed">{d.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
               <a href="#services" className="px-8 py-4 rounded-sm bg-navy text-cream text-sm font-medium hover:bg-navy/90 inline-flex items-center justify-center gap-2 group w-full sm:w-auto">{d?.heroCta1?.text}<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/></a>
               <a href="#contact" className="px-8 py-4 rounded-sm border-2 border-navy/15 text-navy text-sm font-medium hover:border-gold/40 hover:text-gold transition-all duration-500 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text}</a>
@@ -145,7 +145,7 @@ export default function App() {
         <span className="flex items-center gap-2"><Phone className="w-4 h-4 text-gold"/> {d.phone}</span>
       </div></div>
 
-      <section id="services" className="py-28 bg-white"><div className="max-w-6xl mx-auto px-5 sm:px-8">
+      <section id="services" className="py-28 bg-white section-rule"><div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div {...fadeIn} className="mb-16"><div className="flex items-center gap-3 mb-4"><div className="h-px w-8 bg-gold/40"/><Eyebrow className="text-gold">{d?.sections?.services?.label}</Eyebrow></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy">{d?.sections?.services?.title} <span className="text-gold italic">{d?.sections?.services?.titleHighlight}</span></h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {(d.services || []).map((s: any, i: number) => <motion.div key={i} {...fadeIn} className="group bg-cream rounded-sm p-6 border-l-4 border-transparent hover:border-gold hover:-translate-y-1 transition-all duration-500">
@@ -154,7 +154,7 @@ export default function App() {
         </div>
       </div></section>
 
-      <section id="team" className="py-28 bg-cream relative"><div className="absolute top-0 right-0 w-80 h-80 bg-gold/4 rounded-full blur-[100px]"/><div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
+      <section id="team" className="py-28 bg-cream relative section-rule"><div className="absolute top-0 right-0 w-80 h-80 bg-gold/4 rounded-full blur-[100px]"/><div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
         <motion.div {...fadeIn} className="text-center mb-14"><div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">{d?.sections?.team?.label}</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy">{d?.sections?.team?.title} <span className="text-gold italic">{d?.sections?.team?.titleHighlight}</span></h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {(d.lawyers || []).map((lw: any, i: number) => <motion.div key={i} {...fadeIn} className="bg-white rounded-sm p-8 text-center border border-navy/10 hover:-translate-y-1 transition-all duration-500">
@@ -164,8 +164,8 @@ export default function App() {
         </div>
       </div></section>
 
-      <section id="contact" className="py-28 bg-white"><div className="max-w-2xl mx-auto px-5 sm:px-8 text-center">
-        <motion.div {...fadeIn} className="mb-12"><div className="flex items-center justify-center gap-3 mb-5"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">{d?.sections?.contact?.label}</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy mb-4">{d?.sections?.contact?.title} <span className="text-gold italic">{d?.sections?.contact?.titleHighlight}</span></h2><p className="text-navy/50 text-sm">{d?.sections?.contact?.description}</p></motion.div>
+      <section id="contact" className="py-28 bg-white section-rule"><div className="max-w-2xl mx-auto px-5 sm:px-8 text-center">
+        <motion.div {...fadeIn} className="mb-12"><div className="flex items-center justify-center gap-3 mb-5"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">{d?.sections?.contact?.label}</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy mb-4">{d?.sections?.contact?.title} <span className="text-gold italic">{d?.sections?.contact?.titleHighlight}</span></h2><p className="text-navy/50 text-sm lead">{d?.sections?.contact?.description}</p></motion.div>
         <motion.form {...fadeIn} onSubmit={submit} className="bg-cream rounded-sm p-6 sm:p-8 border border-navy/10 text-left">
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div><label className="block text-xs font-bold text-navy/40 uppercase tracking-wider mb-2">{d?.form?.labels?.name}</label><input className="w-full h-12 rounded-sm border border-navy/15 px-4 text-sm bg-white focus:outline-none focus:border-gold/50" value={f.name} onChange={e=>setF({...f,name:e.target.value})} required/></div>

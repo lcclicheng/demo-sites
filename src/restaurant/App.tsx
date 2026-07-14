@@ -235,7 +235,7 @@ export default function App() {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-mute max-w-xl mx-auto mb-12 leading-relaxed font-light">
+          <p className="text-base sm:text-lg text-mute measure-lg mx-auto mb-12 leading-relaxed font-light">
             {d.tagline}
           </p>
 
@@ -292,7 +292,7 @@ export default function App() {
       </div>
 
       {/* MENU */}
-      <section id="menu" className="py-24 sm:py-36 relative">
+      <section id="menu" className="py-24 sm:py-36 relative section-rule">
         <div className="max-w-6xl mx-auto px-5 sm:pl-20 sm:pr-8">
           <motion.div {...fadeIn} className="text-center mb-20">
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -302,7 +302,7 @@ export default function App() {
             <h2 className="font-display text-4xl sm:text-6xl font-bold italic text-paper mb-5">
               {d.menuIntroTitle}
             </h2>
-            <p className="text-mute text-sm max-w-lg mx-auto leading-relaxed">
+            <p className="text-mute text-sm max-w-lg mx-auto leading-relaxed lead">
               {d.menuIntroText}
             </p>
           </motion.div>
@@ -363,14 +363,14 @@ export default function App() {
       </section>
 
       {/* GALLERY */}
-      <section id="gallery" className="py-24 sm:py-36 bg-surface/30 relative">
+      <section id="gallery" className="py-24 sm:py-36 bg-surface/30 relative section-rule">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,164,92,0.03),transparent_70%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:pl-20 sm:pr-8">
           <motion.div {...fadeIn} className="text-center mb-16">
             <h2 className="font-display text-4xl sm:text-6xl font-bold italic text-paper mb-4">
               From the <span className="text-gold not-italic">Kitchen</span>
             </h2>
-            <p className="text-mute text-sm">Six dishes our regulars ask for by name</p>
+            <p className="text-mute text-sm lead">Six dishes our regulars ask for by name</p>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
@@ -415,14 +415,14 @@ export default function App() {
 
       {/* SCREENSHOTS / THE ROOM */}
       {d.screenshots && d.screenshots.length > 0 && (
-        <section id="space" className="py-24 sm:py-36 relative">
+        <section id="space" className="py-24 sm:py-36 relative section-rule">
           <div className="relative z-10 max-w-7xl mx-auto px-5 sm:pl-20 sm:pr-8">
             <motion.div {...fadeIn} className="text-center mb-16">
               <Eyebrow className="text-gold mb-4">The Room</Eyebrow>
               <h2 className="font-display text-4xl sm:text-6xl font-bold italic text-paper mb-4">
                 Inside <span className="text-gold not-italic">Sotto Sotto</span>
               </h2>
-              <p className="text-mute text-sm">{d.screenshotsIntro || 'Tucked beneath the streets of Bath — candlelight, stone arches, and the hum of a full dining room.'}</p>
+              <p className="text-mute text-sm lead">{d.screenshotsIntro || 'Tucked beneath the streets of Bath — candlelight, stone arches, and the hum of a full dining room.'}</p>
             </motion.div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               {(d.screenshots || []).map((s, i) => (
@@ -493,7 +493,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* REVIEWS */}
-      <section id="reviews" className="py-24 sm:py-36">
+      <section id="reviews" className="py-24 sm:py-36 section-rule">
         <div className="max-w-5xl mx-auto px-5 sm:pl-20 sm:pr-8">
           <motion.div {...fadeIn} className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -504,7 +504,7 @@ export default function App() {
             <h2 className="font-display text-4xl sm:text-6xl font-bold italic text-paper mb-4">
               What <span className="text-gold not-italic">Our Guests</span> Say
             </h2>
-            <p className="text-mute text-sm">
+            <p className="text-mute text-sm lead">
               {d.googleRating} · {d.googleReviews} on Google
             </p>
           </motion.div>
@@ -534,7 +534,7 @@ export default function App() {
       </section>
 
       {/* RESERVATION */}
-      <section id="reserve" className="py-24 sm:py-36 bg-surface/30 relative overflow-hidden">
+      <section id="reserve" className="py-24 sm:py-36 bg-surface/30 relative overflow-hidden section-rule">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(200,164,92,0.04),transparent_60%)]" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-40 bg-gradient-to-b from-gold/20 to-transparent" />
 
@@ -548,7 +548,7 @@ export default function App() {
             <h2 className="font-display text-4xl sm:text-6xl font-bold italic text-paper mb-5">
               Secure <span className="text-gold not-italic">Your</span> Evening
             </h2>
-            <p className="text-mute text-sm">{d.reservationNote}</p>
+            <p className="text-mute text-sm lead">{d.reservationNote}</p>
           </motion.div>
 
           <motion.form

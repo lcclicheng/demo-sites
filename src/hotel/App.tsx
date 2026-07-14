@@ -135,7 +135,7 @@ export default function App() {
               <span className="text-sm text-warm/50">{d.googleRating} · {d.googleReviews}</span>
             </div>
 
-            <p className="text-lg text-warm/60 max-w-lg mb-10 leading-relaxed">{d.tagline}</p>
+            <p className="text-lg text-warm/60 measure-lg mb-10 leading-relaxed">{d.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#rooms" className="px-8 py-4 rounded-full bg-emerald text-cream text-sm font-medium hover:bg-emerald/90 inline-flex items-center justify-center gap-2 group w-full sm:w-auto">{d?.heroCta1?.text}<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/></a>
               <a href="#book" className="px-8 py-4 rounded-full border border-warm/20 text-warm text-sm font-medium hover:border-gold/40 hover:text-gold transition-all duration-500 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text}</a>
@@ -151,7 +151,7 @@ export default function App() {
       </div></div>
 
       {/* ROOMS — Arch-top cards */}
-      <section id="rooms" className="py-28 bg-white"><div className="max-w-6xl mx-auto px-5 sm:px-8">
+      <section id="rooms" className="py-28 bg-white section-rule"><div className="max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div {...fadeIn} className="mb-16"><div className="flex items-center gap-3 mb-4"><div className="h-px w-8 bg-gold/40"/><Eyebrow className="text-gold">{d.roomsSectionLabel}</Eyebrow></div><h2 className="font-display text-4xl sm:text-5xl font-bold italic text-warm">{d.roomsSectionTitle}</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {(d.rooms || []).map((r: any, i: number) => <motion.div key={i} {...fadeIn} className="group bg-cream rounded-2xl overflow-hidden border border-warm/10 hover:-translate-y-1 transition-all duration-500 hover:border-gold/20">
@@ -173,7 +173,7 @@ export default function App() {
       </div></section>
 
       {/* BOOKING */}
-      <section id="book" className="py-28 bg-cream relative"><div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px]"/><div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center">
+      <section id="book" className="py-28 bg-cream relative section-rule"><div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px]"/><div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center">
         <motion.div {...fadeIn} className="mb-12"><div className="flex items-center justify-center gap-3 mb-5"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">{d.bookingSectionLabel}</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold italic text-warm mb-4">{d.bookingTitleBefore} <span className="text-gold not-italic">{d.bookingTitleHighlight}</span></h2></motion.div>
         <motion.form {...fadeIn} onSubmit={submit} className="bg-white rounded-2xl p-6 sm:p-8 border border-warm/10 text-left shadow-sm">
           <div className="grid grid-cols-2 gap-4 mb-4">
