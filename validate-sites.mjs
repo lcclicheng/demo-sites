@@ -5,8 +5,9 @@
  * 新增 / 改名 / 删除一个站点，必须同步修改 build-clean.sh 的 PROJS 数组，
  * 否则会出现「JSON 改了却没部署」或「部署了却没校验」的隐性不一致。
  * 本脚本会在校验结束后扫描 examples/ 下「具备 template+slug 但未纳入 PROJS」
- * 的孤儿 JSON 并告警（不阻断），帮你发现遗漏。
- * ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+ * 的孤儿 JSON：默认【软阻断】（exit 1，令 Actions job 失败，fail-fast）；
+ * 仅在显式 --allow-orphans（或 deploy.yml 经 workflow_dispatch 勾选 allow_orphans）时放行。
+ * ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
  *
  * validate-sites.mjs — 部署前自检闸门（关闭「三.2 部署前自检闸门」缺口）
  *
@@ -18,7 +19,8 @@
  *       导致「构建成功但页面缺图」，此检查专门拦截这种情况）
  *
  * 任一不满足 → 退出码 1，阻断 GitHub Actions 的后续构建/部署。
- * 也可本地运行 `node validate-sites.mjs` 做 push 前自检。
+ * 也可本地运行 `node validate-sites.mjs` 做 push 前自检
+ * （孤儿默认阻断；临时放行：`node validate-sites.mjs --allow-orphans`）。
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -45,10 +47,10 @@ const projs = loadProjList();
 const projSet = new Set(projs);
 
 /**
- * 孤儿站点自动发现（非阻断告警 / 可选 fallback）
+ * 孤儿站点自动发现（软阻断 / 可 override）
  * 扫描 examples/*.json，找出「同时具备 template + 非空 slug」但未纳入
  * build-clean.sh PROJS 的 JSON —— 它们看起来应被部署，却不会出现在构建里。
- * 这样能在「忘记把新站加入 PROJS」时给出提示，减少人为同步错误。
+ * 默认在文件末尾软阻断（exit 1，令 Actions 失败）；除非 --allow-orphans。
  * （batch-sample / profix-test / test-new-templates 等测试夹具因 slug 为空被排除）
  */
 const examplesDir = path.join(__dirname, 'examples');
@@ -63,11 +65,6 @@ for (const jf of fs.readdirSync(examplesDir).filter(f => f.endsWith('.json'))) {
   if (looksDeployable && !projSet.has(jf.replace(/\.json$/, ''))) {
     orphanWarnings.push(`${jf} (slug=${dd.slug}, template=${dd.template})`);
   }
-}
-if (orphanWarnings.length) {
-  console.warn(`\n⚠️ 发现 ${orphanWarnings.length} 个 examples/ 下的 JSON 具备 template+slug 但未纳入 build-clean.sh 的 PROJS，将不会被构建/部署：`);
-  for (const o of orphanWarnings) console.warn('  • ' + o);
-  console.warn('   → 请把它们加入 build-clean.sh 的 PROJS 数组（本脚本以 PROJS 为单一事实源）。此告警不阻断部署。\n');
 }
 
 console.log(`🔍 校验 ${projs.length} 个站点 JSON ...\n`);
@@ -124,6 +121,21 @@ if (errors.length) {
   for (const e of errors) console.error('  • ' + e);
   console.error('\n部署已阻断。请修复上述问题后重新 push。');
   process.exit(1);
+}
+
+// ── 孤儿站点软阻断（在 errors 之后处理；fail-fast）──
+// 默认任一孤儿即 exit 1，令 Actions job 失败，避免「忘了加 PROJS 直接 push 漏部署」；
+// 显式 --allow-orphans（或 deploy.yml workflow_dispatch 勾选 allow_orphans）时放行。
+const allowOrphans = process.argv.includes('--allow-orphans');
+if (orphanWarnings.length && !allowOrphans) {
+  console.error(`\n⚠️ 发现 ${orphanWarnings.length} 个 examples/ 下「具备 template+slug 但未纳入 PROJS」的 JSON，将不会被构建/部署（软阻断）：`);
+  for (const o of orphanWarnings) console.error('  • ' + o);
+  console.error('\n请确认它们是否应被部署：若应部署，加入 build-clean.sh 的 PROJS 数组；若确认临时放行，可加 --allow-orphans（或 workflow_dispatch 勾选 allow_orphans）。部署已阻断。');
+  process.exit(1);
+}
+if (orphanWarnings.length && allowOrphans) {
+  console.warn(`\nℹ️ 发现 ${orphanWarnings.length} 个孤儿站点，但已 --allow-orphans 放行（不阻断）。建议事后补入 PROJS：`);
+  for (const o of orphanWarnings) console.warn('  • ' + o);
 }
 
 console.log('✅ 全部站点 JSON 校验通过，可安全构建部署。');

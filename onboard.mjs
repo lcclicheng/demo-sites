@@ -78,17 +78,45 @@ function slugify(name) {
 }
 
 // 自动把新站点 slug 写入 build-clean.sh 的 PROJS（消除「部署前忘了加 PROJS」的人为遗漏）
+// 加固（v0.5）：写前备份 build-clean.sh、用正则安全替换数组、写后 bash -n 语法校验，失败则还原备份。
 function ensureProjInBuildClean(slug) {
-  const bc = path.join(__dirname, 'build-clean.sh')
-  if (!fs.existsSync(bc)) return { added: false, detail: 'build-clean.sh 不存在' }
-  const content = fs.readFileSync(bc, 'utf-8')
-  const m = content.match(/PROJS=\(([^)]*)\)/)
-  if (!m) return { added: false, detail: 'PROJS 数组未找到' }
-  const items = m[1].split(/\s+/).filter(Boolean)
-  if (items.includes(slug)) return { added: false, detail: '已存在于 PROJS' }
-  items.push(slug)
-  fs.writeFileSync(bc, content.replace(/PROJS=\([^)]*\)/, `PROJS=( ${items.join(' ')} )`), 'utf-8')
-  return { added: true, detail: `已自动加入 PROJS: ${slug}` }
+  const bc = path.join(__dirname, 'build-clean.sh');
+  if (!fs.existsSync(bc)) return { added: false, detail: 'build-clean.sh 不存在，请手动把 "' + slug + '" 加入 PROJS' };
+  const content = fs.readFileSync(bc, 'utf-8');
+  const m = content.match(/PROJS=\(([^)]*)\)/);
+  if (!m) return { added: false, detail: 'PROJS 数组未找到，请手动把 "' + slug + '" 加入 PROJS' };
+  const items = m[1].split(/\s+/).filter(Boolean);
+  if (items.includes(slug)) return { added: false, detail: '已存在于 PROJS' };
+
+  const updated = 'PROJS=( ' + [...items, slug].join(' ') + ' )';
+  const next = content.replace(/PROJS=\([^)]*\)/, updated);
+
+  // 1) 写前备份（带时间戳，保留最近几份，可人工清理）
+  const bak = bc + '.bak.' + Date.now();
+  try {
+    fs.copyFileSync(bc, bak);
+  } catch (e) {
+    return { added: false, detail: '备份 build-clean.sh 失败（' + e.message + '），已中止自动写入，请手动把 "' + slug + '" 加入 PROJS' };
+  }
+
+  try {
+    fs.writeFileSync(bc, next, 'utf-8');
+    // 2) 写后语法校验（bash -n 仅解析不执行），确保未破坏脚本
+    const check = spawnSync('bash', ['-n', bc], { encoding: 'utf-8' });
+    if (check.status === 0) {
+      return { added: true, detail: '已自动加入 PROJS: ' + slug + '（已备份 ' + path.basename(bak) + '，bash -n 校验通过）' };
+    }
+    if (check.error) {
+      // bash 不可用（极少见）：保留写入但提示未校验
+      return { added: true, detail: '已自动加入 PROJS: ' + slug + '（bash 不可用，跳过语法校验；已备份 ' + path.basename(bak) + '）' };
+    }
+    // 语法校验失败 → 还原备份，避免留下损坏文件
+    fs.copyFileSync(bak, bc);
+    return { added: false, detail: '写入后 bash -n 语法校验失败（' + String(check.stderr || '').trim() + '），已还原备份。请手动把 "' + slug + '" 加入 PROJS' };
+  } catch (e) {
+    try { fs.copyFileSync(bak, bc); } catch { /* 忽略还原失败 */ }
+    return { added: false, detail: '写入 PROJS 失败（' + e.message + '），已尝试还原备份。请手动把 "' + slug + '" 加入 PROJS' };
+  }
 }
 
 // 列出可用模板（排除明显是测试/批处理的文件）

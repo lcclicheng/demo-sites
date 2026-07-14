@@ -4,8 +4,14 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      allow_orphans:
+        description: '允许存在「具备 template+slug 但未纳入 PROJS」的孤儿站点（软阻断放行）。仅在确认无误时勾选。'
+        type: boolean
+        required: false
+        default: false
 
-# 仅用 GITHUB_TOKEN 发布 Pages，不依赖任何明文 PAT
+# 仅用 GITHUB_TOKEN 发布 Pages，不依赖任何明文 PAT（权限最小化，见 docs/workflow.md 附录 B）
 permissions:
   contents: read
   pages: write
@@ -28,8 +34,10 @@ jobs:
         with:
           node-version: '22'
 
+      # 孤儿站点软阻断：默认缺失 PROJS 的新站会令 job 失败（fail-fast）；
+      # 经 workflow_dispatch 勾选 allow_orphans 可临时放行（仅限确认无误时）。
       - name: Validate site configs (pre-deploy gate)
-        run: node validate-sites.mjs
+        run: node validate-sites.mjs ${{ github.event_name == 'workflow_dispatch' && inputs.allow_orphans == true && '--allow-orphans' || '' }}
 
       - name: Build all 10 demo sites
         run: bash build-clean.sh
