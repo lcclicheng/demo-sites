@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Sparkles, Instagram, Facebook } from 'lucide-react'
 import { yogaData } from './business-data'
+import { HeroBackdrop, StatsStrip, GradientText } from './components/visual'
 const d = yogaData
 
 
@@ -98,6 +99,7 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
+        <HeroBackdrop />
         <div className="absolute inset-0 bg-gradient-to-br from-sage-50 via-cream to-emerald-50"/>
         <div className="absolute top-1/3 right-[10%] w-96 h-96 bg-emerald-100/40 rounded-full blur-[120px]"/>
         <div className="absolute bottom-1/4 left-[5%] w-80 h-80 bg-sage-200/30 rounded-full blur-[100px]"/>
@@ -105,13 +107,16 @@ export default function App() {
           <motion.div initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:1}} className="max-w-2xl">
             <p className="text-sage-500 text-sm tracking-[0.2em] uppercase font-medium mb-4">{d.subtitle} · {d.location}</p>
             <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl font-light italic leading-[0.92] mb-6 break-words">
-              {d.heroLine1}<br/><span className="text-sage-700 not-italic font-normal">{d.heroLine2}</span><br/><span className="text-sage-800 not-italic font-normal">{d.heroLine3}</span>
+              <GradientText>{d.heroLine1}</GradientText><br/><span className="text-sage-700 not-italic font-normal">{d.heroLine2}</span><br/><span className="text-sage-800 not-italic font-normal">{d.heroLine3}</span>
             </h1>
             <p className="text-lg text-sage-600 leading-relaxed max-w-md mb-10">{d.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#classes" className="px-8 py-4 rounded-full bg-sage-800 text-white text-sm font-medium hover:bg-sage-700 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta1?.text} <ArrowRight className="w-4 h-4"/></a>
               <a href="#book" className="px-8 py-4 rounded-full border-2 border-sage-200 text-sage-800 text-sm font-medium hover:border-sage-400 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text}</a>
             </div>
+            <StatsStrip stats={[
+              (d as any).googleRating ? { val: (d as any).googleRating, label: (d as any).googleReviews || 'Google Reviews', stars: true } : null,
+            ].filter(Boolean)} />
           </motion.div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Instagram, Facebook } from 'lucide-react'
 import { hotelData } from './business-data'
+import { HeroBackdrop, GradientText } from './components/visual'
 const d = hotelData
 
 
@@ -108,6 +109,7 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pb-16 overflow-hidden bg-cream">
+        <HeroBackdrop />
         {/* Gold pinstripes */}
         <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(200,149,44,0.06) 79px, rgba(200,149,44,0.06) 80px)' }}/>
         <div className="absolute top-1/3 right-[15%] w-80 h-80 bg-gold/6 rounded-full blur-[120px]"/>
@@ -126,7 +128,7 @@ export default function App() {
             <h1 className="font-display text-6xl sm:text-[10vw] lg:text-[8rem] font-bold italic leading-[0.9] text-warm mb-6 break-words">
               {d.heroLine1}<br/>{d.heroLine2}
             </h1>
-            <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8">{d.heroLine3}</p>
+            <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8"><GradientText>{d.heroLine3}</GradientText></p>
 
             <div className="flex items-center gap-3 mb-8">
               <div className="flex gap-0.5">{Array(5).fill(0).map((_,i)=><Star key={i} className="w-4 h-4 fill-gold text-gold"/>)}</div>

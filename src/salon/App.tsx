@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Sparkles } from 'lucide-react'
 import { salonData } from './business-data'
+import { HeroBackdrop, GradientText } from './components/visual'
 const d = salonData
 
 
@@ -107,6 +108,7 @@ export default function App() {
 
       {/* HERO — MotionSites proportion */}
       <section className="relative min-h-screen flex items-end pb-12 sm:pb-16 overflow-hidden bg-ivory">
+        <HeroBackdrop />
         <div className="absolute top-1/3 right-[15%] w-96 h-96 bg-gold/8 rounded-full blur-[140px]"/>
         <div className="absolute bottom-1/4 left-[5%] w-80 h-80 bg-plum/5 rounded-full blur-[100px]"/>
         <div className="absolute left-8 sm:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent hidden lg:block"/>
@@ -114,7 +116,7 @@ export default function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:pl-20 sm:pr-8 w-full mt-16 sm:mt-0">
           <motion.div initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}}>
             <div className="flex items-center gap-3 mb-6"><div className="h-px w-8 bg-gold/40"/><span className="text-xs tracking-[0.3em] uppercase text-plum/40 font-medium">{d.heroBadge}</span></div>
-            <h1 className="font-display text-7xl sm:text-[12vw] lg:text-[10rem] font-bold italic leading-[0.85] text-plum mb-3 break-words">{d.heroLine1}</h1>
+            <h1 className="font-display text-7xl sm:text-[12vw] lg:text-[10rem] font-bold italic leading-[0.85] text-plum mb-3 break-words"><GradientText>{d.heroLine1}</GradientText></h1>
             <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8 tracking-wide">{d.heroLine2}</p>
             <div className="flex items-center gap-4 mb-8">
               <div className="flex gap-0.5">{Array(5).fill(0).map((_,i)=><Star key={i} className="w-4 h-4 fill-gold text-gold"/>)}</div>

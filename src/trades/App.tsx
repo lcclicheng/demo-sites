@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Shield, Wrench, Timer, ThumbsUp, Award, Menu, X } from 'lucide-react'
 import { tradesData } from './business-data'
+import { HeroBackdrop, GradientText } from './components/visual'
 const d = tradesData
 
 
@@ -104,11 +105,12 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative bg-gradient-to-br from-navy to-slate-800 text-white overflow-hidden">
+        <HeroBackdrop particles={false} />
         <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_70%_30%,white_1px,transparent_1px)] bg-[size:48px_48px]"/>
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-32">
           <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.7}} className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4"><div className="flex gap-0.5">{Array(5).fill(0).map((_,i)=><Star key={i} className="w-4 h-4 fill-orange text-orange"/>)}</div><span className="text-sm text-slate-300">{d.googleRating} · {d.googleReviews}</span></div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-4 break-words">{d.heroLine1}<br/><span className="text-orange">{d.heroLine2}</span></h1>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-4 break-words">{d.heroLine1}<br/><span className="text-orange"><GradientText>{d.heroLine2}</GradientText></span></h1>
             <p className="text-lg text-slate-300 max-w-lg mb-8 leading-relaxed">{d.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#contact" className="px-8 py-4 rounded-md bg-orange text-white font-bold text-sm hover:bg-orange-600 inline-flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">{d?.heroCta1?.text} <ArrowRight className="w-4 h-4"/></a>

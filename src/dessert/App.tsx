@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Star, ArrowRight, Cake, Send, Check, MapPin, Clock, Phone, Menu, X, Sparkles } from 'lucide-react'
 import { dessertData } from './business-data'
+import { HeroBackdrop, GradientText } from './components/visual'
 
 const d = dessertData
 
@@ -136,6 +137,7 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-ivory">
+        <HeroBackdrop />
         {/* Texture */}
         <div className="absolute inset-0 thread-pattern" />
         {/* Ambient glow — warm gold, subtle */}
@@ -157,7 +159,7 @@ export default function App() {
 
             {/* Headline — MotionSites proportion */}
             <h1 className="font-display text-7xl sm:text-[11vw] lg:text-[10rem] font-bold italic leading-[0.88] tracking-tight mb-4 text-espresso break-words">
-              {d.heroLine1}
+              <GradientText>{d.heroLine1}</GradientText>
             </h1>
             <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8 tracking-wide">{d.heroLine2}</p>
 

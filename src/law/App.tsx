@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Scale, Shield } from 'lucide-react'
 import { lawData } from './business-data'
+import { HeroBackdrop, GradientText } from './components/visual'
 const d = lawData
 
 
@@ -102,6 +103,7 @@ export default function App() {
 
       {/* HERO — TIGHT three-line + brass weight */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-cream">
+        <HeroBackdrop particles={false} />
         <div className="absolute inset-0 pattern-stripes opacity-60"/>
         {/* Double gold lines at top */}
         <div className="absolute top-[12%] left-8 sm:left-12 right-8 sm:right-12">
@@ -118,7 +120,7 @@ export default function App() {
             <h1 className="font-display text-6xl sm:text-[10vw] lg:text-[8rem] font-bold leading-[1.02] text-navy mb-6 break-words">
               {(d.heroLines || []).map((line: string, i: number) => (
                 <span key={i} className={i === 2 ? 'text-gold italic' : ''}>
-                  {line}{i < 2 ? <br/> : ''}
+                  {i === 2 ? <GradientText>{line}</GradientText> : line}{i < 2 ? <br/> : ''}
                 </span>
               ))}
             </h1>

@@ -28,6 +28,15 @@ const IS_AI = args.includes('--ai')
 // ── 工具函数 ──────────────────────────────────
 
 function ensureDir(dir) { if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true }) }
+function copyDir(src, dest) {
+  if (!fs.existsSync(src)) return
+  ensureDir(dest)
+  for (const e of fs.readdirSync(src, { withFileTypes: true })) {
+    const s = path.join(src, e.name), d = path.join(dest, e.name)
+    if (e.isDirectory()) copyDir(s, d)
+    else fs.copyFileSync(s, d)
+  }
+}
 function replaceInFile(filePath, replacements) { let c=fs.readFileSync(filePath,'utf-8');for(const [s,r] of Object.entries(replacements))c=c.replaceAll(s,r);fs.writeFileSync(filePath,c,'utf-8')}
 
 // ── 图片防缓存：给所有图片路径加 ?v=<构建版本> ──
@@ -50,6 +59,38 @@ function addImgVersion(v, ver = BUILD_VERSION) {
   }
   return v
 }
+
+// ── 共享视觉手法 CSS（v0.9.4：从 20 个旧站抽取的设计系统，注入每模板 index.css） ──
+// 全部用 currentColor + opacity / color-mix 实现亮暗主题自适应：
+// 同一套类名在暗金餐厅模板与亮奶油咖啡模板上都能正确显示（tint 跟随宿主文字色）。
+// 配套 React 组件见 src/components/visual.tsx。
+const VISUAL_CSS = `
+/* === Shared Visual Techniques (injected by generate.mjs) === */
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.particle{position:absolute;width:2px;height:2px;border-radius:9999px;background:currentColor;opacity:0;animation:drift 20s linear infinite}
+.particle:nth-child(1){left:10%;top:18%;animation-delay:0s;animation-duration:17s}
+.particle:nth-child(2){left:24%;top:62%;animation-delay:3s;animation-duration:21s}
+.particle:nth-child(3){left:38%;top:30%;animation-delay:5s;animation-duration:16s}
+.particle:nth-child(4){left:55%;top:72%;animation-delay:7s;animation-duration:23s}
+.particle:nth-child(5){left:70%;top:14%;animation-delay:2s;animation-duration:19s}
+.particle:nth-child(6){left:82%;top:52%;animation-delay:6s;animation-duration:20s}
+.particle:nth-child(7){left:14%;top:82%;animation-delay:9s;animation-duration:18s}
+.particle:nth-child(8){left:60%;top:40%;animation-delay:4s;animation-duration:22s}
+.particle:nth-child(9){left:34%;top:8%;animation-delay:8s;animation-duration:15s}
+.particle:nth-child(10){left:90%;top:24%;animation-delay:1s;animation-duration:24s}
+.particle:nth-child(11){left:46%;top:90%;animation-delay:11s;animation-duration:20s}
+.particle:nth-child(12){left:76%;top:84%;animation-delay:13s;animation-duration:17s}
+@keyframes drift{0%{opacity:0;transform:translateY(0) translateX(0)}10%{opacity:.5}90%{opacity:.5}100%{opacity:0;transform:translateY(-90vh) translateX(40px)}}
+.breathe-ring{position:absolute;width:20rem;height:20rem;border-radius:9999px;border:1px solid color-mix(in srgb,currentColor 12%,transparent);animation:breathe 6s ease-in-out infinite}
+.breathe-ring.delay{animation-delay:3s}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.35);opacity:.1}}
+.gradient-text{background:linear-gradient(100deg,currentColor,color-mix(in srgb,currentColor 35%,transparent),currentColor);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shiny 5s linear infinite}
+@keyframes shiny{0%{background-position:-200% center}100%{background-position:200% center}}
+.glass-card{background:color-mix(in srgb,currentColor 4%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid color-mix(in srgb,currentColor 14%,transparent)}
+.confetti-dots{background-image:radial-gradient(color-mix(in srgb,currentColor 55%,transparent) 1px,transparent 1px);background-size:22px 22px;opacity:.5}
+.shimmer-soft{animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%,100%{opacity:.25}50%{opacity:.6}}
+`
 
 // ── 共享依赖安装（v0.6：一次性安装到工程根 node_modules，配合 CI 的 setup-node npm 缓存） ──
 // 每个站点构建时复用根 node_modules（符号链接），避免每站重复 npm install（10 站只装 1 次）。
@@ -314,9 +355,12 @@ async function generateOne(jsonPath) {
 
   // 模板特定文件
   fs.writeFileSync(path.join(outputDir,'index.html'),t.html.replace('__TITLE__',data.pageTitle||data.name))
-  fs.writeFileSync(path.join(outputDir,'src','index.css'),t.css)
+  fs.writeFileSync(path.join(outputDir,'src','index.css'),t.css + '\n' + VISUAL_CSS)
   fs.writeFileSync(path.join(outputDir,'tailwind.config.js'),t.twConfig)
   for (const f of t.files) { const s=path.join(__dirname,f);if(fs.existsSync(s)){const d=path.join(outputDir,'src',path.basename(f));ensureDir(path.dirname(d));fs.copyFileSync(s,d)}}
+
+  // 共享视觉组件（v0.9.4：HeroBackdrop / StatsStrip / GradientText / GlassCard / ConfettiBg）
+  copyDir(path.join(__dirname,'src','components'),path.join(outputDir,'src','components'))
 
   // 拷贝项目专属图片资源（assets/<projectName>/ → public/images/，构建后访问 /images/xxx.jpg）
   const imgSrc = path.resolve(__dirname,'assets',projectName)

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, ArrowUpRight, Send, Check, Coffee, Bean, CircleDot, Instagram, Facebook } from 'lucide-react'
 import { coffeeData } from './business-data'
+import { HeroBackdrop, StatsStrip, GradientText } from './components/visual'
 
 const d = coffeeData
 
@@ -108,6 +109,7 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
+        <HeroBackdrop />
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full border border-vermillion/10"/>
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border border-vermillion/8"/>
         <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-vermillion/3 blur-[100px]"/>
@@ -115,12 +117,16 @@ export default function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 sm:mt-0">
           <motion.div initial={{opacity:0,y:60}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}} className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6"><div className="h-px w-12 bg-vermillion"/><span className="text-xs tracking-[0.3em] uppercase text-vermillion font-semibold">{d.subtitle}</span></div>
-            <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-6 break-words">{d.heroLine1}<br/><span className="text-vermillion">{d.heroLine2}</span></h1>
+            <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-6 break-words"><GradientText>{d.heroLine1}</GradientText><br/><span className="text-vermillion">{d.heroLine2}</span></h1>
             <p className="text-lg sm:text-xl text-stone max-w-lg mb-10 leading-relaxed">{d.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#menu" className="px-8 py-4 rounded-full bg-ink text-cream text-sm font-semibold hover:bg-ink/90 transition-colors inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta1?.text} <ArrowRight className="w-4 h-4"/></a>
               <a href="#order" className="px-8 py-4 rounded-full border-2 border-ink/20 text-ink text-sm font-semibold hover:border-ink/40 transition-colors inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text} <Bean className="w-4 h-4"/></a>
             </div>
+            <StatsStrip stats={[
+              (d as any).googleRating ? { val: (d as any).googleRating, label: (d as any).googleReviews || 'Google Reviews', stars: true } : null,
+              ...((d as any).heroStats || []).slice(0, 2).map((s: any) => ({ val: s.value ?? s.val, label: s.label })),
+            ].filter(Boolean)} />
           </motion.div>
         </div>
       </section>
