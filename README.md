@@ -11,6 +11,7 @@
 - [`docs/workflow.md`](./docs/workflow.md) — 系统总文档（单一事实源）
 - [`docs/delivery-checklist.md`](./docs/delivery-checklist.md) — 合规交付清单（隐私 / GDPR / Cookie / 注册地址）
 - [`docs/custom-domain.md`](./docs/custom-domain.md) — 自定义域名 / DNS / SSL / 客户交接 SOP
+- [`docs/cms.md`](./docs/cms.md) — 客户自助内容后台（Decap CMS + GitHub OAuth）启用与隔离模型
 
 ## 快速开始
 
