@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Shield, Wrench, Timer, ThumbsUp, Award, Menu, X } from 'lucide-react'
 import { tradesData } from './business-data'
-import { HeroBackdrop, GradientText } from './components/visual'
+import { HeroBackdrop, GradientText, GlassCard } from './components/visual'
 const d = tradesData
 
 
@@ -161,10 +161,12 @@ export default function App() {
 
       {/* REVIEWS */}
       <section id="reviews" className="py-20 sm:py-28 bg-white"><div className="max-w-5xl mx-auto px-5 sm:px-8"><motion.div {...fadeView(0)} className="text-center mb-12"><p className="text-xs tracking-[0.25em] uppercase text-orange font-bold mb-4">Reviews</p><h2 className="text-3xl sm:text-4xl font-extrabold text-navy">What our customers say</h2></motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">{(d.reviews || []).map((r,i)=><motion.div key={i} {...fadeView(i*0.1)} className="bg-light rounded-xl p-6 border border-slate-200">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">{(d.reviews || []).map((r,i)=><motion.div key={i} {...fadeView(i*0.1)} className="rounded-xl">
+          <GlassCard className="h-full">
           <div className="flex gap-0.5 mb-3">{Array(r.rating).fill(0).map((_,j)=><Star key={j} className="w-4 h-4 fill-orange text-orange"/>)}</div>
           <p className="text-sm text-slate-600 leading-relaxed mb-4 italic">"{r.text}"</p>
           <p className="text-sm font-bold text-navy">{r.name}</p>
+          </GlassCard>
         </motion.div>)}</div></div></section>
 
       {/* CONTACT */}

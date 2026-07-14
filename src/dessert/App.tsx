@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Star, ArrowRight, Cake, Send, Check, MapPin, Clock, Phone, Menu, X, Sparkles } from 'lucide-react'
 import { dessertData } from './business-data'
-import { HeroBackdrop, GradientText } from './components/visual'
+import { HeroBackdrop, GradientText, ConfettiBg } from './components/visual'
 
 const d = dessertData
 
@@ -273,7 +273,8 @@ export default function App() {
       </section>
 
       {/* ORDER */}
-      <section id="order" className="py-28 bg-ivory relative">
+      <section id="order" className="py-28 bg-ivory relative overflow-hidden">
+        <ConfettiBg />
         <div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px]" />
         <div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center">
           <motion.div {...fadeIn} className="mb-12">
