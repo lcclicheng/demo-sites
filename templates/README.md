@@ -32,6 +32,7 @@
 - `gen-decap-config.mjs` — 自动生成 Decap CMS 字段映射（100% 覆盖防丢字段）
 - `validate-sites.mjs` — 部署前校验闸门（缺图 / 缺字段 / 孤儿站点）
 - `inject-privacy.mjs` — 隐私 / 注册地址 / 发票 / 合同页注入
+- `src/components/visual.tsx` — **共享视觉手法库**（HeroBackdrop / StatsStrip / GradientText / GlassCard / ConfettiBg / Eyebrow），从 20 个旧站（`premium-*`/`bento-dashboard`/`vanguard-landing` 等）抽取沉淀；全 `currentColor`+`color-mix` 主题自适应，亮暗模板通用；构建时由 `generate.mjs` 注入 `VISUAL_CSS` + `copyDir` 拷贝进每站。8 套模板 hero 现已注入发光背景+呼吸环+粒子、流光标题（restaurant 保留原生等效手法）
 
 ## 约定与红线
 
