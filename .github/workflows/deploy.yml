@@ -29,10 +29,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 依赖缓存（v0.6）：缓存 npm 全局缓存目录(~/.npm)，缓存键取自根 package-lock.json。
+      # generate.mjs 已改为「工程根一次性 npm ci + 各站点符号链接复用 node_modules」，
+      # 故 10 站只真正安装 1 次，且命中本缓存，构建显著提速。
+      # 注意：package-lock.json 必须提交进仓库，缓存键才稳定；改依赖版本即自动换键重装。
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
 
       # 孤儿站点软阻断：默认缺失 PROJS 的新站会令 job 失败（fail-fast）；
       # 经 workflow_dispatch 勾选 allow_orphans 可临时放行（仅限确认无误时）。

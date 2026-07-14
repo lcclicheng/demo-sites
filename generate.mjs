@@ -30,6 +30,21 @@ const IS_AI = args.includes('--ai')
 function ensureDir(dir) { if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true }) }
 function replaceInFile(filePath, replacements) { let c=fs.readFileSync(filePath,'utf-8');for(const [s,r] of Object.entries(replacements))c=c.replaceAll(s,r);fs.writeFileSync(filePath,c,'utf-8')}
 
+// ── 共享依赖安装（v0.6：一次性安装到工程根 node_modules，配合 CI 的 setup-node npm 缓存） ──
+// 每个站点构建时复用根 node_modules（符号链接），避免每站重复 npm install（10 站只装 1 次）。
+// CI 每次 runner 全新（checkout 不含 node_modules），故必跑一次 npm ci，但命中 ~/.npm 缓存极快；
+// 本地若根 node_modules 已存在则直接复用。失败/缺锁时回退到本站 npm install（见 generateOne）。
+let _sharedDepsReady = false
+async function ensureSharedDeps() {
+  if (_sharedDepsReady) return
+  const rootNm = path.join(__dirname, 'node_modules')
+  if (!fs.existsSync(rootNm)) {
+    console.log('  📦 安装共享依赖(工程根, 一次性；命中 CI npm 缓存)...')
+    execSync('npm ci', { cwd: __dirname, stdio: 'pipe' })
+  }
+  _sharedDepsReady = true
+}
+
 // 模板配置：每个模板需要复制哪些额外文件
 const TEMPLATES = {
   // ── Noir · 暗黑金奢华餐厅 ──
@@ -366,11 +381,27 @@ async function generateOne(jsonPath) {
   html = html.replace('__TITLE__',data.pageTitle||data.name)
   fs.writeFileSync(path.join(outputDir,'index.html'),html,'utf-8')
 
-  // 构建
-  console.log('  📦 安装依赖...')
-  execSync('npm install',{cwd:outputDir,stdio:'pipe'})
+  // ── 构建（v0.6：共享依赖 + 符号链接复用，避免每站重复 npm install） ──
+  await ensureSharedDeps()
+  const sharedNm = path.join(__dirname, 'node_modules')
+  const siteNm = path.join(outputDir, 'node_modules')
+  let useShared = false
+  if (fs.existsSync(sharedNm) && !fs.existsSync(siteNm)) {
+    try {
+      // Windows 用 junction（无需管理员权限）；POSIX 用 dir 符号链接
+      fs.symlinkSync(sharedNm, siteNm, process.platform === 'win32' ? 'junction' : 'dir')
+      useShared = true
+      console.log('  🔗 复用工程根 node_modules (符号链接)')
+    } catch (e) {
+      console.warn('  ⚠️ 符号链接失败，回退本站点 npm install: ' + (e && e.message))
+    }
+  }
+  if (!useShared) {
+    console.log('  📦 安装依赖...')
+    execSync('npm install', { cwd: outputDir, stdio: 'pipe' })
+  }
   console.log('  🔨 构建中...')
-  execSync('npx vite build',{cwd:outputDir,stdio:'pipe'})
+  execSync('npx vite build', { cwd: outputDir, stdio: 'pipe' })
 
   const distDir = path.join(outputDir,'dist')
   console.log(`  ✅ ${data.name} → ${distDir}`)

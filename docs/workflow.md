@@ -1,6 +1,6 @@
-# 建站系统流程文档（v0.5）
+# 建站系统流程文档（v0.6）
 
-> 版本：v0.5 ｜ 更新：2026-07-14（v0.5：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key / 门户链接 / 文档） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
+> 版本：v0.6 ｜ 更新：2026-07-14（v0.6：部署依赖缓存 —— deploy.yml `setup-node cache:'npm'` + generate.mjs 改为「工程根一次性 npm ci + 各站点符号链接复用 node_modules」，10 站只装 1 次依赖并命中 CI npm 缓存） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
 > 初版 v0.1 同日发布；本次依据审查意见修订：补充**交付后维护流程**、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/部署健壮性、文档维护规则、统一格式与难度标签。
 > **定位**：本文档是系统的「单一事实来源」。任何重大改动（新增站点、改模板、动部署流程）须同步更新此处（见 §11 文档维护规则）。
 
@@ -13,6 +13,7 @@
 | v0.3 | 2026-07-14 | onboarding 工具增强：图片上传接口（base64）、生成后自动单站构建、`/preview/<slug>/` 本地预览、缺失图片提醒 |
 | v0.4 | 2026-07-14 | SEO（og:image/sitemap/robots）、部署后 Slack/Telegram 通知、合规交付清单、自定义域名 SOP、onboarding 自动写 PROJS、README 回链单一事实源 |
 | **v0.5** | 2026-07-14 | slug 统一重命名（cr-me→creme、the-vault→vault）；onboard.mjs 自动写 PROJS 加固（备份 + bash -n 校验 + 失败还原）；validate 孤儿站点改软阻断；custom-domain 形态 B 补全；GitHub Pages 监控建议；GITHUB_TOKEN 权限最小化；文档审查整改闭环 |
+| **v0.6** | 2026-07-14 | **部署依赖缓存**：deploy.yml `setup-node cache:'npm'`（缓存键取根 package-lock.json）；generate.mjs 改为「工程根一次性 `npm ci` + 各站点符号链接复用 node_modules」，10 站只装 1 次并命中缓存，构建提速 |
 
 > 完整版本记录见文末「版本记录」行。
 
@@ -175,7 +176,7 @@ git push origin main      # 走 SSH，无需 PAT
 
 - **Actions 已具备并发控制**（`deploy.yml` 中 `concurrency` 组，避免并行部署互相覆盖）。
 - **Actions 失败怎么看**：GitHub 仓库 → Actions 标签 → 看对应 run 的日志。校验闸门报错会明确告诉你「哪个站、缺什么」。
-- 可选优化（见 §11）：给 `setup-node` 加 npm 依赖缓存、部署后发通知。
+- **部署依赖缓存已落地（v0.6）**：`setup-node` 已加 `cache: 'npm'`（缓存键取根 `package-lock.json`）；`generate.mjs` 改为「工程根一次性 `npm ci` + 各站点符号链接复用 `node_modules`」，10 站只真正安装 1 次并命中 CI 的 npm 缓存，构建显著提速。详见 §11。
 
 ---
 
@@ -374,7 +375,7 @@ git push origin main      # 走 SSH，无需 PAT
 | custom-domain 形态 B（子路径重定向）补全 | 低/中 | ✅ 已完成（v0.5） | — |
 | GitHub Pages 监控建议（仓库大小/构建时长） | 低/中 | ✅ 已完成（v0.5，建议写入 deploy.yml） | — |
 | GITHUB_TOKEN 权限最小化（附录 B） | 低/低 | ✅ 已完成（v0.5，deploy.yml 已最小权限） | — |
-| deploy.yml 依赖缓存（setup-node cache） | 中/中 | 🔲 待做 | v0.6 |
+| deploy.yml 依赖缓存（setup-node cache + 一次性安装复用） | 中/中 | ✅ 已完成（v0.6） | — |
 | 客户自助内容后台（CMS） | 中/低 | 🔲 待做（需真实频改客户） | v0.7+ |
 | i18n 策略明确化 | 低/中 | ✅ 已完成（默认，无需改动） | — |
 | 图片文件名哈希扩展（全图片 ?v=） | 低/低 | 🔲 待做（低优先级） | v0.6 |
@@ -438,4 +439,4 @@ rm -rf output public
 
 ---
 
-*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）→ v0.5（2026-07-14：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key、门户链接、文档）。后续迭代请直接修改本文档并更新本行版本号与日期。*
+*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）→ v0.5（2026-07-14：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key、门户链接、文档）→ v0.6（2026-07-14：部署依赖缓存 —— setup-node cache:'npm' + generate.mjs 改为「工程根一次性 npm ci + 各站点符号链接复用 node_modules」，10 站只装 1 次并命中 CI npm 缓存）。后续迭代请直接修改本文档并更新本行版本号与日期。*
