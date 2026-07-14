@@ -167,22 +167,22 @@
       "sub": "Butternut squash, pancetta, truffle"
     }
   ],
-  "screenshotsIntro": "Tucked beneath the streets of Bath — candlelight, stone arches, and the hum of a full dining room.",
+  "screenshotsIntro": "Tucked beneath the streets of Bath — candlelight, stone arches, and the hum of a full dining room. (Example images from Openverse; your real photos will replace these.)",
   "screenshots": [
     {
       "image": "./images/screenshot-1.jpg",
-      "title": "The Vaulted Room",
-      "sub": "Candlelit stone arches"
+      "title": "The Gilded Room",
+      "sub": "Candlelight, mirrors & white tablecloths"
     },
     {
       "image": "./images/screenshot-2.jpg",
       "title": "By the Window",
-      "sub": "Bath stone & warm light"
+      "sub": "Natural light over an Italian lunch"
     },
     {
       "image": "./images/screenshot-3.jpg",
       "title": "A Table for Two",
-      "sub": "Date-night corner"
+      "sub": "Daily menu, fresh bread & a lit candle"
     }
   ],
   "occasionOptions": [
