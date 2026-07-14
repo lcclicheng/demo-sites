@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Sparkles, Instagram, Facebook } from 'lucide-react'
 import { yogaData } from './business-data'
-import { HeroBackdrop, StatsStrip, GradientText } from './components/visual'
+import { HeroBackdrop, StatsStrip, GradientText, SquareMonogram } from './components/visual'
 const d = yogaData
 
 
@@ -146,7 +146,7 @@ export default function App() {
         <motion.div {...fadeView(0)} className="text-center mb-14"><p className="text-xs tracking-[0.3em] uppercase text-sage-500 font-semibold mb-4">Our Teachers</p><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">Guides on your <span className="not-italic text-sage-700">journey</span>.</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {(d.teachers || []).map((t,i)=><motion.div key={i} {...fadeView(i*0.1)} className="bg-white rounded-2xl p-6 text-center hover:-translate-y-1 transition-all duration-300">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-100 to-sage-100 flex items-center justify-center text-2xl font-display italic mx-auto mb-4 text-sage-700">{t.initials}</div>
+            <SquareMonogram initials={t.initials} className="mx-auto mb-4" />
             <h4 className="font-semibold text-sage-800 mb-1">{t.name}</h4><p className="text-xs text-sage-500 mb-3">{t.role}</p><p className="text-xs text-sage-600 leading-relaxed">{t.specialty}</p>
           </motion.div>)}
         </div>

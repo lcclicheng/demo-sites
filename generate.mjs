@@ -88,6 +88,8 @@ const VISUAL_CSS = `
 @keyframes shiny{0%{background-position:-200% center}100%{background-position:200% center}}
 .glass-card{background:color-mix(in srgb,currentColor 4%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid color-mix(in srgb,currentColor 14%,transparent)}
 .confetti-dots{background-image:radial-gradient(color-mix(in srgb,currentColor 55%,transparent) 1px,transparent 1px);background-size:22px 22px;opacity:.5}
+.bento-grid{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bento-grid::before{content:'';position:absolute;inset:0;background-image:linear-gradient(to right,currentColor 1px,transparent 1px),linear-gradient(to bottom,currentColor 1px,transparent 1px);background-size:54px 54px;opacity:.05}
 .shimmer-soft{animation:shimmer 3s ease-in-out infinite}
 @keyframes shimmer{0%,100%{opacity:.25}50%{opacity:.6}}
 `

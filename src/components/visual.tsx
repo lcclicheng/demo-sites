@@ -19,9 +19,11 @@ import { Star } from 'lucide-react'
 export function HeroBackdrop({
   breathe = true,
   particles = true,
+  variant = 'default',
 }: {
   breathe?: boolean
   particles?: boolean
+  variant?: 'default' | 'grid'
 }) {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
@@ -43,13 +45,17 @@ export function HeroBackdrop({
         </div>
       )}
 
-      {/* Drifting particles (from premium-restaurant) */}
-      {particles && (
-        <div className="particles">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <span key={i} className="particle" />
-          ))}
-        </div>
+      {/* Drifting particles (premium-restaurant) OR architectural bento grid (bento-dashboard) */}
+      {variant === 'grid' ? (
+        <div className="bento-grid" aria-hidden />
+      ) : (
+        particles && (
+          <div className="particles">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <span key={i} className="particle" />
+            ))}
+          </div>
+        )
       )}
     </div>
   )
@@ -126,5 +132,38 @@ export function Eyebrow({ children }: { children: ReactNode }) {
     >
       {children}
     </p>
+  )
+}
+
+/* ── Square monogram: editorial initials tile (from premium-law) ──
+   Square (not round) tile tinted with currentColor + initials. Reads high-end /
+   editorial vs the generic round avatar. Theme-adaptive via currentColor. */
+export function SquareMonogram({
+  initials,
+  className = '',
+}: {
+  initials: string
+  className?: string
+}) {
+  return (
+    <div
+      className={`square-monogram font-display ${className}`}
+      style={{
+        width: '5rem',
+        height: '5rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '0.25rem',
+        background: 'color-mix(in srgb, currentColor 9%, transparent)',
+        border: '1px solid color-mix(in srgb, currentColor 22%, transparent)',
+        fontWeight: 600,
+        fontSize: '1.5rem',
+        letterSpacing: '0.02em',
+      }}
+      aria-hidden
+    >
+      {initials}
+    </div>
   )
 }

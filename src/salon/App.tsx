@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Sparkles } from 'lucide-react'
 import { salonData } from './business-data'
-import { HeroBackdrop, GradientText } from './components/visual'
+import { HeroBackdrop, GradientText, SquareMonogram } from './components/visual'
 const d = salonData
 
 
@@ -152,7 +152,7 @@ export default function App() {
         <motion.div {...fadeIn} className="text-center mb-14"><div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-gold/30"/><span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Meet the Team</span><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl italic text-plum">Artists at <span className="text-gold not-italic">work</span>.</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {(d.stylists || []).map((s,i)=><motion.div key={i} {...fadeIn} className="group bg-white rounded-xl p-8 text-center border border-plum/5 hover:-translate-y-1 transition-all duration-500 hover:border-gold/20">
-            <div className="w-20 h-20 rounded-full bg-plum flex items-center justify-center text-2xl font-display italic text-gold mx-auto mb-4">{s.initials}</div>
+            <SquareMonogram initials={s.initials} className="mx-auto mb-4" />
             <h4 className="font-display text-lg font-semibold text-plum mb-1">{s.name}</h4><p className="text-xs text-gold font-medium mb-3">{s.role}</p><p className="text-xs text-plum/60 leading-relaxed">{s.specialty}</p>
           </motion.div>)}
         </div>
