@@ -31,6 +31,12 @@ backend:
 # Decap 管理界面语言（中文）
 locale: "zh"
 
+# 媒体库（Decap 强制要求根级配置；本项目不启用图片上传组件，仅占位以满足 schema）
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+media_library:
+  name: default_media_library
+
 # 说明：本脚手架暂不启用 image/file 上传组件（见 docs/cms.md「图片处理」）。
 # 图片路径以字符串形式编辑（如 ./images/screenshot-1.jpg），保留现有 ./images/ 约定，
 # 避免 Decap 上传把路径写成 /images/xxx.jpg 在子路径部署下失效。
@@ -379,7 +385,7 @@ collections:
           - name: teachersSubtitle
             label: "Teachers Subtitle"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: teachersDescription
             label: "Teachers Description"
             widget: string
@@ -471,7 +477,7 @@ collections:
               - name: links
                 label: "Links"
                 widget: list
-                field: { label: "项", widget: string }
+                field: { name: "item", label: "项", widget: string }
               - name: cta
                 label: "Cta"
                 widget: string
@@ -529,7 +535,7 @@ collections:
           - name: heroLines
             label: "Hero Lines"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: heroCta1
             label: "Hero Cta1"
             widget: object
@@ -564,7 +570,7 @@ collections:
           - name: certifications
             label: "Certifications"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: services
             label: "Services"
             widget: list
@@ -773,7 +779,7 @@ collections:
           - name: navLinks
             label: "Nav Links"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: navCtaText
             label: "Nav Cta Text"
             widget: string
@@ -967,7 +973,7 @@ collections:
           - name: footerMenuLinks
             label: "Footer Menu Links"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: footerHoursTitle
             label: "Footer Hours Title"
             widget: string
@@ -980,7 +986,7 @@ collections:
           - name: footerHours
             label: "Footer Hours"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: slug
             label: "Slug（结构性·勿改）"
             widget: hidden
@@ -1039,7 +1045,7 @@ collections:
           - name: certs
             label: "Certs"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: pageTitle
             label: "Page Title"
             widget: string
@@ -1097,7 +1103,7 @@ collections:
           - name: heroTrustBadges
             label: "Hero Trust Badges"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: services
             label: "Services"
             widget: list
@@ -1126,11 +1132,11 @@ collections:
               - name: paragraphs
                 label: "Paragraphs"
                 widget: list
-                field: { label: "项", widget: text }
+                field: { name: "item", label: "项", widget: text }
               - name: certifications
                 label: "Certifications"
                 widget: list
-                field: { label: "项", widget: string }
+                field: { name: "item", label: "项", widget: string }
               - name: whyChoose
                 label: "Why Choose"
                 widget: list
@@ -1145,7 +1151,7 @@ collections:
           - name: aboutParagraphs
             label: "About Paragraphs"
             widget: list
-            field: { label: "项", widget: text }
+            field: { name: "item", label: "项", widget: text }
           - name: reviews
             label: "Reviews"
             widget: list
@@ -1244,7 +1250,7 @@ collections:
               - name: links
                 label: "Links"
                 widget: list
-                field: { label: "项", widget: string }
+                field: { name: "item", label: "项", widget: string }
               - name: cta
                 label: "Cta"
                 widget: string
@@ -1354,7 +1360,7 @@ collections:
           - name: certifications
             label: "Certifications"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: menuIntroTitle
             label: "Menu Intro Title"
             widget: string
@@ -1406,7 +1412,7 @@ collections:
           - name: occasionOptions
             label: "Occasion Options"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: reservationNote
             label: "Reservation Note"
             widget: text
@@ -1422,7 +1428,7 @@ collections:
           - name: aboutParagraphs
             label: "About Paragraphs"
             widget: list
-            field: { label: "项", widget: text }
+            field: { name: "item", label: "项", widget: text }
           - name: aboutStats
             label: "About Stats"
             widget: list
@@ -1659,7 +1665,7 @@ collections:
           - name: navLinks
             label: "Nav Links"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: navCtaText
             label: "Nav Cta Text"
             widget: string
@@ -1743,7 +1749,7 @@ collections:
           - name: navLinks
             label: "Nav Links"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: pastriesTitle
             label: "Pastries Title"
             widget: string
@@ -1982,7 +1988,7 @@ collections:
           - name: certifications
             label: "Certifications"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: menuIntroTitle
             label: "Menu Intro Title"
             widget: string
@@ -2054,7 +2060,7 @@ collections:
           - name: occasionOptions
             label: "Occasion Options"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: reservationNote
             label: "Reservation Note"
             widget: text
@@ -2070,7 +2076,7 @@ collections:
           - name: aboutParagraphs
             label: "About Paragraphs"
             widget: list
-            field: { label: "项", widget: text }
+            field: { name: "item", label: "项", widget: text }
           - name: aboutStats
             label: "About Stats"
             widget: list
@@ -2216,7 +2222,7 @@ collections:
           - name: navLinks
             label: "Nav Links"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: navCtaText
             label: "Nav Cta Text"
             widget: string
@@ -2275,7 +2281,7 @@ collections:
               - name: options
                 label: "Options"
                 widget: list
-                field: { label: "项", widget: string }
+                field: { name: "item", label: "项", widget: string }
           - name: infoBar
             label: "Info Bar"
             widget: list
@@ -2290,7 +2296,7 @@ collections:
               - name: lines
                 label: "Lines"
                 widget: list
-                field: { label: "项", widget: string }
+                field: { name: "item", label: "项", widget: string }
           - name: footerDescription
             label: "Footer Description"
             widget: text
@@ -2305,11 +2311,11 @@ collections:
               - name: items
                 label: "Items"
                 widget: list
-                field: { label: "项", widget: string }
+                field: { name: "item", label: "项", widget: string }
           - name: footerAddressLines
             label: "Footer Address Lines"
             widget: list
-            field: { label: "项", widget: string }
+            field: { name: "item", label: "项", widget: string }
           - name: footerSocial
             label: "Footer Social"
             widget: list

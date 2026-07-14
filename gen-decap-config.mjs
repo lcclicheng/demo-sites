@@ -53,7 +53,7 @@ function inferField(k, v) {
   const label = humanize(k)
   if (Array.isArray(v)) {
     if (v.length === 0) {
-      return { name: k, label, widget: 'list', field: { label: '项', widget: 'string' } }
+      return { name: k, label, widget: 'list', field: { name: 'item', label: '项', widget: 'string' } }
     }
     const first = v[0]
     if (first && typeof first === 'object') {
@@ -63,7 +63,7 @@ function inferField(k, v) {
       const sampleKey = Object.keys(first)[0] || 'name'
       return { name: k, label, widget: 'list', summary: `{{fields.${sampleKey}}}`, fields: inferFields(merged) }
     }
-    return { name: k, label, widget: 'list', field: { label: '项', widget: scalarWidget(first) } }
+    return { name: k, label, widget: 'list', field: { name: 'item', label: '项', widget: scalarWidget(first) } }
   }
   if (v && typeof v === 'object') {
     return { name: k, label, widget: 'object', fields: inferFields(v) }
@@ -102,7 +102,7 @@ function fieldToYaml(f, indent) {
   if (f.max !== undefined) s += `${pad}  max: ${f.max}\n`
   if (f.summary) s += `${pad}  summary: "${f.summary}"\n`
   if (f.field) {
-    s += `${pad}  field: { label: ${yamlStr(f.field.label)}, widget: ${f.field.widget} }\n`
+    s += `${pad}  field: { name: ${yamlStr(f.field.name || 'item')}, label: ${yamlStr(f.field.label)}, widget: ${f.field.widget} }\n`
   }
   if (f.fields) {
     s += `${pad}  fields:\n`
@@ -199,6 +199,12 @@ backend:
 
 # Decap 管理界面语言（中文）
 locale: "zh"
+
+# 媒体库（Decap 强制要求根级配置；本项目不启用图片上传组件，仅占位以满足 schema）
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+media_library:
+  name: default_media_library
 
 # 说明：本脚手架暂不启用 image/file 上传组件（见 docs/cms.md「图片处理」）。
 # 图片路径以字符串形式编辑（如 ./images/screenshot-1.jpg），保留现有 ./images/ 约定，
