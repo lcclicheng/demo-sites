@@ -13,6 +13,7 @@
 - [`docs/custom-domain.md`](./docs/custom-domain.md) — 自定义域名 / DNS / SSL / 客户交接 SOP
 - [`docs/cms.md`](./docs/cms.md) — 客户自助内容后台（Decap CMS + GitHub OAuth）启用与隔离模型
 - [`docs/delivery-handover.md`](./docs/delivery-handover.md) — 客户交付标准化包（欢迎邮件 / 合规签字 / 维护手册 / 支持条款 / 发票）
+- [`docs/pricing.md`](./docs/pricing.md) — 报价与套餐（£ 定价基准：基础建站 / +CMS 自助 / 年度支持）
 
 ## 快速开始
 

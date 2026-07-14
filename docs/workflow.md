@@ -1,6 +1,6 @@
-# 建站系统流程文档（v0.9）
+# 建站系统流程文档（v0.9.1）
 
-> 版本：v0.8 ｜ 更新：2026-07-14（v0.8：客户自助 CMS 全 10 站自动映射 + 图片 `?v=` 防缓存；v0.7 CMS 脚手架、v0.6 部署缓存已落地） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
+> 版本：v0.9.1 ｜ 更新：2026-07-14（v0.9：流程标准化规范 v1；v0.9.1：定价三套餐落地见 `docs/pricing.md`；v0.8：客户自助 CMS 全 10 站自动映射 + 图片 `?v=` 防缓存；v0.7 CMS 脚手架、v0.6 部署缓存已落地） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
 > 初版 v0.1 同日发布；本次依据审查意见修订：补充**交付后维护流程**、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/部署健壮性、文档维护规则、统一格式与难度标签。
 > **定位**：本文档是系统的「单一事实来源」。任何重大改动（新增站点、改模板、动部署流程）须同步更新此处（见 §11 文档维护规则）。
 
@@ -17,6 +17,7 @@
 | **v0.7** | 2026-07-14 | **客户自助 CMS 脚手架**：Decap CMS + GitHub OAuth；`admin/index.html` + `admin/config.yml`（完整映射 `sotto-sotto` 全部字段，含结构性 template/slug，防保存丢字段）；`deploy.yml` 把 `admin/` 发布到 `/demo-sites/admin/`；`docs/cms.md` 写清 OAuth 注册、逐站启用、生产模型（客户独立仓库+自定义域名）、图片处理、安全防坑 |
 | **v0.8** | 2026-07-14 | **客户自助 CMS 全量落地 + 图片防缓存**：`gen-decap-config.mjs` 从 `examples/*.json` 自动生成 `admin/config.yml` 全 10 站字段映射（100% 覆盖、防保存丢字段崩站）；`generate.mjs` 注入时给所有图片路径加 `?v=<构建版本>`（每次部署不同、对 CMS 保存自愈）；演示站 `/admin` 保留公开作能力展示 |
 | **v0.9** | 2026-07-14 | **流程标准化规范 v1**：交付标准化包（`docs/delivery-handover.md`）、模板库索引（`templates/README.md`）+ 新增行业模板 SOP、交付后第 7 天反馈循环（`clients/` + §5.10）、AI 协作规范（§13）、中低优先待办（监控 / 定价 / 自动化测试 / 多语言） |
+| **v0.9.1** | 2026-07-14 | **定价三套餐落地**：基础建站 £490 / +CMS 自助启用 £790 / +年度支持 £1,290/年，作为初始报价基准（首客交付后复盘重定），见 `docs/pricing.md` |
 
 > 完整版本记录见文末「版本记录」行。
 
@@ -32,6 +33,7 @@
 | **客户上线后想改内容怎么办** | **§5.9 交付后维护流程** |
 | **客户想自己改内容（自助 CMS）** | **docs/cms.md** |
 | **交付给客户的标准化包（欢迎邮件/合规/维护/支持条款）** | **docs/delivery-handover.md** |
+| **报价与套餐（£ 定价基准）** | **docs/pricing.md** |
 | 本地改模板 / 看效果 | §4.1 本地开发流程 |
 | 推送上线 | §4.3 部署流程 / §6 部署与认证 |
 | **排查部署失败** | **§4.3 + §9 已知坑 FAQ** |
@@ -409,7 +411,7 @@ git push origin main      # 走 SSH，无需 PAT
 | **增量构建（只重建变更站，跳过未变更站 + 门户）** | 中/高 | 🔲 待做（站点增多后提速；v0.6 缓存已缓解安装，但全量 `build-clean.sh` 仍随站点数线性变慢） | v0.9 | AI |
 | 新增行业模板 SOP（命名/必含字段/SEO 隐私 CMS checklist/测试） | 低/中 | ✅ 已完成（v0.9，见本节 SOP + `templates/README.md`） | v0.9 | AI |
 | 监控仪表盘（UptimeRobot + GitHub Issues 客户站点健康看板） | 低/中 | 🔲 待做（站点增多后健康可视化） | v0.9+ | AI/你 |
-| 定价包标准化（基础建站 / CMS 启用 / 年度支持 3 套餐） | 低/中 | 🔲 待做（写进文档作报价基准） | v0.9+ | 你（定价）/ AI（文档） |
+| 定价包标准化（基础建站 / CMS 启用 / 年度支持 3 套餐） | 低/中 | ✅ 已落地（v0.9.1，初始 £ 基准见 `docs/pricing.md`；首客交付后复盘重定） | v0.9.1 | 你（定价）/ AI（文档） |
 | 自动化 UI 测试（validate-sites.mjs 加轻量 Playwright 截图对比/检查） | 中/中 | 🔲 待做（防视觉回归） | v0.9+ | AI |
 | 多语言准备（onboarding.html 英文版，未来英国客户直用） | 低/中 | 🔲 待做（接入工具 UI 当前中文） | v0.9+ | AI |
 
@@ -529,4 +531,4 @@ rm -rf output public
 
 ---
 
-*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）→ v0.5（2026-07-14：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key、门户链接、文档）→ v0.6（2026-07-14：部署依赖缓存 —— setup-node cache:'npm' + generate.mjs 改为「工程根一次性 npm ci + 各站点符号链接复用 node_modules」，10 站只装 1 次并命中 CI npm 缓存）→ v0.7（2026-07-14：客户自助 CMS 脚手架 —— Decap CMS + GitHub OAuth，admin/ 发布到 /demo-sites/admin/，完整映射 sotto-sotto 全部字段防保存丢字段，docs/cms.md 写清 OAuth 注册/逐站启用/生产模型/图片处理/安全防坑）→ v0.8（2026-07-14：客户自助 CMS 全量落地 —— gen-decap-config.mjs 自动生成全 10 站字段映射 100% 覆盖防丢字段；图片 ?v= 防缓存；演示站 /admin 保留公开作展示）→ v0.9（2026-07-14：流程标准化规范 v1 —— 交付标准化包 docs/delivery-handover.md、模板库索引 templates/README.md + 新增行业模板 SOP、交付后第7天反馈循环 clients/ + §5.10、AI 协作规范 §13、中低优先待办 监控/定价/自动化测试/多语言）。后续迭代请直接修改本文档并更新本行版本号与日期。*
+*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）→ v0.5（2026-07-14：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key、门户链接、文档）→ v0.6（2026-07-14：部署依赖缓存 —— setup-node cache:'npm' + generate.mjs 改为「工程根一次性 npm ci + 各站点符号链接复用 node_modules」，10 站只装 1 次并命中 CI npm 缓存）→ v0.7（2026-07-14：客户自助 CMS 脚手架 —— Decap CMS + GitHub OAuth，admin/ 发布到 /demo-sites/admin/，完整映射 sotto-sotto 全部字段防保存丢字段，docs/cms.md 写清 OAuth 注册/逐站启用/生产模型/图片处理/安全防坑）→ v0.8（2026-07-14：客户自助 CMS 全量落地 —— gen-decap-config.mjs 自动生成全 10 站字段映射 100% 覆盖防丢字段；图片 ?v= 防缓存；演示站 /admin 保留公开作展示）→ v0.9（2026-07-14：流程标准化规范 v1 —— 交付标准化包 docs/delivery-handover.md、模板库索引 templates/README.md + 新增行业模板 SOP、交付后第7天反馈循环 clients/ + §5.10、AI 协作规范 §13、中低优先待办 监控/定价/自动化测试/多语言）→ v0.9.1（2026-07-14：定价三套餐落地 —— 基础建站 £490 / +CMS 自助启用 £790 / +年度支持 £1,290/年，初始报价基准，首客交付后复盘重定，见 docs/pricing.md）。后续迭代请直接修改本文档并更新本行版本号与日期。*
