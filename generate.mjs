@@ -148,8 +148,8 @@ const THEMES = {
     ],
   },
 
-  // CR-ME · 甜品(玫瑰马卡龙) → 玫瑰金 + 莓果深棕
-  'cr-me': {
+  // CREME · 甜品(玫瑰马卡龙) → 玫瑰金 + 莓果深棕
+  'creme': {
     cssReplace: [
       ['background:#faf7f2', 'background:#fdf6f4'],
       ['rgba(26,16,8,0.12)', 'rgba(107,58,74,0.12)'],
@@ -193,7 +193,7 @@ const THEMES = {
     ],
   },
 
-  // PATISSERIE · 法式甜品(香槟金，区别于 cr-me 的玫瑰)
+  // PATISSERIE · 法式甜品(香槟金，区别于 creme 的玫瑰)
   patisserie: {
     cssReplace: [
       ['background:#faf7f2', 'background:#fbf8f0'],
@@ -229,8 +229,8 @@ const THEMES = {
     ],
   },
 
-  // THE VAULT · 老钱民宿 → Playfair 换 Fraunces + 古金
-  'the-vault': {
+  // VAULT · 老钱民宿 → Playfair 换 Fraunces + 古金
+  'vault': {
     html: '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:wght@400;500;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"/><title>__TITLE__</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>',
     cssReplace: [
       ['rgba(200,149,44,0.25)', 'rgba(184,137,63,0.25)'],

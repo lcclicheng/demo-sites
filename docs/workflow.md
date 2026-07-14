@@ -1,6 +1,6 @@
 # 建站系统流程文档（v0.3）
 
-> 版本：v0.4 ｜ 更新：2026-07-14（v0.4：SEO基础/sitemap/robots、部署后通知、合规交付清单、自定义域名SOP、onboarding自动写PROJS、README回链） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
+> 版本：v0.5 ｜ 更新：2026-07-14（v0.5：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key / 门户链接 / 文档） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
 > 初版 v0.1 同日发布；本次依据审查意见修订：补充**交付后维护流程**、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/部署健壮性、文档维护规则、统一格式与难度标签。
 > **定位**：本文档是系统的「单一事实来源」。任何重大改动（新增站点、改模板、动部署流程）须同步更新此处（见 §11 文档维护规则）。
 
@@ -39,15 +39,15 @@
 | examples/atelier-salon.json | salon | atelier | /demo-sites/atelier/ |
 | examples/breath-yoga.json | yoga | breath | /demo-sites/breath/ |
 | examples/chambers-law.json | law | chambers | /demo-sites/chambers/ |
-| examples/creme-dessert.json | dessert | cr-me | /demo-sites/cr-me/ |
+| examples/creme-dessert.json | dessert | creme | /demo-sites/creme/ |
 | examples/forge-trades.json | trades | forge | /demo-sites/forge/ |
 | examples/mario-pizza.json | restaurant | mario | /demo-sites/mario/ |
 | examples/mono-coffee.json | coffee | mono | /demo-sites/mono/ |
 | examples/patisserie-v2.json | dessert | patisserie | /demo-sites/patisserie/ |
 | examples/sotto-sotto.json | restaurant | sotto-sotto | /demo-sites/sotto-sotto/ |
-| examples/vault-hotel.json | hotel | the-vault | /demo-sites/the-vault/ |
+| examples/vault-hotel.json | hotel | vault | /demo-sites/vault/ |
 
-> ⚠️ **slug 命名不一致（已知 quirk，暂不修）**：`cr-me` 取自 CRÈME 缩写，与其余全词 slug 风格不同。因已上线且 URL 固定，**改名会破坏外链**，故保留。新增站点建议统一用全词小写连字符（如 `creme-dessert` 风格）。详见附录 A。
+> ℹ️ **slug 命名已统一（v0.5）**：原 `cr-me`（CRÈME 缩写）、`the-vault` 已于 2026-07-14 重命名为 `creme`、`vault`，与全词小写连字符风格一致。旧 URL `/demo-sites/cr-me/`、`/demo-sites/the-vault/` 已失效（演示门户无稳定外链，无需 301；真实客户场景需配重定向）。详见附录 A。
 
 ---
 
@@ -380,10 +380,9 @@ rm -rf output public
 
 ## 附录 A：slug 命名约定
 
-- 规则：小写字母 / 数字 / 连字符，如 `sotto-sotto`、`the-vault`
-- **已知不一致**：`creme-dessert` 源的 slug 为 `cr-me`（取自 CRÈME 缩写），与其余全词 slug 风格不同
-- **决策**：因 `cr-me` 已上线且 URL 固定，**改名会破坏外链**，故保留不改
-- **新增建议**：统一用全词小写连字符；若未来要统一 `cr-me` → `creme`，需配 301 重定向或保留旧目录
+- 规则：小写字母 / 数字 / 连字符，如 `sotto-sotto`、`vault`
+- **历史不一致（已修复 v0.5）**：`creme-dessert` 源曾用 slug `cr-me`（CRÈME 缩写）、`vault-hotel` 曾用 `the-vault`，与其余全词 slug 风格不同；已于 2026-07-14 统一为 `creme`、`vault`（同步改了 `generate.mjs` 的 `THEMES` key、门户链接、本文档）
+- **新增建议**：统一用全词小写连字符（如 `creme-dessert`、`vault-hotel` 风格）
 
 ## 附录 B：安全清单（部署相关）
 
@@ -395,4 +394,4 @@ rm -rf output public
 
 ---
 
-*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）。后续迭代请直接修改本文档并更新本行版本号与日期。*
+*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）→ v0.5（2026-07-14：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key、门户链接、文档）。后续迭代请直接修改本文档并更新本行版本号与日期。*

@@ -7,13 +7,13 @@ const map = {
   'atelier-salon.json': 'atelier',
   'breath-yoga.json': 'breath',
   'chambers-law.json': 'chambers',
-  'creme-dessert.json': 'cr-me',
+  'creme-dessert.json': 'creme',
   'forge-trades.json': 'forge',
   'mario-pizza.json': 'mario',
   'mono-coffee.json': 'mono',
   'patisserie-v2.json': 'patisserie',
   'sotto-sotto.json': 'sotto-sotto',
-  'vault-hotel.json': 'the-vault',
+  'vault-hotel.json': 'vault',
 }
 
 for (const [file, slug] of Object.entries(map)) {
