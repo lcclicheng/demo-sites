@@ -50,6 +50,43 @@
 6. **Alert Contacts**：绑邮箱（默认）；可选加 Telegram / Slack / Webhook。
 7. （可选）开启 UptimeRobot 免费 **Status Page**：给客户一个公开的“运行状态”页，专业感加分，也可作为 B 档“年度呵护”的可视交付物。
 
+### 监测点清单（可直接复制添加）
+
+以下为本仓库当前 10 个站点 + 门户 + CMS 后台的线上地址（slug 取自各 `examples/<x>.json` 的 `slug` 字段，与构建/健康检查一致）。在 UptimeRobot 逐个 **Add New Monitor → HTTP(s)** 粘贴即可：
+
+| Friendly Name | URL | 类型 |
+|---|---|---|
+| Portal (demo-sites) | https://lcclicheng.github.io/demo-sites/ | HTTP(s) |
+| CMS Admin | https://lcclicheng.github.io/demo-sites/admin/ | HTTP(s) |
+| atelier | https://lcclicheng.github.io/demo-sites/atelier/ | HTTP(s) |
+| breath | https://lcclicheng.github.io/demo-sites/breath/ | HTTP(s) |
+| chambers | https://lcclicheng.github.io/demo-sites/chambers/ | HTTP(s) |
+| creme | https://lcclicheng.github.io/demo-sites/creme/ | HTTP(s) |
+| forge | https://lcclicheng.github.io/demo-sites/forge/ | HTTP(s) |
+| mario | https://lcclicheng.github.io/demo-sites/mario/ | HTTP(s) |
+| mono | https://lcclicheng.github.io/demo-sites/mono/ | HTTP(s) |
+| patisserie | https://lcclicheng.github.io/demo-sites/patisserie/ | HTTP(s) |
+| sotto-sotto | https://lcclicheng.github.io/demo-sites/sotto-sotto/ | HTTP(s) |
+| vault | https://lcclicheng.github.io/demo-sites/vault/ | HTTP(s) |
+
+> 新增/下线站点后，此处需手动同步（UptimeRobot 侧无法自动跟随 `PROJS`）。
+
+### 一键批量创建（可选，省去逐个手点）
+
+仓库已提供 [`setup-uptimerobot.mjs`](./../setup-uptimerobot.mjs)，读取你的 API Key 后调用 UptimeRobot v2 API 批量创建上面全部监测点（含门户 + admin + 10 站）：
+
+1. UptimeRobot → **My Settings → API Settings** 创建 **Read/Write** 类型的 API Key（免费版可用）。
+2. 本地运行（需 Node 18+，仓库根目录）：
+
+   ```bash
+   UPTIMEROBOT_API_KEY=urXXXXXX node setup-uptimerobot.mjs
+   ```
+
+3. 脚本对每个 URL 调 `addMonitor`（type=1 HTTP, interval=300s），打印创建结果；同名监测点已存在则跳过（幂等，可重复跑）。
+4. 完成后回到 UptimeRobot 仪表盘确认 12 个监测点均为「Up」。
+
+> 该脚本只创建监测点，不含 Alert Contacts 绑定——首次仍建议在 UI 里绑邮箱 / Telegram 才能收到告警推送。
+
 ### 与定价挂钩
 - `docs/pricing.md` 的 **B 年度呵护（£390/年）** 已含“站点健康监控 + 异常主动告警”。
 - 交付 B 档客户时：把该客户站点 URL 加进 UptimeRobot，并（可选）把其纳入一个公开 Status Page 链接写进交付包。
