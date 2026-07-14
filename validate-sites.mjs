@@ -1,5 +1,13 @@
 #!/usr/bin/env node
 /**
+ * ⚠️⚠️⚠️ 维护者必读 ⚠️⚠️⚠️
+ * 本闸门以 build-clean.sh 里的 PROJS 数组为「要构建/校验的站点」唯一事实源。
+ * 新增 / 改名 / 删除一个站点，必须同步修改 build-clean.sh 的 PROJS 数组，
+ * 否则会出现「JSON 改了却没部署」或「部署了却没校验」的隐性不一致。
+ * 本脚本会在校验结束后扫描 examples/ 下「具备 template+slug 但未纳入 PROJS」
+ * 的孤儿 JSON 并告警（不阻断），帮你发现遗漏。
+ * ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+ *
  * validate-sites.mjs — 部署前自检闸门（关闭「三.2 部署前自检闸门」缺口）
  *
  * 校验 build-clean.sh 中 PROJS 列表指向的每一个站点 JSON：
@@ -34,6 +42,33 @@ function loadProjList() {
 
 const errors = [];
 const projs = loadProjList();
+const projSet = new Set(projs);
+
+/**
+ * 孤儿站点自动发现（非阻断告警 / 可选 fallback）
+ * 扫描 examples/*.json，找出「同时具备 template + 非空 slug」但未纳入
+ * build-clean.sh PROJS 的 JSON —— 它们看起来应被部署，却不会出现在构建里。
+ * 这样能在「忘记把新站加入 PROJS」时给出提示，减少人为同步错误。
+ * （batch-sample / profix-test / test-new-templates 等测试夹具因 slug 为空被排除）
+ */
+const examplesDir = path.join(__dirname, 'examples');
+const orphanWarnings = [];
+for (const jf of fs.readdirSync(examplesDir).filter(f => f.endsWith('.json'))) {
+  const fp = path.join(examplesDir, jf);
+  let dd;
+  try { dd = JSON.parse(fs.readFileSync(fp, 'utf-8')); } catch { continue; }
+  const looksDeployable =
+    typeof dd.template === 'string' && KNOWN_TEMPLATES.has(dd.template) &&
+    typeof dd.slug === 'string' && dd.slug.trim();
+  if (looksDeployable && !projSet.has(jf.replace(/\.json$/, ''))) {
+    orphanWarnings.push(`${jf} (slug=${dd.slug}, template=${dd.template})`);
+  }
+}
+if (orphanWarnings.length) {
+  console.warn(`\n⚠️ 发现 ${orphanWarnings.length} 个 examples/ 下的 JSON 具备 template+slug 但未纳入 build-clean.sh 的 PROJS，将不会被构建/部署：`);
+  for (const o of orphanWarnings) console.warn('  • ' + o);
+  console.warn('   → 请把它们加入 build-clean.sh 的 PROJS 数组（本脚本以 PROJS 为单一事实源）。此告警不阻断部署。\n');
+}
 
 console.log(`🔍 校验 ${projs.length} 个站点 JSON ...\n`);
 
