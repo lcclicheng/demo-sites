@@ -31,11 +31,11 @@ backend:
 # Decap 管理界面语言（中文）
 locale: "zh"
 
-# 媒体库（Decap 强制要求根级配置；本项目不启用图片上传组件，仅占位以满足 schema）
+# 媒体库根级目录（Decap schema 强制要求 media_folder；本项目不启用图片上传组件，
+# 故不声明 media_library —— 声明会被当成「外部媒体库」要求 CMS.registerMediaLibrary 注册，
+# 反而会报 Missing external media library。省略 media_library 时 Decap 自动用内置默认库）
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
-media_library:
-  name: default_media_library
 
 # 说明：本脚手架暂不启用 image/file 上传组件（见 docs/cms.md「图片处理」）。
 # 图片路径以字符串形式编辑（如 ./images/screenshot-1.jpg），保留现有 ./images/ 约定，
