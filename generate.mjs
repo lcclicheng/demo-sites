@@ -30,6 +30,27 @@ const IS_AI = args.includes('--ai')
 function ensureDir(dir) { if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true }) }
 function replaceInFile(filePath, replacements) { let c=fs.readFileSync(filePath,'utf-8');for(const [s,r] of Object.entries(replacements))c=c.replaceAll(s,r);fs.writeFileSync(filePath,c,'utf-8')}
 
+// ── 图片防缓存：给所有图片路径加 ?v=<构建版本> ──
+// 匹配常见图片扩展名（忽略已有 query），确保换图后浏览器强制刷新。
+// 每次部署 BUILD_VERSION 不同（CI 可传 env.BUILD_VERSION 固定某值）；运行时自愈——
+// 即便 Decap CMS 保存把路径写回 JSON，下次生成仍会按新版本重加 ?v=。
+const IMG_RE = /\.(jpe?g|png|webp|gif|avif|svg|bmp|ico)(\?.*)?$/i
+const BUILD_VERSION = process.env.BUILD_VERSION || String(Date.now())
+function addImgVersion(v, ver = BUILD_VERSION) {
+  if (typeof v === 'string') {
+    if (!IMG_RE.test(v)) return v
+    const base = v.replace(/\?.*$/, '')
+    return `${base}?v=${ver}`
+  }
+  if (Array.isArray(v)) return v.map(x => addImgVersion(x, ver))
+  if (v && typeof v === 'object') {
+    const o = {}
+    for (const k of Object.keys(v)) o[k] = addImgVersion(v[k], ver)
+    return o
+  }
+  return v
+}
+
 // ── 共享依赖安装（v0.6：一次性安装到工程根 node_modules，配合 CI 的 setup-node npm 缓存） ──
 // 每个站点构建时复用根 node_modules（符号链接），避免每站重复 npm install（10 站只装 1 次）。
 // CI 每次 runner 全新（checkout 不含 node_modules），故必跑一次 npm ci，但命中 ~/.npm 缓存极快；
@@ -374,7 +395,8 @@ async function generateOne(jsonPath) {
 
   // 生成 business-data.ts
   const varName = template==='coffee'?'coffeeData':template==='salon'?'salonData':template==='dessert'?'dessertData':template==='yoga'?'yogaData':template==='law'?'lawData':template==='hotel'?'hotelData':template==='trades'?'tradesData':'businessData'
-  fs.writeFileSync(path.join(outputDir,'src','business-data.ts'),`// auto-generated\n\nexport const ${varName} = ${JSON.stringify(data,null,2)} as const\n`,'utf-8')
+  const versionedData = addImgVersion(data)
+  fs.writeFileSync(path.join(outputDir,'src','business-data.ts'),`// auto-generated (BUILD_VERSION=${BUILD_VERSION})\n\nexport const ${varName} = ${JSON.stringify(versionedData,null,2)} as const\n`,'utf-8')
 
   // 更新 index.html 标题
   let html = fs.readFileSync(path.join(outputDir,'index.html'),'utf-8')

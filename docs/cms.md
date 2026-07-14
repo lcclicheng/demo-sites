@@ -1,8 +1,10 @@
-# 客户自助内容后台（Decap CMS）· v0.7 脚手架
+# 客户自助内容后台（Decap CMS）· v0.8
 
-> 版本：v0.7 ｜ 更新：2026-07-14 ｜ 作者：lcclicheng（一人公司 / 独立开发者）
+> 版本：v0.8 ｜ 更新：2026-07-14 ｜ 作者：lcclicheng（一人公司 / 独立开发者）
 > 配套：`admin/index.html` + `admin/config.yml`（仓库内脚手架）；`deploy.yml` 已把 `admin/` 发布到线上 `/demo-sites/admin/`。
-> 关联：`workflow.md` §5.9（交付后维护流程）、§11（待办：客户自助 CMS 标记 v0.7 脚手架完成）。
+> 关联：`workflow.md` §5.9（交付后维护流程）、§11（客户自助 CMS 已完成 v0.8，全 10 站自动映射）。
+
+> 🌐 **演示站 `/admin` 故意公开**：当前 `admin/config.yml` 的 `client_id` 未填，`/demo-sites/admin/` 任何人都能打开但**登录会失败**（无 OAuth 凭证），仅作能力展示、不暴露编辑权限，安全。真实客户启用时见下方「生产模型」。
 
 ---
 
