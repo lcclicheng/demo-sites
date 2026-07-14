@@ -1,4 +1,4 @@
-# 建站系统流程文档（v0.8）
+# 建站系统流程文档（v0.9）
 
 > 版本：v0.8 ｜ 更新：2026-07-14（v0.8：客户自助 CMS 全 10 站自动映射 + 图片 `?v=` 防缓存；v0.7 CMS 脚手架、v0.6 部署缓存已落地） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
 > 初版 v0.1 同日发布；本次依据审查意见修订：补充**交付后维护流程**、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/部署健壮性、文档维护规则、统一格式与难度标签。
@@ -16,6 +16,7 @@
 | **v0.6** | 2026-07-14 | **部署依赖缓存**：deploy.yml `setup-node cache:'npm'`（缓存键取根 package-lock.json）；generate.mjs 改为「工程根一次性 `npm ci` + 各站点符号链接复用 node_modules」，10 站只装 1 次并命中缓存，构建提速 |
 | **v0.7** | 2026-07-14 | **客户自助 CMS 脚手架**：Decap CMS + GitHub OAuth；`admin/index.html` + `admin/config.yml`（完整映射 `sotto-sotto` 全部字段，含结构性 template/slug，防保存丢字段）；`deploy.yml` 把 `admin/` 发布到 `/demo-sites/admin/`；`docs/cms.md` 写清 OAuth 注册、逐站启用、生产模型（客户独立仓库+自定义域名）、图片处理、安全防坑 |
 | **v0.8** | 2026-07-14 | **客户自助 CMS 全量落地 + 图片防缓存**：`gen-decap-config.mjs` 从 `examples/*.json` 自动生成 `admin/config.yml` 全 10 站字段映射（100% 覆盖、防保存丢字段崩站）；`generate.mjs` 注入时给所有图片路径加 `?v=<构建版本>`（每次部署不同、对 CMS 保存自愈）；演示站 `/admin` 保留公开作能力展示 |
+| **v0.9** | 2026-07-14 | **流程标准化规范 v1**：交付标准化包（`docs/delivery-handover.md`）、模板库索引（`templates/README.md`）+ 新增行业模板 SOP、交付后第 7 天反馈循环（`clients/` + §5.10）、AI 协作规范（§13）、中低优先待办（监控 / 定价 / 自动化测试 / 多语言） |
 
 > 完整版本记录见文末「版本记录」行。
 
@@ -30,9 +31,11 @@
 | 接一个新客户（标准化流程） | §5 客户接入 SOP |
 | **客户上线后想改内容怎么办** | **§5.9 交付后维护流程** |
 | **客户想自己改内容（自助 CMS）** | **docs/cms.md** |
+| **交付给客户的标准化包（欢迎邮件/合规/维护/支持条款）** | **docs/delivery-handover.md** |
 | 本地改模板 / 看效果 | §4.1 本地开发流程 |
 | 推送上线 | §4.3 部署流程 / §6 部署与认证 |
 | **排查部署失败** | **§4.3 + §9 已知坑 FAQ** |
+| **与 AI 助手怎么协作（生成交付包/Review/分析日志）** | **§13 与 AI 助手协作规范** |
 | 知道还差什么、下一步做什么 | §11 待迭代优化清单 |
 
 ---
@@ -263,6 +266,24 @@ git push origin main      # 走 SSH，无需 PAT
 - ⚠️ **冲突规避（重要）**：onboarding 与 CMS 都改同一份 `examples/<slug>.json`。CMS 启用后该站**以 CMS 为准**——你用 onboarding/手改前务必先 `git pull` 拉取客户最新保存，且避免与客户同时编辑同一站；否则你本地覆盖会丢客户未保存的 CMS 改动。两者写入都会触发 Actions，不存在「谁覆盖谁」的隐藏问题，只有「谁最后提交」的时序问题。
 - 详见 `docs/cms.md`（§5 全 10 站自动映射、§6 生产模型、§11 一页纸上手卡）。
 
+### §5.10 交付后第 7 天满意度调研（反馈循环）
+
+**目的**：把一次性交付变成持续优化的闭环，积累客户洞察反哺模板。
+
+**时机**：站点上线后第 7 天，自动或手动发送「上线后满意度调研」（简单 Google Form 或邮件）。
+- 收集维度：内容准确性、加载速度、手机端体验、想新增的功能、整体满意度 / NPS。
+- **知识库沉淀**：反馈记录到 `clients/<slug>/feedback.md`（该目录已 gitignore，敏感信息不进仓库），形成可检索的知识库。
+- **AI 复用**：以后可以说「根据过去 N 个客户的反馈，帮我优化 `restaurant` 模板的菜单区块」，我会基于 `clients/*/feedback.md` 给出有数据支持的改进。
+
+**调研模板（建议问题）**
+1. 网站内容是否准确反映了你的业务？[是 / 部分 / 否 + 备注]
+2. 页面加载速度满意吗？[1–5]
+3. 手机上浏览体验如何？[1–5]
+4. 最希望新增的功能？[开放题]
+5. 整体满意度与推荐意愿（NPS）？[0–10]
+
+> 反馈文件结构与填写规范见 `clients/README.md`。
+
 ### 注册地址语义（务必搞清）
 
 | 业务类型 | 需要注册办公室？ | `registeredAddress` 字段 |
@@ -386,6 +407,41 @@ git push origin main      # 走 SSH，无需 PAT
 | i18n 策略明确化 | 低/中 | ✅ 已完成（默认，无需改动） | — | AI |
 | 图片文件名哈希扩展（全图片 ?v=） | 低/低 | ✅ 已完成（v0.8：generate.mjs 注入时给所有图片路径加 `?v=<构建版本>`，每次部署不同、对 CMS 保存自愈） | v0.8 | AI |
 | **增量构建（只重建变更站，跳过未变更站 + 门户）** | 中/高 | 🔲 待做（站点增多后提速；v0.6 缓存已缓解安装，但全量 `build-clean.sh` 仍随站点数线性变慢） | v0.9 | AI |
+| 新增行业模板 SOP（命名/必含字段/SEO 隐私 CMS checklist/测试） | 低/中 | ✅ 已完成（v0.9，见本节 SOP + `templates/README.md`） | v0.9 | AI |
+| 监控仪表盘（UptimeRobot + GitHub Issues 客户站点健康看板） | 低/中 | 🔲 待做（站点增多后健康可视化） | v0.9+ | AI/你 |
+| 定价包标准化（基础建站 / CMS 启用 / 年度支持 3 套餐） | 低/中 | 🔲 待做（写进文档作报价基准） | v0.9+ | 你（定价）/ AI（文档） |
+| 自动化 UI 测试（validate-sites.mjs 加轻量 Playwright 截图对比/检查） | 中/中 | 🔲 待做（防视觉回归） | v0.9+ | AI |
+| 多语言准备（onboarding.html 英文版，未来英国客户直用） | 低/中 | 🔲 待做（接入工具 UI 当前中文） | v0.9+ | AI |
+
+---
+
+### 新增行业模板 SOP（标准化起点）
+
+> 目的：让「做新行业站」可复制、可 Review，避免每次从零摸索。模板库索引见仓库根 `templates/README.md`（指向 `src/<template>/`，不物理复制避免漂移）。
+
+**1. 命名规范**
+- 模板名（即 `data.template` 值）：全小写英文、行业语义清晰，如 `restaurant` / `yoga` / `law`；不与现有 8 套重名。
+- 站点 slug（`data.slug`）：全词小写连字符，如 `sotto-sotto` / `breath`；避免缩写（见附录 A）。
+- 源文件：`examples/<slug>.json`；组件：`src/<template>/`（含 `App.tsx` + `business-data.ts`）。
+
+**2. 必须包含的字段清单（至少）**
+- 结构性（必填，被 `validate-sites.mjs` 与 Decap 校验）：`name` / `slug` / `template`。
+- 业务基础：`tagline` / `aboutParagraphs[]` / `phone` / `address` / `email`（如适用）。
+- 内容区块（按行业）：菜单 / 服务 / 作品集 / 评价 / 营业时间 / 预订方式 等。
+- 图片引用：统一 `./images/<file>` 约定，对应 `assets/<slug>/`。
+
+**3. SEO / 隐私 / CMS 配置 checklist**
+- SEO：`seo.{title,description}` 填（否则回退 pageTitle/tagline）；`generate.mjs` 会自动注入 og:/canonical/sitemap。
+- 隐私：`inject-privacy.mjs` 会自动注入隐私/发票/合同页；如 Ltd 客户需填 `registeredAddress`。
+- CMS：新站启用自助后台时，跑 `gen-decap-config.mjs` 重新生成 `admin/config.yml`（自动 100% 覆盖字段，防保存丢字段）；`template`/`slug` 会被设为 hidden+required。
+- 图片：真实图放 `assets/<slug>/`；`?v=` 哈希由 `generate.mjs` 自动加，覆盖同名即刷新。
+
+**4. 测试验证步骤**
+- `node validate-sites.mjs` 校验通过（无缺字段 / 缺图 / 孤儿告警）。
+- `node generate.mjs "./examples/<slug>.json"` 单站构建成功出 `dist/index.html`。
+- 本地预览（onboard.mjs `/preview/<slug>/` 或 `python -m http.server`）。
+- 加入 `PROJS`（用 onboard.mjs 生成会自动写；手动加见 §8）。
+- `git add -u && git commit && git push` → Actions 全量校验 + 构建 + 部署，确认线上 200。
 
 ---
 
@@ -420,6 +476,33 @@ rm -rf output public
 
 ---
 
+## 13. 与 AI 助手协作规范
+
+**定位**：AI 助手（本项目当前即本会话 AI；用户也可能用 Grok 等其他 AI）是你流程中的**正式一环**。把协作标准化、可追溯，能显著提升效率与一致性。
+
+### 我可以高效帮你做的事
+- **生成 / 优化新模板组件**：基于现有 8 套行业模板（`src/<template>/`）衍生新变体或新行业 UI。
+- **Review 新 JSON 数据合规性与完整性**：审查 `examples/<slug>.json` 的缺字段 / 结构问题（对照 `validate-sites.mjs` 逻辑与字段规范）。
+- **起草客户邮件、交付材料、合同条款**：按 `docs/delivery-handover.md` 模板填充「第 X 客户交付包」。
+- **分析 validate / Actions 报错日志**：定位部署失败根因（缺图、缺字段、校验闸门、SSH 限流等）。
+- **生成新行业 CMS 配置块**：用 `gen-decap-config.mjs` 或手写，给新站补全 Decap `admin/config.yml` 字段映射。
+- **优化 SEO 文案、隐私政策模板**：og:/sitemap/robots 文案、`inject-privacy.mjs` 注入内容。
+- **批量处理图片描述 / 命名**：图片路径、alt 文本、文件名规范化。
+
+### 使用提示
+- **提供具体上下文**：贴 JSON 片段、错误日志、客户需求，越具体产出越准。
+- 「帮我生成 `{{slug}}` 客户的交付包」→ 我按 `docs/delivery-handover.md` 填充。
+- 「Review 这个新站」→ 我走 `docs/delivery-checklist.md` 逐项核对。
+- 「基于 restaurant 模板生成一个 yoga 新变体」→ 我参考 `src/restaurant/` 结构给出差异实现。
+- 「分析这次 Actions 失败」→ 贴 run 日志，我定位根因并给修复步骤。
+
+### 协作红线（务必遵守）
+- 私钥 / Client Secret / 真实客户敏感信息**绝不提交 git**，也不写入会被公开的 config。
+- 法律判断（地址合规、隐私条款）由客户提供，AI 只做模板注入，不替客户做法律担保。
+- 重大改动（换模板、加板块、改字段结构）改完务必重跑校验与构建。
+
+---
+
 ## 附录 A：slug 命名约定
 
 - 规则：小写字母 / 数字 / 连字符，如 `sotto-sotto`、`vault`
@@ -446,4 +529,4 @@ rm -rf output public
 
 ---
 
-*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）→ v0.5（2026-07-14：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key、门户链接、文档）→ v0.6（2026-07-14：部署依赖缓存 —— setup-node cache:'npm' + generate.mjs 改为「工程根一次性 npm ci + 各站点符号链接复用 node_modules」，10 站只装 1 次并命中 CI npm 缓存）→ v0.7（2026-07-14：客户自助 CMS 脚手架 —— Decap CMS + GitHub OAuth，admin/ 发布到 /demo-sites/admin/，完整映射 sotto-sotto 全部字段防保存丢字段，docs/cms.md 写清 OAuth 注册/逐站启用/生产模型/图片处理/安全防坑）→ v0.8（2026-07-14：客户自助 CMS 全量落地 —— gen-decap-config.mjs 自动生成全 10 站字段映射 100% 覆盖防丢字段；图片 ?v= 防缓存；演示站 /admin 保留公开作展示）。后续迭代请直接修改本文档并更新本行版本号与日期。*
+*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）→ v0.5（2026-07-14：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key、门户链接、文档）→ v0.6（2026-07-14：部署依赖缓存 —— setup-node cache:'npm' + generate.mjs 改为「工程根一次性 npm ci + 各站点符号链接复用 node_modules」，10 站只装 1 次并命中 CI npm 缓存）→ v0.7（2026-07-14：客户自助 CMS 脚手架 —— Decap CMS + GitHub OAuth，admin/ 发布到 /demo-sites/admin/，完整映射 sotto-sotto 全部字段防保存丢字段，docs/cms.md 写清 OAuth 注册/逐站启用/生产模型/图片处理/安全防坑）→ v0.8（2026-07-14：客户自助 CMS 全量落地 —— gen-decap-config.mjs 自动生成全 10 站字段映射 100% 覆盖防丢字段；图片 ?v= 防缓存；演示站 /admin 保留公开作展示）→ v0.9（2026-07-14：流程标准化规范 v1 —— 交付标准化包 docs/delivery-handover.md、模板库索引 templates/README.md + 新增行业模板 SOP、交付后第7天反馈循环 clients/ + §5.10、AI 协作规范 §13、中低优先待办 监控/定价/自动化测试/多语言）。后续迭代请直接修改本文档并更新本行版本号与日期。*

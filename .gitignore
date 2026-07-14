@@ -26,3 +26,6 @@ Thumbs.db
 /patisserie/
 /sotto-sotto/
 /vault/
+
+# 客户反馈知识库（含敏感信息，不进仓库）
+clients/
