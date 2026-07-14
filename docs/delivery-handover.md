@@ -1,14 +1,21 @@
-# 客户交付标准化包（Delivery Handover Package）
+<!--
+  AI INTERNAL NOTES — this block is an HTML comment and will NOT render or be sent to the client.
+  Purpose: every time we deliver a site to a real client, copy this file, fill the {{placeholders}},
+  and bundle it with the attached modules into one folder (or a Notion / Google Drive link) to email the client.
+  Value: turns "here's a link" into a formal client-success onboarding.
+  How to use: tell me "generate the delivery package for client #{{N}} (slug = {{slug}})". I will read
+  examples/{{slug}}.json and auto-fill §1–§6. For a readiness review, follow docs/delivery-checklist.md.
+  Client feedback lives in clients/{{slug}}/feedback.md (gitignored, local only).
+  RULE: keep the entire visible document in English — UK clients. Never put Chinese into the deliverable.
+-->
 
-> **用途**：每次把站点交付给真实客户时，复制本文件、填入 `{{占位符}}`，连同下面各模块打包成一个文件夹（或 Notion / Google Drive 链接）发给客户。
-> **价值**：交付不再是「发个链接」，而是正式的**客户成功 onboarding**，显著提升客户感知价值与专业度。
-> **AI 协作**：以后直接对我说「帮我生成第 {{N}} 个客户（slug = `{{slug}}`）的交付包」，我会读取 `examples/{{slug}}.json` 自动填充本模板，产出可发送的交付材料。
+# Delivery Handover Package
+
+> Copy this file, fill the `{{placeholders}}`, and send it to the client together with the attached modules.
 
 ---
 
-## 1. 欢迎邮件模板（Welcome Email）
-
-> 发给客户的正文（英国客户建议英文；如客户偏好中文可切换）。下方为英文模板。
+## 1. Welcome Email
 
 **To**: {{client_email}}
 **Subject**: 🎉 Your website is live — {{client_name}} ({{site_name}})
@@ -40,9 +47,9 @@ Best,
 
 ---
 
-## 2. 合规交付清单签字版（Compliance Sign-off）
+## 2. Compliance Sign-off
 
-> 来源：[`docs/delivery-checklist.md`](./delivery-checklist.md)。下方为客户确认版，请客户逐项核对后**签名存档**（导出 PDF）。
+> Source: `docs/delivery-checklist.md`. The client confirms each item, then signs and returns a PDF copy for our records.
 
 **Site**: {{site_name}} (`{{slug}}`)  ·  **Client**: {{client_name}}  ·  **Date**: {{delivery_date}}
 
@@ -57,68 +64,65 @@ Best,
 **Client sign-off**
 Signature: ___________________________   Name: {{client_name}}   Date: __________
 
-> 存档：将签名版 PDF 存入 `clients/{{slug}}/handover/` （该目录已 gitignore，不进仓库）。
+> Archive the signed PDF in `clients/{{slug}}/handover/` (this directory is gitignored and stays local).
 
 ---
 
-## 3. 站点维护手册（一页纸 · Maintenance Guide）
+## 3. Maintenance Guide (one page)
 
 **Your site**: {{site_name}} — {{live_url}}
 **CMS dashboard**: {{cms_url}}
 
-### 如何改内容（自助，无需代码）
-1. 打开 {{cms_url}}，用你的 GitHub 账号登录。
-2. 点击你的站点（`{{slug}}`），编辑任意字段（文案 / 菜单 / 营业时间 / 评价 / 图片路径）。
-3. 保存 → 约 1–2 分钟后线上自动更新（图片改名后会自动刷新缓存）。
-4. **换真实照片**：把新图覆盖到对应路径，或在 CMS 里改图片路径字符串。
+### How to edit content (self-service, no code)
+1. Open {{cms_url}} and sign in with your GitHub account.
+2. Click your site (`{{slug}}`) and edit any field (text / menu / opening hours / reviews / image path).
+3. Save → the live site updates automatically in ~1–2 minutes (renaming an image refreshes its cache automatically).
+4. **To swap in real photos**: overwrite the file at the corresponding path, or change the image path string in the CMS.
 
-### 域名续费提醒
-- 自定义域名（如 {{custom_domain}}）由**客户自行在注册商处续费**，逾期会失效。
-- 建议开启注册商的「自动续费」。到期前 30 天我会提醒一次。
-- GitHub Pages 本身免费，无需续费。
+### Domain renewal reminder
+- A custom domain (e.g. {{custom_domain}}) is **renewed by the client at their registrar** — it lapses if not renewed.
+- Enable the registrar's auto-renew. I will send one reminder ~30 days before expiry.
+- GitHub Pages itself is free and needs no renewal.
 
-### 如何联系我
-- 邮箱：{{your_email}}  ·  电话/WhatsApp：{{your_phone}}
-- 紧急改动响应时间见 §5 支持条款。
+### How to reach me
+- Email: {{your_email}}  ·  Phone / WhatsApp: {{your_phone}}
+- Urgent-change response time is in §5 Support Terms.
 
-### 注意事项
-- 不要在未登录态反复刷新 CMS（GitHub API 有未认证限流，见交付沟通）。
-- 结构性改动（换模板 / 加板块）请联系我，不要自行改代码。
-
----
-
-## 4. 自定义域名交接清单（Custom Domain Handover · 若适用）
-
-> 仅当客户使用自有域名时填写。完整 SOP 见 [`docs/custom-domain.md`](./custom-domain.md)。
-
-- [ ] 客户在域名注册商添加记录：
-  - **形态 A（推荐，独立仓库根域）**：A 记录 / ALIAS 指向 GitHub Pages；或子域 CNAME 到 `{{user}}.github.io`
-  - **形态 B（子路径）**：CNAME / 301 转发到 `lcclicheng.github.io/demo-sites/{{slug}}/`
-- [ ] GitHub Pages → Custom domain 填入 {{custom_domain}}，勾选 **Enforce HTTPS**
-- [ ] SSL 证书自动签发（可能需数分钟～24h 生效）
-- [ ] 验证：浏览器开 {{custom_domain}} 返回 200 且地址栏有锁标
-- [ ] 客户持有注册商账号与 DNS 控制权（你仅协助，不代持）
-
-> 演示期（无自有域名）跳过本节，线上地址用 `https://lcclicheng.github.io/demo-sites/{{slug}}/`。
+### Notes
+- Do not repeatedly refresh the CMS while signed out (GitHub's unauthenticated API rate limit — see handover comms).
+- Structural changes (swap template / add a section) — contact me; do not edit code yourself.
 
 ---
 
-## 5. 支持条款（Support Terms）
+## 4. Custom Domain Handover (if applicable)
 
-> 以下为**默认模板**，实际数值按与客户约定填写。建议写进合同 / 报价单。
+> Fill this section only if the client uses their own domain. Full SOP: `docs/custom-domain.md`.
 
-- **响应时间**：工作日 {{response_hours}} 小时内回复（如 24h）；紧急故障 {{urgent_hours}}h（如 4h）。
-- **免费改动额度**：交付后 {{free_change_window}} 内，{{free_change_count}} 次小改动免费（如 30 天内 3 次文案/图片微调）。
-- **计费改动**：超出免费额度按 {{rate_per_change}} / 次，或按小时 {{rate_per_hour}}。
-- **年费支持选项（可选）**：
-  - **基础** £{{tier1}}/年：监控 + 邮件支持 + 少量改动额度
-  - **标准** £{{tier2}}/年：含 CMS 启用维护 + 优先响应 + 定期备份
-  - **高级** £{{tier3}}/年：含内容更新代劳 + 月度小优化
-- **不包含**：新模板开发、重大 redesign、第三方付费服务订阅费。
+- [ ] Client adds records at their registrar:
+  - **Form A (recommended, standalone repo root domain)**: A / ALIAS record pointing to GitHub Pages; or a subdomain CNAME to `{{user}}.github.io`
+  - **Form B (subpath)**: CNAME / 301 redirect to `lcclicheng.github.io/demo-sites/{{slug}}/`
+- [ ] GitHub Pages → Custom domain set to {{custom_domain}}, tick **Enforce HTTPS**
+- [ ] SSL certificate issued automatically (may take minutes–24h)
+- [ ] Verify: opening {{custom_domain}} returns 200 and shows a lock icon
+- [ ] Client holds the registrar account and DNS control (you assist only, never custody)
+
+> Demo period (no own domain): skip this section; use `https://lcclicheng.github.io/demo-sites/{{slug}}/`.
 
 ---
 
-## 6. 发票 & 付款确认（Invoice & Payment）
+## 5. Support Terms
+
+> Default template — fill actual numbers per client agreement; put them in the contract / quote.
+
+- **Response time**: reply within {{response_hours}} business hours (e.g. 24h); urgent incidents within {{urgent_hours}}h (e.g. 4h).
+- **Free-change allowance**: {{free_change_count}} small changes free within {{free_change_window}} of delivery (e.g. 3 tweaks in 30 days — copy / image edits).
+- **Billable changes**: beyond the free allowance, {{rate_per_change}} / change, or {{rate_per_hour}} / hour.
+- **Annual Care plan (optional)**: £{{annual_care_price}}/year — site monitoring + priority response + free small-change allowance + domain-renewal assistance (recommended; static site upkeep is minimal, near pure-margin).
+- **Not included**: new template development, major redesign, third-party paid service subscriptions.
+
+---
+
+## 6. Invoice & Payment
 
 - **Invoice No.**: {{invoice_no}}
 - **Issued**: {{invoice_date}}  ·  **Due**: {{invoice_due}}
@@ -127,11 +131,3 @@ Signature: ___________________________   Name: {{client_name}}   Date: _________
 - **Status**: ☐ Paid  ☐ Pending  ☐ Deposit received ({{deposit_amount}})
 - **Payment method**: {{payment_method}} (bank transfer / Stripe / etc.)
 - **Note**: {{invoice_note}}
-
----
-
-## 附录：AI 协作提示（内部用，不发给客户）
-
-- 「帮我生成第 {{N}} 个客户（slug = `{{slug}}`）的交付包」→ 读取 `examples/{{slug}}.json` + 本模板，自动填出 §1–§6。
-- 「Review 这个站的交付完备度」→ 走 [`docs/delivery-checklist.md`](./delivery-checklist.md) 逐项核对。
-- 客户反馈回收见 [`clients/{{slug}}/feedback.md`](./../clients/{{slug}}/feedback.md)（已 gitignore）。
