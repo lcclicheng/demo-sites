@@ -1,6 +1,6 @@
-# 建站系统流程文档（v0.9.2）
+# 建站系统流程文档（v0.9.3）
 
-> 版本：v0.9.2 ｜ 更新：2026-07-14（v0.9：流程标准化规范 v1；v0.9.2：定价两档落地（进攻型）见 `docs/pricing.md`；v0.9.1：定价三套餐、v0.8：客户自助 CMS 全 10 站自动映射 + 图片 `?v=` 防缓存；v0.7 CMS 脚手架、v0.6 部署缓存已落地） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
+> 版本：v0.9.3 ｜ 更新：2026-07-14（v0.9.3：监控仪表盘 + 轻量冒烟测试落地，见 `docs/monitoring.md`；v0.9.2：定价两档落地（进攻型）见 `docs/pricing.md`；v0.9.1：定价三套餐、v0.8：客户自助 CMS 全 10 站自动映射 + 图片 `?v=` 防缓存；v0.7 CMS 脚手架、v0.6 部署缓存已落地） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
 > 初版 v0.1 同日发布；本次依据审查意见修订：补充**交付后维护流程**、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/部署健壮性、文档维护规则、统一格式与难度标签。
 > **定位**：本文档是系统的「单一事实来源」。任何重大改动（新增站点、改模板、动部署流程）须同步更新此处（见 §11 文档维护规则）。
 
@@ -18,6 +18,7 @@
 | **v0.8** | 2026-07-14 | **客户自助 CMS 全量落地 + 图片防缓存**：`gen-decap-config.mjs` 从 `examples/*.json` 自动生成 `admin/config.yml` 全 10 站字段映射（100% 覆盖、防保存丢字段崩站）；`generate.mjs` 注入时给所有图片路径加 `?v=<构建版本>`（每次部署不同、对 CMS 保存自愈）；演示站 `/admin` 保留公开作能力展示 |
 | **v0.9** | 2026-07-14 | **流程标准化规范 v1**：交付标准化包（`docs/delivery-handover.md`）、模板库索引（`templates/README.md`）+ 新增行业模板 SOP、交付后第 7 天反馈循环（`clients/` + §5.10）、AI 协作规范（§13）、中低优先待办（监控 / 定价 / 自动化测试 / 多语言） |
 | **v0.9.2** | 2026-07-14 | **定价两档落地（进攻型）**：建站含 CMS 自助 £590 一次性 / 年度呵护 £390/年，作为初始报价基准（首客交付后复盘重定），见 `docs/pricing.md` |
+| **v0.9.3** | 2026-07-14 | **监控 + 轻量冒烟落地**：`health-check.mjs` + `.github/workflows/health-check.yml` 每天定时查全站 200/挂载点/title，失败自动开/更 Issue、恢复自动关；`smoke-test.mjs` 校验每站产物非空壳，接进 `deploy.yml` Assemble 之后阻断坏部署；UptimeRobot 外部探测 SOP 见 `docs/monitoring.md` |
 
 > 完整版本记录见文末「版本记录」行。
 
@@ -38,6 +39,7 @@
 | 推送上线 | §4.3 部署流程 / §6 部署与认证 |
 | **排查部署失败** | **§4.3 + §9 已知坑 FAQ** |
 | **与 AI 助手怎么协作（生成交付包/Review/分析日志）** | **§13 与 AI 助手协作规范** |
+| **客户站点健康看板（监控 / 告警 / 自动 Issue）** | **docs/monitoring.md** |
 | 知道还差什么、下一步做什么 | §11 待迭代优化清单 |
 
 ---
@@ -410,10 +412,10 @@ git push origin main      # 走 SSH，无需 PAT
 | 图片文件名哈希扩展（全图片 ?v=） | 低/低 | ✅ 已完成（v0.8：generate.mjs 注入时给所有图片路径加 `?v=<构建版本>`，每次部署不同、对 CMS 保存自愈） | v0.8 | AI |
 | **增量构建（只重建变更站，跳过未变更站 + 门户）** | 中/高 | 🔲 待做（站点增多后提速；v0.6 缓存已缓解安装，但全量 `build-clean.sh` 仍随站点数线性变慢） | v0.9 | AI |
 | 新增行业模板 SOP（命名/必含字段/SEO 隐私 CMS checklist/测试） | 低/中 | ✅ 已完成（v0.9，见本节 SOP + `templates/README.md`） | v0.9 | AI |
-| 监控仪表盘（UptimeRobot + GitHub Issues 客户站点健康看板） | 低/中 | 🔲 待做（站点增多后健康可视化） | v0.9+ | AI/你 |
+| 监控仪表盘（UptimeRobot + GitHub Issues 客户站点健康看板） | 低/中 | ✅ 已落地（v0.9.3：自建 `health-check.mjs` + `.github/workflows/health-check.yml` 每天定时查全站 200/挂载点/title，失败自动开/更 Issue、恢复自动关；UptimeRobot 外部探测 SOP 见 `docs/monitoring.md`，你手动加监测点） | v0.9.3 | AI（自建+SOP）/ 你（UptimeRobot 注册） |
 | 定价两档（建站含 CMS 自助 £590 一次性 / 年度呵护 £390 年） | 低/中 | ✅ 已落地（v0.9.2，进攻型初始 £ 基准见 `docs/pricing.md`；首客交付后复盘重定） | v0.9.2 | 你（定价）/ AI（文档） |
-| 自动化 UI 测试（validate-sites.mjs 加轻量 Playwright 截图对比/检查） | 中/中 | 🔲 待做（防视觉回归） | v0.9+ | AI |
-| 多语言准备（onboarding.html 英文版，未来英国客户直用） | 低/中 | 🔲 待做（接入工具 UI 当前中文） | v0.9+ | AI |
+| 自动化 UI 测试（构建后冒烟检查） | 中/中 | ✅ 已落地（v0.9.3：`smoke-test.mjs` 校验每站产物含挂载点/JS/title 非空壳，接进 `deploy.yml` Assemble 之后阻断坏部署）；Playwright 逐像素**视觉回归**留待站点数 >15 或有真实客户再上 | v0.9.3（冒烟）/ v1.0+（视觉回归） | AI |
+| 多语言准备（onboarding.html 英文版，未来英国客户直用） | 低/中 | ⏸ 暂缓（决策 2026-07-14）：交付包已英文化、`onboarding.html` 是**你（owner）自用**的中文接入工具、客户不直接接触，故现无实际英文消费者。**触发条件**：出现要自助填料的英国直客、或把接入工具开放给客户时，再补英文版（约半天工作量） | 触发后 | AI |
 
 ---
 
@@ -531,4 +533,4 @@ rm -rf output public
 
 ---
 
-*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）→ v0.5（2026-07-14：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key、门户链接、文档）→ v0.6（2026-07-14：部署依赖缓存 —— setup-node cache:'npm' + generate.mjs 改为「工程根一次性 npm ci + 各站点符号链接复用 node_modules」，10 站只装 1 次并命中 CI npm 缓存）→ v0.7（2026-07-14：客户自助 CMS 脚手架 —— Decap CMS + GitHub OAuth，admin/ 发布到 /demo-sites/admin/，完整映射 sotto-sotto 全部字段防保存丢字段，docs/cms.md 写清 OAuth 注册/逐站启用/生产模型/图片处理/安全防坑）→ v0.8（2026-07-14：客户自助 CMS 全量落地 —— gen-decap-config.mjs 自动生成全 10 站字段映射 100% 覆盖防丢字段；图片 ?v= 防缓存；演示站 /admin 保留公开作展示）→ v0.9（2026-07-14：流程标准化规范 v1 —— 交付标准化包 docs/delivery-handover.md、模板库索引 templates/README.md + 新增行业模板 SOP、交付后第7天反馈循环 clients/ + §5.10、AI 协作规范 §13、中低优先待办 监控/定价/自动化测试/多语言）→ v0.9.1（2026-07-14：定价三套餐落地 —— 基础建站 £490 / +CMS 自助启用 £790 / +年度支持 £1,290/年，初始报价基准，首客交付后复盘重定，见 docs/pricing.md）。后续迭代请直接修改本文档并更新本行版本号与日期。*
+*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）→ v0.5（2026-07-14：slug 统一重命名 cr-me→creme、the-vault→vault，同步 THEMES 主题 key、门户链接、文档）→ v0.6（2026-07-14：部署依赖缓存 —— setup-node cache:'npm' + generate.mjs 改为「工程根一次性 npm ci + 各站点符号链接复用 node_modules」，10 站只装 1 次并命中 CI npm 缓存）→ v0.7（2026-07-14：客户自助 CMS 脚手架 —— Decap CMS + GitHub OAuth，admin/ 发布到 /demo-sites/admin/，完整映射 sotto-sotto 全部字段防保存丢字段，docs/cms.md 写清 OAuth 注册/逐站启用/生产模型/图片处理/安全防坑）→ v0.8（2026-07-14：客户自助 CMS 全量落地 —— gen-decap-config.mjs 自动生成全 10 站字段映射 100% 覆盖防丢字段；图片 ?v= 防缓存；演示站 /admin 保留公开作展示）→ v0.9（2026-07-14：流程标准化规范 v1 —— 交付标准化包 docs/delivery-handover.md、模板库索引 templates/README.md + 新增行业模板 SOP、交付后第7天反馈循环 clients/ + §5.10、AI 协作规范 §13、中低优先待办 监控/定价/自动化测试/多语言）→ v0.9.1（2026-07-14：定价三套餐落地 —— 基础建站 £490 / +CMS 自助启用 £790 / +年度支持 £1,290/年，初始报价基准，首客交付后复盘重定，见 docs/pricing.md）→ v0.9.2（2026-07-14：定价改进攻型两档 —— 建站含 CMS 自助 £590 一次性 / 年度呵护 £390/年，见 docs/pricing.md）→ v0.9.3（2026-07-14：监控 + 轻量冒烟落地 —— health-check.mjs + health-check.yml 每天定时查全站 200/挂载点/title、失败自动开/更 Issue、恢复自动关；smoke-test.mjs 校验每站产物非空壳接进 deploy.yml 阻断坏部署；UptimeRobot 外部探测 SOP 见 docs/monitoring.md）。后续迭代请直接修改本文档并更新本行版本号与日期。*

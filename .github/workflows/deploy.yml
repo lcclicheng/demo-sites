@@ -67,6 +67,11 @@ jobs:
           echo "=== public/ 内容 ==="
           ls -la public
 
+      # 冒烟测试（v0.9.3）：构建产物不是空壳的最后一道闸门（挂载点/JS/title 齐全）。
+      # 失败即阻断部署，避免把坏页面推上线。视觉回归（Playwright）留待站点数增多后再上。
+      - name: Smoke test built artifacts
+        run: node smoke-test.mjs
+
       - name: Generate sitemap.xml + robots.txt (SEO)
         run: node gen-seo.mjs
 
