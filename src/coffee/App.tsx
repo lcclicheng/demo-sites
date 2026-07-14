@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, ArrowUpRight, Send, Check, Coffee, Bean, CircleDot, Instagram, Facebook } from 'lucide-react'
 import { coffeeData } from './business-data'
-import { HeroBackdrop, StatsStrip, GradientText } from './components/visual'
+import { HeroBackdrop, StatsStrip, GradientText, Eyebrow } from './components/visual'
 
 const d = coffeeData
 
@@ -116,7 +116,7 @@ export default function App() {
         <div className="absolute inset-0 ritual-pattern opacity-[0.03]"/>
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 sm:mt-0">
           <motion.div initial={{opacity:0,y:60}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}} className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6"><div className="h-px w-12 bg-vermillion"/><span className="text-xs tracking-[0.3em] uppercase text-vermillion font-semibold">{d.subtitle}</span></div>
+            <div className="flex items-center gap-3 mb-6"><div className="h-px w-12 bg-vermillion"/><Eyebrow className="text-vermillion">{d.subtitle}</Eyebrow></div>
             <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-6 break-words"><GradientText>{d.heroLine1}</GradientText><br/><span className="text-vermillion">{d.heroLine2}</span></h1>
             <p className="text-lg sm:text-xl text-stone max-w-lg mb-10 leading-relaxed">{d.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -144,7 +144,7 @@ export default function App() {
       <section id="menu" className="py-24 sm:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <motion.div {...fadeView(0)} className="text-center mb-16">
-            <div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-vermillion"/><span className="text-xs tracking-[0.3em] uppercase text-vermillion font-semibold">{d.menuTitle}</span><div className="h-px w-8 bg-vermillion"/></div>
+            <div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-vermillion"/><Eyebrow className="text-vermillion">{d.menuTitle}</Eyebrow><div className="h-px w-8 bg-vermillion"/></div>
             <h2 className="font-display text-5xl sm:text-6xl font-bold">{d.menuSubtitle}</h2>
           </motion.div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -166,7 +166,7 @@ export default function App() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full border border-vermillion/10 -translate-y-1/2 translate-x-1/4"/>
         <div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center">
           <motion.div {...fadeView(0)}>
-            <div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-vermillion"/><span className="text-xs tracking-[0.3em] uppercase text-vermillion font-semibold">Order</span><div className="h-px w-8 bg-vermillion"/></div>
+            <div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-vermillion"/><Eyebrow className="text-vermillion">Order</Eyebrow><div className="h-px w-8 bg-vermillion"/></div>
             <h2 className="font-display text-5xl sm:text-6xl font-bold mb-4">Skip the <span className="text-vermillion italic">queue</span>.</h2>
           </motion.div>
           <motion.form {...fadeView(0.1)} onSubmit={handleOrder} className="bg-white rounded-3xl p-6 sm:p-8 border border-ink/5">

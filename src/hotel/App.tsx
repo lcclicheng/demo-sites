@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Instagram, Facebook } from 'lucide-react'
 import { hotelData } from './business-data'
-import { HeroBackdrop, GradientText } from './components/visual'
+import { HeroBackdrop, GradientText, Eyebrow } from './components/visual'
 const d = hotelData
 
 
@@ -121,7 +121,7 @@ export default function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 sm:mt-0">
           <motion.div initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}} className="max-w-3xl">
             <div className="flex items-center gap-4 mb-6">
-              <div className="h-px w-10 bg-gold/40"/><span className="text-xs tracking-[0.3em] uppercase text-emerald font-semibold">Boutique Hotel · {d.location}</span>
+              <div className="h-px w-10 bg-gold/40"/><Eyebrow className="text-emerald">Boutique Hotel · {d.location}</Eyebrow>
             </div>
 
             {/* Dramatic title — mansion feel, not yoga */}
@@ -152,7 +152,7 @@ export default function App() {
 
       {/* ROOMS — Arch-top cards */}
       <section id="rooms" className="py-28 bg-white"><div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <motion.div {...fadeIn} className="mb-16"><div className="flex items-center gap-3 mb-4"><div className="h-px w-8 bg-gold/40"/><span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">{d.roomsSectionLabel}</span></div><h2 className="font-display text-4xl sm:text-5xl font-bold italic text-warm">{d.roomsSectionTitle}</h2></motion.div>
+        <motion.div {...fadeIn} className="mb-16"><div className="flex items-center gap-3 mb-4"><div className="h-px w-8 bg-gold/40"/><Eyebrow className="text-gold">{d.roomsSectionLabel}</Eyebrow></div><h2 className="font-display text-4xl sm:text-5xl font-bold italic text-warm">{d.roomsSectionTitle}</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {(d.rooms || []).map((r: any, i: number) => <motion.div key={i} {...fadeIn} className="group bg-cream rounded-2xl overflow-hidden border border-warm/10 hover:-translate-y-1 transition-all duration-500 hover:border-gold/20">
             {/* Arch top */}
@@ -174,7 +174,7 @@ export default function App() {
 
       {/* BOOKING */}
       <section id="book" className="py-28 bg-cream relative"><div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px]"/><div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center">
-        <motion.div {...fadeIn} className="mb-12"><div className="flex items-center justify-center gap-3 mb-5"><div className="h-px w-8 bg-gold/30"/><span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">{d.bookingSectionLabel}</span><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold italic text-warm mb-4">{d.bookingTitleBefore} <span className="text-gold not-italic">{d.bookingTitleHighlight}</span></h2></motion.div>
+        <motion.div {...fadeIn} className="mb-12"><div className="flex items-center justify-center gap-3 mb-5"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">{d.bookingSectionLabel}</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold italic text-warm mb-4">{d.bookingTitleBefore} <span className="text-gold not-italic">{d.bookingTitleHighlight}</span></h2></motion.div>
         <motion.form {...fadeIn} onSubmit={submit} className="bg-white rounded-2xl p-6 sm:p-8 border border-warm/10 text-left shadow-sm">
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div><label className="block text-xs font-semibold text-warm/40 uppercase tracking-wider mb-2">Name</label><input className="w-full h-12 rounded-xl border border-warm/15 px-4 text-sm focus:outline-none focus:border-gold/50" value={f.name} onChange={e=>setF({...f,name:e.target.value})} required/></div>

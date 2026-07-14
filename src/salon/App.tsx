@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Sparkles } from 'lucide-react'
 import { salonData } from './business-data'
-import { HeroBackdrop, GradientText, SquareMonogram } from './components/visual'
+import { HeroBackdrop, GradientText, SquareMonogram, Eyebrow } from './components/visual'
 const d = salonData
 
 
@@ -115,7 +115,7 @@ export default function App() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:pl-20 sm:pr-8 w-full mt-16 sm:mt-0">
           <motion.div initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}}>
-            <div className="flex items-center gap-3 mb-6"><div className="h-px w-8 bg-gold/40"/><span className="text-xs tracking-[0.3em] uppercase text-plum/40 font-medium">{d.heroBadge}</span></div>
+            <div className="flex items-center gap-3 mb-6"><div className="h-px w-8 bg-gold/40"/><Eyebrow className="text-plum/40">{d.heroBadge}</Eyebrow></div>
             <h1 className="font-display text-7xl sm:text-[12vw] lg:text-[10rem] font-bold italic leading-[0.85] text-plum mb-3 break-words"><GradientText>{d.heroLine1}</GradientText></h1>
             <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8 tracking-wide">{d.heroLine2}</p>
             <div className="flex items-center gap-4 mb-8">
@@ -137,7 +137,7 @@ export default function App() {
       </div></div>
 
       <section id="services" className="py-28 bg-white"><div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <motion.div {...fadeIn} className="mb-16"><div className="flex items-center gap-3 mb-4"><div className="h-px w-8 bg-gold/40"/><span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Our Services</span></div><h2 className="font-display text-4xl sm:text-5xl italic text-plum">Tailored to you.</h2></motion.div>
+        <motion.div {...fadeIn} className="mb-16"><div className="flex items-center gap-3 mb-4"><div className="h-px w-8 bg-gold/40"/><Eyebrow className="text-gold">Our Services</Eyebrow></div><h2 className="font-display text-4xl sm:text-5xl italic text-plum">Tailored to you.</h2></motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {allServices.map((s,i)=><motion.div key={i} {...fadeIn} className={`group bg-ivory rounded-xl p-6 border-l-4 border-transparent hover:border-gold hover:-translate-y-1 transition-all duration-500 ${(s as any).span===2?'md:col-span-2':''}`}>
             <div className="flex items-center gap-2 mb-3"><span className="text-[10px] text-gold font-semibold bg-gold/10 px-2 py-0.5 rounded">{s.time}</span></div>
@@ -149,7 +149,7 @@ export default function App() {
       </div></section>
 
       <section id="stylists" className="py-28 bg-ivory relative"><div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px]"/><div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
-        <motion.div {...fadeIn} className="text-center mb-14"><div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-gold/30"/><span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Meet the Team</span><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl italic text-plum">Artists at <span className="text-gold not-italic">work</span>.</h2></motion.div>
+        <motion.div {...fadeIn} className="text-center mb-14"><div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">Meet the Team</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl italic text-plum">Artists at <span className="text-gold not-italic">work</span>.</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {(d.stylists || []).map((s,i)=><motion.div key={i} {...fadeIn} className="group bg-white rounded-xl p-8 text-center border border-plum/5 hover:-translate-y-1 transition-all duration-500 hover:border-gold/20">
             <SquareMonogram initials={s.initials} className="mx-auto mb-4" />
@@ -159,7 +159,7 @@ export default function App() {
       </div></section>
 
       <section id="book" className="py-28 bg-white relative"><div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-[120px]"/><div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center">
-        <motion.div {...fadeIn} className="mb-12"><div className="flex items-center justify-center gap-3 mb-5"><div className="h-px w-8 bg-gold/30"/><span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Bookings</span><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl italic text-plum mb-4">Reserve your <span className="text-gold not-italic">time</span>.</h2></motion.div>
+        <motion.div {...fadeIn} className="mb-12"><div className="flex items-center justify-center gap-3 mb-5"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">Bookings</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl italic text-plum mb-4">Reserve your <span className="text-gold not-italic">time</span>.</h2></motion.div>
         <motion.form {...fadeIn} onSubmit={submit} className="bg-ivory rounded-2xl p-6 sm:p-8 border border-plum/5 text-left">
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div><label className="block text-xs font-semibold text-plum/40 uppercase tracking-wider mb-2">Name</label><input className="w-full h-12 rounded-xl border border-plum/10 px-4 text-sm bg-white/70 focus:outline-none focus:border-gold/50" value={f.name} onChange={e=>setF({...f,name:e.target.value})} required/></div>

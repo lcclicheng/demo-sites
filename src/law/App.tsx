@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Scale, Shield } from 'lucide-react'
 import { lawData } from './business-data'
-import { HeroBackdrop, GradientText } from './components/visual'
+import { HeroBackdrop, GradientText, Eyebrow } from './components/visual'
 const d = lawData
 
 
@@ -114,7 +114,7 @@ export default function App() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 sm:mt-0">
           <motion.div initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}} className="max-w-4xl">
-            <p className="text-xs tracking-[0.3em] uppercase text-gold font-semibold mb-8">{d.subtitle} · Est. {d.established} · {d.location}</p>
+            <Eyebrow className="text-gold mb-8">{d.subtitle} · Est. {d.established} · {d.location}</Eyebrow>
 
             {/* TIGHT three-line — much less spacing than before */}
             <h1 className="font-display text-6xl sm:text-[10vw] lg:text-[8rem] font-bold leading-[1.02] text-navy mb-6 break-words">
@@ -146,7 +146,7 @@ export default function App() {
       </div></div>
 
       <section id="services" className="py-28 bg-white"><div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <motion.div {...fadeIn} className="mb-16"><div className="flex items-center gap-3 mb-4"><div className="h-px w-8 bg-gold/40"/><span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">{d?.sections?.services?.label}</span></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy">{d?.sections?.services?.title} <span className="text-gold italic">{d?.sections?.services?.titleHighlight}</span></h2></motion.div>
+        <motion.div {...fadeIn} className="mb-16"><div className="flex items-center gap-3 mb-4"><div className="h-px w-8 bg-gold/40"/><Eyebrow className="text-gold">{d?.sections?.services?.label}</Eyebrow></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy">{d?.sections?.services?.title} <span className="text-gold italic">{d?.sections?.services?.titleHighlight}</span></h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {(d.services || []).map((s: any, i: number) => <motion.div key={i} {...fadeIn} className="group bg-cream rounded-sm p-6 border-l-4 border-transparent hover:border-gold hover:-translate-y-1 transition-all duration-500">
             <h3 className="font-display text-lg font-semibold text-navy mb-2">{s.name}</h3><p className="text-sm text-navy/60 leading-relaxed">{s.desc}</p>
@@ -155,7 +155,7 @@ export default function App() {
       </div></section>
 
       <section id="team" className="py-28 bg-cream relative"><div className="absolute top-0 right-0 w-80 h-80 bg-gold/4 rounded-full blur-[100px]"/><div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
-        <motion.div {...fadeIn} className="text-center mb-14"><div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-gold/30"/><span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">{d?.sections?.team?.label}</span><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy">{d?.sections?.team?.title} <span className="text-gold italic">{d?.sections?.team?.titleHighlight}</span></h2></motion.div>
+        <motion.div {...fadeIn} className="text-center mb-14"><div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">{d?.sections?.team?.label}</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy">{d?.sections?.team?.title} <span className="text-gold italic">{d?.sections?.team?.titleHighlight}</span></h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {(d.lawyers || []).map((lw: any, i: number) => <motion.div key={i} {...fadeIn} className="bg-white rounded-sm p-8 text-center border border-navy/10 hover:-translate-y-1 transition-all duration-500">
             <div className="w-20 h-20 bg-navy flex items-center justify-center text-xl font-display text-gold font-bold mx-auto mb-4">{lw.initials}</div>
@@ -165,7 +165,7 @@ export default function App() {
       </div></section>
 
       <section id="contact" className="py-28 bg-white"><div className="max-w-2xl mx-auto px-5 sm:px-8 text-center">
-        <motion.div {...fadeIn} className="mb-12"><div className="flex items-center justify-center gap-3 mb-5"><div className="h-px w-8 bg-gold/30"/><span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">{d?.sections?.contact?.label}</span><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy mb-4">{d?.sections?.contact?.title} <span className="text-gold italic">{d?.sections?.contact?.titleHighlight}</span></h2><p className="text-navy/50 text-sm">{d?.sections?.contact?.description}</p></motion.div>
+        <motion.div {...fadeIn} className="mb-12"><div className="flex items-center justify-center gap-3 mb-5"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">{d?.sections?.contact?.label}</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl font-bold text-navy mb-4">{d?.sections?.contact?.title} <span className="text-gold italic">{d?.sections?.contact?.titleHighlight}</span></h2><p className="text-navy/50 text-sm">{d?.sections?.contact?.description}</p></motion.div>
         <motion.form {...fadeIn} onSubmit={submit} className="bg-cream rounded-sm p-6 sm:p-8 border border-navy/10 text-left">
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div><label className="block text-xs font-bold text-navy/40 uppercase tracking-wider mb-2">{d?.form?.labels?.name}</label><input className="w-full h-12 rounded-sm border border-navy/15 px-4 text-sm bg-white focus:outline-none focus:border-gold/50" value={f.name} onChange={e=>setF({...f,name:e.target.value})} required/></div>

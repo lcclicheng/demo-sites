@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Sparkles, Instagram, Facebook } from 'lucide-react'
 import { yogaData } from './business-data'
-import { HeroBackdrop, StatsStrip, GradientText, SquareMonogram } from './components/visual'
+import { HeroBackdrop, StatsStrip, GradientText, SquareMonogram, Eyebrow } from './components/visual'
 const d = yogaData
 
 
@@ -105,7 +105,7 @@ export default function App() {
         <div className="absolute bottom-1/4 left-[5%] w-80 h-80 bg-sage-200/30 rounded-full blur-[100px]"/>
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 sm:mt-0">
           <motion.div initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:1}} className="max-w-2xl">
-            <p className="text-sage-500 text-sm tracking-[0.2em] uppercase font-medium mb-4">{d.subtitle} · {d.location}</p>
+            <Eyebrow className="text-sage-500 mb-4">{d.subtitle} · {d.location}</Eyebrow>
             <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl font-light italic leading-[0.92] mb-6 break-words">
               <GradientText>{d.heroLine1}</GradientText><br/><span className="text-sage-700 not-italic font-normal">{d.heroLine2}</span><br/><span className="text-sage-800 not-italic font-normal">{d.heroLine3}</span>
             </h1>
@@ -130,7 +130,7 @@ export default function App() {
 
       {/* CLASSES */}
       <section id="classes" className="py-24 sm:py-32 bg-white"><div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <motion.div {...fadeView(0)} className="text-center mb-14"><p className="text-xs tracking-[0.3em] uppercase text-sage-500 font-semibold mb-4">{d.classTitle}</p><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">{d.classSubtitle}</h2></motion.div>
+        <motion.div {...fadeView(0)} className="text-center mb-14"><Eyebrow className="text-sage-500 mb-4">{d.classTitle}</Eyebrow><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">{d.classSubtitle}</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {(d.classes || []).map((c,i)=><motion.div key={i} {...fadeView(i*0.05)} className="group bg-cream rounded-3xl p-6 border border-sage-100 hover:border-emerald-200 hover:-translate-y-1 transition-all duration-300">
             <div className="flex items-center gap-2 mb-3"><span className="text-[10px] tracking-[0.15em] uppercase text-sage-400 font-semibold bg-sage-50 px-2 py-1 rounded-full">{c.level}</span><span className="text-[10px] text-sage-300">{c.time}</span></div>
@@ -143,7 +143,7 @@ export default function App() {
 
       {/* TEACHERS */}
       <section id="teachers" className="py-24 sm:py-32 bg-sage-50/50"><div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <motion.div {...fadeView(0)} className="text-center mb-14"><p className="text-xs tracking-[0.3em] uppercase text-sage-500 font-semibold mb-4">Our Teachers</p><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">Guides on your <span className="not-italic text-sage-700">journey</span>.</h2></motion.div>
+        <motion.div {...fadeView(0)} className="text-center mb-14"><Eyebrow className="text-sage-500 mb-4">Our Teachers</Eyebrow><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">Guides on your <span className="not-italic text-sage-700">journey</span>.</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {(d.teachers || []).map((t,i)=><motion.div key={i} {...fadeView(i*0.1)} className="bg-white rounded-2xl p-6 text-center hover:-translate-y-1 transition-all duration-300">
             <SquareMonogram initials={t.initials} className="mx-auto mb-4" />
@@ -155,7 +155,7 @@ export default function App() {
       {/* BOOK */}
       <section id="book" className="py-24 sm:py-32 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/30 rounded-full blur-[120px]"/>
-        <div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center"><motion.div {...fadeView(0)} className="mb-10"><p className="text-xs tracking-[0.3em] uppercase text-sage-500 font-semibold mb-4">Book a Class</p><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">Begin your <span className="not-italic text-sage-700">practice</span>.</h2></motion.div>
+        <div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center"><motion.div {...fadeView(0)} className="mb-10"><Eyebrow className="text-sage-500 mb-4">Book a Class</Eyebrow><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">Begin your <span className="not-italic text-sage-700">practice</span>.</h2></motion.div>
           <motion.form {...fadeView(0.1)} onSubmit={submit} className="bg-cream rounded-3xl p-6 sm:p-8 border border-sage-100">
             <div className="grid grid-cols-2 gap-4 mb-4"><div><label className="block text-xs font-semibold text-sage-500 uppercase tracking-wider mb-2">Name</label><input className="w-full h-12 rounded-xl border border-sage-200 px-4 text-sm bg-white/70 focus:outline-none focus:border-emerald-300" value={f.name} onChange={e=>setF({...f,name:e.target.value})} required/></div><div><label className="block text-xs font-semibold text-sage-500 uppercase tracking-wider mb-2">Email</label><input type="email" className="w-full h-12 rounded-xl border border-sage-200 px-4 text-sm bg-white/70 focus:outline-none focus:border-emerald-300" value={f.email} onChange={e=>setF({...f,email:e.target.value})} required/></div></div>
             <div className="grid grid-cols-2 gap-4 mb-6"><div><label className="block text-xs font-semibold text-sage-500 uppercase tracking-wider mb-2">Class</label><select className="w-full h-12 rounded-xl border border-sage-200 px-4 text-sm bg-white/70 focus:outline-none focus:border-emerald-300" value={f.cls} onChange={e=>setF({...f,cls:e.target.value})} required><option value="">Select</option>{(d.classes || []).map(c=><option key={c.name}>{c.name}</option>)}</select></div><div><label className="block text-xs font-semibold text-sage-500 uppercase tracking-wider mb-2">Date</label><input type="date" className="w-full h-12 rounded-xl border border-sage-200 px-4 text-sm bg-white/70 focus:outline-none focus:border-emerald-300" value={f.date} onChange={e=>setF({...f,date:e.target.value})} required/></div></div>

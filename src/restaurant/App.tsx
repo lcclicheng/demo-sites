@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { Star, Phone, MapPin, Clock, ArrowRight, Send, Check, X, Menu, Sparkles, Wine, UtensilsCrossed, Flame, Lamp, Salad } from 'lucide-react'
-import { HeroBackdrop, GradientText } from './components/visual'
+import { HeroBackdrop, GradientText, Eyebrow } from './components/visual'
 import { businessData } from './business-data'
 
 const d = businessData
@@ -297,7 +297,7 @@ export default function App() {
           <motion.div {...fadeIn} className="text-center mb-20">
             <div className="flex items-center justify-center gap-3 mb-6">
               <UtensilsCrossed className="w-4 h-4 text-gold/60" />
-              <span className="text-[10px] tracking-[0.4em] uppercase text-gold font-semibold">The Menu</span>
+              <Eyebrow className="text-gold">The Menu</Eyebrow>
             </div>
             <h2 className="font-display text-4xl sm:text-6xl font-bold italic text-paper mb-5">
               {d.menuIntroTitle}
@@ -418,7 +418,7 @@ export default function App() {
         <section id="space" className="py-24 sm:py-36 relative">
           <div className="relative z-10 max-w-7xl mx-auto px-5 sm:pl-20 sm:pr-8">
             <motion.div {...fadeIn} className="text-center mb-16">
-              <span className="block text-[10px] tracking-[0.4em] uppercase text-gold font-semibold mb-4">The Room</span>
+              <Eyebrow className="text-gold mb-4">The Room</Eyebrow>
               <h2 className="font-display text-4xl sm:text-6xl font-bold italic text-paper mb-4">
                 Inside <span className="text-gold not-italic">Sotto Sotto</span>
               </h2>
@@ -542,7 +542,7 @@ export default function App() {
           <motion.div {...fadeIn} className="text-center mb-14">
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="h-px w-10 bg-gold/30" />
-              <span className="text-[10px] tracking-[0.4em] uppercase text-gold font-semibold">Reservations</span>
+              <Eyebrow className="text-gold">Reservations</Eyebrow>
               <div className="h-px w-10 bg-gold/30" />
             </div>
             <h2 className="font-display text-4xl sm:text-6xl font-bold italic text-paper mb-5">

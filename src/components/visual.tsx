@@ -124,10 +124,10 @@ export function ConfettiBg({ className = '' }: { className?: string }) {
 
 /* ── Section eyebrow: small uppercase kicker used before headings ──
    Keeps the "label · label" micro-typography consistent across templates. */
-export function Eyebrow({ children }: { children: ReactNode }) {
+export function Eyebrow({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
     <p
-      className="text-[10px] sm:text-xs tracking-[0.3em] uppercase font-semibold mb-4"
+      className={`text-[10px] sm:text-xs tracking-[0.3em] uppercase font-semibold ${className}`}
       style={{ opacity: 0.7 }}
     >
       {children}

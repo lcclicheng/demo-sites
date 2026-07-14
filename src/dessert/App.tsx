@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Star, ArrowRight, Cake, Send, Check, MapPin, Clock, Phone, Menu, X, Sparkles } from 'lucide-react'
 import { dessertData } from './business-data'
-import { HeroBackdrop, GradientText, ConfettiBg } from './components/visual'
+import { HeroBackdrop, GradientText, ConfettiBg, Eyebrow } from './components/visual'
 
 const d = dessertData
 
@@ -152,7 +152,7 @@ export default function App() {
             {/* Badge */}
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-xs tracking-[0.3em] uppercase text-espresso/40 font-medium">{d.location}</span>
+              <Eyebrow className="text-espresso/40">{d.location}</Eyebrow>
               <div className="flex gap-0.5 ml-2">{Array(5).fill(0).map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />)}</div>
               <span className="text-xs text-espresso/30">{d.googleRating}</span>
             </div>
@@ -194,7 +194,7 @@ export default function App() {
           <motion.div {...fadeIn} className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="h-px w-8 bg-gold/40" />
-              <span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">{d.pastriesTitle}</span>
+              <Eyebrow className="text-gold">{d.pastriesTitle}</Eyebrow>
               <div className="h-px w-8 bg-gold/40" />
             </div>
             <p className="text-sm text-espresso/40">{d.pastriesSubtitle}</p>
@@ -224,7 +224,7 @@ export default function App() {
           <motion.div {...fadeIn} className="text-center mb-14">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Cake className="w-5 h-5 text-gold" />
-              <span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">{d.cakesTitle}</span>
+              <Eyebrow className="text-gold">{d.cakesTitle}</Eyebrow>
             </div>
             <p className="text-sm text-espresso/40">{d.cakesSubtitle}</p>
           </motion.div>
@@ -253,7 +253,7 @@ export default function App() {
           <motion.div {...fadeIn} className="text-center mb-14">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="h-px w-8 bg-gold/30" />
-              <span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">{d.chocolateTitle}</span>
+              <Eyebrow className="text-gold">{d.chocolateTitle}</Eyebrow>
               <div className="h-px w-8 bg-gold/30" />
             </div>
             <p className="text-sm text-ivory/40">{d.chocolateSubtitle}</p>
@@ -280,7 +280,7 @@ export default function App() {
           <motion.div {...fadeIn} className="mb-12">
             <div className="flex items-center justify-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold/30" />
-              <span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">{d.orderTitle}</span>
+              <Eyebrow className="text-gold">{d.orderTitle}</Eyebrow>
               <div className="h-px w-8 bg-gold/30" />
             </div>
             <h2 className="font-display text-5xl sm:text-6xl font-bold italic mb-4 text-espresso">{d.orderSubtitle}</h2>
