@@ -423,6 +423,7 @@ git push origin main      # 走 SSH，无需 PAT
 | 自动化 UI 测试（构建后冒烟检查） | 中/中 | ✅ 已落地（v0.9.3：`smoke-test.mjs` 校验每站产物含挂载点/JS/title 非空壳，接进 `deploy.yml` Assemble 之后阻断坏部署）；Playwright 逐像素**视觉回归**留待站点数 >15 或有真实客户再上 | v0.9.3（冒烟）/ v1.0+（视觉回归） | AI |
 | **共享视觉手法系统（Hero+视觉库）** | 低/中 | ✅ 已落地（v0.9.4：从 20 个旧站抽取设计手法沉淀为 `src/components/visual.tsx`（HeroBackdrop/StatsStrip/GradientText/GlassCard/ConfettiBg/Eyebrow），`generate.mjs` 注入 `VISUAL_CSS`（particles/breathe-ring/gradient-text 等）+ `copyDir` 拷贝组件；7 套模板 hero 注入发光背景+呼吸环+粒子、流光标题，咖啡/瑜伽加指标条；restaurant 保留原生等效手法；全 `currentColor`+`color-mix` 主题自适应，亮暗模板通用；v0.9.5 GlassCard/ConfettiBg 入区块层、v0.9.6 再增 SquareMonogram + HeroBackdrop 网格变体） | v0.9.4 | AI |
 | 多语言准备（onboarding.html 英文版，未来英国客户直用） | 低/中 | ⏸ 暂缓（决策 2026-07-14）：交付包已英文化、`onboarding.html` 是**你（owner）自用**的中文接入工具、客户不直接接触，故现无实际英文消费者。**触发条件**：出现要自助填料的英国直客、或把接入工具开放给客户时，再补英文版（约半天工作量） | 触发后 | AI |
+| **9 个 demo 改用真实英国商家（内容真实化）** | 中/高 | 🔲 待做（当前仅 Sotto Sotto 为真商家 demo，其余 9 个为虚构品牌+编造文案；用户自己物色 9 个真实商家+照片，按 intake 清单给 AI 逐个生成；命名用真实商家名同 Sotto，照片优先真图否则 Openverse CC 授权占位标注可替换；9 slot→模板：MONO Coffee(coffee)/Atelier Salon(salon)/Crème Dessert(dessert)/Breath Yoga(yoga)/Chambers Law(law)/The Vault Hotel(hotel)/Forge Trades(trades)/Mario's Pizzeria(restaurant)/Patisserie(dessert)） | v1.0 | 你（找真实商家+照片）/ AI（生成 demo） |
 
 ---
 
