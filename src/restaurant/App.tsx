@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { Star, Phone, MapPin, Clock, ArrowRight, Send, Check, X, Menu, Sparkles, Wine, UtensilsCrossed, Flame, Lamp, Salad } from 'lucide-react'
+import { HeroBackdrop, GradientText } from './components/visual'
 import { businessData } from './business-data'
 
 const d = businessData
@@ -196,6 +197,7 @@ export default function App() {
 
       {/* HERO */}
       <section ref={heroRef} id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <HeroBackdrop particles={false} />
         <div className="particles">
           {Array(12).fill(0).map((_, i) => (
             <div key={i} className="particle" />
@@ -226,7 +228,7 @@ export default function App() {
           </div>
 
           <h1 className="font-display text-6xl sm:text-[11vw] lg:text-[9rem] font-bold italic leading-[0.9] mb-6 tracking-tight break-words">
-            <span className="text-paper">{d.heroLine1}</span>
+            <span className="text-paper"><GradientText>{d.heroLine1}</GradientText></span>
             <br />
             <span className="text-gold block text-4xl sm:text-[5vw] lg:text-7xl font-normal not-italic mt-2 tracking-[0.08em] break-words">
               {d.heroLine2}

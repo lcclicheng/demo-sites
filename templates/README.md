@@ -32,7 +32,7 @@
 - `gen-decap-config.mjs` — 自动生成 Decap CMS 字段映射（100% 覆盖防丢字段）
 - `validate-sites.mjs` — 部署前校验闸门（缺图 / 缺字段 / 孤儿站点）
 - `inject-privacy.mjs` — 隐私 / 注册地址 / 发票 / 合同页注入
-- `src/components/visual.tsx` — **共享视觉手法库**（HeroBackdrop[default|grid] / StatsStrip / GradientText / GlassCard / ConfettiBg / SquareMonogram / Eyebrow），从 20 个旧站（`premium-*`/`bento-dashboard`/`vanguard-landing` 等）抽取沉淀；全 `currentColor`+`color-mix` 主题自适应，亮暗模板通用；构建时由 `generate.mjs` 注入 `VISUAL_CSS` + `copyDir` 拷贝进每站。8 套模板 hero 现已注入发光背景+呼吸环+粒子、流光标题（restaurant 保留原生等效手法）；GlassCard 已实际用于 trades 评价卡片（信任区块磨砂面板）、ConfettiBg 已实际用于 dessert 下单区（点阵纹理）；SquareMonogram 已实际用于 salon 造型师/yoga 老师（方形首字母替代圆头像，editorial 编辑感）；HeroBackdrop variant="grid"（bento-dashboard 建筑感点阵网格）已用于 hotel hero；Eyebrow 因各模板已手写 kicker+分隔线，暂不强制使用
+- `src/components/visual.tsx` — **共享视觉手法库**（HeroBackdrop[default|grid] / StatsStrip / GradientText / GlassCard / ConfettiBg / SquareMonogram / Eyebrow），从 20 个旧站（`premium-*`/`bento-dashboard`/`vanguard-landing` 等）抽取沉淀；全 `currentColor`+`color-mix` 主题自适应，亮暗模板通用；构建时由 `generate.mjs` 注入 `VISUAL_CSS` + `copyDir` 拷贝进每站。全 8 套模板 hero 现已注入发光背景+呼吸环+粒子、流光标题（restaurant 在 v0.9.7 已补齐为最后一站：HeroBackdrop+GradientText，与其余 7 套一致；此前保留原生等效手法）；GlassCard 已实际用于 trades 评价卡片（信任区块磨砂面板）、ConfettiBg 已实际用于 dessert 下单区（点阵纹理）；SquareMonogram 已实际用于 salon 造型师/yoga 老师（方形首字母替代圆头像，editorial 编辑感）；HeroBackdrop variant="grid"（bento-dashboard 建筑感点阵网格）已用于 hotel hero；Eyebrow 因各模板已手写 kicker+分隔线，暂不强制使用
 
 ## 约定与红线
 
