@@ -45,8 +45,9 @@ collections:
         file: "examples/atelier-salon.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -228,15 +229,17 @@ collections:
             label: "Established Text"
             widget: string
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
       - name: "breath-yoga"
         label: "BREATH · Bath, UK · Yoga & Wellness"
         file: "examples/breath-yoga.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -473,15 +476,17 @@ collections:
                 label: "Cta"
                 widget: string
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
       - name: "chambers-law"
         label: "CHAMBERS · Bath, UK · Solicitors"
         file: "examples/chambers-law.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -674,15 +679,17 @@ collections:
                 label: "Hours"
                 widget: string
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
       - name: "creme-dessert"
         label: "CRÈME · Bath, UK"
         file: "examples/creme-dessert.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -975,15 +982,17 @@ collections:
             widget: list
             field: { label: "项", widget: string }
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
       - name: "forge-trades"
         label: "FORGE · Leeds, UK · Plumbing · Heating · Electrical"
         file: "examples/forge-trades.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -1240,15 +1249,17 @@ collections:
                 label: "Cta"
                 widget: string
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
       - name: "mario-pizza"
         label: "Mario's Pizzeria · Leeds, UK · Wood-Fired Pizza"
         file: "examples/mario-pizza.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -1467,15 +1478,17 @@ collections:
                 min: 1
                 max: 5
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
       - name: "mono-coffee"
         label: "MONO · Shoreditch, London · Specialty Coffee"
         file: "examples/mono-coffee.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -1651,15 +1664,17 @@ collections:
             label: "Nav Cta Text"
             widget: string
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
       - name: "patisserie-v2"
         label: "PATISSERIE · Bath, UK · French Craft"
         file: "examples/patisserie-v2.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -1862,15 +1877,17 @@ collections:
             label: "Footer Note"
             widget: string
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
       - name: "sotto-sotto"
         label: "Sotto Sotto · Bath, UK · Italian Restaurant"
         file: "examples/sotto-sotto.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -2109,15 +2126,17 @@ collections:
                 min: 1
                 max: 5
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
       - name: "vault-hotel"
         label: "THE VAULT · Bath, UK"
         file: "examples/vault-hotel.json"
         fields:
           - name: template
-            label: "Template"
-            widget: string
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
           - name: name
             label: "Name"
             widget: string
@@ -2306,5 +2325,6 @@ collections:
             label: "Footer Copyright"
             widget: string
           - name: slug
-            label: "Slug"
-            widget: string
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true

@@ -4,7 +4,7 @@
 > 配套：`admin/index.html` + `admin/config.yml`（仓库内脚手架）；`deploy.yml` 已把 `admin/` 发布到线上 `/demo-sites/admin/`。
 > 关联：`workflow.md` §5.9（交付后维护流程）、§11（客户自助 CMS 已完成 v0.8，全 10 站自动映射）。
 
-> 🌐 **演示站 `/admin` 故意公开**：当前 `admin/config.yml` 的 `client_id` 未填，`/demo-sites/admin/` 任何人都能打开但**登录会失败**（无 OAuth 凭证），仅作能力展示、不暴露编辑权限，安全。真实客户启用时见下方「生产模型」。
+> 🌐 **演示站 `/admin` 已激活并公开**：`client_id` 已填入并注册 OAuth App，`https://lcclicheng.github.io/demo-sites/admin/` 任何人都能打开、且**能用你的 GitHub 账号登录编辑**（你本人有仓库写权限）。它既是能力展示、也可作获客卖点；真实客户请走下方「生产模型」（独立仓库 + 协作者隔离），**勿在演示仓库给客户写权限**。
 
 ---
 
@@ -41,7 +41,7 @@ examples/<slug>.json  ──commit──▶  GitHub repo main  ──push 触发
 
 ## 3. 一次性激活：注册 GitHub OAuth App（你做一遍，全站复用）
 
-`admin/config.yml` 里的 `backend.client_id` 现在是占位注释，所以 `/admin` 能打开但**登录会失败**（正常，不是 bug）。激活只需一次：
+`admin/config.yml` 里的 `backend.client_id` **已填入并激活**（你注册的 OAuth App Client ID：`Ov23lifKVTnpwVMYhl3r`），`/demo-sites/admin/` 已可登录编辑。下面是**给真实客户在其独立仓库启用时**的标准注册步骤（演示站已激活，客户仓库需各自注册 OAuth App）：
 
 1. 打开 GitHub → 右上角头像 → **Settings → Developer settings → OAuth Apps → New OAuth App**
 2. 填：
@@ -49,18 +49,18 @@ examples/<slug>.json  ──commit──▶  GitHub repo main  ──push 触发
    - **Homepage URL**：`https://lcclicheng.github.io/demo-sites/`
    - **Authorization callback URL**：`https://lcclicheng.github.io/demo-sites/admin/`
      （必须精确等于 Decap 所在页面 URL，含结尾 `/admin/`）
-3. 创建后拿到 **Client ID**（和 Client Secret，本方案只需 Client ID，Secret 可留空）
-4. 编辑 `admin/config.yml`，把这一行取消注释并填入：
+3. 创建后拿到 **Client ID**（和 Client Secret）。🔒 **本方案只用 Client ID，Client Secret 永远不要写进 `config.yml`**——它是前端公开加载的，写进去会泄露；Secret 留空即可，无需提交
+4. 编辑客户仓库的 `admin/config.yml`，把 `client_id` 填入客户自己的 Client ID（演示站已填好，无需再改）：
    ```yaml
    backend:
      name: github
-     repo: lcclicheng/demo-sites
+     repo: <客户仓库名>
      branch: main
      base_url: https://api.github.com
      auth_scope: repo
-     client_id: "这里填你的 Client ID"
+     client_id: "客户仓库的 Client ID"   # 🔒 只填 ID；绝不填 Client Secret
    ```
-5. `git add -u && git commit && git push origin main` —— Actions 重新部署后，`/admin` 即可用 GitHub 账号登录编辑。
+5. `git add -u && git commit && git push origin main` —— Actions 重新部署后，该仓库的 `/admin` 即可用对应 GitHub 账号登录编辑。
 
 > 权限说明：`auth_scope: repo` 表示该 GitHub 账号需对 `lcclicheng/demo-sites` 有**写权限**才能保存。当前仓库只有你本人有写权限 → 只有你能登录编辑。把某客户加为仓库**协作者**即可让他也能改（见 §6 生产模型）。
 
@@ -73,22 +73,25 @@ examples/<slug>.json  ──commit──▶  GitHub repo main  ──push 触发
 3. 左侧选站点（如 Sotto Sotto）→ 表单改名称 / 电话 / 菜单 / 关于 / 评价 / 营业时间等
 4. 点「Publish」→ 立即 commit 到 `main` → 等 Actions 跑完（约数分钟）→ 刷新站点即见新内容
 
-> 图片：当前脚手架把图片路径当作**字符串**编辑（如 `./images/screenshot-1.jpg`），不接 Decap 上传组件。客户可切换「引用哪张已存在的图」；要换真实照片仍由你（owner）把图覆盖进 `assets/<slug>/`（或未来启用上传，见 §7）。
+> **演示期图片编辑方案（子路径部署下）**：当前脚手架把图片路径当作**字符串**编辑（如 `./images/screenshot-1.jpg`），不接 Decap 上传组件。客户在 `/admin` 里只能「切换引用哪张已存在的图」；要换真实照片，由你（owner）把新图覆盖进 `assets/<slug>/` 同名文件（图片已带 `?v=` 防缓存，覆盖后即刷新），再让客户在 CMS 里把路径指到新文件名。这比开放上传更稳，且规避子路径下 `public_folder` 错位 404。
+>
+> ⚠️ **强烈建议真实客户直接走「形态 A：独立仓库 + 根路径自定义域名」**（`custom-domain.md`）：根路径下 `public_folder: /images` 才正确，届时可在 CMS 启用图片上传（§7），客户自助传图、体验完整。演示仓库 `/demo-sites/<slug>/` 子路径的图片上传兼容性坑，都由此规避。
 
 ---
 
-## 5. 启用更多站点（recipe）
+## 5. 全 10 站自动映射（已落地，无需手工加站）
 
-Decap 保存时**只写配置里出现的字段，未列出的 key 会被丢弃** —— 所以每个站点必须在 `config.yml` 里**完整映射其 JSON 的全部 key**（含结构性 `template` / `slug`），否则保存会丢字段、站点残缺甚至构建崩。
+> **重要口径统一（避免文档与代码脱节）**：`admin/config.yml` **当前已包含全部 10 个演示站**的完整字段映射，不再是「只有 `sotto-sotto`」。这是 `gen-decap-config.mjs` 脚本自动生成的（见下），**不是手写的**。
 
-脚手架已**完整映射 `sotto-sotto`**（restaurant 模板）作为参考实现。要加别的站：
-
-1. 用 Decap 的「`files:`」机制，在 `collections[0].files` 下**复制一份** `sotto-sotto` 的块
-2. 改两处：`name` / `label`（显示名）、`file: "examples/<slug>.json"`
-3. **关键**：把字段列表改成该站 JSON 的真实全部 key（不同模板字段不同！先用 Read 打开 `examples/<slug>.json` 核对每个 key，漏一个就会丢）
-4. `git push` → 该站出现在 `/admin` 左侧
-
-> 嫌逐个映射麻烦 / 怕漏字段？直接让我（AI）按该模板 JSON 生成完整字段块即可，准确无误。当前仅 `sotto-sotto` 已验证全量映射，其他 9 站**尚未**加入配置（避免误改丢字段）。
+- Decap 保存时**只写配置里出现的字段，未列出的 key 会被丢弃** —— 所以每个站点必须在 `config.yml` 里**完整映射其 JSON 的全部 key**（含结构性 `template` / `slug`；后者已设为 `widget: hidden` + `required: true`，客户在 UI 看不到也改不了，保存时自动保留原值，彻底防误删导致构建崩）。
+- 自动生成（单一事实源 = `build-clean.sh` 的 `PROJS`）：
+  ```bash
+  node gen-decap-config.mjs      # 解析 PROJS → 对每个 examples/<slug>.json 递归推断类型生成字段 → 写 admin/config.yml
+  git commit -am "chore: 刷新 Decap 配置" && git push
+  ```
+  脚本内置**覆盖校验**：任一站 JSON 的 key 未被映射就中止写入（绝不输出残缺 config）。已验证 10 站字段覆盖 100%（44~67 字段/站）。
+- **新增站点后**：把站加入 `PROJS` → 跑一次 `node gen-decap-config.mjs` → push，该站即出现在 `/admin` 左侧。无需手工复制字段块。
+- ⚠️ 手工维护 `files:` 段极易漏字段导致保存丢键、构建崩；**统一走脚本生成**，`admin/config.yml` 头部已注明勿手改。
 
 ---
 
@@ -122,8 +125,8 @@ Decap 保存时**只写配置里出现的字段，未列出的 key 会被丢弃*
 
 ## 8. 安全与防坑清单
 
-- ✅ **全量映射**：每个站点的 `config.yml` 字段必须覆盖其 JSON 全部 key（含 `template`/`slug`），否则保存丢字段 → 构建崩。脚手架的 `sotto-sotto` 已全量覆盖。
-- ✅ **结构性字段勿改**：`template` / `slug` 决定构建与部署路径，UI 里标了「结构性·勿改」；真客户仓库里可直接从配置移除这两行（但移除后 Decap 保存会丢它们 → 所以要么保留、要么你线下改 JSON 时同步）。**最省心：保留、提醒客户别动。**
+- ✅ **全量映射**：每个站点的 `config.yml` 字段必须覆盖其 JSON 全部 key（含 `template`/`slug`），否则保存丢字段 → 构建崩。当前 `admin/config.yml` 已由 `gen-decap-config.mjs` 自动生成**全部 10 站**的完整映射（100% 覆盖）。
+- ✅ **结构性字段已隐藏防误改**：`template` / `slug` 已设为 `widget: hidden` + `required: true`——客户在 UI 看不到也改不了，保存时自动保留原值，从机制上杜绝误删导致构建崩。无需再靠「提醒别动」。
 - ✅ **权限随仓库**：没被加为协作者的 GitHub 账号登录后无法保存 → 天然防外人改。
 - 🔧 **草稿/审核（可选）**：想先审后发，可在 `config.yml` 顶部加 `publish_mode: editorial_workflow`（会走 PR 审核流程，单人可不加）。
 - 🔧 **回滚**：Decap 每次保存都是一次 commit，GitHub 历史可随时 revert 到旧版本。
@@ -141,4 +144,45 @@ Decap 保存时**只写配置里出现的字段，未列出的 key 会被丢弃*
 
 ---
 
-*本脚手架为 v0.7 起点：已接好 Decap + GitHub 后台、完整映射 sotto-sotto、写入 deploy 发布链路、文档就绪。真实客户逐个启用 + 注册 OAuth App 后即生产可用。*
+## 10. SEO / sitemap 自动更新（CMS 保存后无需手动处理）
+
+客户在 `/admin` 保存 → 一次 commit 到 `main` → **Actions 自动重跑整条流水线**：
+
+```
+validate-sites.mjs → build-clean.sh（generate.mjs 重建所有站，OG/meta 从最新 JSON 重新注入）
+                  → gen-seo.mjs（重新生成 sitemap.xml + robots.txt）
+                  → deploy-pages
+```
+
+- **内容类改动（菜单/文案/营业时间/图片路径）**：构建时 `generate.mjs` 重新注入最新 JSON，SEO 元信息（title/description/og:*）与线上内容**自动同步**，无需你干预。
+- **sitemap.xml**：每次部署由 `gen-seo.mjs` 从 `PROJS` 重新生成，站点 URL 列表始终正确（CMS 改内容不改变 slug，故 URL 不变；新增/下线站点时 sitemap 随之更新）。
+- 结论：**CMS 保存后 SEO 与 sitemap 均自愈**，你不必为「内容更新后 SEO 滞后」担心；若线上没变，先等 Actions 跑完（约数分钟）再看。
+
+---
+
+## 11. 一页纸快速上手卡（发给启用 CMS 的客户）
+
+> 把下面这段复制成一张卡，随交付发给客户即可。
+
+```
+【你的网站自助后台 · 快速上手】
+① 打开：https://<你的域名>/admin/   （或演示站 https://lcclicheng.github.io/demo-sites/admin/）
+② 点「Login with GitHub」→ 用你的 GitHub 账号授权
+③ 左侧选你的站点 → 改名称 / 电话 / 菜单 / 文案 / 营业时间 / 评价
+④ 点「Publish」→ 自动保存并上线（约几分钟，刷新即见）
+⑤ 换照片？联系我（owner）发图，我放好你再在后台指到新图名
+⑥ 遇到问题？随时微信/邮件找我。内容改动我都会帮你把关，放心改。
+```
+
+---
+
+## 12. 未来扩展提示（可选）
+
+- **图片上传进阶**：真实客户走「独立仓库 + 根域名」后，可在 `admin/config.yml` 加 `media_folder` / `public_folder: /images` 并启用 `widget: image` 让客户直接传图（见 §7）。
+- **图床混合方案**：若仓库因图片膨胀变慢，可考虑 Cloudinary / GitHub 直接上传 的混合——CMS 上传落 Cloudinary 返回 URL，仓库只存链接，避免仓库体积失控。
+- **依赖与安全监控**：在客户仓库开启 **GitHub Dependabot**（自动 PR 升级依赖）+ 利用仓库 **Insights / Actions 日志** 设阈值告警（仓库大小、构建时长），比仅打印更主动。
+- **审核流程**：想先审后发，在 `admin/config.yml` 顶部加 `publish_mode: editorial_workflow`（走 PR 审核，单人可不加）。
+
+---
+
+*本文档随 `workflow.md` 维护，当前状态（v0.8）：Decap CMS 全 10 站自动映射（`gen-decap-config.mjs` 生成，100% 覆盖防丢字段）+ `template`/`slug` 已设 hidden+required + 图片 `?v=` 防缓存 + 演示站 OAuth 已激活；真实客户按 §6 生产模型各自注册 OAuth App 启用即生产可用。*

@@ -68,6 +68,11 @@ function inferField(k, v) {
   if (v && typeof v === 'object') {
     return { name: k, label, widget: 'object', fields: inferFields(v) }
   }
+  // 结构性字段：template / slug 决定构建与部署路径，绝不可让客户在 UI 改动或保存时丢失。
+  // 设为 hidden（UI 不可见、但保存时保留原值）+ required: true，彻底防误操作导致构建崩。
+  if (k === 'template' || k === 'slug') {
+    return { name: k, label: label + '（结构性·勿改）', widget: 'hidden', required: true }
+  }
   const w = scalarWidget(v)
   const f = { name: k, label, widget: w }
   if (w === 'number') {

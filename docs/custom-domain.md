@@ -17,6 +17,33 @@
 
 ---
 
+## 0.5 形态 A 详细实施：从演示仓库迁移到独立客户仓库
+
+下面是「把某个演示站迁移成客户独立仓库 + 根域名部署」的可照做清单（与后面 §1–§7 配套）。
+
+### 0.5.1 准备客户仓库
+1. 在 GitHub 新建客户仓库（如 `client-sottosotto`），初始化（可空 README）。
+2. 把本演示仓库的**必要文件**复制到客户仓库（**不要整仓复制**，避免把其他演示站 / 历史带过去）：
+   - `src/`（8 套模板 + 组件）
+   - `assets/<slug>/`（该客户站的图片源）
+   - `examples/<slug>.json`（该客户站的业务数据）
+   - `generate.mjs`、`inject-privacy.mjs`、`build-clean.sh`、`package.json`、`package-lock.json`、`index.html`（门户，若也部署）、`.nojekyll`
+   - `.github/workflows/deploy.yml`（部署流水线）
+3. 调整 `build-clean.sh` 的 `PROJS`：只保留该客户的 `<slug>`（单站构建，更快更省）。
+4. 调整 `deploy.yml`：若客户仓库只放一个站，Assemble 步骤可简化为直接部署该站 `dist`（去掉 `for` 循环 / 门户）；保留门户结构则按需。
+5. `admin/` + `gen-decap-config.mjs` 一并复制（若该客户要 CMS 自助）；改 `admin/config.yml` 的 `repo` 为客户仓库名、`file` 指向该客户 JSON、`PROJS` 仅该站 → 重跑 `node gen-decap-config.mjs`。
+6. 本地验证：`bash build-clean.sh` → `output/<slug>/dist` 生成 → `node onboard.mjs` 预览或 `python -m http.server` 看效果。
+
+### 0.5.2 绑定自定义域名（接 §1–§7）
+7. 注册域名（§1）→ 在客户仓库 `deploy.yml` 的 Assemble 步骤加 `echo "客户域名" > public/CNAME`（或单站 `dist/` 根放 `CNAME`）。
+8. DNS（§3）+ Pages 绑定 Enforce HTTPS（§4）。
+9. 设 `SITE_BASE_URL=https://客户域名` 后跑 `generate.mjs` / `gen-seo.mjs`，使 og:url / canonical / sitemap 指向客户域名（§5）。
+10. 验证上线（§6）+ 客户交接（§7）。
+
+> 形态 A 下站点在根路径 `/` 提供，`public_folder: /images` 图片路径正确，CMS 图片上传可启用（`docs/cms.md` §7）。CNAME / 域名账号 / DNS / 续费日期在 §7 一并交客户。
+
+---
+
 ## 形态 B 实施步骤（复用本仓库 /demo-sites/ 子路径）
 
 **适用**：客户已有 / 想用自有域名，但不想独立部署，仅希望自有域名指向现有的 `https://lcclicheng.github.io/demo-sites/<slug>/`。
