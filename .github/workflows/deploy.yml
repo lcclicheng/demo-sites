@@ -50,6 +50,9 @@ jobs:
           echo "=== public/ 内容 ==="
           ls -la public
 
+      - name: Generate sitemap.xml + robots.txt (SEO)
+        run: node gen-seo.mjs
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -65,3 +68,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
+
+      # 部署结果通知（非阻断：缺少 secret 或网络失败时不影响部署）
+      # 配置方式：仓库 Settings → Secrets → 添加 SLACK_WEBHOOK_URL 或 TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID
+      - name: Notify deploy result (Slack / Telegram)
+        if: always()
+        continue-on-error: true
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          STATUS="${{ job.status }}"
+          MSG="[demo-sites] Deploy ${STATUS} — $(date -u +%FT%TZ) — commit ${GITHUB_SHA::7}"
+          if [ -n "$SLACK_WEBHOOK_URL" ]; then
+            curl -sS -X POST -H 'Content-type: application/json' \
+              --data "{\"text\":\"${MSG}\"}" "$SLACK_WEBHOOK_URL" || true
+          fi
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+              --data-urlencode "text=${MSG}" || true
+          fi

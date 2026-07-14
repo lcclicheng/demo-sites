@@ -1,6 +1,6 @@
 # 建站系统流程文档（v0.3）
 
-> 版本：v0.3 ｜ 更新：2026-07-14（v0.3 接入工具增强：图片上传+自动构建+预览） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
+> 版本：v0.4 ｜ 更新：2026-07-14（v0.4：SEO基础/sitemap/robots、部署后通知、合规交付清单、自定义域名SOP、onboarding自动写PROJS、README回链） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
 > 初版 v0.1 同日发布；本次依据审查意见修订：补充**交付后维护流程**、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/部署健壮性、文档维护规则、统一格式与难度标签。
 > **定位**：本文档是系统的「单一事实来源」。任何重大改动（新增站点、改模板、动部署流程）须同步更新此处（见 §11 文档维护规则）。
 
@@ -327,21 +327,23 @@ git push origin main      # 走 SSH，无需 PAT
 
 ## 11. 待迭代优化清单
 
-> 标签含义：`[难度/收益]` —— 难度：低/中/高；收益：低/中/高。**非必需**，按优先级排。
+> 标签含义：`[难度/收益]` —— 难度：低/中/高；收益：低/中/高。**非必需**，按优先级排。已完成项标注 ✅ 与版本。
 
-- [低难度 / 高收益] **自定义域名 / DNS / SSL / 客户交接（「上线交付」环节）**：真实英国客户签约后，把 `/demo-sites/<slug>` 换成客户自己的域名（如 `sottosotto.co.uk`），配 DNS、开 SSL、交接给客户、后续改内容流程。模板加 CNAME 支持基本开箱即用（相对路径已兼容）。
+- [低难度 / 高收益] **自定义域名 / DNS / SSL / 客户交接** —— 📘 **SOP 已就绪（v0.4）**：见 `docs/custom-domain.md` 完整 runbook（CNAME / DNS A/ALIAS / Pages 绑定 / Enforce HTTPS / 客户交接）。**代码执行待真实英国客户签约**后进行（演示期用 `/demo-sites/<slug>` 即可）。相对路径已兼容，切换域名基本开箱即用。
 - [低难度 / 高收益] **onboarding 工具增强** —— ✅ **已完成（v0.3）**
-  - 图片上传接口（base64，零依赖）：生成时自动建 `assets/<slug>/` 并写入图片，消灭「第 5 步手动放图」
-  - 生成后自动跑单站 `generate.mjs` 构建 + 提供 `/preview/<slug>/` 本地预览 + 缺失图片提醒 + 部署命令
-  - 注：因 `generate.mjs` 在 `npm install` 网络抖动时会抛未捕获异常导致 exit 1，接入工具的 `buildOk` 改以 `dist/index.html` 是否真实生成为准，并对失败重试一次。
-- [低难度 / 中收益] **文档维护规则**：每次重大改动必须同步更新本文档 + `README.md`（或让 `README.md` 直接指向本文档最新版，避免双份失真）。
-- [低难度 / 中收益] **合规交付清单**：交付时附「隐私政策 / GDPR / Cookie 同意 / 注册地址合规」确认项，降低你的法律风险（见 §7）。
-- [中难度 / 高收益] **SEO 基础**：模板补充 meta tags（title/description/OG）、自动生成 `sitemap.xml` 与 `robots.txt`（Vite 插件容易实现）。
-- [低难度 / 中收益] **部署后通知**：Actions 部署成功/失败发 Slack / Email / Telegram，及时感知。
-- [中难度 / 中收益] **deploy.yml 依赖缓存**：`setup-node` 加 `cache: 'npm'`；但当前每站独立 `npm install` 在 `output/<slug>`，需调整安装结构才能命中缓存（见 §2 限制）。
-- [中难度 / 低收益] **客户自助内容后台（CMS）**：客户在自己域名下自助改部分内容（§5.9 未来方向）。
-- [低难度 / 中收益] **i18n 策略明确化（当前默认）**：开发者/接入工具 UI 用中文，客户交付的演示站全英文（面向英国客户）。已在 §5 / 本文多处体现，无需改动，仅作显式记录。
-- [低难度 / 低收益] **图片文件名哈希扩展**：当前仅 `screenshots` 字段有 `?v=` 哈希；若其他图片也中招，可统一给所有图片文件名加内容哈希。
+  - 图片上传接口（base64，零依赖）+ 生成后自动单站构建 + `/preview/<slug>/` 本地预览 + 缺失图片提醒 + 部署命令
+  - **v0.4 增强**：生成成功后**自动把 slug 写入 `build-clean.sh` 的 PROJS**（消除「部署前忘了加 PROJS」的人为遗漏），结果页展示是否自动加入
+- [低难度 / 中收益] **文档维护规则** —— ✅ **已完成（v0.4）**：`README.md` 改为指向 `docs/workflow.md`（单一事实源），删除双份失真风险；每次重大改动同步本文档
+- [低难度 / 中收益] **合规交付清单** —— ✅ **已完成（v0.4）**：见 `docs/delivery-checklist.md`（隐私政策 / GDPR / Cookie 同意 / 注册地址 ECCTA 合规 / 公开信息提醒 / 图片版权 / 客户交接），从 §7 引用
+- [中难度 / 高收益] **SEO 基础** —— ✅ **已完成（v0.4）**
+  - `generate.mjs` 注入完整 meta：description / robots / `og:title` `og:type` `og:url` `og:site_name` `og:description` `og:locale` / **`og:image` 社交分享图**（优先 screenshots 首图，带 `?v` 缓存哈希）/ `twitter:card=summary_large_image` / canonical
+  - `gen-seo.mjs` 从 `PROJS` 单一事实源生成 `public/sitemap.xml` + `public/robots.txt`，已接入 `deploy.yml`（组装后步骤）
+  - 门户 `index.html` 也补充了 SEO 元信息；支持 `SITE_BASE_URL` 环境变量（自定义域名场景）
+- [低难度 / 中收益] **部署后通知** —— ✅ **已完成（v0.4，需配置 secrets）**：`deploy.yml` 部署后发 Slack / Telegram（非阻断，`continue-on-error` + `if: always()`）。配置：仓库 Settings → Secrets 加 `SLACK_WEBHOOK_URL` 或 `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID`
+- [中难度 / 中收益] **deploy.yml 依赖缓存**：`setup-node` 加 `cache: 'npm'`；但当前每站独立 `npm install` 在 `output/<slug>`，需调整安装结构才能命中缓存（见 §2 限制）。**保留待做**
+- [中难度 / 低收益] **客户自助内容后台（CMS）**：客户在自己域名下自助改部分内容（§5.9 未来方向）。**保留待真实客户**（频改内容才值得）
+- [低难度 / 中收益] **i18n 策略明确化（当前默认）**：开发者/接入工具 UI 用中文，客户交付的演示站全英文（面向英国客户）。已在 §5 / 本文多处体现，无需改动
+- [低难度 / 低收益] **图片文件名哈希扩展**：当前仅 `screenshots` 字段有 `?v=` 哈希；若其他图片也中招，可统一给所有图片文件名加内容哈希。**保留（低优先级）**
 
 ---
 
@@ -393,4 +395,4 @@ rm -rf output public
 
 ---
 
-*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）。后续迭代请直接修改本文档并更新本行版本号与日期。*
+*版本记录：v0.1（2026-07-14 初版）→ v0.2（2026-07-14 审查修订：交付后维护流程、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/健壮性、文档维护规则、难度标签）→ v0.3（2026-07-14 onboarding 工具增强：图片上传接口、生成后自动单站构建、/preview/<slug>/ 本地预览、缺失图片提醒）→ v0.4（2026-07-14：SEO 基础/og:image/sitemap/robots、部署后 Slack/Telegram 通知、合规交付清单文档、自定义域名 SOP 文档、onboarding 自动写 PROJS、README 回链单一事实源）。后续迭代请直接修改本文档并更新本行版本号与日期。*

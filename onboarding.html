@@ -279,6 +279,9 @@ document.getElementById('genBtn').onclick = () => {
       const miss = (res.missingImgs && res.missingImgs.length)
         ? `<div class="note" style="border-left-color:#ff6b6b">⚠️ 以下引用图片缺失（构建产物可能缺图）：<b>${res.missingImgs.join(', ')}</b>。请上传或放入 <code>assets/${res.slug}/</code> 后重新生成。</div>`
         : '';
+      const projBlock = res.projAutoAdded
+        ? `<div class="ok" style="border-left-color:var(--acc)">✅ 已自动加入 build-clean.sh 的 PROJS：<b>${res.slug}</b>（部署时会被构建）。</div>`
+        : `<div class="note" style="border-left-color:var(--warn)">⚙️ ${escapeHtml(res.noteProjs)}</div>`;
       const buildBlock = res.buildOk
         ? `<div class="ok">✅ 单站构建成功（exit ${res.buildExit}），预览产物已就绪。</div>
            <p style="margin:10px 0 4px">👉 本地预览（新标签页打开）：</p>
@@ -290,7 +293,7 @@ document.getElementById('genBtn').onclick = () => {
         ${buildBlock}
         ${miss}
         <p style="margin:10px 0 4px">🚀 提交并触发部署（Actions 自动构建 10 站上线）：</p><code>${res.deployHint}</code>
-        <div class="note" style="border-left-color:var(--warn)">⚙️ ${escapeHtml(res.noteProjs)}</div>
+        ${projBlock}
         <p class="hint" style="margin-top:8px">📷 当前 <code>assets/${res.slug}/</code> 已有图：${res.existingImgs.length ? res.existingImgs.join(', ') : '（无）'}</p>`;
       box.scrollIntoView({ behavior: 'smooth' });
     })

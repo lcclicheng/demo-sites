@@ -292,13 +292,7 @@ async function generateOne(jsonPath) {
     console.log(`  🖼️ 已拷贝 ${imgs.length} 张图片到 public/images/`)
   }
 
-  // 注入 OG 标签 + favicon + scroll-to-top
-  let htmlOut = fs.readFileSync(path.join(outputDir,'index.html'),'utf-8')
-  const ogTags = `<meta property="og:title" content="${(data.pageTitle||data.name).replace(/"/g,'&quot;')}"/><meta property="og:type" content="website"/><meta property="og:description" content="${(data.tagline||'').replace(/"/g,'&quot;').slice(0,200)}"/><meta name="description" content="${(data.tagline||'').replace(/"/g,'&quot;').slice(0,200)}"/><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>${t.favicon||'●'}</text></svg>"/><script>window.addEventListener('scroll',function(){var b=document.getElementById('scrollTop');if(b)b.style.opacity=window.scrollY>600?'1':'0'})</script>`
-  htmlOut = htmlOut.replace('</head>', ogTags + '</head>')
-  // Add scroll-to-top button before </body>
-  htmlOut = htmlOut.replace('</body>', '<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:\'smooth\'})" style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(0,0,0,0.7);color:white;font-size:20px;cursor:pointer;z-index:999;opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center">↑</button></body>')
-  fs.writeFileSync(path.join(outputDir,'index.html'),htmlOut,'utf-8')
+  // ⏩ SEO / OG / Twitter 社交卡片标签注入已移至下方「截图哈希之后」区块（确保 og:image 带 ?v 缓存哈希）
 
   // 需要调整 main.tsx 的 import 路径（从 ./App 改为对应模板）
   const mainTsx = fs.readFileSync(path.join(outputDir,'src','main.tsx'),'utf-8')
@@ -318,6 +312,50 @@ async function generateOne(jsonPath) {
       }
     }
   }
+
+  // ── SEO / OG / Twitter 社交卡片标签注入（放在截图哈希之后，og:image 自带 ?v 缓存哈希） ──
+  const seoTitle = (data.seo && data.seo.title) || data.pageTitle || data.name || ''
+  const seoDescRaw = (data.seo && data.seo.description) || data.tagline || (Array.isArray(data.aboutParagraphs) ? data.aboutParagraphs[0] : '') || data.name || ''
+  const seoDesc = String(seoDescRaw).replace(/"/g, '&quot;').replace(/\s+/g, ' ').trim().slice(0, 200)
+  const SEO_BASE = (process.env.SITE_BASE_URL || 'https://lcclicheng.github.io/demo-sites').replace(/\/$/, '')
+  const siteUrl = `${SEO_BASE}/${projectName}/`
+  // 社交分享图：优先 screenshots 第1张（已带 ?v 哈希），否则 assets 首图
+  let ogImage = ''
+  if (Array.isArray(data.screenshots) && data.screenshots[0] && data.screenshots[0].image) {
+    const s = String(data.screenshots[0].image)
+    ogImage = s.startsWith('http') ? s : siteUrl + s.replace(/^\.?\//, '')
+  } else if (fs.existsSync(imgSrc)) {
+    const first = fs.readdirSync(imgSrc).find((f) => /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(f))
+    if (first) ogImage = `${siteUrl}images/${first}`
+  }
+  const esc = (s) => String(s).replace(/"/g, '&quot;')
+  const seoTags = [
+    `<meta name="description" content="${seoDesc}"/>`,
+    `<meta name="robots" content="index,follow"/>`,
+    `<meta property="og:title" content="${esc(seoTitle)}"/>`,
+    `<meta property="og:type" content="website"/>`,
+    `<meta property="og:url" content="${esc(siteUrl)}"/>`,
+    `<meta property="og:site_name" content="${esc(seoTitle)}"/>`,
+    `<meta property="og:description" content="${seoDesc}"/>`,
+    `<meta property="og:locale" content="en_GB"/>`,
+    ogImage ? `<meta property="og:image" content="${esc(ogImage)}"/>` : '',
+    ogImage ? `<meta property="og:image:alt" content="${esc(seoTitle)}"/>` : '',
+    `<meta name="twitter:card" content="summary_large_image"/>`,
+    `<meta name="twitter:title" content="${esc(seoTitle)}"/>`,
+    `<meta name="twitter:description" content="${seoDesc}"/>`,
+    ogImage ? `<meta name="twitter:image" content="${esc(ogImage)}"/>` : '',
+    `<link rel="canonical" href="${esc(siteUrl)}"/>`,
+    `<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>${t.favicon || '●'}</text></svg>"/>`,
+    `<script>window.addEventListener('scroll',function(){var b=document.getElementById('scrollTop');if(b)b.style.opacity=window.scrollY>600?'1':'0'})</script>`,
+  ].filter(Boolean).join('')
+  let htmlSeo = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf-8')
+  htmlSeo = htmlSeo.replace('</head>', seoTags + '</head>')
+  // 滚动到顶部按钮
+  htmlSeo = htmlSeo.replace(
+    '</body>',
+    '<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:\'smooth\'})" style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(0,0,0,0.7);color:white;font-size:20px;cursor:pointer;z-index:999;opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center">↑</button></body>'
+  )
+  fs.writeFileSync(path.join(outputDir, 'index.html'), htmlSeo, 'utf-8')
 
   // 生成 business-data.ts
   const varName = template==='coffee'?'coffeeData':template==='salon'?'salonData':template==='dessert'?'dessertData':template==='yoga'?'yogaData':template==='law'?'lawData':template==='hotel'?'hotelData':template==='trades'?'tradesData':'businessData'

@@ -77,6 +77,20 @@ function slugify(name) {
   );
 }
 
+// 自动把新站点 slug 写入 build-clean.sh 的 PROJS（消除「部署前忘了加 PROJS」的人为遗漏）
+function ensureProjInBuildClean(slug) {
+  const bc = path.join(__dirname, 'build-clean.sh')
+  if (!fs.existsSync(bc)) return { added: false, detail: 'build-clean.sh 不存在' }
+  const content = fs.readFileSync(bc, 'utf-8')
+  const m = content.match(/PROJS=\(([^)]*)\)/)
+  if (!m) return { added: false, detail: 'PROJS 数组未找到' }
+  const items = m[1].split(/\s+/).filter(Boolean)
+  if (items.includes(slug)) return { added: false, detail: '已存在于 PROJS' }
+  items.push(slug)
+  fs.writeFileSync(bc, content.replace(/PROJS=\([^)]*\)/, `PROJS=( ${items.join(' ')} )`), 'utf-8')
+  return { added: true, detail: `已自动加入 PROJS: ${slug}` }
+}
+
 // 列出可用模板（排除明显是测试/批处理的文件）
 const SKIP = new Set(['batch-sample.json', 'test-new-templates.json', 'profix-test.json']);
 
@@ -268,6 +282,7 @@ const server = http.createServer(async (req, res) => {
       const buildLog = (build.stdout || '') + (build.stderr || '');
       const buildTail = buildLog.split('\n').slice(-25).join('\n').trim();
       const distReady = buildOk;
+      const projResult = ensureProjInBuildClean(slug);
 
       // 是否含 screenshots 区块（用于提示图片命名）
       const hasScreenshots = Array.isArray(data.screenshots) && data.screenshots.length > 0;
@@ -291,8 +306,12 @@ const server = http.createServer(async (req, res) => {
         hasScreenshots,
         missingImgs,
         previewUrl: `/preview/${slug}/`,
-        deployHint: `git add -A && git commit -m "feat: add ${slug}" && git push origin main`,
-        noteProjs: `部署前需把 "${slug}" 加入 build-clean.sh 的 PROJS 数组，否则 Actions 不会构建/部署该站。`,
+        projAutoAdded: projResult.added,
+        projDetail: projResult.detail,
+        deployHint: `git add -u && git commit -m "feat: add ${slug}" && git push origin main`,
+        noteProjs: projResult.added
+          ? `已自动把 "${slug}" 加入 build-clean.sh 的 PROJS，Actions 会构建/部署该站。直接部署即可。`
+          : `部署前请确认 "${slug}" 已在 build-clean.sh 的 PROJS 中（${projResult.detail}）。`,
       });
     } catch (e) {
       return sendJSON(res, 500, { ok: false, error: String(e.message || e) });
