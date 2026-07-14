@@ -26,7 +26,7 @@ backend:
   branch: main
   base_url: https://api.github.com
   auth_scope: repo
-  client_id: "Ov23lifKVTnpwVMYhl3r"
+  client_id: "Ov23liU2dLXkUgYuBK0b"
 
 # Decap 管理界面语言（中文）
 locale: "zh"
