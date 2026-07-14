@@ -304,6 +304,21 @@ async function generateOne(jsonPath) {
   const mainTsx = fs.readFileSync(path.join(outputDir,'src','main.tsx'),'utf-8')
   fs.writeFileSync(path.join(outputDir,'src','main.tsx'),mainTsx,'utf-8')
 
+  // 给截图图片追加内容哈希 query，彻底杜绝 CDN/浏览器缓存同名旧图（Sotto 曾中招）
+  if (Array.isArray(data.screenshots)) {
+    const { createHash } = await import('node:crypto')
+    for (const s of data.screenshots) {
+      if (s && typeof s.image === 'string') {
+        const fname = s.image.split('?')[0].split('/').pop()
+        const fpath = path.resolve(__dirname, 'assets', projectName, fname)
+        if (fs.existsSync(fpath)) {
+          const h = createHash('md5').update(fs.readFileSync(fpath)).digest('hex').slice(0, 8)
+          s.image = s.image + (s.image.includes('?') ? '&' : '?') + 'v=' + h
+        }
+      }
+    }
+  }
+
   // 生成 business-data.ts
   const varName = template==='coffee'?'coffeeData':template==='salon'?'salonData':template==='dessert'?'dessertData':template==='yoga'?'yogaData':template==='law'?'lawData':template==='hotel'?'hotelData':template==='trades'?'tradesData':'businessData'
   fs.writeFileSync(path.join(outputDir,'src','business-data.ts'),`// auto-generated\n\nexport const ${varName} = ${JSON.stringify(data,null,2)} as const\n`,'utf-8')
