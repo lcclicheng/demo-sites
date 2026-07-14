@@ -382,7 +382,7 @@ git push origin main      # 走 SSH，无需 PAT
 | GitHub Pages 监控建议（仓库大小/构建时长） | 低/中 | ✅ 已完成（v0.5，建议写入 deploy.yml） | — |
 | GITHUB_TOKEN 权限最小化（附录 B） | 低/低 | ✅ 已完成（v0.5，deploy.yml 已最小权限） | — |
 | deploy.yml 依赖缓存（setup-node cache + 一次性安装复用） | 中/中 | ✅ 已完成（v0.6） | — |
-| 客户自助内容后台（Decap CMS + GitHub OAuth） | 中/高 | ✅ 已完成（v0.8：gen-decap-config.mjs 自动生成全 10 站字段映射、100% 覆盖防丢字段；admin/ 发布到 /demo-sites/admin/；docs/cms.md 就绪；待真实客户注册 OAuth App 激活） | v0.8 |
+| 客户自助内容后台（Decap CMS + GitHub OAuth） | 中/高 | ✅ 已完成（v0.8：gen-decap-config.mjs 自动生成全 10 站字段映射、100% 覆盖防丢字段；admin/ 发布到 /demo-sites/admin/；docs/cms.md 就绪；演示站 OAuth App 已注册并填 client_id 激活，/demo-sites/admin/ 可登录编辑；真实客户按生产模型各自注册） | v0.8 |
 | i18n 策略明确化 | 低/中 | ✅ 已完成（默认，无需改动） | — |
 | 图片文件名哈希扩展（全图片 ?v=） | 低/低 | ✅ 已完成（v0.8：generate.mjs 注入时给所有图片路径加 `?v=<构建版本>`，每次部署不同、对 CMS 保存自愈） | v0.8 |
 

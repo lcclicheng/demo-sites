@@ -17,7 +17,7 @@
 #    1) 在 GitHub 注册一个 OAuth App（Settings → Developer settings → OAuth Apps）
 #    2) Authorization callback URL 填：https://lcclicheng.github.io/demo-sites/admin/
 #    3) 把拿到的 Client ID 填到下方 backend.client_id
-#    未填 client_id 前，/admin 能打开但登录会失败（属正常，非 bug）。
+#    重跑本脚本会自动沿用已填的 client_id，不会冲掉（无需重复填）。
 # ═════════════════════════════════════════════════════════════════════════
 
 backend:
@@ -26,7 +26,7 @@ backend:
   branch: main
   base_url: https://api.github.com
   auth_scope: repo
-  # client_id: "在此填入你的 GitHub OAuth App Client ID"   # ← 注册 OAuth App 后取消注释并填入
+  client_id: "Ov23lifKVTnpwVMYhl3r"
 
 # Decap 管理界面语言（中文）
 locale: "zh"
