@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>站点接入 Onboarding</title>
+<style>
+  :root { --bg:#0f1115; --panel:#171a21; --panel2:#1f232c; --line:#2a2f3a; --txt:#e6e9ef; --mute:#9aa3b2; --acc:#5b8cff; --ok:#39d98a; --warn:#f5b14c; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--txt); font-size:14px; line-height:1.5; }
+  header { padding:18px 24px; border-bottom:1px solid var(--line); background:var(--panel); position:sticky; top:0; z-index:10; }
+  header h1 { margin:0; font-size:18px; }
+  header p { margin:4px 0 0; color:var(--mute); font-size:12px; }
+  .wrap { max-width:920px; margin:0 auto; padding:20px 24px 80px; }
+  .step { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:16px; }
+  .step h2 { margin:0 0 12px; font-size:15px; display:flex; align-items:center; gap:8px; }
+  .step h2 .n { background:var(--acc); color:#fff; width:22px; height:22px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:12px; }
+  label, .flabel { display:block; font-size:12px; color:var(--mute); margin-bottom:4px; }
+  input[type=text], input[type=number], textarea, select { width:100%; background:var(--panel2); border:1px solid var(--line); color:var(--txt); border-radius:7px; padding:8px 10px; font-size:13px; font-family:inherit; }
+  textarea { resize:vertical; min-height:60px; }
+  input:disabled { opacity:.5; }
+  .field { margin-bottom:12px; }
+  fieldset.obj { border:1px solid var(--line); border-radius:8px; padding:12px; margin:0 0 12px; background:var(--panel2); }
+  legend { color:var(--acc); font-size:12px; padding:0 6px; }
+  .arr-item { border:1px dashed var(--line); border-radius:8px; padding:10px; margin-bottom:10px; background:var(--panel); }
+  .arr-item .hd { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; color:var(--mute); font-size:12px; }
+  button { cursor:pointer; border:none; border-radius:7px; padding:8px 14px; font-size:13px; font-weight:600; }
+  .btn-add { background:var(--panel2); color:var(--acc); border:1px solid var(--line); }
+  .btn-del { background:transparent; color:#ff6b6b; border:1px solid #5a2a2a; padding:4px 10px; font-size:12px; }
+  .btn-primary { background:var(--acc); color:#fff; width:100%; padding:12px; font-size:14px; margin-top:8px; }
+  .btn-primary:disabled { opacity:.5; cursor:not-allowed; }
+  .row { display:flex; gap:12px; } .row > * { flex:1; }
+  .hint { color:var(--mute); font-size:12px; margin:6px 0; }
+  .note { background:#1c2230; border-left:3px solid var(--warn); padding:10px 12px; border-radius:0 7px 7px 0; font-size:12px; color:#d9c08a; margin:8px 0; }
+  .result { background:#13251c; border:1px solid #1f513a; border-radius:10px; padding:16px; display:none; }
+  .result code { display:block; background:#0c140f; padding:10px; border-radius:6px; margin:6px 0; white-space:pre-wrap; word-break:break-all; font-size:12px; }
+  .ok { color:var(--ok); } .err { color:#ff6b6b; }
+  .copy { float:right; font-size:11px; background:var(--panel2); color:var(--mute); border:1px solid var(--line); padding:2px 8px; border-radius:5px; }
+  .biztoggle { display:flex; gap:10px; }
+  .biztoggle label { flex:1; background:var(--panel2); border:1px solid var(--line); border-radius:8px; padding:10px; text-align:center; cursor:pointer; color:var(--txt); margin:0; }
+  .biztoggle input { display:none; }
+  .biztoggle label.sel { border-color:var(--acc); background:#1a2540; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🛠️ 站点接入 Onboarding</h1>
+  <p>替客户填表 → 自动生成 examples/&lt;slug&gt;.json → 构建部署。客户无需碰任何代码。</p>
+</header>
+
+<div class="wrap">
+  <div class="step">
+    <h2><span class="n">1</span> 选择模板 / 基础站</h2>
+    <div class="row">
+      <div class="field" style="margin:0">
+        <label>从现有演示站克隆（保留结构，改内容）</label>
+        <select id="tpl"></select>
+      </div>
+      <div class="field" style="margin:0; max-width:220px">
+        <label>&nbsp;</label>
+        <button class="btn-add" id="loadBtn" style="width:100%">载入此模板</button>
+      </div>
+    </div>
+    <p class="hint">建议：新客户选同行业演示站作底（如新餐厅选 Sotto Sotto），结构最贴合。</p>
+  </div>
+
+  <div class="step" id="step2" style="display:none">
+    <h2><span class="n">2</span> 业务类型（影响注册地址字段）</h2>
+    <div class="biztoggle" id="biz">
+      <label id="lbl-ltd"><input type="radio" name="biz" value="ltd" checked> Ltd / LLP<br><span style="font-size:11px;color:var(--mute)">需注册办公室地址</span></label>
+      <label id="lbl-sole"><input type="radio" name="biz" value="sole"> Sole Trader<br><span style="font-size:11px;color:var(--mute)">无需注册地址</span></label>
+    </div>
+    <div class="note" id="biznote">Ltd：注册地址填住宅或会计师免费地址即可合规（不一定要买虚拟办公室）。Sole Trader：完全不需要注册地址，下方字段将自动清空禁用。</div>
+  </div>
+
+  <div class="step" id="step3" style="display:none">
+    <h2><span class="n">3</span> 填写客户信息</h2>
+    <div class="row">
+      <div class="field"><label>站点名称 (name)</label><input type="text" id="f-name"></div>
+      <div class="field"><label>部署路径 (slug)</label><input type="text" id="f-slug"></div>
+    </div>
+    <p class="hint">slug 决定线上地址 <code>/demo-sites/&lt;slug&gt;/</code>，只能用小写字母/数字/连字符。</p>
+    <div id="form"></div>
+    <div class="note">📷 <b>实景图</b>：把客户照片命名为 <code>screenshot-1.jpg / 2.jpg / 3.jpg</code> 放到 <code>assets/&lt;slug&gt;/</code> 目录（与 examples 同级）。表单里只改图片标题/说明即可。</div>
+    <button class="btn-primary" id="genBtn">✅ 生成 examples/&lt;slug&gt;.json</button>
+  </div>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+let DATA = null;       // 当前编辑的对象（源）
+let BIZ = 'ltd';       // 业务类型
+
+// ---------- DOM 工具 ----------
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') n.className = v;
+    else if (k === 'html') n.innerHTML = v;
+    else if (k.startsWith('on') && typeof v === 'function') n.addEventListener(k.slice(2), v);
+    else if (k.startsWith('data-')) n.setAttribute(k, v);
+    else n.setAttribute(k, v);
+  }
+  for (const kid of kids) { if (kid == null) continue; n.append(kid.nodeType ? kid : document.createTextNode(kid)); }
+  return n;
+}
+function getAt(obj, path) { return path.reduce((o, k) => (o == null ? o : o[k]), obj); }
+function setAt(obj, path, val) {
+  let o = obj;
+  for (let i = 0; i < path.length - 1; i++) o = o[path[i]];
+  o[path[path.length - 1]] = val;
+}
+function isLongString(s) { return typeof s === 'string' && (s.length > 50 || s.includes('\n')); }
+
+// ---------- 渲染 ----------
+function renderControl(value, path) {
+  if (value === null || value === undefined) {
+    const i = el('input', { type: 'text', oninput: e => setAt(DATA, path, e.target.value || null) });
+    return i;
+  }
+  const t = typeof value;
+  if (t === 'string') {
+    if (isLongString(value)) {
+      const ta = el('textarea', { oninput: e => setAt(DATA, path, e.target.value) }); ta.value = value; return ta;
+    }
+    const i = el('input', { type: 'text', oninput: e => setAt(DATA, path, e.target.value) }); i.value = value; return i;
+  }
+  if (t === 'number') {
+    const i = el('input', { type: 'number', oninput: e => setAt(DATA, path, e.target.value === '' ? null : Number(e.target.value)) }); i.value = value; return i;
+  }
+  if (t === 'boolean') {
+    const i = el('input', { type: 'checkbox', onchange: e => setAt(DATA, path, e.target.checked) }); i.checked = value; return i;
+  }
+  if (Array.isArray(value)) return renderArray(value, path);
+  if (t === 'object') return renderObject(value, path);
+  return el('input', { type: 'text' });
+}
+
+function renderField(key, value, path) {
+  // registeredAddress 特殊处理：Sole Trader 时禁用
+  if (key === 'registeredAddress' && BIZ === 'sole') {
+    const wrap = el('div', { class: 'field' });
+    wrap.append(el('label', {}, 'registeredAddress（注册办公室地址）'));
+    const i = el('input', { type: 'text', disabled: 'disabled', placeholder: 'Sole Trader 无需注册地址 — 已自动清空' });
+    i.value = '';
+    wrap.append(i);
+    wrap.append(el('div', { class: 'hint' }, '当前为 Sole Trader：该字段已禁用并清空。'));
+    return wrap;
+  }
+  const wrap = el('div', { class: 'field' });
+  wrap.append(el('label', {}, key));
+  wrap.append(renderControl(value, path));
+  return wrap;
+}
+
+function renderObject(obj, path) {
+  const fs = el('fieldset', { class: 'obj' });
+  fs.append(el('legend', {}, path.length ? String(path[path.length - 1]) : 'object'));
+  for (const k of Object.keys(obj)) fs.append(renderField(k, obj[k], path.concat(k)));
+  return fs;
+}
+
+function emptyItemOf(sample) {
+  if (Array.isArray(sample)) return [];
+  if (sample && typeof sample === 'object') {
+    const o = {};
+    for (const k of Object.keys(sample)) o[k] = Array.isArray(sample[k]) ? [] : (typeof sample[k] === 'object' && sample[k] !== null ? emptyItemOf(sample[k]) : (typeof sample[k] === 'string' ? '' : typeof sample[k] === 'number' ? 0 : typeof sample[k] === 'boolean' ? false : null));
+    return o;
+  }
+  return '';
+}
+
+function renderArray(arr, path) {
+  const container = el('div', { class: 'arr' });
+  function refresh() {
+    const fresh = renderArray(arr, path);
+    container.replaceWith(fresh);
+  }
+  arr.forEach((item, idx) => {
+    const itemWrap = el('div', { class: 'arr-item' });
+    const hd = el('div', { class: 'hd' }, `项目 ${idx + 1}`);
+    hd.append(el('button', { class: 'btn-del', onclick: () => { arr.splice(idx, 1); refresh(); } }, '删除'));
+    itemWrap.append(hd);
+    if (item && typeof item === 'object' && !Array.isArray(item)) itemWrap.append(renderObject(item, path.concat(idx)));
+    else itemWrap.append(renderControl(item, path.concat(idx)));
+    container.append(itemWrap);
+  });
+  const addBtn = el('button', { class: 'btn-add', onclick: () => {
+    const sample = arr.length ? arr[0] : '';
+    arr.push(emptyItemOf(sample));
+    refresh();
+  } }, '+ 添加一项');
+  container.append(addBtn);
+  return container;
+}
+
+// ---------- 流程 ----------
+function loadTemplate() {
+  const file = document.getElementById('tpl').value;
+  if (!file) return;
+  fetch('/api/example?file=' + encodeURIComponent(file))
+    .then(r => r.json())
+    .then(d => {
+      DATA = d;
+      BIZ = 'ltd';
+      document.getElementById('step2').style.display = '';
+      document.getElementById('step3').style.display = '';
+      document.getElementById('f-name').value = d.name || '';
+      document.getElementById('f-slug').value = d.slug || '';
+      document.getElementById('form').innerHTML = '';
+      document.getElementById('form').append(renderObject(d, []));
+      document.getElementById('result').style.display = 'none';
+      window.scrollTo({ top: document.getElementById('step2').offsetTop - 70, behavior: 'smooth' });
+    })
+    .catch(e => alert('载入失败: ' + e));
+}
+
+function syncNameSlug() {
+  if (!DATA) return;
+  DATA.name = document.getElementById('f-name').value;
+  let s = document.getElementById('f-slug').value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  document.getElementById('f-slug').value = s;
+  DATA.slug = s;
+}
+
+document.getElementById('loadBtn').onclick = loadTemplate;
+document.getElementById('tpl').onchange = loadTemplate;
+
+document.querySelectorAll('input[name=biz]').forEach(r => r.addEventListener('change', e => {
+  BIZ = e.target.value;
+  document.querySelectorAll('#biz label').forEach(l => l.classList.remove('sel'));
+  document.getElementById('lbl-' + BIZ).classList.add('sel');
+  if (!DATA) return;
+  if (BIZ === 'sole') { if ('registeredAddress' in DATA) DATA.registeredAddress = ''; }
+  // 重渲染表单以反映 registeredAddress 状态
+  document.getElementById('form').innerHTML = '';
+  document.getElementById('form').append(renderObject(DATA, []));
+}));
+
+document.getElementById('genBtn').onclick = () => {
+  syncNameSlug();
+  if (!DATA || !DATA.slug) { alert('请先填写 slug（部署路径）'); return; }
+  if (BIZ === 'sole' && 'registeredAddress' in DATA) DATA.registeredAddress = '';
+  fetch('/api/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: DATA })
+  })
+    .then(r => r.json())
+    .then(res => {
+      const box = document.getElementById('result');
+      box.style.display = '';
+      if (res.ok) {
+        box.innerHTML = `<div class="ok">✅ 已生成 <b>${res.file}</b></div>
+          <p class="hint">文件位置：<code>${res.path}</code></p>
+          <p style="margin:10px 0 4px">① 本地预览（可选）：</p><code>${res.previewCmd}</code>
+          <p style="margin:10px 0 4px">② 全量构建 + 部署（推送到 main 即 Actions 自动上线）：</p><code>${res.buildCmd}</code>
+          <p style="margin:10px 0 4px">③ 提交并触发部署：</p><code>${res.deployHint}</code>
+          <p class="hint" style="margin-top:10px">📷 别忘了把客户实景图放到 <code>assets/${res.slug}/screenshot-1~3.jpg</code>，再跑构建。</p>`;
+      } else {
+        box.innerHTML = `<div class="err">❌ 生成失败：${res.error}</div>`;
+      }
+      box.scrollIntoView({ behavior: 'smooth' });
+    })
+    .catch(e => alert('提交失败: ' + e));
+};
+
+// 初始化模板下拉
+fetch('/api/templates')
+  .then(r => r.json())
+  .then(list => {
+    const sel = document.getElementById('tpl');
+    sel.innerHTML = '';
+    list.forEach(t => {
+      const o = el('option', { value: t.file }, `${t.name}  ·  [${t.template}]`);
+      sel.append(o);
+    });
+    document.getElementById('lbl-ltd').classList.add('sel');
+  });
+</script>
+</body>
+</html>

@@ -28,6 +28,9 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Validate site configs (pre-deploy gate)
+        run: node validate-sites.mjs
+
       - name: Build all 10 demo sites
         run: bash build-clean.sh
 
