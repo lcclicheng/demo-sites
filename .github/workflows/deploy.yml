@@ -55,6 +55,9 @@ jobs:
           # 门户页 + 禁用 Jekyll
           cp index.html public/ 2>/dev/null || true
           cp .nojekyll public/ 2>/dev/null || true
+          # 客户自助 CMS 后台（Decap）：复制到 public/admin，线上 /demo-sites/admin/
+          # 登录需在 GitHub 注册 OAuth App 并把 client_id 填进 admin/config.yml（见 docs/cms.md）
+          cp -r admin public/admin 2>/dev/null || true
           # 每个构建产物 -> public/<site>
           for d in output/*/; do
             name=$(basename "$d")

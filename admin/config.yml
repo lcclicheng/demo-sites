@@ -1,0 +1,182 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Decap CMS 配置（客户自助内容后台 · v0.7 脚手架）
+# 文档见 docs/cms.md
+#
+# 工作原理：客户在 /admin 登录（GitHub OAuth）→ 编辑 examples/<slug>.json
+#           → 保存即 commit 到仓库 main → 触发 Actions 重建 → 站点自动上线。
+#
+# ⚠️ 重要安全约定（避免保存时丢字段导致构建崩）：
+#    Decap 保存时【只写配置里出现的字段】，未在下面列出的 key 会被丢弃。
+#    因此本配置已【完整覆盖 sotto-sotto.json 的每一个 key】（含结构性
+#    template / slug），确保保存后 JSON 不残缺。新增/修改站点务必同样全量映射。
+#
+# 🔧 一次性激活（详见 docs/cms.md）：
+#    1) 在 GitHub 注册一个 OAuth App（Settings → Developer settings → OAuth Apps）
+#    2) Authorization callback URL 填：https://lcclicheng.github.io/demo-sites/admin/
+#    3) 把拿到的 Client ID 填到下方 backend.client_id
+#    未填 client_id 前，/admin 能打开但登录会失败（属正常，非 bug）。
+# ═══════════════════════════════════════════════════════════════════════════
+
+backend:
+  name: github
+  repo: lcclicheng/demo-sites
+  branch: main
+  base_url: https://api.github.com
+  auth_scope: repo
+  # client_id: "在此填入你的 GitHub OAuth App Client ID"   # ← 注册 OAuth App 后取消注释并填入
+
+# Decap 管理界面语言（中文）
+locale: "zh"
+
+# 说明：本脚手架暂不启用 image/file 上传组件（见 docs/cms.md「图片处理」）。
+# 图片路径以字符串形式编辑（如 ./images/screenshot-1.jpg），保留现有 ./images/ 约定，
+# 避免 Decap 上传把路径写成 /images/xxx.jpg 在子路径部署下失效。
+# 如需启用图片上传，见 docs/cms.md 的「生产模型（客户独立仓库）」一节。
+
+collections:
+  - name: "sites"
+    label: "客户站点内容"
+    files:
+      # ─────────────────────────────────────────────────────────────
+      # 参考实现：sotto-sotto（restaurant 模板）。其他站点启用方式见 docs/cms.md。
+      # 注意：template / slug 为结构性字段，必须保留（否则构建崩），请勿让客户改动。
+      # ─────────────────────────────────────────────────────────────
+      - name: "sotto-sotto"
+        label: "Sotto Sotto（意大利餐厅 · Bath）"
+        file: "examples/sotto-sotto.json"
+        fields:
+          # —— 结构性（勿改）——
+          - { name: template, label: "模板(结构性·勿改)", widget: string }
+          - { name: slug, label: "部署路径(结构性·勿改)", widget: string }
+          # —— 基础信息 ——
+          - { name: name, label: "商家名称", widget: string }
+          - { name: subtitle, label: "副标题", widget: string }
+          - { name: tagline, label: "标语", widget: text }
+          - { name: established, label: "创立年份", widget: string }
+          - { name: location, label: "城市/地区", widget: string }
+          - { name: street, label: "街道地址", widget: string }
+          - { name: registeredAddress, label: "注册办公室地址", widget: string }
+          - { name: phone, label: "电话", widget: string }
+          - { name: email, label: "邮箱", widget: string }
+          - { name: googleRating, label: "Google 评分", widget: string }
+          - { name: googleReviews, label: "Google 评价数", widget: string }
+          - { name: pageTitle, label: "页面标题(SEO)", widget: string }
+          # —— 首屏 ——
+          - { name: heroLine1, label: "首屏主标题行1", widget: string }
+          - { name: heroLine2, label: "首屏主标题行2", widget: string }
+          - { name: heroBadge, label: "首屏徽标文案", widget: string }
+          - name: heroCta1
+            label: "首屏按钮1"
+            widget: object
+            fields:
+              - { name: text, label: "文字", widget: string }
+              - { name: href, label: "链接(#锚点)", widget: string }
+          - name: heroCta2
+            label: "首屏按钮2"
+            widget: object
+            fields:
+              - { name: text, label: "文字", widget: string }
+              - { name: href, label: "链接(#锚点)", widget: string }
+          - name: heroStats
+            label: "首屏数据条"
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { name: val, label: "数值", widget: string }
+              - { name: label, label: "标签", widget: string }
+              - { name: stars, label: "是否显示星级", widget: boolean, required: false }
+          - name: infoTicker
+            label: "信息滚动条"
+            widget: list
+            summary: "{{fields.text}}"
+            fields:
+              - { name: icon, label: "图标名(lucide)", widget: string }
+              - { name: text, label: "文字", widget: string }
+          - name: certifications
+            label: "资质认证"
+            widget: list
+            field: { label: "认证", widget: string }
+          # —— 菜单 ——
+          - { name: menuIntroTitle, label: "菜单引言标题", widget: string }
+          - { name: menuIntroText, label: "菜单引言正文", widget: text }
+          - name: menuSections
+            label: "菜单分区"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "分区名", widget: string }
+              - { name: icon, label: "图标名(lucide)", widget: string }
+              - name: items
+                label: "菜品"
+                widget: list
+                summary: "{{fields.name}} · {{fields.price}}"
+                fields:
+                  - { name: name, label: "菜名", widget: string }
+                  - { name: desc, label: "描述", widget: text }
+                  - { name: price, label: "价格", widget: string }
+                  - { name: pair, label: "配酒(可选)", widget: string, required: false }
+                  - { name: image, label: "图片路径(./images/xxx.jpg)", widget: string }
+          - name: galleryItems
+            label: "菜品画廊"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: image, label: "图片路径(./images/xxx.jpg)", widget: string }
+              - { name: title, label: "标题", widget: string }
+              - { name: sub, label: "副标题", widget: string }
+          # —— 实景图 ——
+          - { name: screenshotsIntro, label: "实景图区引言", widget: text }
+          - name: screenshots
+            label: "实景图"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: image, label: "图片路径(./images/xxx.jpg)", widget: string }
+              - { name: title, label: "标题", widget: string }
+              - { name: sub, label: "副标题", widget: string }
+          # —— 预订 ——
+          - name: occasionOptions
+            label: "场合选项"
+            widget: list
+            field: { label: "场合", widget: string }
+          - { name: reservationNote, label: "预订提示", widget: text }
+          - { name: footerNote, label: "页脚备注", widget: text }
+          # —— 关于 ——
+          - { name: aboutTitle, label: "关于标题", widget: string }
+          - { name: aboutSubtitle, label: "关于副标题", widget: string }
+          - name: aboutParagraphs
+            label: "关于段落"
+            widget: list
+            field: { label: "段落", widget: text }
+          - name: aboutStats
+            label: "关于数据"
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { name: value, label: "数值", widget: string }
+              - { name: label, label: "标签", widget: string }
+          - name: whyChooseItems
+            label: "为什么选我们"
+            widget: list
+            summary: "{{fields.text}}"
+            fields:
+              - { name: icon, label: "图标名(lucide)", widget: string }
+              - { name: text, label: "文字", widget: string }
+          # —— 营业时间 ——
+          - name: hoursDetail
+            label: "营业时间"
+            widget: object
+            fields:
+              - { name: wedThu, label: "周三~周四", widget: string }
+              - { name: friSat, label: "周五~周六", widget: string }
+              - { name: sunday, label: "周日", widget: string }
+              - { name: closedDays, label: "休息日", widget: string }
+          # —— 评价 ——
+          - name: reviews
+            label: "顾客评价"
+            widget: list
+            summary: "{{fields.name}} · {{fields.rating}}★"
+            fields:
+              - { name: name, label: "顾客", widget: string }
+              - { name: text, label: "评价内容", widget: text }
+              - { name: rating, label: "评分(1-5)", widget: number, min: 1, max: 5 }
