@@ -11,10 +11,10 @@
 - [`docs/workflow.md`](./docs/workflow.md) — 系统总文档（单一事实源）
 - [`docs/delivery-checklist.md`](./docs/delivery-checklist.md) — 合规交付清单（隐私 / GDPR / Cookie / 注册地址）
 - [`docs/custom-domain.md`](./docs/custom-domain.md) — 自定义域名 / DNS / SSL / 客户交接 SOP
-- [`docs/cms.md`](./docs/cms.md) — 客户自助内容后台（Decap CMS + GitHub OAuth）启用与隔离模型
+- [`docs/cms.md`](./docs/cms.md) — 客户自助内容后台（Decap CMS + GitHub OAuth）· 仅作演示能力，标准交付不再含 CMS 自助
 - [`docs/delivery-handover.md`](./docs/delivery-handover.md) — 客户交付标准化包（欢迎邮件 / 合规签字 / 维护手册 / 支持条款 / 发票）
 - [`docs/monitoring.md`](./docs/monitoring.md) — 客户站点健康看板（Actions 定时健康检查自动开 Issue + UptimeRobot 外部探测 SOP）
-- [`docs/pricing.md`](./docs/pricing.md) — 报价与套餐（£ 定价基准：基础建站 / +CMS 自助 / 年度支持）
+- [`docs/pricing.md`](./docs/pricing.md) — 报价与套餐（£ 定价基准：基础建站含首月无忧改版 / 年度呵护支持）
 
 ## 快速开始
 

@@ -26,11 +26,10 @@ Your new website is now live and ready to share with the world:
 
 🔗 **Live site**: {{live_url}}  (e.g. https://{{custom_domain}}/  or  https://lcclicheng.github.io/demo-sites/{{slug}}/)
 
-**What you can do yourself (no coding needed)**
-- Edit text, menu, photos, opening hours, reviews via the self-service dashboard:
-  👉 **CMS login**: {{cms_url}}  (e.g. https://lcclicheng.github.io/demo-sites/admin/)
-  👉 Sign in with GitHub (the account we set up for you), then click your site and edit — changes publish automatically in ~1–2 minutes.
-- A one-page **maintenance guide** is attached (see §3) covering how to change content, renew your domain, and reach me.
+**What's included in your first month**
+- **Unlimited revisions for 30 days** after go-live: any tweak to text, menu, photos, opening hours or reviews — just email me and I'll publish it (usually within 1–2 days, free of charge).
+- After the first month, ongoing changes are covered by the **Annual Care plan** (§5) or available as one-off paid edits.
+- A one-page **maintenance guide** is attached (see §3) covering how to request changes, renew your domain, and reach me.
 
 **Compliance & sign-off**
 - Please review the **compliance checklist** (§2) and return the signed copy for our records.
@@ -59,7 +58,7 @@ Best,
 - [ ] Public-info warning acknowledged: phone / address on a GitHub Pages site are **publicly visible**
 - [ ] Image copyright: all photos used are licensed / owned by the client (or Openverse CC-licensed placeholders clearly marked)
 - [ ] Domain / DNS / SSL handled (if custom domain — see §4)
-- [ ] Client has received CMS login and confirmed they can edit
+- [ ] Client understands the 30-day unlimited-revision window and how to request changes (email {{your_email}})
 
 **Client sign-off**
 Signature: ___________________________   Name: {{client_name}}   Date: __________
@@ -71,13 +70,12 @@ Signature: ___________________________   Name: {{client_name}}   Date: _________
 ## 3. Maintenance Guide (one page)
 
 **Your site**: {{site_name}} — {{live_url}}
-**CMS dashboard**: {{cms_url}}
 
-### How to edit content (self-service, no code)
-1. Open {{cms_url}} and sign in with your GitHub account.
-2. Click your site (`{{slug}}`) and edit any field (text / menu / opening hours / reviews / image path).
-3. Save → the live site updates automatically in ~1–2 minutes (renaming an image refreshes its cache automatically).
-4. **To swap in real photos**: overwrite the file at the corresponding path, or change the image path string in the CMS.
+### How to request a change (no dashboard needed)
+1. Email {{your_email}} with what you'd like changed (text / menu / photos / opening hours / reviews).
+2. Within your **first 30 days**, changes are unlimited and free — I'll publish within 1–2 days.
+3. After 30 days, changes run through the **Annual Care plan** (§5) or as one-off paid edits — just ask.
+4. **To swap in real photos**: send me the image files and I'll place them (or tell me the path and I'll update it).
 
 ### Domain renewal reminder
 - A custom domain (e.g. {{custom_domain}}) is **renewed by the client at their registrar** — it lapses if not renewed.
@@ -89,7 +87,7 @@ Signature: ___________________________   Name: {{client_name}}   Date: _________
 - Urgent-change response time is in §5 Support Terms.
 
 ### Notes
-- Do not repeatedly refresh the CMS while signed out (GitHub's unauthenticated API rate limit — see handover comms).
+- No dashboard or login needed — all changes go through me by email, so there's nothing for you to manage.
 - Structural changes (swap template / add a section) — contact me; do not edit code yourself.
 
 ---
@@ -115,8 +113,9 @@ Signature: ___________________________   Name: {{client_name}}   Date: _________
 > Default template — fill actual numbers per client agreement; put them in the contract / quote.
 
 - **Response time**: reply within {{response_hours}} business hours (e.g. 24h); urgent incidents within {{urgent_hours}}h (e.g. 4h).
-- **Free-change allowance**: {{free_change_count}} small changes free within {{free_change_window}} of delivery (e.g. 3 tweaks in 30 days — copy / image edits).
-- **Billable changes**: beyond the free allowance, {{rate_per_change}} / change, or {{rate_per_hour}} / hour.
+- **First 30 days — unlimited revisions (included in Tier A)**: any text / photo / menu / hours tweak, free, just email me — no allowance counting.
+- **Free-change allowance (Annual Care, Tier B)**: {{free_change_count}} small changes / year included (e.g. 12 tweaks — copy / image edits).
+- **Billable changes (no plan)**: beyond the above, {{rate_per_change}} / change, or {{rate_per_hour}} / hour.
 - **Annual Care plan (optional)**: £{{annual_care_price}}/year — site monitoring + priority response + free small-change allowance + domain-renewal assistance (recommended; static site upkeep is minimal, near pure-margin).
 - **Not included**: new template development, major redesign, third-party paid service subscriptions.
 
