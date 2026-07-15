@@ -39,10 +39,10 @@
 
 修复：footer 加 `Data © OpenStreetMap contributors · Images © Openverse (CC)`（与 `uk-biz-finder` 底栏一致）。
 
-### H4 — ganache(dessert) / papa-bruno(restaurant) 站缺隐私政策页
-证据：`#privacy` 路由仅存在于 base + coffee / salon / yoga / law / hotel / trades 模板；**dessert / restaurant 模板无**。9 真实站中 `ganache`、`papa-bruno` 因此无 Privacy Policy 页。
+### H4 — ~~ganache(dessert) / papa-bruno(restaurant) 站缺隐私政策页~~ ❌ **经复核为误报（已撤销）**
+原证据错误：实测 `src/dessert/App.tsx`(L41/L379) 与 `src/restaurant/App.tsx`(L62/L760) **均含完整 `#privacy` 路由 + 本地 `PrivacyPolicy` 组件**，且 footer 各有 `<a href="#privacy">Privacy Policy</a>` 链接。构建 `ganache`、`papa-bruno` 后，其 `dist` 含 "Privacy Policy / We collect / GDPR / cookies" 文案 → **8/8 模板均已含隐私页，H4 不成立**。
 
-风险：UK **GDPR / PECR** 要求网站有隐私声明；这 2 站缺 = 合规缺口。
+风险：原判定为合规缺口，复核后无此缺口。
 
 修复：把 privacy 路由 + Cookie 链接移植到 dessert / restaurant 模板（与 coffee 等对齐）。
 
@@ -70,7 +70,7 @@
 - **PROJS 为唯一事实源**，孤儿门防漏构建 / 防孤儿上线。
 - **safe-delete 守卫绕法**（`mv` 非 `rm`）已文档化。
 - **OAuth `client_id` 已填**，CMS 后端可用（仅覆盖面子缺口，见 H2）。
-- **7/8 模板含隐私页 + Cookie 声明**（PECR 意识具备，仅 dessert/restaurant 漏，见 H4）。
+- **8/8 模板含隐私页 + Cookie 声明**（PECR 意识具备，H4 经复核为误报，见下）。
 - 资产流水线 skill + UK Biz Finder 工具链完整。
 
 ---
@@ -95,10 +95,10 @@
 |---|---|---|---|
 | H2 · CMS 覆盖 19 站 | ✅ 已推送 | `node gen-decap-config.mjs` 重生成 `admin/config.yml`，自动保留 `client_id`，覆盖 10 模板 + 9 真实商家 | `923adc1` |
 | H3 · OSM/Openverse 署名 | ✅ 已修复 | `generate.mjs` 在 `</body>` 前注入底部署名条，仅 `_source==='osm'` 真实站生效（模板 demo 不注入） | 本轮 |
-| H1 · 未核实免责横幅 | 🟡 已注入·待补邮箱 | `generate.mjs` 在 `#root` 前注入顶部横幅"数据未核实，商家可 claim/下架"，仅真实站生效 | 本轮 |
-| H4 · dessert/restaurant 隐私页 | ⏸ 待做 | 两模板缺 Privacy 路由，致 ganache/papa-bruno/chinatown-bakery 无隐私政策 | — |
+| H1 · 未核实免责横幅 | ✅ 已闭环 | `generate.mjs` 注入顶部横幅"数据未核实，商家可 claim/下架"，仅真实站生效；claim 邮箱已替换为真实 `lic28790@gmail.com` | 本轮 |
+| H4 · dessert/restaurant 隐私页 | ✅ 误报已复核 | 经复核 8/8 模板均含完整隐私页（含 dessert/restaurant），构建产物已验证含隐私文案，无需改动 | 本轮 |
 | H5 · 外联/授权 | ⏸ 第2步范畴 | 加速外联 + 获授权前 `noindex` | — |
 
 **本轮改动文件**：`generate.mjs`（注入逻辑）+ 9 个真实站 JSON（`_source:'osm'` 来源标记，既修复数据缺陷又驱动 H1/H3 判定）。
 
-**H1 残留项（需用户动作）**：横幅内 claim 邮箱当前为占位 `hello@your-web-studio.co.uk`，**须替换为真实接收 claim 请求的邮箱**后 H1 才算完全闭环；站上占位电话/编造好评本身待第2步联系商家核实后替换（横幅仅为过渡期消险）。
+**H1 已闭环**：claim 邮箱已替换为用户真实邮箱 `lic28790@gmail.com`（H1 完全闭环）。**剩余待第2步**：站上占位电话 / 编造好评 / 臆测营业时间本身待联系商家核实后替换（横幅仅为过渡期消险）。
