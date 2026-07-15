@@ -10,7 +10,7 @@ set -u
 cd "$(dirname "$0")"
 LOG_DIR="$(pwd)/build-logs"
 mkdir -p "$LOG_DIR"
-PROJS=( atelier-salon breath-yoga chambers-law creme-dessert forge-trades mario-pizza mono-coffee patisserie-v2 sotto-sotto vault-hotel )
+PROJS=( atelier-salon breath-yoga chambers-law creme-dessert forge-trades mario-pizza mono-coffee patisserie-v2 sotto-sotto vault-hotel morris-coffee holborn-nails ganache indaba-yoga seddons-law gower-hotel vale-hardware papa-bruno chinatown-bakery )
 echo "=== 干净全量重建开始 $(date) ===" | tee "$LOG_DIR/_clean.log"
 for f in "${PROJS[@]}"; do
   echo ">>> 构建 $f ... $(date)" | tee -a "$LOG_DIR/_clean.log"
