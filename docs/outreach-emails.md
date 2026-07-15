@@ -48,7 +48,7 @@ Morris's, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 2/9 — Holborn Nails & Beauty (holborn-nails)
@@ -74,7 +74,7 @@ Holborn Nails & Beauty, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 3/9 — Ganache Chocolatier (ganache)
@@ -100,7 +100,7 @@ Ganache Chocolatier, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 4/9 — Indaba Yoga (indaba-yoga)
@@ -126,7 +126,7 @@ Indaba Yoga, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 5/9 — Seddons Solicitors (seddons-law)
@@ -152,7 +152,7 @@ Seddons Solicitors, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 6/9 — Gower House Hotel (gower-hotel)
@@ -178,7 +178,7 @@ Gower House Hotel, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 7/9 — Vale Hardware (vale-hardware)
@@ -204,7 +204,7 @@ Vale Hardware, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 8/9 — Papa Bruno (papa-bruno)
@@ -230,7 +230,7 @@ Papa Bruno, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 9/9 — Chinatown Bakery (chinatown-bakery)
@@ -256,7 +256,7 @@ Chinatown Bakery, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ---
@@ -276,7 +276,7 @@ Happy to answer any questions if anything's unclear.
 
 Either way, thanks for the great work you do.
 
-<YourName>
+Ethan Li
 ```
 
 ## 确认采集邮件（模板 C，商家同意后，通用）
@@ -295,5 +295,5 @@ Brilliant, let's do it. To build the site I just need:
 
 That's it. I'll send you a preview before it goes live.
 
-<YourName>
+Ethan Li
 ```

@@ -15,7 +15,7 @@
 | 3 | Vale Hardware | vale-hardware | 编造 5★ 好评（Priya Sharma 等虚构名） | Google 商家资料留言 / FB | ☐ 待发 |
 | 4 | Papa Bruno | papa-bruno | 编造 5★ 好评（James Whitfield 等虚构名） | Google 商家资料留言 / FB | ☐ 待发 |
 
-> 4 家**均无官网** → 走 Google 商家资料留言 / Facebook 主页私信最稳；若电话能接通也可电话后补发邮件。填好 `<YourName>` 后复制下方对应块发出。
+> 4 家**均无官网** → 走 Google 商家资料留言 / Facebook 主页私信最稳；若电话能接通也可电话后补发邮件。签名已填 **Ethan Li**，复制下方对应块即可直接发。
 
 ## 📎 各商家独立预览链接（发邮件时贴入对应块）
 
@@ -24,7 +24,7 @@
 
 | # | 商家 | 预览链接 | 状态 |
 |---|---|---|---|
-| 1 | Indaba Yoga | https://lcclicheng.github.io/demo-sites/indaba-yoga/ | ✅ 在线（横幅重部署中） |
+| 1 | Indaba Yoga | https://lcclicheng.github.io/demo-sites/indaba-yoga/ | ✅ 在线 |
 | 2 | Seddons Solicitors | https://lcclicheng.github.io/demo-sites/seddons-law/ | ✅ 在线 |
 | 3 | Vale Hardware | https://lcclicheng.github.io/demo-sites/vale-hardware/ | ✅ 在线 |
 | 4 | Papa Bruno | https://lcclicheng.github.io/demo-sites/papa-bruno/ | ✅ 在线 |
@@ -57,7 +57,7 @@ Indaba Yoga, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 2/4 — Seddons Solicitors (seddons-law)
@@ -86,7 +86,7 @@ Seddons Solicitors, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 3/4 — Vale Hardware (vale-hardware)
@@ -115,7 +115,7 @@ Vale Hardware, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ## 邮件 4/4 — Papa Bruno (papa-bruno)
@@ -144,7 +144,7 @@ Papa Bruno, just say the word and I'll take it down.
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ---

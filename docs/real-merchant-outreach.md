@@ -44,7 +44,7 @@ No catch, no subscription, no obligation. If you'd rather I didn't feature
 Interested? Just reply and I'll get it live.
 
 Best,
-<YourName>
+Ethan Li
 ```
 
 ### 模板 B — 跟进（首触后第 4 天）
@@ -62,7 +62,7 @@ Happy to answer any questions if anything's unclear.
 
 Either way, thanks for the great work you do.
 
-<YourName>
+Ethan Li
 ```
 
 ### 模板 C — 确认采集（商家同意后，要图 / 要数据）
@@ -81,7 +81,7 @@ Brilliant, let's do it. To build the site I just need:
 
 That's it. I'll send you a preview before it goes live.
 
-<YourName>
+Ethan Li
 ```
 
 ## 4. 数据采集清单（按模板字段）
