@@ -528,7 +528,37 @@ async function generateOne(jsonPath) {
     if (first) ogImage = `${siteUrl}images/${first}`
   }
   const esc = (s) => String(s).replace(/"/g, '&quot;')
+
+  // ── JSON-LD 结构化数据（LocalBusiness 子类，提升本地 SEO / 富结果）──
+  // 仅取真实存在的字段，绝不编造；hours 等未规范化字段本期不注入，避免误导爬虫
+  const SCHEMA_TYPE = {
+    restaurant: 'Restaurant', coffee: 'Cafe', dessert: 'Bakery',
+    salon: 'HairSalon', hotel: 'Hotel', yoga: 'HealthClub',
+    law: 'LegalService', trades: 'HomeAndConstructionBusiness',
+  }[template] || 'LocalBusiness'
+  const _street = data.street || data.registeredAddress || ''
+  const _locality = data.location || ''
+  const _jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': SCHEMA_TYPE,
+    name: data.name || seoTitle,
+    url: siteUrl,
+    description: seoDesc,
+    ...(data.phone ? { telephone: data.phone } : {}),
+    ...(data.email ? { email: data.email } : {}),
+    ...((_street || _locality) ? { address: {
+      '@type': 'PostalAddress',
+      ...(_street ? { streetAddress: _street } : {}),
+      ...(_locality ? { addressLocality: _locality } : {}),
+      addressCountry: 'GB',
+    } } : {}),
+    ...(data.priceRange ? { priceRange: data.priceRange } : {}),
+    ...(ogImage ? { image: ogImage } : {}),
+    ...(['trades', 'law', 'hotel'].includes(template) && _locality ? { areaServed: _locality } : {}),
+  }
+  const jsonLdTag = `<script type="application/ld+json">${JSON.stringify(_jsonLd).replace(/</g, '\\u003c')}</script>`
   const seoTags = [
+    jsonLdTag,
     `<meta name="description" content="${seoDesc}"/>`,
     `<meta name="robots" content="index,follow"/>`,
     `<meta property="og:title" content="${esc(seoTitle)}"/>`,

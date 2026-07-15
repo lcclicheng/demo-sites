@@ -49,8 +49,12 @@
 ## 4. 当前进度
 
 - [x] 步骤 1 启动：见 `clients/README.md` + `scaffold-client.mjs`
-- [x] 步骤 2 启动：见 `knowledge/README.md` + `knowledge/{restaurant,coffee,law}/`
-- [ ] 步骤 3–6：待前两步评审后推进
+- [x] 步骤 2 完成：**8 行业全覆盖** `knowledge/{restaurant,coffee,salon,dessert,yoga,law,hotel,trades}/`（各含 hero/seo/faq/cta，共 32 文件 + README）
+- [x] 步骤 4a 完成：**JSON-LD 自动注入**（`generate.mjs` 按 `template` 映射 Restaurant/Cafe/Bakery/HairSalon/Hotel/HealthClub/LegalService/HomeAndConstructionBusiness，仅取真实字段、`<` 转义、不编造 hours）
+- [x] 步骤 4b 脚手架：见 `docs/blog-pipeline.md` + `blog/README.md` + `blog/_samples/`；LLM 生成与 `gen-blog.mjs` 渲染器留待上线后 / 步骤 6
+- [ ] 步骤 3 AI Intake：降级为上线后增值服务（§5.1）
+- [ ] 步骤 5 Deployment Adapter：需 owner 开 Vercel / Cloudflare 账号
+- [ ] 步骤 6 Section Engine：最后做，价值已被前几步验证
 
 ## 5. 关键决策记录
 
