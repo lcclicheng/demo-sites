@@ -566,9 +566,12 @@ async function generateOne(jsonPath) {
   html = html.replace('__TITLE__',data.pageTitle||data.name)
   fs.writeFileSync(path.join(outputDir,'index.html'),html,'utf-8')
 
-  // ── 合规注入：仅真实商家站（_source==='osm'）──
+  // ── 合规注入：仅真实商家站（_source==='osm' 或 OSM 对象）──
   // H1 未核实免责横幅 + H3 OSM/Openverse 署名（满足 ODbL §12.4 + CC BY 署名要求）
-  if (data._source === 'osm') {
+  // 兼容两种写法：① 既有 9 站用字符串 "osm"；② uk-biz-finder 导出用对象 {provider:'OpenStreetMap ...', ...}
+  const isOsmSource = data._source === 'osm' ||
+    (data._source && typeof data._source === 'object' && /openstreetmap/i.test(data._source.provider || ''))
+  if (isOsmSource) {
     let finalHtml = fs.readFileSync(path.join(outputDir,'index.html'),'utf-8')
     const SHOWCASE_CONTACT = 'lic28790@gmail.com' // 真实接收 claim 请求的邮箱（H1 完全闭环）
     const banner = `<div id="showcase-banner" style="position:relative;z-index:1000;background:#faf3e0;color:#7a5b1e;font-size:12px;line-height:1.45;text-align:center;padding:7px 16px;font-family:system-ui,-apple-system,sans-serif;border-bottom:1px solid #e7d8b5">Showcase demo · Built from public OpenStreetMap data. Phone, opening hours &amp; reviews are <strong>unverified</strong> and shown for demonstration only. Business owners: <a href="mailto:${SHOWCASE_CONTACT}" style="color:#7a5b1e;text-decoration:underline">email us to claim this page or request removal</a>.</div>`
