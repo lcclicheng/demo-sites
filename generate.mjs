@@ -200,6 +200,19 @@ const TEMPLATES = {
     css: '@tailwind base;@tailwind components;@tailwind utilities;*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}body{font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-tap-highlight-color:transparent;background:#f5f5f4;color:#1c1917}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#f5f5f4}::-webkit-scrollbar-thumb{background:rgba(217,119,6,0.25);border-radius:2px}::selection{background:rgba(217,119,6,0.2)}.grid-pattern{background-image:linear-gradient(rgba(28,25,23,0.04)1px,transparent 1px),linear-gradient(90deg,rgba(28,25,23,0.04)1px,transparent 1px);background-size:24px 24px}@media (max-width:768px){input,select,textarea{font-size:16px}}',
     twConfig: `/** @type {import('tailwindcss').Config} */export default{content:['./index.html','./src/**/*.{js,ts,jsx,tsx}'],theme:{extend:{colors:{steel:'#f5f5f4',charcoal:'#1c1917',copper:'#d97706',rust:'#9a3412',concrete:'#e7e5e4',ink:'#171717'},fontFamily:{body:['Inter','sans-serif']}}},plugins:[]}`,
   },
+
+  // ── SECTIONED · 组合器模板（Section Engine 入口，theme-agnostic）──
+  // 不绑定任何行业：消费统一的 SectionedData 契约，按 data.sections（可选覆盖）
+  // 或默认顺序渲染通用 section 组件（src/components/sections/*）。
+  // 配色仅依赖 accent / surface / ink 三色，可通过 THEMES 逐站覆盖。
+  sectioned: {
+    files: ['src/sectioned/App.tsx', 'src/sectioned/business-data.ts'],
+    favicon: '◈',
+    tailwind: 'sectioned',
+    html: '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"/><title>__TITLE__</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>',
+    css: '@tailwind base;@tailwind components;@tailwind utilities;*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}body{font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-tap-highlight-color:transparent;background:#faf9f7;color:#1c1917}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#faf9f7}::-webkit-scrollbar-thumb{background:rgba(184,137,90,0.2);border-radius:0}::selection{background:rgba(184,137,90,0.25)}@media (max-width:768px){input,select,textarea{font-size:16px}}',
+    twConfig: `/** @type {import('tailwindcss').Config} */export default{content:['./index.html','./src/**/*.{js,ts,jsx,tsx}'],theme:{extend:{colors:{surface:'#faf9f7',ink:'#1c1917',accent:'#b8895a'},fontFamily:{display:['"Playfair Display"','Georgia','serif'],body:['Inter','sans-serif']}}},plugins:[]}`,
+  },
 }
 
 // ── 单项目生成 ────────────────────────────────

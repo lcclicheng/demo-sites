@@ -1,0 +1,111 @@
+// Section Engine 源数据 — 本地 `npm run dev` 预览用。
+// CI 构建时由 generate.mjs 用 examples/<slug>.json 覆盖写入 output/src/business-data.ts。
+
+export const businessData = {
+  template: 'sectioned',
+  slug: 'sectioned-demo',
+  name: 'The Hartwell',
+  subtitle: 'Neighbourhood Kitchen',
+  tagline: 'A seasonal neighbourhood kitchen in the heart of Bristol — small plates, natural wine, and a warm welcome.',
+  established: '2019',
+  location: 'Bristol, UK',
+  street: '12 Cotham Hill, Bristol BS6 6LA',
+  postcode: 'BS6 6LA',
+  phone: '+44 117 900 1234',
+  email: 'hello@thehartwell.co.uk',
+  googleRating: '4.8',
+  googleReviews: '210+ reviews',
+  heroLine1: 'The Hartwell',
+  heroLine2: 'Neighbourhood Kitchen',
+  heroBadge: 'Est. 2019 · Bristol',
+  heroStats: [
+    { val: '4.8', label: 'Google Rating', stars: true },
+    { val: '210+', label: 'Reviews' },
+    { val: '2019', label: 'Established' },
+  ],
+  heroCta1: { text: 'View Menu', href: '#menu' },
+  heroCta2: { text: 'Book a Table', href: '#booking' },
+  // 可选组合覆盖：演示「AI 自定义顺序 / 子集」。缺此字段则引擎用默认顺序。
+  sections: [
+    { type: 'hero' },
+    { type: 'infoBar' },
+    { type: 'menu' },
+    { type: 'story' },
+    { type: 'gallery' },
+    { type: 'reviews' },
+    { type: 'team' },
+    { type: 'booking' },
+    { type: 'location' },
+    { type: 'instagram' },
+    { type: 'footer' },
+  ],
+  infoBar: [
+    { icon: 'MapPin', text: '12 Cotham Hill, Bristol' },
+    { icon: 'Clock', text: 'Tue—Sun · 12:00—22:00' },
+    { icon: 'Phone', text: '+44 117 900 1234' },
+  ],
+  menu: [
+    {
+      title: 'To Share',
+      icon: 'UtensilsCrossed',
+      items: [
+        { name: 'Burnt Honey Leeks', desc: 'Charred leek, whipped feta, hazelnut', price: '11' },
+        { name: 'Cromwell Lamb', desc: 'Slow shoulder, apricot, mint', price: '14' },
+      ],
+    },
+    {
+      title: 'Mains',
+      icon: 'Flame',
+      items: [
+        { name: 'Day Boat Fish', desc: 'Line-caught, brown butter, samphire', price: '22' },
+        { name: 'Cinder Valley Chicken', desc: 'Roasted on the bone, lemon, thyme', price: '19' },
+      ],
+    },
+  ],
+  menuIntroTitle: 'Cooked Over Fire',
+  menuIntroText: 'A short, changing menu built around the charcoal grill.',
+  story: {
+    title: 'A Kitchen Without Airs',
+    paragraphs: [
+      'The Hartwell opened in 2019 on a quiet corner of Cotham Hill, with a simple idea: cook with the seasons, pour natural wine, and treat every guest like a regular.',
+      'We work with a handful of West Country growers and fishermen, changing the menu as the weather does. Nothing arrives pre-made; everything leaves the pass within minutes of order.',
+    ],
+    stats: [
+      { value: '6', label: 'Years' },
+      { value: '40', label: 'Wines' },
+      { value: '4.8', label: 'Google' },
+    ],
+  },
+  gallery: [
+    { title: 'The Pass', icon: 'Flame' },
+    { title: 'The Counter', icon: 'Wine' },
+    { title: 'The Garden', icon: 'UtensilsCrossed' },
+  ],
+  reviews: [
+    { name: 'Olivia P.', text: 'The warmest room in Bristol. The lamb is unforgettable.', rating: 5 },
+    { name: 'James R.', text: 'Natural wine list is a joy. Never rushed, never precious.', rating: 5 },
+  ],
+  team: [
+    { name: 'Mara Quinn', role: 'Head Chef', initials: 'MQ' },
+    { name: 'Tom Ellis', role: 'Sommelier', initials: 'TE' },
+  ],
+  booking: {
+    intro: 'Tables released 30 days ahead. Weekends fill fast.',
+    note: 'We hold tables 15 minutes past the booking time.',
+    occasionOptions: ['Anniversary', 'Birthday', 'Business'],
+  },
+  hoursDetail: {
+    wedFri: '12:00—22:00',
+    saturday: '12:00—23:00',
+    sunday: '12:00—21:00',
+    closedDays: 'Mon · Closed',
+  },
+  footer: {
+    quickLinks: ['Our Menu', 'Private Dining', 'Gift Cards'],
+    note: 'Small plates. Natural wine. Warm welcome.',
+  },
+  instagram: 'https://instagram.com/thehartwell',
+  facebook: 'https://facebook.com/thehartwell',
+  pageTitle: 'The Hartwell — Neighbourhood Kitchen in Bristol',
+  seo: { description: 'Seasonal neighbourhood kitchen in Bristol — small plates and natural wine.' },
+} as const
