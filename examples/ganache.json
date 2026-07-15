@@ -1,7 +1,6 @@
 {
   "template": "dessert",
   "name": "GANACHE",
-  "brandEmoji": "🍫",
   "tagline": "An artisan chocolatier in Soho — hand-tempered truffles, pralines, and small pastries made daily.",
   "taglineFull": "Fine chocolate in the heart of Soho.",
   "location": "Soho, London",
@@ -33,9 +32,9 @@
   "chocolateSubtitle": "Single-origin couverture, hand-tempered.",
   "specialTitle": "Today's Special",
   "specialItems": [
-    { "name": "Salted Caramel Truffle", "price": "2.50", "emoji": "🍫" },
-    { "name": "Pistachio Praline", "price": "2.80", "emoji": "🌰" },
-    { "name": "Raspberry Heart", "price": "3.00", "emoji": "💗" }
+    { "name": "Salted Caramel Truffle", "price": "2.50" },
+    { "name": "Pistachio Praline", "price": "2.80" },
+    { "name": "Raspberry Heart", "price": "3.00" }
   ],
   "orderTitle": "PRE-ORDER",
   "orderSubtitle": "Reserve your favourites.",

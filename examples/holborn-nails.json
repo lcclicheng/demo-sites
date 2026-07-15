@@ -40,12 +40,12 @@
     { "name": "Amara Okafor", "role": "Beauty Therapist · 6 yrs", "specialty": "Facials, pedicures, waxing", "initials": "AO" }
   ],
   "galleryItems": [
-    { "gradient": "from-rose-200 to-blush", "emoji": "💅", "title": "The Manicure" },
-    { "gradient": "from-plum/30 to-blush", "emoji": "👁️", "title": "The Lashes" },
-    { "gradient": "from-amber-100 to-gold/30", "emoji": "✨", "title": "The Glow" },
-    { "gradient": "from-blush to-rose-100", "emoji": "🦶", "title": "The Pedicure" },
-    { "gradient": "from-sage-200 to-sage/30", "emoji": "🌿", "title": "The Products" },
-    { "gradient": "from-stone-200 to-sand", "emoji": "🕯️", "title": "The Studio" }
+    { "gradient": "from-rose-200 to-blush", "title": "The Manicure" },
+    { "gradient": "from-plum/30 to-blush", "title": "The Lashes" },
+    { "gradient": "from-amber-100 to-gold/30", "title": "The Glow" },
+    { "gradient": "from-blush to-rose-100", "title": "The Pedicure" },
+    { "gradient": "from-sage-200 to-sage/30", "title": "The Products" },
+    { "gradient": "from-stone-200 to-sand", "title": "The Studio" }
   ],
   "bookingFields": [
     { "name": "name", "label": "Name", "type": "text", "required": true },

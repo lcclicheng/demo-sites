@@ -132,32 +132,32 @@
   "galleryItems": [
     {
       "gradient": "from-amber-900/80 via-amber-700/60 to-amber-900/80",
-      "emoji": "🍝",
+      "icon": "UtensilsCrossed",
       "title": "The Pasta"
     },
     {
       "gradient": "from-stone-800/80 via-stone-700/60 to-stone-800/80",
-      "emoji": "🔥",
+      "icon": "Flame",
       "title": "The Oven"
     },
     {
       "gradient": "from-zinc-800/80 via-zinc-700/50 to-zinc-800/80",
-      "emoji": "🐟",
+      "icon": "Fish",
       "title": "The Sea"
     },
     {
       "gradient": "from-amber-800/80 via-yellow-700/50 to-amber-800/80",
-      "emoji": "🍷",
+      "icon": "Wine",
       "title": "The Table"
     },
     {
       "gradient": "from-stone-900/80 via-amber-800/50 to-stone-900/80",
-      "emoji": "🍷",
+      "icon": "Wine",
       "title": "The Cellar"
     },
     {
       "gradient": "from-zinc-900/80 via-amber-700/40 to-zinc-900/80",
-      "emoji": "🇮🇹",
+      "icon": "Wheat",
       "title": "La Sicilia"
     }
   ],

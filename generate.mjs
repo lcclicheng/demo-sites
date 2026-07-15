@@ -510,6 +510,12 @@ async function generateOne(jsonPath) {
   const seoTitle = (data.seo && data.seo.title) || data.pageTitle || data.name || ''
   const seoDescRaw = (data.seo && data.seo.description) || data.tagline || (Array.isArray(data.aboutParagraphs) ? data.aboutParagraphs[0] : '') || data.name || ''
   const seoDesc = String(seoDescRaw).replace(/"/g, '&quot;').replace(/\s+/g, ' ').trim().slice(0, 200)
+  // favicon: 品牌首字母 monogram（替换原模板 emoji，符合高端定位）
+  const brandInitials = (data.name || data.slug || 'B')
+    .replace(/[^A-Za-z0-9 ]/g, ' ').split(/\s+/)
+    .filter((w) => w && !['the', 'and', 'of', 'a', 'de', 'la', 'le'].includes(w.toLowerCase()))
+    .slice(0, 2).map((w) => w[0].toUpperCase()).join('')
+  const faviconFontSize = brandInitials.length > 1 ? 52 : 80
   const SEO_BASE = (process.env.SITE_BASE_URL || 'https://lcclicheng.github.io/demo-sites').replace(/\/$/, '')
   const siteUrl = `${SEO_BASE}/${projectName}/`
   // 社交分享图：优先 screenshots 第1张（已带 ?v 哈希），否则 assets 首图
@@ -538,7 +544,7 @@ async function generateOne(jsonPath) {
     `<meta name="twitter:description" content="${seoDesc}"/>`,
     ogImage ? `<meta name="twitter:image" content="${esc(ogImage)}"/>` : '',
     `<link rel="canonical" href="${esc(siteUrl)}"/>`,
-    `<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>${t.favicon || '●'}</text></svg>"/>`,
+    `<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23000'/><text x='50' y='52' font-family='Georgia,serif' font-size='${faviconFontSize}' font-style='italic' text-anchor='middle' dominant-baseline='central' fill='%23fff'>${brandInitials}</text></svg>"/>`,
     `<script>window.addEventListener('scroll',function(){var b=document.getElementById('scrollTop');if(b)b.style.opacity=window.scrollY>600?'1':'0'})</script>`,
   ].filter(Boolean).join('')
   let htmlSeo = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf-8')

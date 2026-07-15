@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
-import { Star, Phone, MapPin, Clock, ArrowRight, Send, Check, X, Menu, Sparkles, Wine, UtensilsCrossed, Flame, Lamp, Salad } from 'lucide-react'
+import { Star, Phone, MapPin, Clock, ArrowRight, Send, Check, X, Menu, Sparkles, Wine, UtensilsCrossed, Flame, Lamp, Salad, Fish, Wheat, Grape } from 'lucide-react'
 import { HeroBackdrop, GradientText, Eyebrow } from './components/visual'
 import { businessData } from './business-data'
 
@@ -22,7 +22,7 @@ const menuIcons: Record<string, React.FC<{ className?: string }>> = {
 }
 
 const galleryIcons: Record<string, React.FC<{ className?: string }>> = {
-  Flame, UtensilsCrossed, Sparkles, Wine, Lamp, Salad,
+  Flame, UtensilsCrossed, Sparkles, Wine, Lamp, Salad, Fish, Wheat, Grape,
 }
 
 export default function App() {
