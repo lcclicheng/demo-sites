@@ -26,7 +26,7 @@
   "pastriesTitle": "FROM THE COUNTER",
   "pastriesSubtitle": "Fresh every morning at 8am.",
   "cakesTitle": "CELEBRATION CAKES",
-  "cakesSubtitle": "Made for special days.",
+  "cakesSubtitle": "Made to order for your occasion.",
   "chocolateTitle": "SMALL LUXURIES,",
   "chocolateTitleAccent": "EVERY DAY.",
   "chocolateSubtitle": "Single-origin couverture, hand-tempered.",
@@ -37,7 +37,7 @@
     { "name": "Raspberry Heart", "price": "3.00" }
   ],
   "orderTitle": "PRE-ORDER",
-  "orderSubtitle": "Reserve your favourites.",
+  "orderSubtitle": "Reserve for collection.",
   "orderSuccessTitle": "Order Confirmed!",
   "orderSuccessMessage": "We'll confirm within 2 hours. Merci!",
   "orderButtonText": "Place Pre-Order",

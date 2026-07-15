@@ -42,9 +42,9 @@
   "galleryItems": [
     { "gradient": "from-rose-200 to-blush", "title": "The Manicure" },
     { "gradient": "from-plum/30 to-blush", "title": "The Lashes" },
-    { "gradient": "from-amber-100 to-gold/30", "title": "The Glow" },
+    { "gradient": "from-amber-100 to-gold/30", "title": "The Facial" },
     { "gradient": "from-blush to-rose-100", "title": "The Pedicure" },
-    { "gradient": "from-sage-200 to-sage/30", "title": "The Products" },
+    { "gradient": "from-sage-200 to-sage/30", "title": "The Edit" },
     { "gradient": "from-stone-200 to-sand", "title": "The Studio" }
   ],
   "bookingFields": [

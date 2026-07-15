@@ -351,16 +351,16 @@ const THEMES = {
   },
   'ganache': {
     cssReplace: [
-      ['background:#faf7f2', 'background:#fdf6f4'],
-      ['rgba(26,16,8,0.12)', 'rgba(107,58,74,0.12)'],
-      ['rgba(184,147,90,0.25)', 'rgba(224,163,176,0.25)'],
-      ['rgba(184,147,90,0.04)', 'rgba(224,163,176,0.04)'],
+      ['background:#faf7f2', 'background:#fbf3f0'],
+      ['rgba(26,16,8,0.12)', 'rgba(90,46,58,0.12)'],
+      ['rgba(184,147,90,0.25)', 'rgba(176,106,130,0.22)'],
+      ['rgba(184,147,90,0.04)', 'rgba(176,106,130,0.05)'],
     ],
     twReplace: [
-      ["ivory:'#faf7f2'", "ivory:'#fdf6f4'"],
-      ["espresso:'#1a1008'", "espresso:'#6b3a4a'"],
-      ["gold:'#b8935a'", "gold:'#e0a3b0'"],
-      ["cream:'#f5f0e8'", "cream:'#fbeef0'"],
+      ["ivory:'#faf7f2'", "ivory:'#fbf3f0'"],
+      ["espresso:'#1a1008'", "espresso:'#5a2e3a'"],
+      ["gold:'#b8935a'", "gold:'#b06a82'"],
+      ["cream:'#f5f0e8'", "cream:'#f7e9ec'"],
     ],
   },
   'indaba-yoga': {

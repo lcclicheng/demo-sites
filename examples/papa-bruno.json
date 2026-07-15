@@ -178,7 +178,7 @@
   ],
   "aboutStats": [
     {
-      "value": "26+",
+      "value": "28+",
       "label": "Years"
     },
     {
@@ -211,7 +211,7 @@
   "hoursDetail": {
     "wedFri": "12:00—22:30",
     "saturday": "12:00—23:00",
-    "sunday": "12:00—21:00",
+    "sunday": "Closed",
     "closedDays": "Sunday"
   },
   "reviews": [

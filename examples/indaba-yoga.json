@@ -26,7 +26,7 @@
     { "days": "Sat—Sun", "hours": "8:00—18:00" }
   ],
   "classTitle": "Our Practice",
-  "classSubtitle": "Something for everyone.",
+  "classSubtitle": "From gentle rest to athletic flow.",
   "classes": [
     { "name": "Vinyasa Flow", "desc": "Dynamic sequence linking breath with movement.", "price": "£16", "time": "60 min", "level": "All Levels" },
     { "name": "Yin & Restore", "desc": "Deep, passive stretches held for 3-5 minutes.", "price": "£14", "time": "75 min", "level": "Beginner" },
