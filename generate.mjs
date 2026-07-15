@@ -23,6 +23,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const args = process.argv.slice(2)
 const IS_BATCH = args.includes('--batch')
 const IS_DEPLOY = args.includes('--deploy')
+// 部署目标（步骤 5 Deployment Adapter）：cloudflare（默认）| vercel
+const DEPLOY_TARGET = (process.env.DEPLOY_TARGET || 'cloudflare').toLowerCase()
 const IS_AI = args.includes('--ai')
 
 // ── 工具函数 ──────────────────────────────────
@@ -654,6 +656,34 @@ async function deployCf(distDir) {
   }
 }
 
+// ── Vercel 部署（客户站专用，解锁 serverless） ──
+async function deployVercel(distDir, projectName) {
+  try {
+    if (!process.env.VERCEL_TOKEN) {
+      console.log('  ⚠️ 未设置 VERCEL_TOKEN，跳过 Vercel 部署（请在环境/CI secret 中配置）。')
+      return false
+    }
+    const name = (projectName || path.basename(path.dirname(distDir)))
+      .toLowerCase().replace(/[^a-z0-9-]/g, '-')
+    console.log(`  ▲ 部署到 Vercel（项目 ${name}）...`)
+    execSync(
+      `npx vercel deploy --prod --name "${name}" --token "${process.env.VERCEL_TOKEN}" "${distDir}"`,
+      { stdio: 'pipe' }
+    )
+    console.log('  ✅ 部署完成')
+    return true
+  } catch (e) {
+    console.log('  ⚠️ Vercel 部署失败（vercel CLI 未安装 / VERCEL_TOKEN 无效 / 项目名冲突）。手动运行 vercel deploy 即可。')
+    return false
+  }
+}
+
+// 部署分发：按 DEPLOY_TARGET 选择适配器（步骤 5）
+async function deployTo(result) {
+  if (DEPLOY_TARGET === 'vercel') return deployVercel(result.distDir, result.projectName)
+  return deployCf(result.distDir)
+}
+
 // ── AI JSON 生成 ──────────────────────────────
 
 function generateAiPrompt(description) {
@@ -734,7 +764,7 @@ async function main() {
 
     // 批量部署
     if (IS_DEPLOY) {
-      for (const r of results) await deployCf(r.distDir)
+      for (const r of results) await deployTo(r)
     }
     return
   }
@@ -748,9 +778,9 @@ async function main() {
 
   console.log(`\n✨ ${result.name} 生成成功!`)
   console.log(`   部署文件: ${result.distDir}`)
-  console.log('   部署方式: 将 dist 上传到 Cloudflare Pages')
+  console.log(`   部署方式: ${DEPLOY_TARGET === 'vercel' ? 'Vercel (vercel deploy --prod)' : 'Cloudflare Pages'}`)
 
-  if (IS_DEPLOY) await deployCf(result.distDir)
+  if (IS_DEPLOY) await deployTo(result)
 }
 
 main().catch(console.error)
