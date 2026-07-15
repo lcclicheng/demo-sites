@@ -1,7 +1,7 @@
 # ═════════════════════════════════════════════════════════════════════════
 # Decap CMS 配置（客户自助内容后台 · 自动生成，勿手改 files 段）
 #
-# ⚠️ 本文件由 gen-decap-config.mjs 从 examples/*.json 自动生成（覆盖全部 10 站、100% 字段映射）。
+# ⚠️ 本文件由 gen-decap-config.mjs 从 examples/*.json 自动生成（覆盖全部 19 站、100% 字段映射）。
 #    修改站点字段后请重跑：node gen-decap-config.mjs
 #    手写微调 label 等可直接改下方 files（不影响覆盖正确性）。
 #
@@ -2329,6 +2329,2029 @@ collections:
                 widget: string
           - name: footerCopyright
             label: "Footer Copyright"
+            widget: string
+          - name: slug
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
+      - name: "morris-coffee"
+        label: "MORRIS'S · Mayfair, London · Specialty Coffee"
+        file: "examples/morris-coffee.json"
+        fields:
+          - name: template
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
+          - name: name
+            label: "Name"
+            widget: string
+          - name: subtitle
+            label: "Subtitle"
+            widget: string
+          - name: tagline
+            label: "Tagline"
+            widget: text
+          - name: established
+            label: "Established"
+            widget: string
+          - name: location
+            label: "Location"
+            widget: string
+          - name: street
+            label: "Street"
+            widget: string
+          - name: registeredAddress
+            label: "Registered Address"
+            widget: string
+          - name: phone
+            label: "Phone"
+            widget: string
+          - name: email
+            label: "Email"
+            widget: string
+          - name: googleRating
+            label: "Google Rating"
+            widget: string
+          - name: googleReviews
+            label: "Google Reviews"
+            widget: string
+          - name: hours
+            label: "Hours"
+            widget: string
+          - name: pageTitle
+            label: "Page Title"
+            widget: string
+          - name: heroLine1
+            label: "Hero Line1"
+            widget: string
+          - name: heroLine2
+            label: "Hero Line2"
+            widget: string
+          - name: menuTitle
+            label: "Menu Title"
+            widget: string
+          - name: menuSubtitle
+            label: "Menu Subtitle"
+            widget: string
+          - name: heroCta1
+            label: "Hero Cta1"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroCta2
+            label: "Hero Cta2"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: menuItems
+            label: "Menu Items"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: origin
+                label: "Origin"
+                widget: string
+              - name: notes
+                label: "Notes"
+                widget: string
+              - name: roast
+                label: "Roast"
+                widget: string
+              - name: price
+                label: "Price"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: string
+              - name: roastLevel
+                label: "Roast Level"
+                widget: number
+                min: 0
+                max: 999999
+              - name: process
+                label: "Process"
+                widget: string
+          - name: roasteryTitle
+            label: "Roastery Title"
+            widget: string
+          - name: roasteryDescription
+            label: "Roastery Description"
+            widget: text
+          - name: orderTitle
+            label: "Order Title"
+            widget: string
+          - name: orderSubtitle
+            label: "Order Subtitle"
+            widget: string
+          - name: orderConfirmationTitle
+            label: "Order Confirmation Title"
+            widget: string
+          - name: orderConfirmationMessage
+            label: "Order Confirmation Message"
+            widget: string
+          - name: orderFormLabels
+            label: "Order Form Labels"
+            widget: object
+            fields:
+              - name: item
+                label: "Item"
+                widget: string
+              - name: name
+                label: "Name"
+                widget: string
+              - name: phone
+                label: "Phone"
+                widget: string
+              - name: note
+                label: "Note"
+                widget: string
+          - name: orderFormPlaceholders
+            label: "Order Form Placeholders"
+            widget: object
+            fields:
+              - name: item
+                label: "Item"
+                widget: string
+              - name: name
+                label: "Name"
+                widget: string
+              - name: phone
+                label: "Phone"
+                widget: string
+              - name: note
+                label: "Note"
+                widget: string
+          - name: orderButtonText
+            label: "Order Button Text"
+            widget: string
+          - name: footerTagline
+            label: "Footer Tagline"
+            widget: text
+          - name: footerBottomText
+            label: "Footer Bottom Text"
+            widget: string
+          - name: footerHoursLabel
+            label: "Footer Hours Label"
+            widget: string
+          - name: footerContactLabel
+            label: "Footer Contact Label"
+            widget: string
+          - name: navLinks
+            label: "Nav Links"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: navCtaText
+            label: "Nav Cta Text"
+            widget: string
+          - name: slug
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
+      - name: "holborn-nails"
+        label: "HOLBORN · Holborn, London · Nails & Beauty"
+        file: "examples/holborn-nails.json"
+        fields:
+          - name: template
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
+          - name: name
+            label: "Name"
+            widget: string
+          - name: subtitle
+            label: "Subtitle"
+            widget: string
+          - name: tagline
+            label: "Tagline"
+            widget: text
+          - name: heroTagline
+            label: "Hero Tagline"
+            widget: string
+          - name: heroBadge
+            label: "Hero Badge"
+            widget: string
+          - name: heroLine1
+            label: "Hero Line1"
+            widget: string
+          - name: heroLine2
+            label: "Hero Line2"
+            widget: string
+          - name: heroRating
+            label: "Hero Rating"
+            widget: string
+          - name: heroReviews
+            label: "Hero Reviews"
+            widget: string
+          - name: established
+            label: "Established"
+            widget: string
+          - name: location
+            label: "Location"
+            widget: string
+          - name: street
+            label: "Street"
+            widget: string
+          - name: registeredAddress
+            label: "Registered Address"
+            widget: string
+          - name: phone
+            label: "Phone"
+            widget: string
+          - name: email
+            label: "Email"
+            widget: string
+          - name: googleRating
+            label: "Google Rating"
+            widget: string
+          - name: googleReviews
+            label: "Google Reviews"
+            widget: string
+          - name: hours
+            label: "Hours"
+            widget: string
+          - name: pageTitle
+            label: "Page Title"
+            widget: string
+          - name: heroCta1
+            label: "Hero Cta1"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroCta2
+            label: "Hero Cta2"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: serviceCategories
+            label: "Service Categories"
+            widget: list
+            summary: "{{fields.category}}"
+            fields:
+              - name: category
+                label: "Category"
+                widget: string
+              - name: items
+                label: "Items"
+                widget: list
+                summary: "{{fields.name}}"
+                fields:
+                  - name: name
+                    label: "Name"
+                    widget: string
+                  - name: desc
+                    label: "Desc"
+                    widget: string
+                  - name: price
+                    label: "Price"
+                    widget: string
+                  - name: time
+                    label: "Time"
+                    widget: string
+                  - name: span
+                    label: "Span"
+                    widget: number
+                    min: 0
+                    max: 999999
+          - name: stylists
+            label: "Stylists"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: role
+                label: "Role"
+                widget: string
+              - name: specialty
+                label: "Specialty"
+                widget: string
+              - name: initials
+                label: "Initials"
+                widget: string
+          - name: galleryItems
+            label: "Gallery Items"
+            widget: list
+            summary: "{{fields.gradient}}"
+            fields:
+              - name: gradient
+                label: "Gradient"
+                widget: string
+              - name: title
+                label: "Title"
+                widget: string
+          - name: bookingFields
+            label: "Booking Fields"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+              - name: type
+                label: "Type"
+                widget: string
+              - name: required
+                label: "Required"
+                widget: boolean
+                required: false
+          - name: bookingTitle
+            label: "Booking Title"
+            widget: string
+          - name: bookingDescription
+            label: "Booking Description"
+            widget: string
+          - name: bookingCta
+            label: "Booking Cta"
+            widget: string
+          - name: brand
+            label: "Brand"
+            widget: string
+          - name: brandDescription
+            label: "Brand Description"
+            widget: string
+          - name: hoursNote
+            label: "Hours Note"
+            widget: string
+          - name: address
+            label: "Address"
+            widget: string
+          - name: establishedText
+            label: "Established Text"
+            widget: string
+          - name: slug
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
+      - name: "ganache"
+        label: "GANACHE · Soho, London"
+        file: "examples/ganache.json"
+        fields:
+          - name: template
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
+          - name: name
+            label: "Name"
+            widget: string
+          - name: tagline
+            label: "Tagline"
+            widget: text
+          - name: taglineFull
+            label: "Tagline Full"
+            widget: string
+          - name: location
+            label: "Location"
+            widget: string
+          - name: city
+            label: "City"
+            widget: string
+          - name: street
+            label: "Street"
+            widget: string
+          - name: registeredAddress
+            label: "Registered Address"
+            widget: string
+          - name: phone
+            label: "Phone"
+            widget: string
+          - name: email
+            label: "Email"
+            widget: string
+          - name: googleRating
+            label: "Google Rating"
+            widget: string
+          - name: googleReviewsLabel
+            label: "Google Reviews Label"
+            widget: string
+          - name: hoursDayRange
+            label: "Hours Day Range"
+            widget: string
+          - name: hoursTimeRange
+            label: "Hours Time Range"
+            widget: string
+          - name: hoursClosedDay
+            label: "Hours Closed Day"
+            widget: string
+          - name: hoursClosedLabel
+            label: "Hours Closed Label"
+            widget: string
+          - name: hours
+            label: "Hours"
+            widget: string
+          - name: pageTitle
+            label: "Page Title"
+            widget: string
+          - name: heroLine1
+            label: "Hero Line1"
+            widget: string
+          - name: heroLine2
+            label: "Hero Line2"
+            widget: string
+          - name: heroCta1
+            label: "Hero Cta1"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroCta2
+            label: "Hero Cta2"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: navLinks
+            label: "Nav Links"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: navCtaText
+            label: "Nav Cta Text"
+            widget: string
+          - name: pastriesTitle
+            label: "Pastries Title"
+            widget: string
+          - name: pastriesSubtitle
+            label: "Pastries Subtitle"
+            widget: string
+          - name: cakesTitle
+            label: "Cakes Title"
+            widget: string
+          - name: cakesSubtitle
+            label: "Cakes Subtitle"
+            widget: string
+          - name: chocolateTitle
+            label: "Chocolate Title"
+            widget: string
+          - name: chocolateTitleAccent
+            label: "Chocolate Title Accent"
+            widget: string
+          - name: chocolateSubtitle
+            label: "Chocolate Subtitle"
+            widget: string
+          - name: specialTitle
+            label: "Special Title"
+            widget: string
+          - name: specialItems
+            label: "Special Items"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: price
+                label: "Price"
+                widget: string
+          - name: orderTitle
+            label: "Order Title"
+            widget: string
+          - name: orderSubtitle
+            label: "Order Subtitle"
+            widget: string
+          - name: orderSuccessTitle
+            label: "Order Success Title"
+            widget: string
+          - name: orderSuccessMessage
+            label: "Order Success Message"
+            widget: string
+          - name: orderButtonText
+            label: "Order Button Text"
+            widget: string
+          - name: orderFields
+            label: "Order Fields"
+            widget: object
+            fields:
+              - name: item
+                label: "Item"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: placeholder
+                    label: "Placeholder"
+                    widget: string
+              - name: name
+                label: "Name"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: placeholder
+                    label: "Placeholder"
+                    widget: string
+              - name: email
+                label: "Email"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: placeholder
+                    label: "Placeholder"
+                    widget: string
+              - name: date
+                label: "Date"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: placeholder
+                    label: "Placeholder"
+                    widget: string
+              - name: message
+                label: "Message"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: placeholder
+                    label: "Placeholder"
+                    widget: string
+          - name: orderFormLabels
+            label: "Order Form Labels"
+            widget: object
+            fields:
+              - name: cake
+                label: "Cake"
+                widget: string
+              - name: name
+                label: "Name"
+                widget: string
+              - name: email
+                label: "Email"
+                widget: string
+              - name: date
+                label: "Date"
+                widget: string
+              - name: message
+                label: "Message"
+                widget: string
+          - name: orderFormPlaceholders
+            label: "Order Form Placeholders"
+            widget: object
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: email
+                label: "Email"
+                widget: string
+              - name: message
+                label: "Message"
+                widget: string
+          - name: menuItems
+            label: "Menu Items"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: string
+              - name: price
+                label: "Price"
+                widget: string
+          - name: cakeItems
+            label: "Cake Items"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: string
+              - name: price
+                label: "Price"
+                widget: string
+              - name: serves
+                label: "Serves"
+                widget: string
+          - name: chocolateItems
+            label: "Chocolate Items"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: string
+              - name: price
+                label: "Price"
+                widget: string
+          - name: footerMenuTitle
+            label: "Footer Menu Title"
+            widget: string
+          - name: footerMenuLinks
+            label: "Footer Menu Links"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: footerHoursTitle
+            label: "Footer Hours Title"
+            widget: string
+          - name: footerFindUsTitle
+            label: "Footer Find Us Title"
+            widget: string
+          - name: footerNote
+            label: "Footer Note"
+            widget: string
+          - name: footerHours
+            label: "Footer Hours"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: slug
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
+      - name: "indaba-yoga"
+        label: "INDABA · Marylebone, London · Yoga & Wellness"
+        file: "examples/indaba-yoga.json"
+        fields:
+          - name: template
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
+          - name: name
+            label: "Name"
+            widget: string
+          - name: subtitle
+            label: "Subtitle"
+            widget: string
+          - name: tagline
+            label: "Tagline"
+            widget: text
+          - name: established
+            label: "Established"
+            widget: string
+          - name: location
+            label: "Location"
+            widget: string
+          - name: street
+            label: "Street"
+            widget: string
+          - name: registeredAddress
+            label: "Registered Address"
+            widget: string
+          - name: phone
+            label: "Phone"
+            widget: string
+          - name: email
+            label: "Email"
+            widget: string
+          - name: googleRating
+            label: "Google Rating"
+            widget: string
+          - name: googleReviews
+            label: "Google Reviews"
+            widget: string
+          - name: pageTitle
+            label: "Page Title"
+            widget: string
+          - name: heroLine1
+            label: "Hero Line1"
+            widget: string
+          - name: heroLine2
+            label: "Hero Line2"
+            widget: string
+          - name: heroLine3
+            label: "Hero Line3"
+            widget: string
+          - name: heroSubtitle
+            label: "Hero Subtitle"
+            widget: string
+          - name: heroCta1
+            label: "Hero Cta1"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroCta2
+            label: "Hero Cta2"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: phoneDisplay
+            label: "Phone Display"
+            widget: string
+          - name: hoursCompact
+            label: "Hours Compact"
+            widget: string
+          - name: hours
+            label: "Hours"
+            widget: string
+          - name: hoursItems
+            label: "Hours Items"
+            widget: list
+            summary: "{{fields.days}}"
+            fields:
+              - name: days
+                label: "Days"
+                widget: string
+              - name: hours
+                label: "Hours"
+                widget: string
+          - name: classTitle
+            label: "Class Title"
+            widget: string
+          - name: classSubtitle
+            label: "Class Subtitle"
+            widget: string
+          - name: classes
+            label: "Classes"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: string
+              - name: price
+                label: "Price"
+                widget: string
+              - name: time
+                label: "Time"
+                widget: string
+              - name: level
+                label: "Level"
+                widget: string
+          - name: classDescription
+            label: "Class Description"
+            widget: string
+          - name: classLevelColors
+            label: "Class Level Colors"
+            widget: object
+            fields:
+              - name: All Levels
+                label: "All Levels"
+                widget: string
+              - name: Beginner
+                label: "Beginner"
+                widget: string
+              - name: Intermediate
+                label: "Intermediate"
+                widget: string
+              - name: Pregnancy
+                label: "Pregnancy"
+                widget: string
+          - name: teachersTitle
+            label: "Teachers Title"
+            widget: string
+          - name: teachersSubtitle
+            label: "Teachers Subtitle"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: teachersDescription
+            label: "Teachers Description"
+            widget: string
+          - name: teachers
+            label: "Teachers"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: role
+                label: "Role"
+                widget: string
+              - name: specialty
+                label: "Specialty"
+                widget: string
+              - name: initials
+                label: "Initials"
+                widget: string
+          - name: bookTitle
+            label: "Book Title"
+            widget: string
+          - name: bookSubtitle
+            label: "Book Subtitle"
+            widget: string
+          - name: bookHighlight
+            label: "Book Highlight"
+            widget: string
+          - name: bookDescription
+            label: "Book Description"
+            widget: string
+          - name: bookFields
+            label: "Book Fields"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+              - name: type
+                label: "Type"
+                widget: string
+              - name: required
+                label: "Required"
+                widget: boolean
+                required: false
+          - name: bookSubmitLabel
+            label: "Book Submit Label"
+            widget: string
+          - name: bookSubmittedLabel
+            label: "Book Submitted Label"
+            widget: string
+          - name: footerDescription
+            label: "Footer Description"
+            widget: string
+          - name: footerTagline
+            label: "Footer Tagline"
+            widget: string
+          - name: footerCopyright
+            label: "Footer Copyright"
+            widget: string
+          - name: footerAddress
+            label: "Footer Address"
+            widget: string
+          - name: cardBookLabel
+            label: "Card Book Label"
+            widget: string
+          - name: footerHeadings
+            label: "Footer Headings"
+            widget: object
+            fields:
+              - name: classes
+                label: "Classes"
+                widget: string
+              - name: hours
+                label: "Hours"
+                widget: string
+              - name: findUs
+                label: "Find Us"
+                widget: string
+          - name: nav
+            label: "Nav"
+            widget: object
+            fields:
+              - name: links
+                label: "Links"
+                widget: list
+                field: { name: "item", label: "项", widget: string }
+              - name: cta
+                label: "Cta"
+                widget: string
+          - name: slug
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
+      - name: "seddons-law"
+        label: "SEDDONS · Marylebone, London · Solicitors"
+        file: "examples/seddons-law.json"
+        fields:
+          - name: template
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
+          - name: name
+            label: "Name"
+            widget: string
+          - name: subtitle
+            label: "Subtitle"
+            widget: string
+          - name: tagline
+            label: "Tagline"
+            widget: text
+          - name: established
+            label: "Established"
+            widget: string
+          - name: location
+            label: "Location"
+            widget: string
+          - name: street
+            label: "Street"
+            widget: string
+          - name: registeredAddress
+            label: "Registered Address"
+            widget: string
+          - name: phone
+            label: "Phone"
+            widget: string
+          - name: email
+            label: "Email"
+            widget: string
+          - name: googleRating
+            label: "Google Rating"
+            widget: string
+          - name: googleReviews
+            label: "Google Reviews"
+            widget: string
+          - name: hours
+            label: "Hours"
+            widget: string
+          - name: pageTitle
+            label: "Page Title"
+            widget: string
+          - name: heroLines
+            label: "Hero Lines"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: heroCta1
+            label: "Hero Cta1"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroCta2
+            label: "Hero Cta2"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: stats
+            label: "Stats"
+            widget: list
+            summary: "{{fields.value}}"
+            fields:
+              - name: value
+                label: "Value"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+          - name: certifications
+            label: "Certifications"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: services
+            label: "Services"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: text
+          - name: sections
+            label: "Sections"
+            widget: object
+            fields:
+              - name: services
+                label: "Services"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: title
+                    label: "Title"
+                    widget: string
+                  - name: titleHighlight
+                    label: "Title Highlight"
+                    widget: string
+              - name: team
+                label: "Team"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: title
+                    label: "Title"
+                    widget: string
+                  - name: titleHighlight
+                    label: "Title Highlight"
+                    widget: string
+              - name: contact
+                label: "Contact"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: title
+                    label: "Title"
+                    widget: string
+                  - name: titleHighlight
+                    label: "Title Highlight"
+                    widget: string
+                  - name: description
+                    label: "Description"
+                    widget: string
+          - name: lawyers
+            label: "Lawyers"
+            widget: list
+            summary: "{{fields.initials}}"
+            fields:
+              - name: initials
+                label: "Initials"
+                widget: string
+              - name: name
+                label: "Name"
+                widget: string
+              - name: role
+                label: "Role"
+                widget: string
+              - name: specialty
+                label: "Specialty"
+                widget: string
+          - name: form
+            label: "Form"
+            widget: object
+            fields:
+              - name: labels
+                label: "Labels"
+                widget: object
+                fields:
+                  - name: name
+                    label: "Name"
+                    widget: string
+                  - name: email
+                    label: "Email"
+                    widget: string
+                  - name: phone
+                    label: "Phone"
+                    widget: string
+                  - name: message
+                    label: "Message"
+                    widget: string
+              - name: submit
+                label: "Submit"
+                widget: string
+              - name: success
+                label: "Success"
+                widget: string
+          - name: footer
+            label: "Footer"
+            widget: object
+            fields:
+              - name: sra
+                label: "Sra"
+                widget: string
+              - name: copyright
+                label: "Copyright"
+                widget: string
+              - name: hours
+                label: "Hours"
+                widget: string
+          - name: slug
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
+      - name: "gower-hotel"
+        label: "GOWER HOUSE · London, UK"
+        file: "examples/gower-hotel.json"
+        fields:
+          - name: template
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
+          - name: name
+            label: "Name"
+            widget: string
+          - name: tagline
+            label: "Tagline"
+            widget: text
+          - name: established
+            label: "Established"
+            widget: string
+          - name: location
+            label: "Location"
+            widget: string
+          - name: street
+            label: "Street"
+            widget: string
+          - name: registeredAddress
+            label: "Registered Address"
+            widget: string
+          - name: phone
+            label: "Phone"
+            widget: string
+          - name: email
+            label: "Email"
+            widget: string
+          - name: googleRating
+            label: "Google Rating"
+            widget: string
+          - name: googleReviews
+            label: "Google Reviews"
+            widget: string
+          - name: hours
+            label: "Hours"
+            widget: string
+          - name: pageTitle
+            label: "Page Title"
+            widget: string
+          - name: heroLine1
+            label: "Hero Line1"
+            widget: string
+          - name: heroLine2
+            label: "Hero Line2"
+            widget: string
+          - name: heroLine3
+            label: "Hero Line3"
+            widget: string
+          - name: heroTagline
+            label: "Hero Tagline"
+            widget: text
+          - name: heroStars
+            label: "Hero Stars"
+            widget: number
+            min: 1
+            max: 5
+          - name: heroRatingText
+            label: "Hero Rating Text"
+            widget: string
+          - name: heroCta1
+            label: "Hero Cta1"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroCta2
+            label: "Hero Cta2"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: navLinks
+            label: "Nav Links"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: navCtaText
+            label: "Nav Cta Text"
+            widget: string
+          - name: roomsSectionLabel
+            label: "Rooms Section Label"
+            widget: string
+          - name: roomsSectionTitle
+            label: "Rooms Section Title"
+            widget: string
+          - name: rooms
+            label: "Rooms"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: text
+              - name: price
+                label: "Price"
+                widget: number
+                min: 0
+                max: 999999
+              - name: gradient
+                label: "Gradient"
+                widget: string
+          - name: bookingSectionLabel
+            label: "Booking Section Label"
+            widget: string
+          - name: bookingTitleBefore
+            label: "Booking Title Before"
+            widget: string
+          - name: bookingTitleHighlight
+            label: "Booking Title Highlight"
+            widget: string
+          - name: bookingFields
+            label: "Booking Fields"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+              - name: type
+                label: "Type"
+                widget: string
+              - name: required
+                label: "Required"
+                widget: boolean
+                required: false
+              - name: options
+                label: "Options"
+                widget: list
+                field: { name: "item", label: "项", widget: string }
+          - name: infoBar
+            label: "Info Bar"
+            widget: list
+            summary: "{{fields.icon}}"
+            fields:
+              - name: icon
+                label: "Icon"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+              - name: lines
+                label: "Lines"
+                widget: list
+                field: { name: "item", label: "项", widget: string }
+          - name: footerDescription
+            label: "Footer Description"
+            widget: text
+          - name: footerInfo
+            label: "Footer Info"
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - name: label
+                label: "Label"
+                widget: string
+              - name: items
+                label: "Items"
+                widget: list
+                field: { name: "item", label: "项", widget: string }
+          - name: footerAddressLines
+            label: "Footer Address Lines"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: footerSocial
+            label: "Footer Social"
+            widget: list
+            summary: "{{fields.icon}}"
+            fields:
+              - name: icon
+                label: "Icon"
+                widget: string
+              - name: url
+                label: "Url"
+                widget: string
+          - name: footerCopyright
+            label: "Footer Copyright"
+            widget: string
+          - name: slug
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
+      - name: "vale-hardware"
+        label: "VALE HARDWARE · London, UK · Hardware · Keys · Repairs"
+        file: "examples/vale-hardware.json"
+        fields:
+          - name: template
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
+          - name: name
+            label: "Name"
+            widget: string
+          - name: subtitle
+            label: "Subtitle"
+            widget: string
+          - name: tagline
+            label: "Tagline"
+            widget: text
+          - name: established
+            label: "Established"
+            widget: string
+          - name: location
+            label: "Location"
+            widget: string
+          - name: street
+            label: "Street"
+            widget: string
+          - name: registeredAddress
+            label: "Registered Address"
+            widget: string
+          - name: phone
+            label: "Phone"
+            widget: string
+          - name: email
+            label: "Email"
+            widget: string
+          - name: googleRating
+            label: "Google Rating"
+            widget: string
+          - name: googleReviews
+            label: "Google Reviews"
+            widget: string
+          - name: hours
+            label: "Hours"
+            widget: string
+          - name: certs
+            label: "Certs"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: pageTitle
+            label: "Page Title"
+            widget: string
+          - name: heroLine1
+            label: "Hero Line1"
+            widget: string
+          - name: heroLine2
+            label: "Hero Line2"
+            widget: string
+          - name: heroBadge
+            label: "Hero Badge"
+            widget: string
+          - name: heroCta1
+            label: "Hero Cta1"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroCta2
+            label: "Hero Cta2"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroStats
+            label: "Hero Stats"
+            widget: list
+            summary: "{{fields.value}}"
+            fields:
+              - name: value
+                label: "Value"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+          - name: stats
+            label: "Stats"
+            widget: list
+            summary: "{{fields.value}}"
+            fields:
+              - name: value
+                label: "Value"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+          - name: heroTrustBadges
+            label: "Hero Trust Badges"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: services
+            label: "Services"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: text
+              - name: priceFrom
+                label: "Price From"
+                widget: string
+              - name: emergency
+                label: "Emergency"
+                widget: boolean
+                required: false
+          - name: about
+            label: "About"
+            widget: object
+            fields:
+              - name: title
+                label: "Title"
+                widget: string
+              - name: paragraphs
+                label: "Paragraphs"
+                widget: list
+                field: { name: "item", label: "项", widget: text }
+              - name: certifications
+                label: "Certifications"
+                widget: list
+                field: { name: "item", label: "项", widget: string }
+              - name: whyChoose
+                label: "Why Choose"
+                widget: list
+                summary: "{{fields.icon}}"
+                fields:
+                  - name: icon
+                    label: "Icon"
+                    widget: string
+                  - name: text
+                    label: "Text"
+                    widget: text
+          - name: aboutParagraphs
+            label: "About Paragraphs"
+            widget: list
+            field: { name: "item", label: "项", widget: text }
+          - name: reviews
+            label: "Reviews"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: text
+                label: "Text"
+                widget: text
+              - name: rating
+                label: "Rating"
+                widget: number
+                min: 1
+                max: 5
+          - name: contact
+            label: "Contact"
+            widget: object
+            fields:
+              - name: labels
+                label: "Labels"
+                widget: object
+                fields:
+                  - name: name
+                    label: "Name"
+                    widget: string
+                  - name: phone
+                    label: "Phone"
+                    widget: string
+                  - name: email
+                    label: "Email"
+                    widget: string
+                  - name: service
+                    label: "Service"
+                    widget: string
+                  - name: urgency
+                    label: "Urgency"
+                    widget: string
+                  - name: message
+                    label: "Message"
+                    widget: string
+              - name: placeholders
+                label: "Placeholders"
+                widget: object
+                fields:
+                  - name: name
+                    label: "Name"
+                    widget: string
+                  - name: phone
+                    label: "Phone"
+                    widget: string
+                  - name: email
+                    label: "Email"
+                    widget: string
+                  - name: service
+                    label: "Service"
+                    widget: string
+                  - name: message
+                    label: "Message"
+                    widget: text
+              - name: submit
+                label: "Submit"
+                widget: string
+              - name: success
+                label: "Success"
+                widget: text
+          - name: urgencyOptions
+            label: "Urgency Options"
+            widget: list
+            summary: "{{fields.value}}"
+            fields:
+              - name: value
+                label: "Value"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+              - name: icon
+                label: "Icon"
+                widget: string
+          - name: footer
+            label: "Footer"
+            widget: object
+            fields:
+              - name: tagline
+                label: "Tagline"
+                widget: string
+              - name: copyright
+                label: "Copyright"
+                widget: string
+          - name: nav
+            label: "Nav"
+            widget: object
+            fields:
+              - name: links
+                label: "Links"
+                widget: list
+                field: { name: "item", label: "项", widget: string }
+              - name: cta
+                label: "Cta"
+                widget: string
+          - name: slug
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
+      - name: "papa-bruno"
+        label: "Papa Bruno · London, UK · Sicilian Home Cooking"
+        file: "examples/papa-bruno.json"
+        fields:
+          - name: template
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
+          - name: name
+            label: "Name"
+            widget: string
+          - name: subtitle
+            label: "Subtitle"
+            widget: string
+          - name: tagline
+            label: "Tagline"
+            widget: text
+          - name: established
+            label: "Established"
+            widget: string
+          - name: location
+            label: "Location"
+            widget: string
+          - name: street
+            label: "Street"
+            widget: string
+          - name: registeredAddress
+            label: "Registered Address"
+            widget: string
+          - name: phone
+            label: "Phone"
+            widget: string
+          - name: email
+            label: "Email"
+            widget: string
+          - name: googleRating
+            label: "Google Rating"
+            widget: string
+          - name: googleReviews
+            label: "Google Reviews"
+            widget: string
+          - name: pageTitle
+            label: "Page Title"
+            widget: string
+          - name: heroLine1
+            label: "Hero Line1"
+            widget: string
+          - name: heroLine2
+            label: "Hero Line2"
+            widget: string
+          - name: heroBadge
+            label: "Hero Badge"
+            widget: string
+          - name: heroCta1
+            label: "Hero Cta1"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroCta2
+            label: "Hero Cta2"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroStats
+            label: "Hero Stats"
+            widget: list
+            summary: "{{fields.val}}"
+            fields:
+              - name: val
+                label: "Val"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+              - name: stars
+                label: "Stars"
+                widget: boolean
+                required: false
+          - name: infoTicker
+            label: "Info Ticker"
+            widget: list
+            summary: "{{fields.icon}}"
+            fields:
+              - name: icon
+                label: "Icon"
+                widget: string
+              - name: text
+                label: "Text"
+                widget: string
+          - name: certifications
+            label: "Certifications"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: menuIntroTitle
+            label: "Menu Intro Title"
+            widget: string
+          - name: menuIntroText
+            label: "Menu Intro Text"
+            widget: text
+          - name: menuSections
+            label: "Menu Sections"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - name: title
+                label: "Title"
+                widget: string
+              - name: icon
+                label: "Icon"
+                widget: string
+              - name: items
+                label: "Items"
+                widget: list
+                summary: "{{fields.name}}"
+                fields:
+                  - name: name
+                    label: "Name"
+                    widget: string
+                  - name: desc
+                    label: "Desc"
+                    widget: text
+                  - name: price
+                    label: "Price"
+                    widget: string
+                  - name: pair
+                    label: "Pair"
+                    widget: string
+          - name: galleryItems
+            label: "Gallery Items"
+            widget: list
+            summary: "{{fields.gradient}}"
+            fields:
+              - name: gradient
+                label: "Gradient"
+                widget: string
+              - name: icon
+                label: "Icon"
+                widget: string
+              - name: title
+                label: "Title"
+                widget: string
+          - name: occasionOptions
+            label: "Occasion Options"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: reservationNote
+            label: "Reservation Note"
+            widget: text
+          - name: footerNote
+            label: "Footer Note"
+            widget: text
+          - name: aboutTitle
+            label: "About Title"
+            widget: string
+          - name: aboutSubtitle
+            label: "About Subtitle"
+            widget: string
+          - name: aboutParagraphs
+            label: "About Paragraphs"
+            widget: list
+            field: { name: "item", label: "项", widget: text }
+          - name: aboutStats
+            label: "About Stats"
+            widget: list
+            summary: "{{fields.value}}"
+            fields:
+              - name: value
+                label: "Value"
+                widget: string
+              - name: label
+                label: "Label"
+                widget: string
+          - name: whyChooseItems
+            label: "Why Choose Items"
+            widget: list
+            summary: "{{fields.icon}}"
+            fields:
+              - name: icon
+                label: "Icon"
+                widget: string
+              - name: text
+                label: "Text"
+                widget: string
+          - name: hoursDetail
+            label: "Hours Detail"
+            widget: object
+            fields:
+              - name: wedFri
+                label: "Wed Fri"
+                widget: string
+              - name: saturday
+                label: "Saturday"
+                widget: string
+              - name: sunday
+                label: "Sunday"
+                widget: string
+              - name: closedDays
+                label: "Closed Days"
+                widget: string
+          - name: reviews
+            label: "Reviews"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: text
+                label: "Text"
+                widget: text
+              - name: rating
+                label: "Rating"
+                widget: number
+                min: 1
+                max: 5
+          - name: slug
+            label: "Slug（结构性·勿改）"
+            widget: hidden
+            required: true
+      - name: "chinatown-bakery"
+        label: "CHINATOWN BAKERY · London, UK · Chinese & Hong Kong Patisserie"
+        file: "examples/chinatown-bakery.json"
+        fields:
+          - name: template
+            label: "Template（结构性·勿改）"
+            widget: hidden
+            required: true
+          - name: name
+            label: "Name"
+            widget: string
+          - name: subtitle
+            label: "Subtitle"
+            widget: string
+          - name: tagline
+            label: "Tagline"
+            widget: text
+          - name: taglineFull
+            label: "Tagline Full"
+            widget: text
+          - name: location
+            label: "Location"
+            widget: string
+          - name: street
+            label: "Street"
+            widget: string
+          - name: registeredAddress
+            label: "Registered Address"
+            widget: string
+          - name: phone
+            label: "Phone"
+            widget: string
+          - name: email
+            label: "Email"
+            widget: string
+          - name: googleRating
+            label: "Google Rating"
+            widget: string
+          - name: googleReviews
+            label: "Google Reviews"
+            widget: string
+          - name: hours
+            label: "Hours"
+            widget: string
+          - name: pageTitle
+            label: "Page Title"
+            widget: string
+          - name: heroLine1
+            label: "Hero Line1"
+            widget: string
+          - name: heroLine2
+            label: "Hero Line2"
+            widget: string
+          - name: heroCta1
+            label: "Hero Cta1"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: heroCta2
+            label: "Hero Cta2"
+            widget: object
+            fields:
+              - name: text
+                label: "Text"
+                widget: string
+              - name: href
+                label: "Href"
+                widget: string
+          - name: navLinks
+            label: "Nav Links"
+            widget: list
+            field: { name: "item", label: "项", widget: string }
+          - name: pastriesTitle
+            label: "Pastries Title"
+            widget: string
+          - name: pastriesSubtitle
+            label: "Pastries Subtitle"
+            widget: string
+          - name: cakesTitle
+            label: "Cakes Title"
+            widget: string
+          - name: cakesSubtitle
+            label: "Cakes Subtitle"
+            widget: string
+          - name: chocolateTitle
+            label: "Chocolate Title"
+            widget: string
+          - name: chocolateSubtitle
+            label: "Chocolate Subtitle"
+            widget: string
+          - name: orderTitle
+            label: "Order Title"
+            widget: string
+          - name: orderSubtitle
+            label: "Order Subtitle"
+            widget: string
+          - name: orderSuccessTitle
+            label: "Order Success Title"
+            widget: string
+          - name: orderSuccessMessage
+            label: "Order Success Message"
+            widget: string
+          - name: orderButtonText
+            label: "Order Button Text"
+            widget: string
+          - name: orderFields
+            label: "Order Fields"
+            widget: object
+            fields:
+              - name: item
+                label: "Item"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: placeholder
+                    label: "Placeholder"
+                    widget: string
+              - name: name
+                label: "Name"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: placeholder
+                    label: "Placeholder"
+                    widget: string
+              - name: email
+                label: "Email"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: placeholder
+                    label: "Placeholder"
+                    widget: string
+              - name: date
+                label: "Date"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+              - name: message
+                label: "Message"
+                widget: object
+                fields:
+                  - name: label
+                    label: "Label"
+                    widget: string
+                  - name: placeholder
+                    label: "Placeholder"
+                    widget: string
+          - name: menuItems
+            label: "Menu Items"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: string
+              - name: price
+                label: "Price"
+                widget: string
+          - name: cakeItems
+            label: "Cake Items"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: text
+              - name: price
+                label: "Price"
+                widget: string
+              - name: serves
+                label: "Serves"
+                widget: string
+          - name: chocolateItems
+            label: "Chocolate Items"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - name: name
+                label: "Name"
+                widget: string
+              - name: desc
+                label: "Desc"
+                widget: string
+              - name: price
+                label: "Price"
+                widget: string
+          - name: footerNote
+            label: "Footer Note"
             widget: string
           - name: slug
             label: "Slug（结构性·勿改）"
