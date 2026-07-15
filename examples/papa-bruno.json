@@ -1,0 +1,235 @@
+{
+  "template": "restaurant",
+  "name": "Papa Bruno",
+  "subtitle": "Sicilian Home Cooking",
+  "tagline": "Nonna's recipes from Catania — hand-rolled pasta, wood-fired focaccia, and sardines a beccafico, a short walk from Westminster.",
+  "established": "1998",
+  "location": "London, UK",
+  "street": "47 Marsham Street, London SW1P 3DP",
+  "registeredAddress": "47 Marsham Street, London SW1P 3DP, United Kingdom",
+  "phone": "+44 20 7222 4396",
+  "email": "ciao@papabruno.co.uk",
+  "googleRating": "4.6",
+  "googleReviews": "540+ reviews",
+  "pageTitle": "Papa Bruno — Sicilian Restaurant in Westminster, London",
+  "heroLine1": "Papa",
+  "heroLine2": "BRUNO",
+  "heroBadge": "Sicilian, since 1998",
+  "heroCta1": {
+    "text": "View Menu",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Book a Table",
+    "href": "#reserve"
+  },
+  "heroStats": [
+    {
+      "val": "1998",
+      "label": "Established"
+    },
+    {
+      "val": "4.6",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "Catania",
+      "label": "Nonna's Kitchen"
+    },
+    {
+      "val": "100%",
+      "label": "Hand-Rolled Pasta"
+    }
+  ],
+  "infoTicker": [
+    {
+      "icon": "MapPin",
+      "text": "47 Marsham Street, London SW1P 3DP"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon–Sat · 12:00—22:30"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 20 7222 4396"
+    },
+    {
+      "icon": "Wine",
+      "text": "Fully Licensed"
+    }
+  ],
+  "certifications": [
+    "5★ Food Hygiene",
+    "Fully Licensed",
+    "TripAdvisor Travellers' Choice"
+  ],
+  "menuIntroTitle": "Sicily on Marsham Street",
+  "menuIntroText": "Hand-rolled pasta, wood-fired focaccia, and recipes Bruno's nonna taught him in Catania. Honest Sicilian cooking, no shortcuts.",
+  "menuSections": [
+    {
+      "title": "Primi — Pasta",
+      "icon": "Flame",
+      "items": [
+        {
+          "name": "Pasta alla Norma",
+          "desc": "Rigatoni, fried aubergine, tomato, and salted ricotta — the dish of Sicily",
+          "price": "14.50",
+          "pair": "Etna Rosso"
+        },
+        {
+          "name": "Sardine a Beccafico",
+          "desc": "Fresh sardines stuffed with breadcrumbs, pine nuts, and raisins, baked in the Sicilian way",
+          "price": "16",
+          "pair": "Grillo"
+        },
+        {
+          "name": "Spaghetti alle Vongole",
+          "desc": "Clams, garlic, white wine, and a whisper of chilli",
+          "price": "17.50",
+          "pair": "Fiano"
+        }
+      ]
+    },
+    {
+      "title": "Secondi — Mains",
+      "icon": "UtensilsCrossed",
+      "items": [
+        {
+          "name": "Involtini di Vitello",
+          "desc": "Veal rolls with provola, parsley, and lemon, slow-braised in white wine",
+          "price": "19",
+          "pair": "Nero d'Avola"
+        },
+        {
+          "name": "Focaccia di Bruno",
+          "desc": "Wood-fired focaccia with cherry tomato, oregano, and Sicilian olive oil",
+          "price": "9",
+          "pair": "Etna Bianco"
+        }
+      ]
+    },
+    {
+      "title": "Dolci",
+      "icon": "Sparkles",
+      "items": [
+        {
+          "name": "Cannoli Siciliani",
+          "desc": "Crispy shells filled with sweet ricotta, pistachio, and candied orange",
+          "price": "7.50",
+          "pair": "Passito"
+        },
+        {
+          "name": "Cassata",
+          "desc": "Sponge, ricotta, marzipan, and candied fruit — Easter in a slice",
+          "price": "8",
+          "pair": "Marsala"
+        }
+      ]
+    }
+  ],
+  "galleryItems": [
+    {
+      "gradient": "from-amber-900/80 via-amber-700/60 to-amber-900/80",
+      "emoji": "🍝",
+      "title": "The Pasta"
+    },
+    {
+      "gradient": "from-stone-800/80 via-stone-700/60 to-stone-800/80",
+      "emoji": "🔥",
+      "title": "The Oven"
+    },
+    {
+      "gradient": "from-zinc-800/80 via-zinc-700/50 to-zinc-800/80",
+      "emoji": "🐟",
+      "title": "The Sea"
+    },
+    {
+      "gradient": "from-amber-800/80 via-yellow-700/50 to-amber-800/80",
+      "emoji": "🍷",
+      "title": "The Table"
+    },
+    {
+      "gradient": "from-stone-900/80 via-amber-800/50 to-stone-900/80",
+      "emoji": "🍷",
+      "title": "The Cellar"
+    },
+    {
+      "gradient": "from-zinc-900/80 via-amber-700/40 to-zinc-900/80",
+      "emoji": "🇮🇹",
+      "title": "La Sicilia"
+    }
+  ],
+  "occasionOptions": [
+    "Family Dinner",
+    "Date Night",
+    "Business Lunch",
+    "Just Because"
+  ],
+  "reservationNote": "We release tables 30 days in advance. Pre-theatre sittings before 18:00 fill fastest — book early for Westminster evenings.",
+  "footerNote": "Family recipes from Catania, served on Marsham Street since 1998.",
+  "aboutTitle": "From Catania to Westminster",
+  "aboutSubtitle": "Pasta · Family · Sicily",
+  "aboutParagraphs": [
+    "Bruno left a tiny kitchen in Catania for London in 1998, carrying his nonna's recipe book and a dream of a proper Sicilian table. What started as twelve covers is now one of Westminster's most-loved neighbourhood restaurants.",
+    "We make everything by hand — our pasta is rolled daily, our bread baked in a wood-fired oven, and every sauce built from scratch.",
+    "No shortcuts. No fusion. Just the food Bruno grew up with, on a quiet street near the Abbey."
+  ],
+  "aboutStats": [
+    {
+      "value": "26+",
+      "label": "Years"
+    },
+    {
+      "value": "100%",
+      "label": "Hand-Rolled"
+    },
+    {
+      "value": "4.6",
+      "label": "Rating"
+    }
+  ],
+  "whyChooseItems": [
+    {
+      "icon": "Timer",
+      "text": "Pasta rolled fresh each morning — never dried, never bought in"
+    },
+    {
+      "icon": "ThumbsUp",
+      "text": "5★ Food Hygiene — inspected every six months"
+    },
+    {
+      "icon": "Shield",
+      "text": "Fully licensed — Sicilian wine by the carafe or the bottle"
+    },
+    {
+      "icon": "Award",
+      "text": "540+ five-star reviews — check our Google profile"
+    }
+  ],
+  "hoursDetail": {
+    "wedFri": "12:00—22:30",
+    "saturday": "12:00—23:00",
+    "sunday": "12:00—21:00",
+    "closedDays": "Sunday"
+  },
+  "reviews": [
+    {
+      "name": "James Whitfield",
+      "text": "The sardines a beccafico are the best thing I've eaten in London this year. Quiet, unpretentious, perfect.",
+      "rating": 5
+    },
+    {
+      "name": "Sofia Romano",
+      "text": "Tastes exactly like my nonna's kitchen in Palermo. Bruno came out to say hello — proper Sicilian hospitality.",
+      "rating": 5
+    },
+    {
+      "name": "The Okafors",
+      "text": "Took the in-laws for a birthday lunch. Cannoli worth the trip alone. We'll be back.",
+      "rating": 5
+    }
+  ],
+  "slug": "papa-bruno"
+}

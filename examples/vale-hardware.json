@@ -1,0 +1,217 @@
+{
+  "template": "trades",
+  "name": "VALE HARDWARE",
+  "subtitle": "Hardware · Keys · Repairs",
+  "tagline": "Maida Vale's neighbourhood hardware shop — keys cut while you wait, fixings, tools, and a friendly word of advice since 1992.",
+  "established": "1992",
+  "location": "London, UK",
+  "street": "8 Clifton Road, London W9 1SZ",
+  "registeredAddress": "8 Clifton Road, London W9 1SZ, United Kingdom",
+  "phone": "+44 20 4531 2764",
+  "email": "hello@valehardware.co.uk",
+  "googleRating": "4.8",
+  "googleReviews": "320+ reviews",
+  "hours": "Mon—Sat: 8:30—18:00 · Sun: 10:00—16:00",
+  "certs": [
+    "Family-Run Since 1992",
+    "Key Cutting On-Site",
+    "Tool Hire Available",
+    "Free Local Advice"
+  ],
+  "pageTitle": "VALE HARDWARE — Hardware, Keys & Repairs in Maida Vale",
+  "heroLine1": "Keys cut,",
+  "heroLine2": "problems solved.",
+  "heroBadge": "30 Years · 320+ Reviews",
+  "heroCta1": {
+    "text": "Visit the Shop",
+    "href": "#contact"
+  },
+  "heroCta2": {
+    "text": "Call Us",
+    "href": "tel:+442045312764"
+  },
+  "heroStats": [
+    {
+      "value": "30+",
+      "label": "Years"
+    },
+    {
+      "value": "320+",
+      "label": "Reviews"
+    },
+    {
+      "value": "4.8",
+      "label": "Rating"
+    },
+    {
+      "value": "5min",
+      "label": "Key Cut"
+    }
+  ],
+  "stats": [
+    {
+      "value": "30+",
+      "label": "Years"
+    },
+    {
+      "value": "320+",
+      "label": "Reviews"
+    },
+    {
+      "value": "4.8",
+      "label": "Rating"
+    },
+    {
+      "value": "5min",
+      "label": "Key Cut"
+    }
+  ],
+  "heroTrustBadges": [
+    "Family-Run Since 1992",
+    "Keys Cut On-Site",
+    "Tool Hire Available",
+    "Free Local Advice"
+  ],
+  "services": [
+    {
+      "name": "Key Cutting",
+      "desc": "House, window, safe, and security keys cut while you wait. Most standard keys done in under five minutes.",
+      "priceFrom": "£3.50",
+      "emergency": false
+    },
+    {
+      "name": "Tool Hire",
+      "desc": "Drills, sanders, wallpaper strippers, and ladders by the day. Bring ID and we'll have you sorted in minutes.",
+      "priceFrom": "£8/day",
+      "emergency": false
+    },
+    {
+      "name": "Lock & Handle Fitting",
+      "desc": "Supply and fit of cylinders, mortice locks, and door handles. Quiet, tidy work with no upsell.",
+      "priceFrom": "£45",
+      "emergency": false
+    },
+    {
+      "name": "Picture Hanging & Shelving",
+      "desc": "Solid-wall fixings, floating shelves, and mirror hanging — done right the first time, no cracked plaster.",
+      "priceFrom": "£35",
+      "emergency": false
+    },
+    {
+      "name": "Battery & Bulb Supply",
+      "desc": "Every size battery, energy-saving and halogen bulbs, and torch cells. The things you can never find elsewhere.",
+      "priceFrom": "£2",
+      "emergency": false
+    },
+    {
+      "name": "Local Delivery",
+      "desc": "Heavy paint, timber, and bulky fixings delivered around Maida Vale same-day for a small flat fee.",
+      "priceFrom": "£5",
+      "emergency": false
+    }
+  ],
+  "about": {
+    "title": "Thirty years on Clifton Road.",
+    "paragraphs": [
+      "VALE HARDWARE opened in 1992 when Len Vale left a chain store to run a proper neighbourhood shop. What began as one counter and a key machine has become Maida Vale's first stop for anything that needs fixing, hanging, or mending.",
+      "We don't do hard-sell. We do the right screw, the right advice, and a key cut before your coffee goes cold.",
+      "Everyone behind the counter lives locally and knows the terraces, mansion flats, and parade shops of W9 by name. Come in with a photo on your phone — we'll usually know the part."
+    ],
+    "certifications": [
+      "Family-Run Since 1992",
+      "Key Cutting On-Site",
+      "Tool Hire Available",
+      "Free Local Advice"
+    ],
+    "whyChoose": [
+      {
+        "icon": "Timer",
+        "text": "Most keys cut in under five minutes — done while you wait, no appointment needed"
+      },
+      {
+        "icon": "ThumbsUp",
+        "text": "30 years on the same street — we'll still be here when the chain stores have moved on"
+      },
+      {
+        "icon": "Shield",
+        "text": "Honest advice, no upsell — if a ten-pence washer will do, we'll tell you"
+      },
+      {
+        "icon": "Award",
+        "text": "320+ five-star reviews — check our Google profile and see what the neighbours say"
+      }
+    ]
+  },
+  "aboutParagraphs": [
+    "VALE HARDWARE opened in 1992 when Len Vale left a chain store to run a proper neighbourhood shop. What began as one counter and a key machine has become Maida Vale's first stop for anything that needs fixing, hanging, or mending.",
+    "We don't do hard-sell. We do the right screw, the right advice, and a key cut before your coffee goes cold.",
+    "Everyone behind the counter lives locally and knows the terraces, mansion flats, and parade shops of W9 by name. Come in with a photo on your phone — we'll usually know the part."
+  ],
+  "reviews": [
+    {
+      "name": "Priya Sharma",
+      "text": "Snapped my only back-door key on a Sunday morning. They cut me a new one in four minutes and refused to overcharge. Lifesavers.",
+      "rating": 5
+    },
+    {
+      "name": "Mr Okafor",
+      "text": "Been coming here since 1998. They remembered the odd latch on my 1930s front door. You don't get that at a superstore.",
+      "rating": 5
+    },
+    {
+      "name": "The Delaneys",
+      "text": "Hired a floor sander for the weekend, returned it Monday, no fuss. Cheaper than the hire chain and two minutes from home.",
+      "rating": 5
+    }
+  ],
+  "contact": {
+    "labels": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "service": "Service",
+      "urgency": "Urgency",
+      "message": "Describe what you need"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "phone": "Best number to reach you",
+      "email": "you@email.com",
+      "service": "Select service",
+      "message": "e.g. spare front-door key, shelf brackets, sander for the weekend..."
+    },
+    "submit": "Send Us a Message",
+    "success": "Message received! We'll get back to you the same working day."
+  },
+  "urgencyOptions": [
+    {
+      "value": "routine",
+      "label": "Routine",
+      "icon": "Clock"
+    },
+    {
+      "value": "urgent",
+      "label": "Urgent",
+      "icon": "Timer"
+    },
+    {
+      "value": "emergency",
+      "label": "Emergency",
+      "icon": "Timer"
+    }
+  ],
+  "footer": {
+    "tagline": "Keys cut, problems solved. Since 1992.",
+    "copyright": "All rights reserved."
+  },
+  "nav": {
+    "links": [
+      "Services",
+      "About",
+      "Reviews",
+      "Contact"
+    ],
+    "cta": "Visit Shop"
+  },
+  "slug": "vale-hardware"
+}

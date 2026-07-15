@@ -335,6 +335,101 @@ const THEMES = {
       ['\'"Playfair Display"\'', '\'"Fraunces"\''],
     ],
   },
+
+  // ── 真实商家 demo 主题（v0.9.10：镜像模板精修观感，slug 与模板 demo 区分） ──
+  'holborn-nails': {
+    html: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/><title>__TITLE__</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>`,
+    cssReplace: [
+      ['background:#faf7f2', 'background:#faf6f1'],
+      ['rgba(61,28,61,0.15)', 'rgba(91,74,82,0.12)'],
+      ['rgba(212,165,116,0.3)', 'rgba(192,137,106,0.3)'],
+    ],
+    twReplace: [
+      ["plum:'#3d1c3d'", "plum:'#5b4a52'"],
+      ["gold:'#d4a574'", "gold:'#c0896a'"],
+    ],
+  },
+  'ganache': {
+    cssReplace: [
+      ['background:#faf7f2', 'background:#fdf6f4'],
+      ['rgba(26,16,8,0.12)', 'rgba(107,58,74,0.12)'],
+      ['rgba(184,147,90,0.25)', 'rgba(224,163,176,0.25)'],
+      ['rgba(184,147,90,0.04)', 'rgba(224,163,176,0.04)'],
+    ],
+    twReplace: [
+      ["ivory:'#faf7f2'", "ivory:'#fdf6f4'"],
+      ["espresso:'#1a1008'", "espresso:'#6b3a4a'"],
+      ["gold:'#b8935a'", "gold:'#e0a3b0'"],
+      ["cream:'#f5f0e8'", "cream:'#fbeef0'"],
+    ],
+  },
+  'indaba-yoga': {
+    cssReplace: [
+      ['rgba(52,211,153,0.25)', 'rgba(95,174,154,0.25)'],
+    ],
+    twReplace: [
+      ["emerald:'#34d399'", "emerald:'#5fae9a'"],
+    ],
+  },
+  'seddons-law': {
+    cssReplace: [
+      ['rgba(184,134,11,0.18)', 'rgba(140,152,166,0.18)'],
+      ['rgba(184,134,11,0.25)', 'rgba(140,152,166,0.25)'],
+      ['rgba(184,134,11,0.08)', 'rgba(140,152,166,0.08)'],
+    ],
+    twReplace: [
+      ["gold:'#b8860b'", "gold:'#8c98a6'"],
+    ],
+  },
+  'gower-hotel': {
+    html: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:wght@400;500;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/><title>__TITLE__</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>`,
+    cssReplace: [
+      ['rgba(200,149,44,0.25)', 'rgba(184,137,63,0.25)'],
+    ],
+    twReplace: [
+      ["gold:'#c8952c'", "gold:'#b8893f'"],
+      ["'\"Playfair Display\"'", "'\"Fraunces\"'"],
+    ],
+  },
+  'vale-hardware': {
+    cssReplace: [
+      ['rgba(217,119,6,0.25)', 'rgba(194,65,12,0.25)'],
+      ['rgba(217,119,6,0.2)', 'rgba(194,65,12,0.2)'],
+    ],
+    twReplace: [
+      ["copper:'#d97706'", "copper:'#c2410c'"],
+      ["rust:'#9a3412'", "rust:'#7c2d12'"],
+    ],
+  },
+  'papa-bruno': {
+    cssReplace: [
+      ['rgba(200,164,92,0.2)', 'rgba(217,102,63,0.22)'],
+      ['rgba(200,164,92,0.3)', 'rgba(217,102,63,0.28)'],
+      ['rgba(200,164,92,0.4)', 'rgba(217,102,63,0.4)'],
+      ['rgba(200,164,92,0.15)', 'rgba(217,102,63,0.15)'],
+      ['background:#c8a45c', 'background:#d9663f'],
+    ],
+    twReplace: [
+      ["gold:'#c8a45c'", "gold:'#d9663f'"],
+      ["'gold-light':'#e0c878'", "'gold-light':'#e8896a'"],
+      ["paper:'#e8e0d0'", "paper:'#f4e3da'"],
+      ["mute:'#8a8070'", "mute:'#a8897d'"],
+    ],
+  },
+  'chinatown-bakery': {
+    cssReplace: [
+      ['background:#faf7f2', 'background:#fbf8f0'],
+      ['rgba(26,16,8,0.12)', 'rgba(90,74,46,0.12)'],
+      ['rgba(184,147,90,0.25)', 'rgba(201,161,74,0.22)'],
+      ['rgba(184,147,90,0.04)', 'rgba(201,161,74,0.04)'],
+    ],
+    twReplace: [
+      ["ivory:'#faf7f2'", "ivory:'#fbf8f0'"],
+      ["espresso:'#1a1008'", "espresso:'#5a4a2e'"],
+      ["gold:'#b8935a'", "gold:'#c9a14a'"],
+      ["cream:'#f5f0e8'", "cream:'#f5efe0'"],
+    ],
+  },
 }
 
 // 对 base 字符串按 [old,new] 列表做全量替换；未命中的替换打印警告（便于发现模板改动导致的失配）

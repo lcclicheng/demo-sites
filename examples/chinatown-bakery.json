@@ -1,0 +1,140 @@
+{
+  "template": "dessert",
+  "name": "CHINATOWN BAKERY",
+  "subtitle": "Chinese & Hong Kong Patisserie",
+  "tagline": "Fresh egg tarts, pineapple buns, and mooncakes baked daily in the heart of London's Chinatown.",
+  "taglineFull": "A neighbourhood bakery in the heart of London's Chinatown. Every piece is made the way it's been made for generations.",
+  "location": "London, UK",
+  "street": "25 Wardour Street, London W1D 6PP",
+  "registeredAddress": "25 Wardour Street, London W1D 6PP, United Kingdom",
+  "phone": "+44 20 7434 2706",
+  "email": "hello@chinatownbakery.co.uk",
+  "googleRating": "4.5",
+  "googleReviews": "600+ reviews",
+  "hours": "Mon—Sun · 9:00—21:00",
+  "pageTitle": "CHINATOWN BAKERY — Chinese & Hong Kong Patisserie",
+  "heroLine1": "CHINATOWN",
+  "heroLine2": "BAKERY",
+  "heroCta1": {
+    "text": "Explore Bakery",
+    "href": "#pastries"
+  },
+  "heroCta2": {
+    "text": "Order Online",
+    "href": "#order"
+  },
+  "navLinks": [
+    "Bakery",
+    "Cakes",
+    "Mooncakes",
+    "Order"
+  ],
+  "pastriesTitle": "From the Oven",
+  "pastriesSubtitle": "Baked fresh throughout the day.",
+  "cakesTitle": "Celebration Cakes",
+  "cakesSubtitle": "Made for special days. 48 hours notice.",
+  "chocolateTitle": "Mooncakes",
+  "chocolateSubtitle": "Hand-pressed for Mid-Autumn and all year round.",
+  "orderTitle": "Pre-Order",
+  "orderSubtitle": "Reserve your favourites for collection.",
+  "orderSuccessTitle": "Order Confirmed",
+  "orderSuccessMessage": "We'll confirm within 2 hours. Xièxiè.",
+  "orderButtonText": "Place Pre-Order",
+  "orderFields": {
+    "item": {
+      "label": "Selection",
+      "placeholder": "Choose your cake or box"
+    },
+    "name": {
+      "label": "Name",
+      "placeholder": "Your name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "you@email.com"
+    },
+    "date": {
+      "label": "Collection Date"
+    },
+    "message": {
+      "label": "Special Requests",
+      "placeholder": "Allergies, dietary requirements..."
+    }
+  },
+  "menuItems": [
+    {
+      "name": "Egg Tart (Dàn Tǎ)",
+      "desc": "Flaky puff shell, warm vanilla custard, baked until just set",
+      "price": "£2.80"
+    },
+    {
+      "name": "Pineapple Bun (Bō Luó Bāo)",
+      "desc": "Soft milk bun with a crisp, sugary topping — no pineapple, just the name",
+      "price": "£3.20"
+    },
+    {
+      "name": "Custard Bun (Nǎi Huáng Bāo)",
+      "desc": "Steamed bun with a molten salted-custard centre",
+      "price": "£3.50"
+    },
+    {
+      "name": "Sesame Ball (Má Tuán)",
+      "desc": "Glutinous rice shell, red bean paste, rolled in sesame and fried",
+      "price": "£3.00"
+    },
+    {
+      "name": "Red Bean Bun",
+      "desc": "Steamed bun filled with sweet adzuki bean paste",
+      "price": "£3.00"
+    },
+    {
+      "name": "Curry Puff",
+      "desc": "Golden pastry with a spiced potato and pea filling",
+      "price": "£3.40"
+    }
+  ],
+  "cakeItems": [
+    {
+      "name": "Fresh Cream Sponge",
+      "desc": "Light sponge with fresh cream and seasonal fruit",
+      "price": "£38",
+      "serves": "8—10"
+    },
+    {
+      "name": "Mango Mochi Cake",
+      "desc": "Layered sponge, mango, and soft mochi — a Chinatown favourite",
+      "price": "£42",
+      "serves": "10—12"
+    },
+    {
+      "name": "Durian Cake",
+      "desc": "For the brave — real Musang King durian cream between soft sponge",
+      "price": "£45",
+      "serves": "8—10"
+    }
+  ],
+  "chocolateItems": [
+    {
+      "name": "Lotus Paste (Golden)",
+      "desc": "Classic sweet lotus paste, baked in a traditional mould",
+      "price": "£6.50"
+    },
+    {
+      "name": "Red Bean (Whole Yolk)",
+      "desc": "Red bean paste with a salted egg yolk at its heart",
+      "price": "£7.00"
+    },
+    {
+      "name": "White Lotus & Nuts",
+      "desc": "White lotus paste with mixed nuts and a yolk — the festive standard",
+      "price": "£7.50"
+    },
+    {
+      "name": "Snow Skin (Mango)",
+      "desc": "Chilled, no-bake snow-skin mooncake with fresh mango",
+      "price": "£6.00"
+    }
+  ],
+  "footerNote": "Baked fresh in Chinatown since 1985.",
+  "slug": "chinatown-bakery"
+}

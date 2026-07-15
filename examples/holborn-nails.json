@@ -1,0 +1,68 @@
+{
+  "template": "salon",
+  "name": "HOLBORN",
+  "subtitle": "Nails & Beauty",
+  "tagline": "A calm Holborn studio for nails, lashes, and facials — quiet luxury, no rush, no upsell.",
+  "heroTagline": "Quiet luxury for hands and feet.",
+  "heroBadge": "Nails · Lashes · Facials",
+  "heroLine1": "HOLBORN",
+  "heroLine2": "Nails & Beauty",
+  "heroRating": "4.8",
+  "heroReviews": "160+ reviews",
+  "established": "2014",
+  "location": "Holborn, London",
+  "street": "57 Red Lion Street, London WC1R 4PD",
+  "registeredAddress": "57 Red Lion Street, London WC1R 4PD, United Kingdom",
+  "phone": "+44 20 7831 6222",
+  "email": "hello@holbornnails.co.uk",
+  "googleRating": "4.8",
+  "googleReviews": "160+ reviews",
+  "hours": "Tue—Sat · 10:00—19:00",
+  "pageTitle": "HOLBORN — Nails & Beauty in Holborn",
+  "heroCta1": { "text": "Book Appointment", "href": "#book" },
+  "heroCta2": { "text": "View Services", "href": "#services" },
+  "serviceCategories": [
+    {
+      "category": "Nails & Beauty",
+      "items": [
+        { "name": "Classic Manicure", "desc": "File, shape, cuticle care & polish", "price": "£32", "time": "45 min", "span": 2 },
+        { "name": "Gel Polish", "desc": "Long-lasting glossy finish, soak-off", "price": "£38", "time": "60 min", "span": 1 },
+        { "name": "Luxury Pedicure", "desc": "Full foot care, scrub, massage & polish", "price": "£45", "time": "60 min", "span": 1 },
+        { "name": "Lash Extensions", "desc": "Classic or volume, tailored look", "price": "£65", "time": "90 min", "span": 1 },
+        { "name": "Brow Styling", "desc": "Tint, wax & lamination", "price": "£28", "time": "30 min", "span": 1 },
+        { "name": "Express Facial", "desc": "Cleanse, exfoliate & hydrate", "price": "£55", "time": "45 min", "span": 1 }
+      ]
+    }
+  ],
+  "stylists": [
+    { "name": "Marta Kowalska", "role": "Nail Artist · 9 yrs", "specialty": "Gel, nail art, Russian manicure", "initials": "MK" },
+    { "name": "Yuki Tanaka", "role": "Lash & Brow Specialist · 7 yrs", "specialty": "Classic & volume lashes, lamination", "initials": "YT" },
+    { "name": "Amara Okafor", "role": "Beauty Therapist · 6 yrs", "specialty": "Facials, pedicures, waxing", "initials": "AO" }
+  ],
+  "galleryItems": [
+    { "gradient": "from-rose-200 to-blush", "emoji": "💅", "title": "The Manicure" },
+    { "gradient": "from-plum/30 to-blush", "emoji": "👁️", "title": "The Lashes" },
+    { "gradient": "from-amber-100 to-gold/30", "emoji": "✨", "title": "The Glow" },
+    { "gradient": "from-blush to-rose-100", "emoji": "🦶", "title": "The Pedicure" },
+    { "gradient": "from-sage-200 to-sage/30", "emoji": "🌿", "title": "The Products" },
+    { "gradient": "from-stone-200 to-sand", "emoji": "🕯️", "title": "The Studio" }
+  ],
+  "bookingFields": [
+    { "name": "name", "label": "Name", "type": "text", "required": true },
+    { "name": "email", "label": "Email", "type": "email", "required": true },
+    { "name": "service", "label": "Service", "type": "select", "required": true },
+    { "name": "stylist", "label": "Specialist", "type": "select" },
+    { "name": "date", "label": "Date", "type": "date", "required": true },
+    { "name": "time", "label": "Time", "type": "select" },
+    { "name": "note", "label": "Notes", "type": "textarea" }
+  ],
+  "bookingTitle": "BOOK YOUR VISIT",
+  "bookingDescription": "New clients get a complimentary consultation.",
+  "bookingCta": "Confirm Booking",
+  "brand": "HOLBORN",
+  "brandDescription": "A nails & beauty studio in Holborn. Quiet luxury, no rush.",
+  "hoursNote": "Tue—Sat · 10:00—19:00 · Sun—Mon — Closed",
+  "address": "57 Red Lion Street, London WC1R 4PD",
+  "establishedText": "Est. 2014 · Holborn, London",
+  "slug": "holborn-nails"
+}

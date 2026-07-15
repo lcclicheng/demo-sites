@@ -1,0 +1,173 @@
+{
+  "template": "hotel",
+  "name": "GOWER HOUSE",
+  "tagline": "Twelve calm rooms behind a white Georgian facade in Bloomsbury — two minutes from the British Library and a stroll from the British Museum.",
+  "established": "2003",
+  "location": "London, UK",
+  "street": "57 Gower Street, London WC1E 6HJ",
+  "registeredAddress": "57 Gower Street, London WC1E 6HJ, United Kingdom",
+  "phone": "+44 20 7636 4685",
+  "email": "stay@gowerhouse.co.uk",
+  "googleRating": "4.7",
+  "googleReviews": "210+ reviews",
+  "hours": "Check-in: 15:00 · Check-out: 11:00",
+  "pageTitle": "GOWER HOUSE — Boutique Hotel in Bloomsbury, London",
+  "heroLine1": "Rest.",
+  "heroLine2": "Read.",
+  "heroLine3": "Bloomsbury.",
+  "heroTagline": "Twelve rooms behind a white Georgian facade, two minutes from the British Library.",
+  "heroStars": 4,
+  "heroRatingText": "4.7 · 210+ reviews",
+  "heroCta1": {
+    "text": "View Our Rooms",
+    "href": "#rooms"
+  },
+  "heroCta2": {
+    "text": "Check Availability",
+    "href": "#book"
+  },
+  "navLinks": [
+    "Rooms",
+    "Book"
+  ],
+  "navCtaText": "Book Now",
+  "roomsSectionLabel": "OUR ROOMS",
+  "roomsSectionTitle": "Twelve quiet spaces, one warm welcome.",
+  "rooms": [
+    {
+      "name": "The Library Room",
+      "desc": "Floor-to-ceiling bookshelves, a window seat over Gower Street, and an antique writing desk. King bed, rainfall shower.",
+      "price": 215,
+      "gradient": "from-emerald/20 to-gold/20"
+    },
+    {
+      "name": "The Garden Room",
+      "desc": "French doors opening onto our small walled yard. Calm, green, and full of morning light. King bed.",
+      "price": 185,
+      "gradient": "from-emerald/30 to-blush/20"
+    },
+    {
+      "name": "The Bloomsbury Double",
+      "desc": "Our most-booked room — warm tones, a marble bathroom, and a view across the Georgian rooftops.",
+      "price": 165,
+      "gradient": "from-warm/30 to-gold/10"
+    },
+    {
+      "name": "The Attic Single",
+      "desc": "A snug, bright room under the eaves for the solo traveller who just needs a good night's sleep.",
+      "price": 125,
+      "gradient": "from-sky-200/30 to-emerald/10"
+    }
+  ],
+  "bookingSectionLabel": "BOOK YOUR STAY",
+  "bookingTitleBefore": "Your room",
+  "bookingTitleHighlight": "awaits.",
+  "bookingFields": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "name": "checkin",
+      "label": "Check-in",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "checkout",
+      "label": "Check-out",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "guests",
+      "label": "Guests",
+      "type": "select",
+      "options": [
+        "1 Guest",
+        "2 Guests",
+        "3 Guests",
+        "4 Guests"
+      ]
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "label": "Location",
+      "lines": [
+        "57 Gower Street",
+        "London WC1E 6HJ"
+      ]
+    },
+    {
+      "icon": "Clock",
+      "label": "Check-in / out",
+      "lines": [
+        "Check-in: 15:00",
+        "Check-out: 11:00"
+      ]
+    },
+    {
+      "icon": "Phone",
+      "label": "Contact",
+      "lines": [
+        "+44 20 7636 4685",
+        "stay@gowerhouse.co.uk"
+      ]
+    }
+  ],
+  "footerDescription": "A white Georgian townhouse in Bloomsbury. Twelve individually appointed rooms, two minutes from the British Library.",
+  "footerInfo": [
+    {
+      "label": "Rooms",
+      "items": [
+        "The Library Room",
+        "The Garden Room",
+        "The Bloomsbury Double",
+        "The Attic Single"
+      ]
+    },
+    {
+      "label": "Info",
+      "items": [
+        "Check-in: 15:00",
+        "Check-out: 11:00",
+        "Breakfast: 7:30-10:00"
+      ]
+    },
+    {
+      "label": "Find Us",
+      "items": [
+        "57 Gower Street",
+        "London WC1E 6HJ",
+        "United Kingdom"
+      ]
+    }
+  ],
+  "footerAddressLines": [
+    "57 Gower Street",
+    "London WC1E 6HJ",
+    "United Kingdom"
+  ],
+  "footerSocial": [
+    {
+      "icon": "Instagram",
+      "url": "#"
+    },
+    {
+      "icon": "Facebook",
+      "url": "#"
+    }
+  ],
+  "footerCopyright": "All rights reserved.",
+  "slug": "gower-hotel"
+}
