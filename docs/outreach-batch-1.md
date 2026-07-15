@@ -17,6 +17,18 @@
 
 > 4 家**均无官网** → 走 Google 商家资料留言 / Facebook 主页私信最稳；若电话能接通也可电话后补发邮件。填好 `<YourName>` 后复制下方对应块发出。
 
+## 📎 各商家独立预览链接（发邮件时贴入对应块）
+
+> 每家一个独立 URL，点开即看我们为 TA 搭的「独立站效果」。4 个链接均已上线、且都挂有 **Showcase 免责横幅**（"数据未核实、仅作演示，业主可邮件认领或下架"），可放心发给业主看效果。
+> 基址：`https://lcclicheng.github.io/demo-sites/<slug>/`
+
+| # | 商家 | 预览链接 | 状态 |
+|---|---|---|---|
+| 1 | Indaba Yoga | https://lcclicheng.github.io/demo-sites/indaba-yoga/ | ✅ 在线（横幅重部署中） |
+| 2 | Seddons Solicitors | https://lcclicheng.github.io/demo-sites/seddons-law/ | ✅ 在线 |
+| 3 | Vale Hardware | https://lcclicheng.github.io/demo-sites/vale-hardware/ | ✅ 在线 |
+| 4 | Papa Bruno | https://lcclicheng.github.io/demo-sites/papa-bruno/ | ✅ 在线 |
+
 ---
 
 ## 邮件 1/4 — Indaba Yoga (indaba-yoga)
@@ -35,6 +47,9 @@ set one up for Indaba Yoga — free of charge, as part of that showcase.
 All I'd need from you is:
   • a few photos you already have (the studio, a class, the teachers)
   • a quick confirm of your class schedule and contact details
+
+You can see a preview of what we'd build for Indaba Yoga here:
+https://lcclicheng.github.io/demo-sites/indaba-yoga/
 
 No catch, no subscription, no obligation. If you'd rather I didn't feature
 Indaba Yoga, just say the word and I'll take it down.
@@ -62,6 +77,9 @@ All I'd need from you is:
   • a few photos you already have (your office, the team)
   • a quick confirm of your practice areas and contact details
 
+You can see a preview of what we'd build for Seddons Solicitors here:
+https://lcclicheng.github.io/demo-sites/seddons-law/
+
 No catch, no subscription, no obligation. If you'd rather I didn't feature
 Seddons Solicitors, just say the word and I'll take it down.
 
@@ -88,6 +106,9 @@ All I'd need from you is:
   • a few photos you already have (the shop, your range, the team)
   • a quick confirm of your services and contact details
 
+You can see a preview of what we'd build for Vale Hardware here:
+https://lcclicheng.github.io/demo-sites/vale-hardware/
+
 No catch, no subscription, no obligation. If you'd rather I didn't feature
 Vale Hardware, just say the word and I'll take it down.
 
@@ -113,6 +134,9 @@ set one up for Papa Bruno — free of charge, as part of that showcase.
 All I'd need from you is:
   • a few photos you already have (your dishes, the dining room, the team)
   • a quick confirm of your signature dishes and contact details
+
+You can see a preview of what we'd build for Papa Bruno here:
+https://lcclicheng.github.io/demo-sites/papa-bruno/
 
 No catch, no subscription, no obligation. If you'd rather I didn't feature
 Papa Bruno, just say the word and I'll take it down.
