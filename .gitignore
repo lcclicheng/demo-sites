@@ -28,4 +28,7 @@ Thumbs.db
 /vault/
 
 # 客户反馈知识库（含敏感信息，不进仓库）
-clients/
+# 用 clients/** 忽略全部内容但保留目录可遍历，从而可单独放行约定文档
+clients/**
+# CRM 约定文档入库（真实客户数据：合同/发票/反馈/info 仍私有）
+!clients/README.md
