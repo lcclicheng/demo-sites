@@ -231,5 +231,6 @@
       "rating": 5
     }
   ],
-  "slug": "papa-bruno"
+  "slug": "papa-bruno",
+  "_source": "osm"
 }

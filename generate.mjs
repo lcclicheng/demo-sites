@@ -566,6 +566,19 @@ async function generateOne(jsonPath) {
   html = html.replace('__TITLE__',data.pageTitle||data.name)
   fs.writeFileSync(path.join(outputDir,'index.html'),html,'utf-8')
 
+  // ── 合规注入：仅真实商家站（_source==='osm'）──
+  // H1 未核实免责横幅 + H3 OSM/Openverse 署名（满足 ODbL §12.4 + CC BY 署名要求）
+  if (data._source === 'osm') {
+    let finalHtml = fs.readFileSync(path.join(outputDir,'index.html'),'utf-8')
+    const SHOWCASE_CONTACT = 'hello@your-web-studio.co.uk' // TODO: 替换为真实接收 claim 请求的邮箱后再算 H1 完全闭环
+    const banner = `<div id="showcase-banner" style="position:relative;z-index:1000;background:#faf3e0;color:#7a5b1e;font-size:12px;line-height:1.45;text-align:center;padding:7px 16px;font-family:system-ui,-apple-system,sans-serif;border-bottom:1px solid #e7d8b5">Showcase demo · Built from public OpenStreetMap data. Phone, opening hours &amp; reviews are <strong>unverified</strong> and shown for demonstration only. Business owners: <a href="mailto:${SHOWCASE_CONTACT}" style="color:#7a5b1e;text-decoration:underline">email us to claim this page or request removal</a>.</div>`
+    const attr = `<div id="osm-attribution" style="margin-top:8px;padding:10px 16px;background:#f7f7f7;color:#888;font-size:11px;text-align:center;font-family:system-ui,-apple-system,sans-serif;border-top:1px solid #eee">Business data © OpenStreetMap contributors · Photos © Openverse (CC BY)</div>`
+    finalHtml = finalHtml.replace('<div id="root"></div>', banner + '\n<div id="root"></div>')
+    finalHtml = finalHtml.replace('</body>', attr + '\n</body>')
+    fs.writeFileSync(path.join(outputDir,'index.html'),finalHtml,'utf-8')
+    console.log('  🛡️ 注入未核实免责横幅 + OSM/Openverse 署名 (真实商家站)')
+  }
+
   // ── 构建（v0.6：共享依赖 + 符号链接复用，避免每站重复 npm install） ──
   await ensureSharedDeps()
   const sharedNm = path.join(__dirname, 'node_modules')

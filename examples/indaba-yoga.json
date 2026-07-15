@@ -16,24 +16,72 @@
   "heroLine2": "Move.",
   "heroLine3": "Be.",
   "heroSubtitle": "Classes for every body, every level.",
-  "heroCta1": { "text": "View Classes", "href": "#classes" },
-  "heroCta2": { "text": "Book a Session", "href": "#book" },
+  "heroCta1": {
+    "text": "View Classes",
+    "href": "#classes"
+  },
+  "heroCta2": {
+    "text": "Book a Session",
+    "href": "#book"
+  },
   "phoneDisplay": "+44 20 7486 9999",
   "hoursCompact": "Mon—Fri 6:30—21:00 · Sat—Sun 8:00—18:00",
   "hours": "Mon—Fri 6:30—21:00 · Sat—Sun 8:00—18:00",
   "hoursItems": [
-    { "days": "Mon—Fri", "hours": "6:30—21:00" },
-    { "days": "Sat—Sun", "hours": "8:00—18:00" }
+    {
+      "days": "Mon—Fri",
+      "hours": "6:30—21:00"
+    },
+    {
+      "days": "Sat—Sun",
+      "hours": "8:00—18:00"
+    }
   ],
   "classTitle": "Our Practice",
   "classSubtitle": "From gentle rest to athletic flow.",
   "classes": [
-    { "name": "Vinyasa Flow", "desc": "Dynamic sequence linking breath with movement.", "price": "£16", "time": "60 min", "level": "All Levels" },
-    { "name": "Yin & Restore", "desc": "Deep, passive stretches held for 3-5 minutes.", "price": "£14", "time": "75 min", "level": "Beginner" },
-    { "name": "Hatha Foundations", "desc": "Classic postures with detailed alignment cues.", "price": "£14", "time": "60 min", "level": "Beginner" },
-    { "name": "Power Yoga", "desc": "Athletic, challenging flow to build heat and endurance.", "price": "£16", "time": "60 min", "level": "Intermediate" },
-    { "name": "Sound Meditation", "desc": "Guided meditation with singing bowls.", "price": "£10", "time": "45 min", "level": "All Levels" },
-    { "name": "Prenatal Yoga", "desc": "Safe, nurturing practice for expectant mothers.", "price": "£16", "time": "60 min", "level": "Pregnancy" }
+    {
+      "name": "Vinyasa Flow",
+      "desc": "Dynamic sequence linking breath with movement.",
+      "price": "£16",
+      "time": "60 min",
+      "level": "All Levels"
+    },
+    {
+      "name": "Yin & Restore",
+      "desc": "Deep, passive stretches held for 3-5 minutes.",
+      "price": "£14",
+      "time": "75 min",
+      "level": "Beginner"
+    },
+    {
+      "name": "Hatha Foundations",
+      "desc": "Classic postures with detailed alignment cues.",
+      "price": "£14",
+      "time": "60 min",
+      "level": "Beginner"
+    },
+    {
+      "name": "Power Yoga",
+      "desc": "Athletic, challenging flow to build heat and endurance.",
+      "price": "£16",
+      "time": "60 min",
+      "level": "Intermediate"
+    },
+    {
+      "name": "Sound Meditation",
+      "desc": "Guided meditation with singing bowls.",
+      "price": "£10",
+      "time": "45 min",
+      "level": "All Levels"
+    },
+    {
+      "name": "Prenatal Yoga",
+      "desc": "Safe, nurturing practice for expectant mothers.",
+      "price": "£16",
+      "time": "60 min",
+      "level": "Pregnancy"
+    }
   ],
   "classDescription": "From gentle restoration to athletic flow.",
   "classLevelColors": {
@@ -43,23 +91,66 @@
     "Pregnancy": "bg-blush text-plum"
   },
   "teachersTitle": "Our Teachers",
-  "teachersSubtitle": ["Guides on your", "journey."],
+  "teachersSubtitle": [
+    "Guides on your",
+    "journey."
+  ],
   "teachersDescription": "Each teacher brings a unique perspective to your practice.",
   "teachers": [
-    { "name": "Priya Sharma", "role": "Founder & Lead Teacher", "specialty": "Vinyasa, Meditation, Teacher Training", "initials": "PS" },
-    { "name": "Luna Johansson", "role": "Senior Teacher", "specialty": "Yin, Restorative, Sound Healing", "initials": "LJ" },
-    { "name": "Marcus Webb", "role": "Teacher", "specialty": "Power Yoga, Mobility, Breathwork", "initials": "MW" },
-    { "name": "Aiko Tanaka", "role": "Teacher", "specialty": "Hatha, Prenatal, Kids Yoga", "initials": "AT" }
+    {
+      "name": "Priya Sharma",
+      "role": "Founder & Lead Teacher",
+      "specialty": "Vinyasa, Meditation, Teacher Training",
+      "initials": "PS"
+    },
+    {
+      "name": "Luna Johansson",
+      "role": "Senior Teacher",
+      "specialty": "Yin, Restorative, Sound Healing",
+      "initials": "LJ"
+    },
+    {
+      "name": "Marcus Webb",
+      "role": "Teacher",
+      "specialty": "Power Yoga, Mobility, Breathwork",
+      "initials": "MW"
+    },
+    {
+      "name": "Aiko Tanaka",
+      "role": "Teacher",
+      "specialty": "Hatha, Prenatal, Kids Yoga",
+      "initials": "AT"
+    }
   ],
   "bookTitle": "Book a Class",
   "bookSubtitle": "Begin your",
   "bookHighlight": "practice.",
   "bookDescription": "New students get their first class free.",
   "bookFields": [
-    { "name": "name", "label": "Name", "type": "text", "required": true },
-    { "name": "email", "label": "Email", "type": "email", "required": true },
-    { "name": "cls", "label": "Class", "type": "select", "required": true },
-    { "name": "date", "label": "Date", "type": "date", "required": true }
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "name": "cls",
+      "label": "Class",
+      "type": "select",
+      "required": true
+    },
+    {
+      "name": "date",
+      "label": "Date",
+      "type": "date",
+      "required": true
+    }
   ],
   "bookSubmitLabel": "Reserve Spot",
   "bookSubmittedLabel": "Booked!",
@@ -68,7 +159,19 @@
   "footerCopyright": "All rights reserved.",
   "footerAddress": "18 Hayes Place, London NW1 1HJ",
   "cardBookLabel": "Book",
-  "footerHeadings": { "classes": "Classes", "hours": "Hours", "findUs": "Find Us" },
-  "nav": { "links": ["Classes", "Teachers", "Book"], "cta": "Book Now" },
-  "slug": "indaba-yoga"
+  "footerHeadings": {
+    "classes": "Classes",
+    "hours": "Hours",
+    "findUs": "Find Us"
+  },
+  "nav": {
+    "links": [
+      "Classes",
+      "Teachers",
+      "Book"
+    ],
+    "cta": "Book Now"
+  },
+  "slug": "indaba-yoga",
+  "_source": "osm"
 }

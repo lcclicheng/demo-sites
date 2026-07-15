@@ -19,9 +19,19 @@
   "pageTitle": "GANACHE — Artisan Chocolatier in Soho",
   "heroLine1": "Hand-tempered",
   "heroLine2": "every morning.",
-  "heroCta1": { "text": "Explore Chocolates", "href": "#pastries" },
-  "heroCta2": { "text": "Gift Box Order", "href": "#order" },
-  "navLinks": ["Chocolates", "Cakes", "Order"],
+  "heroCta1": {
+    "text": "Explore Chocolates",
+    "href": "#pastries"
+  },
+  "heroCta2": {
+    "text": "Gift Box Order",
+    "href": "#order"
+  },
+  "navLinks": [
+    "Chocolates",
+    "Cakes",
+    "Order"
+  ],
   "navCtaText": "Pre-Order",
   "pastriesTitle": "FROM THE COUNTER",
   "pastriesSubtitle": "Fresh every morning at 8am.",
@@ -32,9 +42,18 @@
   "chocolateSubtitle": "Single-origin couverture, hand-tempered.",
   "specialTitle": "Today's Special",
   "specialItems": [
-    { "name": "Salted Caramel Truffle", "price": "2.50" },
-    { "name": "Pistachio Praline", "price": "2.80" },
-    { "name": "Raspberry Heart", "price": "3.00" }
+    {
+      "name": "Salted Caramel Truffle",
+      "price": "2.50"
+    },
+    {
+      "name": "Pistachio Praline",
+      "price": "2.80"
+    },
+    {
+      "name": "Raspberry Heart",
+      "price": "3.00"
+    }
   ],
   "orderTitle": "PRE-ORDER",
   "orderSubtitle": "Reserve for collection.",
@@ -42,42 +61,128 @@
   "orderSuccessMessage": "We'll confirm within 2 hours. Merci!",
   "orderButtonText": "Place Pre-Order",
   "orderFields": {
-    "item": { "label": "Selection", "placeholder": "Choose your box" },
-    "name": { "label": "Name", "placeholder": "Your name" },
-    "email": { "label": "Email", "placeholder": "you@email.com" },
-    "date": { "label": "Collection Date", "placeholder": "" },
-    "message": { "label": "Special Requests", "placeholder": "Allergies, dietary requirements..." }
+    "item": {
+      "label": "Selection",
+      "placeholder": "Choose your box"
+    },
+    "name": {
+      "label": "Name",
+      "placeholder": "Your name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "you@email.com"
+    },
+    "date": {
+      "label": "Collection Date",
+      "placeholder": ""
+    },
+    "message": {
+      "label": "Special Requests",
+      "placeholder": "Allergies, dietary requirements..."
+    }
   },
   "orderFormLabels": {
-    "cake": "Selection", "name": "Name", "email": "Email", "date": "Collection Date", "message": "Special Requests"
+    "cake": "Selection",
+    "name": "Name",
+    "email": "Email",
+    "date": "Collection Date",
+    "message": "Special Requests"
   },
   "orderFormPlaceholders": {
-    "name": "Your name", "email": "you@email.com", "message": "Allergies, dietary requirements..."
+    "name": "Your name",
+    "email": "you@email.com",
+    "message": "Allergies, dietary requirements..."
   },
   "menuItems": [
-    { "name": "Truffle Box", "desc": "12 hand-tempered truffles, assorted flavours", "price": "£24" },
-    { "name": "Praliné Sleeve", "desc": "Hazelnut & almond pralines in dark chocolate", "price": "£14" },
-    { "name": "Orange Zest Tart", "desc": "Dark chocolate shell, candied orange", "price": "£5.50" },
-    { "name": "Salted Caramel Bar", "desc": "70% single-origin, fleur de sel", "price": "£6" },
-    { "name": "Vanilla Bean Macaron", "desc": "Crisp shell, Madagascar vanilla ganache", "price": "£2.80" },
-    { "name": "Hot Chocolate", "desc": "Melted 70% couverture, whipped cream", "price": "£4.50" }
+    {
+      "name": "Truffle Box",
+      "desc": "12 hand-tempered truffles, assorted flavours",
+      "price": "£24"
+    },
+    {
+      "name": "Praliné Sleeve",
+      "desc": "Hazelnut & almond pralines in dark chocolate",
+      "price": "£14"
+    },
+    {
+      "name": "Orange Zest Tart",
+      "desc": "Dark chocolate shell, candied orange",
+      "price": "£5.50"
+    },
+    {
+      "name": "Salted Caramel Bar",
+      "desc": "70% single-origin, fleur de sel",
+      "price": "£6"
+    },
+    {
+      "name": "Vanilla Bean Macaron",
+      "desc": "Crisp shell, Madagascar vanilla ganache",
+      "price": "£2.80"
+    },
+    {
+      "name": "Hot Chocolate",
+      "desc": "Melted 70% couverture, whipped cream",
+      "price": "£4.50"
+    }
   ],
   "cakeItems": [
-    { "name": "Chocolate Fudge Cake", "desc": "Three layers, dark ganache, gold leaf", "price": "42", "serves": "10-12" },
-    { "name": "Praline Torte", "desc": "Almond sponge, hazelnut cream, cocoa", "price": "45", "serves": "8-10" },
-    { "name": "Raspberry Dome", "desc": "Dark chocolate mousse, fresh raspberry", "price": "40", "serves": "8-10" }
+    {
+      "name": "Chocolate Fudge Cake",
+      "desc": "Three layers, dark ganache, gold leaf",
+      "price": "42",
+      "serves": "10-12"
+    },
+    {
+      "name": "Praline Torte",
+      "desc": "Almond sponge, hazelnut cream, cocoa",
+      "price": "45",
+      "serves": "8-10"
+    },
+    {
+      "name": "Raspberry Dome",
+      "desc": "Dark chocolate mousse, fresh raspberry",
+      "price": "40",
+      "serves": "8-10"
+    }
   ],
   "chocolateItems": [
-    { "name": "Praliné Noisette", "desc": "Hazelnut praline in dark chocolate", "price": "3.50" },
-    { "name": "Ganache Framboise", "desc": "Raspberry ganache in ruby chocolate", "price": "3.50" },
-    { "name": "Caramel Fleur de Sel", "desc": "Salted butter caramel in milk chocolate", "price": "3.00" },
-    { "name": "Truffle Noire", "desc": "72% single-origin truffle, cocoa dusted", "price": "3.00" }
+    {
+      "name": "Praliné Noisette",
+      "desc": "Hazelnut praline in dark chocolate",
+      "price": "3.50"
+    },
+    {
+      "name": "Ganache Framboise",
+      "desc": "Raspberry ganache in ruby chocolate",
+      "price": "3.50"
+    },
+    {
+      "name": "Caramel Fleur de Sel",
+      "desc": "Salted butter caramel in milk chocolate",
+      "price": "3.00"
+    },
+    {
+      "name": "Truffle Noire",
+      "desc": "72% single-origin truffle, cocoa dusted",
+      "price": "3.00"
+    }
   ],
   "footerMenuTitle": "Our Shop",
-  "footerMenuLinks": ["Chocolates", "Cakes", "Gift Boxes", "Corporate", "Catering"],
+  "footerMenuLinks": [
+    "Chocolates",
+    "Cakes",
+    "Gift Boxes",
+    "Corporate",
+    "Catering"
+  ],
   "footerHoursTitle": "Hours",
   "footerFindUsTitle": "Find Us",
   "footerNote": "GANACHE",
-  "footerHours": ["Tue—Sun: 10:00—19:00", "Monday — Closed"],
-  "slug": "ganache"
+  "footerHours": [
+    "Tue—Sun: 10:00—19:00",
+    "Monday — Closed"
+  ],
+  "slug": "ganache",
+  "_source": "osm"
 }

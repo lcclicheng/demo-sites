@@ -17,13 +17,55 @@
   "heroLine2": "CONSIDERED.",
   "menuTitle": "The Bar",
   "menuSubtitle": "Single origins & house blends",
-  "heroCta1": { "text": "See the Menu", "href": "#menu" },
-  "heroCta2": { "text": "Order Ahead", "href": "#order" },
+  "heroCta1": {
+    "text": "See the Menu",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Order Ahead",
+    "href": "#order"
+  },
   "menuItems": [
-    { "name": "Ethiopia Yirgacheffe", "origin": "Ethiopia", "notes": "Jasmine · Bergamot · Honey", "roast": "Light", "price": "£3.80", "desc": "Washed process, delicate and floral with a clean citrus finish.", "roastLevel": 1, "process": "Washed" },
-    { "name": "Colombia El Paraiso", "origin": "Colombia", "notes": "Red Apple · Caramel · Cacao", "roast": "Medium", "price": "£3.60", "desc": "Balanced and sweet, a dependable everyday espresso.", "roastLevel": 3, "process": "Washed" },
-    { "name": "Brazil Cerrado", "origin": "Brazil", "notes": "Hazelnut · Milk Chocolate · Toffee", "roast": "Medium-Dark", "price": "£3.40", "desc": "Low acidity, full body — built for flat whites.", "roastLevel": 4, "process": "Natural" },
-    { "name": "Sumatra Mandheling", "origin": "Indonesia", "notes": "Cedar · Dark Chocolate · Spice", "roast": "Dark", "price": "£3.50", "desc": "Earthy and syrupy, our winter house blend.", "roastLevel": 5, "process": "Wet-Hulled" }
+    {
+      "name": "Ethiopia Yirgacheffe",
+      "origin": "Ethiopia",
+      "notes": "Jasmine · Bergamot · Honey",
+      "roast": "Light",
+      "price": "£3.80",
+      "desc": "Washed process, delicate and floral with a clean citrus finish.",
+      "roastLevel": 1,
+      "process": "Washed"
+    },
+    {
+      "name": "Colombia El Paraiso",
+      "origin": "Colombia",
+      "notes": "Red Apple · Caramel · Cacao",
+      "roast": "Medium",
+      "price": "£3.60",
+      "desc": "Balanced and sweet, a dependable everyday espresso.",
+      "roastLevel": 3,
+      "process": "Washed"
+    },
+    {
+      "name": "Brazil Cerrado",
+      "origin": "Brazil",
+      "notes": "Hazelnut · Milk Chocolate · Toffee",
+      "roast": "Medium-Dark",
+      "price": "£3.40",
+      "desc": "Low acidity, full body — built for flat whites.",
+      "roastLevel": 4,
+      "process": "Natural"
+    },
+    {
+      "name": "Sumatra Mandheling",
+      "origin": "Indonesia",
+      "notes": "Cedar · Dark Chocolate · Spice",
+      "roast": "Dark",
+      "price": "£3.50",
+      "desc": "Earthy and syrupy, our winter house blend.",
+      "roastLevel": 5,
+      "process": "Wet-Hulled"
+    }
   ],
   "roasteryTitle": "THE ROASTERY",
   "roasteryDescription": "Beans are roasted weekly in small batches and rested 48 hours before the first pull. No blends disguised as single origins — just honest coffee.",
@@ -31,14 +73,29 @@
   "orderSubtitle": "Skip the queue on Clifford Street.",
   "orderConfirmationTitle": "Order Placed",
   "orderConfirmationMessage": "Ready in 8–10 minutes.",
-  "orderFormLabels": { "item": "Your Coffee", "name": "Name", "phone": "Phone", "note": "Notes" },
-  "orderFormPlaceholders": { "item": "Select your brew", "name": "Your name", "phone": "+44 7xxx", "note": "Oat milk? Extra shot?" },
+  "orderFormLabels": {
+    "item": "Your Coffee",
+    "name": "Name",
+    "phone": "Phone",
+    "note": "Notes"
+  },
+  "orderFormPlaceholders": {
+    "item": "Select your brew",
+    "name": "Your name",
+    "phone": "+44 7xxx",
+    "note": "Oat milk? Extra shot?"
+  },
   "orderButtonText": "Place Order",
   "footerTagline": "Specialty coffee in the heart of Mayfair. Small batches, no shortcuts.",
   "footerBottomText": "Crafted on Clifford Street, London.",
   "footerHoursLabel": "Hours",
   "footerContactLabel": "Find Us",
-  "navLinks": ["Menu", "Roastery", "Order"],
+  "navLinks": [
+    "Menu",
+    "Roastery",
+    "Order"
+  ],
   "navCtaText": "Order Now",
-  "slug": "morris-coffee"
+  "slug": "morris-coffee",
+  "_source": "osm"
 }

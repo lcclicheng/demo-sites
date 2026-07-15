@@ -85,4 +85,20 @@
 | 4 | H4：dessert/restaurant 加隐私页 | 中 | GDPR 合规 |
 | 5 | H5：加速外联 / 获授权前 noindex | 中 | 冒充/诽谤风险 |
 
-> 本次仅做审查，未改动任何文件（`admin/config.yml` 重生成后已还原）。修复需逐项确认后执行。
+> 审查当天已获授权执行修复（用户"可以，开始"）。进度见下。
+
+---
+
+## 修复执行记录（2026-07-15 夜）
+
+| 项 | 状态 | 落地方式 | 提交 |
+|---|---|---|---|
+| H2 · CMS 覆盖 19 站 | ✅ 已推送 | `node gen-decap-config.mjs` 重生成 `admin/config.yml`，自动保留 `client_id`，覆盖 10 模板 + 9 真实商家 | `923adc1` |
+| H3 · OSM/Openverse 署名 | ✅ 已修复 | `generate.mjs` 在 `</body>` 前注入底部署名条，仅 `_source==='osm'` 真实站生效（模板 demo 不注入） | 本轮 |
+| H1 · 未核实免责横幅 | 🟡 已注入·待补邮箱 | `generate.mjs` 在 `#root` 前注入顶部横幅"数据未核实，商家可 claim/下架"，仅真实站生效 | 本轮 |
+| H4 · dessert/restaurant 隐私页 | ⏸ 待做 | 两模板缺 Privacy 路由，致 ganache/papa-bruno/chinatown-bakery 无隐私政策 | — |
+| H5 · 外联/授权 | ⏸ 第2步范畴 | 加速外联 + 获授权前 `noindex` | — |
+
+**本轮改动文件**：`generate.mjs`（注入逻辑）+ 9 个真实站 JSON（`_source:'osm'` 来源标记，既修复数据缺陷又驱动 H1/H3 判定）。
+
+**H1 残留项（需用户动作）**：横幅内 claim 邮箱当前为占位 `hello@your-web-studio.co.uk`，**须替换为真实接收 claim 请求的邮箱**后 H1 才算完全闭环；站上占位电话/编造好评本身待第2步联系商家核实后替换（横幅仅为过渡期消险）。

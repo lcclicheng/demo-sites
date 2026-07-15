@@ -13,39 +13,122 @@
   "googleReviews": "75+ reviews",
   "hours": "Mon—Fri: 9:00—17:30",
   "pageTitle": "SEDDONS — Solicitors in London",
-  "heroLines": ["CLARITY.", "CONFIDENCE.", "RESULTS."],
-  "heroCta1": { "text": "Our Services", "href": "#services" },
-  "heroCta2": { "text": "Book a Consultation", "href": "#contact" },
-  "stats": [
-    { "value": "40+", "label": "Years" },
-    { "value": "4.6", "label": "Rating" },
-    { "value": "1,200+", "label": "Clients" },
-    { "value": "SRA", "label": "Regulated" }
+  "heroLines": [
+    "CLARITY.",
+    "CONFIDENCE.",
+    "RESULTS."
   ],
-  "certifications": ["SRA Regulated", "Lexcel Accredited", "Resolution Member", "Law Society"],
+  "heroCta1": {
+    "text": "Our Services",
+    "href": "#services"
+  },
+  "heroCta2": {
+    "text": "Book a Consultation",
+    "href": "#contact"
+  },
+  "stats": [
+    {
+      "value": "40+",
+      "label": "Years"
+    },
+    {
+      "value": "4.6",
+      "label": "Rating"
+    },
+    {
+      "value": "1,200+",
+      "label": "Clients"
+    },
+    {
+      "value": "SRA",
+      "label": "Regulated"
+    }
+  ],
+  "certifications": [
+    "SRA Regulated",
+    "Lexcel Accredited",
+    "Resolution Member",
+    "Law Society"
+  ],
   "services": [
-    { "name": "Residential Conveyancing", "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees." },
-    { "name": "Family Law", "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most." },
-    { "name": "Wills & Probate", "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care." },
-    { "name": "Employment Law", "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers." },
-    { "name": "Commercial Property", "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors." },
-    { "name": "Dispute Resolution", "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation." }
+    {
+      "name": "Residential Conveyancing",
+      "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+    },
+    {
+      "name": "Family Law",
+      "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+    },
+    {
+      "name": "Wills & Probate",
+      "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+    },
+    {
+      "name": "Employment Law",
+      "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+    },
+    {
+      "name": "Commercial Property",
+      "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+    },
+    {
+      "name": "Dispute Resolution",
+      "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+    }
   ],
   "sections": {
-    "services": { "label": "PRACTICE AREAS", "title": "How we can", "titleHighlight": "help." },
-    "team": { "label": "OUR TEAM", "title": "Decades of", "titleHighlight": "experience." },
-    "contact": { "label": "CONTACT US", "title": "Let's", "titleHighlight": "talk.", "description": "Free initial consultation. No obligation." }
+    "services": {
+      "label": "PRACTICE AREAS",
+      "title": "How we can",
+      "titleHighlight": "help."
+    },
+    "team": {
+      "label": "OUR TEAM",
+      "title": "Decades of",
+      "titleHighlight": "experience."
+    },
+    "contact": {
+      "label": "CONTACT US",
+      "title": "Let's",
+      "titleHighlight": "talk.",
+      "description": "Free initial consultation. No obligation."
+    }
   },
   "lawyers": [
-    { "initials": "JS", "name": "James Seddon", "role": "Senior Partner", "specialty": "Commercial Property & Dispute Resolution" },
-    { "initials": "EC", "name": "Eleanor Cross", "role": "Partner", "specialty": "Family Law & Mediation" },
-    { "initials": "RP", "name": "Ravi Patel", "role": "Associate", "specialty": "Conveyancing & Property Law" }
+    {
+      "initials": "JS",
+      "name": "James Seddon",
+      "role": "Senior Partner",
+      "specialty": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "initials": "EC",
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "specialty": "Family Law & Mediation"
+    },
+    {
+      "initials": "RP",
+      "name": "Ravi Patel",
+      "role": "Associate",
+      "specialty": "Conveyancing & Property Law"
+    }
   ],
   "form": {
-    "labels": { "name": "Name", "email": "Email", "phone": "Phone", "message": "How can we help?" },
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "How can we help?"
+    },
     "submit": "Send Enquiry",
     "success": "Thank you! We'll be in touch within 24 hours."
   },
-  "footer": { "sra": "Regulated by the Solicitors Regulation Authority.", "copyright": "All rights reserved.", "hours": "Mon—Fri · 9:00—17:30" },
-  "slug": "seddons-law"
+  "footer": {
+    "sra": "Regulated by the Solicitors Regulation Authority.",
+    "copyright": "All rights reserved.",
+    "hours": "Mon—Fri · 9:00—17:30"
+  },
+  "slug": "seddons-law",
+  "_source": "osm"
 }
