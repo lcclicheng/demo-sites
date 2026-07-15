@@ -51,3 +51,16 @@
 - [x] 步骤 1 启动：见 `clients/README.md` + `scaffold-client.mjs`
 - [x] 步骤 2 启动：见 `knowledge/README.md` + `knowledge/{restaurant,coffee,law}/`
 - [ ] 步骤 3–6：待前两步评审后推进
+
+## 5. 关键决策记录
+
+### 5.1 LLM Provider（步骤 3 AI Intake 的前置）
+- **决策（2026-07-16）**：AI Intake 的 LLM 选用 **OpenAI 家族** 或 **DeepSeek 家族**（二者择一，暂未定）。
+- **key 处理**：先**留空 / env 占位**，不硬编码、不现在烧额度。
+- **定位**：AI Intake（自然语言→JSON）属于**正式上线后给客户的增值服务**，不是当前阶段的开发任务——本期暂不实现调用逻辑，等业务跑起来再接入。
+- **接口约定**：脚本按 **provider-agnostic** 设计（env 读 `LLM_API_KEY` + `LLM_BASE_URL` + `LLM_MODEL`），兼容 OpenAI 兼容接口与 DeepSeek，owner 填 key 即跑。
+- **影响**：步骤 3 从「立即实现」降级为「接口预留 + 上线后启用」，不阻塞其余步骤。
+
+### 5.2 其余待拍板项
+- 步骤 5 Deployment Adapter 需 owner 开 **Vercel / Cloudflare** 账号（解锁 serverless 才能跑 AI 客服 / 月报邮件 / 排名巡检）。
+- 步骤 4 SEO Agent + Blog 无外部依赖，可作下一步快赢。
