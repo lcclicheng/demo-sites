@@ -30,7 +30,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const KNOWN_TEMPLATES = new Set([
   'restaurant', 'coffee', 'salon', 'dessert',
-  'yoga', 'law', 'hotel', 'trades'
+  'yoga', 'law', 'hotel', 'trades',
+  'sectioned' // 步骤6 Section Engine 组合器模板（theme-agnostic 通用 section 库）
 ]);
 const SLUG_RE = /^[a-z0-9][a-z0-9-]*$/;
 
