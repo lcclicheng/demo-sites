@@ -1,0 +1,12 @@
+# events.log — 项目变动历史（为什么 state 变成这样）
+# 追加式；每条格式: [YYYY-MM-DD HH:MM] EVENT [detail]
+# 与 state/ 配对：state/ 记"当前是什么"，本文件记"为什么变成这样"。AI 排查 Bug 优先读此。
+# 由 CI 或 AI 在每次 build/deploy/release/架构变更后追加。
+
+[2026-07-16 13:09] ARCH 项目改为 MDD（Memory Driven Development）三层分离
+[2026-07-16 13:20] DOC  创建 PROJECT-OVERVIEW.md 整合版（架构+订阅付费一册）commit 3292658
+[2026-07-16 14:05] ARCH 建立 MDD 骨架 memory/ decisions/ tasks/ .ai/ + docs/index.md commit f2281b4
+[2026-07-16 15:40] DOC  超级单文件 workflow.md(57KB) 拆为 architecture/deployment/onboarding/seo 主题文件 commit 8b0233d
+[2026-07-16 18:32] ARCH 第二轮系统级收口：memory 拆 core/runtime + contracts/state/playbooks/checklists + ADR Status + 加载优先级 P0-P8 commit a604623
+[2026-07-16 18:45] ARCH 第三轮精炼：principles 加 Fact only once + Architecture Laws(10)；loading-priority 加 Stop Rule；新增 state/health.md + runtime/lessons-learned.md + events.log；4 个自动化方向落 tasks/todo
+[2026-07-16 18:45] HEALTH Build=PASS Deploy=PASS Health=PASS Smoke=PASS Coverage=N/A (commit a604623)

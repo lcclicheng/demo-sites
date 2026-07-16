@@ -10,6 +10,8 @@ public/
 build-logs/
 *.log
 gen8*.log
+# 例外：项目变动历史（与 state/ 配对，需进版本控制便于 diff/排查）
+!events.log
 
 # 系统文件
 .DS_Store

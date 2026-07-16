@@ -26,9 +26,11 @@
 3. **多 AI 协同**：不同模型共用同一套加载策略 + `contracts/` 统一 Schema，避免输出不同字段。
 4. **回写（自动化方向）**：任务完成后由 AI 自动更新 `memory/runtime/progress.md` + `current-sprint.md` + `state/*`，并据 `checklists/` 勾选——未来可由 CI 读取复用。
 5. **稳定期纪律**：项目已进「架构稳定期」，重点在**运行机制**（自动维护 + 统一加载），不再新增目录（见 `current-sprint.md` 的「本期不做」）。
+6. **Stop Rule（强制）**：若 **P0–P2 已足够回答当前任务**，立即停手，**禁止**继续加载 P3–P8。例：问「项目目标？」→ 读完 `memory/core/` 即答，不得再读 `docs/` / `knowledge/` / `playbooks/`。早停 = 省 token、防上下文膨胀。只有当 P0–P2 确实无法回答时才按需下行。
 
 ## 反模式（禁止）
 - ❌ 一上来就 `cat docs/workflow.md` 全量（已归档且巨石）。
 - ❌ 改视觉却不读 `contracts/theme.md` + `memory/core/principles.md`（theme-agnostic）。
 - ❌ 生成业务 JSON 却不读 `contracts/section-data.md`（字段漂移）。
 - ❌ 为小任务把 P3–P8 全读一遍（token 浪费 + 上下文膨胀致遗忘）。
+- ❌ P0–P2 已能回答仍继续加载 P3+（违反 Stop Rule）。
