@@ -5,6 +5,7 @@
 > **第二轮收口（2026-07-16）**：`memory/` 拆 `core/`+`runtime/`；新增 `contracts/`（Schema 单一事实源）、`state/`（运行时状态）、`playbooks/`（执行 SOP）、`checklists/`（AI/CI 复用）；`decisions/` 各 ADR 加 `Status`；落地「加载优先级 P0–P8」（`memory/core/loading-priority.md`）。架构进入稳定期，不再新增目录。
 > **第三轮精炼（2026-07-16，评审 99/100）**：`principles.md` 加 **Fact only once** + **Architecture Laws(10 条铁律)**；`loading-priority.md` 加 **Stop Rule**（P0–P2 够答即停）；新增 `state/health.md`（一眼健康度）、`memory/runtime/lessons-learned.md`（Sprint 复盘）、根 `events.log`（变动历史=为什么变成这样，与 `state/` 配对）；4 个自动化方向落 `tasks/todo/`（Router / 状态同步 / CI 校验 / 最小上下文）。未新增任何目录。
 > **第四轮（2026-07-16，用户审核报告）**：补**可执行性缺口**——`memory/boot.md`（固定加载清单）+ `.ai/loading-protocol.md`（完整协议）+ `tasks/router-template.md`（轻量路由）+ `.ai/ai-guidelines.md`（协作规范）+ `docs/architecture-v4.md`（mermaid 架构图源码）；`state/health.md` 加量化指标；Architecture Laws 扩至 **13 条**（State/Events/Runtime 职责 + Contracts/Checklists + Docs 归属）。纯文件增强，未新增目录。
+> **第五轮（2026-07-16，自动化四件套落地 + 瑕疵修复）**：落地 MDD v4 四大自动化方向——`playbooks/router.md`（任务类型→最小加载计划映射）+ `scripts/state-sync.mjs`（任务完成自动回写 progress/events/health）+ `playbooks/cross-sync.md`+`scripts/cross-sync-check.mjs`（参考实现↔标准漂移自检）+ `scripts/check-contracts.mjs`+`.github/workflows/consistency-check.yml`（CI 契约一致性校验）；本轮同时修复 `state/health.md` 陈旧 commit 引用与本文档骨架索引滞后。未新增目录。
 
 ## MDD 骨架（当前目录）
 
@@ -20,7 +21,9 @@ gh-pages-build/
 ├── state/         【运行时状态直查】current-version · release · template · build · deploy · health
 ├── decisions/     【P3】ADR001–006（均含 Status: Accepted）
 ├── tasks/         【P5】todo · doing · done（按你收口保持三态，未扩 review/）+ router-template.md
-├── playbooks/     【执行型 SOP】new-client · deploy · release · seo · maintenance
+├── playbooks/     【执行型 SOP】new-client · deploy · release · seo · maintenance · router · cross-sync
+├── scripts/       【自动化 CLI】state-sync · check-contracts · cross-sync-check
+├── .github/workflows/consistency-check.yml  【CI 一致性校验 · 契约自检】
 ├── checklists/    【AI/CI 复用勾选单】release · deployment · new-client
 ├── .ai/           【P0】architect · frontend · backend · seo · designer · loading-protocol · ai-guidelines
 ├── knowledge/     【P7】8 行业素材（restaurant/coffee/salon/dessert/yoga/law/hotel/trades，不再二次拆分）
@@ -42,7 +45,7 @@ gh-pages-build/
 - `decisions/ADR00N-*.md`（架构决策，含 `Status` 字段，避免重复问「为什么」）
 - `tasks/{todo,doing,done}/`（当前任务；按收口保持三态，不扩 review）
 - `.ai/<role>.md`（角色上下文：architect / frontend / backend / seo / designer）
-- `playbooks/`（执行型 SOP）· `checklists/`（AI/CI 复用勾选单）
+- `playbooks/`（执行型 SOP：new-client/deploy/release/seo/maintenance/**router**/**cross-sync**）· `checklists/`（AI/CI 复用勾选单）· `scripts/`（自动化 CLI：**state-sync** / **check-contracts** / **cross-sync-check**）· CI `consistency-check.yml`（契约一致性校验）
 - `events.log`（**变动历史**：为什么 state 变成这样，排查 Bug 优先读）
 - `memory/boot.md`（固定加载清单，开局必读）+ `.ai/loading-protocol.md`（完整协议）+ `.ai/ai-guidelines.md`（协作规范）+ `tasks/router-template.md`（路由模板）
 - `memory/core/principles.md` 的 **Architecture Laws(13 条铁律)** + `loading-priority.md` 的 **Stop Rule** 是所有 AI 必须遵守的硬约束
