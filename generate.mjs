@@ -222,132 +222,146 @@ const TEMPLATES = {
 // 由 applyThemeReplace 对 css / twConfig 做精确字符串替换；html 仅在更换字体时提供完整字符串。
 // 这样每站拥有独立美感，而模板 JSX 保持单一来源（便于后续统一修复）。
 const THEMES = {
-  // ATELIER · 编辑室美学沙龙 → 暖陶土青铜 + Marcellus（区别于 law/hotel 的金+Playfair）
+  // MONO · 精品咖啡 → 暖铜（由 coffee 模板 steel/charcoal/copper 迁移到 sectioned 三色系统）
+  mono: {
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#f6f3ef'"],
+      ["ink:'#1c1917'", "ink:'#211b15'"],
+      ["accent:'#b8895a'", "accent:'#c2772e'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#f6f3ef'],
+      ['color:#1c1917', 'color:#211b15'],
+      ['rgba(184,137,90,0.2)', 'rgba(194,119,46,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(194,119,46,0.25)'],
+    ],
+  },
+
+  // ── 以下 9 个 slug 已迁移到 sectioned 三色基底（surface / ink / accent + Playfair/Marcellus/Fraunces）──
+  // 旧行业基底(plum/gold/emerald/ivory/abyss...)的替换串在 sectioned 基底上不匹配，已重写为针对 surface/ink/accent。
+
+  // ATELIER · 编辑室美学沙龙 → 暖陶土青铜 + Marcellus（区别于 vault 的 Fraunces、creme 的玫瑰）
   atelier: {
     html: '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"/><title>__TITLE__</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>',
-    cssReplace: [
-      ['background:#faf7f2', 'background:#faf6f1'],
-      ['rgba(61,28,61,0.15)', 'rgba(91,74,82,0.12)'],
-      ['rgba(212,165,116,0.3)', 'rgba(192,137,106,0.3)'],
-    ],
     twReplace: [
-      ['plum:\'#3d1c3d\'', 'plum:\'#5b4a52\''],
-      ['gold:\'#d4a574\'', 'gold:\'#c0896a\''],
+      ["surface:'#faf9f7'", "surface:'#faf6f1'"],
+      ["ink:'#1c1917'", "ink:'#211b15'"],
+      ["accent:'#b8895a'", "accent:'#c0896a'"],
+      ["'\"Playfair Display\"'", "'\"Marcellus\"'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#faf6f1'],
+      ['color:#1c1917', 'color:#211b15'],
+      ['rgba(184,137,90,0.2)', 'rgba(192,137,106,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(192,137,106,0.25)'],
     ],
   },
 
-  // BREATH · 禅意瑜伽 → 雾青绿（区别于其他绿调）
+  // BREATH · 禅意瑜伽 → 雾青绿（sectioned 三色基底）
   breath: {
-    cssReplace: [
-      ['rgba(52,211,153,0.25)', 'rgba(95,174,154,0.25)'],
-    ],
     twReplace: [
-      ['emerald:\'#34d399\'', 'emerald:\'#5fae9a\''],
+      ["surface:'#faf9f7'", "surface:'#f5f8f6'"],
+      ["accent:'#b8895a'", "accent:'#5fae9a'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#f5f8f6'],
+      ['rgba(184,137,90,0.2)', 'rgba(95,174,154,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(95,174,154,0.25)'],
     ],
   },
 
-  // CHAMBERS · 遗产律所 → 铂银（金→银，去掉"老钱金"雷同）
+  // CHAMBERS · 遗产律所 → 铂银（金→银，sectioned 三色基底）
   chambers: {
-    cssReplace: [
-      ['rgba(184,134,11,0.18)', 'rgba(140,152,166,0.18)'],
-      ['rgba(184,134,11,0.25)', 'rgba(140,152,166,0.25)'],
-      ['rgba(184,134,11,0.08)', 'rgba(140,152,166,0.08)'],
-    ],
     twReplace: [
-      ['gold:\'#b8860b\'', 'gold:\'#8c98a6\''],
+      ["accent:'#b8895a'", "accent:'#8c98a6'"],
+    ],
+    cssReplace: [
+      ['rgba(184,137,90,0.2)', 'rgba(140,152,166,0.18)'],
+      ['rgba(184,137,90,0.25)', 'rgba(140,152,166,0.25)'],
     ],
   },
 
-  // CREME · 甜品(玫瑰马卡龙) → 玫瑰金 + 莓果深棕
+  // CREME · 甜品(玫瑰马卡龙) → 玫瑰金 + 莓果深棕（sectioned 三色基底）
   'creme': {
-    cssReplace: [
-      ['background:#faf7f2', 'background:#fdf6f4'],
-      ['rgba(26,16,8,0.12)', 'rgba(107,58,74,0.12)'],
-      ['rgba(184,147,90,0.25)', 'rgba(224,163,176,0.25)'],
-      ['rgba(184,147,90,0.04)', 'rgba(224,163,176,0.04)'],
-    ],
     twReplace: [
-      ['ivory:\'#faf7f2\'', 'ivory:\'#fdf6f4\''],
-      ['espresso:\'#1a1008\'', 'espresso:\'#6b3a4a\''],
-      ['gold:\'#b8935a\'', 'gold:\'#e0a3b0\''],
-      ['cream:\'#f5f0e8\'', 'cream:\'#fbeef0\''],
+      ["surface:'#faf9f7'", "surface:'#fdf6f4'"],
+      ["ink:'#1c1917'", "ink:'#5a3a44'"],
+      ["accent:'#b8895a'", "accent:'#e0a3b0'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#fdf6f4'],
+      ['color:#1c1917', 'color:#5a3a44'],
+      ['rgba(184,137,90,0.2)', 'rgba(224,163,176,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(224,163,176,0.25)'],
     ],
   },
 
-  // FORGE · 工业蓝领 → 铁锈橙（区别于 mario 的番茄红）
+  // FORGE · 工业蓝领 → 铁锈橙（sectioned 三色基底）
   forge: {
-    cssReplace: [
-      ['rgba(217,119,6,0.25)', 'rgba(194,65,12,0.25)'],
-      ['rgba(217,119,6,0.2)', 'rgba(194,65,12,0.2)'],
-    ],
     twReplace: [
-      ['copper:\'#d97706\'', 'copper:\'#c2410c\''],
-      ['rust:\'#9a3412\'', 'rust:\'#7c2d12\''],
+      ["accent:'#b8895a'", "accent:'#c2410c'"],
+    ],
+    cssReplace: [
+      ['rgba(184,137,90,0.2)', 'rgba(194,65,12,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(194,65,12,0.25)'],
     ],
   },
 
-  // MARIO · 披萨(暗黑金 → 暗黑+番茄红)
-  'mario-s-pizzeria': {
-    cssReplace: [
-      ['rgba(200,164,92,0.2)', 'rgba(217,102,63,0.22)'],
-      ['rgba(200,164,92,0.3)', 'rgba(217,102,63,0.28)'],
-      ['rgba(200,164,92,0.4)', 'rgba(217,102,63,0.4)'],
-      ['rgba(200,164,92,0.15)', 'rgba(217,102,63,0.15)'],
-      ['background:#c8a45c', 'background:#d9663f'],
-    ],
+  // MARIO · 披萨 → 暗黑 + 番茄红（sectioned 三色基底翻转 surface/ink 为高对比暗色）
+  'mario': {
     twReplace: [
-      ['gold:\'#c8a45c\'', 'gold:\'#d9663f\''],
-      ['\'gold-light\':\'#e0c878\'', '\'gold-light\':\'#e8896a\''],
-      ['paper:\'#e8e0d0\'', 'paper:\'#f4e3da\''],
-      ['mute:\'#8a8070\'', 'mute:\'#a8897d\''],
+      ["surface:'#faf9f7'", "surface:'#14110d'"],
+      ["ink:'#1c1917'", "ink:'#f5f0e8'"],
+      ["accent:'#b8895a'", "accent:'#d9663f'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#14110d'],
+      ['color:#1c1917', 'color:#f5f0e8'],
+      ['rgba(184,137,90,0.2)', 'rgba(217,102,63,0.22)'],
+      ['rgba(184,137,90,0.25)', 'rgba(217,102,63,0.28)'],
     ],
   },
 
-  // PATISSERIE · 法式甜品(香槟金，区别于 creme 的玫瑰)
+  // PATISSERIE · 法式甜品(香槟金，区别于 creme 的玫瑰，sectioned 三色基底)
   patisserie: {
-    cssReplace: [
-      ['background:#faf7f2', 'background:#fbf8f0'],
-      ['rgba(26,16,8,0.12)', 'rgba(90,74,46,0.12)'],
-      ['rgba(184,147,90,0.25)', 'rgba(201,161,74,0.22)'],
-      ['rgba(184,147,90,0.04)', 'rgba(201,161,74,0.04)'],
-    ],
     twReplace: [
-      ['ivory:\'#faf7f2\'', 'ivory:\'#fbf8f0\''],
-      ['espresso:\'#1a1008\'', 'espresso:\'#5a4a2e\''],
-      ['gold:\'#b8935a\'', 'gold:\'#c9a14a\''],
-      ['cream:\'#f5f0e8\'', 'cream:\'#f5efe0\''],
+      ["surface:'#faf9f7'", "surface:'#fbf8f0'"],
+      ["ink:'#1c1917'", "ink:'#5a4a2e'"],
+      ["accent:'#b8895a'", "accent:'#c9a14a'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#fbf8f0'],
+      ['color:#1c1917', 'color:#5a4a2e'],
+      ['rgba(184,137,90,0.2)', 'rgba(201,161,74,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(201,161,74,0.25)'],
     ],
   },
 
-  // SOTTO-SOTTO · 意大利餐厅(亮色奶油+陶土，区别于 mario 的暗黑)
+  // SOTTO-SOTTO · 意大利餐厅(亮色奶油+陶土，区别于 mario 的暗黑，sectioned 三色基底)
   'sotto-sotto': {
-    cssReplace: [
-      ['background:#0a0806', 'background:#f7f1ea'],
-      ['rgba(200,164,92,0.2)', 'rgba(192,132,87,0.25)'],
-      ['rgba(200,164,92,0.3)', 'rgba(192,132,87,0.25)'],
-      ['rgba(200,164,92,0.4)', 'rgba(192,132,87,0.4)'],
-      ['rgba(200,164,92,0.15)', 'rgba(192,132,87,0.15)'],
-      ['background:#c8a45c', 'background:#c08457'],
-    ],
     twReplace: [
-      ['abyss:\'#0a0806\'', 'abyss:\'#f7f1ea\''],
-      ['surface:\'#14110d\'', 'surface:\'#fffaf3\''],
-      ['gold:\'#c8a45c\'', 'gold:\'#c08457\''],
-      ['\'gold-light\':\'#e0c878\'', '\'gold-light\':\'#d9a878\''],
-      ['paper:\'#e8e0d0\'', 'paper:\'#3a2e22\''],
-      ['mute:\'#8a8070\'', 'mute:\'#8a7a6a\''],
+      ["surface:'#faf9f7'", "surface:'#f7f1ea'"],
+      ["ink:'#1c1917'", "ink:'#3a2e22'"],
+      ["accent:'#b8895a'", "accent:'#c08457'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#f7f1ea'],
+      ['color:#1c1917', 'color:#3a2e22'],
+      ['rgba(184,137,90,0.2)', 'rgba(192,132,87,0.25)'],
+      ['rgba(184,137,90,0.25)', 'rgba(192,132,87,0.25)'],
     ],
   },
 
-  // VAULT · 老钱民宿 → Playfair 换 Fraunces + 古金
+  // VAULT · 老钱民宿 → Fraunces + 古金（sectioned 三色基底）
   'vault': {
     html: '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:wght@400;500;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"/><title>__TITLE__</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>',
-    cssReplace: [
-      ['rgba(200,149,44,0.25)', 'rgba(184,137,63,0.25)'],
-    ],
     twReplace: [
-      ['gold:\'#c8952c\'', 'gold:\'#b8893f\''],
-      ['\'"Playfair Display"\'', '\'"Fraunces"\''],
+      ["accent:'#b8895a'", "accent:'#b8893f'"],
+      ["'\"Playfair Display\"'", "'\"Fraunces\"'"],
+    ],
+    cssReplace: [
+      ['rgba(184,137,90,0.2)', 'rgba(184,137,63,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(184,137,63,0.25)'],
     ],
   },
 

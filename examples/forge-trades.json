@@ -1,5 +1,5 @@
 {
-  "template": "trades",
+  "template": "sectioned",
   "name": "FORGE",
   "subtitle": "Plumbing · Heating · Electrical",
   "tagline": "Same-day response. No call-out fee. 20 years of trusted service across West Yorkshire.",
@@ -26,27 +26,27 @@
   "heroBadge": "20 Years · 480+ Reviews",
   "heroCta1": {
     "text": "Get a Free Quote",
-    "href": "#contact"
+    "href": "#booking"
   },
   "heroCta2": {
     "text": "24/7 Emergency",
-    "href": "#emergency"
+    "href": "#booking"
   },
   "heroStats": [
     {
-      "value": "20+",
+      "val": "20+",
       "label": "Years"
     },
     {
-      "value": "480+",
+      "val": "480+",
       "label": "Reviews"
     },
     {
-      "value": "4.9",
+      "val": "4.9",
       "label": "Rating"
     },
     {
-      "value": "60min",
+      "val": "60min",
       "label": "Response"
     }
   ],
@@ -203,8 +203,13 @@
     }
   ],
   "footer": {
-    "tagline": "Fixed right, first time. Since 2005.",
-    "copyright": "All rights reserved."
+    "note": "Fixed right, first time. Since 2005.",
+    "quickLinks": [
+      "Services",
+      "About",
+      "Reviews",
+      "Contact"
+    ]
   },
   "nav": {
     "links": [
@@ -215,5 +220,108 @@
     ],
     "cta": "Get Quote"
   },
-  "slug": "forge"
+  "slug": "forge",
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "reviews"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "Unit 12, Wellington Industrial Estate, Leeds LS12 2UA"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri: 7:00—19:00 · Sat: 8:00—16:00 · 24/7 Emergency"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 113 234 5678"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Our Services",
+      "icon": "Wrench",
+      "items": [
+        {
+          "name": "Emergency Repairs",
+          "desc": "Burst pipes, gas leaks, no heating — we arrive within 60 minutes. Available 24/7, 365 days a year.",
+          "price": "From £85"
+        },
+        {
+          "name": "Boiler Installation & Service",
+          "desc": "Full boiler replacement, annual servicing, and landlord safety certificates. All work Gas Safe certified.",
+          "price": "From £1,950"
+        },
+        {
+          "name": "Bathroom Fitting",
+          "desc": "Complete bathroom renovations — plumbing, tiling, installation. Free design consultation included.",
+          "price": "From £3,500"
+        },
+        {
+          "name": "Central Heating",
+          "desc": "Radiator installation, power flushing, underfloor heating, and smart thermostat upgrades.",
+          "price": "From £450"
+        },
+        {
+          "name": "Drainage & Blockages",
+          "desc": "High-pressure jetting, CCTV drain surveys, and root removal. No-dig solutions where possible.",
+          "price": "From £95"
+        },
+        {
+          "name": "Landlord Services",
+          "desc": "Gas safety certificates (CP12), EICR electrical reports, and planned maintenance for rental properties.",
+          "price": "From £75"
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Plumbing · Heating · Electrical",
+  "story": {
+    "title": "Three generations of getting it right.",
+    "paragraphs": [
+      "FORGE started in 2005 when Dave Thompson left the corporate plumbing world to serve his local community. What began as a single van and a reputation for showing up on time has grown into West Yorkshire's most trusted trades team.",
+      "We don't do call-out fees. We don't do hidden charges. We do clear quotes, clean work, and a 12-month guarantee on every job — no exceptions.",
+      "Every engineer on our team is fully qualified, background-checked, and trained to explain the work in plain English. No jargon, no upsells, no surprises."
+    ],
+    "stats": []
+  },
+  "booking": {
+    "intro": "Get My Free Quote",
+    "note": "Quote request received! We'll call you within 2 hours.",
+    "occasionOptions": [
+      "Routine",
+      "Urgent",
+      "Emergency"
+    ]
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Fri: 7:00—19:00 · Sat: 8:00—16:00 · 24/7 Emergency",
+    "saturday": "Mon—Fri: 7:00—19:00 · Sat: 8:00—16:00 · 24/7 Emergency",
+    "sunday": "Mon—Fri: 7:00—19:00 · Sat: 8:00—16:00 · 24/7 Emergency",
+    "closedDays": ""
+  }
 }

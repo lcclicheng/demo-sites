@@ -1,5 +1,5 @@
 {
-  "template": "salon",
+  "template": "sectioned",
   "name": "ATELIER",
   "subtitle": "Hair Design Studio",
   "tagline": "A private studio in Bath for those who understand that great hair is architecture, not decoration.",
@@ -21,11 +21,11 @@
   "pageTitle": "ATELIER — Hair Design Studio",
   "heroCta1": {
     "text": "Book Consultation",
-    "href": "#book"
+    "href": "#booking"
   },
   "heroCta2": {
     "text": "View Services",
-    "href": "#services"
+    "href": "#menu"
   },
   "serviceCategories": [
     {
@@ -177,5 +177,145 @@
   "hoursNote": "Mon—Sun · Closed",
   "address": "24 Milsom Street, Bath BA1 1DG",
   "establishedText": "Est. 2016 · Bath, UK",
-  "slug": "atelier"
+  "slug": "atelier",
+  "heroStats": [
+    {
+      "val": "4.9",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "280+",
+      "label": "Reviews"
+    },
+    {
+      "val": "2016",
+      "label": "Established"
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "team"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "24 Milsom Street, Bath BA1 1DG"
+    },
+    {
+      "icon": "Clock",
+      "text": "Tue—Sat · 9:00—18:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 1225 789012"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Hair",
+      "icon": "Scissors",
+      "items": [
+        {
+          "name": "Signature Cut & Style",
+          "desc": "Consultation, precision cut, blow-dry & finish · 60 min",
+          "price": "£85"
+        },
+        {
+          "name": "Balayage / Highlights",
+          "desc": "Hand-painted colour tailored to your skin tone · 2—3 hrs",
+          "price": "£140"
+        },
+        {
+          "name": "Full Colour Transformation",
+          "desc": "Complete colour change with Olaplex treatment · 2 hrs",
+          "price": "£110"
+        },
+        {
+          "name": "Keratin Smoothing",
+          "desc": "Frizz elimination, up to 12 weeks of silkiness · 90 min",
+          "price": "£165"
+        },
+        {
+          "name": "Event Styling",
+          "desc": "Updo, waves, or sleek styling for special occasions · 45 min",
+          "price": "£65"
+        },
+        {
+          "name": "Brow Sculpt",
+          "desc": "Lamination + tint for perfectly shaped brows · 30 min",
+          "price": "£45"
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Hair",
+  "story": {
+    "title": "Architecture for hair.",
+    "paragraphs": [
+      "A private hair design studio. Architecture for hair."
+    ],
+    "stats": []
+  },
+  "team": [
+    {
+      "name": "Isabelle Moreau",
+      "role": "Creative Director · 15 yrs",
+      "initials": "IM",
+      "bio": "Precision cuts, editorial styling, razor work"
+    },
+    {
+      "name": "Clara Jensen",
+      "role": "Senior Colourist · 10 yrs",
+      "initials": "CJ",
+      "bio": "Balayage, colour correction, icy blondes"
+    },
+    {
+      "name": "Maya Okonkwo",
+      "role": "Master Stylist · 8 yrs",
+      "initials": "MO",
+      "bio": "Textured cuts, curly hair, bridal & events"
+    }
+  ],
+  "booking": {
+    "intro": "New clients receive a complimentary consultation.",
+    "note": "BEGIN YOUR TRANSFORMATION",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "9:00—18:00",
+    "saturday": "9:00—18:00",
+    "sunday": "Closed",
+    "closedDays": "Sun"
+  },
+  "footer": {
+    "note": "A private hair design studio. Architecture for hair.",
+    "quickLinks": [
+      "Services",
+      "Team",
+      "Book"
+    ]
+  }
 }

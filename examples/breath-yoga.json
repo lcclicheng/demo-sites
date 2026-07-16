@@ -1,5 +1,5 @@
 {
-  "template": "yoga",
+  "template": "sectioned",
   "name": "BREATH",
   "subtitle": "Yoga & Wellness",
   "tagline": "Find stillness in movement. Classes for every body, every level, every journey.",
@@ -18,11 +18,11 @@
   "heroSubtitle": "Classes for every body, every level.",
   "heroCta1": {
     "text": "View Classes",
-    "href": "#classes"
+    "href": "#menu"
   },
   "heroCta2": {
     "text": "Book a Session",
-    "href": "#book"
+    "href": "#booking"
   },
   "phoneDisplay": "+44 1225 345678",
   "hoursCompact": "Mon—Fri 6:30—20:30 · Sat—Sun 8:00—18:00",
@@ -172,5 +172,151 @@
     ],
     "cta": "Book Now"
   },
-  "slug": "breath"
+  "slug": "breath",
+  "heroStats": [
+    {
+      "val": "4.9",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "230+",
+      "label": "Reviews"
+    },
+    {
+      "val": "2017",
+      "label": "Established"
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "team"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "15 Walcot Street, Bath BA1 5BG"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri 6:30—20:30 · Sat—Sun 8:00—18:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 1225 345678"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Our Practice",
+      "icon": "Activity",
+      "items": [
+        {
+          "name": "Vinyasa Flow",
+          "desc": "Dynamic sequence linking breath with movement. · All Levels · 60 min",
+          "price": "£14"
+        },
+        {
+          "name": "Yin & Restore",
+          "desc": "Deep, passive stretches held for 3-5 minutes. · Beginner · 75 min",
+          "price": "£12"
+        },
+        {
+          "name": "Hatha Foundations",
+          "desc": "Classic postures with detailed alignment cues. · Beginner · 60 min",
+          "price": "£12"
+        },
+        {
+          "name": "Power Yoga",
+          "desc": "Athletic, challenging flow to build heat and endurance. · Intermediate · 60 min",
+          "price": "£14"
+        },
+        {
+          "name": "Sunrise Meditation",
+          "desc": "Guided meditation and gentle movement. · All Levels · 30 min",
+          "price": "£8"
+        },
+        {
+          "name": "Prenatal Yoga",
+          "desc": "Safe, nurturing practice for expectant mothers. · Pregnancy · 75 min",
+          "price": "£14"
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Something for everyone.",
+  "story": {
+    "title": "Our Practice",
+    "paragraphs": [
+      "From gentle restoration to athletic flow."
+    ],
+    "stats": []
+  },
+  "team": [
+    {
+      "name": "Priya Sharma",
+      "role": "Founder & Lead Teacher",
+      "initials": "PS",
+      "bio": "Vinyasa, Meditation, Teacher Training"
+    },
+    {
+      "name": "Luna Johansson",
+      "role": "Senior Teacher",
+      "initials": "LJ",
+      "bio": "Yin, Restorative, Sound Healing"
+    },
+    {
+      "name": "Marcus Webb",
+      "role": "Teacher",
+      "initials": "MW",
+      "bio": "Power Yoga, Mobility, Breathwork"
+    },
+    {
+      "name": "Aiko Tanaka",
+      "role": "Teacher",
+      "initials": "AT",
+      "bio": "Hatha, Prenatal, Kids Yoga"
+    }
+  ],
+  "booking": {
+    "intro": "New students get their first class free.",
+    "note": "Booked!",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "6:30—20:30",
+    "saturday": "8:00—18:00",
+    "sunday": "8:00—18:00",
+    "closedDays": ""
+  },
+  "footer": {
+    "note": "A sanctuary for movement and mindfulness.",
+    "quickLinks": [
+      "Classes",
+      "Teachers",
+      "Book"
+    ]
+  }
 }

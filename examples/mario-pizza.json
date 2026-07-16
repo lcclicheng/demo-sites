@@ -1,5 +1,5 @@
 {
-  "template": "restaurant",
+  "template": "sectioned",
   "name": "Mario's Pizzeria",
   "subtitle": "Wood-Fired Pizza",
   "tagline": "48-hour fermented dough, San Marzano tomatoes, and fresh mozzarella — straight from Naples to Leeds.",
@@ -21,7 +21,7 @@
   },
   "heroCta2": {
     "text": "Book a Table",
-    "href": "#reserve"
+    "href": "#booking"
   },
   "heroStats": [
     {
@@ -225,5 +225,145 @@
       "rating": 5
     }
   ],
-  "slug": "mario"
+  "slug": "mario",
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "reviews"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "47 Briggate, Leeds LS1 6HF"
+    },
+    {
+      "icon": "Clock",
+      "text": "Wed–Sun · 17:00—22:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 113 234 5678"
+    },
+    {
+      "icon": "Wine",
+      "text": "Fully Licensed"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Pizza Rossa",
+      "icon": "Flame",
+      "items": [
+        {
+          "name": "Margherita",
+          "desc": "San Marzano tomato, fresh mozzarella, basil, extra virgin olive oil",
+          "price": "£11.50",
+          "pair": "Lager Italiana"
+        },
+        {
+          "name": "Diavola",
+          "desc": "Tomato, mozzarella, spicy salami, Calabrian chili, honey drizzle",
+          "price": "£14",
+          "pair": "Chianti Classico"
+        }
+      ]
+    },
+    {
+      "title": "Pizza Bianca",
+      "icon": "UtensilsCrossed",
+      "items": [
+        {
+          "name": "Funghi & Truffle",
+          "desc": "Mixed wild mushrooms, truffle cream, mozzarella, fresh thyme",
+          "price": "£15.50",
+          "pair": "Barbera d'Alba"
+        },
+        {
+          "name": "Prosciutto e Rucola",
+          "desc": "Mozzarella base, Parma ham, rocket, shaved Parmesan",
+          "price": "£14.50",
+          "pair": "Pinot Grigio"
+        }
+      ]
+    },
+    {
+      "title": "Dolci",
+      "icon": "Sparkles",
+      "items": [
+        {
+          "name": "Tiramisu della Casa",
+          "desc": "Our family recipe — espresso-soaked savoiardi, mascarpone, cocoa",
+          "price": "£8",
+          "pair": "Vin Santo"
+        },
+        {
+          "name": "Cannoli Siciliani",
+          "desc": "Crispy shells filled with sweet ricotta, pistachio, candied orange",
+          "price": "£7.50",
+          "pair": "Moscato d'Asti"
+        }
+      ]
+    }
+  ],
+  "story": {
+    "title": "From Naples to Leeds",
+    "paragraphs": [
+      "Mario brought his grandfather's pizza recipe from a tiny shop in Naples to the heart of Leeds in 2012. What started as a single wood-fired oven has grown into one of Yorkshire's most beloved pizzerias.",
+      "We make everything from scratch — our dough ferments for 48 hours, our mozzarella is stretched by hand, and every pizza is baked at 485°C for exactly 90 seconds.",
+      "No shortcuts. No compromises. Just honest, incredible pizza."
+    ],
+    "stats": [
+      {
+        "value": "12+",
+        "label": "Years"
+      },
+      {
+        "value": "485°C",
+        "label": "Oven Temp"
+      },
+      {
+        "value": "4.7",
+        "label": "Rating"
+      }
+    ]
+  },
+  "booking": {
+    "intro": "",
+    "note": "We release tables 30 days in advance. Friday and Saturday typically fill within 48 hours.",
+    "occasionOptions": [
+      "Birthday",
+      "Anniversary",
+      "Date Night",
+      "Just Because"
+    ]
+  },
+  "footer": {
+    "note": "Proud members of the Associazione Verace Pizza Napoletana.",
+    "quickLinks": [
+      "Menu",
+      "Story",
+      "Book"
+    ]
+  }
 }

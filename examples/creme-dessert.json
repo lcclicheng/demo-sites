@@ -1,5 +1,5 @@
 {
-  "template": "dessert",
+  "template": "sectioned",
   "name": "CRÈME",
   "brandEmoji": "🧁",
   "tagline": "Every pastry is a small work of art, made by hand, with the finest ingredients.",
@@ -22,11 +22,11 @@
   "heroLine2": "crafted daily.",
   "heroCta1": {
     "text": "Explore Pastries",
-    "href": "#pastries"
+    "href": "#menu"
   },
   "heroCta2": {
     "text": "Custom Cake Order",
-    "href": "#order"
+    "href": "#booking"
   },
   "navLinks": [
     "Pastries",
@@ -188,5 +188,163 @@
     "Sat—Sun: 8:30—17:00",
     "Monday — Closed"
   ],
-  "slug": "creme"
+  "slug": "creme",
+  "heroStats": [
+    {
+      "val": "4.9",
+      "label": "Google Rating",
+      "stars": true
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "8 Abbey Green, Bath BA1 1NW"
+    },
+    {
+      "icon": "Clock",
+      "text": "Tue—Fri 8:00—17:00 · Sat—Sun 8:30—17:00 · Monday — Closed"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 1225 456789"
+    }
+  ],
+  "menu": [
+    {
+      "title": "FROM THE OVEN",
+      "icon": "Croissant",
+      "items": [
+        {
+          "name": "Mille-Feuille",
+          "desc": "Caramelized puff pastry, vanilla crème diplomate, fresh berries",
+          "price": "£8.50"
+        },
+        {
+          "name": "Éclair Trio",
+          "desc": "Dark chocolate, salted caramel & pistachio",
+          "price": "£7.00"
+        },
+        {
+          "name": "Tarte au Citron",
+          "desc": "Classic lemon tart with torched Swiss meringue",
+          "price": "£6.50"
+        },
+        {
+          "name": "Paris-Brest",
+          "desc": "Choux pastry ring, praline crème mousseline",
+          "price": "£9.00"
+        },
+        {
+          "name": "Macaron Box",
+          "desc": "6 handcrafted: raspberry, rose, pistachio, vanilla",
+          "price": "£12.00"
+        },
+        {
+          "name": "Crème Brûlée",
+          "desc": "Tahitian vanilla custard, caramelized sugar crust",
+          "price": "£6.00"
+        }
+      ]
+    },
+    {
+      "title": "CELEBRATION CAKES",
+      "icon": "Cake",
+      "items": [
+        {
+          "name": "Fraisier",
+          "desc": "Genoise sponge, mousseline cream, fresh strawberries · Serves 8-10",
+          "price": "£45"
+        },
+        {
+          "name": "Opéra",
+          "desc": "Almond sponge, coffee buttercream, dark chocolate ganache · Serves 10-12",
+          "price": "£48"
+        },
+        {
+          "name": "Charlotte aux Fruits",
+          "desc": "Ladyfinger-lined mousse cake, seasonal fruit · Serves 8-10",
+          "price": "£42"
+        }
+      ]
+    },
+    {
+      "title": "SMALL LUXURIES,",
+      "icon": "Candy",
+      "items": [
+        {
+          "name": "Praliné Noisette",
+          "desc": "Hazelnut praline in dark chocolate shell",
+          "price": "£3.50"
+        },
+        {
+          "name": "Ganache Framboise",
+          "desc": "Raspberry ganache in ruby chocolate",
+          "price": "£3.50"
+        },
+        {
+          "name": "Caramel Fleur de Sel",
+          "desc": "Salted butter caramel in milk chocolate",
+          "price": "£3.00"
+        },
+        {
+          "name": "Truffle Noire",
+          "desc": "72% dark chocolate truffle, cocoa dusted",
+          "price": "£3.00"
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Fresh every morning at 5am.",
+  "story": {
+    "title": "French patisserie in the heart of Bath.",
+    "paragraphs": [
+      "French patisserie in the heart of Bath."
+    ],
+    "stats": []
+  },
+  "booking": {
+    "intro": "Reserve your favourites.",
+    "note": "We'll confirm within 2 hours. Merci!",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "Tue—Fri 8:00—17:00 · Sat—Sun 8:30—17:00 · Monday — Closed",
+    "saturday": "Tue—Fri 8:00—17:00 · Sat—Sun 8:30—17:00 · Monday — Closed",
+    "sunday": "Tue—Fri 8:00—17:00 · Sat—Sun 8:30—17:00 · Monday — Closed",
+    "closedDays": ""
+  },
+  "footer": {
+    "note": "CRÈME",
+    "quickLinks": [
+      "Patisserie",
+      "Cakes",
+      "Chocolates",
+      "Gift Boxes",
+      "Catering"
+    ]
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "template": "restaurant",
+  "template": "sectioned",
   "name": "Sotto Sotto",
   "subtitle": "Italian Restaurant",
   "tagline": "Authentic Italian cooking in the heart of Bath. Handmade pasta, slow-simmered ragu, and classic tiramisu — served just below street level since 2002.",
@@ -21,7 +21,7 @@
   },
   "heroCta2": {
     "text": "Book a Table",
-    "href": "#reserve"
+    "href": "#booking"
   },
   "heroStats": [
     {
@@ -233,8 +233,8 @@
     }
   ],
   "hoursDetail": {
-    "wedThu": "17:00—22:00",
-    "friSat": "12:00—22:30",
+    "wedFri": "17:00—22:00",
+    "saturday": "12:00—22:30",
     "sunday": "12:00—21:00",
     "closedDays": "Mon—Tue"
   },
@@ -255,5 +255,151 @@
       "rating": 5
     }
   ],
-  "slug": "sotto-sotto"
+  "slug": "sotto-sotto",
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "reviews"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "10 N Parade, Bath BA2 4AL"
+    },
+    {
+      "icon": "Clock",
+      "text": "Tue–Sun · 12:00—22:30"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 1225 330236"
+    },
+    {
+      "icon": "Wine",
+      "text": "Fully Licensed"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Pasta & Risotto",
+      "icon": "UtensilsCrossed",
+      "items": [
+        {
+          "name": "Linguine con gamberi",
+          "desc": "Linguine tossed with prawns, sun-dried tomatoes, anchovies, black olives, capers, garlic and EVO oil",
+          "price": "£12.75",
+          "pair": "Greco di Tufo"
+        },
+        {
+          "name": "Fettuccine al ragù d'agnello",
+          "desc": "Fresh homemade fettuccine with lamb ragout on a bed of Pecorino cheese fondue",
+          "price": "£12.50",
+          "pair": "Primitivo di Manduria"
+        },
+        {
+          "name": "Fettuccine alla crema di zucca",
+          "desc": "Fresh homemade fettuccine, sage, chilli, roasted butternut squash, pancetta and truffle cream",
+          "price": "£10.50",
+          "pair": "Pinot Grigio Alto Adige"
+        }
+      ]
+    },
+    {
+      "title": "Risotto & Secondi",
+      "icon": "Flame",
+      "items": [
+        {
+          "name": "Risotto al Barbera",
+          "desc": "Italian Arborio risotto with Barbera wine, sausage and cream of Taleggio cheese",
+          "price": "£11.75",
+          "pair": "Barbera d'Alba"
+        },
+        {
+          "name": "Carré di agnello in crosta di pistacchi",
+          "desc": "Pistachio crusted rack of lamb with mixed roasted root vegetables and Primitivo red wine sauce",
+          "price": "£24.25",
+          "pair": "Chianti Classico"
+        }
+      ]
+    },
+    {
+      "title": "Dolci",
+      "icon": "Sparkles",
+      "items": [
+        {
+          "name": "Tiramisu della Casa",
+          "desc": "Espresso-soaked savoiardi, mascarpone, and cocoa — made fresh every morning",
+          "price": "£8.50",
+          "pair": "Vin Santo"
+        },
+        {
+          "name": "Panna Cotta",
+          "desc": "Vanilla bean panna cotta with raspberry coulis and fresh mint",
+          "price": "£8.50",
+          "pair": "Moscato d'Asti"
+        }
+      ]
+    }
+  ],
+  "story": {
+    "title": "Beneath the Streets of Bath",
+    "paragraphs": [
+      "Sotto Sotto has been a Bath institution for over two decades. Tucked beneath the arches of North Parade, our candlelit dining room feels a world away from the city above.",
+      "We cook the dishes our families grew up with — slow-braised ragus, hand-rolled pasta, and desserts that arrive at the table with the quiet confidence of recipes that have travelled through generations.",
+      "Every ingredient is chosen for flavour, not fuss. The result is honest Italian food in a room that makes you want to stay all evening."
+    ],
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Years"
+      },
+      {
+        "value": "4.6",
+        "label": "Rating"
+      },
+      {
+        "value": "Bath",
+        "label": "City Centre"
+      }
+    ]
+  },
+  "booking": {
+    "intro": "",
+    "note": "We recommend booking at least 7 days in advance. Friday and Saturday tables fill quickly.",
+    "occasionOptions": [
+      "Birthday",
+      "Anniversary",
+      "Date Night",
+      "Business Dinner"
+    ]
+  },
+  "footer": {
+    "note": "Proudly independent. Italian ingredients. Bath soul.",
+    "quickLinks": [
+      "Menu",
+      "Story",
+      "Book"
+    ]
+  }
 }

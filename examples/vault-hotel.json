@@ -1,5 +1,5 @@
 {
-  "template": "hotel",
+  "template": "sectioned",
   "name": "THE VAULT",
   "tagline": "Six individually designed rooms in a Grade II listed Georgian townhouse in the heart of Bath.",
   "established": "2010",
@@ -20,11 +20,11 @@
   "heroRatingText": "4.9 · 340+ reviews",
   "heroCta1": {
     "text": "View Our Rooms",
-    "href": "#rooms"
+    "href": "#menu"
   },
   "heroCta2": {
     "text": "Check Availability",
-    "href": "#book"
+    "href": "#booking"
   },
   "navLinks": [
     "Rooms",
@@ -102,27 +102,15 @@
   "infoBar": [
     {
       "icon": "MapPin",
-      "label": "Location",
-      "lines": [
-        "22 Great Pulteney Street",
-        "Bath BA2 4BU"
-      ]
+      "text": "22 Great Pulteney Street · Bath BA2 4BU"
     },
     {
       "icon": "Clock",
-      "label": "Check-in / out",
-      "lines": [
-        "Check-in: 15:00",
-        "Check-out: 11:00"
-      ]
+      "text": "Check-in: 15:00 · Check-out: 11:00"
     },
     {
       "icon": "Phone",
-      "label": "Contact",
-      "lines": [
-        "+44 1225 432198",
-        "stay@thevaultbath.co.uk"
-      ]
+      "text": "+44 1225 432198 · stay@thevaultbath.co.uk"
     }
   ],
   "footerDescription": "A Grade II listed Georgian townhouse. Six individually designed rooms. One unforgettable stay.",
@@ -169,5 +157,98 @@
     }
   ],
   "footerCopyright": "All rights reserved.",
-  "slug": "vault"
+  "slug": "vault",
+  "heroStats": [
+    {
+      "val": "4.9",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "340+",
+      "label": "Reviews"
+    },
+    {
+      "val": "2010",
+      "label": "Established"
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Six unique spaces, one warm welcome.",
+      "icon": "Bed",
+      "items": [
+        {
+          "name": "The Georgian Suite",
+          "desc": "Four-poster bed, roll-top bath, views over Pulteney Bridge. Includes breakfast and afternoon tea.",
+          "price": "£225"
+        },
+        {
+          "name": "The Garden Room",
+          "desc": "French doors opening onto our private walled garden. King bed, rainfall shower.",
+          "price": "£185"
+        },
+        {
+          "name": "The Library Room",
+          "desc": "Floor-to-ceiling bookshelves, window seat, antique writing desk.",
+          "price": "£165"
+        },
+        {
+          "name": "The Blue Room",
+          "desc": "Calm and coastal-inspired. Queen bed, claw-foot tub, morning light.",
+          "price": "£145"
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "OUR ROOMS",
+  "story": {
+    "title": "Six unique spaces, one warm welcome.",
+    "paragraphs": [
+      "Six individually designed rooms in a Grade II listed Georgian townhouse in the heart of Bath."
+    ],
+    "stats": []
+  },
+  "booking": {
+    "intro": "Your room awaits.",
+    "note": "",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "Check-in: 15:00 · Check-out: 11:00",
+    "saturday": "Check-in: 15:00 · Check-out: 11:00",
+    "sunday": "Check-in: 15:00 · Check-out: 11:00",
+    "closedDays": ""
+  },
+  "footer": {
+    "note": "A Grade II listed Georgian townhouse. Six individually designed rooms. One unforgettable stay.",
+    "quickLinks": [
+      "Rooms",
+      "Book",
+      "Find Us"
+    ]
+  }
 }

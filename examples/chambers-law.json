@@ -1,5 +1,5 @@
 {
-  "template": "law",
+  "template": "sectioned",
   "name": "CHAMBERS",
   "subtitle": "Solicitors",
   "tagline": "Trusted legal counsel for individuals, families, and businesses across the South West since 1985.",
@@ -20,11 +20,11 @@
   ],
   "heroCta1": {
     "text": "Our Services",
-    "href": "#services"
+    "href": "#menu"
   },
   "heroCta2": {
     "text": "Book a Consultation",
-    "href": "#contact"
+    "href": "#booking"
   },
   "stats": [
     {
@@ -76,24 +76,32 @@
       "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
     }
   ],
-  "sections": {
-    "services": {
-      "label": "PRACTICE AREAS",
-      "title": "How we can",
-      "titleHighlight": "help."
+  "sections": [
+    {
+      "type": "hero"
     },
-    "team": {
-      "label": "OUR TEAM",
-      "title": "Decades of",
-      "titleHighlight": "experience."
+    {
+      "type": "infoBar"
     },
-    "contact": {
-      "label": "CONTACT US",
-      "title": "Let's",
-      "titleHighlight": "talk.",
-      "description": "Free initial consultation. No obligation."
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "team"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
     }
-  },
+  ],
   "lawyers": [
     {
       "initials": "JW",
@@ -125,9 +133,117 @@
     "success": "Thank you! We'll be in touch within 24 hours."
   },
   "footer": {
-    "sra": "Regulated by the Solicitors Regulation Authority.",
-    "copyright": "All rights reserved.",
-    "hours": "Mon—Fri · 9:00—17:30"
+    "note": "Regulated by the Solicitors Regulation Authority.",
+    "quickLinks": [
+      "Services",
+      "Team",
+      "Contact"
+    ]
   },
-  "slug": "chambers"
+  "slug": "chambers",
+  "heroLine1": "CLARITY.",
+  "heroLine2": "CONFIDENCE. RESULTS.",
+  "heroStats": [
+    {
+      "val": "35+",
+      "label": "Years"
+    },
+    {
+      "val": "4.8",
+      "label": "Rating"
+    },
+    {
+      "val": "500+",
+      "label": "Clients"
+    },
+    {
+      "val": "SRA",
+      "label": "Regulated"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "31 Queen Square, Bath BA1 2HN"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri: 9:00—17:30"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 1225 789456"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Practice Areas",
+      "icon": "Scale",
+      "items": [
+        {
+          "name": "Residential Conveyancing",
+          "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+        },
+        {
+          "name": "Family Law",
+          "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+        },
+        {
+          "name": "Wills & Probate",
+          "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+        },
+        {
+          "name": "Employment Law",
+          "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+        },
+        {
+          "name": "Commercial Property",
+          "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+        },
+        {
+          "name": "Dispute Resolution",
+          "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "How we can",
+  "story": {
+    "title": "Decades of",
+    "paragraphs": [
+      "Trusted legal counsel for individuals, families, and businesses across the South West since 1985."
+    ],
+    "stats": []
+  },
+  "team": [
+    {
+      "name": "James Whitfield",
+      "role": "Senior Partner",
+      "initials": "JW",
+      "bio": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "initials": "EC",
+      "bio": "Family Law & Mediation"
+    },
+    {
+      "name": "Robert Palmer",
+      "role": "Associate",
+      "initials": "RP",
+      "bio": "Conveyancing & Property Law"
+    }
+  ],
+  "booking": {
+    "intro": "Free initial consultation. No obligation.",
+    "note": "Thank you! We'll be in touch within 24 hours.",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Fri: 9:00—17:30",
+    "saturday": "Closed",
+    "sunday": "Closed",
+    "closedDays": "Weekends"
+  }
 }
