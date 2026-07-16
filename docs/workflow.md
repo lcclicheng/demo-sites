@@ -1,5 +1,18 @@
 # 建站系统流程文档（v1.1）
 
+> 🗄️ **本文件已于 2026-07-16 归档，不再维护（MDD 重构）。**
+> 原为 57KB 超级单文件，随项目进入 100K+ token 级别已不适合作 AI/人的按需读取入口，现已按主题拆分：
+> - 技术架构 / 目录 → **`docs/architecture.md`**
+> - 部署 / 认证 / 本地开发 / 安全 → **`docs/deployment.md`**
+> - 客户接入 / 维护 / 合规 / 新增模板 SOP → **`docs/onboarding.md`**
+> - SEO / 内容 → **`docs/seo.md`**（Blog 见 `docs/blog-pipeline.md`）
+> - 定价 / 监控 / 路线图 / Section Engine → 各专项文件（见 `docs/index.md`）
+> - 一册通读 → **`docs/PROJECT-OVERVIEW.md`**
+>
+> **新内容请写入上述主题文件，勿再改本文件。** 本文件仅作历史版本脉络与完整版本记录留存。文档索引见 `docs/index.md`。
+>
+> ---
+
 > 版本：v1.1.0 ｜ 更新：2026-07-16（v1.1.0：步骤6 Section Engine 收口——10 个 curated 预设全部迁移到 sectioned 统一架构、双轨在 curated 层终结；8 套行业模板现为真实商家垂直站 + 历史保留；站点总数 19→20（含 morris-coffee 迁移 sectioned + sectioned-demo）；monitoring 监测点扩至 22；v1.0.1：定价模型微调——A 档取消 Decap CMS 自助交付，改为「建站 + 首月内不限次数修改」（省去 OAuth/培训/维护），价格与分行业浮动不变；步骤2 外联——4 家高风险商家首批发送包就绪（indaba-yoga/seddons-law/vale-hardware/papa-bruno，各带独立预览链接 + Ethan Li 署名），indaba-yoga 补未核实免责横幅；`generate.mjs` 合规注入兼容 `_source` 对象形式（uk-biz-finder 导出可直喂）；v1.0：9 个真实英国商家 demo 全上线（19 站在线）+ UK Biz Finder 商家搜索工具 + 资产流水线 skill + favicon monogram 化；v0.9.9：编辑排版层 —— 从 20 旧站提炼的编辑排版规律统一 8 模板观感：generate.mjs 新增 EDITORIAL_CSS 注入 index.css（全局 body line-height 1.7 放松正文行高；.measure/.measure-lg 阅读宽度限宽；.lead 导语段落；.rule/.section-rule 发丝分隔线）；8 模板应用 measure-lg（hero 副标题限宽）+ lead（章节导语）+ section-rule（区块顶边线）共约 44 处；全 currentColor+color-mix 主题自适应，亮暗通用；v0.9.8：Eyebrow 收口 —— 从 20 旧站采集的共享视觉系统 8 个组件中最后一个 Eyebrow（section 小标签 kicker）接入全部 8 套模板的 section kicker（约 30 处），保留各行业 h-px 装饰线与 accent 色、restaurant 金色 hero badge 保留；组件库 8/8 全量落地，采集闭环完成；v0.9.7：全 8 模板 / 10 个真实站点统一接入共享视觉系统 —— restaurant 补齐为最后一站（HeroBackdrop+GradientText）与其余 7 套一致；v0.9.6：共享视觉手法再延展 —— 从 20 旧站再抽取 SquareMonogram（方形首字母 editorial monogram，替代圆头像，注入 salon 造型师 + yoga 老师）与 HeroBackdrop variant="grid"（bento-dashboard 建筑感点阵网格纹理，注入 hotel hero）；v0.9.5：共享视觉手法延展到区块层 —— GlassCard 注入 trades 评价卡/ConfettiBg 注入 dessert 下单区，Eyebrow 因各模板已手写 kicker 暂不强制；v0.9.4：共享视觉手法系统落地，见 `src/components/visual.tsx` 与 `generate.mjs`；v0.9.3：监控仪表盘 + 轻量冒烟测试落地，见 `docs/monitoring.md`；v0.9.2：定价两档落地（进攻型）见 `docs/pricing.md`；v0.9.1：定价三套餐、v0.8：客户自助 CMS 全 10 站自动映射 + 图片 `?v=` 防缓存；v0.7 CMS 脚手架、v0.6 部署缓存已落地） ｜ 作者：lcclicheng（一人公司 / 独立开发者）
 > 初版 v0.1 同日发布；本次依据审查意见修订：补充**交付后维护流程**、路径去硬编码、GitHub Pages 限制、孤儿站点自动发现、合规/法律风险、SEO/部署健壮性、文档维护规则、统一格式与难度标签。
 > **定位**：本文档是系统的「单一事实来源」。任何重大改动（新增站点、改模板、动部署流程）须同步更新此处（见 §11 文档维护规则）。

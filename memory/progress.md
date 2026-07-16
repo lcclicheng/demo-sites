@@ -6,7 +6,7 @@
 - **步骤6 收口**：10 curated 预设全迁 `sectioned`，双轨在 curated 层终结；站点 19→20（含 morris-coffee 迁 sectioned + sectioned-demo）。
 - **文档同步 v1.1.0 + 门户同步**（补 sectioned-demo 卡 + OG/Twitter 文案）。
 - **产出 `docs/PROJECT-OVERVIEW.md`**（最终整合版，含架构 + 订阅付费）。
-- **MDD 架构启动**：按用户要求改为 Memory Driven Development —— 建 `memory/ decisions/ tasks/ .ai/` 骨架 + `docs/index.md`；`workflow.md`(57KB) 待拆为各主题文件。
+- **MDD 架构落地**：按用户要求改为 Memory Driven Development —— 建 `memory/ decisions/ tasks/ .ai/` 骨架 + `docs/index.md`；`workflow.md`(57KB) 已拆为 `architecture.md`/`deployment.md`/`onboarding.md`/`seo.md`（+ 现有 pricing/monitoring/section-engine 等专项），workflow.md 顶部加归档标注不再维护，README/index.md 回链全部改指主题文件。
 
 ## 2026-07-15
 - **架构审查**（H1-H5 / L1-L4）：H2(CMS 覆盖) 已闭环、H3(OSM 署名) 已修、H1(占位数据) 加免责横幅过渡；H4 误报撤销。

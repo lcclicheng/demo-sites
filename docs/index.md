@@ -9,11 +9,28 @@
 - `tasks/{todo,doing,done}/`（当前任务）
 - `.ai/<role>.md`（角色上下文：architect / frontend / backend / seo / designer）
 
-## 给人读（按主题）
-- **`docs/PROJECT-OVERVIEW.md`** — ⭐ 最终整合版项目说明（架构 + 订阅付费一册通读，过渡期总入口）
-- `docs/workflow.md` — 系统总文档（v1.1.0，**待拆**为下方各主题文件）
-- 计划中拆出的主题文件（尚未创建）：`docs/architecture.md` · `docs/deployment.md` · `docs/onboarding.md` · `docs/seo.md`（SEO/Blog 脚手架在 `docs/blog-pipeline.md`）· `docs/monitoring.md`(已有) · `docs/pricing.md`(已有) · `docs/roadmap.md`(已有 `v2-roadmap.md`)
-- 配套专项：`docs/custom-domain.md` · `docs/delivery-checklist.md` · `docs/delivery-handover.md` · `docs/cms.md`(已降级演示) · `docs/real-merchant-outreach.md` · `docs/outreach-emails.md` · `docs/outreach-batch-1.md` · `docs/blog-pipeline.md` · `docs/architecture-audit-2026-07-15.md`
+## 给人读（按主题 —— 已从超级单文件 workflow.md 拆出）
+
+| 主题 | 文件 | 内容 |
+|---|---|---|
+| ⭐ 一册通读 | `docs/PROJECT-OVERVIEW.md` | 最终整合版项目说明（架构 + 订阅付费全景，总入口） |
+| 技术架构 | `docs/architecture.md` | 技术栈 / 核心管线 / 8 模板 + Section Engine / GitHub Pages 限制 / 目录结构 / PROJS 单一事实源 |
+| 部署认证 | `docs/deployment.md` | 本地开发 / push→Actions / SSH 443 / FAQ 坑 / 质量闸门 / 安全清单 / 命令速查 |
+| 客户接入 | `docs/onboarding.md` | 接入 SOP 8 步 / 交付后维护 / 第 7 天满意度 / 合规与注册地址 / 新增模板 SOP / slug 约定 |
+| SEO / 内容 | `docs/seo.md` | SEO 基础自动注入 / checklist / JSON-LD 结构化数据 / Blog（指向 blog-pipeline.md） |
+| Section Engine | `docs/section-engine.md` | theme-agnostic 12 section 组合器 + SectionedData 数据契约 |
+| 定价 | `docs/pricing.md` | A £590 / B £390/年 + 分行业微调 |
+| 监控 | `docs/monitoring.md` | health-check + UptimeRobot 看板 |
+| 路线图 | `docs/v2-roadmap.md` | 增量构建 / Playwright / 真实商家替换等 |
+
+## 配套专项文档
+- `docs/custom-domain.md`（自定义域名/DNS）· `docs/delivery-handover.md`（交付包）· `docs/delivery-checklist.md`（交付清单）
+- `docs/cms.md`（Decap CMS，已降级为可选演示能力）· `docs/blog-pipeline.md`（Blog 脚手架）
+- `docs/real-merchant-outreach.md` · `docs/outreach-emails.md` · `docs/outreach-batch-1.md`（真实商家外联）
+- `docs/architecture-audit-2026-07-15.md` · `docs/deployment-adapter.md`（历史审计/适配）
+
+## 归档
+- `docs/workflow.md` — 🗄️ **已归档（v1.1.0，2026-07-16 定格）**。原 57KB 超级单文件，已按上表拆分为各主题文件，**不再维护**，仅作历史版本脉络与完整版本记录留存。新内容请写入对应主题文件。
 
 ## 行业知识（AI 生成可直接引用，非代码）
 - `knowledge/{restaurant,coffee,salon,dessert,yoga,law,hotel,trades}/`（各含 hero / seo / faq / cta）

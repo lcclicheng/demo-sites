@@ -9,4 +9,4 @@
 ## 战略
 - 从「建站项目」→「AI Website Factory」：AI Intake（步骤3 NL→JSON）降级为**上线后增值服务**（LLM 选 OpenAI / DeepSeek，key 留 env 占位）。
 - 提升 MRR：B 档年维护 + 增项（自定义域名 / 多语言 / 深度 SEO）。
-- 文档 MDD 化：`docs/workflow.md`(57KB) 拆为各主题文件（见 `docs/index.md`）。
+- 文档 MDD 化 ✅：`docs/workflow.md`(57KB) 已拆为 `architecture.md`/`deployment.md`/`onboarding.md`/`seo.md` + 现有专项，workflow.md 已归档；索引见 `docs/index.md`（2026-07-16）。
