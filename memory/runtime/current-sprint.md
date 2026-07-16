@@ -35,6 +35,8 @@
 - `tasks/todo/automation-min-context.md` — AI 自动按任务类型选最小上下文（落实 Stop Rule）
 
 ## 最近完成
+- PROJECT-OVERVIEW.md 整合版（commit `3292658`）。
 - MDD 骨架（`memory/ decisions/ tasks/ .ai/ docs/index`）落地（commit `f2281b4`）。
 - 超级单文件 `workflow.md` 拆为主题文件（commit `8b0233d`）。
-- PROJECT-OVERVIEW.md 整合版（commit `3292658`）。
+- 第二轮系统级收口：`memory` 拆 `core/runtime` + `contracts/`(Schema) + `state/`(运行时) + `playbooks/`(执行 SOP) + `checklists/`(AI/CI) + ADR `Status` + 加载优先级 P0–P8（commit `a604623`）。
+- 第三轮精炼（99/100 评审）：`principles.md` 加 Fact only once + Architecture Laws(10)；`loading-priority.md` 加 Stop Rule；新增 `state/health.md` + `runtime/lessons-learned.md` + 根 `events.log`；4 个自动化方向落 `tasks/todo`（commit `073de6e`）。

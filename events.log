@@ -10,3 +10,4 @@
 [2026-07-16 18:32] ARCH 第二轮系统级收口：memory 拆 core/runtime + contracts/state/playbooks/checklists + ADR Status + 加载优先级 P0-P8 commit a604623
 [2026-07-16 18:45] ARCH 第三轮精炼：principles 加 Fact only once + Architecture Laws(10)；loading-priority 加 Stop Rule；新增 state/health.md + runtime/lessons-learned.md + events.log；4 个自动化方向落 tasks/todo
 [2026-07-16 18:45] HEALTH Build=PASS Deploy=PASS Health=PASS Smoke=PASS Coverage=N/A (commit a604623)
+[2026-07-16 18:57] SYNC 项目内记忆与跨项目标准同步：project.md 标 V4；current-sprint 补 commit a604623/073de6e；progress.md 三轮闭环记录；升级 ~/.workbuddy/MDD-STANDARD.md → v4（含 core/runtime/contracts/state/playbooks/checklists/events.log/Architecture Laws/P0-P8+Stop Rule/V1-V4 模型/自动化四方向）；升级 ~/.workbuddy/MEMORY.md MDD 节为 v4 并标注 gh-pages-build 为参考实现。本仓库即 MDD v4 参考实现，供未来大型项目套用。

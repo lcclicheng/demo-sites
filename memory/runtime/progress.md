@@ -7,6 +7,7 @@
 - **文档同步 v1.1.0 + 门户同步**（补 sectioned-demo 卡 + OG/Twitter 文案）。
 - **产出 `docs/PROJECT-OVERVIEW.md`**（最终整合版，含架构 + 订阅付费）。
 - **MDD 架构落地**：按用户要求改为 Memory Driven Development —— 建 `memory/ decisions/ tasks/ .ai/` 骨架 + `docs/index.md`；`workflow.md`(57KB) 已拆为 `architecture.md`/`deployment.md`/`onboarding.md`/`seo.md`（+ 现有 pricing/monitoring/section-engine 等专项），workflow.md 顶部加归档标注不再维护，README/index.md 回链全部改指主题文件。
+- **MDD 成熟度收敛（三轮闭环，用户评分 96→99/100）**：①骨架 `memory/ decisions/ tasks/ .ai/` + `docs/index`（f2281b4）→ ②`workflow.md`(57KB) 拆主题文件（8b0233d）→ ③第二轮系统级收口 `memory` 拆 `core/runtime` + `contracts/`(Schema 单一事实源) + `state/`(运行时) + `playbooks/`(执行 SOP) + `checklists/`(AI/CI) + ADR `Status` + 加载优先级 P0–P8（a604623）→ ④第三轮 99 分精炼：Architecture Laws(10 铁律) + Stop Rule(P0–P2 够答即停) + `state/health.md`(一眼健康度) + `runtime/lessons-learned.md`(Sprint 复盘) + 根 `events.log`(变动历史) + 4 个自动化方向落 `tasks/todo`（073de6e）。**最终定级 V4 · AI Native Operating System**，项目进入「架构稳定期」，后续重点=自动化维护而非继续加目录。本仓库即 MDD 参考实现（标准见 `C:\Users\12102\.workbuddy\MDD-STANDARD.md` v4）。
 
 ## 2026-07-15
 - **架构审查**（H1-H5 / L1-L4）：H2(CMS 覆盖) 已闭环、H3(OSM 署名) 已修、H1(占位数据) 加免责横幅过渡；H4 误报撤销。
