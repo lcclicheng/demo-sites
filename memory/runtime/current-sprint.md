@@ -5,6 +5,12 @@
 
 ## 本期焦点（2026-07-16 起）
 
+**阶段切换：架构完成 → Track A 跑通首单获客（Go-to-Market）**
+- MDD v4 架构 + 自动化四件套已全部闭环（见下「最近完成」），系统侧进入稳定期。
+- 当前瓶颈 = 需求侧（0 付费客户）。方向（用户 2026-07-16 21:59 拍板）= **Track A**：用已就绪的外联包拿下第一个真实客户。
+- 外联包已 100% 就绪：`docs/outreach-emails.md`（9 家个性化邮件 + B/C 跟进）、`docs/outreach-batch-1.md`（优先 4 家高风险商家 + 预览链接 + 替换 SOP）。**下一步 = 用户发信（Google 商家资料/FB 私信），AI 收到回复后走 real-merchant-replace**。
+- UK Biz Finder（`../uk-biz-finder/`）留作扩量（9 家之外的全新线索），首批不发。
+
 **MDD 架构第二轮收口**（用户评分 96/100 后的 4 项系统级升级）：
 - ✅ `memory/` 拆 `core/`（稳定）+ `runtime/`（易变 + current-sprint）
 - ✅ `decisions/` 各 ADR 加 `Status` 字段
@@ -16,10 +22,11 @@
 - ✅ 第三轮精炼（99/100 评审）：`principles.md` 加 Fact only once + Architecture Laws(10 条铁律)；`loading-priority.md` 加 Stop Rule（P0–P2 够答即停）；新增 `state/health.md`（一眼健康度）+ `memory/runtime/lessons-learned.md`（Sprint 复盘）+ 根 `events.log`（变动历史）；4 个自动化方向落 `tasks/todo/`。未新增目录。
 
 ## 本期待办（进行中）
+- 🔴 **Track A：发首批 4 家高风险外联（Indaba Yoga / Seddons / Vale Hardware / Papa Bruno）**，消除线上假数据法律风险，争取首个真实客户。
 - 真实商家替换（步骤 2）：9 个真实站仍用占位/臆测数据，首批 4 家高风险外联包就绪待发。
 - 首个真实客户签约 → 实测 Vercel 部署（`DEPLOY_TARGET=vercel`）。
-- 增量构建（build 随站点数线性变慢）。
-- Playwright 逐像素视觉回归（已 20 站，可启用）。
+- 增量构建（build 随站点数线性变慢，gated >15 站）。
+- Playwright 逐像素视觉回归（已 20 站，gated 真实客户/站点>15）。
 
 ## 本期不做（架构稳定期，防目录膨胀）
 - `tasks/` 不扩成 5 子目录；`knowledge/` 不二次拆分；不新增 `prompts/` / `context/`（`.ai/` 已承担角色上下文）。
