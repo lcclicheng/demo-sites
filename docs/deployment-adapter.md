@@ -34,10 +34,10 @@ async function deployTo(result) {
 - `DEPLOY_TARGET` 选适配器：`cloudflare`（默认）| `vercel`。
 - `deployVercel` 调 `vercel deploy --prod --name <projectName> <distDir>`，`<projectName>` 自动清洗。
 
-### 为什么没做「部署 19 站 demo 到 Vercel」
+### 为什么没做「部署 20 站 demo 到 Vercel」
 
 用户决策（2026-07-16）：**仅客户站适配器**。demo 镜像到 Vercel 会创建一个公开的 `demo-sites` 项目、
-且每次 push 都要重 build 19 站，收益低、暴露面大。客户站是「一对一独立项目」，适配器天然契合。
+且每次 push 都要重 build 20 站，收益低、暴露面大。客户站是「一对一独立项目」，适配器天然契合。
 
 ## 客户站部署流程
 

@@ -54,7 +54,7 @@
 - [x] 步骤 4b 脚手架：见 `docs/blog-pipeline.md` + `blog/README.md` + `blog/_samples/`；LLM 生成与 `gen-blog.mjs` 渲染器留待上线后 / 步骤 6
 - [ ] 步骤 3 AI Intake：降级为上线后增值服务（§5.1）
 - [x] 步骤 5 Deployment Adapter：**客户站 Vercel 适配器上线**（generate.mjs `DEPLOY_TARGET` 分发 + `deployVercel` + `deploy/vercel/` 模板含 serverless `api/contact.js`；demo 仍留 GitHub Pages，未做公开镜像）— 见 `docs/deployment-adapter.md`
-- [x] 步骤 6 Section Engine：**组合器模板 `sectioned` + 通用 section 库（theme-agnostic，12 section）+ 默认/自定义组合**；现有 8 套 preset 保留零风险；`sectioned-demo` 进 CI 验证 — 见 `docs/section-engine.md`
+- [x] 步骤 6 Section Engine：**组合器模板 `sectioned` + 通用 section 库（theme-agnostic，12 section）+ 默认/自定义组合**；**10 个 curated 预设已全部迁移到 sectioned 统一架构、双轨在 curated 层终结**（v1.1.0 收口）；8 套行业模板保留作真实商家垂直站 + 历史样板；`sectioned-demo` 进 CI 验证 — 见 `docs/section-engine.md`
 
 ## 5. 关键决策记录
 

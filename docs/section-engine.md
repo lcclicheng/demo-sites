@@ -6,7 +6,7 @@
 ## 1. 这是什么
 
 之前的 8 套模板（`src/<行业>/App.tsx`）是**整体手写页面**：每个行业一份几百行的 App，
-消费各自的一份 `business-data.ts`。它们视觉已打磨、零风险，**继续保留作为 curated presets**。
+消费各自的一份 `business-data.ts`。它们视觉已打磨、零风险，**保留作真实商家垂直站 + 历史样板**（curated 样板预设层已在 v1.1.0 全部迁移到 Section Engine，不再依赖这 8 套）。
 
 Section Engine 是一个**新的组合层**，让「模板数量」从 8 变成「无限」：
 
@@ -108,13 +108,10 @@ renderSections(sections, d)
 
 ## 6. 与现有 8 套模板的关系（重要）
 
-- **8 套 preset 不动**：`restaurant / coffee / salon / dessert / yoga / law / hotel / trades` 视觉已打磨、
-  业务字段各异（如 trades 用 `menuCategories`、restaurant 用 `menuSections`），继续作为快速起点的「主题」。
+- **curated 样板预设已全部迁移到 `sectioned`**（v1.1.0 收口）：`atelier / breath / chambers / creme / forge / mario / mono / patisserie / sotto-sotto / vault` 共 10 个 curated 预设全部跑在 Section Engine 统一架构上，「未来迁移」对 curated 层已完成。
+- **8 套行业模板保留作真实商家垂直站 + 历史样板**：`restaurant / coffee / salon / dessert / yoga / law / hotel / trades` 视觉已打磨、业务字段各异（如 trades 用 `menuCategories`、restaurant 用 `menuSections`），继续用于真实商家演示站（如 morris-coffee 之外的 8 个 OSM 真实商家）展示该垂直行业的打磨 UI；不删除。
 - **新客户站优先走 `sectioned`**：统一数据契约 + AI 组合，避免每行业维护一份巨型 App。
-- **未来迁移路径（可选）**：把 8 套各自 `business-data.ts` 映射到 `SectionedData`，
-  即可让老站点也跑在 Section Engine 上、逐步废弃 preset。
-  ⚠️ 此迁移属视觉重构，**必须先用 Playwright 逐像素视觉回归保护**（P4 决议：原留待站点数 >15 或来真实客户；
-  现已 19 站，可启用）。未启用回归前不要物理删除 8 套 preset。
+- **双轨现状**：curated 预设层已 100% sectioned；真实商家层为混合（morris-coffee 已迁 sectioned 作 pilot，其余 8 个仍用行业模板）。未来若要把真实商家也迁 sectioned，须先用 Playwright 逐像素视觉回归保护（P4 决议：原留待站点数 >15 或来真实客户；现已 20 站，可启用）。未启用回归前不要物理删除 8 套行业模板。
 
 ## 7. 扩展：新增 / 定制一个 section
 

@@ -365,6 +365,21 @@ const THEMES = {
     ],
   },
 
+  // MORRIS · 第二咖啡 demo → 摩卡铜（区别于 mono 的暖铜，sectioned 三色基底）
+  'morris-coffee': {
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#f3efe8'"],
+      ["ink:'#1c1917'", "ink:'#211b15'"],
+      ["accent:'#b8895a'", "accent:'#a86b3c'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#f3efe8'],
+      ['color:#1c1917', 'color:#211b15'],
+      ['rgba(184,137,90,0.2)', 'rgba(168,107,60,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(168,107,60,0.25)'],
+    ],
+  },
+
   // ── 真实商家 demo 主题（v0.9.10：镜像模板精修观感，slug 与模板 demo 区分） ──
   'holborn-nails': {
     html: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/><title>__TITLE__</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>`,

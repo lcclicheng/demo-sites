@@ -1,5 +1,5 @@
 {
-  "template": "coffee",
+  "template": "sectioned",
   "name": "MORRIS'S",
   "subtitle": "Specialty Coffee",
   "tagline": "A small Mayfair bar dedicated to the craft of coffee — single origins, precise extractions, and a quiet room away from the crowd.",
@@ -18,12 +18,12 @@
   "menuTitle": "The Bar",
   "menuSubtitle": "Single origins & house blends",
   "heroCta1": {
-    "text": "See the Menu",
+    "text": "Explore Our Menu",
     "href": "#menu"
   },
   "heroCta2": {
     "text": "Order Ahead",
-    "href": "#order"
+    "href": "#booking"
   },
   "menuItems": [
     {
@@ -97,5 +97,127 @@
   ],
   "navCtaText": "Order Now",
   "slug": "morris-coffee",
-  "_source": "osm"
+  "_source": "osm",
+  "heroBadge": "Est. 2017 · Mayfair",
+  "heroStats": [
+    {
+      "val": "4.7",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "210+",
+      "label": "Reviews"
+    },
+    {
+      "val": "2017",
+      "label": "Established"
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "15B Clifford Street, London W1S 4JZ"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri · 7:30—18:00 · Sat—Sun · 9:00—17:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 20 7734 6930"
+    }
+  ],
+  "menu": [
+    {
+      "title": "The Bar",
+      "icon": "Coffee",
+      "items": [
+        {
+          "name": "Ethiopia Yirgacheffe",
+          "desc": "Ethiopia · Jasmine · Bergamot · Honey · Washed",
+          "price": "£3.80"
+        },
+        {
+          "name": "Colombia El Paraiso",
+          "desc": "Colombia · Red Apple · Caramel · Cacao · Washed",
+          "price": "£3.60"
+        },
+        {
+          "name": "Brazil Cerrado",
+          "desc": "Brazil · Hazelnut · Milk Chocolate · Toffee · Natural",
+          "price": "£3.40"
+        },
+        {
+          "name": "Sumatra Mandheling",
+          "desc": "Indonesia · Cedar · Dark Chocolate · Spice · Wet-Hulled",
+          "price": "£3.50"
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Single origins & house blends",
+  "menuIntroText": "Beans are roasted weekly in small batches and rested 48 hours before the first pull. No blends disguised as single origins — just honest coffee.",
+  "story": {
+    "title": "THE ROASTERY",
+    "paragraphs": [
+      "Beans are roasted weekly in small batches and rested 48 hours before the first pull. No blends disguised as single origins — just honest coffee."
+    ],
+    "stats": [
+      {
+        "value": "15kg",
+        "label": "Batch"
+      },
+      {
+        "value": "12",
+        "label": "Profiles"
+      },
+      {
+        "value": "72h",
+        "label": "Rest"
+      }
+    ]
+  },
+  "booking": {
+    "intro": "Order ahead and skip the queue.",
+    "note": "Ready in 8–10 minutes.",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Fri · 7:30—18:00 · Sat—Sun · 9:00—17:00",
+    "saturday": "Mon—Fri · 7:30—18:00 · Sat—Sun · 9:00—17:00",
+    "sunday": "Mon—Fri · 7:30—18:00 · Sat—Sun · 9:00—17:00",
+    "closedDays": ""
+  },
+  "footer": {
+    "note": "Specialty coffee in the heart of Mayfair. Small batches, no shortcuts.",
+    "quickLinks": [
+      "Menu",
+      "Roastery",
+      "Order"
+    ]
+  }
 }

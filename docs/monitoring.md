@@ -1,6 +1,6 @@
 # 站点健康监控（Monitoring）
 
-> 版本：v0.9.3 ｜ 落地：2026-07-14 ｜ 作者：lcclicheng（一人公司 / 独立开发者）
+> 版本：v0.9.3（站点清单同步至 v1.1.0：20 站）｜ 落地：2026-07-14 ｜ 作者：lcclicheng（一人公司 / 独立开发者）
 > 配套：`health-check.mjs`、`.github/workflows/health-check.yml`、`docs/workflow.md` §11、`docs/pricing.md`（B 年度呵护档含监控）
 
 监控分**两层**，互补使用：
@@ -52,7 +52,7 @@
 
 ### 监测点清单（可直接复制添加）
 
-以下为本仓库当前 10 个站点 + 门户 + CMS 后台的线上地址（slug 取自各 `examples/<x>.json` 的 `slug` 字段，与构建/健康检查一致）。在 UptimeRobot 逐个 **Add New Monitor → HTTP(s)** 粘贴即可：
+以下为本仓库当前 20 个站点 + 门户 + CMS 后台的线上地址（slug 取自各 `examples/<x>.json` 的 `slug` 字段，与构建/健康检查一致）。在 UptimeRobot 逐个 **Add New Monitor → HTTP(s)** 粘贴即可：
 
 | Friendly Name | URL | 类型 |
 |---|---|---|
@@ -68,12 +68,22 @@
 | patisserie | https://lcclicheng.github.io/demo-sites/patisserie/ | HTTP(s) |
 | sotto-sotto | https://lcclicheng.github.io/demo-sites/sotto-sotto/ | HTTP(s) |
 | vault | https://lcclicheng.github.io/demo-sites/vault/ | HTTP(s) |
+| morris-coffee | https://lcclicheng.github.io/demo-sites/morris-coffee/ | HTTP(s) |
+| holborn-nails | https://lcclicheng.github.io/demo-sites/holborn-nails/ | HTTP(s) |
+| ganache | https://lcclicheng.github.io/demo-sites/ganache/ | HTTP(s) |
+| indaba-yoga | https://lcclicheng.github.io/demo-sites/indaba-yoga/ | HTTP(s) |
+| seddons-law | https://lcclicheng.github.io/demo-sites/seddons-law/ | HTTP(s) |
+| gower-hotel | https://lcclicheng.github.io/demo-sites/gower-hotel/ | HTTP(s) |
+| vale-hardware | https://lcclicheng.github.io/demo-sites/vale-hardware/ | HTTP(s) |
+| papa-bruno | https://lcclicheng.github.io/demo-sites/papa-bruno/ | HTTP(s) |
+| chinatown-bakery | https://lcclicheng.github.io/demo-sites/chinatown-bakery/ | HTTP(s) |
+| sectioned-demo | https://lcclicheng.github.io/demo-sites/sectioned-demo/ | HTTP(s) |
 
 > 新增/下线站点后，此处需手动同步（UptimeRobot 侧无法自动跟随 `PROJS`）。
 
 ### 一键批量创建（可选，省去逐个手点）
 
-仓库已提供 [`setup-uptimerobot.mjs`](./../setup-uptimerobot.mjs)，读取你的 API Key 后调用 UptimeRobot v2 API 批量创建上面全部监测点（含门户 + admin + 10 站）：
+仓库已提供 [`setup-uptimerobot.mjs`](./../setup-uptimerobot.mjs)，读取你的 API Key 后调用 UptimeRobot v2 API 批量创建上面全部监测点（含门户 + admin + 20 站）：
 
 1. UptimeRobot → **My Settings → API Settings** 创建 **Read/Write** 类型的 API Key（免费版可用）。
 2. 本地运行（需 Node 18+，仓库根目录）：
@@ -83,7 +93,7 @@
    ```
 
 3. 脚本对每个 URL 调 `addMonitor`（type=1 HTTP, interval=300s），打印创建结果；同名监测点已存在则跳过（幂等，可重复跑）。
-4. 完成后回到 UptimeRobot 仪表盘确认 12 个监测点均为「Up」。
+4. 完成后回到 UptimeRobot 仪表盘确认 22 个监测点均为「Up」。
 
 > 该脚本只创建监测点，不含 Alert Contacts 绑定——首次仍建议在 UI 里绑邮箱 / Telegram 才能收到告警推送。
 

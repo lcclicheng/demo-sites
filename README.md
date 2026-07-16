@@ -6,7 +6,7 @@
 > 📘 **完整系统文档（单一事实源）：[`docs/workflow.md`](./docs/workflow.md)**
 > 架构、目录、客户接入 SOP、部署与认证、质量闸门、合规风险、待迭代清单都在那里。本文档仅作入口，重大改动以 `docs/workflow.md` 为准。
 
-> 🆕 **最近更新（2026-07-16，v1.0.1）**：A 档定价取消 Decap CMS 自助交付，改为「建站 + 首月内不限次数修改」（省去 OAuth/培训/维护）；4 家高风险真实商家首批外联发送包就绪（各带独立预览链接 + Ethan Li 署名）；`generate.mjs` 合规注入现已兼容 uk-biz-finder 的 `_source` 对象导出格式。详见 `docs/workflow.md` 版本记录。
+> 🆕 **最近更新（2026-07-16，v1.1.0）**：步骤6 Section Engine 收口——10 个 curated 预设全部迁移 `sectioned` 统一架构、双轨在 curated 层终结；8 套行业模板现为真实商家垂直站 + 历史样板；站点总数 19→20（含 morris-coffee 迁移 sectioned + sectioned-demo）；monitoring 监测点扩至 22。A 档定价取消 Decap CMS 自助交付，改为「建站 + 首月内不限次数修改」（省去 OAuth/培训/维护）；4 家高风险真实商家首批外联发送包就绪（各带独立预览链接 + Ethan Li 署名）；`generate.mjs` 合规注入现已兼容 uk-biz-finder 的 `_source` 对象导出格式。详见 `docs/workflow.md` 版本记录。
 
 ## 配套文档
 
@@ -27,7 +27,7 @@ node onboard.mjs          # 打开 http://localhost:4321/
 # 本地单站构建
 node generate.mjs "./examples/<site>.json"
 
-# 全量干净重建 10 站
+# 全量干净重建 20 站
 bash build-clean.sh
 
 # 部署（SSH 推送触发 Actions 自动上线）

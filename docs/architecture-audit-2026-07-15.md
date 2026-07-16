@@ -1,6 +1,6 @@
 # 建站系统 · 架构漏洞审查（2026-07-15）
 
-> 范围：gh-pages-build（19 站）+ UK Biz Finder + 资产流水线 skill + CI + Decap CMS。
+> 范围：gh-pages-build（写于 2026-07-15 时 19 站；2026-07-16 morris-coffee 迁移 sectioned 后共 20 站）+ UK Biz Finder + 资产流水线 skill + CI + Decap CMS。
 > 方法：实测 9 真实站 JSON 字段、grep 署名/隐私、读 `build-clean.sh` / `deploy.yml` / `admin/config.yml` / `gen-decap-config.mjs`，并重跑 CMS 生成验证修复。
 > 结论：架构骨架健康（CI 三闸门 + 孤儿门 + 逐站 dist 校验 + OAuth 已配 + 7/8 模板含隐私页）。但存在 **5 个待处理漏洞，其中 2 个高危**。
 
