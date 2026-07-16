@@ -7,3 +7,9 @@
 - **约束**：输出必须遵守 `memory/core/loading-priority.md` 的 P0–P8 + Stop Rule。
 - **See**: memory/core/loading-priority.md · .ai/* · playbooks/
 - **状态**: todo（架构稳定期后的第一阶段自动化）
+
+
+---
+
+**状态**: done（2026-07-16 落地）
+- 实现见：`playbooks/automation-router.md` 或 `scripts/automation-router.mjs`（详见 current-sprint.md「下一阶段」已落地注释 + events.log）。

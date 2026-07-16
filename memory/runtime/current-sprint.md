@@ -29,10 +29,12 @@
 
 架构已完成「代码仓库 → AI 可持续协作系统」的转变（V4: AI Native Operating System）。下一步投入**把这套架构自动化**，而非继续设计：
 
-- `tasks/todo/automation-router.md` — Router 自动生成加载计划（User→Router→Task Type→Loading Plan→AI）
-- `tasks/todo/automation-state-sync.md` — 任务完成自动更新 `state/` + `runtime/` + `CHANGELOG` + `events.log`
-- `tasks/todo/automation-ci-contracts.md` — CI 自动校验 `contracts/`/`checklists/`/`ADR` 引用一致、字段不漂移
-- `tasks/todo/automation-min-context.md` — AI 自动按任务类型选最小上下文（落实 Stop Rule）
+- ~~`tasks/todo/automation-router.md` — Router 自动生成加载计划（User→Router→Task Type→Loading Plan→AI）~~ ✅ 已落地 `playbooks/router.md`
+- ~~`tasks/todo/automation-state-sync.md` — 任务完成自动更新 `state/` + `runtime/` + `CHANGELOG` + `events.log`~~ ✅ 已落地 `scripts/state-sync.mjs`
+- ~~`tasks/todo/automation-ci-contracts.md` — CI 自动校验 `contracts/`/`checklists/`/`ADR` 引用一致、字段不漂移~~ ✅ 已落地 `scripts/check-contracts.mjs` + `.github/workflows/consistency-check.yml`
+- ~~`tasks/todo/automation-min-context.md` — AI 自动按任务类型选最小上下文（落实 Stop Rule）~~ ✅ 已折叠进 `playbooks/router.md` §5
+
+> **自动化四件套已闭环（commit 见 events.log）**：Router 规则 + 状态回写脚本 + 跨项目同步 playbook/脚本 + CI 一致性闸门全部就绪。附带修复一处真实漂移——`principles.md` 与 `MDD-STANDARD.md` 的 Laws 段标题「10 条」与正文 13 条不符，已统一为 13，`scripts/cross-sync-check.mjs` 可自检此类头体漂移。
 
 ## 最近完成
 - PROJECT-OVERVIEW.md 整合版（commit `3292658`）。

@@ -5,3 +5,9 @@
 - **落地形态**（待定）：CI step 或 AI 收尾钩子，读取 tasks/doing 卡片 → 写 state + 追加 events.log。
 - **See**: state/health.md · memory/runtime/lessons-learned.md · events.log · memory/core/principles.md(Law #8)
 - **状态**: todo
+
+
+---
+
+**状态**: done（2026-07-16 落地）
+- 实现见：`playbooks/automation-state-sync.md` 或 `scripts/automation-state-sync.mjs`（详见 current-sprint.md「下一阶段」已落地注释 + events.log）。

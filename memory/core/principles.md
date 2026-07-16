@@ -11,7 +11,7 @@
 
 ---
 
-## Architecture Laws（架构铁律 · 10 条，所有 AI 必须遵守）
+## Architecture Laws（架构铁律 · 13 条，所有 AI 必须遵守）
 
 > 不论 Claude / GPT / Gemini，处理本项目任何任务都遵守以下铁律。
 

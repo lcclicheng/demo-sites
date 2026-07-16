@@ -10,3 +10,9 @@
   4. 在 `events.log` 记 `SYNC`。
 - **约束**：标准保持**通用**（去项目名），参考实现保持**具体**（带本仓库路径）；不双向复制、不漂移（Fact only once）。
 - **See**: tasks/todo/automation-ci-contracts.md · memory/core/principles.md · C:/Users/12102/.workbuddy/MDD-STANDARD.md
+
+
+---
+
+**状态**: done（2026-07-16 落地）
+- 实现见：`playbooks/automation-cross-sync.md` 或 `scripts/automation-cross-sync.mjs`（详见 current-sprint.md「下一阶段」已落地注释 + events.log）。

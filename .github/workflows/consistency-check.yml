@@ -1,0 +1,27 @@
+name: Consistency check (contracts / ADR)
+
+# 自动化方向 #3：CI 自动校验 contracts/checklists/ADR 一致性、字段不漂移（Law #1 Fact only once + #9）。
+# 与 deploy.yml 独立运行；漂移则本 job 失败（可见、可拦 PR），不依赖 Pages 发布权限。
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Check contracts / business-json / ADR consistency
+        run: node scripts/check-contracts.mjs

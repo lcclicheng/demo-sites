@@ -15,3 +15,5 @@
 
 ## 2026-07-14
 - **流程标准化 v1**：交付包 / 模板库 SOP / 反馈循环 / AI 协作规范 / 遗留待办(P3-P6) 落地；定价改进攻型两档（原三档）。
+
+- 2026-07-16 [state-sync · feature (v4.1)] 落地 MDD v4 自动化四件套：Router(playbooks/router.md,叠 min-context) + state-sync 脚本 + cross-sync playbook/脚本(并修 Laws 10→13 头体漂移) + ci-contracts 校验(workflow+脚本)

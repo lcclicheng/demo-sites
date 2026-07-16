@@ -5,3 +5,9 @@
 - **价值**：防止上下文膨胀致遗忘（大型项目核心风险），降低 token 成本。
 - **See**: memory/core/loading-priority.md(Stop Rule) · .ai/* · tasks/todo/automation-router.md
 - **状态**: todo（与 automation-router 协同）
+
+
+---
+
+**状态**: done（2026-07-16 落地）
+- 实现见：`playbooks/automation-min-context.md` 或 `scripts/automation-min-context.mjs`（详见 current-sprint.md「下一阶段」已落地注释 + events.log）。

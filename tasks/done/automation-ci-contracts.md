@@ -5,3 +5,9 @@
 - **落地形态**（待定）：GitHub Actions 加一个 `consistency-check` job，解析 contracts/*.md 的字段表 vs `src/components/sections/types.ts` + `examples/*.json` 实际字段。
 - **See**: contracts/section-data.md · contracts/business-json.md · contracts/theme.md · decisions/ · checklists/
 - **状态**: todo
+
+
+---
+
+**状态**: done（2026-07-16 落地）
+- 实现见：`playbooks/automation-ci-contracts.md` 或 `scripts/automation-ci-contracts.mjs`（详见 current-sprint.md「下一阶段」已落地注释 + events.log）。
