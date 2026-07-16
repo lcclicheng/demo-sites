@@ -5,4 +5,4 @@
 - **完成度**: 0%（计划 v0.9，v0.6 依赖缓存已缓解安装）
 - **负责人**: AI
 - **相关文件**: `build-clean.sh` · `generate.mjs` · `.github/workflows/deploy.yml`
-- **See**: memory/constraints.md(PROJS 事实源)
+- **See**: memory/core/constraints.md(PROJS 事实源)

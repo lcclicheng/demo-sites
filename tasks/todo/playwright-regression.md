@@ -5,4 +5,4 @@
 - **完成度**: 0%（站点 >15 已满足启用条件，原留待真实客户；现 20 站可启用）
 - **负责人**: AI
 - **相关文件**: `smoke-test.mjs` · `src/components/sections/*` · `src/components/visual.tsx`
-- **See**: memory/principles.md(双轨收敛·未回归前不删行业模板)
+- **See**: memory/core/principles.md(双轨收敛·未回归前不删行业模板)
