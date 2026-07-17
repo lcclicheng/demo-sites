@@ -89,6 +89,7 @@ Signature: ___________________________   Name: {{client_name}}   Date: _________
 ### Notes
 - No dashboard or login needed — all changes go through me by email, so there's nothing for you to manage.
 - Structural changes (swap template / add a section) — contact me; do not edit code yourself.
+- **Tier C clients**: you received the Full Ownership Handover — you self-edit via the Decap `/admin` backend (see §7); no need to email me for content changes.
 
 ---
 
@@ -118,6 +119,7 @@ Signature: ___________________________   Name: {{client_name}}   Date: _________
 - **Billable changes (no plan)**: beyond the above, {{rate_per_change}} / change, or {{rate_per_hour}} / hour.
 - **Annual Care plan (optional)**: £{{annual_care_price}}/year — site monitoring + priority response + free small-change allowance + domain-renewal assistance (recommended; static site upkeep is minimal, near pure-margin).
 - **Not included**: new template development, major redesign, third-party paid service subscriptions.
+- **Tier C clients**: not on A/B support terms — you own the site and self-manage via Decap (see §7). Annual Care may be added optionally for monitoring / priority response.
 
 ---
 
@@ -130,3 +132,18 @@ Signature: ___________________________   Name: {{client_name}}   Date: _________
 - **Status**: ☐ Paid  ☐ Pending  ☐ Deposit received ({{deposit_amount}})
 - **Payment method**: {{payment_method}} (bank transfer / Stripe / etc.)
 - **Note**: {{invoice_note}}
+
+---
+
+## 7. Tier C — Full Ownership Handover (optional)
+
+> Fill this section only if the client purchased the **Full Ownership Handover (Tier C)**. The handover differs from A/B: the client receives the source repository + data + a self-serve editing backend they own.
+
+- [ ] Source repository transferred to the client's own GitHub account (or a new repo under their name); client has full ownership.
+- [ ] Client's site `examples/<slug>.json` handed over; client owns all content.
+- [ ] Decap CMS configured to point at the **client's own repo** + the **client's own GitHub OAuth App** (free, client registers) — see `docs/cms.md` §3 / §6.
+- [ ] Client can self-edit at `/admin` → auto-commit + deploy; **no ongoing maintenance from us**.
+- [ ] Handover doc + short training delivered: repo structure, Decap one-pager, how to self-deploy / change domain.
+- [ ] Optional: client may still purchase **Annual Care (Tier B)** for monitoring / priority response, but it is not required.
+
+> After Tier C handover, all content and infrastructure changes are the client's responsibility. We are not on the hook for ongoing maintenance.

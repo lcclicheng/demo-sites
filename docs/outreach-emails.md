@@ -38,8 +38,9 @@ showcase of great independent UK businesses, and your place really stood out.
 
 I build premium websites for small businesses like yours — the kind that look
 bespoke and editorial (not a generic Wix/Squarespace template), load fast on
-mobile, and are built so Google can actually find you. Best of all, I host them
-on a free, reliable platform, so there's no monthly fee to keep your site live.
+mobile, and are built so Google can actually find you. Every site is designed
+around your business, not dropped into a stock template — and I host it on a
+free, reliable platform, so there's no monthly fee to keep it live.
 
 I was so taken with Morris's that I went ahead and drafted one for you
 already — here's a live preview:
@@ -59,9 +60,12 @@ All I need from you is about 10 minutes:
   • a few photos you already have
   • a quick confirm of your opening hours and contact details
 
-(For the record, this showcase site is 100% free. If you later want ongoing
-updates, uptime monitoring or a custom domain, that's the paid care plan I
-offer other clients — no pressure either way.)
+(For the record, this showcase site is 100% free — it's yours to keep, hosted
+at no cost. Two optional paths if you ever want more: a simple annual care plan
+where I keep it updated, monitored and running for you; or, if you'd rather own
+the lot outright, I can hand over the full source code, all your data, and a
+self-service editor so you can change the site yourself forever, with no ongoing
+fees. No pressure either way — the free site stands on its own.)
 
 Not interested, or would rather I didn't feature Morris's? Just say the word
 and I'll take it down — no hard feelings.
@@ -84,8 +88,9 @@ great independent UK businesses, and your place really stood out.
 
 I build premium websites for small businesses like yours — the kind that look
 bespoke and editorial (not a generic Wix/Squarespace template), load fast on
-mobile, and are built so Google can actually find you. Best of all, I host them
-on a free, reliable platform, so there's no monthly fee to keep your site live.
+mobile, and are built so Google can actually find you. Every site is designed
+around your business, not dropped into a stock template — and I host it on a
+free, reliable platform, so there's no monthly fee to keep it live.
 
 I was so taken with Holborn Nails & Beauty that I went ahead and drafted one for
 you already — here's a live preview:
@@ -105,9 +110,12 @@ All I need from you is about 10 minutes:
   • a few photos you already have
   • a quick confirm of your opening hours and contact details
 
-(For the record, this showcase site is 100% free. If you later want ongoing
-updates, uptime monitoring or a custom domain, that's the paid care plan I
-offer other clients — no pressure either way.)
+(For the record, this showcase site is 100% free — it's yours to keep, hosted
+at no cost. Two optional paths if you ever want more: a simple annual care plan
+where I keep it updated, monitored and running for you; or, if you'd rather own
+the lot outright, I can hand over the full source code, all your data, and a
+self-service editor so you can change the site yourself forever, with no ongoing
+fees. No pressure either way — the free site stands on its own.)
 
 Not interested, or would rather I didn't feature Holborn Nails & Beauty? Just
 say the word and I'll take it down — no hard feelings.
@@ -130,8 +138,9 @@ showcase of great independent UK businesses, and your place really stood out.
 
 I build premium websites for small businesses like yours — the kind that look
 bespoke and editorial (not a generic Wix/Squarespace template), load fast on
-mobile, and are built so Google can actually find you. Best of all, I host them
-on a free, reliable platform, so there's no monthly fee to keep your site live.
+mobile, and are built so Google can actually find you. Every site is designed
+around your business, not dropped into a stock template — and I host it on a
+free, reliable platform, so there's no monthly fee to keep it live.
 
 I was so taken with Ganache Chocolatier that I went ahead and drafted one for
 you already — here's a live preview:
@@ -151,9 +160,12 @@ All I need from you is about 10 minutes:
   • a few photos you already have
   • a quick confirm of your opening hours and contact details
 
-(For the record, this showcase site is 100% free. If you later want ongoing
-updates, uptime monitoring or a custom domain, that's the paid care plan I
-offer other clients — no pressure either way.)
+(For the record, this showcase site is 100% free — it's yours to keep, hosted
+at no cost. Two optional paths if you ever want more: a simple annual care plan
+where I keep it updated, monitored and running for you; or, if you'd rather own
+the lot outright, I can hand over the full source code, all your data, and a
+self-service editor so you can change the site yourself forever, with no ongoing
+fees. No pressure either way — the free site stands on its own.)
 
 Not interested, or would rather I didn't feature Ganache Chocolatier? Just say
 the word and I'll take it down — no hard feelings.
@@ -176,8 +188,9 @@ great independent UK businesses, and your place really stood out.
 
 I build premium websites for small businesses like yours — the kind that look
 bespoke and editorial (not a generic Wix/Squarespace template), load fast on
-mobile, and are built so Google can actually find you. Best of all, I host them
-on a free, reliable platform, so there's no monthly fee to keep your site live.
+mobile, and are built so Google can actually find you. Every site is designed
+around your business, not dropped into a stock template — and I host it on a
+free, reliable platform, so there's no monthly fee to keep it live.
 
 I was so taken with Indaba Yoga that I went ahead and drafted one for you
 already — here's a live preview:
@@ -197,9 +210,12 @@ All I need from you is about 10 minutes:
   • a few photos you already have
   • a quick confirm of your class schedule and contact details
 
-(For the record, this showcase site is 100% free. If you later want ongoing
-updates, uptime monitoring or a custom domain, that's the paid care plan I
-offer other clients — no pressure either way.)
+(For the record, this showcase site is 100% free — it's yours to keep, hosted
+at no cost. Two optional paths if you ever want more: a simple annual care plan
+where I keep it updated, monitored and running for you; or, if you'd rather own
+the lot outright, I can hand over the full source code, all your data, and a
+self-service editor so you can change the site yourself forever, with no ongoing
+fees. No pressure either way — the free site stands on its own.)
 
 Not interested, or would rather I didn't feature Indaba Yoga? Just say the word
 and I'll take it down — no hard feelings.
@@ -222,8 +238,9 @@ great independent UK businesses, and your practice really stood out.
 
 I build premium websites for small businesses like yours — the kind that look
 bespoke and editorial (not a generic Wix/Squarespace template), load fast on
-mobile, and are built so Google can actually find you. Best of all, I host them
-on a free, reliable platform, so there's no monthly fee to keep your site live.
+mobile, and are built so Google can actually find you. Every site is designed
+around your business, not dropped into a stock template — and I host it on a
+free, reliable platform, so there's no monthly fee to keep it live.
 
 I was so taken with Seddons Solicitors that I went ahead and drafted one for you
 already — here's a live preview:
@@ -243,9 +260,12 @@ All I need from you is about 10 minutes:
   • a few photos you already have
   • a quick confirm of your practice areas and contact details
 
-(For the record, this showcase site is 100% free. If you later want ongoing
-updates, uptime monitoring or a custom domain, that's the paid care plan I
-offer other clients — no pressure either way.)
+(For the record, this showcase site is 100% free — it's yours to keep, hosted
+at no cost. Two optional paths if you ever want more: a simple annual care plan
+where I keep it updated, monitored and running for you; or, if you'd rather own
+the lot outright, I can hand over the full source code, all your data, and a
+self-service editor so you can change the site yourself forever, with no ongoing
+fees. No pressure either way — the free site stands on its own.)
 
 Not interested, or would rather I didn't feature Seddons Solicitors? Just say
 the word and I'll take it down — no hard feelings.
@@ -268,8 +288,9 @@ great independent UK businesses, and your place really stood out.
 
 I build premium websites for small businesses like yours — the kind that look
 bespoke and editorial (not a generic Wix/Squarespace template), load fast on
-mobile, and are built so Google can actually find you. Best of all, I host them
-on a free, reliable platform, so there's no monthly fee to keep your site live.
+mobile, and are built so Google can actually find you. Every site is designed
+around your business, not dropped into a stock template — and I host it on a
+free, reliable platform, so there's no monthly fee to keep it live.
 
 I was so taken with Gower House Hotel that I went ahead and drafted one for you
 already — here's a live preview:
@@ -289,9 +310,12 @@ All I need from you is about 10 minutes:
   • a few photos you already have
   • a quick confirm of your room types / facilities and contact details
 
-(For the record, this showcase site is 100% free. If you later want ongoing
-updates, uptime monitoring or a custom domain, that's the paid care plan I
-offer other clients — no pressure either way.)
+(For the record, this showcase site is 100% free — it's yours to keep, hosted
+at no cost. Two optional paths if you ever want more: a simple annual care plan
+where I keep it updated, monitored and running for you; or, if you'd rather own
+the lot outright, I can hand over the full source code, all your data, and a
+self-service editor so you can change the site yourself forever, with no ongoing
+fees. No pressure either way — the free site stands on its own.)
 
 Not interested, or would rather I didn't feature Gower House Hotel? Just say
 the word and I'll take it down — no hard feelings.
@@ -314,8 +338,9 @@ great independent UK businesses, and your place really stood out.
 
 I build premium websites for small businesses like yours — the kind that look
 bespoke and editorial (not a generic Wix/Squarespace template), load fast on
-mobile, and are built so Google can actually find you. Best of all, I host them
-on a free, reliable platform, so there's no monthly fee to keep your site live.
+mobile, and are built so Google can actually find you. Every site is designed
+around your business, not dropped into a stock template — and I host it on a
+free, reliable platform, so there's no monthly fee to keep it live.
 
 I was so taken with Vale Hardware that I went ahead and drafted one for you
 already — here's a live preview:
@@ -335,9 +360,12 @@ All I need from you is about 10 minutes:
   • a few photos you already have
   • a quick confirm of your services and contact details
 
-(For the record, this showcase site is 100% free. If you later want ongoing
-updates, uptime monitoring or a custom domain, that's the paid care plan I
-offer other clients — no pressure either way.)
+(For the record, this showcase site is 100% free — it's yours to keep, hosted
+at no cost. Two optional paths if you ever want more: a simple annual care plan
+where I keep it updated, monitored and running for you; or, if you'd rather own
+the lot outright, I can hand over the full source code, all your data, and a
+self-service editor so you can change the site yourself forever, with no ongoing
+fees. No pressure either way — the free site stands on its own.)
 
 Not interested, or would rather I didn't feature Vale Hardware? Just say the
 word and I'll take it down — no hard feelings.
@@ -360,8 +388,9 @@ of great independent UK businesses, and your place really stood out.
 
 I build premium websites for small businesses like yours — the kind that look
 bespoke and editorial (not a generic Wix/Squarespace template), load fast on
-mobile, and are built so Google can actually find you. Best of all, I host them
-on a free, reliable platform, so there's no monthly fee to keep your site live.
+mobile, and are built so Google can actually find you. Every site is designed
+around your business, not dropped into a stock template — and I host it on a
+free, reliable platform, so there's no monthly fee to keep it live.
 
 I was so taken with Papa Bruno that I went ahead and drafted one for you
 already — here's a live preview:
@@ -381,9 +410,12 @@ All I need from you is about 10 minutes:
   • a few photos you already have
   • a quick confirm of your signature dishes and contact details
 
-(For the record, this showcase site is 100% free. If you later want ongoing
-updates, uptime monitoring or a custom domain, that's the paid care plan I
-offer other clients — no pressure either way.)
+(For the record, this showcase site is 100% free — it's yours to keep, hosted
+at no cost. Two optional paths if you ever want more: a simple annual care plan
+where I keep it updated, monitored and running for you; or, if you'd rather own
+the lot outright, I can hand over the full source code, all your data, and a
+self-service editor so you can change the site yourself forever, with no ongoing
+fees. No pressure either way — the free site stands on its own.)
 
 Not interested, or would rather I didn't feature Papa Bruno? Just say the word
 and I'll take it down — no hard feelings.
@@ -406,8 +438,9 @@ great independent UK businesses, and your place really stood out.
 
 I build premium websites for small businesses like yours — the kind that look
 bespoke and editorial (not a generic Wix/Squarespace template), load fast on
-mobile, and are built so Google can actually find you. Best of all, I host them
-on a free, reliable platform, so there's no monthly fee to keep your site live.
+mobile, and are built so Google can actually find you. Every site is designed
+around your business, not dropped into a stock template — and I host it on a
+free, reliable platform, so there's no monthly fee to keep it live.
 
 I was so taken with Chinatown Bakery that I went ahead and drafted one for you
 already — here's a live preview:
@@ -427,9 +460,12 @@ All I need from you is about 10 minutes:
   • a few photos you already have
   • a quick confirm of your opening hours and contact details
 
-(For the record, this showcase site is 100% free. If you later want ongoing
-updates, uptime monitoring or a custom domain, that's the paid care plan I
-offer other clients — no pressure either way.)
+(For the record, this showcase site is 100% free — it's yours to keep, hosted
+at no cost. Two optional paths if you ever want more: a simple annual care plan
+where I keep it updated, monitored and running for you; or, if you'd rather own
+the lot outright, I can hand over the full source code, all your data, and a
+self-service editor so you can change the site yourself forever, with no ongoing
+fees. No pressure either way — the free site stands on its own.)
 
 Not interested, or would rather I didn't feature Chinatown Bakery? Just say the
 word and I'll take it down — no hard feelings.
@@ -474,9 +510,10 @@ Brilliant. To get your real site live I just need:
   2. Confirm details: opening hours (all 7 days), phone, website (if any).
   3. A one-line ok that I can show these on the website.
 
-That's it — no cost, and I'll send you a preview before it goes live. If you
-later want changes, monitoring or a custom domain, I offer an annual care
-plan, but the site itself stays free.
+That's it — no cost, and I'll send you a preview before it goes live. Down the
+line you've got options if you want them: an annual care plan where I look after
+updates and monitoring, or a one-off handover where you own the source code and
+data outright and edit the site yourself. Either way, the site itself stays free.
 
 Ethan Li
 ```

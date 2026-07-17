@@ -1,0 +1,13 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+const base = JSON.parse(readFileSync('D:/workbuddy项目/2026-07-07-09-02-15/gh-pages-build/leads-all.json', 'utf8'));
+let n = base.length;
+const r = { name:'Gandhi Indian Restaurant', industry:'restaurant', city:'Maidenhead', source:'https://www.cybo.com/GB-biz/gandhi-indian-restaurant_9C', email:'gandhirestaurantl@gmail.com', note:'Cybo 目录列出公开 Gmail；旧自有站 gandhiindianrestaurant.co.uk 已失效，无有效独立站' };
+const base_slug = r.name.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+const slug = base_slug + '-' + r.industry;
+const out = { id:'L'+String(n+1).padStart(3,'0'), slug, name:r.name, industry:r.industry, city:r.city, source:r.source, email:r.email, emailStatus:'found', hasOwnSite:false, note:r.note, status:'lead', segment:'precise' };
+const all = [...base, out];
+writeFileSync('D:/workbuddy项目/2026-07-07-09-02-15/gh-pages-build/leads-all.json', JSON.stringify(all, null, 2));
+const precise = all.filter(x=>x.segment==='precise');
+const slugs = all.map(x=>x.slug);
+console.log('主库总数:', all.length, ' 精准人群:', precise.length, ' 本批新增:1');
+console.log('slug 唯一:', new Set(slugs).size === slugs.length);

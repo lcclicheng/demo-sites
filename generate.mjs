@@ -474,6 +474,70 @@ const THEMES = {
       ["cream:'#f5f0e8'", "cream:'#f5efe0'"],
     ],
   },
+
+  // ── 2026-07-17 批量精准 demo（5 家跨行业，独立调色板 = 差异性）──
+  // Sundara Yoga (Brighton) → 海岸青绿（区别于 indaba 的雾青）
+  'sundara-yoga-yoga': {
+    cssReplace: [
+      ['rgba(52,211,153,0.25)', 'rgba(63,158,140,0.25)'],
+    ],
+    twReplace: [
+      ["emerald:'#34d399'", "emerald:'#3f9e8c'"],
+    ],
+  },
+  // Red Lion Law (Birmingham) → 古铜黄铜（区别于 seddons 的铂银）
+  'red-lion-law-law': {
+    cssReplace: [
+      ['rgba(184,134,11,0.18)', 'rgba(125,107,63,0.18)'],
+      ['rgba(184,134,11,0.25)', 'rgba(125,107,63,0.25)'],
+      ['rgba(184,134,11,0.08)', 'rgba(125,107,63,0.08)'],
+    ],
+    twReplace: [
+      ["gold:'#b8860b'", "gold:'#7d6b3f'"],
+    ],
+  },
+  // Twisted Sister (Glasgow) → 茄紫 + 玫瑰（区别于 holborn 的陶土）
+  'twisted-sister-salon': {
+    cssReplace: [
+      ['rgba(61,28,61,0.15)', 'rgba(74,35,54,0.15)'],
+      ['rgba(212,165,116,0.3)', 'rgba(201,138,166,0.3)'],
+    ],
+    twReplace: [
+      ["plum:'#3d1c3d'", "plum:'#4a2336'"],
+      ["gold:'#d4a574'", "gold:'#c98aa6'"],
+    ],
+  },
+  // Claremont Cakes (Bristol) → 香槟金 + 暖可可（区别于 ganache 的玫瑰）
+  'claremont-cakes-dessert': {
+    cssReplace: [
+      ['rgba(26,16,8,0.12)', 'rgba(74,58,42,0.12)'],
+      ['rgba(184,147,90,0.25)', 'rgba(201,161,74,0.25)'],
+      ['rgba(184,147,90,0.06)', 'rgba(201,161,74,0.06)'],
+      ['rgba(184,147,90,0.04)', 'rgba(201,161,74,0.05)'],
+    ],
+    twReplace: [
+      ["ivory:'#faf7f2'", "ivory:'#fbf8f0'"],
+      ["espresso:'#1a1008'", "espresso:'#4a3a2a'"],
+      ["gold:'#b8935a'", "gold:'#c9a14a'"],
+      ["cream:'#f5f0e8'", "cream:'#f5efe0'"],
+    ],
+  },
+  // Tabitha's Coffee (Manchester) → 焦糖拿铁 + DM Serif（区别于 mono/morris 的暖铜 Playfair）
+  'tabitha-s-coffee-coffee': {
+    html: '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"/><title>__TITLE__</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>',
+    cssReplace: [
+      ['background:#faf9f7', 'background:#f5f1ea'],
+      ['color:#1c1917', 'color:#211b15'],
+      ['rgba(184,137,90,0.2)', 'rgba(194,136,79,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(194,136,79,0.25)'],
+    ],
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#f5f1ea'"],
+      ["ink:'#1c1917'", "ink:'#211b15'"],
+      ["accent:'#b8895a'", "accent:'#c2884f'"],
+      ["'\"Playfair Display\"'", "'\"DM Serif Display\"'"],
+    ],
+  },
 }
 
 // 对 base 字符串按 [old,new] 列表做全量替换；未命中的替换打印警告（便于发现模板改动导致的失配）

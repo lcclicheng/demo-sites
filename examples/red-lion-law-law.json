@@ -1,0 +1,56 @@
+{
+  "template": "law",
+  "name": "RED LION",
+  "subtitle": "Solicitors",
+  "tagline": "Straightforward legal advice for Birmingham families and businesses since 2009.",
+  "established": "2009",
+  "location": "Birmingham",
+  "street": "8 Colmore Row, Birmingham B3 2QB",
+  "registeredAddress": "8 Colmore Row, Birmingham B3 2QB, United Kingdom",
+  "phone": "+44 121 234 5678",
+  "email": "redlionsolicitors@gmail.com",
+  "googleRating": "4.7",
+  "googleReviews": "95+ reviews",
+  "hours": "Mon—Fri: 9:00—17:30",
+  "pageTitle": "RED LION — Solicitors in Birmingham",
+  "heroLines": ["CLARITY.", "CARE.", "COMMUNITY."],
+  "heroCta1": { "text": "Our Services", "href": "#services" },
+  "heroCta2": { "text": "Book a Consultation", "href": "#contact" },
+  "stats": [
+    { "value": "15+", "label": "Years" },
+    { "value": "4.7", "label": "Rating" },
+    { "value": "400+", "label": "Clients" },
+    { "value": "SRA", "label": "Regulated" }
+  ],
+  "certifications": ["SRA Regulated", "Lexcel Accredited", "Resolution Member", "Law Society"],
+  "services": [
+    { "name": "Residential Conveyancing", "desc": "Buying or selling in Birmingham? We handle offer to completion with clear, fixed fees." },
+    { "name": "Family Law", "desc": "Divorce, finances, and children — sensitive, practical help when it matters most." },
+    { "name": "Wills & Probate", "desc": "Protect your family with a properly drawn will and careful estate administration." },
+    { "name": "Employment Law", "desc": "Settlement agreements, unfair dismissal, redundancy — for employees and employers." },
+    { "name": "Commercial Property", "desc": "Leases and acquisitions with straight-talking advice for local business." },
+    { "name": "Dispute Resolution", "desc": "Contract and debt disputes resolved before they reach court." }
+  ],
+  "sections": {
+    "services": { "label": "PRACTICE AREAS", "title": "How we can", "titleHighlight": "help." },
+    "team": { "label": "OUR TEAM", "title": "Local lawyers,", "titleHighlight": "real care." },
+    "contact": { "label": "CONTACT US", "title": "Let's", "titleHighlight": "talk.", "description": "Free 20-minute consultation. No obligation." }
+  },
+  "lawyers": [
+    { "initials": "RH", "name": "Rebecca Hale", "role": "Senior Partner", "specialty": "Conveyancing & Commercial Property" },
+    { "initials": "MO", "name": "Michael Osei", "role": "Partner", "specialty": "Family Law & Mediation" },
+    { "initials": "SK", "name": "Sara Kapoor", "role": "Associate", "specialty": "Wills, Probate & Employment" }
+  ],
+  "form": {
+    "labels": { "name": "Name", "email": "Email", "phone": "Phone", "message": "How can we help?" },
+    "submit": "Send Enquiry",
+    "success": "Thank you — we'll be in touch within one working day."
+  },
+  "footer": {
+    "sra": "Regulated by the Solicitors Regulation Authority.",
+    "copyright": "All rights reserved.",
+    "hours": "Mon—Fri · 9:00—17:30"
+  },
+  "slug": "red-lion-law-law",
+  "_source": "osm"
+}

@@ -1,0 +1,69 @@
+{
+  "template": "salon",
+  "name": "TWISTED SISTER",
+  "subtitle": "Hair & Colour",
+  "tagline": "A creative Glasgow salon for cut, colour, and curl — bold looks, gentle hands, no rush.",
+  "heroTagline": "Bold colour, quiet confidence.",
+  "heroBadge": "Cut · Colour · Curl",
+  "heroLine1": "TWISTED",
+  "heroLine2": "SISTER",
+  "heroRating": "4.8",
+  "heroReviews": "180+ reviews",
+  "established": "2016",
+  "location": "Glasgow",
+  "street": "22 Trongate, Glasgow G1 5ES",
+  "registeredAddress": "22 Trongate, Glasgow G1 5ES, United Kingdom",
+  "phone": "+44 141 552 3456",
+  "email": "twistedsisterhair@gmail.com",
+  "googleRating": "4.8",
+  "googleReviews": "180+ reviews",
+  "hours": "Tue—Sat · 10:00—19:00",
+  "pageTitle": "TWISTED SISTER — Hair & Colour in Glasgow",
+  "heroCta1": { "text": "Book Appointment", "href": "#book" },
+  "heroCta2": { "text": "View Services", "href": "#services" },
+  "serviceCategories": [
+    {
+      "category": "Hair & Colour",
+      "items": [
+        { "name": "Signature Cut", "desc": "Consultation, wash, cut & finish", "price": "£42", "time": "60 min", "span": 2 },
+        { "name": "Full Colour", "desc": "Tint, gloss or full-head colour", "price": "£68", "time": "120 min", "span": 1 },
+        { "name": "Balayage", "desc": "Hand-painted, low-maintenance lightness", "price": "£120", "time": "180 min", "span": 1 },
+        { "name": "Curly Cut", "desc": "Dry-cut for natural texture", "price": "£55", "time": "75 min", "span": 1 },
+        { "name": "Root Refresh", "desc": "Up to 6 weeks of regrowth", "price": "£48", "time": "90 min", "span": 1 },
+        { "name": "Treatment & Blowdry", "desc": "Repair mask + finish", "price": "£38", "time": "45 min", "span": 1 }
+      ]
+    }
+  ],
+  "stylists": [
+    { "name": "Caitlin Murray", "role": "Creative Director · 11 yrs", "specialty": "Colour, balayage, curly", "initials": "CM" },
+    { "name": "Jodie Fleming", "role": "Senior Stylist · 8 yrs", "specialty": "Cut, root refresh, styling", "initials": "JF" },
+    { "name": "Priya Anand", "role": "Colourist · 6 yrs", "specialty": "Fashion colour, treatments", "initials": "PA" }
+  ],
+  "galleryItems": [
+    { "gradient": "from-rose-200 to-blush", "title": "The Cut" },
+    { "gradient": "from-plum/30 to-blush", "title": "The Colour" },
+    { "gradient": "from-amber-100 to-gold/30", "title": "The Finish" },
+    { "gradient": "from-blush to-rose-100", "title": "The Curl" },
+    { "gradient": "from-sage-200 to-sage/30", "title": "The Edit" },
+    { "gradient": "from-stone-200 to-sand", "title": "The Salon" }
+  ],
+  "bookingFields": [
+    { "name": "name", "label": "Name", "type": "text", "required": true },
+    { "name": "email", "label": "Email", "type": "email", "required": true },
+    { "name": "service", "label": "Service", "type": "select", "required": true },
+    { "name": "stylist", "label": "Stylist", "type": "select" },
+    { "name": "date", "label": "Date", "type": "date", "required": true },
+    { "name": "time", "label": "Time", "type": "select" },
+    { "name": "note", "label": "Notes", "type": "textarea" }
+  ],
+  "bookingTitle": "BOOK YOUR VISIT",
+  "bookingDescription": "New clients get a complimentary consultation.",
+  "bookingCta": "Confirm Booking",
+  "brand": "TWISTED SISTER",
+  "brandDescription": "A creative hair & colour salon in Glasgow. Bold looks, gentle hands.",
+  "hoursNote": "Tue—Sat · 10:00—19:00 · Sun—Mon — Closed",
+  "address": "22 Trongate, Glasgow G1 5ES",
+  "establishedText": "Est. 2016 · Glasgow",
+  "slug": "twisted-sister-salon",
+  "_source": "osm"
+}

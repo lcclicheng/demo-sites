@@ -1,0 +1,91 @@
+{
+  "template": "sectioned",
+  "slug": "tabitha-s-coffee-coffee",
+  "name": "TABITHA'S",
+  "subtitle": "Specialty Coffee",
+  "tagline": "Independent specialty coffee in Manchester — single-origin, slow-roasted, brewed with care.",
+  "established": "2020",
+  "location": "Northern Quarter, Manchester",
+  "street": "19 Thomas Street, Manchester M4 1EU",
+  "registeredAddress": "19 Thomas Street, Manchester M4 1EU, United Kingdom",
+  "phone": "+44 161 834 5678",
+  "email": "tabithascoffeeandjuice@gmail.com",
+  "googleRating": "4.8",
+  "googleReviews": "260+ reviews",
+  "hours": "Every day · 8:00—17:00",
+  "pageTitle": "TABITHA'S — Specialty Coffee in Manchester",
+  "heroLine1": "SLOW COFFEE,",
+  "heroLine2": "FAST CITY.",
+  "heroBadge": "Est. 2020 · Northern Quarter",
+  "heroStats": [
+    { "val": "4.8", "label": "Google Rating", "stars": true },
+    { "val": "260+", "label": "Reviews" },
+    { "val": "2020", "label": "Established" }
+  ],
+  "heroCta1": { "text": "Explore Menu", "href": "#menu" },
+  "heroCta2": { "text": "Order Ahead", "href": "#booking" },
+  "sections": [
+    { "type": "hero" },
+    { "type": "infoBar" },
+    { "type": "menu" },
+    { "type": "story" },
+    { "type": "booking" },
+    { "type": "location" },
+    { "type": "footer" }
+  ],
+  "infoBar": [
+    { "icon": "MapPin", "text": "19 Thomas Street, Northern Quarter, Manchester M4 1EU" },
+    { "icon": "Clock", "text": "Every day · 8:00—17:00" },
+    { "icon": "Phone", "text": "+44 161 834 5678" }
+  ],
+  "menu": [
+    {
+      "title": "Espresso Bar",
+      "icon": "Coffee",
+      "items": [
+        { "name": "Single Origin Espresso", "desc": "Rotating micro-lot · tasting notes on the board", "price": "£3.00" },
+        { "name": "Flat White", "desc": "Double ristretto, silky milk", "price": "£3.40" },
+        { "name": "Filter (V60)", "desc": "Light roast, clean & bright", "price": "£3.80" },
+        { "name": "Cortado", "desc": "Equal parts espresso and warm milk", "price": "£3.20" }
+      ]
+    },
+    {
+      "title": "Brunch",
+      "icon": "Coffee",
+      "items": [
+        { "name": "Avocado Sourdough", "desc": "Sourdough, chili, lime, poached egg", "price": "£8.50" },
+        { "name": "Granola Bowl", "desc": "Yoghurt, seasonal fruit, honey", "price": "£6.50" },
+        { "name": "Bacon Roll", "desc": "Local bacon, brioche, house ketchup", "price": "£5.50" }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Single Origin, Slow Roasted",
+  "menuIntroText": "We roast weekly in small batches and brew to bring out the bean, not the burn.",
+  "story": {
+    "title": "THE ROASTERY",
+    "paragraphs": ["We started TABITHA'S in 2020 with one well-worn roaster and a fondness for slow mornings. Everything is roasted in small batches and pulled with care."],
+    "stats": [
+      { "value": "Small", "label": "Batch Roast" },
+      { "value": "Weekly", "label": "Fresh Roast" },
+      { "value": "Direct", "label": "Trade" }
+    ]
+  },
+  "booking": {
+    "intro": "Order ahead and skip the queue.",
+    "note": "Ready in 5-8 minutes.",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "8:00—17:00",
+    "saturday": "8:00—17:00",
+    "sunday": "8:00—17:00",
+    "closedDays": ""
+  },
+  "footer": {
+    "note": "Independent specialty coffee in Manchester. Small batch. Slow roast. Good mornings.",
+    "quickLinks": ["Menu", "Roastery", "Order"]
+  },
+  "seo": { "description": "Specialty coffee in Manchester's Northern Quarter — single-origin, small-batch, brewed with care." },
+  "slug": "tabitha-s-coffee-coffee",
+  "_source": "osm"
+}

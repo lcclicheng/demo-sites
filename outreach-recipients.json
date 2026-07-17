@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "indaba-yoga",
+    "email": "welcome@indabayoga.com",
+    "businessName": "Indaba Yoga",
+    "items": "the studio, a class, the teachers",
+    "audience": "students",
+    "searchTerm": "yoga studio",
+    "benefitPhrase": "levels that playing field overnight",
+    "details": "class schedule and contact details",
+    "previewUrl": "https://lcclicheng.github.io/demo-sites/indaba-yoga/"
+  },
+  {
+    "slug": "seddons-law",
+    "email": "enquiries@seddons.co.uk",
+    "businessName": "Seddons Solicitors",
+    "items": "your office, the team",
+    "audience": "clients",
+    "searchTerm": "solicitor",
+    "benefitPhrase": "trust-building site levels that playing field overnight",
+    "details": "practice areas and contact details",
+    "previewUrl": "https://lcclicheng.github.io/demo-sites/seddons-law/"
+  },
+  {
+    "slug": "vale-hardware",
+    "email": "NO_PUBLIC_EMAIL_USE_GMB_OR_PHONE",
+    "businessName": "Vale Hardware",
+    "items": "the shop, your range, the team",
+    "audience": "customers",
+    "searchTerm": "hardware shop",
+    "benefitPhrase": "levels that playing field overnight",
+    "details": "services and contact details",
+    "previewUrl": "https://lcclicheng.github.io/demo-sites/vale-hardware/"
+  },
+  {
+    "slug": "papa-bruno",
+    "email": "NO_PUBLIC_EMAIL_LIKELY_CLOSED_VERIFY_FIRST",
+    "businessName": "Papa Bruno",
+    "items": "your dishes, the dining room, the team",
+    "audience": "diners",
+    "searchTerm": "restaurant",
+    "benefitPhrase": "with your real dishes front and centre levels that playing field overnight",
+    "details": "signature dishes and contact details",
+    "previewUrl": "https://lcclicheng.github.io/demo-sites/papa-bruno/"
+  }
+]
