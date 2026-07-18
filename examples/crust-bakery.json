@@ -1,0 +1,139 @@
+{
+  "template": "sectioned",
+  "name": "CRUST & CRUMB",
+  "subtitle": "Artisan Bakery · Patisserie",
+  "tagline": "Sourdough baked before dawn, patisserie by mid-morning, and coffee worth crossing town for.",
+  "established": "2014",
+  "location": "York, UK",
+  "street": "8 Gillygate, York YO31 7EQ",
+  "registeredAddress": "8 Gillygate, York YO31 7EQ, United Kingdom",
+  "phone": "+44 1904 672 140",
+  "email": "hello@crustandcrumb.co.uk",
+  "googleRating": "4.8",
+  "googleReviews": "510+ reviews",
+  "hours": "Mon—Sat: 7:00—17:00 · Sun: 8:00—15:00",
+  "certs": ["Great Taste 2023", "Sourdough School trained", "Local & Independent"],
+  "pageTitle": "CRUST & CRUMB — Artisan Bakery in York",
+  "heroLine1": "Baked",
+  "heroLine2": "this morning.",
+  "heroBadge": "York · Est. 2014",
+  "heroCta1": { "text": "See Our Bakes", "href": "#menu" },
+  "heroCta2": { "text": "Order a Cake", "href": "#booking" },
+  "heroStats": [
+    { "val": "10yrs", "label": "Baking" },
+    { "val": "510+", "label": "Reviews" },
+    { "val": "4.8", "label": "Rating" },
+    { "val": "Daily", "label": "Fresh" }
+  ],
+  "stats": [
+    { "value": "10yrs", "label": "Baking" },
+    { "value": "510+", "label": "Reviews" },
+    { "value": "4.8", "label": "Rating" },
+    { "value": "Daily", "label": "Fresh" }
+  ],
+  "heroTrustBadges": ["Great Taste 2023", "Sourdough School trained", "Local & Independent"],
+  "services": [
+    { "name": "Sourdough & Bread", "desc": "Slow-fermented country loaves, rye, and seeded batons — baked fresh every morning.", "priceFrom": "£3.50" },
+    { "name": "Patisserie", "desc": "Croissants, pains au chocolat, and seasonal tarts made by hand before the shop opens.", "priceFrom": "£2.80" },
+    { "name": "Celebration Cakes", "desc": "Birthday, wedding and occasion cakes, designed with you. Two weeks' notice please.", "priceFrom": "£45" },
+    { "name": "Coffee & Cake", "desc": "Single-origin espresso, flat whites, and a slice of the day's cake to sit or take away.", "priceFrom": "£4.50" },
+    { "name": "Lunch & Savouries", "desc": "Quiches, sausage rolls and filled focaccia for a proper lunch on the go.", "priceFrom": "£5.50" },
+    { "name": "Wholesale", "desc": "Bread and pastries supplied to cafés and offices across York. Ask about a weekly order.", "priceFrom": "£POA" }
+  ],
+  "about": {
+    "title": "A small bakery with a long rise.",
+    "paragraphs": [
+      "CRUST & CRUMB opened in 2014 when two friends left city kitchens to bake bread the slow way. We mill where we can, ferment for 36 hours, and never use additives.",
+      "Everything is made on site. If it isn't good enough for our own breakfast table, it doesn't go in the window.",
+      "We work with Yorkshire growers and a single coffee roaster up the road, because the short chain tastes better — and it's the right thing to do."
+    ],
+    "certifications": ["Great Taste 2023", "Sourdough School trained", "Local & Independent"],
+    "whyChoose": [
+      { "icon": "Leaf", "text": "Naturally leavened — long fermentation, no improvers, proper flavour" },
+      { "icon": "ThumbsUp", "text": "Baked fresh every morning — if it's left from yesterday, we don't sell it" },
+      { "icon": "Shield", "text": "Local & independent — Yorkshire flour, a roaster up the road, no factories" },
+      { "icon": "Award", "text": "510+ five-star reviews — read them on Google before you visit" }
+    ]
+  },
+  "aboutParagraphs": [
+    "CRUST & CRUMB opened in 2014 when two friends left city kitchens to bake bread the slow way. We mill where we can, ferment for 36 hours, and never use additives.",
+    "Everything is made on site. If it isn't good enough for our own breakfast table, it doesn't go in the window.",
+    "We work with Yorkshire growers and a single coffee roaster up the road, because the short chain tastes better — and it's the right thing to do."
+  ],
+  "reviews": [
+    { "name": "Lucy Bennett", "text": "Best sourdough in York, bar none. The seeded baton is my weekly ritual.", "rating": 5 },
+    { "name": "Mark Fletcher", "text": "Ordered a wedding cake — stunning, and it tasted even better than it looked.", "rating": 5 },
+    { "name": "Aisha K.", "text": "Coffee and a croissant on a Saturday morning. Always warm, always worth the queue.", "rating": 5 }
+  ],
+  "contact": {
+    "labels": { "name": "Name", "phone": "Phone", "email": "Email", "service": "Interest", "urgency": "Urgency", "message": "Tell us more" },
+    "placeholders": { "name": "Your name", "phone": "Best number to reach you", "email": "you@email.com", "service": "Select interest", "message": "e.g. Celebration cake for 20, coffee order for the office..." },
+    "submit": "Send Enquiry",
+    "success": "Thanks! We'll be in touch within one working day."
+  },
+  "urgencyOptions": [
+    { "value": "enquiry", "label": "Enquiry", "icon": "MessageCircle" },
+    { "value": "order", "label": "Order", "icon": "ShoppingBag" },
+    { "value": "urgent", "label": "Urgent", "icon": "Clock" }
+  ],
+  "footer": {
+    "note": "Baked fresh, every morning. Since 2014.",
+    "quickLinks": ["Menu", "About", "Reviews", "Contact"]
+  },
+  "nav": {
+    "links": ["Menu", "About", "Reviews", "Contact"],
+    "cta": "Order"
+  },
+  "slug": "crust-bakery",
+  "sections": [
+    { "type": "hero" },
+    { "type": "infoBar" },
+    { "type": "menu" },
+    { "type": "story" },
+    { "type": "reviews" },
+    { "type": "booking" },
+    { "type": "location" },
+    { "type": "footer" }
+  ],
+  "infoBar": [
+    { "icon": "MapPin", "text": "8 Gillygate, York YO31 7EQ" },
+    { "icon": "Clock", "text": "Mon—Sat: 7:00—17:00 · Sun: 8:00—15:00" },
+    { "icon": "Phone", "text": "+44 1904 672 140" }
+  ],
+  "menu": [
+    {
+      "title": "Our Bakes",
+      "icon": "Croissant",
+      "items": [
+        { "name": "Sourdough & Bread", "desc": "Slow-fermented country loaves, rye, and seeded batons — baked fresh every morning.", "price": "From £3.50" },
+        { "name": "Patisserie", "desc": "Croissants, pains au chocolat, and seasonal tarts made by hand before the shop opens.", "price": "From £2.80" },
+        { "name": "Celebration Cakes", "desc": "Birthday, wedding and occasion cakes, designed with you. Two weeks' notice please.", "price": "From £45" },
+        { "name": "Coffee & Cake", "desc": "Single-origin espresso, flat whites, and a slice of the day's cake.", "price": "From £4.50" },
+        { "name": "Lunch & Savouries", "desc": "Quiches, sausage rolls and filled focaccia for a proper lunch on the go.", "price": "From £5.50" },
+        { "name": "Wholesale", "desc": "Bread and pastries supplied to cafés and offices across York.", "price": "POA" }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Artisan Bakery · Patisserie",
+  "story": {
+    "title": "A small bakery with a long rise.",
+    "paragraphs": [
+      "CRUST & CRUMB opened in 2014 when two friends left city kitchens to bake bread the slow way. We mill where we can, ferment for 36 hours, and never use additives.",
+      "Everything is made on site. If it isn't good enough for our own breakfast table, it doesn't go in the window.",
+      "We work with Yorkshire growers and a single coffee roaster up the road, because the short chain tastes better — and it's the right thing to do."
+    ],
+    "stats": []
+  },
+  "booking": {
+    "intro": "Send Enquiry",
+    "note": "Thanks! We'll be in touch within one working day.",
+    "occasionOptions": ["Birthday", "Wedding", "Corporate", "Just Because"]
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Sat: 7:00—17:00 · Sun: 8:00—15:00",
+    "saturday": "Mon—Sat: 7:00—17:00 · Sun: 8:00—15:00",
+    "sunday": "Sun: 8:00—15:00",
+    "closedDays": ""
+  },
+  "_source": "osm"
+}

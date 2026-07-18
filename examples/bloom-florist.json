@@ -1,0 +1,139 @@
+{
+  "template": "sectioned",
+  "name": "PETAL & STEM",
+  "subtitle": "Florist · Flower Studio",
+  "tagline": "Seasonal, British-grown flowers arranged with a light touch — weddings, events, and the bunch you grab on the way home.",
+  "established": "2018",
+  "location": "Brighton, UK",
+  "street": "23 Kensington Gardens, Brighton BN1 4AL",
+  "registeredAddress": "23 Kensington Gardens, Brighton BN1 4AL, United Kingdom",
+  "phone": "+44 1273 915 660",
+  "email": "hello@petalandstem.co.uk",
+  "googleRating": "4.9",
+  "googleReviews": "280+ reviews",
+  "hours": "Tue—Sat: 9:00—17:30 · Sun: 10:00—14:00",
+  "certs": ["British Flowers Rock", "Eco-friendly foam-free", "Brighton independent"],
+  "pageTitle": "PETAL & STEM — Florist in Brighton",
+  "heroLine1": "Flowers,",
+  "heroLine2": "done properly.",
+  "heroBadge": "Brighton · Est. 2018",
+  "heroCta1": { "text": "See Our Work", "href": "#menu" },
+  "heroCta2": { "text": "Enquire", "href": "#booking" },
+  "heroStats": [
+    { "val": "6yrs", "label": "Arranging" },
+    { "val": "280+", "label": "Reviews" },
+    { "val": "4.9", "label": "Rating" },
+    { "val": "British", "label": "Grown" }
+  ],
+  "stats": [
+    { "value": "6yrs", "label": "Arranging" },
+    { "value": "280+", "label": "Reviews" },
+    { "value": "4.9", "label": "Rating" },
+    { "value": "British", "label": "Grown" }
+  ],
+  "heroTrustBadges": ["British Flowers Rock", "Eco-friendly foam-free", "Brighton independent"],
+  "services": [
+    { "name": "Bouquets & Bunches", "desc": "Hand-tied seasonal bouquets, from a quick thank-you to a full birthday statement.", "priceFrom": "£25" },
+    { "name": "Weddings", "desc": "Bespoke bridal bouquets, table arrangements and archways. We handle the whole day.", "priceFrom": "£350" },
+    { "name": "Events & Corporate", "desc": "Weekly office flowers, launches, and dinner-party centrepieces across Brighton.", "priceFrom": "£60" },
+    { "name": "Subscriptions", "desc": "A fresh bunch delivered weekly or fortnightly — the gift that keeps arriving.", "priceFrom": "£22" },
+    { "name": "Funerals & Sympathy", "desc": "Considered, respectful arrangements and wreaths, delivered with care.", "priceFrom": "£55" },
+    { "name": "Workshops", "desc": "Seasonal flower-school sessions in the studio. Dates on our socials.", "priceFrom": "£45" }
+  ],
+  "about": {
+    "title": "Grown here, arranged with care.",
+    "paragraphs": [
+      "PETAL & STEM started in 2018 from a market stall and a van full of buckets. Today we're a small studio on Kensington Gardens working mostly with British growers.",
+      "We're foam-free and as local as the season allows — no air-freighted roses, no plastic, just flowers that were in a field yesterday.",
+      "Every arrangement is made by hand by the same two people who'll answer your email. That's the whole business."
+    ],
+    "certifications": ["British Flowers Rock", "Eco-friendly foam-free", "Brighton independent"],
+    "whyChoose": [
+      { "icon": "Leaf", "text": "British-grown, seasonal — no air-freighted flowers, ever" },
+      { "icon": "ThumbsUp", "text": "Foam-free & plastic-free — kinder to the flowers and the planet" },
+      { "icon": "Shield", "text": "Independent studio — made by the people who answer your email" },
+      { "icon": "Award", "text": "280+ five-star reviews — see what Brighton says on Google" }
+    ]
+  },
+  "aboutParagraphs": [
+    "PETAL & STEM started in 2018 from a market stall and a van full of buckets. Today we're a small studio on Kensington Gardens working mostly with British growers.",
+    "We're foam-free and as local as the season allows — no air-freighted roses, no plastic, just flowers that were in a field yesterday.",
+    "Every arrangement is made by hand by the same two people who'll answer your email. That's the whole business."
+  ],
+  "reviews": [
+    { "name": "Sophie Marsh", "text": "My wedding flowers were beyond anything I'd pictured. Guests are still talking about them.", "rating": 5 },
+    { "name": "James P.", "text": "Weekly subscription for the office — genuinely the highlight of everyone's Tuesday.", "rating": 5 },
+    { "name": "Nadia R.", "text": "Sympathy wreath handled with such care during a hard week. Thank you.", "rating": 5 }
+  ],
+  "contact": {
+    "labels": { "name": "Name", "phone": "Phone", "email": "Email", "service": "Interest", "urgency": "Urgency", "message": "Tell us more" },
+    "placeholders": { "name": "Your name", "phone": "Best number to reach you", "email": "you@email.com", "service": "Select interest", "message": "e.g. Bridal bouquet for September, weekly office flowers..." },
+    "submit": "Send Enquiry",
+    "success": "Thanks! We'll be in touch within one working day."
+  },
+  "urgencyOptions": [
+    { "value": "enquiry", "label": "Enquiry", "icon": "MessageCircle" },
+    { "value": "order", "label": "Order", "icon": "ShoppingBag" },
+    { "value": "urgent", "label": "Urgent", "icon": "Clock" }
+  ],
+  "footer": {
+    "note": "Seasonal flowers, arranged with care. Since 2018.",
+    "quickLinks": ["Work", "About", "Reviews", "Contact"]
+  },
+  "nav": {
+    "links": ["Work", "About", "Reviews", "Contact"],
+    "cta": "Enquire"
+  },
+  "slug": "bloom-florist",
+  "sections": [
+    { "type": "hero" },
+    { "type": "infoBar" },
+    { "type": "menu" },
+    { "type": "story" },
+    { "type": "reviews" },
+    { "type": "booking" },
+    { "type": "location" },
+    { "type": "footer" }
+  ],
+  "infoBar": [
+    { "icon": "MapPin", "text": "23 Kensington Gardens, Brighton BN1 4AL" },
+    { "icon": "Clock", "text": "Tue—Sat: 9:00—17:30 · Sun: 10:00—14:00" },
+    { "icon": "Phone", "text": "+44 1273 915 660" }
+  ],
+  "menu": [
+    {
+      "title": "What We Do",
+      "icon": "Flower2",
+      "items": [
+        { "name": "Bouquets & Bunches", "desc": "Hand-tied seasonal bouquets, from a quick thank-you to a full birthday statement.", "price": "From £25" },
+        { "name": "Weddings", "desc": "Bespoke bridal bouquets, table arrangements and archways. We handle the whole day.", "price": "From £350" },
+        { "name": "Events & Corporate", "desc": "Weekly office flowers, launches, and dinner-party centrepieces across Brighton.", "price": "From £60" },
+        { "name": "Subscriptions", "desc": "A fresh bunch delivered weekly or fortnightly — the gift that keeps arriving.", "price": "From £22" },
+        { "name": "Funerals & Sympathy", "desc": "Considered, respectful arrangements and wreaths, delivered with care.", "price": "From £55" },
+        { "name": "Workshops", "desc": "Seasonal flower-school sessions in the studio. Dates on our socials.", "price": "From £45" }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Florist · Flower Studio",
+  "story": {
+    "title": "Grown here, arranged with care.",
+    "paragraphs": [
+      "PETAL & STEM started in 2018 from a market stall and a van full of buckets. Today we're a small studio on Kensington Gardens working mostly with British growers.",
+      "We're foam-free and as local as the season allows — no air-freighted roses, no plastic, just flowers that were in a field yesterday.",
+      "Every arrangement is made by hand by the same two people who'll answer your email. That's the whole business."
+    ],
+    "stats": []
+  },
+  "booking": {
+    "intro": "Send Enquiry",
+    "note": "Thanks! We'll be in touch within one working day.",
+    "occasionOptions": ["Bouquet", "Wedding", "Event", "Subscription"]
+  },
+  "hoursDetail": {
+    "wedFri": "Tue—Sat: 9:00—17:30 · Sun: 10:00—14:00",
+    "saturday": "Tue—Sat: 9:00—17:30 · Sun: 10:00—14:00",
+    "sunday": "Sun: 10:00—14:00",
+    "closedDays": "Closed Monday"
+  },
+  "_source": "osm"
+}

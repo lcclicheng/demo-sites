@@ -10,15 +10,17 @@ set -u
 cd "$(dirname "$0")"
 LOG_DIR="$(pwd)/build-logs"
 mkdir -p "$LOG_DIR"
-# ── 真实商家 demo 站（共 10 个）· 外联邮件均未发送（☐ 待发）──
+# ── 真实商家 demo 站（共 15 个）· 外联邮件均未发送（☐ 待发）──
 # 第一批·差异化 B 版：morris-coffee holborn-nails ganache indaba-yoga seddons-law
 # 第二批·原版 A 版：  sundara-yoga-yoga red-lion-law-law twisted-sister-salon claremont-cakes-dessert tabitha-s-coffee-coffee
+# 第三批·新行业扩面：cornish-cove-hotel osteria-lua granite-trades crust-bakery bloom-florist
 # 上线后预览链接：https://lcclicheng.github.io/demo-sites/<slug>/  （发邮件时贴入）
 PROJS=(
   atelier-salon breath-yoga chambers-law creme-dessert forge-trades mario-pizza mono-coffee patisserie-v2 sotto-sotto vault-hotel
   gower-hotel vale-hardware papa-bruno chinatown-bakery sectioned-demo
   morris-coffee holborn-nails ganache indaba-yoga seddons-law
   sundara-yoga-yoga red-lion-law-law twisted-sister-salon claremont-cakes-dessert tabitha-s-coffee-coffee
+  cornish-cove-hotel osteria-lua granite-trades crust-bakery bloom-florist
 )
 echo "=== 干净全量重建开始 $(date) ===" | tee "$LOG_DIR/_clean.log"
 for f in "${PROJS[@]}"; do

@@ -198,7 +198,7 @@ const TEMPLATES = {
     tailwind: 'trades',
     html: '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"/><title>__TITLE__</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>',
     css: '@tailwind base;@tailwind components;@tailwind utilities;*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}body{font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-tap-highlight-color:transparent;background:#f5f5f4;color:#1c1917}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#f5f5f4}::-webkit-scrollbar-thumb{background:rgba(217,119,6,0.25);border-radius:2px}::selection{background:rgba(217,119,6,0.2)}.grid-pattern{background-image:linear-gradient(rgba(28,25,23,0.04)1px,transparent 1px),linear-gradient(90deg,rgba(28,25,23,0.04)1px,transparent 1px);background-size:24px 24px}@media (max-width:768px){input,select,textarea{font-size:16px}}',
-    twConfig: `/** @type {import('tailwindcss').Config} */export default{content:['./index.html','./src/**/*.{js,ts,jsx,tsx}'],theme:{extend:{colors:{steel:'#f5f5f4',charcoal:'#1c1917',copper:'#d97706',rust:'#9a3412',concrete:'#e7e5e4',ink:'#171717'},fontFamily:{body:['Inter','sans-serif']}}},plugins:[]}`,
+    twConfig: `/** @type {import('tailwindcss').Config} */export default{content:['./index.html','./src/**/*.{js,ts,jsx,tsx}'],theme:{extend:{colors:{steel:'#f5f5f4',charcoal:'#1c1917',copper:'#d97706',rust:'#9a3412',concrete:'#e7e5e4',ink:'#171717',navy:'#0f172a',light:'#f8fafc'},fontFamily:{body:['Inter','sans-serif']}}},plugins:[]}`,
   },
 
   // ── SECTIONED · 组合器模板（Section Engine 入口，theme-agnostic）──
@@ -377,6 +377,48 @@ const THEMES = {
       ['color:#1c1917', 'color:#211b15'],
       ['rgba(184,137,90,0.2)', 'rgba(168,107,60,0.2)'],
       ['rgba(184,137,90,0.25)', 'rgba(168,107,60,0.25)'],
+    ],
+  },
+
+  // CORNISH COVE · 民宿 demo → 海军蓝+黄铜（区别于 gower-hotel 的翡翠绿+金，hotel 模板）
+  'cornish-cove-hotel': {
+    twReplace: [
+      ["gold:'#c8952c'", "gold:'#b07d3c'"],
+      ["emerald:'#0a2a1e'", "emerald:'#1f2a44'"],
+    ],
+    cssReplace: [
+      ['rgba(200,149,44,0.2)', 'rgba(176,125,60,0.2)'],
+      ['rgba(200,149,44,0.25)', 'rgba(176,125,60,0.25)'],
+    ],
+  },
+
+  // CRUST · 烘焙 demo → 胡桃暖棕（sectioned 三色基底，区别于 patisserie 香槟金）
+  'crust-bakery': {
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#fbf4ec'"],
+      ["ink:'#1c1917'", "ink:'#3a2a1e'"],
+      ["accent:'#b8895a'", "accent:'#b5651d'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#fbf4ec'],
+      ['color:#1c1917', 'color:#3a2a1e'],
+      ['rgba(184,137,90,0.2)', 'rgba(181,101,29,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(181,101,29,0.25)'],
+    ],
+  },
+
+  // BLOOM · 花店 demo → 兰紫 orchid（sectioned 三色基底，全站唯一紫色系）
+  'bloom-florist': {
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#faf8fb'"],
+      ["ink:'#1c1917'", "ink:'#3a2a3a'"],
+      ["accent:'#b8895a'", "accent:'#9d6b9c'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#faf8fb'],
+      ['color:#1c1917', 'color:#3a2a3a'],
+      ['rgba(184,137,90,0.2)', 'rgba(157,107,156,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(157,107,156,0.25)'],
     ],
   },
 
