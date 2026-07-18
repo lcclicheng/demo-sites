@@ -1,52 +1,112 @@
 {
   "template": "trades",
-  "name": "IRONWOOD",
-  "subtitle": "Plumbing · Heating · Joinery",
-  "tagline": "Same-day response. No call-out fee. 18 years keeping Manchester's homes warm, dry and working.",
+  "name": "MANCHESTER PLUMBING & HEATING",
+  "subtitle": "Plumbing · Heating · Gas",
+  "tagline": "Same-day response. No call-out fee. Nearly two decades keeping Manchester’s homes warm, dry and working.",
   "established": "2007",
   "location": "Manchester, UK",
-  "street": "Unit 4, Trafford Trading Estate, Manchester M17 1HH",
-  "registeredAddress": "Unit 4, Trafford Trading Estate, Manchester M17 1HH, United Kingdom",
+  "street": "Manchester",
+  "registeredAddress": "Manchester, United Kingdom",
   "phone": "+44 161 883 2200",
   "emergency": true,
   "emergencyPhone": "+44 161 883 9999",
-  "email": "hello@ironwoodtrades.co.uk",
+  "email": "hello@manchesterplumbingandheating.co.uk",
   "googleRating": "4.9",
   "googleReviews": "390+ reviews",
   "hours": "Mon—Fri: 7:30—18:00 · Sat: 8:00—14:00 · 24/7 Emergency",
-  "pageTitle": "IRONWOOD — Plumbing · Heating · Joinery in Manchester",
+  "pageTitle": "MANCHESTER PLUMBING & HEATING — Plumbing · Heating in Manchester",
   "heroLine1": "Fixed right,",
   "heroLine2": "first time.",
-  "heroCta1": { "text": "Get a Free Quote", "href": "#contact" },
-  "heroCta2": { "text": "24/7 Emergency", "href": "#contact" },
-  "certs": ["Gas Safe Registered", "Fully Insured", "City & Guilds", "Checkatrade"],
+  "heroCta1": {
+    "text": "Get a Free Quote",
+    "href": "#contact"
+  },
+  "heroCta2": {
+    "text": "24/7 Emergency",
+    "href": "#contact"
+  },
+  "certs": [
+    "Gas Safe Registered",
+    "Fully Insured",
+    "City & Guilds",
+    "Checkatrade"
+  ],
   "stats": [
-    { "value": "18+", "label": "Years" },
-    { "value": "390+", "label": "Reviews" },
-    { "value": "4.9", "label": "Rating" },
-    { "value": "60min", "label": "Response" }
+    {
+      "value": "18+",
+      "label": "Years"
+    },
+    {
+      "value": "390+",
+      "label": "Reviews"
+    },
+    {
+      "value": "4.9",
+      "label": "Rating"
+    },
+    {
+      "value": "60min",
+      "label": "Response"
+    }
   ],
   "servicesTitle": "WHAT WE DO",
   "servicesSubtitle": "One trusted team for the whole house.",
   "services": [
-    { "name": "Emergency Repairs", "desc": "Burst pipes, no heating, leaks — we arrive within the hour. 24/7, 365 days.", "price": "From £85", "emergency": true },
-    { "name": "Boiler Installation", "desc": "New boiler supply & fit, annual servicing, landlord gas safety certificates. Gas Safe certified.", "price": "From £1,950" },
-    { "name": "Joinery & Carpentry", "desc": "Bespoke shelving, doors, fitted furniture and small extensions. Measured and made on site.", "price": "From £350" },
-    { "name": "Bathroom Fitting", "desc": "Full bathroom renovations — plumbing, tiling, install. Free design visit included.", "price": "From £3,200" },
-    { "name": "Central Heating", "desc": "Radiators, power flushing, smart thermostats and underfloor heating.", "price": "From £450" },
-    { "name": "Landlord Services", "desc": "Gas safety (CP12), EICR reports and planned maintenance for rental properties.", "price": "From £75" }
+    {
+      "name": "Emergency Repairs",
+      "desc": "Burst pipes, no heating, leaks — we arrive within the hour. 24/7, 365 days.",
+      "price": "From £85",
+      "emergency": true
+    },
+    {
+      "name": "Boiler Installation",
+      "desc": "New boiler supply & fit, annual servicing, landlord gas safety certificates. Gas Safe certified.",
+      "price": "From £1,950"
+    },
+    {
+      "name": "Joinery & Carpentry",
+      "desc": "Bespoke shelving, doors, fitted furniture and small extensions. Measured and made on site.",
+      "price": "From £350"
+    },
+    {
+      "name": "Bathroom Fitting",
+      "desc": "Full bathroom renovations — plumbing, tiling, install. Free design visit included.",
+      "price": "From £3,200"
+    },
+    {
+      "name": "Central Heating",
+      "desc": "Radiators, power flushing, smart thermostats and underfloor heating.",
+      "price": "From £450"
+    },
+    {
+      "name": "Landlord Services",
+      "desc": "Gas safety (CP12), EICR reports and planned maintenance for rental properties.",
+      "price": "From £75"
+    }
   ],
   "aboutTitle": "Two decades of getting it right.",
   "aboutParagraphs": [
-    "IRONWOOD started in 2007 when Matt Irons left the big firms to serve his own neighbourhood. What began as one van and a reputation for turning up on time is now Manchester's most trusted home-services team.",
-    "No call-out fees. No hidden charges. Clear quotes, tidy work, and a 12-month guarantee on every job — no exceptions.",
-    "Every engineer is qualified, background-checked, and trained to explain the work in plain English. No jargon, no upsells, no surprises."
+    "Manchester Plumbing & Heating has kept the city’s homes warm, dry and working for nearly two decades — same-day response, no call-out fee, and engineers who explain the job in plain English.",
+    "Boilers, bathrooms, emergencies and landlord certificates, all under one roof. Clear quotes, tidy work, and a guarantee on every job.",
+    "Every engineer is qualified, insured and background-checked. No jargon, no upsells, no surprises."
   ],
   "reviews": [
-    { "name": "Gemma Patel", "text": "Burst pipe at 11pm on a Tuesday. IRONWOOD were here in 45 minutes. Lifesavers.", "rating": 5 },
-    { "name": "Dave O'Connor", "text": "New boiler fitted last month. Tidy, polite, explained everything. Best of four quotes.", "rating": 5 },
-    { "name": "The Khans", "text": "Used them for a full bathroom. Plumbing, tiling, joinery — one team, zero stress.", "rating": 5 }
+    {
+      "name": "Gemma Patel",
+      "text": "Burst pipe at 11pm on a Tuesday. They were here in 45 minutes. Lifesavers.",
+      "rating": 5
+    },
+    {
+      "name": "Dave O'Connor",
+      "text": "New boiler fitted last month. Tidy, polite, explained everything. Best of four quotes.",
+      "rating": 5
+    },
+    {
+      "name": "The Khans",
+      "text": "Used them for a full bathroom. Plumbing, tiling, joinery — one team, zero stress.",
+      "rating": 5
+    }
   ],
   "slug": "granite-trades",
-  "_source": "osm"
+  "_source": "real-merchant"
 }

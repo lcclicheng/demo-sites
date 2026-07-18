@@ -1,116 +1,290 @@
 {
   "template": "sectioned",
-  "name": "LUMEN PHOTOGRAPHY",
+  "name": "BLUE SKY PHOTOGRAPHY",
   "subtitle": "Photographer · Portrait & Event",
   "tagline": "Natural-light portraiture, weddings and brand shoots across Edinburgh — relaxed, real, and yours to keep.",
   "established": "2017",
   "location": "Edinburgh, UK",
-  "street": "27 Cockburn Street, Edinburgh EH1 1BP",
-  "registeredAddress": "27 Cockburn Street, Edinburgh EH1 1BP, United Kingdom",
+  "street": "Edinburgh",
+  "registeredAddress": "Edinburgh, United Kingdom",
   "phone": "+44 131 220 4455",
-  "email": "hello@lumenphoto.co.uk",
+  "email": "hello@blueskyphotography.co.uk",
   "googleRating": "5.0",
   "googleReviews": "190+ reviews",
   "hours": "Mon—Fri: 9:00—18:00 · Sat: 10:00—16:00",
-  "certs": ["Natural-light specialist", "Full editing included", "Edinburgh independent"],
-  "pageTitle": "LUMEN PHOTOGRAPHY — Photographer in Edinburgh",
+  "certs": [
+    "Natural-light specialist",
+    "Full editing included",
+    "Edinburgh independent"
+  ],
+  "pageTitle": "BLUE SKY PHOTOGRAPHY — Photographer in Edinburgh",
   "heroLine1": "Real moments,",
   "heroLine2": "beautifully kept.",
   "heroBadge": "Edinburgh · Est. 2017",
-  "heroCta1": { "text": "See Sessions", "href": "#menu" },
-  "heroCta2": { "text": "Enquire", "href": "#booking" },
+  "heroCta1": {
+    "text": "See Sessions",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Enquire",
+    "href": "#booking"
+  },
   "heroStats": [
-    { "val": "8yrs", "label": "Shooting" },
-    { "val": "190+", "label": "Reviews" },
-    { "val": "5.0", "label": "Rating" },
-    { "val": "EDI", "label": "Based" }
+    {
+      "val": "8yrs",
+      "label": "Shooting"
+    },
+    {
+      "val": "190+",
+      "label": "Reviews"
+    },
+    {
+      "val": "5.0",
+      "label": "Rating"
+    },
+    {
+      "val": "EDI",
+      "label": "Based"
+    }
   ],
   "stats": [
-    { "value": "8yrs", "label": "Shooting" },
-    { "value": "190+", "label": "Reviews" },
-    { "value": "5.0", "label": "Rating" },
-    { "value": "EDI", "label": "Based" }
+    {
+      "value": "8yrs",
+      "label": "Shooting"
+    },
+    {
+      "value": "190+",
+      "label": "Reviews"
+    },
+    {
+      "value": "5.0",
+      "label": "Rating"
+    },
+    {
+      "value": "EDI",
+      "label": "Based"
+    }
   ],
-  "heroTrustBadges": ["Natural-light specialist", "Full editing included", "Edinburgh independent"],
+  "heroTrustBadges": [
+    "Natural-light specialist",
+    "Full editing included",
+    "Edinburgh independent"
+  ],
   "services": [
-    { "name": "Portrait Session", "desc": "Studio or on-location portraits that actually look like you.", "priceFrom": "£120" },
-    { "name": "Weddings", "desc": "Full-day documentary coverage, two photographers, all images delivered.", "priceFrom": "£1,200" },
-    { "name": "Brand & Headshots", "desc": "Consistent team and product shots for your website and socials.", "priceFrom": "£250" },
-    { "name": "Family", "desc": "Relaxed home or outdoor sessions — the messy, lovely kind.", "priceFrom": "£150" },
-    { "name": "Events", "desc": "Launches, parties and conferences, shot candid and never awkward.", "priceFrom": "£300" },
-    { "name": "Prints & Albums", "desc": "Heirloom albums and framed prints, produced locally in Edinburgh.", "priceFrom": "£60" }
+    {
+      "name": "Portrait Session",
+      "desc": "Studio or on-location portraits that actually look like you.",
+      "priceFrom": "£120"
+    },
+    {
+      "name": "Weddings",
+      "desc": "Full-day documentary coverage, two photographers, all images delivered.",
+      "priceFrom": "£1,200"
+    },
+    {
+      "name": "Brand & Headshots",
+      "desc": "Consistent team and product shots for your website and socials.",
+      "priceFrom": "£250"
+    },
+    {
+      "name": "Family",
+      "desc": "Relaxed home or outdoor sessions — the messy, lovely kind.",
+      "priceFrom": "£150"
+    },
+    {
+      "name": "Events",
+      "desc": "Launches, parties and conferences, shot candid and never awkward.",
+      "priceFrom": "£300"
+    },
+    {
+      "name": "Prints & Albums",
+      "desc": "Heirloom albums and framed prints, produced locally in Edinburgh.",
+      "priceFrom": "£60"
+    }
   ],
   "about": {
     "title": "Photography that feels like you.",
     "paragraphs": [
-      "LUMEN started in 2017 from a spare room and a borrowed lens. Today it's a small studio on Cockburn Street shooting across Edinburgh.",
-      "We work in natural light wherever we can — it's kinder, calmer, and the pictures age better.",
+      "Blue Sky Photography started from a spare room and a borrowed lens. Today it’s a studio shooting across Edinburgh.",
+      "We work in natural light wherever we can — it’s kinder, calmer, and the pictures age better.",
       "Every booking includes full editing and the whole gallery. No hidden fees, no upsell on the day."
     ],
-    "certifications": ["Natural-light specialist", "Full editing included", "Edinburgh independent"],
+    "certifications": [
+      "Natural-light specialist",
+      "Full editing included",
+      "Edinburgh independent"
+    ],
     "whyChoose": [
-      { "icon": "Camera", "text": "Natural-light approach — calm, flattering, never stiff" },
-      { "icon": "Heart", "text": "Real moments over poses — you'll recognise yourselves" },
-      { "icon": "Shield", "text": "Full editing and the whole gallery included, always" },
-      { "icon": "Award", "text": "190+ five-star reviews across Edinburgh" }
+      {
+        "icon": "Camera",
+        "text": "Natural-light approach — calm, flattering, never stiff"
+      },
+      {
+        "icon": "Heart",
+        "text": "Real moments over poses — you'll recognise yourselves"
+      },
+      {
+        "icon": "Shield",
+        "text": "Full editing and the whole gallery included, always"
+      },
+      {
+        "icon": "Award",
+        "text": "190+ five-star reviews across Edinburgh"
+      }
     ]
   },
   "aboutParagraphs": [
-    "LUMEN started in 2017 from a spare room and a borrowed lens. Today it's a small studio on Cockburn Street shooting across Edinburgh.",
-    "We work in natural light wherever we can — it's kinder, calmer, and the pictures age better.",
+    "Blue Sky Photography started from a spare room and a borrowed lens. Today it’s a studio shooting across Edinburgh.",
+    "We work in natural light wherever we can — it’s kinder, calmer, and the pictures age better.",
     "Every booking includes full editing and the whole gallery. No hidden fees, no upsell on the day."
   ],
   "reviews": [
-    { "name": "Eilidh M.", "text": "Our wedding photos are everything we hoped for and not a single awkward pose.", "rating": 5 },
-    { "name": "Olu A.", "text": "Headshots for the whole team done in an afternoon — natural and consistent.", "rating": 5 },
-    { "name": "Catriona F.", "text": "Family session was chaos in the best way and the photos are perfect.", "rating": 5 }
+    {
+      "name": "Eilidh M.",
+      "text": "Our wedding photos are everything we hoped for and not a single awkward pose.",
+      "rating": 5
+    },
+    {
+      "name": "Olu A.",
+      "text": "Headshots for the whole team done in an afternoon — natural and consistent.",
+      "rating": 5
+    },
+    {
+      "name": "Catriona F.",
+      "text": "Family session was chaos in the best way and the photos are perfect.",
+      "rating": 5
+    }
   ],
   "contact": {
-    "labels": { "name": "Name", "phone": "Phone", "email": "Email", "service": "Interest", "urgency": "Urgency", "message": "Tell us more" },
-    "placeholders": { "name": "Your name", "phone": "Best number to reach you", "email": "you@email.com", "service": "Select interest", "message": "e.g. Wedding date, brand shoot brief, family session location..." },
+    "labels": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "service": "Interest",
+      "urgency": "Urgency",
+      "message": "Tell us more"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "phone": "Best number to reach you",
+      "email": "you@email.com",
+      "service": "Select interest",
+      "message": "e.g. Wedding date, brand shoot brief, family session location..."
+    },
     "submit": "Send Enquiry",
     "success": "Thanks! We'll reply within one working day with availability and a quote."
   },
   "urgencyOptions": [
-    { "value": "enquiry", "label": "Enquiry", "icon": "MessageCircle" },
-    { "value": "order", "label": "Book", "icon": "Calendar" },
-    { "value": "urgent", "label": "Urgent", "icon": "Clock" }
+    {
+      "value": "enquiry",
+      "label": "Enquiry",
+      "icon": "MessageCircle"
+    },
+    {
+      "value": "order",
+      "label": "Book",
+      "icon": "Calendar"
+    },
+    {
+      "value": "urgent",
+      "label": "Urgent",
+      "icon": "Clock"
+    }
   ],
   "footer": {
     "note": "Real moments, beautifully kept. Edinburgh, since 2017.",
-    "quickLinks": ["Sessions", "About", "Reviews", "Contact"]
+    "quickLinks": [
+      "Sessions",
+      "About",
+      "Reviews",
+      "Contact"
+    ]
   },
   "nav": {
-    "links": ["Sessions", "About", "Reviews", "Contact"],
+    "links": [
+      "Sessions",
+      "About",
+      "Reviews",
+      "Contact"
+    ],
     "cta": "Enquire"
   },
   "slug": "lumen-studio",
   "sections": [
-    { "type": "hero" },
-    { "type": "infoBar" },
-    { "type": "menu" },
-    { "type": "story" },
-    { "type": "reviews" },
-    { "type": "booking" },
-    { "type": "location" },
-    { "type": "footer" }
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "reviews"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
   ],
   "infoBar": [
-    { "icon": "MapPin", "text": "27 Cockburn Street, Edinburgh EH1 1BP" },
-    { "icon": "Clock", "text": "Mon—Fri: 9:00—18:00 · Sat: 10:00—16:00" },
-    { "icon": "Phone", "text": "+44 131 220 4455" }
+    {
+      "icon": "MapPin",
+      "text": "Edinburgh"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri: 9:00—18:00 · Sat: 10:00—16:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 131 220 4455"
+    }
   ],
   "menu": [
     {
       "title": "What We Do",
       "icon": "Camera",
       "items": [
-        { "name": "Portrait Session", "desc": "Studio or on-location portraits that actually look like you.", "price": "From £120" },
-        { "name": "Weddings", "desc": "Full-day documentary coverage, two photographers, all images delivered.", "price": "From £1,200" },
-        { "name": "Brand & Headshots", "desc": "Consistent team and product shots for your website and socials.", "price": "From £250" },
-        { "name": "Family", "desc": "Relaxed home or outdoor sessions — the messy, lovely kind.", "price": "From £150" },
-        { "name": "Events", "desc": "Launches, parties and conferences, shot candid and never awkward.", "price": "From £300" },
-        { "name": "Prints & Albums", "desc": "Heirloom albums and framed prints, produced locally in Edinburgh.", "price": "From £60" }
+        {
+          "name": "Portrait Session",
+          "desc": "Studio or on-location portraits that actually look like you.",
+          "price": "From £120"
+        },
+        {
+          "name": "Weddings",
+          "desc": "Full-day documentary coverage, two photographers, all images delivered.",
+          "price": "From £1,200"
+        },
+        {
+          "name": "Brand & Headshots",
+          "desc": "Consistent team and product shots for your website and socials.",
+          "price": "From £250"
+        },
+        {
+          "name": "Family",
+          "desc": "Relaxed home or outdoor sessions — the messy, lovely kind.",
+          "price": "From £150"
+        },
+        {
+          "name": "Events",
+          "desc": "Launches, parties and conferences, shot candid and never awkward.",
+          "price": "From £300"
+        },
+        {
+          "name": "Prints & Albums",
+          "desc": "Heirloom albums and framed prints, produced locally in Edinburgh.",
+          "price": "From £60"
+        }
       ]
     }
   ],
@@ -118,8 +292,8 @@
   "story": {
     "title": "Photography that feels like you.",
     "paragraphs": [
-      "LUMEN started in 2017 from a spare room and a borrowed lens. Today it's a small studio on Cockburn Street shooting across Edinburgh.",
-      "We work in natural light wherever we can — it's kinder, calmer, and the pictures age better.",
+      "Blue Sky Photography started from a spare room and a borrowed lens. Today it’s a studio shooting across Edinburgh.",
+      "We work in natural light wherever we can — it’s kinder, calmer, and the pictures age better.",
       "Every booking includes full editing and the whole gallery. No hidden fees, no upsell on the day."
     ],
     "stats": []
@@ -127,7 +301,12 @@
   "booking": {
     "intro": "Send Enquiry",
     "note": "Thanks! We'll reply within one working day with availability and a quote.",
-    "occasionOptions": ["Portrait", "Wedding", "Brand", "Family"]
+    "occasionOptions": [
+      "Portrait",
+      "Wedding",
+      "Brand",
+      "Family"
+    ]
   },
   "hoursDetail": {
     "wedFri": "Mon—Fri: 9:00—18:00 · Sat: 10:00—16:00",
@@ -135,5 +314,5 @@
     "sunday": "By appointment",
     "closedDays": "Closed Sunday (enquiries welcome)"
   },
-  "_source": "osm"
+  "_source": "real-merchant"
 }

@@ -34,3 +34,6 @@ Thumbs.db
 clients/**
 # CRM 约定文档入库（真实客户数据：合同/发票/反馈/info 仍私有）
 !clients/README.md
+
+# 外联决策系统（含 20 家真实商家外联状态/策略，不进公开仓库；参照 clients/** 范式）
+outreach/决策/

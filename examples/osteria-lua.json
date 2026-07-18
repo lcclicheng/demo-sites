@@ -1,31 +1,58 @@
 {
   "template": "restaurant",
-  "name": "OSTERIA LUA",
-  "tagline": "Rustic Italian cooking from an open kitchen in the heart of Bristol — hand-rolled pasta, wood-fired mains, and a short, honest wine list.",
+  "name": "LA PIAZZA 1",
+  "tagline": "Family-run Italian cooking in the heart of Bristol — wood-fired pizza, fresh pasta, and a warm welcome since the 1990s.",
   "location": "Bristol, UK",
-  "street": "12 Cotham Hill, Bristol BS6 6LA",
-  "registeredAddress": "12 Cotham Hill, Bristol BS6 6LA, United Kingdom",
+  "street": "Bristol",
+  "registeredAddress": "Bristol, United Kingdom",
   "phone": "+44 117 924 3310",
-  "email": "ciao@osterialua.co.uk",
+  "email": "info@lapiazza1.co.uk",
   "googleRating": "4.7",
   "googleReviews": "640+ reviews",
-  "pageTitle": "OSTERIA LUA — Italian Restaurant in Bristol",
-  "heroBadge": "Bristol · Est. 2016",
+  "pageTitle": "LA PIAZZA 1 — Italian Restaurant in Bristol",
+  "heroBadge": "Bristol · Family Run",
   "heroLine1": "Cooked",
   "heroLine2": "with love.",
   "heroStats": [
-    { "val": "4.7", "stars": true },
-    { "val": "640+", "stars": false },
-    { "val": "Est. 2016", "stars": false }
+    {
+      "val": "4.7",
+      "stars": true
+    },
+    {
+      "val": "640+",
+      "stars": false
+    },
+    {
+      "val": "Est. 2016",
+      "stars": false
+    }
   ],
   "infoTicker": [
-    { "icon": "MapPin", "text": "12 Cotham Hill, Bristol BS6 6LA" },
-    { "icon": "Clock", "text": "Tue—Sun · 12:00—22:00" },
-    { "icon": "Phone", "text": "+44 117 924 3310" },
-    { "icon": "Wine", "text": "40 wines by the glass" }
+    {
+      "icon": "MapPin",
+      "text": "Bristol"
+    },
+    {
+      "icon": "Clock",
+      "text": "Tue—Sun · 12:00—22:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 117 924 3310"
+    },
+    {
+      "icon": "Wine",
+      "text": "40 wines by the glass"
+    }
   ],
-  "heroCta1": { "text": "Book a Table", "href": "#reserve" },
-  "heroCta2": { "text": "View Menu", "href": "#menu" },
+  "heroCta1": {
+    "text": "Book a Table",
+    "href": "#reserve"
+  },
+  "heroCta2": {
+    "text": "View Menu",
+    "href": "#menu"
+  },
   "menuIntroTitle": "The Menu",
   "menuIntroText": "Seasonal, regional Italian cooking. Pasta rolled fresh each morning; mains from the wood fire. Ask about the daily specials.",
   "menuSections": [
@@ -33,51 +60,126 @@
       "icon": "UtensilsCrossed",
       "title": "To Start",
       "items": [
-        { "name": "Burrata & Peach", "desc": "Creamy burrata, roasted peach, basil oil, toasted sourdough.", "price": 11 },
-        { "name": "Bruschetta di Pomodoro", "desc": "Sourdough, vine tomatoes, garlic, aged balsamic.", "price": 8 },
-        { "name": "Arancini", "desc": "Saffron risotto balls, smoked mozzarella, lemon aioli.", "price": 9 }
+        {
+          "name": "Burrata & Peach",
+          "desc": "Creamy burrata, roasted peach, basil oil, toasted sourdough.",
+          "price": 11
+        },
+        {
+          "name": "Bruschetta di Pomodoro",
+          "desc": "Sourdough, vine tomatoes, garlic, aged balsamic.",
+          "price": 8
+        },
+        {
+          "name": "Arancini",
+          "desc": "Saffron risotto balls, smoked mozzarella, lemon aioli.",
+          "price": 9
+        }
       ]
     },
     {
       "icon": "Flame",
       "title": "From the Fire",
       "items": [
-        { "name": "Pappardelle al Ragù", "desc": "Slow-cooked beef & pork ragù, parmesan, parsley.", "price": 17, "pair": "Sangiovese, Tuscany" },
-        { "name": "Wood-fired Sea Bass", "desc": "Whole Cornish sea bass, fennel, lemon, olive oil.", "price": 24, "pair": "Vermentino, Sardinia" },
-        { "name": "Pollo alla Diavola", "desc": "Spatchcock chicken, rosemary, chilli, charred lemon.", "price": 19, "pair": "Negroamaro, Puglia" }
+        {
+          "name": "Pappardelle al Ragù",
+          "desc": "Slow-cooked beef & pork ragù, parmesan, parsley.",
+          "price": 17,
+          "pair": "Sangiovese, Tuscany"
+        },
+        {
+          "name": "Wood-fired Sea Bass",
+          "desc": "Whole Cornish sea bass, fennel, lemon, olive oil.",
+          "price": 24,
+          "pair": "Vermentino, Sardinia"
+        },
+        {
+          "name": "Pollo alla Diavola",
+          "desc": "Spatchcock chicken, rosemary, chilli, charred lemon.",
+          "price": 19,
+          "pair": "Negroamaro, Puglia"
+        }
       ]
     },
     {
       "icon": "Sparkles",
       "title": "Dolci",
       "items": [
-        { "name": "Tiramisù", "desc": "Mascarpone, espresso, savoiardi, cocoa.", "price": 8 },
-        { "name": "Affogato", "desc": "Vanilla gelato, hot espresso, amaretto.", "price": 7 },
-        { "name": "Olive Oil Cake", "desc": "Orange & almond, crème fraîche.", "price": 7 }
+        {
+          "name": "Tiramisù",
+          "desc": "Mascarpone, espresso, savoiardi, cocoa.",
+          "price": 8
+        },
+        {
+          "name": "Affogato",
+          "desc": "Vanilla gelato, hot espresso, amaretto.",
+          "price": 7
+        },
+        {
+          "name": "Olive Oil Cake",
+          "desc": "Orange & almond, crème fraîche.",
+          "price": 7
+        }
       ]
     }
   ],
   "screenshots": [
-    { "icon": "Wine", "title": "The Wine Wall", "sub": "40 wines by the glass", "gradient": "from-stone-900 to-abyss" },
-    { "icon": "Flame", "title": "The Wood Fire", "sub": "Mains cooked over embers", "gradient": "from-stone-900 to-abyss" },
-    { "icon": "Wheat", "title": "Fresh Pasta", "sub": "Rolled each morning", "gradient": "from-stone-900 to-abyss" },
-    { "icon": "Lamp", "title": "The Dining Room", "sub": "Candlelight, low music", "gradient": "from-stone-900 to-abyss" }
+    {
+      "icon": "Wine",
+      "title": "The Wine Wall",
+      "sub": "40 wines by the glass",
+      "gradient": "from-stone-900 to-abyss"
+    },
+    {
+      "icon": "Flame",
+      "title": "The Wood Fire",
+      "sub": "Mains cooked over embers",
+      "gradient": "from-stone-900 to-abyss"
+    },
+    {
+      "icon": "Wheat",
+      "title": "Fresh Pasta",
+      "sub": "Rolled each morning",
+      "gradient": "from-stone-900 to-abyss"
+    },
+    {
+      "icon": "Lamp",
+      "title": "The Dining Room",
+      "sub": "Candlelight, low music",
+      "gradient": "from-stone-900 to-abyss"
+    }
   ],
   "reviews": [
-    { "name": "Hannah Reed", "text": "The ragù is the best I've had outside Italy. Cosy room, brilliant front of house.", "rating": 5 },
-    { "name": "Tom Ashby", "text": "Took my mum for her birthday. Wood-fired sea bass was perfect. Already booked again.", "rating": 5 },
-    { "name": "Priya N.", "text": "Small, warm, unpretentious. The wine pairing suggestions were spot on.", "rating": 5 }
+    {
+      "name": "Hannah Reed",
+      "text": "The ragù is the best I've had outside Italy. Cosy room, brilliant front of house.",
+      "rating": 5
+    },
+    {
+      "name": "Tom Ashby",
+      "text": "Took my mum for her birthday. Wood-fired sea bass was perfect. Already booked again.",
+      "rating": 5
+    },
+    {
+      "name": "Priya N.",
+      "text": "Small, warm, unpretentious. The wine pairing suggestions were spot on.",
+      "rating": 5
+    }
   ],
-  "reservationNote": "Tables up to 6 can book online. For larger parties or private hire, call us on +44 117 924 3310.",
-  "occasionOptions": ["Dinner", "Private Hire", "Celebration"],
+  "reservationNote": "Tables up to 6 can book online. For larger parties or private hire, get in touch via the form.",
+  "occasionOptions": [
+    "Dinner",
+    "Private Hire",
+    "Celebration"
+  ],
   "hoursDetail": {
     "wedFri": "Tue—Fri: 12:00—15:00 · 17:30—22:00",
     "saturday": "Sat: 12:00—23:00",
     "sunday": "Sun: 12:00—21:00",
     "closedDays": "Closed Monday"
   },
-  "screenshotsIntro": "A small room on Cotham Hill — candlelight, the hum of the wood fire, and the clink of glasses from the wine wall.",
-  "footerNote": "© OSTERIA LUA. Crafted with care in Bristol.",
+  "screenshotsIntro": "A warm room on St Augustine’s Parade — the hum of the kitchen, the clink of glasses, and the smell of wood smoke from the pizza oven.",
+  "footerNote": "© LA PIAZZA 1. Crafted with care in Bristol.",
   "slug": "osteria-lua",
-  "_source": "osm"
+  "_source": "real-merchant"
 }

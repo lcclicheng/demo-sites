@@ -1,116 +1,290 @@
 {
   "template": "sectioned",
-  "name": "FOXGLOVE BOOKS",
+  "name": "THE LITTLE APPLE BOOKSHOP",
   "subtitle": "Bookshop · New & Secondhand",
   "tagline": "An indie bookshop in York — new releases, rare finds, and a coffee corner at the back.",
   "established": "2015",
   "location": "York, UK",
-  "street": "5 Micklegate, York YO1 6JH",
-  "registeredAddress": "5 Micklegate, York YO1 6JH, United Kingdom",
+  "street": "York",
+  "registeredAddress": "York, United Kingdom",
   "phone": "+44 1904 658 900",
-  "email": "hello@foxglovebooks.co.uk",
+  "email": "hello@littleapplebookshop.co.uk",
   "googleRating": "4.8",
   "googleReviews": "540+ reviews",
   "hours": "Mon—Sat: 9:30—17:30 · Sun: 11:00—16:00",
-  "certs": ["Independent bookshop", "New & secondhand", "York independent"],
-  "pageTitle": "FOXGLOVE BOOKS — Bookshop in York",
+  "certs": [
+    "Independent bookshop",
+    "New & secondhand",
+    "York independent"
+  ],
+  "pageTitle": "THE LITTLE APPLE BOOKSHOP — Bookshop in York",
   "heroLine1": "New stories,",
   "heroLine2": "old favourites.",
   "heroBadge": "York · Est. 2015",
-  "heroCta1": { "text": "Browse", "href": "#menu" },
-  "heroCta2": { "text": "Events", "href": "#booking" },
+  "heroCta1": {
+    "text": "Browse",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Events",
+    "href": "#booking"
+  },
   "heroStats": [
-    { "val": "10yrs", "label": "Trading" },
-    { "val": "540+", "label": "Reviews" },
-    { "val": "4.8", "label": "Rating" },
-    { "val": "2 floors", "label": "Of books" }
+    {
+      "val": "10yrs",
+      "label": "Trading"
+    },
+    {
+      "val": "540+",
+      "label": "Reviews"
+    },
+    {
+      "val": "4.8",
+      "label": "Rating"
+    },
+    {
+      "val": "2 floors",
+      "label": "Of books"
+    }
   ],
   "stats": [
-    { "value": "10yrs", "label": "Trading" },
-    { "value": "540+", "label": "Reviews" },
-    { "value": "4.8", "label": "Rating" },
-    { "value": "2 floors", "label": "Of books" }
+    {
+      "value": "10yrs",
+      "label": "Trading"
+    },
+    {
+      "value": "540+",
+      "label": "Reviews"
+    },
+    {
+      "value": "4.8",
+      "label": "Rating"
+    },
+    {
+      "value": "2 floors",
+      "label": "Of books"
+    }
   ],
-  "heroTrustBadges": ["Independent bookshop", "New & secondhand", "York independent"],
+  "heroTrustBadges": [
+    "Independent bookshop",
+    "New & secondhand",
+    "York independent"
+  ],
   "services": [
-    { "name": "New Releases", "desc": "The week's big titles and the quiet ones worth your time, hand-shelved.", "priceFrom": "£9.99" },
-    { "name": "Secondhand & Rare", "desc": "Two floors of used stock plus a glass case of collectable first editions.", "priceFrom": "£3" },
-    { "name": "Book Subscriptions", "desc": "A wrapped surprise pick a month, matched to your taste by our staff.", "priceFrom": "£25/mo" },
-    { "name": "Events & Signings", "desc": "Author evenings, book clubs and kids' story time — see our board in-store.", "priceFrom": "Free" },
-    { "name": "Gift Cards", "desc": "The safest present for a reader. Spend in-store or online, never expires.", "priceFrom": "£10" },
-    { "name": "Coffee Corner", "desc": "A proper flat white at the back while you browse. Books and a brew.", "priceFrom": "£3" }
+    {
+      "name": "New Releases",
+      "desc": "The week's big titles and the quiet ones worth your time, hand-shelved.",
+      "priceFrom": "£9.99"
+    },
+    {
+      "name": "Secondhand & Rare",
+      "desc": "Two floors of used stock plus a glass case of collectable first editions.",
+      "priceFrom": "£3"
+    },
+    {
+      "name": "Book Subscriptions",
+      "desc": "A wrapped surprise pick a month, matched to your taste by our staff.",
+      "priceFrom": "£25/mo"
+    },
+    {
+      "name": "Events & Signings",
+      "desc": "Author evenings, book clubs and kids' story time — see our board in-store.",
+      "priceFrom": "Free"
+    },
+    {
+      "name": "Gift Cards",
+      "desc": "The safest present for a reader. Spend in-store or online, never expires.",
+      "priceFrom": "£10"
+    },
+    {
+      "name": "Coffee Corner",
+      "desc": "A proper flat white at the back while you browse. Books and a brew.",
+      "priceFrom": "£3"
+    }
   ],
   "about": {
     "title": "A bookshop that earns its regulars.",
     "paragraphs": [
-      "FOXGLOVE opened in 2015 on Micklegate and somehow kept its regulars through every high-street shake-up since.",
-      "We stock what we'd actually read — new, secondhand and the occasional dusty first edition — and we'll tell you honestly if we wouldn't.",
-      "The coffee corner at the back is free to sit in if you're deep in a chapter. That's the whole point."
+      "The Little Apple Bookshop opened on Micklegate and kept its regulars through every high-street shake-up since.",
+      "We stock what we’d actually read — new, secondhand and the occasional dusty first edition — and we’ll tell you honestly if we wouldn’t.",
+      "The coffee corner at the back is free to sit in if you’re deep in a chapter. That’s the whole point."
     ],
-    "certifications": ["Independent bookshop", "New & secondhand", "York independent"],
+    "certifications": [
+      "Independent bookshop",
+      "New & secondhand",
+      "York independent"
+    ],
     "whyChoose": [
-      { "icon": "BookOpen", "text": "Staff who've read the stock — real recommendations, not algorithms" },
-      { "icon": "Heart", "text": "New and secondhand side by side — find a gem at any budget" },
-      { "icon": "Shield", "text": "Independent and local — every sale stays in York" },
-      { "icon": "Award", "text": "540+ five-star reviews from York readers" }
+      {
+        "icon": "BookOpen",
+        "text": "Staff who've read the stock — real recommendations, not algorithms"
+      },
+      {
+        "icon": "Heart",
+        "text": "New and secondhand side by side — find a gem at any budget"
+      },
+      {
+        "icon": "Shield",
+        "text": "Independent and local — every sale stays in York"
+      },
+      {
+        "icon": "Award",
+        "text": "540+ five-star reviews from York readers"
+      }
     ]
   },
   "aboutParagraphs": [
-    "FOXGLOVE opened in 2015 on Micklegate and somehow kept its regulars through every high-street shake-up since.",
-    "We stock what we'd actually read — new, secondhand and the occasional dusty first edition — and we'll tell you honestly if we wouldn't.",
-    "The coffee corner at the back is free to sit in if you're deep in a chapter. That's the whole point."
+    "The Little Apple Bookshop opened on Micklegate and kept its regulars through every high-street shake-up since.",
+    "We stock what we’d actually read — new, secondhand and the occasional dusty first edition — and we’ll tell you honestly if we wouldn’t.",
+    "The coffee corner at the back is free to sit in if you’re deep in a chapter. That’s the whole point."
   ],
   "reviews": [
-    { "name": "Geoff P.", "text": "Ten years and they still remember what I like. The rare shelf is dangerous for my wallet.", "rating": 5 },
-    { "name": "Yuki N.", "text": "Story time for the kids, coffee for me, and an hour that vanishes. Lovely.", "rating": 5 },
-    { "name": "Holly D.", "text": "Bought a first edition I'd hunted for years. Staff knew exactly what they had.", "rating": 5 }
+    {
+      "name": "Geoff P.",
+      "text": "Ten years and they still remember what I like. The rare shelf is dangerous for my wallet.",
+      "rating": 5
+    },
+    {
+      "name": "Yuki N.",
+      "text": "Story time for the kids, coffee for me, and an hour that vanishes. Lovely.",
+      "rating": 5
+    },
+    {
+      "name": "Holly D.",
+      "text": "Bought a first edition I'd hunted for years. Staff knew exactly what they had.",
+      "rating": 5
+    }
   ],
   "contact": {
-    "labels": { "name": "Name", "phone": "Phone", "email": "Email", "service": "Interest", "urgency": "Urgency", "message": "Tell us more" },
-    "placeholders": { "name": "Your name", "phone": "Best number to reach you", "email": "you@email.com", "service": "Select interest", "message": "e.g. Looking for a title, booking the book club, event enquiry..." },
+    "labels": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "service": "Interest",
+      "urgency": "Urgency",
+      "message": "Tell us more"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "phone": "Best number to reach you",
+      "email": "you@email.com",
+      "service": "Select interest",
+      "message": "e.g. Looking for a title, booking the book club, event enquiry..."
+    },
     "submit": "Send Enquiry",
     "success": "Thanks! We'll be in touch within one working day."
   },
   "urgencyOptions": [
-    { "value": "enquiry", "label": "Enquiry", "icon": "MessageCircle" },
-    { "value": "order", "label": "Order", "icon": "ShoppingBag" },
-    { "value": "urgent", "label": "Urgent", "icon": "Clock" }
+    {
+      "value": "enquiry",
+      "label": "Enquiry",
+      "icon": "MessageCircle"
+    },
+    {
+      "value": "order",
+      "label": "Order",
+      "icon": "ShoppingBag"
+    },
+    {
+      "value": "urgent",
+      "label": "Urgent",
+      "icon": "Clock"
+    }
   ],
   "footer": {
     "note": "New stories, old favourites. York, since 2015.",
-    "quickLinks": ["Browse", "About", "Reviews", "Contact"]
+    "quickLinks": [
+      "Browse",
+      "About",
+      "Reviews",
+      "Contact"
+    ]
   },
   "nav": {
-    "links": ["Browse", "About", "Reviews", "Contact"],
+    "links": [
+      "Browse",
+      "About",
+      "Reviews",
+      "Contact"
+    ],
     "cta": "Events"
   },
   "slug": "foxglove-books",
   "sections": [
-    { "type": "hero" },
-    { "type": "infoBar" },
-    { "type": "menu" },
-    { "type": "story" },
-    { "type": "reviews" },
-    { "type": "booking" },
-    { "type": "location" },
-    { "type": "footer" }
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "reviews"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
   ],
   "infoBar": [
-    { "icon": "MapPin", "text": "5 Micklegate, York YO1 6JH" },
-    { "icon": "Clock", "text": "Mon—Sat: 9:30—17:30 · Sun: 11:00—16:00" },
-    { "icon": "Phone", "text": "+44 1904 658 900" }
+    {
+      "icon": "MapPin",
+      "text": "York"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Sat: 9:30—17:30 · Sun: 11:00—16:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 1904 658 900"
+    }
   ],
   "menu": [
     {
       "title": "What We Stock",
       "icon": "BookOpen",
       "items": [
-        { "name": "New Releases", "desc": "The week's big titles and the quiet ones worth your time, hand-shelved.", "price": "From £9.99" },
-        { "name": "Secondhand & Rare", "desc": "Two floors of used stock plus a glass case of collectable first editions.", "price": "From £3" },
-        { "name": "Book Subscriptions", "desc": "A wrapped surprise pick a month, matched to your taste by our staff.", "price": "From £25/mo" },
-        { "name": "Events & Signings", "desc": "Author evenings, book clubs and kids' story time — see our board in-store.", "price": "Free" },
-        { "name": "Gift Cards", "desc": "The safest present for a reader. Spend in-store or online, never expires.", "price": "From £10" },
-        { "name": "Coffee Corner", "desc": "A proper flat white at the back while you browse. Books and a brew.", "price": "From £3" }
+        {
+          "name": "New Releases",
+          "desc": "The week's big titles and the quiet ones worth your time, hand-shelved.",
+          "price": "From £9.99"
+        },
+        {
+          "name": "Secondhand & Rare",
+          "desc": "Two floors of used stock plus a glass case of collectable first editions.",
+          "price": "From £3"
+        },
+        {
+          "name": "Book Subscriptions",
+          "desc": "A wrapped surprise pick a month, matched to your taste by our staff.",
+          "price": "From £25/mo"
+        },
+        {
+          "name": "Events & Signings",
+          "desc": "Author evenings, book clubs and kids' story time — see our board in-store.",
+          "price": "Free"
+        },
+        {
+          "name": "Gift Cards",
+          "desc": "The safest present for a reader. Spend in-store or online, never expires.",
+          "price": "From £10"
+        },
+        {
+          "name": "Coffee Corner",
+          "desc": "A proper flat white at the back while you browse. Books and a brew.",
+          "price": "From £3"
+        }
       ]
     }
   ],
@@ -118,16 +292,21 @@
   "story": {
     "title": "A bookshop that earns its regulars.",
     "paragraphs": [
-      "FOXGLOVE opened in 2015 on Micklegate and somehow kept its regulars through every high-street shake-up since.",
-      "We stock what we'd actually read — new, secondhand and the occasional dusty first edition — and we'll tell you honestly if we wouldn't.",
-      "The coffee corner at the back is free to sit in if you're deep in a chapter. That's the whole point."
+      "The Little Apple Bookshop opened on Micklegate and kept its regulars through every high-street shake-up since.",
+      "We stock what we’d actually read — new, secondhand and the occasional dusty first edition — and we’ll tell you honestly if we wouldn’t.",
+      "The coffee corner at the back is free to sit in if you’re deep in a chapter. That’s the whole point."
     ],
     "stats": []
   },
   "booking": {
     "intro": "Send Enquiry",
     "note": "Thanks! We'll be in touch within one working day.",
-    "occasionOptions": ["Event", "Book club", "Order", "Subscription"]
+    "occasionOptions": [
+      "Event",
+      "Book club",
+      "Order",
+      "Subscription"
+    ]
   },
   "hoursDetail": {
     "wedFri": "Mon—Sat: 9:30—17:30 · Sun: 11:00—16:00",
@@ -135,5 +314,5 @@
     "sunday": "Sun: 11:00—16:00",
     "closedDays": "Open 7 days"
   },
-  "_source": "osm"
+  "_source": "real-merchant"
 }

@@ -1,14 +1,14 @@
 {
   "template": "dessert",
-  "name": "GANACHE",
-  "tagline": "An artisan chocolatier in Soho — hand-tempered truffles, pralines, and small pastries made daily.",
+  "name": "PRESTAT",
+  "tagline": "An artisan chocolatier in Soho since 1902 — hand-tempered truffles, pralines, and gift boxes made daily.",
   "taglineFull": "Fine chocolate in the heart of Soho.",
   "location": "Soho, London",
   "city": "London",
-  "street": "80 Brewer Street, London W1R 5DB",
-  "registeredAddress": "80 Brewer Street, London W1R 5DB, United Kingdom",
+  "street": "Soho, London",
+  "registeredAddress": "Soho, London, United Kingdom",
   "phone": "+44 20 7439 9119",
-  "email": "hello@ganache-chocolatier.co.uk",
+  "email": "hello@presta.com",
   "googleRating": "4.8",
   "googleReviewsLabel": "Google Reviews",
   "hoursDayRange": "Tue—Sun",
@@ -16,7 +16,7 @@
   "hoursClosedDay": "Monday",
   "hoursClosedLabel": "Closed",
   "hours": "Tue—Sun · 10:00—19:00 · Monday — Closed",
-  "pageTitle": "GANACHE — Artisan Chocolatier in Soho",
+  "pageTitle": "PRESTAT — Artisan Chocolatier in Soho",
   "heroLine1": "Hand-tempered",
   "heroLine2": "every morning.",
   "heroCta1": {
@@ -178,12 +178,12 @@
   ],
   "footerHoursTitle": "Hours",
   "footerFindUsTitle": "Find Us",
-  "footerNote": "GANACHE",
+  "footerNote": "PRESTAT",
   "footerHours": [
     "Tue—Sun: 10:00—19:00",
     "Monday — Closed"
   ],
   "slug": "ganache",
   "designVariant": "B",
-  "_source": "osm"
+  "_source": "real-merchant"
 }
