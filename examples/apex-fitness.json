@@ -1,0 +1,139 @@
+{
+  "template": "sectioned",
+  "name": "APEX FITNESS STUDIO",
+  "subtitle": "Gym · Strength & Conditioning",
+  "tagline": "A boutique strength studio in Leeds — real coaching, small classes, and no crowded gym floor.",
+  "established": "2019",
+  "location": "Leeds, UK",
+  "street": "8 Boar Lane, Leeds LS1 6EN",
+  "registeredAddress": "8 Boar Lane, Leeds LS1 6EN, United Kingdom",
+  "phone": "+44 113 245 7788",
+  "email": "hello@apexfitness.co.uk",
+  "googleRating": "4.8",
+  "googleReviews": "320+ reviews",
+  "hours": "Mon—Fri: 6:00—21:00 · Sat—Sun: 8:00—16:00",
+  "certs": ["Qualified coaches", "Small-group training", "Leeds independent"],
+  "pageTitle": "APEX FITNESS STUDIO — Gym in Leeds",
+  "heroLine1": "Get stronger,",
+  "heroLine2": "for real.",
+  "heroBadge": "Leeds · Est. 2019",
+  "heroCta1": { "text": "Start Trial", "href": "#booking" },
+  "heroCta2": { "text": "Our Sessions", "href": "#menu" },
+  "heroStats": [
+    { "val": "6yrs", "label": "Coaching" },
+    { "val": "320+", "label": "Reviews" },
+    { "val": "4.8", "label": "Rating" },
+    { "val": "8ppl", "label": "Max class" }
+  ],
+  "stats": [
+    { "value": "6yrs", "label": "Coaching" },
+    { "value": "320+", "label": "Reviews" },
+    { "value": "4.8", "label": "Rating" },
+    { "value": "8ppl", "label": "Max class" }
+  ],
+  "heroTrustBadges": ["Qualified coaches", "Small-group training", "Leeds independent"],
+  "services": [
+    { "name": "Personal Training", "desc": "One-to-one blocks built around your goals and your schedule.", "priceFrom": "£45/session" },
+    { "name": "Strength Classes", "desc": "Coached barbell and dumbbell sessions, capped at eight people.", "priceFrom": "£18/class" },
+    { "name": "HIIT", "desc": "30-minute conditioning blasts to build engine and burn off the week.", "priceFrom": "£14/class" },
+    { "name": "Nutrition Plan", "desc": "Simple, sustainable eating guidance — no fad diets, no shakes.", "priceFrom": "£60" },
+    { "name": "Onboarding", "desc": "Two sessions to teach the lifts and set your baseline. New members only.", "priceFrom": "£30" },
+    { "name": "Membership", "desc": "Unlimited classes, members app, and a free programme review each month.", "priceFrom": "£89/mo" }
+  ],
+  "about": {
+    "title": "Strength without the noise.",
+    "paragraphs": [
+      "APEX opened in 2019 because we were tired of gyms that sell you a contract and forget your name. We built the studio we wanted instead.",
+      "Our coaches actually coach — they watch your form, adjust the plan, and keep classes small enough to notice.",
+      "No mirrors-to-the-ceiling, no juice bar upsell. Just training that works, with people who care."
+    ],
+    "certifications": ["Qualified coaches", "Small-group training", "Leeds independent"],
+    "whyChoose": [
+      { "icon": "Dumbbell", "text": "Coached sessions — real form checks, not a QR code" },
+      { "icon": "Users", "text": "Classes capped at eight — you're never lost in the room" },
+      { "icon": "Shield", "text": "Qualified, insured coaches with a plan for every level" },
+      { "icon": "Award", "text": "320+ five-star reviews across Leeds" }
+    ]
+  },
+  "aboutParagraphs": [
+    "APEX opened in 2019 because we were tired of gyms that sell you a contract and forget your name. We built the studio we wanted instead.",
+    "Our coaches actually coach — they watch your form, adjust the plan, and keep classes small enough to notice.",
+    "No mirrors-to-the-ceiling, no juice bar upsell. Just training that works, with people who care."
+  ],
+  "reviews": [
+    { "name": "Hannah W.", "text": "First gym where I've actually stuck with it. The coaches know exactly where I'm at.", "rating": 5 },
+    { "name": "Dean M.", "text": "PT blocks got me my first pull-up at 41. Worth every penny.", "rating": 5 },
+    { "name": "Priya S.", "text": "Small classes mean no hiding at the back. Best decision for my strength.", "rating": 5 }
+  ],
+  "contact": {
+    "labels": { "name": "Name", "phone": "Phone", "email": "Email", "service": "Interest", "urgency": "Urgency", "message": "Tell us more" },
+    "placeholders": { "name": "Your name", "phone": "Best number to reach you", "email": "you@email.com", "service": "Select interest", "message": "e.g. Free trial week, personal training, strength classes..." },
+    "submit": "Book Trial",
+    "success": "Thanks! We'll be in touch within one working day to get you started."
+  },
+  "urgencyOptions": [
+    { "value": "enquiry", "label": "Enquiry", "icon": "MessageCircle" },
+    { "value": "order", "label": "Trial", "icon": "Calendar" },
+    { "value": "urgent", "label": "Urgent", "icon": "Clock" }
+  ],
+  "footer": {
+    "note": "Strength without the noise. Leeds, since 2019.",
+    "quickLinks": ["Sessions", "About", "Reviews", "Contact"]
+  },
+  "nav": {
+    "links": ["Sessions", "About", "Reviews", "Contact"],
+    "cta": "Trial"
+  },
+  "slug": "apex-fitness",
+  "sections": [
+    { "type": "hero" },
+    { "type": "infoBar" },
+    { "type": "menu" },
+    { "type": "story" },
+    { "type": "reviews" },
+    { "type": "booking" },
+    { "type": "location" },
+    { "type": "footer" }
+  ],
+  "infoBar": [
+    { "icon": "MapPin", "text": "8 Boar Lane, Leeds LS1 6EN" },
+    { "icon": "Clock", "text": "Mon—Fri: 6:00—21:00 · Sat—Sun: 8:00—16:00" },
+    { "icon": "Phone", "text": "+44 113 245 7788" }
+  ],
+  "menu": [
+    {
+      "title": "What We Do",
+      "icon": "Dumbbell",
+      "items": [
+        { "name": "Personal Training", "desc": "One-to-one blocks built around your goals and your schedule.", "price": "From £45/session" },
+        { "name": "Strength Classes", "desc": "Coached barbell and dumbbell sessions, capped at eight people.", "price": "From £18/class" },
+        { "name": "HIIT", "desc": "30-minute conditioning blasts to build engine and burn off the week.", "price": "From £14/class" },
+        { "name": "Nutrition Plan", "desc": "Simple, sustainable eating guidance — no fad diets, no shakes.", "price": "From £60" },
+        { "name": "Onboarding", "desc": "Two sessions to teach the lifts and set your baseline. New members only.", "price": "From £30" },
+        { "name": "Membership", "desc": "Unlimited classes, members app, and a free programme review each month.", "price": "From £89/mo" }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Gym · Strength & Conditioning",
+  "story": {
+    "title": "Strength without the noise.",
+    "paragraphs": [
+      "APEX opened in 2019 because we were tired of gyms that sell you a contract and forget your name. We built the studio we wanted instead.",
+      "Our coaches actually coach — they watch your form, adjust the plan, and keep classes small enough to notice.",
+      "No mirrors-to-the-ceiling, no juice bar upsell. Just training that works, with people who care."
+    ],
+    "stats": []
+  },
+  "booking": {
+    "intro": "Book Trial",
+    "note": "Thanks! We'll be in touch within one working day to get you started.",
+    "occasionOptions": ["PT Trial", "Strength Class", "HIIT", "Membership"]
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Fri: 6:00—21:00 · Sat—Sun: 8:00—16:00",
+    "saturday": "Mon—Fri: 6:00—21:00 · Sat—Sun: 8:00—16:00",
+    "sunday": "Sat—Sun: 8:00—16:00",
+    "closedDays": "Open 7 days"
+  },
+  "_source": "osm"
+}

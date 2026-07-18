@@ -581,6 +581,81 @@ const THEMES = {
       ["'\"Playfair Display\"'", "'\"DM Serif Display\"'"],
     ],
   },
+
+  // KINGSMAN · 理发店 demo → oxblood 暗红（sectioned 三色基底，与现有金/绿/橙/紫/兰紫全不撞）
+  'kingsman-barbers': {
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#f6f4f1'"],
+      ["ink:'#1c1917'", "ink:'#1a1714'"],
+      ["accent:'#b8895a'", "accent:'#9b2226'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#f6f4f1'],
+      ['color:#1c1917', 'color:#1a1714'],
+      ['rgba(184,137,90,0.2)', 'rgba(155,34,38,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(155,34,38,0.25)'],
+    ],
+  },
+
+  // APEX · 健身房 demo → electric cyan（sectioned 三色基底）
+  'apex-fitness': {
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#f8fafc'"],
+      ["ink:'#1c1917'", "ink:'#111827'"],
+      ["accent:'#b8895a'", "accent:'#06b6d4'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#f8fafc'],
+      ['color:#1c1917', 'color:#111827'],
+      ['rgba(184,137,90,0.2)', 'rgba(6,182,212,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(6,182,212,0.25)'],
+    ],
+  },
+
+  // LUMEN · 摄影师 demo → indigo 靛蓝（sectioned 三色基底）
+  'lumen-studio': {
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#fafafa'"],
+      ["ink:'#1c1917'", "ink:'#18181b'"],
+      ["accent:'#b8895a'", "accent:'#4338ca'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#fafafa'],
+      ['color:#1c1917', 'color:#18181b'],
+      ['rgba(184,137,90,0.2)', 'rgba(67,56,202,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(67,56,202,0.25)'],
+    ],
+  },
+
+  // PAWS · 宠物美容 demo → soft pink（sectioned 三色基底）
+  'paws-pamper': {
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#fdf8fb'"],
+      ["ink:'#1c1917'", "ink:'#3f3a42'"],
+      ["accent:'#b8895a'", "accent:'#f472b6'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#fdf8fb'],
+      ['color:#1c1917', 'color:#3f3a42'],
+      ['rgba(184,137,90,0.2)', 'rgba(244,114,182,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(244,114,182,0.25)'],
+    ],
+  },
+
+  // FOXGLOVE · 书店 demo → deep violet 深紫罗兰（区别于 bloom 兰紫 #9d6b9c）
+  'foxglove-books': {
+    twReplace: [
+      ["surface:'#faf9f7'", "surface:'#faf8f3'"],
+      ["ink:'#1c1917'", "ink:'#1c1917'"],
+      ["accent:'#b8895a'", "accent:'#6d28d9'"],
+    ],
+    cssReplace: [
+      ['background:#faf9f7', 'background:#faf8f3'],
+      ['color:#1c1917', 'color:#1c1917'],
+      ['rgba(184,137,90,0.2)', 'rgba(109,40,217,0.2)'],
+      ['rgba(184,137,90,0.25)', 'rgba(109,40,217,0.25)'],
+    ],
+  },
 }
 
 // 对 base 字符串按 [old,new] 列表做全量替换；未命中的替换打印警告（便于发现模板改动导致的失配）

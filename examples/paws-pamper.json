@@ -1,0 +1,139 @@
+{
+  "template": "sectioned",
+  "name": "PAWS & PAMPER",
+  "subtitle": "Pet Grooming · Dog & Cat Spa",
+  "tagline": "Gentle, fear-free grooming for dogs and cats in Bristol — calm hands, tidy coats, happy pets.",
+  "established": "2020",
+  "location": "Bristol, UK",
+  "street": "11 Cotham Hill, Bristol BS6 6LD",
+  "registeredAddress": "11 Cotham Hill, Bristol BS6 6LD, United Kingdom",
+  "phone": "+44 117 929 3344",
+  "email": "hello@pawspamper.co.uk",
+  "googleRating": "4.9",
+  "googleReviews": "260+ reviews",
+  "hours": "Tue—Sat: 9:00—17:00 · Sun: 10:00—14:00",
+  "certs": ["Fear-free handling", "Cat-friendly separation", "Bristol independent"],
+  "pageTitle": "PAWS & PAMPER — Pet Grooming in Bristol",
+  "heroLine1": "Calm coats,",
+  "heroLine2": "happy pets.",
+  "heroBadge": "Bristol · Est. 2020",
+  "heroCta1": { "text": "Book Groom", "href": "#booking" },
+  "heroCta2": { "text": "Our Services", "href": "#menu" },
+  "heroStats": [
+    { "val": "5yrs", "label": "Grooming" },
+    { "val": "260+", "label": "Reviews" },
+    { "val": "4.9", "label": "Rating" },
+    { "val": "F-F", "label": "Fear-free" }
+  ],
+  "stats": [
+    { "value": "5yrs", "label": "Grooming" },
+    { "value": "260+", "label": "Reviews" },
+    { "value": "4.9", "label": "Rating" },
+    { "value": "F-F", "label": "Fear-free" }
+  ],
+  "heroTrustBadges": ["Fear-free handling", "Cat-friendly separation", "Bristol independent"],
+  "services": [
+    { "name": "Full Groom", "desc": "Wash, dry, full clip or scissor cut, nails, ears and a bow.", "priceFrom": "£45" },
+    { "name": "Bath & Tidy", "desc": "For in-between visits — clean coat, face and paws neatened.", "priceFrom": "£30" },
+    { "name": "Puppy Intro", "desc": "Gentle first visits so little ones learn the salon is safe.", "priceFrom": "£25" },
+    { "name": "Nail & Paw", "desc": "Nail trim and paw balm — quick, no fuss, no stress.", "priceFrom": "£15" },
+    { "name": "De-shed", "desc": "Undercoat blow-out for the heavy moult seasons. Your hoover will thank you.", "priceFrom": "£35" },
+    { "name": "Spa Package", "desc": "Full groom plus blueberry facial, pawdicure and a bandana.", "priceFrom": "£55" }
+  ],
+  "about": {
+    "title": "Grooming without the stress.",
+    "paragraphs": [
+      "PAWS & PAMPER opened in 2020 after years of watching nervous pets dread the groomer. We built the opposite.",
+      "Dogs and cats are handled separately, sessions are calm and unrushed, and anxious animals get all the time they need.",
+      "We'd rather take longer and send a relaxed pet home than rush a frightened one out the door."
+    ],
+    "certifications": ["Fear-free handling", "Cat-friendly separation", "Bristol independent"],
+    "whyChoose": [
+      { "icon": "PawPrint", "text": "Fear-free handling — anxious pets welcome, no rush" },
+      { "icon": "Heart", "text": "Dogs and cats kept separate and calm throughout" },
+      { "icon": "Shield", "text": "Fully insured, trained groomers with first-aid know-how" },
+      { "icon": "Award", "text": "260+ five-star reviews across Bristol" }
+    ]
+  },
+  "aboutParagraphs": [
+    "PAWS & PAMPER opened in 2020 after years of watching nervous pets dread the groomer. We built the opposite.",
+    "Dogs and cats are handled separately, sessions are calm and unrushed, and anxious animals get all the time they need.",
+    "We'd rather take longer and send a relaxed pet home than rush a frightened one out the door."
+  ],
+  "reviews": [
+    { "name": "Lucy T.", "text": "My rescue terrier used to shake at the door. Now he trots in. That says everything.", "rating": 5 },
+    { "name": "Ben R.", "text": "Cat grooming done properly — separated from dogs, super gentle. Thank you.", "rating": 5 },
+    { "name": "Amara O.", "text": "Spa package for our old lab and she came home glowing. Worth every penny.", "rating": 5 }
+  ],
+  "contact": {
+    "labels": { "name": "Name", "phone": "Phone", "email": "Email", "service": "Interest", "urgency": "Urgency", "message": "Tell us more" },
+    "placeholders": { "name": "Your name", "phone": "Best number to reach you", "email": "you@email.com", "service": "Select interest", "message": "e.g. Full groom for a nervous cocker, puppy intro, de-shed..." },
+    "submit": "Book Groom",
+    "success": "Thanks! We'll confirm your slot within one working day."
+  },
+  "urgencyOptions": [
+    { "value": "enquiry", "label": "Enquiry", "icon": "MessageCircle" },
+    { "value": "order", "label": "Book", "icon": "Calendar" },
+    { "value": "urgent", "label": "Urgent", "icon": "Clock" }
+  ],
+  "footer": {
+    "note": "Calm coats, happy pets. Bristol, since 2020.",
+    "quickLinks": ["Services", "About", "Reviews", "Contact"]
+  },
+  "nav": {
+    "links": ["Services", "About", "Reviews", "Contact"],
+    "cta": "Book"
+  },
+  "slug": "paws-pamper",
+  "sections": [
+    { "type": "hero" },
+    { "type": "infoBar" },
+    { "type": "menu" },
+    { "type": "story" },
+    { "type": "reviews" },
+    { "type": "booking" },
+    { "type": "location" },
+    { "type": "footer" }
+  ],
+  "infoBar": [
+    { "icon": "MapPin", "text": "11 Cotham Hill, Bristol BS6 6LD" },
+    { "icon": "Clock", "text": "Tue—Sat: 9:00—17:00 · Sun: 10:00—14:00" },
+    { "icon": "Phone", "text": "+44 117 929 3344" }
+  ],
+  "menu": [
+    {
+      "title": "What We Do",
+      "icon": "PawPrint",
+      "items": [
+        { "name": "Full Groom", "desc": "Wash, dry, full clip or scissor cut, nails, ears and a bow.", "price": "From £45" },
+        { "name": "Bath & Tidy", "desc": "For in-between visits — clean coat, face and paws neatened.", "price": "From £30" },
+        { "name": "Puppy Intro", "desc": "Gentle first visits so little ones learn the salon is safe.", "price": "From £25" },
+        { "name": "Nail & Paw", "desc": "Nail trim and paw balm — quick, no fuss, no stress.", "price": "From £15" },
+        { "name": "De-shed", "desc": "Undercoat blow-out for the heavy moult seasons. Your hoover will thank you.", "price": "From £35" },
+        { "name": "Spa Package", "desc": "Full groom plus blueberry facial, pawdicure and a bandana.", "price": "From £55" }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Pet Grooming · Dog & Cat Spa",
+  "story": {
+    "title": "Grooming without the stress.",
+    "paragraphs": [
+      "PAWS & PAMPER opened in 2020 after years of watching nervous pets dread the groomer. We built the opposite.",
+      "Dogs and cats are handled separately, sessions are calm and unrushed, and anxious animals get all the time they need.",
+      "We'd rather take longer and send a relaxed pet home than rush a frightened one out the door."
+    ],
+    "stats": []
+  },
+  "booking": {
+    "intro": "Book Groom",
+    "note": "Thanks! We'll confirm your slot within one working day.",
+    "occasionOptions": ["Full Groom", "Bath & Tidy", "Puppy Intro", "Spa"]
+  },
+  "hoursDetail": {
+    "wedFri": "Tue—Sat: 9:00—17:00 · Sun: 10:00—14:00",
+    "saturday": "Tue—Sat: 9:00—17:00 · Sun: 10:00—14:00",
+    "sunday": "Sun: 10:00—14:00",
+    "closedDays": "Closed Monday"
+  },
+  "_source": "osm"
+}

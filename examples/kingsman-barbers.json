@@ -1,0 +1,139 @@
+{
+  "template": "sectioned",
+  "name": "KINGSMAN BARBERS",
+  "subtitle": "Barbershop · Gentlemen's Grooming",
+  "tagline": "Classic men's barbering in Manchester's Northern Quarter — sharp cuts, hot-towel shaves, and beards shaped by hand.",
+  "established": "2016",
+  "location": "Manchester, UK",
+  "street": "14 Turner Street, Manchester M4 1DZ",
+  "registeredAddress": "14 Turner Street, Manchester M4 1DZ, United Kingdom",
+  "phone": "+44 161 834 0022",
+  "email": "hello@kingsmanbarbers.co.uk",
+  "googleRating": "4.9",
+  "googleReviews": "410+ reviews",
+  "hours": "Mon—Sat: 9:00—19:00 · Sun: 11:00—16:00",
+  "certs": ["Master Barbers", "Traditional hot-towel", "Manchester independent"],
+  "pageTitle": "KINGSMAN BARBERS — Barbershop in Manchester",
+  "heroLine1": "Sharp cuts,",
+  "heroLine2": "properly done.",
+  "heroBadge": "Manchester · Est. 2016",
+  "heroCta1": { "text": "Book a Cut", "href": "#booking" },
+  "heroCta2": { "text": "Our Services", "href": "#menu" },
+  "heroStats": [
+    { "val": "9yrs", "label": "Cutting" },
+    { "val": "410+", "label": "Reviews" },
+    { "val": "4.9", "label": "Rating" },
+    { "val": "MCR", "label": "Born" }
+  ],
+  "stats": [
+    { "value": "9yrs", "label": "Cutting" },
+    { "value": "410+", "label": "Reviews" },
+    { "value": "4.9", "label": "Rating" },
+    { "value": "MCR", "label": "Born" }
+  ],
+  "heroTrustBadges": ["Master Barbers", "Traditional hot-towel", "Manchester independent"],
+  "services": [
+    { "name": "Skin Fade", "desc": "Precision fade with clippers and scissors, finished sharp.", "priceFrom": "£22" },
+    { "name": "Classic Cut", "desc": "Scissor cut with wash, hot towel and a straight-razor neckline.", "priceFrom": "£26" },
+    { "name": "Hot-Towel Shave", "desc": "Full traditional wet shave — lather, steam, and a clean finish.", "priceFrom": "£28" },
+    { "name": "Beard Sculpt", "desc": "Shape, line-up and conditioning oil to keep it tidy.", "priceFrom": "£18" },
+    { "name": "Kids' Cut", "desc": "Patient cuts for the smaller gentlemen. Under 12s.", "priceFrom": "£15" },
+    { "name": "Head Shave", "desc": "Bowl-free, smooth, with hot towel and aftercare.", "priceFrom": "£20" }
+  ],
+  "about": {
+    "title": "A proper barbershop, since 2016.",
+    "paragraphs": [
+      "KINGSMAN started in 2016 above a fabric shop on Turner Street. We built it for the kind of haircut you can't get at a high-street chain.",
+      "Every cut is done by a barber who's been with us for years — no rotating chairs, no upsell, just a good cut and a proper shave.",
+      "We keep it simple: walk in or book, sit down, leave looking right."
+    ],
+    "certifications": ["Master Barbers", "Traditional hot-towel", "Manchester independent"],
+    "whyChoose": [
+      { "icon": "Scissors", "text": "Barbers who've been with us for years — your cut stays consistent" },
+      { "icon": "Clock", "text": "Book ahead or walk in — we run on time" },
+      { "icon": "Shield", "text": "Clean blades, sanitised kit, every single client" },
+      { "icon": "Award", "text": "410+ five-star reviews across Manchester" }
+    ]
+  },
+  "aboutParagraphs": [
+    "KINGSMAN started in 2016 above a fabric shop on Turner Street. We built it for the kind of haircut you can't get at a high-street chain.",
+    "Every cut is done by a barber who's been with us for years — no rotating chairs, no upsell, just a good cut and a proper shave.",
+    "We keep it simple: walk in or book, sit down, leave looking right."
+  ],
+  "reviews": [
+    { "name": "Tom B.", "text": "Best fade in the Northern Quarter, and they remember your name.", "rating": 5 },
+    { "name": "Rishi K.", "text": "The hot-towel shave is genuinely the best half hour in Manchester.", "rating": 5 },
+    { "name": "Marcus L.", "text": "Took my son for his first proper cut — patient and brilliant.", "rating": 5 }
+  ],
+  "contact": {
+    "labels": { "name": "Name", "phone": "Phone", "email": "Email", "service": "Interest", "urgency": "Urgency", "message": "Tell us more" },
+    "placeholders": { "name": "Your name", "phone": "Best number to reach you", "email": "you@email.com", "service": "Select interest", "message": "e.g. Skin fade for Friday, beard sculpt before a wedding..." },
+    "submit": "Book Appointment",
+    "success": "Thanks! We'll confirm your slot within one working day."
+  },
+  "urgencyOptions": [
+    { "value": "enquiry", "label": "Enquiry", "icon": "MessageCircle" },
+    { "value": "order", "label": "Book", "icon": "Calendar" },
+    { "value": "urgent", "label": "Urgent", "icon": "Clock" }
+  ],
+  "footer": {
+    "note": "Sharp cuts and proper shaves. Manchester, since 2016.",
+    "quickLinks": ["Services", "About", "Reviews", "Contact"]
+  },
+  "nav": {
+    "links": ["Services", "About", "Reviews", "Contact"],
+    "cta": "Book"
+  },
+  "slug": "kingsman-barbers",
+  "sections": [
+    { "type": "hero" },
+    { "type": "infoBar" },
+    { "type": "menu" },
+    { "type": "story" },
+    { "type": "reviews" },
+    { "type": "booking" },
+    { "type": "location" },
+    { "type": "footer" }
+  ],
+  "infoBar": [
+    { "icon": "MapPin", "text": "14 Turner Street, Manchester M4 1DZ" },
+    { "icon": "Clock", "text": "Mon—Sat: 9:00—19:00 · Sun: 11:00—16:00" },
+    { "icon": "Phone", "text": "+44 161 834 0022" }
+  ],
+  "menu": [
+    {
+      "title": "What We Do",
+      "icon": "Scissors",
+      "items": [
+        { "name": "Skin Fade", "desc": "Precision fade with clippers and scissors, finished sharp.", "price": "From £22" },
+        { "name": "Classic Cut", "desc": "Scissor cut with wash, hot towel and a straight-razor neckline.", "price": "From £26" },
+        { "name": "Hot-Towel Shave", "desc": "Full traditional wet shave — lather, steam, and a clean finish.", "price": "From £28" },
+        { "name": "Beard Sculpt", "desc": "Shape, line-up and conditioning oil to keep it tidy.", "price": "From £18" },
+        { "name": "Kids' Cut", "desc": "Patient cuts for the smaller gentlemen. Under 12s.", "price": "From £15" },
+        { "name": "Head Shave", "desc": "Bowl-free, smooth, with hot towel and aftercare.", "price": "From £20" }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Barbershop · Gentlemen's Grooming",
+  "story": {
+    "title": "A proper barbershop, since 2016.",
+    "paragraphs": [
+      "KINGSMAN started in 2016 above a fabric shop on Turner Street. We built it for the kind of haircut you can't get at a high-street chain.",
+      "Every cut is done by a barber who's been with us for years — no rotating chairs, no upsell, just a good cut and a proper shave.",
+      "We keep it simple: walk in or book, sit down, leave looking right."
+    ],
+    "stats": []
+  },
+  "booking": {
+    "intro": "Book Appointment",
+    "note": "Thanks! We'll confirm your slot within one working day.",
+    "occasionOptions": ["Skin Fade", "Classic Cut", "Hot-Towel Shave", "Beard Sculpt"]
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Sat: 9:00—19:00 · Sun: 11:00—16:00",
+    "saturday": "Mon—Sat: 9:00—19:00 · Sun: 11:00—16:00",
+    "sunday": "Sun: 11:00—16:00",
+    "closedDays": "Closed Monday? No — open Mon—Sat"
+  },
+  "_source": "osm"
+}
