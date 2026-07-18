@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Sparkles } from 'lucide-react'
 import { salonData } from './business-data'
-import { HeroBackdrop, GradientText, SquareMonogram, Eyebrow } from './components/visual'
+import { HeroBackdrop, GradientText, SquareMonogram, Eyebrow, GlassCard } from './components/visual'
 const d = salonData
 
 
@@ -90,8 +90,6 @@ export default function App() {
 
   return (
     <div className="bg-ivory text-plum font-body">
-      <style dangerouslySetInnerHTML={{ __html: `body{background:#faf7f2;color:#3d1c3d;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}::selection{background:rgba(212,165,116,0.3)}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#faf7f2}::-webkit-scrollbar-thumb{background:rgba(61,28,61,0.15);border-radius:2px}` }} />
-
       <nav className="fixed top-0 left-0 right-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-plum/5">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16 sm:h-20">
           <a href="#" className="flex items-center gap-3"><div className="w-px h-6 bg-gold" /><span className="font-display text-xl sm:text-2xl italic text-plum tracking-tight">{d.name}</span></a>
@@ -114,19 +112,45 @@ export default function App() {
         <div className="absolute left-8 sm:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent hidden lg:block"/>
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:pl-20 sm:pr-8 w-full mt-16 sm:mt-0">
-          <motion.div initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}}>
-            <div className="flex items-center gap-3 mb-6"><div className="h-px w-8 bg-gold/40"/><Eyebrow className="text-plum/40">{d.heroBadge}</Eyebrow></div>
-            <h1 className="font-display text-7xl sm:text-[12vw] lg:text-[10rem] font-bold italic leading-[0.85] text-plum mb-3 break-words"><GradientText>{d.heroLine1}</GradientText></h1>
-            <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8 tracking-wide measure-lg">{d.heroLine2}</p>
-            <div className="flex items-center gap-4 mb-8">
+          {(d as any).designVariant === 'B' ? (
+          /* Variant B — centered single column (contrast with A's asymmetric split-card grid) */
+          <motion.div initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}} className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-3 mb-6"><div className="h-px w-8 bg-gold/40"/><Eyebrow className="text-plum/40">{d.heroBadge}</Eyebrow><div className="h-px w-8 bg-gold/40"/></div>
+            <h1 className="font-display text-7xl sm:text-[11vw] lg:text-[9rem] font-bold italic leading-[0.88] text-plum mb-3 break-words"><GradientText>{d.heroLine1}</GradientText></h1>
+            <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8 tracking-wide">{d.heroLine2}</p>
+            <div className="flex items-center justify-center gap-4 mb-8">
               <div className="flex gap-0.5">{Array(5).fill(0).map((_,i)=><Star key={i} className="w-4 h-4 fill-gold text-gold"/>)}</div>
               <span className="text-sm text-plum/40">{d.googleRating} · {d.googleReviews}</span>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#book" className="px-8 py-4 rounded-full bg-plum text-ivory text-sm font-medium hover:bg-plum/90 inline-flex items-center justify-center gap-2 group w-full sm:w-auto">{d?.heroCta1?.text}<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/></a>
               <a href="#services" className="px-8 py-4 rounded-full border border-plum/15 text-plum text-sm font-medium hover:border-gold/40 hover:text-gold transition-all duration-500 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text}<Sparkles className="w-4 h-4"/></a>
             </div>
           </motion.div>
+          ) : (
+          <div className="grid lg:grid-cols-12 gap-10 items-end">
+            <motion.div initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}} className="lg:col-span-7">
+              <div className="flex items-center gap-3 mb-6"><div className="h-px w-8 bg-gold/40"/><Eyebrow className="text-plum/40">{d.heroBadge}</Eyebrow></div>
+              <h1 className="font-display text-7xl sm:text-[12vw] lg:text-[10rem] font-bold italic leading-[0.85] text-plum mb-3 break-words"><GradientText>{d.heroLine1}</GradientText></h1>
+              <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8 tracking-wide measure-lg">{d.heroLine2}</p>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="flex gap-0.5">{Array(5).fill(0).map((_,i)=><Star key={i} className="w-4 h-4 fill-gold text-gold"/>)}</div>
+                <span className="text-sm text-plum/40">{d.googleRating} · {d.googleReviews}</span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="#book" className="px-8 py-4 rounded-full bg-plum text-ivory text-sm font-medium hover:bg-plum/90 inline-flex items-center justify-center gap-2 group w-full sm:w-auto">{d?.heroCta1?.text}<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/></a>
+                <a href="#services" className="px-8 py-4 rounded-full border border-plum/15 text-plum text-sm font-medium hover:border-gold/40 hover:text-gold transition-all duration-500 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text}<Sparkles className="w-4 h-4"/></a>
+              </div>
+            </motion.div>
+            <motion.div initial={{opacity:0,scale:0.96}} animate={{opacity:1,scale:1}} transition={{duration:1,delay:0.15}} className="lg:col-span-5 hidden lg:block">
+              <GlassCard className="p-10 text-center">
+                <SquareMonogram initials={(d.name||'').split(' ').map((w:string)=>w[0]).join('').slice(0,2).toUpperCase()} className="mx-auto mb-5" />
+                <div className="flex justify-center gap-0.5 mb-3">{Array(5).fill(0).map((_,i)=><Star key={i} className="w-5 h-5 fill-gold text-gold"/>)}</div>
+                <p className="text-sm text-plum/50">{d.googleRating} · {d.googleReviews}</p>
+              </GlassCard>
+            </motion.div>
+          </div>
+          )}
         </div>
       </section>
 
@@ -151,9 +175,11 @@ export default function App() {
       <section id="stylists" className="py-28 bg-ivory relative section-rule"><div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px]"/><div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
         <motion.div {...fadeIn} className="text-center mb-14"><div className="flex items-center justify-center gap-3 mb-4"><div className="h-px w-8 bg-gold/30"/><Eyebrow className="text-gold">Meet the Team</Eyebrow><div className="h-px w-8 bg-gold/30"/></div><h2 className="font-display text-4xl sm:text-5xl italic text-plum">Artists at <span className="text-gold not-italic">work</span>.</h2></motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          {(d.stylists || []).map((s,i)=><motion.div key={i} {...fadeIn} className="group bg-white rounded-xl p-8 text-center border border-plum/5 hover:-translate-y-1 transition-all duration-500 hover:border-gold/20">
-            <SquareMonogram initials={s.initials} className="mx-auto mb-4" />
-            <h4 className="font-display text-lg font-semibold text-plum mb-1">{s.name}</h4><p className="text-xs text-gold font-medium mb-3">{s.role}</p><p className="text-xs text-plum/60 leading-relaxed">{s.specialty}</p>
+          {(d.stylists || []).map((s,i)=><motion.div key={i} {...fadeIn} className="group hover:-translate-y-1 transition-all duration-500">
+            <GlassCard className="p-8 text-center h-full">
+              <SquareMonogram initials={s.initials} className="mx-auto mb-4" />
+              <h4 className="font-display text-lg font-semibold text-plum mb-1">{s.name}</h4><p className="text-xs text-gold font-medium mb-3">{s.role}</p><p className="text-xs text-plum/60 leading-relaxed">{s.specialty}</p>
+            </GlassCard>
           </motion.div>)}
         </div>
       </div></section>

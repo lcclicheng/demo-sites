@@ -184,5 +184,6 @@
     "Monday — Closed"
   ],
   "slug": "ganache",
+  "designVariant": "B",
   "_source": "osm"
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Scale, Shield } from 'lucide-react'
 import { lawData } from './business-data'
-import { HeroBackdrop, GradientText, Eyebrow } from './components/visual'
+import { HeroBackdrop, GradientText, Eyebrow, SquareMonogram } from './components/visual'
 const d = lawData
 
 
@@ -103,8 +103,7 @@ export default function App() {
 
       {/* HERO — TIGHT three-line + brass weight */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-cream">
-        <HeroBackdrop particles={false} />
-        <div className="absolute inset-0 pattern-stripes opacity-60"/>
+        <HeroBackdrop variant="grid" particles={false} />
         {/* Double gold lines at top */}
         <div className="absolute top-[12%] left-8 sm:left-12 right-8 sm:right-12">
           <div className="h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent"/>
@@ -113,6 +112,28 @@ export default function App() {
         <div className="absolute bottom-1/4 left-[5%] w-80 h-80 bg-gold/3 rounded-full blur-[100px]"/>
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 sm:mt-0">
+          {(d as any).designVariant === 'B' ? (
+          /* Variant B — centered editorial, monogram crest, symmetric stats */
+          <motion.div initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}} className="max-w-3xl mx-auto text-center">
+            <div className="flex justify-center mb-8"><div className="text-gold"><SquareMonogram initials={(d.name||'').split(' ').map((w:string)=>w[0]).join('').slice(0,2).toUpperCase()} /></div></div>
+            <Eyebrow className="text-gold mb-6 mx-auto">{d.subtitle} · Est. {d.established} · {d.location}</Eyebrow>
+            <h1 className="font-display text-5xl sm:text-7xl lg:text-[6.5rem] font-bold leading-[1.05] text-navy mb-8 break-words">
+              {(d.heroLines || []).map((line: string, i: number) => (
+                <span key={i} className={i === 2 ? 'text-gold italic' : ''}>
+                  {i === 2 ? <GradientText>{line}</GradientText> : line}{i < ((d.heroLines||[]).length - 1) ? ' ' : ''}
+                </span>
+              ))}
+            </h1>
+            <p className="text-lg text-navy/50 measure mx-auto mb-10 leading-relaxed">{d.tagline}</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
+              <a href="#services" className="px-8 py-4 rounded-sm bg-navy text-cream text-sm font-medium hover:bg-navy/90 inline-flex items-center justify-center gap-2 group w-full sm:w-auto">{d?.heroCta1?.text}<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/></a>
+              <a href="#contact" className="px-8 py-4 rounded-sm border-2 border-navy/15 text-navy text-sm font-medium hover:border-gold/40 hover:text-gold transition-all duration-500 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text}</a>
+            </div>
+            <div className="flex flex-wrap gap-10 sm:gap-16 justify-center border-t border-navy/5 pt-8">
+              {(d.stats || []).map((s: any) => <div key={s.label} className="text-center"><span className="font-display text-3xl text-gold font-bold block">{s.value}</span><span className="text-xs text-navy/40 tracking-wide">{s.label}</span></div>)}
+            </div>
+          </motion.div>
+          ) : (
           <motion.div initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.22,1,0.36,1]}} className="max-w-4xl">
             <Eyebrow className="text-gold mb-8">{d.subtitle} · Est. {d.established} · {d.location}</Eyebrow>
 
@@ -136,6 +157,7 @@ export default function App() {
               {(d.stats || []).map((s: any) => <div key={s.label}><span className="font-display text-2xl text-gold font-bold">{s.value}</span><span className="text-xs text-navy/40 ml-2">{s.label}</span></div>)}
             </div>
           </motion.div>
+          )}
         </div>
       </section>
 

@@ -139,7 +139,9 @@ export default function App() {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-ivory">
         <HeroBackdrop />
         {/* Texture */}
-        <div className="absolute inset-0 thread-pattern" />
+        {(d as any).designVariant === 'B'
+          ? <div className="text-gold"><ConfettiBg /></div>
+          : <div className="absolute inset-0 thread-pattern" />}
         {/* Ambient glow — warm gold, subtle */}
         <div className="absolute top-1/3 right-[15%] w-80 h-80 bg-gold/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 left-[5%] w-64 h-64 bg-espresso/3 rounded-full blur-[100px]" />
@@ -148,6 +150,32 @@ export default function App() {
         <div className="absolute left-8 sm:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent hidden lg:block" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:pl-20 sm:pr-8 w-full mt-16 sm:mt-0">
+          {(d as any).designVariant === 'B' ? (
+          /* Variant B — centered, confetti dotted backdrop (contrast with A's left thread-pattern layout) */
+          <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <div className="h-px w-8 bg-gold" />
+              <Eyebrow className="text-espresso/40">{d.location}</Eyebrow>
+              <div className="flex gap-0.5 ml-2">{Array(5).fill(0).map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />)}</div>
+              <span className="text-xs text-espresso/30">{d.googleRating}</span>
+            </div>
+            <h1 className="font-display text-7xl sm:text-[10vw] lg:text-[9rem] font-bold italic leading-[0.9] tracking-tight mb-4 text-espresso break-words">
+              <GradientText>{d.heroLine1}</GradientText>
+            </h1>
+            <p className="font-display text-2xl sm:text-3xl italic text-gold mb-8 tracking-wide">{d.heroLine2}</p>
+            <p className="text-lg text-espresso/50 measure mx-auto mb-10 leading-relaxed">{d.tagline}</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#pastries" className="px-8 py-4 rounded-full bg-espresso text-ivory text-sm font-medium hover:bg-espresso/90 transition-colors inline-flex items-center justify-center gap-2 group w-full sm:w-auto">
+                {d?.heroCta1?.text}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="#order" className="px-8 py-4 rounded-full border border-espresso/15 text-espresso text-sm font-medium hover:border-gold/50 hover:text-gold transition-all duration-500 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+                {d?.heroCta2?.text}
+                <Cake className="w-4 h-4" />
+              </a>
+            </div>
+          </motion.div>
+          ) : (
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="max-w-3xl">
             {/* Badge */}
             <div className="flex items-center gap-3 mb-8">
@@ -176,6 +204,7 @@ export default function App() {
               </a>
             </div>
           </motion.div>
+          )}
         </div>
       </section>
 

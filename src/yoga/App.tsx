@@ -104,6 +104,29 @@ export default function App() {
         <div className="absolute top-1/3 right-[10%] w-96 h-96 bg-emerald-100/40 rounded-full blur-[120px]"/>
         <div className="absolute bottom-1/4 left-[5%] w-80 h-80 bg-sage-200/30 rounded-full blur-[100px]"/>
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 sm:mt-0">
+          {(d as any).designVariant === 'B' ? (
+          /* Variant B — centered, horizontal word-rhythm, prominent metrics, more breathing room */
+          <motion.div initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:1}} className="max-w-3xl mx-auto text-center">
+            <Eyebrow className="text-sage-500 mb-8 mx-auto">{d.subtitle} · {d.location}</Eyebrow>
+            <div className="flex flex-wrap items-baseline justify-center gap-x-6 gap-y-1 mb-8">
+              <span className="font-display text-5xl sm:text-7xl font-light italic"><GradientText>{d.heroLine1}</GradientText></span>
+              <span className="text-sage-300 text-3xl font-light">·</span>
+              <span className="font-display text-5xl sm:text-7xl font-light italic text-sage-700">{d.heroLine2}</span>
+              <span className="text-sage-300 text-3xl font-light">·</span>
+              <span className="font-display text-5xl sm:text-7xl font-light italic text-sage-800">{d.heroLine3}</span>
+            </div>
+            <p className="text-lg text-sage-600 leading-relaxed measure mx-auto mb-10">{d.tagline}</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#classes" className="px-8 py-4 rounded-full bg-sage-800 text-white text-sm font-medium hover:bg-sage-700 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta1?.text} <ArrowRight className="w-4 h-4"/></a>
+              <a href="#book" className="px-8 py-4 rounded-full border-2 border-sage-200 text-sage-800 text-sm font-medium hover:border-sage-400 inline-flex items-center justify-center gap-2 w-full sm:w-auto">{d?.heroCta2?.text}</a>
+            </div>
+            <StatsStrip stats={[
+              (d as any).googleRating && { val: (d as any).googleRating, label: 'Google Rating', stars: true },
+              (d.classes||[]).length && { val: String((d.classes||[]).length), label: 'Class Styles' },
+              (d as any).established && { val: (d as any).established, label: 'Established' },
+            ].filter(Boolean) as any} />
+          </motion.div>
+          ) : (
           <motion.div initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:1}} className="max-w-2xl">
             <Eyebrow className="text-sage-500 mb-4">{d.subtitle} · {d.location}</Eyebrow>
             <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl font-light italic leading-[0.92] mb-6 break-words">
@@ -118,6 +141,7 @@ export default function App() {
               (d as any).googleRating ? { val: (d as any).googleRating, label: (d as any).googleReviews || 'Google Reviews', stars: true } : null,
             ].filter(Boolean)} />
           </motion.div>
+          )}
         </div>
       </section>
 
@@ -156,7 +180,7 @@ export default function App() {
       <section id="book" className="py-24 sm:py-32 bg-white relative overflow-hidden section-rule">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/30 rounded-full blur-[120px]"/>
         <div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-8 text-center"><motion.div {...fadeView(0)} className="mb-10"><Eyebrow className="text-sage-500 mb-4">Book a Class</Eyebrow><h2 className="font-display text-5xl sm:text-6xl font-light italic mb-4">Begin your <span className="not-italic text-sage-700">practice</span>.</h2></motion.div>
-          <motion.form {...fadeView(0.1)} onSubmit={submit} className="bg-cream rounded-3xl p-6 sm:p-8 border border-sage-100">
+          <motion.form {...fadeView(0.1)} onSubmit={submit} className="glass-card rounded-3xl p-6 sm:p-8">
             <div className="grid grid-cols-2 gap-4 mb-4"><div><label className="block text-xs font-semibold text-sage-500 uppercase tracking-wider mb-2">Name</label><input className="w-full h-12 rounded-xl border border-sage-200 px-4 text-sm bg-white/70 focus:outline-none focus:border-emerald-300" value={f.name} onChange={e=>setF({...f,name:e.target.value})} required/></div><div><label className="block text-xs font-semibold text-sage-500 uppercase tracking-wider mb-2">Email</label><input type="email" className="w-full h-12 rounded-xl border border-sage-200 px-4 text-sm bg-white/70 focus:outline-none focus:border-emerald-300" value={f.email} onChange={e=>setF({...f,email:e.target.value})} required/></div></div>
             <div className="grid grid-cols-2 gap-4 mb-6"><div><label className="block text-xs font-semibold text-sage-500 uppercase tracking-wider mb-2">Class</label><select className="w-full h-12 rounded-xl border border-sage-200 px-4 text-sm bg-white/70 focus:outline-none focus:border-emerald-300" value={f.cls} onChange={e=>setF({...f,cls:e.target.value})} required><option value="">Select</option>{(d.classes || []).map(c=><option key={c.name}>{c.name}</option>)}</select></div><div><label className="block text-xs font-semibold text-sage-500 uppercase tracking-wider mb-2">Date</label><input type="date" className="w-full h-12 rounded-xl border border-sage-200 px-4 text-sm bg-white/70 focus:outline-none focus:border-emerald-300" value={f.date} onChange={e=>setF({...f,date:e.target.value})} required/></div></div>
             <button type="submit" className="w-full py-4 rounded-full bg-sage-800 text-white font-semibold text-sm hover:bg-sage-700 active:scale-[0.98] transition-all flex items-center justify-center gap-2">{done?<><Check className="w-4 h-4"/>Booked!</>:<>Reserve Spot <Send className="w-4 h-4"/></>}</button>

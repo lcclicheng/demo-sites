@@ -501,6 +501,7 @@ const THEMES = {
     cssReplace: [
       ['rgba(61,28,61,0.15)', 'rgba(74,35,54,0.15)'],
       ['rgba(212,165,116,0.3)', 'rgba(201,138,166,0.3)'],
+      ['color:#3d1c3d', 'color:#4a2336'],
     ],
     twReplace: [
       ["plum:'#3d1c3d'", "plum:'#4a2336'"],

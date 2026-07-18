@@ -173,5 +173,6 @@
     "cta": "Book Now"
   },
   "slug": "indaba-yoga",
+  "designVariant": "B",
   "_source": "osm"
 }
