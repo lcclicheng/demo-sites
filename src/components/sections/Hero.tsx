@@ -3,7 +3,7 @@
 // 标题/副标题/CTA/指标条全部从 SectionedData 取，缺则优雅降级。
 
 import { motion } from 'framer-motion'
-import { HeroBackdrop, GradientText, StatsStrip, GlassCard } from '../visual'
+import { HeroBackdrop, GradientText, StatsStrip, GlassCard, SignatureMark, deriveSignature } from '../visual'
 import { SectionedData } from './types'
 import { CtaButtons } from './shared'
 
@@ -25,7 +25,7 @@ export function Hero({
         className="relative min-h-screen flex items-center overflow-hidden bg-surface text-ink"
       >
         <div className="text-accent" aria-hidden>
-          <HeroBackdrop particles={false} />
+          <HeroBackdrop particles={false} signature={deriveSignature(d)} />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 grid lg:grid-cols-12 gap-10 items-center">
           <motion.div
@@ -34,6 +34,7 @@ export function Hero({
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7"
           >
+            <SignatureMark kind={deriveSignature(d)} className="w-16 h-16 text-accent mb-6" />
             {d.heroBadge && (
               <p className="text-accent text-sm tracking-[0.25em] uppercase font-medium mb-5">{d.heroBadge}</p>
             )}
@@ -87,7 +88,7 @@ export function Hero({
     >
       {/* 装饰层：currentColor = accent，跟随主题 */}
       <div className="text-accent" aria-hidden>
-        <HeroBackdrop />
+        <HeroBackdrop signature={deriveSignature(d)} />
       </div>
 
       <motion.div
@@ -96,6 +97,7 @@ export function Hero({
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 text-center px-5 mt-16 max-w-4xl"
       >
+        <SignatureMark kind={deriveSignature(d)} className="w-16 h-16 mx-auto text-accent mb-6" />
         {d.heroBadge && (
           <p className="text-accent text-sm tracking-[0.25em] uppercase font-medium mb-5">{d.heroBadge}</p>
         )}

@@ -197,7 +197,7 @@ export default function App() {
 
       {/* HERO */}
       <section ref={heroRef} id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <HeroBackdrop particles={false} />
+        <HeroBackdrop particles={false} signature="plate" />
         <div className="particles">
           {Array(12).fill(0).map((_, i) => (
             <div key={i} className="particle" />

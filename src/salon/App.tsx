@@ -106,7 +106,7 @@ export default function App() {
 
       {/* HERO — MotionSites proportion */}
       <section className="relative min-h-screen flex items-end pb-12 sm:pb-16 overflow-hidden bg-ivory">
-        <HeroBackdrop />
+        <HeroBackdrop signature="sheen" />
         <div className="absolute top-1/3 right-[15%] w-96 h-96 bg-gold/8 rounded-full blur-[140px]"/>
         <div className="absolute bottom-1/4 left-[5%] w-80 h-80 bg-plum/5 rounded-full blur-[100px]"/>
         <div className="absolute left-8 sm:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent hidden lg:block"/>

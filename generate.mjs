@@ -94,6 +94,36 @@ const VISUAL_CSS = `
 .bento-grid::before{content:'';position:absolute;inset:0;background-image:linear-gradient(to right,currentColor 1px,transparent 1px),linear-gradient(to bottom,currentColor 1px,transparent 1px);background-size:54px 54px;opacity:.05}
 .shimmer-soft{animation:shimmer 3s ease-in-out infinite}
 @keyframes shimmer{0%,100%{opacity:.25}50%{opacity:.6}}
+
+/* === Signature motif (招牌) — theme-agnostic SVG, currentColor === */
+.sig-mark{display:inline-flex;color:currentColor}
+.sig-mark svg{width:100%;height:100%;display:block}
+.sig-watermark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.sig-wm-motif{width:min(64vw,32rem);height:min(64vw,32rem);color:currentColor;opacity:.05}
+@keyframes sigfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes sigbreathe{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.06);opacity:.55}}
+@keyframes sigspin{to{transform:rotate(360deg)}}
+@keyframes sigspinslow{to{transform:rotate(360deg)}}
+@keyframes sigsweep{0%{transform:translateX(-12px);opacity:.2}50%{opacity:.9}100%{transform:translateX(12px);opacity:.2}}
+@keyframes sigtwinkle{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes sigrise{0%{transform:translateY(0);opacity:0}30%{opacity:1}100%{transform:translateY(-26px);opacity:0}}
+@keyframes sigdraw{to{stroke-dashoffset:0}}
+@keyframes sigbloom{0%,100%{transform:scale(.7);opacity:.45}50%{transform:scale(1.05);opacity:1}}
+@keyframes sigbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.sig-float{animation:sigfloat 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.sig-breathe{animation:sigbreathe 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.sig-spin{animation:sigspin 26s linear infinite;transform-box:fill-box;transform-origin:center}
+.sig-spin-slow{animation:sigspinslow 64s linear infinite;transform-box:fill-box;transform-origin:center}
+.sig-sweep{animation:sigsweep 4s ease-in-out infinite}
+.sig-twinkle{animation:sigtwinkle 3s ease-in-out infinite}
+.sig-rise{animation:sigrise 3s ease-in-out infinite}
+.sig-draw{stroke-dasharray:260;stroke-dashoffset:260;animation:sigdraw 4.5s ease-in-out infinite}
+.sig-bloom{animation:sigbloom 7s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.sig-bob{animation:sigbob 5s ease-in-out infinite}
+.sig-steam{animation:sigsweep 5s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){
+  .sig-float,.sig-breathe,.sig-spin,.sig-spin-slow,.sig-sweep,.sig-twinkle,.sig-rise,.sig-draw,.sig-bloom,.sig-bob,.sig-steam{animation:none!important}
+}
 `
 
 // ── 编辑排版层（v0.9.9：从 20 个旧站提炼的编辑排版规律，统一 8 模板观感） ──

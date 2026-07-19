@@ -137,7 +137,7 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-ivory">
-        <HeroBackdrop />
+        <HeroBackdrop signature="confetti" />
         {/* Texture */}
         {(d as any).designVariant === 'B'
           ? <div className="text-gold"><ConfettiBg /></div>

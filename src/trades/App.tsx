@@ -105,7 +105,7 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative bg-gradient-to-br from-navy to-slate-800 text-white overflow-hidden">
-        <HeroBackdrop particles={false} />
+        <HeroBackdrop particles={false} signature="forge" />
         <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_70%_30%,white_1px,transparent_1px)] bg-[size:48px_48px]"/>
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-32">
           <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.7}} className="max-w-2xl">

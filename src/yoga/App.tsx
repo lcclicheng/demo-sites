@@ -99,7 +99,7 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <HeroBackdrop />
+        <HeroBackdrop signature="breath" />
         <div className="absolute inset-0 bg-gradient-to-br from-sage-50 via-cream to-emerald-50"/>
         <div className="absolute top-1/3 right-[10%] w-96 h-96 bg-emerald-100/40 rounded-full blur-[120px]"/>
         <div className="absolute bottom-1/4 left-[5%] w-80 h-80 bg-sage-200/30 rounded-full blur-[100px]"/>

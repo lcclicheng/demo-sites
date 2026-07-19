@@ -314,5 +314,6 @@
     "sunday": "Sun: 11:00—16:00",
     "closedDays": "Closed Monday? No — open Mon—Sat"
   },
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "signature": "razor"
 }
