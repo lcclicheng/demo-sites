@@ -712,6 +712,20 @@ async function generateOne(jsonPath) {
     console.log(`  🎨 应用独立主题: ${projectName}`)
   }
   const outputDir = path.resolve(__dirname,'output',projectName)
+  const outputRoot = path.resolve(__dirname,'output')
+
+  // ── 真实 safe-delete 守卫（替代记忆中虚构的 SAFE_DELETE 守卫：原代码是无条件 rmSync）──
+  // 风险：slug/name 异常（如 ".."）会让 outputDir 解析到 output/ 之外，
+  // 导致 rmSync 递归删除整个工程。双重保险：① 名称合规 ② 路径确实落在 output/ 内。
+  if (!projectName || !/^[a-z0-9][a-z0-9-]*$/.test(projectName)) {
+    console.error(`❌ 拒绝构建：projectName 非法（slug/name 缺失或含非法字符）→ "${projectName}"`)
+    process.exit(1)
+  }
+  const rel = path.relative(outputRoot, outputDir)
+  if (rel === '' || rel.startsWith('..') || path.isAbsolute(rel)) {
+    console.error(`❌ 拒绝删除：outputDir 不在 output/ 内（疑似越界）→ ${outputDir}`)
+    process.exit(1)
+  }
 
   console.log(`\n🔨 [${template}] ${data.name}`)
   if (fs.existsSync(outputDir)) fs.rmSync(outputDir,{recursive:true,force:true})

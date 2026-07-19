@@ -47,6 +47,29 @@ const errors = [];
 const projs = loadProjList();
 const projSet = new Set(projs);
 
+// ── 重复构建目标检测（#277：双事实源 PROJS↔slug 的隐性冲突）──
+// 两个不同 PROJS 项若解析出相同 projectName（即 output/<name>/ 相同），
+// 会构建到同一目录互相覆盖，线上只会保留一个站点，另一个「凭空消失」。
+// 此处拦截：不仅比较 slug，也按 generate.mjs 的规则 (slug||name) 归一化后比较，
+// 以覆盖「slug 不同但归一名相同」的边界情况。
+const normName = (d) => ((d.slug || d.name) || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+const nameToProjs = new Map();
+for (const f of projs) {
+  const file = path.join(__dirname, 'examples', `${f}.json`);
+  if (!fs.existsSync(file)) continue;
+  let dd;
+  try { dd = JSON.parse(fs.readFileSync(file, 'utf-8')); } catch { continue; }
+  const pn = normName(dd);
+  if (!pn) continue;
+  if (!nameToProjs.has(pn)) nameToProjs.set(pn, []);
+  nameToProjs.get(pn).push(f);
+}
+for (const [pn, list] of nameToProjs) {
+  if (list.length > 1) {
+    errors.push(`重复构建目标 output/${pn}/ ：PROJS 项 [${list.join(', ')}] 解析出相同 projectName（slug 或 name 冲突）→ 会互相覆盖，线上只剩一个站点`);
+  }
+}
+
 /**
  * 孤儿站点自动发现（软阻断 / 可 override）
  * 扫描 examples/*.json，找出「同时具备 template + 非空 slug」但未纳入

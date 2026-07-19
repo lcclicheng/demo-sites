@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# pre-commit 钩子：拦截私有/敏感目录被误加入公开仓库（#276 技术防线 · 第一道）
+# 防止 `git add -A` / `git add -f` 把 outreach/ business/ business-kit/ clients/ 推上 GitHub。
+# .gitignore 已忽略这些目录（正常情况下 add 不进去），本钩子作为强制保险，
+# 专门拦截「绕开 ignore 的 force-add」与「误改 .gitignore 后整目录入库」。
+# 激活方式（clone 后执行一次）：git config core.hooksPath .githooks
+set -uo pipefail
+
+BLOCKED=0
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
+  # clients/README.md 是约定文档，已 gitignore 显式放行，允许入库
+  if [ "$f" = "clients/README.md" ]; then continue; fi
+  if printf '%s' "$f" | grep -Eq '^(outreach|business|business-kit|clients)/'; then
+    echo "🚫 拦截：尝试提交私有/敏感目录文件 → $f"
+    BLOCKED=1
+  fi
+done < <(git diff --cached --name-only --diff-filter=A)
+
+if [ "$BLOCKED" -ne 0 ]; then
+  echo ""
+  echo "❌ 提交被 pre-commit 钩子阻断：outreach/ business/ business-kit/ clients/ 含真实客户与商家数据，禁止进入公开仓库。"
+  echo "   若确需提交其中某个非敏感文件（如仅 clients/README.md），不要 force-add 整目录；其他情况请走本地商定流程。"
+  exit 1
+fi

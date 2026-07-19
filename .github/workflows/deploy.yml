@@ -45,6 +45,20 @@ jobs:
       - name: Validate site configs (pre-deploy gate)
         run: node validate-sites.mjs ${{ github.event_name == 'workflow_dispatch' && inputs.allow_orphans == true && '--allow-orphans' || '' }}
 
+      # 私有目录泄漏扫描（#276 技术防线 · 第二道，CI 兜底）：
+      # 若有人 force-add 并把 outreach/ business/ business-kit/ clients/ 推上 main，
+      # 这里在部署前拦下并令 job 失败，避免敏感数据随 Pages 上线（本地 pre-commit 钩子的服务端副本）。
+      - name: Scan for leaked private dirs (outreach/business/business-kit/clients)
+        run: |
+          LEAK=$(git ls-files | grep -E '^(outreach|business|business-kit|clients)/' | grep -v '^clients/README.md$' || true)
+          if [ -n "$LEAK" ]; then
+            echo "🚫 发现私有/敏感目录文件已进入仓库，阻断部署："
+            echo "$LEAK"
+            echo "❌ 请撤销这些文件的提交（git rm --cached 并从历史清理），勿 force-add 私有目录。"
+            exit 1
+          fi
+          echo "✅ 未检出私有目录泄漏。"
+
       - name: Build all 10 demo sites
         run: bash build-clean.sh
 
@@ -79,6 +93,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
+          retention-days: 30
 
   deploy:
     needs: build

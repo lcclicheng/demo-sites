@@ -4,8 +4,8 @@
 # 新增 / 改名 / 删除站点，必须同步改这里的 PROJS（以及对应的 examples/<x>.json）。
 # 忘记同步会导致：JSON 改了却没构建，或校验闸门扫不到新站。
 # ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
-# 干净全量重建：绕过 safe-delete 守卫，强制 rm + npm install + vite build
-# 每个项目独立 node 进程；结束后逐个校验 dist 真实生成（不依赖退出码）
+# 干净全量重建：每个项目独立 node 进程，generate.mjs 自带 safe-delete 守卫（slug 异常即拒删）
+# 结束后逐个校验 dist 真实生成；新增「失败闸门」：任一 dist 缺失则 exit 1（不再假成功）
 set -u
 cd "$(dirname "$0")"
 LOG_DIR="$(pwd)/build-logs"
@@ -26,6 +26,7 @@ PROJS=(
   capstone-law love-yoga sycamore-hotel now-plumbing riverhill-coffee
   ashtree-accountants st-giles-dentists hampsons-estate garden-business brinkburn-brewery
 )
+BUILD_FAIL=0
 echo "=== 干净全量重建开始 $(date) ===" | tee "$LOG_DIR/_clean.log"
 for f in "${PROJS[@]}"; do
   echo ">>> 构建 $f ... $(date)" | tee -a "$LOG_DIR/_clean.log"
@@ -39,17 +40,29 @@ for f in "${PROJS[@]}"; do
         echo "    ✅ $f 成功 (dist OK, index.html=$sz bytes)" | tee -a "$LOG_DIR/_clean.log"
       else
         echo "    ❌ $f 产物未更新(可能构建被锁/失败,旧 dist 残留) — 见 clean_$f.log" | tee -a "$LOG_DIR/_clean.log"
+        BUILD_FAIL=$((BUILD_FAIL+1))
       fi
     else
       echo "    ❌ $f dist 缺失 (构建报成功但无产物)" | tee -a "$LOG_DIR/_clean.log"
+      BUILD_FAIL=$((BUILD_FAIL+1))
     fi
   else
     echo "    ❌ $f 失败 (见 clean_$f.log)" | tee -a "$LOG_DIR/_clean.log"
+    BUILD_FAIL=$((BUILD_FAIL+1))
   fi
 done
 echo "=== 干净全量重建结束 $(date) ===" | tee -a "$LOG_DIR/_clean.log"
 echo "--- 最终 dist 检查 ---" | tee -a "$LOG_DIR/_clean.log"
+MISS=0
 for f in "${PROJS[@]}"; do
   pn=$(node -e "const d=require('./examples/$f.json');console.log((d.slug||d.name).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-\$)/g,''))" 2>/dev/null)
-  if [ -f "output/$pn/dist/index.html" ]; then echo "  OK   $f" | tee -a "$LOG_DIR/_clean.log"; else echo "  MISS $f" | tee -a "$LOG_DIR/_clean.log"; fi
+  if [ -f "output/$pn/dist/index.html" ]; then echo "  OK   $f" | tee -a "$LOG_DIR/_clean.log"; else echo "  MISS $f" | tee -a "$LOG_DIR/_clean.log"; MISS=$((MISS+1)); fi
 done
+# ── 失败闸门（#275：替代原「无 set -e 假成功」）──
+# 不引入 set -e：set -e 会让首个失败即中止循环，隐藏其余 44 站的失败，不利诊断。
+# 改为显式计数：构建失败 + dist 缺失 任一 >0 即 exit 1，令 Actions 真红，阻断漏站部署。
+if [ "$BUILD_FAIL" -gt 0 ] || [ "$MISS" -gt 0 ]; then
+  echo "❌ 构建闸门：构建失败 $BUILD_FAIL 个、dist 缺失 $MISS 个（共 ${#PROJS[@]} 站），阻断部署。" | tee -a "$LOG_DIR/_clean.log"
+  exit 1
+fi
+echo "✅ 全部 ${#PROJS[@]} 个站点的 dist 均已生成，可安全组装部署。" | tee -a "$LOG_DIR/_clean.log"
