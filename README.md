@@ -8,6 +8,7 @@
 > 📗 **最终整合版项目说明（一册通读）：[`docs/PROJECT-OVERVIEW.md`](./docs/PROJECT-OVERVIEW.md)** —— 把架构 / 定价 / Section Engine / 路线图 / 监控 / CMS / 审计综合成一份，含架构与订阅付费模型，适合对外讲解或新接手时通读。
 
 > 🆕 **最近更新（2026-07-16，v1.1.0 + MDD 重构）**：项目文档改按 MDD 组织——超级单文件 `workflow.md` 拆分为主题文件，新增 `memory/` `decisions/` `tasks/` `.ai/` 骨架。此前 v1.1.0：Section Engine 收口（10 个 curated 预设全迁 `sectioned`、双轨在 curated 层终结）；站点 19→20；A 档定价取消 CMS 自助改「首月内不限次数修改」。详见 `docs/index.md` 与各主题文件。
+> 🔒 **最近更新（2026-07-19，安全加固）**：把「约定防线」升级为「技术防线」——`generate.mjs` 真实 safe-delete 守卫、`build-clean.sh` 失败闸门、outreach 泄漏双防线（pre-commit + CI）、`validate-sites.mjs` 重复 slug 检测、`deploy.yml` 回滚产物保留（retention-days:30）。详见 `CHANGELOG.md` 与 `AGENT-ONBOARDING.md` §11。站点现 **45 个**（sitemap 46 条）。
 
 ## 配套文档（按主题，索引见 [`docs/index.md`](./docs/index.md)）
 
@@ -29,7 +30,7 @@ node onboard.mjs          # 打开 http://localhost:4321/
 # 本地单站构建
 node generate.mjs "./examples/<site>.json"
 
-# 全量干净重建 20 站
+# 全量干净重建 45 站（PROJS 单一事实源）
 bash build-clean.sh
 
 # 部署（SSH 推送触发 Actions 自动上线）

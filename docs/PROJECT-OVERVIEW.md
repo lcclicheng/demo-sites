@@ -15,7 +15,7 @@
 | 卖什么 | 高端静态站 + 部署 + 交付标准化包 + 年维护；**不卖客户自助后台**（2026-07-16 起取消 Decap 自助交付） |
 | 技术栈 | Vite + React 18 + TypeScript + Tailwind CSS v3 + GitHub Pages（零服务器成本） |
 | 核心引擎 | **Section Engine**（theme-agnostic 通用 section 库 + 组合器）+ 8 套行业模板（真实商家垂直站 / 历史样板） |
-| 站点现状 | **双轨共 20 站**：10 curated 样板预设（全部 sectioned）+ 9 真实英国商家 demo + 1 sectioned-demo 引擎展示 |
+| 站点现状 | **45 个线上站点**（demo 站，主题自适应招牌 motif 全覆盖；早期 v1.1.0 为 20 站，见 §2.4） |
 | 事实源 | `build-clean.sh` 的 `PROJS` 数组（唯一权威，校验闸门与监控都读它） |
 | 怎么收费 | **A 档 £590 一次性（含首月内不限次数代改）/ B 档 £390/年（年度呵护）**；分行业三档微调（±£50/±£40） |
 | 部署 | SSH（443 通道）→ push `main` → GitHub Actions 自动「校验→构建→组装→部署」 |
@@ -31,7 +31,7 @@
 
 ### 1.2 形态
 - **一套 Section Engine 模板引擎**（`sectioned` 组合器 + theme-agnostic 通用 section 库）+ **8 套行业模板**（`restaurant/coffee/salon/dessert/yoga/law/hotel/trades`，保留作真实商家垂直站 + 历史样板）。
-- 当前 **20 个线上站点（双轨）**：客户先看演示判断风格，再决定要不要下单。
+- 当前 **45 个线上站点**：客户先看演示判断风格，再决定要不要下单。
 - 部署在 **GitHub Pages**，零服务器成本。
 
 ### 1.3 商业阶段判断
@@ -85,8 +85,8 @@ examples/<site>.json  (业务数据，单一数据源)
 | **B. 真实英国商家 demo** | 9 | `morris-coffee` 已迁 `sectioned`（pilot）；其余 8 个仍用各自行业模板 | `holborn-nails(salon)/ganache(dessert)/indaba-yoga(yoga)/seddons-law(law)/gower-hotel(hotel)/vale-hardware(trades)/papa-bruno(restaurant)/chinatown-bakery(dessert)`；基于 OSM 真实商家数据 + Openverse CC 占位图 |
 | **C. Section Engine 展示站** | 1 | `sectioned` | `sectioned-demo` 引擎能力展示 |
 
-> **事实源**：`build-clean.sh` 的 `PROJS=( atelier-salon breath-yoga chambers-law creme-dessert forge-trades mario-pizza mono-coffee patisserie-v2 sotto-sotto vault-hotel morris-coffee holborn-nails ganache indaba-yoga seddons-law gower-hotel vale-hardware papa-bruno chinatown-bakery sectioned-demo )`，共 **20 站**，是「要构建的站点」**唯一权威**。新增站点须同步加进 `PROJS`，否则 `validate-sites.mjs` 孤儿闸门（软阻断 `exit 1`）会阻断部署。
-> **双轨说明**：curated 预设层已 100% sectioned；8 套行业模板保留作真实商家垂直展示 + 历史样板，**未启用 Playwright 逐像素视觉回归前不要物理删除**（真实商家迁 sectioned 须先有回归保护；现已 20 站，可启用）。
+> **事实源**：`build-clean.sh` 的 `PROJS` 数组（`PROJS=( atelier-salon breath-yoga ... )`）是「要构建的站点」**唯一权威**，**现 45 站**（v1.1.0 时期为 20，见下表；完整列表以 `build-clean.sh` 为准）。新增站点须同步加进 `PROJS`，否则 `validate-sites.mjs` 孤儿闸门（软阻断 `exit 1`）会阻断部署。
+> **双轨说明**：curated 预设层已 100% sectioned；8 套行业模板保留作真实商家垂直展示 + 历史样板，**未启用 Playwright 逐像素视觉回归前不要物理删除**（真实商家迁 sectioned 须先有回归保护；现已 45 站，远超 15 站阈值，可启用）。
 
 ### 2.5 资产约定
 - 图片源放 `assets/<slug>/`，`generate.mjs` 整目录拷贝进 `dist/images/`；JSON 引用写相对路径 `./images/xxx.jpg`。
@@ -116,19 +116,19 @@ examples/<site>.json  (业务数据，单一数据源)
 | 路径（相对工程根） | 作用 | 部署相关 |
 |---|---|---|
 | `generate.mjs` | 单站构建引擎（读 JSON → 注入 → vite build） | ✅ 核心 |
-| `build-clean.sh` | 全量干净重建 20 站（时间戳校验防 EBUSY 假成功）；`PROJS` 单一事实源在此 | ✅ 核心 |
+| `build-clean.sh` | 全量干净重建 45 站（时间戳校验防 EBUSY 假成功 + 失败闸门 exit 1）；`PROJS` 单一事实源在此 | ✅ 核心 |
 | `.github/workflows/deploy.yml` | CI 部署流水线（校验→构建→组装→Pages） | ✅ 核心 |
 | `.github/workflows/health-check.yml` | 每天定时全站健康检查，失败开 Issue | ✅ 核心 |
 | `validate-sites.mjs` | 部署前自检闸门（缺图/缺字段/孤儿站） | ✅ 核心 |
 | `smoke-test.mjs` | 构建后冒烟（挂载点/JS/title 非空壳），阻断坏部署 | ✅ 核心 |
 | `onboard.mjs` + `onboarding.html` | 客户接入本地服务（端口 4321）+ 通用 JSON 表单渲染器 | 🟡 工具 |
-| `examples/*.json` | 20 个站点的业务数据（接入新客户改这里） | ✅ 数据源 |
+| `examples/*.json` | 45 个站点的业务数据（接入新客户改这里） | ✅ 数据源 |
 | `src/<template>/` | 8 套行业模板 React 组件 + App（真实商家垂直站 + 历史样板） | ✅ 核心 |
 | `src/sectioned/App.tsx` + `src/components/sections/*` | Section Engine 组合器 + 通用 section 库（theme-agnostic，12 section） | ✅ 核心 |
 | `src/components/visual.tsx` | 共享视觉手法库（HeroBackdrop/StatsStrip/GradientText/GlassCard/ConfettiBg/Eyebrow/SquareMonogram + grid 变体），`currentColor+color-mix` | ✅ 核心 |
 | `assets/<slug>/` | 各站图片源 | ✅ 数据源 |
 | `output/` · `public/` | 本地构建产物 / CI 组装中间目录（均 gitignore） | ❌ 忽略 |
-| `index.html` | 门户页（手写 HTML，链接 20 站；⚠️ 已知会漂移，待改为从 PROJS 自动生成） | ✅ |
+| `index.html` | 门户页（手写 HTML，链接 45 站；⚠️ 已知会漂移，待改为从 PROJS 自动生成） | ✅ |
 | `admin/index.html` + `admin/config.yml` | Decap CMS 后台（现降级为内部演示能力） | 🟡 工具 |
 | `gen-decap-config.mjs` | 从 `examples/*.json` 自动生成 `admin/config.yml` 全站字段映射 | 🟡 工具 |
 | `inject-privacy.mjs` | 隐私/注册地址/发票/合同页注入器 | ✅ 辅助 |
@@ -144,7 +144,7 @@ examples/<site>.json  (业务数据，单一数据源)
 ```bash
 # 改单个站（如调试 sotto-sotto）
 node generate.mjs "./examples/sotto-sotto.json"
-# 全量干净重建（绕过 safe-delete 守卫：内部用 mv 移旧产物，非 rm）
+# 全量干净重建（真实 safe-delete 守卫保护：重置用 mv 移旧产物，非 rm）
 bash build-clean.sh
 # 本地预览（构建后）
 python -m http.server 8088 --directory output/sotto-sotto/dist
@@ -255,14 +255,14 @@ git add -u && git commit -m "..." && git push origin main   # 走 SSH，无需 P
 ### 7.3 Decap CMS 现状（已降级）
 - `/admin` 仍随构建部署到 `/demo-sites/admin/`，`client_id` 已填并注册 OAuth App，任何人可打开、你本人有写权限可登录编辑——作**能力展示 / 获客卖点**。
 - **标准交付包不再含客户 CMS 自助后台**：2026-07-16 A 档改为「首月内不限次数代改」，B 档接管首月后改动。`docs/cms.md` 已降级为**内部演示能力参考 / 可选增项**。真实客户仅在其单独付费要求自助后台时，才按「生产模型」（独立仓库 + 协作者隔离 + 各自注册 OAuth App）启用。
-- `admin/config.yml` 由 `gen-decap-config.mjs` 从 `PROJS` 自动生成，全 20 站 100% 字段覆盖（防保存丢字段），`template`/`slug` 已设 `hidden+required` 防误删。
+- `admin/config.yml` 由 `gen-decap-config.mjs` 从 `PROJS` 自动生成，全 45 站 100% 字段覆盖（防保存丢字段），`template`/`slug` 已设 `hidden+required` 防误删。
 
 ---
 
 ## 8. 质量闸门与监控
 
 ### 8.1 质量闸门（部署前 fail-fast）
-- **`validate-sites.mjs`**（构建前）：逐站校验 ① JSON 合法 ② 必填字段 `name/slug/template` 齐全 ③ JSON 引用的 `./images/*` 在 `assets/<slug>/` 真实存在；任一不满足 → `exit 1` → 不构建不部署。同时**孤儿站软阻断**：发现「有 template+slug 却未进 PROJS」的 JSON 默认 `exit 1`，避免漏部署（临时放行：`--allow-orphans`）。
+- **`validate-sites.mjs`**（构建前）：逐站校验 ① JSON 合法 ② 必填字段 `name/slug/template` 齐全 ③ JSON 引用的 `./images/*` 在 `assets/<slug>/` 真实存在；任一不满足 → `exit 1` → 不构建不部署。同时**孤儿站软阻断**：发现「有 template+slug 却未进 PROJS」的 JSON 默认 `exit 1`，避免漏部署（临时放行：`--allow-orphans`）。**重复构建目标检测**：遍历 PROJS 各 JSON 归一化 `projectName(slug||name)`，两站归一化到同一 `output/<slug>/` 即 `exit 1`，防双事实源冲突线上互相覆盖丢站。
 - **`smoke-test.mjs`**（Assemble 之后）：校验每站产物含挂载点 / JS / title，非空壳，阻断坏部署。
 
 ### 8.2 监控（两层互补）
@@ -272,7 +272,7 @@ git add -u && git commit -m "..." && git push origin main   # 走 SSH，无需 P
 | **外部（你手动加）** | UptimeRobot 免费版 | 每 5 分钟 | 邮件 / App / Webhook | 免费（50 监测点） |
 
 - 自建层做**内容级校验**（不只 200，还查挂载点/title 真渲染）+ 用 Issue 留痕成「看板」（筛 `label:health-alert`，空=全绿）。
-- 监测点清单（取自 `PROJS`）：门户 + CMS admin + **20 站** = **22 个监测点**（见 `docs/monitoring.md` 可直接复制的清单）；或跑 `UPTIMEROBOT_API_KEY=urXX node setup-uptimerobot.mjs` 批量创建（幂等）。
+- 监测点清单（取自 `PROJS`）：门户 + CMS admin + **45 站** = **47 个监测点**（见 `docs/monitoring.md` 可直接复制的清单）；或跑 `UPTIMEROBOT_API_KEY=urXX node setup-uptimerobot.mjs` 批量创建（幂等）。
 - **与定价挂钩**：B 档（£390/年）已含监控；交付 B 客户时把其站点加进 UptimeRobot，可选纳入公开 Status Page 写进交付包。
 
 ---
@@ -324,7 +324,7 @@ git add -u && git commit -m "..." && git push origin main   # 走 SSH，无需 P
 ### 10.3 待办（非阻塞，按优先级）
 - 门户 `index.html` 改为从 `PROJS` 自动生成（现手写，已知会漂移）。
 - 增量构建（只重建变更站）提速。
-- Playwright 逐像素视觉回归（站点 >15 或来真实客户再上；现已 20 站，可启用）。
+- Playwright 逐像素视觉回归（站点 >15 或来真实客户再上；现已 45 站，远超阈值，可启用）。
 - 步骤 2 外联真实商家取真图/真数据替换（首批 4 家高风险商家发送包已就绪 `docs/outreach-batch-1.md`）。
 - 首个真实客户签约后实测 `DEPLOY_TARGET=vercel`（需填 `VERCEL_TOKEN`）。
 
@@ -339,7 +339,7 @@ node onboard.mjs                      # http://localhost:4321/
 # 单站构建
 node generate.mjs "./examples/<site>.json"
 
-# 全量干净重建 20 站（PROJS 单一事实源）
+# 全量干净重建 45 站（PROJS 单一事实源）
 bash build-clean.sh
 
 # 本地预览
@@ -373,5 +373,6 @@ UPTIMEROBOT_API_KEY=urXX node setup-uptimerobot.mjs
 - **v0.9.2**：定价改为**进攻型两档**（A £590 含 CMS 自助 / B £390 年）；v0.9.2.1 增补分行业三档微调；**v0.9.2.2（2026-07-16）A 档重构**：取消 CMS 自助，改首月内不限次数代改。
 - **v1.0–v1.0.1**：9 个真实英国商家 demo 全上线（19 站）；配套 UK Biz Finder 工具 + 资产流水线 skill。
 - **v1.1.0（2026-07-16）**：**步骤 6 Section Engine 收口**——10 curated 预设全迁 `sectioned`、双轨在 curated 层终结；8 套行业模板保留作真实商家垂直站 + 历史样板；站点 19→20（morris-coffee 迁 sectioned + sectioned-demo）；monitoring 监测点扩至 22；文档版本同步。
+- **安全加固（2026-07-19）**：站点扩至 **45 个**；接手 agent 风险评审后把「约定防线」升级为「技术防线」——`generate.mjs` 真实 safe-delete 守卫、`build-clean.sh` 失败闸门、`validate-sites.mjs` 重复 slug 检测、outreach 泄漏双防线（pre-commit + CI）、`deploy.yml` 回滚产物保留（retention-days:30）。详见 `CHANGELOG.md`。
 
 > 本整合版与 `docs/workflow.md`（系统总文档）同步至 v1.1.0；任何实现细节以 workflow.md 及各专项文档为准。
