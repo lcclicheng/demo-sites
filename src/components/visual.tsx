@@ -30,7 +30,9 @@ export type Mood = {
   sig: 'on' | 'off'
   cta: 'fill' | 'outline' | 'ghost'
 }
-const DEFAULT_MOOD: Mood = { deco: 'balanced', hero: 'center', sig: 'on', cta: 'fill' }
+// 默认 sig:'off' —— 仅显式 sig:'on' 的站（Day1-4 外联 20 站）才加 Hero 底部第二招牌分隔条，
+// 其余站（含非 Day1-4 的 sectioned 站）视觉保持与改动前完全一致。deco/hero/cta 默认亦等于历史外观。
+const DEFAULT_MOOD: Mood = { deco: 'balanced', hero: 'center', sig: 'off', cta: 'fill' }
 export function getMood(d: any): Mood {
   const m = (d && d.mood) || {}
   return {
