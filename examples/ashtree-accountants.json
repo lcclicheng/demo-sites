@@ -1,0 +1,250 @@
+{
+  "template": "sectioned",
+  "name": "ASHTREE ACCOUNTANTS",
+  "subtitle": "Chartered Accountants",
+  "tagline": "Independent chartered accountants in Nottingham — proactive, personal tax and accountancy for owner-managed businesses and families.",
+  "established": "1993",
+  "location": "Nottingham, UK",
+  "street": "Nottingham",
+  "registeredAddress": "Nottingham, United Kingdom",
+  "phone": "+44 115 950 8080",
+  "email": "hello@ashtreeaccountants.co.uk",
+  "googleRating": "5.0",
+  "googleReviews": "90+ reviews",
+  "hours": "Mon—Fri: 9:00—17:30",
+  "pageTitle": "ASHTREE ACCOUNTANTS — Chartered Accountants in Nottingham",
+  "heroLines": [
+    "CLARITY.",
+    "CONFIDENCE.",
+    "RESULTS."
+  ],
+  "heroCta1": {
+    "text": "Our Services",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Book a Consultation",
+    "href": "#booking"
+  },
+  "stats": [
+    {
+      "value": "30+",
+      "label": "Years"
+    },
+    {
+      "value": "5.0",
+      "label": "Rating"
+    },
+    {
+      "value": "500+",
+      "label": "Clients"
+    },
+    {
+      "value": "ICAEW",
+      "label": "Regulated"
+    }
+  ],
+  "certifications": [
+    "SRA Regulated",
+    "Lexcel Accredited",
+    "Resolution Member",
+    "Law Society"
+  ],
+  "services": [
+    {
+      "name": "Residential Conveyancing",
+      "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+    },
+    {
+      "name": "Family Law",
+      "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+    },
+    {
+      "name": "Wills & Probate",
+      "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+    },
+    {
+      "name": "Employment Law",
+      "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+    },
+    {
+      "name": "Commercial Property",
+      "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+    },
+    {
+      "name": "Dispute Resolution",
+      "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "team"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "lawyers": [
+    {
+      "initials": "JW",
+      "name": "James Whitfield",
+      "role": "Senior Partner",
+      "specialty": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "initials": "EC",
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "specialty": "Family Law & Mediation"
+    },
+    {
+      "initials": "RP",
+      "name": "Robert Palmer",
+      "role": "Associate",
+      "specialty": "Conveyancing & Property Law"
+    }
+  ],
+  "form": {
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "How can we help?"
+    },
+    "submit": "Send Enquiry",
+    "success": "Thank you! We'll be in touch within 24 hours."
+  },
+  "footer": {
+    "note": "Regulated by the Institute of Chartered Accountants in England and Wales.",
+    "quickLinks": [
+      "Services",
+      "Team",
+      "Contact"
+    ]
+  },
+  "slug": "ashtree-accountants",
+  "heroLine1": "CLEAR.",
+  "heroLine2": "CALM. COMPLIANT.",
+  "heroStats": [
+    {
+      "val": "30+",
+      "label": "Years"
+    },
+    {
+      "val": "5.0",
+      "label": "Rating"
+    },
+    {
+      "val": "500+",
+      "label": "Clients"
+    },
+    {
+      "val": "ICAEW",
+      "label": "Regulated"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "Nottingham, NG1"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri: 9:00—17:30"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 115 950 8080"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Practice Areas",
+      "icon": "Scale",
+      "items": [
+        {
+          "name": "Residential Conveyancing",
+          "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+        },
+        {
+          "name": "Family Law",
+          "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+        },
+        {
+          "name": "Wills & Probate",
+          "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+        },
+        {
+          "name": "Employment Law",
+          "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+        },
+        {
+          "name": "Commercial Property",
+          "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+        },
+        {
+          "name": "Dispute Resolution",
+          "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "How we can",
+  "story": {
+    "title": "Decades of",
+    "paragraphs": [
+      "Independent chartered accountants in Nottingham for thirty years — proactive, plain-English advice for owner-managed businesses, families and charities, by relationship not by hard sell."
+    ],
+    "stats": []
+  },
+  "team": [
+    {
+      "name": "James Whitfield",
+      "role": "Senior Partner",
+      "initials": "JW",
+      "bio": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "initials": "EC",
+      "bio": "Family Law & Mediation"
+    },
+    {
+      "name": "Robert Palmer",
+      "role": "Associate",
+      "initials": "RP",
+      "bio": "Conveyancing & Property Law"
+    }
+  ],
+  "booking": {
+    "intro": "Free initial consultation. No obligation.",
+    "note": "Thank you! We'll be in touch within 24 hours.",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Fri: 9:00—17:30",
+    "saturday": "Closed",
+    "sunday": "Closed",
+    "closedDays": "Weekends"
+  },
+  "_source": "real-merchant"
+}

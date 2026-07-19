@@ -1,0 +1,250 @@
+{
+  "template": "sectioned",
+  "name": "42 ST GILES",
+  "subtitle": "Dentists, Oxford",
+  "tagline": "Private dentistry in a beautiful Grade II listed building on St Giles’, Oxford — check-ups, hygiene, implants and cosmetic care.",
+  "established": "1998",
+  "location": "Oxford, UK",
+  "street": "St Giles’, Oxford",
+  "registeredAddress": "St Giles’, Oxford, United Kingdom",
+  "phone": "+44 1865 310368",
+  "email": "hello@42stgiles.com",
+  "googleRating": "4.9",
+  "googleReviews": "200+ reviews",
+  "hours": "Mon—Fri: 9:00—17:30",
+  "pageTitle": "42 ST GILES — Dentists in Oxford",
+  "heroLines": [
+    "CLARITY.",
+    "CONFIDENCE.",
+    "RESULTS."
+  ],
+  "heroCta1": {
+    "text": "Our Treatments",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Book an Appointment",
+    "href": "#booking"
+  },
+  "stats": [
+    {
+      "value": "4.9",
+      "label": "Rating"
+    },
+    {
+      "value": "200+",
+      "label": "Reviews"
+    },
+    {
+      "value": "GDC",
+      "label": "Regulated"
+    },
+    {
+      "value": "25+",
+      "label": "Years"
+    }
+  ],
+  "certifications": [
+    "SRA Regulated",
+    "Lexcel Accredited",
+    "Resolution Member",
+    "Law Society"
+  ],
+  "services": [
+    {
+      "name": "Residential Conveyancing",
+      "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+    },
+    {
+      "name": "Family Law",
+      "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+    },
+    {
+      "name": "Wills & Probate",
+      "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+    },
+    {
+      "name": "Employment Law",
+      "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+    },
+    {
+      "name": "Commercial Property",
+      "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+    },
+    {
+      "name": "Dispute Resolution",
+      "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "team"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "lawyers": [
+    {
+      "initials": "JW",
+      "name": "James Whitfield",
+      "role": "Senior Partner",
+      "specialty": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "initials": "EC",
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "specialty": "Family Law & Mediation"
+    },
+    {
+      "initials": "RP",
+      "name": "Robert Palmer",
+      "role": "Associate",
+      "specialty": "Conveyancing & Property Law"
+    }
+  ],
+  "form": {
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "How can we help?"
+    },
+    "submit": "Send Enquiry",
+    "success": "Thank you! We'll be in touch within 24 hours."
+  },
+  "footer": {
+    "note": "Regulated by the General Dental Council (GDC). CQC registered.",
+    "quickLinks": [
+      "Treatments",
+      "Team",
+      "Book"
+    ]
+  },
+  "slug": "st-giles-dentists",
+  "heroLine1": "HEALTHY.",
+  "heroLine2": "CONFIDENT. SMILES.",
+  "heroStats": [
+    {
+      "val": "4.9",
+      "label": "Rating"
+    },
+    {
+      "val": "200+",
+      "label": "Reviews"
+    },
+    {
+      "val": "GDC",
+      "label": "Regulated"
+    },
+    {
+      "val": "25+",
+      "label": "Years"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "St Giles’, Oxford OX1"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri: 8:45—17:15"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 1865 310368"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Practice Areas",
+      "icon": "Scale",
+      "items": [
+        {
+          "name": "Residential Conveyancing",
+          "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+        },
+        {
+          "name": "Family Law",
+          "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+        },
+        {
+          "name": "Wills & Probate",
+          "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+        },
+        {
+          "name": "Employment Law",
+          "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+        },
+        {
+          "name": "Commercial Property",
+          "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+        },
+        {
+          "name": "Dispute Resolution",
+          "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Our care",
+  "story": {
+    "title": "A practice built on",
+    "paragraphs": [
+      "Private dentistry in a beautifully restored Grade II listed building on St Giles’ — check-ups, hygiene, implants and cosmetic care delivered with a calm, personal touch."
+    ],
+    "stats": []
+  },
+  "team": [
+    {
+      "name": "James Whitfield",
+      "role": "Senior Partner",
+      "initials": "JW",
+      "bio": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "initials": "EC",
+      "bio": "Family Law & Mediation"
+    },
+    {
+      "name": "Robert Palmer",
+      "role": "Associate",
+      "initials": "RP",
+      "bio": "Conveyancing & Property Law"
+    }
+  ],
+  "booking": {
+    "intro": "Free initial consultation. No obligation.",
+    "note": "Thank you! We'll be in touch within 24 hours.",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Fri: 9:00—17:30",
+    "saturday": "Closed",
+    "sunday": "Closed",
+    "closedDays": "Weekends"
+  },
+  "_source": "real-merchant"
+}

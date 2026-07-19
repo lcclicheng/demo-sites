@@ -24,6 +24,7 @@ PROJS=(
   cornish-cove-hotel osteria-lua granite-trades crust-bakery bloom-florist
   kingsman-barbers apex-fitness lumen-studio paws-pamper foxglove-books
   capstone-law love-yoga sycamore-hotel now-plumbing riverhill-coffee
+  ashtree-accountants st-giles-dentists hampsons-estate garden-business brinkburn-brewery
 )
 echo "=== 干净全量重建开始 $(date) ===" | tee "$LOG_DIR/_clean.log"
 for f in "${PROJS[@]}"; do

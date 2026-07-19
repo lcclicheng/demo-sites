@@ -1,0 +1,183 @@
+{
+  "template": "restaurant",
+  "name": "BRINKBURN ST BREWERY",
+  "tagline": "A loved local taphouse in Newcastle’s Ouseburn Valley — handcrafted beers brewed on-site, locally sourced food, and brewery tours.",
+  "location": "Newcastle upon Tyne, UK",
+  "street": "Ouseburn Valley, Byker, Newcastle",
+  "registeredAddress": "Ouseburn Valley, Byker, Newcastle upon Tyne, United Kingdom",
+  "phone": "+44 191 265 0500",
+  "email": "hello@brinkburnbrewery.co.uk",
+  "googleRating": "4.8",
+  "googleReviews": "1,200+ reviews",
+  "pageTitle": "BRINKBURN ST BREWERY — Microbrewery & Taproom in Newcastle",
+  "heroBadge": "Newcastle · Ouseburn Valley",
+  "heroLine1": "Byker brewed,",
+  "heroLine2": "Byker loved.",
+  "heroStats": [
+    {
+      "val": "4.8",
+      "stars": true
+    },
+    {
+      "val": "1,200+",
+      "stars": false
+    },
+    {
+      "val": "Est. 2015",
+      "stars": false
+    }
+  ],
+  "infoTicker": [
+    {
+      "icon": "MapPin",
+      "text": "Ouseburn Valley, Byker"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Sun · 12:00—23:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 191 265 0500"
+    },
+    {
+      "icon": "Beer",
+      "text": "16 taps on site"
+    }
+  ],
+  "heroCta1": {
+    "text": "Book a Brewery Tour",
+    "href": "#reserve"
+  },
+  "heroCta2": {
+    "text": "See Our Beers",
+    "href": "#menu"
+  },
+  "menuIntroTitle": "The Bar",
+  "menuIntroText": "Handcrafted beers brewed on-site in our microbrewery — from refreshing session ales to bold IPAs and rich stouts, plus proper scran from the kitchen.",
+  "menuSections": [
+    {
+      "icon": "Beer",
+      "title": "On Tap",
+      "items": [
+        {
+          "name": "Byker Pale Ale",
+          "desc": "Easy-drinking session pale, citrus and biscuit. 4.0%",
+          "price": 5
+        },
+        {
+          "name": "Ouseburn IPA",
+          "desc": "Bold, resinous IPA with tropical hop character. 5.8%",
+          "price": 6
+        },
+        {
+          "name": "Ford Stout",
+          "desc": "Smooth roast stout, coffee and dark chocolate. 5.2%",
+          "price": 6
+        },
+        {
+          "name": "Valley Lager",
+          "desc": "Crisp, clean lager brewed for the long NE summer. 4.3%",
+          "price": 5
+        }
+      ]
+    },
+    {
+      "icon": "UtensilsCrossed",
+      "title": "Proper Scran",
+      "items": [
+        {
+          "name": "Small Plates",
+          "desc": "Northern-inspired bites to share — perfect with a pint.",
+          "price": 7
+        },
+        {
+          "name": "Brinkburn Burger",
+          "desc": "Locally sourced beef, smoked cheese, house pickles.",
+          "price": 13
+        },
+        {
+          "name": "Sunday Roast",
+          "desc": "Slow-cooked roast with all the trimmings. Sundays only.",
+          "price": 15
+        }
+      ]
+    },
+    {
+      "icon": "Sparkles",
+      "title": "Tasting & Tours",
+      "items": [
+        {
+          "name": "Brewery Tour",
+          "desc": "Behind-the-scenes look at the microbrewery with a guide.",
+          "price": 12
+        },
+        {
+          "name": "Beer Tasting Flight",
+          "desc": "Five core and seasonal beers, explained by our brewers.",
+          "price": 10
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "icon": "Beer",
+      "title": "The Taproom",
+      "sub": "16 beers on tap",
+      "gradient": "from-stone-900 to-abyss"
+    },
+    {
+      "icon": "Flame",
+      "title": "The Microbrewery",
+      "sub": "Brewed on site",
+      "gradient": "from-stone-900 to-abyss"
+    },
+    {
+      "icon": "UtensilsCrossed",
+      "title": "The Kitchen",
+      "sub": "Local, fresh scran",
+      "gradient": "from-stone-900 to-abyss"
+    },
+    {
+      "icon": "Lamp",
+      "title": "Events & Live Music",
+      "sub": "Community nights",
+      "gradient": "from-stone-900 to-abyss"
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Sophie T.",
+      "text": "Best taproom in the Ouseburn. The IPA is unreal and the burger is bang on. Proper local spot.",
+      "rating": 5
+    },
+    {
+      "name": "Dan M.",
+      "text": "Took the brewery tour for a mate’s birthday — brilliant, friendly and the flights were spot on.",
+      "rating": 5
+    },
+    {
+      "name": "Aisha K.",
+      "text": "Sunday roast here is legendary. Cosy, characterful, never rushed. Our go-to.",
+      "rating": 5
+    }
+  ],
+  "reservationNote": "Brewery tours and private hire can be booked online. For groups of 8+ or events, get in touch via the form.",
+  "occasionOptions": [
+    "Brewery Tour",
+    "Private Hire",
+    "Events"
+  ],
+  "hoursDetail": {
+    "wedFri": "Mon—Thu: 12:00—23:00",
+    "saturday": "Fri—Sat: 11:00—00:00",
+    "sunday": "Sun: 12:00—21:00",
+    "closedDays": ""
+  },
+  "screenshotsIntro": "A warm, characterful taphouse in the Ouseburn Valley — the clink of glasses, the hum of the brewhouse, and the smell of fresh pizza from the kitchen.",
+  "footerNote": "© BRINKBURN ST BREWERY. Crafted with care in Newcastle.",
+  "slug": "brinkburn-brewery",
+  "_source": "real-merchant",
+  "subtitle": "Microbrewery · Bar · Kitchen"
+}

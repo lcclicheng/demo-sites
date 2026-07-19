@@ -1,0 +1,112 @@
+{
+  "template": "trades",
+  "name": "THE GARDEN BUSINESS",
+  "subtitle": "Garden Design · Landscaping · Maintenance",
+  "tagline": "Creative garden design, landscaping and maintenance in and around Bath — award-winning workmanship, hassle-free upkeep.",
+  "established": "2020",
+  "location": "Bath, UK",
+  "street": "Bath",
+  "registeredAddress": "Bath, United Kingdom",
+  "phone": "+44 1225 851319",
+  "emergency": true,
+  "emergencyPhone": "+44 161 883 9999",
+  "email": "hello@thegardenbusiness.com",
+  "googleRating": "5.0",
+  "googleReviews": "60+ reviews",
+  "hours": "Mon—Fri: 8:00—17:00 · Sat: 9:00—13:00",
+  "pageTitle": "THE GARDEN BUSINESS — Garden Design & Landscaping in Bath",
+  "heroLine1": "Gardens",
+  "heroLine2": "worth loving.",
+  "heroCta1": {
+    "text": "Get a Free Quote",
+    "href": "#contact"
+  },
+  "heroCta2": {
+    "text": "See Our Work",
+    "href": "#contact"
+  },
+  "certs": [
+    "RHS Awards",
+    "Fully Insured",
+    "BALI Member",
+    "Checkatrade"
+  ],
+  "stats": [
+    {
+      "value": "5+",
+      "label": "Years"
+    },
+    {
+      "value": "60+",
+      "label": "Reviews"
+    },
+    {
+      "value": "5.0",
+      "label": "Rating"
+    },
+    {
+      "value": "100%",
+      "label": "Bath-based"
+    }
+  ],
+  "servicesTitle": "WHAT WE DO",
+  "servicesSubtitle": "One trusted team for the whole house.",
+  "services": [
+    {
+      "name": "Emergency Repairs",
+      "desc": "Burst pipes, no heating, leaks — we arrive within the hour. 24/7, 365 days.",
+      "price": "From £85",
+      "emergency": true
+    },
+    {
+      "name": "Boiler Installation",
+      "desc": "New boiler supply & fit, annual servicing, landlord gas safety certificates. Gas Safe certified.",
+      "price": "From £1,950"
+    },
+    {
+      "name": "Joinery & Carpentry",
+      "desc": "Bespoke shelving, doors, fitted furniture and small extensions. Measured and made on site.",
+      "price": "From £350"
+    },
+    {
+      "name": "Bathroom Fitting",
+      "desc": "Full bathroom renovations — plumbing, tiling, install. Free design visit included.",
+      "price": "From £3,200"
+    },
+    {
+      "name": "Central Heating",
+      "desc": "Radiators, power flushing, smart thermostats and underfloor heating.",
+      "price": "From £450"
+    },
+    {
+      "name": "Landlord Services",
+      "desc": "Gas safety (CP12), EICR reports and planned maintenance for rental properties.",
+      "price": "From £75"
+    }
+  ],
+  "aboutTitle": "Designed, built and cared for.",
+  "aboutParagraphs": [
+    "The Garden Business creates and maintains fantastic gardens across Bath — from creative design and full landscaping construction to hassle-free ongoing maintenance.",
+    "Award-winning workmanship and a friendly, reliable team have earned us a leading reputation with Bath’s homeowners, businesses and prestigious contractors.",
+    "No-obligation quotations, clear communication and tidy sites on every project, big or small."
+  ],
+  "reviews": [
+    {
+      "name": "Emma L.",
+      "text": "Transformed our rear garden. Designed exactly what we wanted and the build was spotless. Could not be happier.",
+      "rating": 5
+    },
+    {
+      "name": "The Whitakers",
+      "text": "Maintenance plan keeps the garden looking perfect with zero effort from us. Reliable and lovely team.",
+      "rating": 5
+    },
+    {
+      "name": "James P.",
+      "text": "Oak planters and fencing done beautifully. Fair price, tidy work, finished on time.",
+      "rating": 5
+    }
+  ],
+  "slug": "garden-business",
+  "_source": "real-merchant"
+}

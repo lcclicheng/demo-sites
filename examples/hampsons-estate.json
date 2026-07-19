@@ -1,0 +1,250 @@
+{
+  "template": "sectioned",
+  "name": "HAMPSONS",
+  "subtitle": "Estate Agents · Leicester",
+  "tagline": "Independent, family-run estate agents in Leicester — honest, personal service for sales and lettings since 2020.",
+  "established": "2020",
+  "location": "Leicester, UK",
+  "street": "Leicester",
+  "registeredAddress": "Leicester, United Kingdom",
+  "phone": "+44 116 214 7555",
+  "email": "hello@hampsonsestateagents.co.uk",
+  "googleRating": "5.0",
+  "googleReviews": "120+ reviews",
+  "hours": "Mon—Fri: 9:00—17:30",
+  "pageTitle": "HAMPSONS — Estate Agents in Leicester",
+  "heroLines": [
+    "CLARITY.",
+    "CONFIDENCE.",
+    "RESULTS."
+  ],
+  "heroCta1": {
+    "text": "Book a Valuation",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "View Properties",
+    "href": "#booking"
+  },
+  "stats": [
+    {
+      "value": "5.0",
+      "label": "Rating"
+    },
+    {
+      "value": "120+",
+      "label": "Reviews"
+    },
+    {
+      "value": "NAEA",
+      "label": "Propertymark"
+    },
+    {
+      "value": "2020",
+      "label": "Established"
+    }
+  ],
+  "certifications": [
+    "SRA Regulated",
+    "Lexcel Accredited",
+    "Resolution Member",
+    "Law Society"
+  ],
+  "services": [
+    {
+      "name": "Residential Conveyancing",
+      "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+    },
+    {
+      "name": "Family Law",
+      "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+    },
+    {
+      "name": "Wills & Probate",
+      "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+    },
+    {
+      "name": "Employment Law",
+      "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+    },
+    {
+      "name": "Commercial Property",
+      "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+    },
+    {
+      "name": "Dispute Resolution",
+      "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "team"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "lawyers": [
+    {
+      "initials": "JW",
+      "name": "James Whitfield",
+      "role": "Senior Partner",
+      "specialty": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "initials": "EC",
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "specialty": "Family Law & Mediation"
+    },
+    {
+      "initials": "RP",
+      "name": "Robert Palmer",
+      "role": "Associate",
+      "specialty": "Conveyancing & Property Law"
+    }
+  ],
+  "form": {
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "How can we help?"
+    },
+    "submit": "Send Enquiry",
+    "success": "Thank you! We'll be in touch within 24 hours."
+  },
+  "footer": {
+    "note": "Members of NAEA Propertymark and The Property Ombudsman.",
+    "quickLinks": [
+      "Valuation",
+      "Sales",
+      "Lettings"
+    ]
+  },
+  "slug": "hampsons-estate",
+  "heroLine1": "YOUR MOVE,",
+  "heroLine2": "matters most.",
+  "heroStats": [
+    {
+      "val": "5.0",
+      "label": "Rating"
+    },
+    {
+      "val": "120+",
+      "label": "Reviews"
+    },
+    {
+      "val": "NAEA",
+      "label": "Propertymark"
+    },
+    {
+      "val": "2020",
+      "label": "Established"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "Leicester, LE1"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri: 9:00—17:30 · Sat: 9:00—13:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 116 214 7555"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Practice Areas",
+      "icon": "Scale",
+      "items": [
+        {
+          "name": "Residential Conveyancing",
+          "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+        },
+        {
+          "name": "Family Law",
+          "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+        },
+        {
+          "name": "Wills & Probate",
+          "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+        },
+        {
+          "name": "Employment Law",
+          "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+        },
+        {
+          "name": "Commercial Property",
+          "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+        },
+        {
+          "name": "Dispute Resolution",
+          "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "How we help",
+  "story": {
+    "title": "A family business",
+    "paragraphs": [
+      "Independent, family-run estate agents in Leicester — honest, personal sales and lettings service built on one-to-one attention and a reputation for doing right by every vendor and buyer."
+    ],
+    "stats": []
+  },
+  "team": [
+    {
+      "name": "James Whitfield",
+      "role": "Senior Partner",
+      "initials": "JW",
+      "bio": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "initials": "EC",
+      "bio": "Family Law & Mediation"
+    },
+    {
+      "name": "Robert Palmer",
+      "role": "Associate",
+      "initials": "RP",
+      "bio": "Conveyancing & Property Law"
+    }
+  ],
+  "booking": {
+    "intro": "Free initial consultation. No obligation.",
+    "note": "Thank you! We'll be in touch within 24 hours.",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Fri: 9:00—17:30",
+    "saturday": "Closed",
+    "sunday": "Closed",
+    "closedDays": "Weekends"
+  },
+  "_source": "real-merchant"
+}
