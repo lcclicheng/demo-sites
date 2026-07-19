@@ -1,0 +1,173 @@
+{
+  "template": "hotel",
+  "name": "THE SYCAMORE",
+  "tagline": "A family-run Edwardian guest house in the heart of York — cosy rooms, a hearty Full English, and a 10-minute walk to the Minster.",
+  "established": "1904",
+  "location": "York, UK",
+  "street": "York",
+  "registeredAddress": "York, United Kingdom",
+  "phone": "+44 1904 654321",
+  "email": "hello@thesycamore.co.uk",
+  "googleRating": "4.8",
+  "googleReviews": "280+ reviews",
+  "hours": "Check-in: 15:00 · Check-out: 11:00",
+  "pageTitle": "THE SYCAMORE — Guest House in York",
+  "heroLine1": "Edwardian.",
+  "heroLine2": "Family-run.",
+  "heroLine3": "York.",
+  "heroTagline": "Cosy rooms in a 1904 Edwardian house, a hearty breakfast, and a 10-minute walk to the Minster.",
+  "heroStars": 4,
+  "heroRatingText": "4.8 · 280+ reviews",
+  "heroCta1": {
+    "text": "View Our Rooms",
+    "href": "#rooms"
+  },
+  "heroCta2": {
+    "text": "Check Availability",
+    "href": "#book"
+  },
+  "navLinks": [
+    "Rooms",
+    "Book"
+  ],
+  "navCtaText": "Book Now",
+  "roomsSectionLabel": "OUR ROOMS",
+  "roomsSectionTitle": "Six quiet rooms, one short walk from the Minster.",
+  "rooms": [
+    {
+      "name": "The Garden Double",
+      "desc": "Period-style double with en-suite shower, overlooking the leafy cul-de-sac. Super-comfy bed.",
+      "price": 95,
+      "gradient": "from-emerald/20 to-gold/20"
+    },
+    {
+      "name": "The Bay Twin",
+      "desc": "Twin room with a bay window and original cornicing. En-suite shower.",
+      "price": 95,
+      "gradient": "from-emerald/30 to-warm/20"
+    },
+    {
+      "name": "The Attic Double",
+      "desc": "Snug double under the eaves, quiet and cosy. Shared bathroom just outside.",
+      "price": 75,
+      "gradient": "from-warm/30 to-gold/10"
+    },
+    {
+      "name": "The Ground-Floor Single",
+      "desc": "A bright single opening onto the garden — for the solo traveller exploring York.",
+      "price": 65,
+      "gradient": "from-sky-200/30 to-emerald/10"
+    }
+  ],
+  "bookingSectionLabel": "BOOK YOUR STAY",
+  "bookingTitleBefore": "Your room",
+  "bookingTitleHighlight": "awaits.",
+  "bookingFields": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "name": "checkin",
+      "label": "Check-in",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "checkout",
+      "label": "Check-out",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "guests",
+      "label": "Guests",
+      "type": "select",
+      "options": [
+        "1 Guest",
+        "2 Guests",
+        "3 Guests",
+        "4 Guests"
+      ]
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "label": "Location",
+      "lines": [
+        "York",
+        "YO1 1AD"
+      ],
+      "text": "York, UK"
+    },
+    {
+      "icon": "Clock",
+      "label": "Check-in / out",
+      "lines": [
+        "Check-in: 14:00",
+        "Check-out: 10:30"
+      ]
+    },
+    {
+      "icon": "Phone",
+      "label": "Contact",
+      "lines": [
+        "+44 1904 654321",
+        "hello@thesycamore.co.uk"
+      ]
+    }
+  ],
+  "footerDescription": "A family-run Edwardian guest house in the heart of York. Six individual rooms, a 10-minute walk from the Minster.",
+  "footerInfo": [
+    {
+      "label": "Rooms",
+      "items": [
+        "The Garden Double",
+        "The Bay Twin",
+        "The Attic Double",
+        "The Ground-Floor Single"
+      ]
+    },
+    {
+      "label": "Info",
+      "items": [
+        "Check-in: 14:00",
+        "Check-out: 10:30",
+        "Breakfast: 8:00–9:30"
+      ]
+    },
+    {
+      "label": "Find Us",
+      "items": [
+        "York",
+        "United Kingdom"
+      ]
+    }
+  ],
+  "footerAddressLines": [
+    "York",
+    "United Kingdom"
+  ],
+  "footerSocial": [
+    {
+      "icon": "Instagram",
+      "url": "#"
+    },
+    {
+      "icon": "Facebook",
+      "url": "#"
+    }
+  ],
+  "footerCopyright": "All rights reserved.",
+  "slug": "sycamore-hotel",
+  "_source": "real-merchant"
+}

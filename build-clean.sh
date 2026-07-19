@@ -23,6 +23,7 @@ PROJS=(
   sundara-yoga-yoga red-lion-law-law twisted-sister-salon claremont-cakes-dessert tabitha-s-coffee-coffee
   cornish-cove-hotel osteria-lua granite-trades crust-bakery bloom-florist
   kingsman-barbers apex-fitness lumen-studio paws-pamper foxglove-books
+  capstone-law love-yoga sycamore-hotel now-plumbing riverhill-coffee
 )
 echo "=== 干净全量重建开始 $(date) ===" | tee "$LOG_DIR/_clean.log"
 for f in "${PROJS[@]}"; do

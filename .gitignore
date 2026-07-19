@@ -37,3 +37,6 @@ clients/**
 
 # 外联决策系统（含 20 家真实商家外联状态/策略，不进公开仓库；参照 clients/** 范式）
 outreach/决策/
+
+# Business Operating System（含定价/KPI/CRM 内部口径与运营节奏，不进公开仓库）
+business/

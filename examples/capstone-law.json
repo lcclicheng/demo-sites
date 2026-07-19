@@ -1,0 +1,250 @@
+{
+  "template": "sectioned",
+  "name": "CAPSTONE",
+  "subtitle": "Solicitors",
+  "tagline": "Independent solicitors in Bristol since 1973 — honest, approachable legal advice for families and businesses.",
+  "established": "1973",
+  "location": "Bristol, UK",
+  "street": "Gloucester Road, Bishopston, Bristol BS7 8AS",
+  "registeredAddress": "Gloucester Road, Bishopston, Bristol, United Kingdom",
+  "phone": "+44 117 946 1100",
+  "email": "hello@capstonelaw.co.uk",
+  "googleRating": "4.9",
+  "googleReviews": "120+ reviews",
+  "hours": "Mon—Fri: 9:00—17:30",
+  "pageTitle": "CAPSTONE — Solicitors in Bristol",
+  "heroLines": [
+    "INDEPENDENT.",
+    "APPROACHABLE.",
+    "TRUSTED."
+  ],
+  "heroCta1": {
+    "text": "Our Services",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Book a Consultation",
+    "href": "#booking"
+  },
+  "stats": [
+    {
+      "value": "50+",
+      "label": "Years"
+    },
+    {
+      "value": "4.9",
+      "label": "Rating"
+    },
+    {
+      "value": "500+",
+      "label": "Clients"
+    },
+    {
+      "value": "SRA",
+      "label": "Regulated"
+    }
+  ],
+  "certifications": [
+    "SRA Regulated",
+    "Lexcel Accredited",
+    "Resolution Member",
+    "Law Society"
+  ],
+  "services": [
+    {
+      "name": "Residential Conveyancing",
+      "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+    },
+    {
+      "name": "Family Law",
+      "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+    },
+    {
+      "name": "Wills & Probate",
+      "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+    },
+    {
+      "name": "Employment Law",
+      "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+    },
+    {
+      "name": "Commercial Property",
+      "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+    },
+    {
+      "name": "Dispute Resolution",
+      "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "team"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "lawyers": [
+    {
+      "initials": "JW",
+      "name": "James Whitfield",
+      "role": "Senior Partner",
+      "specialty": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "initials": "EC",
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "specialty": "Family Law & Mediation"
+    },
+    {
+      "initials": "RP",
+      "name": "Robert Palmer",
+      "role": "Associate",
+      "specialty": "Conveyancing & Property Law"
+    }
+  ],
+  "form": {
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "How can we help?"
+    },
+    "submit": "Send Enquiry",
+    "success": "Thank you! We'll be in touch within 24 hours."
+  },
+  "footer": {
+    "note": "Regulated by the Solicitors Regulation Authority.",
+    "quickLinks": [
+      "Services",
+      "Team",
+      "Contact"
+    ]
+  },
+  "slug": "capstone-law",
+  "heroLine1": "INDEPENDENT.",
+  "heroLine2": "APPROACHABLE. TRUSTED.",
+  "heroStats": [
+    {
+      "val": "50+",
+      "label": "Years"
+    },
+    {
+      "val": "4.9",
+      "label": "Rating"
+    },
+    {
+      "val": "500+",
+      "label": "Clients"
+    },
+    {
+      "val": "SRA",
+      "label": "Regulated"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "Gloucester Road, Bishopston, Bristol BS7"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri: 9:00—17:30"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 117 946 1100"
+    }
+  ],
+  "menu": [
+    {
+      "title": "Practice Areas",
+      "icon": "Scale",
+      "items": [
+        {
+          "name": "Residential Conveyancing",
+          "desc": "Buying or selling property? We handle the entire process from offer to completion with transparent fixed fees."
+        },
+        {
+          "name": "Family Law",
+          "desc": "Divorce, financial settlements, child arrangements. Sensitive, practical advice when you need it most."
+        },
+        {
+          "name": "Wills & Probate",
+          "desc": "Protect your legacy with a professionally drafted will. Estate administration handled with care."
+        },
+        {
+          "name": "Employment Law",
+          "desc": "Settlement agreements, unfair dismissal, redundancy. Clear advice for employees and employers."
+        },
+        {
+          "name": "Commercial Property",
+          "desc": "Leases, acquisitions, and development. Strategic advice for business owners and investors."
+        },
+        {
+          "name": "Dispute Resolution",
+          "desc": "Contract disputes, debt recovery, professional negligence. Resolution before litigation."
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "How we can",
+  "story": {
+    "title": "Decades of",
+    "paragraphs": [
+      "Independent solicitors in Bristol since 1973 — honest, approachable legal advice for families and businesses, by referral and reputation rather than paid referral fees."
+    ],
+    "stats": []
+  },
+  "team": [
+    {
+      "name": "James Whitfield",
+      "role": "Senior Partner",
+      "initials": "JW",
+      "bio": "Commercial Property & Dispute Resolution"
+    },
+    {
+      "name": "Eleanor Cross",
+      "role": "Partner",
+      "initials": "EC",
+      "bio": "Family Law & Mediation"
+    },
+    {
+      "name": "Robert Palmer",
+      "role": "Associate",
+      "initials": "RP",
+      "bio": "Conveyancing & Property Law"
+    }
+  ],
+  "booking": {
+    "intro": "Free initial consultation. No obligation.",
+    "note": "Thank you! We'll be in touch within 24 hours.",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Fri: 9:00—17:30",
+    "saturday": "Closed",
+    "sunday": "Closed",
+    "closedDays": "Weekends"
+  },
+  "_source": "real-merchant"
+}

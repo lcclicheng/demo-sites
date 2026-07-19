@@ -1,0 +1,224 @@
+{
+  "template": "sectioned",
+  "name": "RIVERHILL",
+  "subtitle": "Specialty Coffee · Brunch",
+  "tagline": "Glasgow’s heartbeat of specialty coffee — Dear Green beans, flat whites, and a warm community hub on Gordon Street.",
+  "established": "2014",
+  "location": "Glasgow, UK",
+  "street": "Gordon Street, Glasgow",
+  "registeredAddress": "Gordon Street, Glasgow, United Kingdom",
+  "phone": "+44 141 248 0800",
+  "email": "hello@riverhillcoffee.co.uk",
+  "googleRating": "4.6",
+  "googleReviews": "782+ reviews",
+  "hours": "Mon—Fri · 7:30—18:00 · Sat—Sun · 9:00—17:00",
+  "pageTitle": "RIVERHILL — Specialty Coffee in Glasgow",
+  "heroLine1": "COFFEE,",
+  "heroLine2": "COMMUNITY.",
+  "menuTitle": "The Bar",
+  "menuSubtitle": "Single origins & house blends",
+  "heroCta1": {
+    "text": "Explore Our Menu",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Order Ahead",
+    "href": "#booking"
+  },
+  "menuItems": [
+    {
+      "name": "Ethiopia Yirgacheffe",
+      "origin": "Ethiopia",
+      "notes": "Jasmine · Bergamot · Honey",
+      "roast": "Light",
+      "price": "£3.80",
+      "desc": "Washed process, delicate and floral with a clean citrus finish.",
+      "roastLevel": 1,
+      "process": "Washed"
+    },
+    {
+      "name": "Colombia El Paraiso",
+      "origin": "Colombia",
+      "notes": "Red Apple · Caramel · Cacao",
+      "roast": "Medium",
+      "price": "£3.60",
+      "desc": "Balanced and sweet, a dependable everyday espresso.",
+      "roastLevel": 3,
+      "process": "Washed"
+    },
+    {
+      "name": "Brazil Cerrado",
+      "origin": "Brazil",
+      "notes": "Hazelnut · Milk Chocolate · Toffee",
+      "roast": "Medium-Dark",
+      "price": "£3.40",
+      "desc": "Low acidity, full body — built for flat whites.",
+      "roastLevel": 4,
+      "process": "Natural"
+    },
+    {
+      "name": "Sumatra Mandheling",
+      "origin": "Indonesia",
+      "notes": "Cedar · Dark Chocolate · Spice",
+      "roast": "Dark",
+      "price": "£3.50",
+      "desc": "Earthy and syrupy, our winter house blend.",
+      "roastLevel": 5,
+      "process": "Wet-Hulled"
+    }
+  ],
+  "roasteryTitle": "DEAR GREEN COFFEE",
+  "roasteryDescription": "Beans from Dear Green Coffee Roasters — traceable, ethically sourced, roasted for freshness. No shortcuts.",
+  "orderTitle": "ORDER AHEAD",
+  "orderSubtitle": "Skip the queue on Clifford Street.",
+  "orderConfirmationTitle": "Order Placed",
+  "orderConfirmationMessage": "Ready in 8–10 minutes.",
+  "orderFormLabels": {
+    "item": "Your Coffee",
+    "name": "Name",
+    "phone": "Phone",
+    "note": "Notes"
+  },
+  "orderFormPlaceholders": {
+    "item": "Select your brew",
+    "name": "Your name",
+    "phone": "+44 7xxx",
+    "note": "Oat milk? Extra shot?"
+  },
+  "orderButtonText": "Place Order",
+  "footerTagline": "Specialty coffee in the heart of Glasgow. A community hub on Gordon Street.",
+  "footerBottomText": "Crafted on Gordon Street, Glasgow.",
+  "footerHoursLabel": "Hours",
+  "footerContactLabel": "Find Us",
+  "navLinks": [
+    "Menu",
+    "Roastery",
+    "Order"
+  ],
+  "navCtaText": "Order Now",
+  "slug": "riverhill-coffee",
+  "designVariant": "B",
+  "_source": "real-merchant",
+  "heroBadge": "Est. 2014 · Glasgow",
+  "heroStats": [
+    {
+      "val": "4.6",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "782+",
+      "label": "Reviews"
+    },
+    {
+      "val": "2014",
+      "label": "Established"
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "infoBar": [
+    {
+      "icon": "MapPin",
+      "text": "24 Gordon Street, Glasgow G1 3PU"
+    },
+    {
+      "icon": "Clock",
+      "text": "Mon—Fri · 7:30—18:00 · Sat—Sun · 9:00—17:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 141 248 0800"
+    }
+  ],
+  "menu": [
+    {
+      "title": "The Bar",
+      "icon": "Coffee",
+      "items": [
+        {
+          "name": "Ethiopia Yirgacheffe",
+          "desc": "Ethiopia · Jasmine · Bergamot · Honey · Washed",
+          "price": "£3.80"
+        },
+        {
+          "name": "Colombia El Paraiso",
+          "desc": "Colombia · Red Apple · Caramel · Cacao · Washed",
+          "price": "£3.60"
+        },
+        {
+          "name": "Brazil Cerrado",
+          "desc": "Brazil · Hazelnut · Milk Chocolate · Toffee · Natural",
+          "price": "£3.40"
+        },
+        {
+          "name": "Sumatra Mandheling",
+          "desc": "Indonesia · Cedar · Dark Chocolate · Spice · Wet-Hulled",
+          "price": "£3.50"
+        }
+      ]
+    }
+  ],
+  "menuIntroTitle": "Single origins & house blends",
+  "menuIntroText": "Beans from Dear Green Coffee Roasters — traceable, ethically sourced, roasted for freshness.",
+  "story": {
+    "title": "DEAR GREEN COFFEE",
+    "paragraphs": [
+      "Beans from Dear Green Coffee Roasters — traceable, ethically sourced, roasted for freshness. No shortcuts, just good coffee."
+    ],
+    "stats": [
+      {
+        "value": "15kg",
+        "label": "Batch"
+      },
+      {
+        "value": "12",
+        "label": "Profiles"
+      },
+      {
+        "value": "72h",
+        "label": "Rest"
+      }
+    ]
+  },
+  "booking": {
+    "intro": "Order ahead and skip the queue.",
+    "note": "Ready in 8–10 minutes.",
+    "occasionOptions": []
+  },
+  "hoursDetail": {
+    "wedFri": "Mon—Fri · 7:30—18:00 · Sat—Sun · 9:00—17:00",
+    "saturday": "Mon—Fri · 7:30—18:00 · Sat—Sun · 9:00—17:00",
+    "sunday": "Mon—Fri · 7:30—18:00 · Sat—Sun · 9:00—17:00",
+    "closedDays": ""
+  },
+  "footer": {
+    "note": "Specialty coffee in the heart of Glasgow. A community hub on Gordon Street.",
+    "quickLinks": [
+      "Menu",
+      "Roastery",
+      "Order"
+    ]
+  }
+}

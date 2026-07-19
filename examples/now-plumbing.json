@@ -1,0 +1,112 @@
+{
+  "template": "trades",
+  "name": "NOW PLUMBING",
+  "subtitle": "Plumbing · Heating · Gas",
+  "tagline": "Family-run plumbing & heating in Liverpool for 17+ years — Gas Safe engineers, fixed-price quotes, no call-out surprises.",
+  "established": "2008",
+  "location": "Liverpool, UK",
+  "street": "Liverpool",
+  "registeredAddress": "Liverpool, United Kingdom",
+  "phone": "+44 151 808 0800",
+  "emergency": true,
+  "emergencyPhone": "+44 151 808 0999",
+  "email": "hello@nowplumb.co.uk",
+  "googleRating": "5.0",
+  "googleReviews": "140+ reviews",
+  "hours": "Mon—Fri: 8:00—18:00 · Sat: 9:00—13:00 · 24/7 Emergency",
+  "pageTitle": "NOW PLUMBING — Plumbing · Heating in Liverpool",
+  "heroLine1": "Fixed right,",
+  "heroLine2": "first time.",
+  "heroCta1": {
+    "text": "Get a Free Quote",
+    "href": "#contact"
+  },
+  "heroCta2": {
+    "text": "24/7 Emergency",
+    "href": "#contact"
+  },
+  "certs": [
+    "Gas Safe Registered",
+    "Fully Insured",
+    "City & Guilds",
+    "Checkatrade"
+  ],
+  "stats": [
+    {
+      "value": "17+",
+      "label": "Years"
+    },
+    {
+      "value": "140+",
+      "label": "Reviews"
+    },
+    {
+      "value": "5.0",
+      "label": "Rating"
+    },
+    {
+      "value": "60min",
+      "label": "Response"
+    }
+  ],
+  "servicesTitle": "WHAT WE DO",
+  "servicesSubtitle": "One trusted team for the whole house.",
+  "services": [
+    {
+      "name": "Emergency Repairs",
+      "desc": "Burst pipes, no heating, leaks — we arrive within the hour. 24/7, 365 days.",
+      "price": "From £85",
+      "emergency": true
+    },
+    {
+      "name": "Boiler Installation",
+      "desc": "New boiler supply & fit, annual servicing, landlord gas safety certificates. Gas Safe certified.",
+      "price": "From £1,950"
+    },
+    {
+      "name": "Joinery & Carpentry",
+      "desc": "Bespoke shelving, doors, fitted furniture and small extensions. Measured and made on site.",
+      "price": "From £350"
+    },
+    {
+      "name": "Bathroom Fitting",
+      "desc": "Full bathroom renovations — plumbing, tiling, install. Free design visit included.",
+      "price": "From £3,200"
+    },
+    {
+      "name": "Central Heating",
+      "desc": "Radiators, power flushing, smart thermostats and underfloor heating.",
+      "price": "From £450"
+    },
+    {
+      "name": "Landlord Services",
+      "desc": "Gas safety (CP12), EICR reports and planned maintenance for rental properties.",
+      "price": "From £75"
+    }
+  ],
+  "aboutTitle": "Seventeen years of getting it right.",
+  "aboutParagraphs": [
+    "Now Plumbing has kept Liverpool’s homes warm, dry and working for over seventeen years — fixed-price quotes, Gas Safe engineers, and no call-out surprises.",
+    "Boilers, bathrooms, emergencies and landlord certificates, all under one roof. Clear quotes, tidy work, and a guarantee on every job.",
+    "Every engineer is qualified, insured and background-checked. No jargon, no upsells, no surprises."
+  ],
+  "reviews": [
+    {
+      "name": "Sarah M.",
+      "text": "New boiler fitted last month. Tidy, polite, explained everything. Best of four quotes.",
+      "rating": 5
+    },
+    {
+      "name": "Paul R.",
+      "text": "Burst pipe at 8pm — they were here in under an hour. Lifesavers.",
+      "rating": 5
+    },
+    {
+      "name": "The Okafor Family",
+      "text": "Used them for a full bathroom. Plumbing, tiling, heating — one team, zero stress.",
+      "rating": 5
+    }
+  ],
+  "slug": "now-plumbing",
+  "_source": "real-merchant"
+}
