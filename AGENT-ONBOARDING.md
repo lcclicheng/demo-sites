@@ -95,6 +95,7 @@ uk-biz-finder/       （同级，独立工具）英国商家批量搜索（Overp
 - 用 `currentColor` + `color-mix` 跟随主题（每个站 THEMES 覆盖 `accent`，亮暗/多品牌色通用）。
 - **招牌签名系统**（本项目的 IP）：17 个行业 SVG motif（`brew/breath/monogram/confetti/plate/sheen/forge/grid/pulse/bloom/aperture/paw/page/key/ledger/smile/razor`），全部 `stroke="currentColor"`；`deriveSignature(d)` 自动映射（优先 `signature` 字段）；`HeroBackdrop` 有 `signature` 水印层；sectioned 站另有焦点 `SignatureMark`。
 - `generate.mjs` 的 `VISUAL_CSS` 注入 11 个招牌 keyframes（float/breathe/spin/sweep/twinkle/rise/draw/bloom/bob/steam）+ `prefers-reduced-motion` 降级。
+- **Mood 系统（v0.10，每站美感独立深化，数据驱动）**：example JSON 可加 `"mood": { deco, hero, sig, cta }`（`getMood(d)` 兜底默认，缺字段不报错）。`deco`(minimal/balanced/rich) 经 `HeroBackdrop` 的 `deco-*` 类调 glow/水印/粒子密度（规则在 `VISUAL_CSS`）；`hero`(center/asym/split) 切 sectioned `Hero` 构图（asym 兼容旧 `designVariant:'B'` 先例，split 为编辑型两栏新布局）；`sig:'on'` 在 Hero 底部插入 `SignatureDivider` 第二招牌分隔条；`cta`(fill/outline/ghost) 改 `CtaButtons` 形态。全程 theme-agnostic——只调密度/构图，**绝不调色**；legacy 8 套模板仅在 `HeroBackdrop` 接 `mood={(d as any).mood?.deco}`（最小安全改动，不碰硬编码 CTA/布局）。当前仅 Day1–4 外联 20 站已加 `mood`（见 `examples/`），其余站缺省走 balanced/center/fill 默认，行为不变。
 - ❌ 禁止 JSX 内联 `<style>` 逃避 THEMES 替换（换肤不生效且泄漏旧色进共享模板站）。
 
 ---

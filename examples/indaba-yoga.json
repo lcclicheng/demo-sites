@@ -1,6 +1,7 @@
 {
   "template": "yoga",
   "name": "INDABA",
+  "mood": { "deco": "minimal", "hero": "center", "sig": "on", "cta": "ghost" },
   "subtitle": "Yoga & Wellness",
   "tagline": "One of London's largest yoga studios — classes for every body, every level, every intention.",
   "established": "2006",

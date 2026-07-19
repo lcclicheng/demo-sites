@@ -1,6 +1,7 @@
 {
   "template": "sectioned",
   "name": "BLUE SKY PHOTOGRAPHY",
+  "mood": { "deco": "minimal", "hero": "center", "sig": "on", "cta": "outline" },
   "subtitle": "Photographer · Portrait & Event",
   "tagline": "Natural-light portraiture, weddings and brand shoots across Edinburgh — relaxed, real, and yours to keep.",
   "established": "2017",

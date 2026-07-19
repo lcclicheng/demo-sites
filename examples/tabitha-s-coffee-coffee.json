@@ -2,6 +2,7 @@
   "template": "sectioned",
   "slug": "tabitha-s-coffee-coffee",
   "name": "TABITHA'S",
+  "mood": { "deco": "minimal", "hero": "center", "sig": "on", "cta": "ghost" },
   "subtitle": "Specialty Coffee",
   "tagline": "Independent specialty coffee in Manchester — single-origin, slow-roasted, brewed with care.",
   "established": "2020",

@@ -1,6 +1,7 @@
 {
   "template": "salon",
   "name": "TWISTED SISTER",
+  "mood": { "deco": "rich", "hero": "center", "sig": "on", "cta": "fill" },
   "subtitle": "Hair & Colour",
   "tagline": "A creative Glasgow salon for cut, colour, and curl — bold looks, gentle hands, no rush.",
   "heroTagline": "Bold colour, quiet confidence.",

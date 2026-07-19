@@ -1,6 +1,7 @@
 {
   "template": "sectioned",
   "name": "KAFFEINE",
+  "mood": { "deco": "rich", "hero": "asym", "sig": "on", "cta": "fill" },
   "subtitle": "Specialty Coffee · All-Day Brunch",
   "tagline": "A Fitzrovia coffee bar since 2009 — single-origin espresso, a legendary flat white, and all-day brunch made on site.",
   "established": "2017",

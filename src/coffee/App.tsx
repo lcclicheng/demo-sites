@@ -109,7 +109,7 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <HeroBackdrop particles={false} signature="brew" />
+        <HeroBackdrop particles={false} signature="brew" mood={(d as any).mood?.deco} />
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full border border-vermillion/10"/>
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border border-vermillion/8"/>
         <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-vermillion/3 blur-[100px]"/>

@@ -1,6 +1,7 @@
 {
   "template": "sectioned",
   "name": "HAIR AND HOUNDS",
+  "mood": { "deco": "balanced", "hero": "center", "sig": "on", "cta": "fill" },
   "subtitle": "Pet Grooming · Dog & Cat Spa",
   "tagline": "Gentle, fear-free grooming for dogs and cats in Bristol — calm hands, tidy coats, happy pets.",
   "established": "2020",

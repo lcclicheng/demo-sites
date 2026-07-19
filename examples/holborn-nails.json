@@ -1,6 +1,7 @@
 {
   "template": "salon",
   "name": "SERENITY",
+  "mood": { "deco": "minimal", "hero": "center", "sig": "on", "cta": "outline" },
   "subtitle": "Nails & Beauty",
   "tagline": "A calm Holborn studio for nails, lashes and facials — quiet luxury, no rush, no upsell.",
   "heroTagline": "Quiet luxury for hands and feet.",

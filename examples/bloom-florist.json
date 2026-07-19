@@ -1,6 +1,7 @@
 {
   "template": "sectioned",
   "name": "THE BRIGHTON FLOWER COMPANY",
+  "mood": { "deco": "rich", "hero": "center", "sig": "on", "cta": "ghost" },
   "subtitle": "Florist · Flower Studio",
   "tagline": "Seasonal, British-grown flowers arranged with a light touch — weddings, events, and the bunch you grab on the way home.",
   "established": "2018",

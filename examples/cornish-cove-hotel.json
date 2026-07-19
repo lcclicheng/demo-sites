@@ -1,6 +1,7 @@
 {
   "template": "hotel",
   "name": "PEDN OLVA",
+  "mood": { "deco": "rich", "hero": "center", "sig": "on", "cta": "fill" },
   "tagline": "A clifftop hotel above the Atlantic in St Ives — rooms, a sea-view dining room, and the sound of the tide at your window.",
   "established": "2011",
   "location": "St Ives, Cornwall, UK",

@@ -1,6 +1,7 @@
 {
   "template": "restaurant",
   "name": "LA PIAZZA 1",
+  "mood": { "deco": "balanced", "hero": "center", "sig": "on", "cta": "fill" },
   "tagline": "Family-run Italian cooking in the heart of Bristol — wood-fired pizza, fresh pasta, and a warm welcome since the 1990s.",
   "location": "Bristol, UK",
   "street": "Bristol",

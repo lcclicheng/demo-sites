@@ -14,29 +14,62 @@
 import { ReactNode } from 'react'
 import { Star } from 'lucide-react'
 
+/* ── Mood system (v0.10): per-site aesthetic deepening ──
+   Each site opts into a `mood` object in its example JSON:
+     { deco: 'minimal'|'balanced'|'rich',   // ambient decoration density
+       hero: 'center'|'asym'|'split',        // hero composition (sectioned only)
+       sig:  'on'|'off',                      // signature divider on/off
+       cta:  'fill'|'outline'|'ghost' }       // CTA treatment
+   `getMood()` merges with a safe default so a missing field never breaks render.
+   Everything stays theme-agnostic — the mood only modulates density / composition,
+   never hard-codes a colour. */
+export type MoodDeco = 'minimal' | 'balanced' | 'rich'
+export type Mood = {
+  deco: MoodDeco
+  hero: 'center' | 'asym' | 'split'
+  sig: 'on' | 'off'
+  cta: 'fill' | 'outline' | 'ghost'
+}
+const DEFAULT_MOOD: Mood = { deco: 'balanced', hero: 'center', sig: 'on', cta: 'fill' }
+export function getMood(d: any): Mood {
+  const m = (d && d.mood) || {}
+  return {
+    deco: (m.deco as MoodDeco) || DEFAULT_MOOD.deco,
+    hero: (m.hero as Mood['hero']) || DEFAULT_MOOD.hero,
+    sig: (m.sig as Mood['sig']) || DEFAULT_MOOD.sig,
+    cta: (m.cta as Mood['cta']) || DEFAULT_MOOD.cta,
+  }
+}
+
 /* ── Hero backdrop: ambient glow + optional breathing ring + drifting particles ──
-   Sits absolutely behind hero content. Purely decorative (aria-hidden). */
+   Sits absolutely behind hero content. Purely decorative (aria-hidden).
+   `mood` (deco preset) modulates glow / watermark / particle density via the
+   `deco-*` class on the wrapper — see VISUAL_CSS for the theme-agnostic rules. */
 export function HeroBackdrop({
   breathe = true,
   particles = true,
   variant = 'default',
   signature,
+  mood,
 }: {
   breathe?: boolean
   particles?: boolean
   variant?: 'default' | 'grid'
   signature?: string
+  mood?: MoodDeco
 }) {
+  const decoClass = mood ? `deco-${mood}` : ''
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
-      {/* Ambient glow blobs — tinted with currentColor, faded via opacity */}
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none ${decoClass}`} aria-hidden>
+      {/* Ambient glow blobs — tinted with currentColor; opacity moved to the
+          `.glow-blob` class so the mood preset can modulate it (VISUAL_CSS). */}
       <div
-        className="absolute top-[22%] left-[22%] w-[30rem] h-[30rem] rounded-full blur-[150px] shimmer-soft"
-        style={{ background: 'currentColor', opacity: 0.05 }}
+        className="glow-blob absolute top-[22%] left-[22%] w-[30rem] h-[30rem] rounded-full blur-[150px] shimmer-soft"
+        style={{ background: 'currentColor' }}
       />
       <div
-        className="absolute bottom-[28%] right-[22%] w-80 h-80 rounded-full blur-[120px] shimmer-soft"
-        style={{ background: 'currentColor', opacity: 0.04, animationDelay: '1.5s' }}
+        className="glow-blob glow-blob--2 absolute bottom-[28%] right-[22%] w-80 h-80 rounded-full blur-[120px] shimmer-soft"
+        style={{ background: 'currentColor' }}
       />
 
       {/* Breathing ring — slow scale pulse, very zen (from premium-yoga) */}
@@ -402,4 +435,16 @@ export function deriveSignature(d: any): string {
   ]
   for (const [re, k] of rules) if (re.test(t)) return k
   return 'monogram'
+}
+
+/* Signature divider — a second "招牌" landing point per site.
+   A thin editorial rule flanked by the business-type motif, used to close the
+   hero (or separate chapters). Theme-agnostic: motif follows currentColor. */
+export function SignatureDivider({ kind, className = '' }: { kind: string; className?: string }) {
+  const k = MOTIFS[kind] ? kind : 'monogram'
+  return (
+    <div className={`sig-divider ${className}`} aria-hidden>
+      <SignatureMotif kind={k} />
+    </div>
+  )
 }

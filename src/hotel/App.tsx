@@ -109,7 +109,7 @@ export default function App() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pb-16 overflow-hidden bg-cream">
-        <HeroBackdrop variant="grid" signature="grid" />
+        <HeroBackdrop variant="grid" signature="grid" mood={(d as any).mood?.deco} />
         {/* Gold pinstripes */}
         <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(200,149,44,0.06) 79px, rgba(200,149,44,0.06) 80px)' }}/>
         <div className="absolute top-1/3 right-[15%] w-80 h-80 bg-gold/6 rounded-full blur-[120px]"/>

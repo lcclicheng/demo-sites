@@ -1,6 +1,7 @@
 {
   "template": "law",
   "name": "RED LION",
+  "mood": { "deco": "minimal", "hero": "center", "sig": "on", "cta": "fill" },
   "subtitle": "Solicitors",
   "tagline": "Straightforward legal advice for Birmingham families and businesses since 2009.",
   "established": "2009",

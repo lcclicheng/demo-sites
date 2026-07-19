@@ -1,6 +1,7 @@
 {
   "template": "sectioned",
   "name": "THE LITTLE APPLE BOOKSHOP",
+  "mood": { "deco": "minimal", "hero": "split", "sig": "on", "cta": "ghost" },
   "subtitle": "Bookshop · New & Secondhand",
   "tagline": "An indie bookshop in York — new releases, rare finds, and a coffee corner at the back.",
   "established": "2015",

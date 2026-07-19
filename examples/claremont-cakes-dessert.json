@@ -1,6 +1,7 @@
 {
   "template": "dessert",
   "name": "CLAREMONT",
+  "mood": { "deco": "balanced", "hero": "center", "sig": "on", "cta": "outline" },
   "tagline": "A Bristol cake studio — celebration cakes, patisserie, and small sweet luxuries made to order.",
   "taglineFull": "Cakes and patisserie, made to order in Bristol.",
   "location": "Bristol",

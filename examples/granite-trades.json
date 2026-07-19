@@ -1,6 +1,7 @@
 {
   "template": "trades",
   "name": "MANCHESTER PLUMBING & HEATING",
+  "mood": { "deco": "minimal", "hero": "center", "sig": "on", "cta": "outline" },
   "subtitle": "Plumbing · Heating · Gas",
   "tagline": "Same-day response. No call-out fee. Nearly two decades keeping Manchester’s homes warm, dry and working.",
   "established": "2007",

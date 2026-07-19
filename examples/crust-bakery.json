@@ -1,6 +1,7 @@
 {
   "template": "sectioned",
   "name": "BLUE BIRD BAKERY",
+  "mood": { "deco": "balanced", "hero": "split", "sig": "on", "cta": "fill" },
   "subtitle": "Artisan Bakery · Patisserie",
   "tagline": "Sourdough baked before dawn, patisserie by mid-morning, and coffee worth crossing town for.",
   "established": "2014",

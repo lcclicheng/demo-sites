@@ -1,6 +1,7 @@
 {
   "template": "law",
   "name": "SEDDONS",
+  "mood": { "deco": "balanced", "hero": "center", "sig": "on", "cta": "outline" },
   "subtitle": "Solicitors",
   "tagline": "Trusted legal counsel for individuals, families, and businesses across London since 1984.",
   "established": "1984",

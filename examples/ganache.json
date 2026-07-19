@@ -1,6 +1,7 @@
 {
   "template": "dessert",
   "name": "PRESTAT",
+  "mood": { "deco": "rich", "hero": "center", "sig": "on", "cta": "fill" },
   "tagline": "An artisan chocolatier in Soho since 1902 — hand-tempered truffles, pralines, and gift boxes made daily.",
   "taglineFull": "Fine chocolate in the heart of Soho.",
   "location": "Soho, London",

@@ -121,8 +121,29 @@ const VISUAL_CSS = `
 .sig-bloom{animation:sigbloom 7s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
 .sig-bob{animation:sigbob 5s ease-in-out infinite}
 .sig-steam{animation:sigsweep 5s ease-in-out infinite}
+
+/* === Mood system (v0.10: per-site aesthetic deepening, theme-agnostic) === */
+/* Ambient glow blobs — base opacity moved out of inline style so the mood
+   preset can modulate it. (Old inline was .05/.04; base .05 keeps the look.) */
+.glow-blob{opacity:.05}
+.glow-blob--2{animation-delay:1.5s}
+.deco-rich .glow-blob{opacity:.08}
+.deco-minimal .glow-blob{opacity:.03}
+/* Signature watermark density by mood (base .05 defined on .sig-wm-motif) */
+.deco-rich .sig-wm-motif{opacity:.08}
+.deco-minimal .sig-wm-motif{opacity:.03}
+/* minimal mood strips ambient particles + breathing ring for a calmer hero */
+.deco-minimal .particles{display:none}
+.deco-minimal .breathe-ring{display:none}
+/* Signature divider — second signature landing point (editorial rule + motif) */
+.sig-divider{display:flex;align-items:center;justify-content:center;gap:1rem;padding:2.25rem 1rem}
+.sig-divider::before,.sig-divider::after{content:'';height:1px;flex:1;max-width:7rem;background:color-mix(in srgb,currentColor 16%,transparent)}
+.sig-divider svg{width:2.25rem;height:2.25rem;color:currentColor;opacity:.5}
+/* mood-reveal — gentle signature pop-in (disabled under reduced-motion below) */
+@keyframes moodreveal{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+.mood-reveal{animation:moodreveal 1.1s cubic-bezier(.22,1,.36,1) both}
 @media (prefers-reduced-motion:reduce){
-  .sig-float,.sig-breathe,.sig-spin,.sig-spin-slow,.sig-sweep,.sig-twinkle,.sig-rise,.sig-draw,.sig-bloom,.sig-bob,.sig-steam{animation:none!important}
+  .sig-float,.sig-breathe,.sig-spin,.sig-spin-slow,.sig-sweep,.sig-twinkle,.sig-rise,.sig-draw,.sig-bloom,.sig-bob,.sig-steam,.mood-reveal{animation:none!important}
 }
 `
 

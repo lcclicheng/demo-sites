@@ -1,6 +1,7 @@
 {
   "template": "sectioned",
   "name": "SIMFIT STUDIO",
+  "mood": { "deco": "rich", "hero": "split", "sig": "on", "cta": "fill" },
   "subtitle": "Gym · Strength & Conditioning",
   "tagline": "A boutique strength studio in Leeds — real coaching, small classes, and no crowded gym floor.",
   "established": "2019",

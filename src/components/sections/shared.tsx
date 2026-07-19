@@ -9,26 +9,34 @@ import * as Icons from 'lucide-react'
 export function CtaButtons({
   c1,
   c2,
+  cta = 'fill',
 }: {
   c1?: { text: string; href: string }
   c2?: { text: string; href: string }
+  cta?: 'fill' | 'outline' | 'ghost'
 }) {
   if (!c1 && !c2) return null
+  // mood.cta 驱动 CTA 形态（theme-agnostic：只用 accent / ink token）
+  const c1cls =
+    cta === 'ghost'
+      ? 'text-accent font-medium hover:underline underline-offset-4 decoration-2 transition-all flex items-center gap-2'
+      : cta === 'outline'
+      ? 'px-8 py-3.5 rounded-full border-2 border-accent text-accent text-sm font-medium hover:bg-accent/10 transition-all flex items-center gap-2'
+      : 'px-8 py-3.5 rounded-full bg-accent text-white text-sm font-medium hover:opacity-90 transition-all flex items-center gap-2'
+  const c2cls =
+    cta === 'ghost'
+      ? 'text-ink/55 hover:text-ink text-sm font-medium transition-colors'
+      : 'px-8 py-3.5 rounded-full border-2 border-ink/15 text-ink text-sm font-medium hover:border-accent/40 transition-colors'
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
       {c1 && (
-        <a
-          href={c1.href}
-          className="px-8 py-3.5 rounded-full bg-accent text-white text-sm font-medium hover:opacity-90 transition-all flex items-center gap-2"
-        >
-          {c1.text} <ArrowRight className="w-4 h-4" />
+        <a href={c1.href} className={c1cls}>
+          {c1.text}
+          {cta !== 'ghost' && <ArrowRight className="w-4 h-4" />}
         </a>
       )}
       {c2 && (
-        <a
-          href={c2.href}
-          className="px-8 py-3.5 rounded-full border-2 border-ink/15 text-ink text-sm font-medium hover:border-accent/40 transition-colors"
-        >
+        <a href={c2.href} className={c2cls}>
           {c2.text}
         </a>
       )}

@@ -103,7 +103,7 @@ export default function App() {
 
       {/* HERO — TIGHT three-line + brass weight */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-cream">
-        <HeroBackdrop variant="grid" particles={false} signature="monogram" />
+        <HeroBackdrop variant="grid" particles={false} signature="monogram" mood={(d as any).mood?.deco} />
         {/* Double gold lines at top */}
         <div className="absolute top-[12%] left-8 sm:left-12 right-8 sm:right-12">
           <div className="h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent"/>

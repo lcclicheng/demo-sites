@@ -1,6 +1,7 @@
 {
   "template": "sectioned",
   "name": "MR BEARDMORES",
+  "mood": { "deco": "minimal", "hero": "asym", "sig": "on", "cta": "fill" },
   "subtitle": "Barbershop · Gentlemen’s Grooming",
   "tagline": "Classic men’s barbering in Manchester’s Northern Quarter — sharp cuts, hot-towel shaves, and beards shaped by hand.",
   "established": "2016",

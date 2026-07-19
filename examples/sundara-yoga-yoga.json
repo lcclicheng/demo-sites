@@ -1,6 +1,7 @@
 {
   "template": "yoga",
   "name": "SUNDARA",
+  "mood": { "deco": "balanced", "hero": "center", "sig": "on", "cta": "fill" },
   "subtitle": "Yoga & Movement",
   "tagline": "A bright, welcoming studio in Hove for breath, strength, and stillness — classes for every body, every season.",
   "established": "2017",
