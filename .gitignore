@@ -35,8 +35,11 @@ clients/**
 # CRM 约定文档入库（真实客户数据：合同/发票/反馈/info 仍私有）
 !clients/README.md
 
-# 外联决策系统（含 20 家真实商家外联状态/策略，不进公开仓库；参照 clients/** 范式）
-outreach/决策/
+# 外联 CRM 系统（含 30 家真实商家邮箱/外联状态/策略，整目录不进公开仓库；参照 clients/** 范式）
+outreach/
 
 # Business Operating System（含定价/KPI/CRM 内部口径与运营节奏，不进公开仓库）
 business/
+
+# 客户交付模板工具包（合同/提案/隐私政策/获客话术/定价模板，随 business/ 同规则不进公开仓库）
+business-kit/
