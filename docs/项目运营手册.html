@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>项目运营手册 · 英国小商家高端建站服务</title>
+<style>
+  :root{
+    --bg:#0f1117; --panel:#161922; --panel2:#1d2230; --ink:#e8ebf2; --muted:#9aa3b2;
+    --line:#2a3142; --accent:#7c8cff; --accent2:#39d3a6; --gold:#e0b341; --red:#ff6b6b;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.7;font-size:15px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:48px 28px 96px}
+  header.top{border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:34px}
+  .eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--accent);font-weight:600}
+  h1{font-size:30px;margin:10px 0 6px;font-weight:700;letter-spacing:-.01em}
+  h2{font-size:22px;margin:46px 0 14px;padding-top:18px;border-top:1px solid var(--line);font-weight:700}
+  h2 .n{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:10px}
+  h3{font-size:17px;margin:26px 0 10px;color:var(--ink);font-weight:650}
+  p{margin:10px 0;color:#cdd3df}
+  .muted{color:var(--muted)}
+  ul,ol{margin:10px 0;padding-left:22px}
+  li{margin:6px 0}
+  code{background:var(--panel2);padding:2px 7px;border-radius:6px;font-size:13px;color:#cfe0ff;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace}
+  pre{background:#0b0d13;border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+    overflow:auto;font-size:13px;line-height:1.6;color:#cfe0ff}
+  pre code{background:none;padding:0;color:inherit}
+  table{border-collapse:collapse;width:100%;margin:16px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  th{background:var(--panel2);color:var(--ink);font-weight:650}
+  tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0}
+  .callout{border-left:3px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0;
+    padding:14px 18px;margin:18px 0}
+  .callout.gold{border-left-color:var(--gold)}
+  .callout.green{border-left-color:var(--accent2)}
+  .callout.red{border-left-color:var(--red)}
+  .grid{display:grid;gap:14px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .pill{display:inline-block;font-size:11px;padding:2px 9px;border-radius:999px;
+    background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin-right:6px}
+  .pill.a{color:#cfe0ff;border-color:#3a4a7a}
+  .pill.b{color:#bff0dd;border-color:#2c5d4d}
+  .pill.c{color:#f6e0a6;border-color:#6b5a25}
+  .diagram{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:14px;margin:18px 0;text-align:center}
+  .diagram svg{width:100%;height:auto;max-width:760px}
+  .diagram .cap{font-size:12px;color:var(--muted);margin-top:8px}
+  .kpi{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0}
+  .kpi .box{flex:1;min-width:150px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px}
+  .kpi .v{font-size:26px;font-weight:700;color:var(--accent)}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:2px}
+  footer{margin-top:60px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:12.5px}
+  a{color:var(--accent);text-decoration:none}
+  @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+  @media print{
+    body{background:#fff;color:#111}
+    .wrap{max-width:none;padding:0}
+    .card,.diagram,pre,table,th,td,header.top,.callout{border-color:#ccc}
+    .card,.diagram,pre{background:#fafafa}
+    h2{border-top:1px solid #ccc}
+    pre{color:#111}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Operating Manual · 一人公司 / 独立开发者</div>
+  <h1>英国小商家高端建站服务 · 项目运营手册</h1>
+  <p class="muted">对外署名 <strong>Ethan Li</strong> · 工程仓库 <code>lcclicheng/demo-sites</code>（本地 <code>gh-pages-build/</code>）· 文档版本 v1.1 · 2026-07-19</p>
+  <p class="muted">本文是项目的<strong>单一可读入口</strong>：定位、系统架构、标准化流程、定价变现、业务操作系统（BOS）、外联获客、交付售后与路线图，全部串起来。代码/合约细节见 <code>docs/</code> 各专项文件；业务逻辑与运营口径见 <code>business/</code>。</p>
+</header>
+
+<!-- ============ 0. 目的 ============ -->
+<div class="callout">
+  <strong>本文档覆盖范围（v1.1）</strong>：①项目重点与定位 ②系统四层架构与生成/部署步骤 ③标准化流程规范 ④定价与变现 ⑤<strong>业务操作系统 BOS（新增 · 2026-07-19）</strong>⑥外联获客（含定价邮件体系）⑦端到端变现漏斗 ⑧交付与售后 ⑨路线图 ⑩命令速查 ⑪风险边界。
+  <br/><span class="muted">v1.1 变化：基于 Head of Product / Head of Operations 复盘（工程 9.9/10、商业 7.8/10），补齐最上层的 <strong>Business Layer</strong>——获客漏斗、CRM 状态机、KPI、客户旅程、服务蓝图、客户成功、增长闭环、产品矩阵、运营节奏，形成完整 Business Operating System。</span>
+</div>
+
+<!-- ============ 1. 定位 ============ -->
+<h2><span class="n">01</span>项目定位与价值主张</h2>
+<p><strong>我们是谁</strong>：一个人运营的建站服务（独立开发者 Ethan Li），面向英国小商家（餐厅、咖啡馆、沙龙、瑜伽馆、律所、甜品店、维修、精品酒店、花店、摄影、宠物美容、书店等）。</p>
+<p><strong>我们卖什么</strong>：一个<strong>高端、可上线、零托管成本</strong>的静态站点，由我们替客户填内容、一键生成、自动部署。客户不懂开发，全程我们代劳。</p>
+<div class="grid g3">
+  <div class="card"><h3 style="margin-top:0">客户痛点</h3><p class="muted">小商家预算有限、没技术团队、现有建站方案贵且难维护（ freelancer £1k–3k 一次性 + 维护 £300–1.2k/年，或笨重 CMS 要自管）。</p></div>
+  <div class="card"><h3 style="margin-top:0">我们的解法</h3><p class="muted">Vite+React+Tailwind 模板引擎 + GitHub Pages 零服务器成本；进攻型两档定价；首月代改、之后走年费呵护，把维护负担压到极低。</p></div>
+  <div class="card"><h3 style="margin-top:0">差异化</h3><p class="muted">从 20 个旧独立站提炼的 <strong>editorial 编辑型视觉语言</strong>（反网红、亮暗主题自适应）；统一设计系统而非套模板感；专业交付包提升信任。</p></div>
+</div>
+<div class="kpi">
+  <div class="box"><div class="v">£590</div><div class="l">A 档 · 建站+首月无忧改版（一次性）</div></div>
+  <div class="box"><div class="v">£390</div><div class="l">B 档 · 年度呵护（年费）</div></div>
+  <div class="box"><div class="v">£980</div><div class="l">客户首年总支出（A+B）</div></div>
+  <div class="box"><div class="v">20</div><div class="l">线上站点（10 curated + 9 真实商家 + 1 引擎展示）</div></div>
+</div>
+<div class="callout gold"><strong>2026-07-19 复盘结论（关键转折）</strong>：从工程视角项目已 9.9/10，但从「产品+商业+运营」视角仅 7.8/10——<strong>它目前是 Production System，还不是 Business System</strong>。原流程 90% 文档围绕「如何把网站做好」，但真正赚钱的是 <em>Lead→咨询→成交→Onboarding→Build→Deploy→运营→续费→转介绍</em> 全生命周期，此前只覆盖 Build/Deploy（约 30%）。本手册 v1.1 新增 <strong>Business Operating System（§05）</strong>，把最上层 Business Layer 补齐，与已成熟的 Product / AI / Engineering 三层共同构成完整业务系统。</div>
+
+<!-- ============ 2. 系统架构 ============ -->
+<h2><span class="n">02</span>系统四层架构</h2>
+<p>项目由下三层（Product / AI / Engineering）构成成熟的技术底座，最上层 Business Layer 为 2026-07-19 补齐的运营操作系统。四层职责清晰、互不越界。</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+  <defs><marker id="ard" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#7c8cff"/></marker>
+  <style>
+    .t{fill:#e8ebf2;font-size:13px;font-weight:700}
+    .s{fill:#9aa3b2;font-size:11px}
+  </style></defs>
+
+  <rect x="14" y="18" width="732" height="64" rx="12" fill="#161922" stroke="#e0b341"/>
+  <text class="t" x="28" y="44" fill="#e0b341">BUSINESS LAYER · 本次补齐（NEW · business/）</text>
+  <text class="s" x="28" y="66">Marketing · Sales · CRM · Customer Success · KPI · Growth Loop</text>
+
+  <rect x="14" y="94" width="732" height="56" rx="12" fill="#161922" stroke="#7c8cff"/>
+  <text class="t" x="28" y="118">PRODUCT LAYER · 成熟</text>
+  <text class="s" x="28" y="138">Onboarding · Templates · Build · Deploy · CMS</text>
+
+  <rect x="14" y="162" width="732" height="56" rx="12" fill="#161922" stroke="#39d3a6"/>
+  <text class="t" x="28" y="186" fill="#39d3a6">AI LAYER · 成熟（MDD v4）</text>
+  <text class="s" x="28" y="206">Memory · Knowledge · Contracts · State · ADR</text>
+
+  <rect x="14" y="230" width="732" height="56" rx="12" fill="#161922" stroke="#2a3142"/>
+  <text class="t" x="28" y="254">ENGINEERING LAYER · 成熟（9.9/10）</text>
+  <text class="s" x="28" y="274">Source · CI/CD · Scripts · Assets</text>
+
+  <line x1="380" y1="82" x2="380" y2="92" stroke="#7c8cff" stroke-width="2" marker-end="url(#ard)"/>
+  <line x1="380" y1="150" x2="380" y2="160" stroke="#39d3a6" stroke-width="2" marker-end="url(#ard)"/>
+  <line x1="380" y1="218" x2="380" y2="228" stroke="#7c8cff" stroke-width="2" marker-end="url(#ard)"/>
+  <text x="690" y="82" fill="#9aa3b2" font-size="10">已成熟 ↓</text>
+  <text x="690" y="150" fill="#9aa3b2" font-size="10">已成熟 ↓</text>
+  <text x="690" y="218" fill="#9aa3b2" font-size="10">已成熟 ↓</text>
+</svg>
+<div class="cap">图 1 · 业务四层架构：下面三层（Product/AI/Engineering）已成熟，最上层 Business Layer（business/）为 2026-07-19 补齐</div>
+</div>
+
+<p>单仓库 + 模板引擎 + CI 自动部署。业务数据（JSON）与 UI（模板/组件）分离，AI 按需在最小上下文改数据或组件。端到端技术管线如下：</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#7c8cff"/>
+    </marker>
+    <style>
+      .t{fill:#e8ebf2;font-size:13px;font-weight:600}
+      .s{fill:#9aa3b2;font-size:11px}
+      .box{fill:#161922;stroke:#2a3142;rx:10}
+      .acc{stroke:#7c8cff}
+      .grn{stroke:#39d3a6}
+      .gld{stroke:#e0b341}
+    </style>
+  </defs>
+
+  <!-- Column 1: data + visual system -->
+  <rect class="box acc" x="14" y="30" width="200" height="92" rx="10"/>
+  <text class="t" x="28" y="56">业务数据源</text>
+  <text class="s" x="28" y="76">examples/*.json</text>
+  <text class="s" x="28" y="94">（每个商家一站）</text>
+  <text class="s" x="28" y="112">slug / template / 内容</text>
+
+  <rect class="box gld" x="14" y="150" width="200" height="92" rx="10"/>
+  <text class="t" x="28" y="176">共享视觉系统</text>
+  <text class="s" x="28" y="196">visual.tsx（8 组件）</text>
+  <text class="s" x="28" y="214">VISUAL_CSS +</text>
+  <text class="s" x="28" y="232">EDITORIAL_CSS</text>
+
+  <!-- Column 2: engine -->
+  <rect class="box acc" x="280" y="70" width="200" height="150" rx="10"/>
+  <text class="t" x="294" y="98">生成引擎 generate.mjs</text>
+  <text class="s" x="294" y="120">读 JSON → 注入数据</text>
+  <text class="s" x="294" y="138">→ vite build</text>
+  <text class="s" x="294" y="162">8 行业模板 + sectioned</text>
+  <text class="s" x="294" y="180">引擎（统一数据契约）</text>
+  <text class="s" x="294" y="200">currentColor 主题自适应</text>
+
+  <!-- Column 3: deploy + site -->
+  <rect class="box grn" x="546" y="40" width="200" height="120" rx="10"/>
+  <text class="t" x="560" y="66">GitHub Actions（CI）</text>
+  <text class="s" x="560" y="86">校验 → 全量构建</text>
+  <text class="s" x="560" y="104">→ 组装 → Pages</text>
+  <text class="s" x="560" y="122">GITHUB_TOKEN（最小权限）</text>
+  <text class="s" x="560" y="140">SSH 443 推送</text>
+
+  <rect class="box" x="546" y="182" width="200" height="58" rx="10"/>
+  <text class="t" x="560" y="208">线上 20 站点 + 门户</text>
+  <text class="s" x="560" y="228">lcclicheng.github.io/demo-sites</text>
+
+  <!-- bottom: decision system -->
+  <rect class="box" x="14" y="300" width="732" height="58" rx="10" stroke="#3a4a7a"/>
+  <text class="t" x="28" y="324">决策 / 外联 / 业务系统（gitignored 私有）</text>
+  <text class="s" x="28" y="344">商家清单.md · 发送排期 · 发送清单 · business/（BOS）— 不进公开仓库</text>
+
+  <!-- arrows -->
+  <line x1="214" y1="76" x2="278" y2="120" stroke="#7c8cff" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="214" y1="196" x2="278" y2="150" stroke="#e0b341" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="480" y1="130" x2="544" y2="100" stroke="#7c8cff" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="646" y1="160" x2="646" y2="180" stroke="#39d3a6" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="380" y1="220" x2="380" y2="298" stroke="#7c8cff" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#ar)"/>
+</svg>
+<div class="cap">图 2 · 端到端系统架构：业务数据 + 共享视觉系统 → 引擎生成 → CI 部署 → 门户/站点；决策外联与业务系统为私有侧</div>
+</div>
+
+<p><strong>技术栈</strong>：Vite + React 18 + TypeScript + Tailwind CSS v3；部署 GitHub Pages（零服务器成本）。<strong>核心管线</strong>：<code>examples/&lt;site&gt;.json</code> → 注入 <code>src/&lt;template&gt;/business-data.ts</code> → <code>vite build</code> → <code>output/&lt;slug&gt;/dist/</code> → Actions 组装到 <code>public/&lt;slug&gt;/dist/</code> → GitHub Pages。</p>
+
+<!-- ============ 3. 生成/部署步骤 ============ -->
+<h2><span class="n">03</span>站点生成与部署步骤</h2>
+<p>新客户接入与上线是标准化 SOP（客户不懂开发，全程我们代填）：</p>
+<ol>
+  <li><strong>启动接入工具</strong>：<code>node onboard.mjs</code> → 浏览器 <code>http://localhost:4321/</code>。</li>
+  <li><strong>选模板克隆</strong>：下拉选同行业演示站，自动载入该模板全字段。</li>
+  <li><strong>业务类型切换</strong>：Ltd / Sole Trader 一键切换（Sole Trader 清空 <code>registeredAddress</code>）。</li>
+  <li><strong>填表</strong>：递归渲染全部字段（名称、电话、地址、菜单、评价、关于、营业时间…），数组字段可增删，不碰 JSON 语法。</li>
+  <li><strong>上传实景图</strong>：自动写入 <code>assets/&lt;slug&gt;/</code>，无需手动放文件夹。</li>
+  <li><strong>生成并构建</strong>：点「生成」→ 写出 <code>examples/&lt;slug&gt;.json</code> + 单站 <code>generate.mjs</code> 自动构建（30–60s，失败重试一次）。</li>
+  <li><strong>全量构建 + 部署</strong>：<code>bash build-clean.sh</code> → <code>git add -u && git commit && git push origin main</code>。</li>
+  <li><strong>交付客户</strong>：发线上地址 + 交付标准化包（见 §09）。</li>
+</ol>
+<div class="callout gold"><strong>交付后维护（§5.9）</strong>：客户经微信/邮件把变更发我们 → 改 <code>examples/&lt;slug&gt;.json</code>（或覆盖 <code>assets/&lt;slug&gt;/</code> 同名图）→ <code>bash build-clean.sh</code> → commit → push。图片带 <code>?v=&lt;md5&gt;</code> 内容哈希，覆盖即刷新。<strong>紧急改动可走单站快速构建</strong>：<code>node generate.mjs "./examples/&lt;slug&gt;.json"</code>（仅本地验证，上线仍需 push）。</div>
+
+<div class="grid g2">
+  <div class="card">
+    <h3 style="margin-top:0">质量闸门（部署前 fail-fast）</h3>
+    <p class="muted"><code>validate-sites.mjs</code> 逐站校验：① JSON 合法 ② 必填 <code>name/slug/template</code> 齐全 ③ 图片引用真实存在。任一不满足 → exit 1 → 整 job 失败，残缺内容绝不上线。孤儿站点（有 template+slug 但未进 <code>PROJS</code>）默认软阻断 exit 1。</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">部署认证（已根治）</h3>
+    <p class="muted">走 SSH（443 通道）：<code>~/.ssh/id_ed25519_github</code> + <code>config: github.com → ssh.github.com:443</code>。无需 PAT、无 workflow scope 坑。<code>ssh -T git@github.com</code> 返回 <code>Hi lcclicheng!</code> 即通。</p>
+  </div>
+</div>
+
+<!-- ============ 4. 标准化规范 ============ -->
+<h2><span class="n">04</span>标准化流程规范 v1（5 要点）</h2>
+<table>
+  <tr><th>要点</th><th>落地物</th><th>作用</th></tr>
+  <tr><td>① 交付标准化包</td><td><code>docs/delivery-handover.md</code></td><td>欢迎邮件/合规签字/维护手册/域名交接/支持条款/发票，模板化填充「第 X 客户交付包」，把「发个链接」升级为专业 onboarding</td></tr>
+  <tr><td>② 模板库 + 新增模板 SOP</td><td><code>templates/README.md</code> + workflow §11 SOP</td><td>模板索引 + 命名/必含字段/SEO 隐私 CMS checklist/测试，做新行业站可复制、可 Review</td></tr>
+  <tr><td>③ 反馈循环</td><td><code>clients/&lt;slug&gt;/feedback.md</code> + §5.10</td><td>上线第 7 天满意度调研（内容准确性/速度/手机端/NPS），沉淀知识库反哺模板</td></tr>
+  <tr><td>④ AI 助手协作规范</td><td>workflow §13</td><td>把 AI 列为流程正式一环：生成组件/Review JSON/起草邮件交付物/分析日志/生成 CMS 配置/优化 SEO/批量图描述；含协作红线</td></tr>
+  <tr><td>⑤ 监控 / 定价 / 测试</td><td><code>health-check.mjs</code> + <code>smoke-test.mjs</code> + <code>docs/pricing.md</code></td><td>每日定时查全站 200/挂载点/title（失败自动开 Issue）；冒烟测试阻断坏部署；定价两档落地</td></tr>
+</table>
+
+<!-- ============ 5. 业务操作系统 BOS（NEW） ============ -->
+<h2><span class="n">05</span>业务操作系统（Business Operating System · 新增）</h2>
+<p><strong>为什么有这一章</strong>：复盘发现项目此前是 Production System（只覆盖 Build/Deploy），缺最上层的 Business Layer。本节把获客、成交、续费、转介绍、指标、节奏全部纳入统一流程，与已成熟的 Product / AI / Engineering 三层共同构成完整业务系统。所有定义文档在 <code>business/</code>（gitignored 私有，不进公开仓库）。</p>
+<div class="callout"><strong>设计原则（MDD）</strong>：<code>business/</code> 是<strong>定义层</strong>（状态机 / KPI 口径 / 流程）；实时 CRM 实例仍是 <code>outreach/决策/01_事实/相关方笔记/商家清单.md</code>（单一事实源）。事实只存一份——business/ 不复制个案进度。</div>
+
+<h3>5.1 文档地图</h3>
+<table>
+  <tr><th>文件（business/）</th><th>对应缺口</th><th>优先级</th></tr>
+  <tr><td><code>README.md</code></td><td>四层总架构 + 与 outreach 关系</td><td>—</td></tr>
+  <tr><td><code>lead-pipeline.md</code></td><td>① 获客漏斗</td><td>⭐⭐⭐⭐⭐</td></tr>
+  <tr><td><code>crm-lifecycle.md</code></td><td>② CRM 生命周期状态机</td><td>⭐⭐⭐⭐⭐</td></tr>
+  <tr><td><code>kpi-dashboard.md</code></td><td>③ KPI 仪表盘</td><td>⭐⭐⭐⭐⭐</td></tr>
+  <tr><td><code>customer-journey.md</code></td><td>④ 客户旅程</td><td>⭐⭐⭐⭐</td></tr>
+  <tr><td><code>service-blueprint.md</code></td><td>⑤ 服务蓝图</td><td>⭐⭐⭐⭐</td></tr>
+  <tr><td><code>customer-success.md</code></td><td>⑩ 客户成功（续费引擎）</td><td>⭐⭐⭐⭐</td></tr>
+  <tr><td><code>growth-loop.md</code></td><td>⑦ 增长闭环</td><td>⭐⭐⭐⭐</td></tr>
+  <tr><td><code>product-matrix.md</code></td><td>⑧ 产品矩阵</td><td>⭐⭐⭐</td></tr>
+  <tr><td><code>operating-rhythm.md</code></td><td>⑨ 运营节奏</td><td>⭐⭐⭐</td></tr>
+</table>
+
+<h3>5.2 获客漏斗（Lead Pipeline）</h3>
+<p>7 段标准漏斗，实时执行见 <code>outreach/发送排期.md</code>（07-20 起 5 家/天）：</p>
+<pre><code>Cold Outreach → Website Audit → Free Demo → Quote → Contract → Payment → Kickoff
+（触达 20 家真实商家）   （诊断钩子）   （定制预览）  （A/B 报价）（合规签字）（A 档首付）（进入 Product Layer）</code></pre>
+<p class="muted">转化基准（建议，首客后复盘）：触达率 100% · 回复率 ≥20% · Demo→Quote ≥60% · 成交率 ≥25%（5/20）· CAC≈0（冷邮件+自动预览，无广告费，是模型最大杠杆）。</p>
+
+<h3>5.3 CRM 生命周期状态机</h3>
+<p>9 态状态机（定义在 <code>crm-lifecycle.md</code>），实时实例为商家清单状态列。状态流转如下：</p>
+<div class="diagram">
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+  <defs><marker id="arc" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#7c8cff"/></marker>
+  <style>.t{fill:#e8ebf2;font-size:11.5px;font-weight:650}.s{fill:#9aa3b2;font-size:9.5px}.box{fill:#161922;stroke:#2a3142;rx:9}</style></defs>
+  <rect class="box" x="14" y="40" width="108" height="58" rx="9" stroke="#7c8cff"/><text class="t" x="26" y="66">Lead</text><text class="s" x="26" y="84">待发/待GMB</text>
+  <rect class="box" x="130" y="40" width="108" height="58" rx="9" stroke="#7c8cff"/><text class="t" x="142" y="66">Qualified</text><text class="s" x="142" y="84">已发/已回</text>
+  <rect class="box" x="246" y="40" width="108" height="58" rx="9" stroke="#7c8cff"/><text class="t" x="258" y="66">Quoted</text><text class="s" x="258" y="84">已发报价</text>
+  <rect class="box" x="362" y="40" width="108" height="58" rx="9" stroke="#e0b341"/><text class="t" x="374" y="66">Won</text><text class="s" x="374" y="84">付款到账</text>
+  <rect class="box" x="130" y="150" width="108" height="58" rx="9" stroke="#39d3a6"/><text class="t" x="142" y="176">Building</text><text class="s" x="142" y="194">建站中</text>
+  <rect class="box" x="246" y="150" width="108" height="58" rx="9" stroke="#39d3a6"/><text class="t" x="258" y="176">Live</text><text class="s" x="258" y="194">已上线</text>
+  <rect class="box" x="362" y="150" width="108" height="58" rx="9" stroke="#39d3a6"/><text class="t" x="374" y="176">Maintenance</text><text class="s" x="374" y="194">B 档年费期</text>
+  <rect class="box" x="478" y="150" width="108" height="58" rx="9" stroke="#39d3a6"/><text class="t" x="490" y="176">Renew</text><text class="s" x="490" y="194">续费成功</text>
+  <rect class="box" x="600" y="40" width="120" height="168" rx="9" stroke="#ff6b6b"/><text class="t" x="612" y="120" fill="#ff6b6b">Lost</text><text class="s" x="612" y="138">流失/拒绝</text><text class="s" x="612" y="156">失联归档</text>
+  <line x1="122" y1="69" x2="128" y2="69" stroke="#7c8cff" stroke-width="2" marker-end="url(#arc)"/>
+  <line x1="238" y1="69" x2="244" y2="69" stroke="#7c8cff" stroke-width="2" marker-end="url(#arc)"/>
+  <line x1="354" y1="69" x2="360" y2="69" stroke="#7c8cff" stroke-width="2" marker-end="url(#arc)"/>
+  <line x1="416" y1="98" x2="184" y2="148" stroke="#e0b341" stroke-width="2" marker-end="url(#arc)"/>
+  <line x1="238" y1="179" x2="244" y2="179" stroke="#39d3a6" stroke-width="2" marker-end="url(#arc)"/>
+  <line x1="354" y1="179" x2="360" y2="179" stroke="#39d3a6" stroke-width="2" marker-end="url(#arc)"/>
+  <line x1="470" y1="179" x2="476" y2="179" stroke="#39d3a6" stroke-width="2" marker-end="url(#arc)"/>
+  <line x1="470" y1="69" x2="598" y2="100" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arc)"/>
+  <line x1="600" y1="208" x2="122" y2="220" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arc)"/>
+  <text x="486" y="250" fill="#9aa3b2" font-size="9">Lost ──(重新激活)──▶ Lead</text>
+</svg>
+<div class="cap">图 · CRM 9 态状态机：Lead → Qualified → Quoted → Won → Building → Live → Maintenance → Renew；任意阶段可转 Lost，Lost 可重新激活回 Lead</div>
+</div>
+
+<h3>5.4 KPI 仪表盘</h3>
+<p>11 项指标（定义在 <code>kpi-dashboard.md</code>），月度回填；基线为建议值，首客成交后复盘重定。</p>
+<table>
+  <tr><th>#</th><th>指标</th><th>公式</th><th>首期目标</th></tr>
+  <tr><td>1</td><td>Lead</td><td>入池真实商家数</td><td>20+ 滚动增长</td></tr>
+  <tr><td>2</td><td>Demo Sent</td><td>已发预览链接数</td><td>=触达数</td></tr>
+  <tr><td>3</td><td>Conversion</td><td>Won / 已发触达</td><td>≥25%</td></tr>
+  <tr><td>4</td><td>Revenue（一次性）</td><td>成交数 × A 档</td><td>5×£590=£2,950</td></tr>
+  <tr><td>5</td><td>MRR</td><td>在 Maintenance × B/12</td><td>5×£390/12≈£163</td></tr>
+  <tr><td>6</td><td>Churn</td><td>流失 / 年初在保</td><td>&lt;15%/年</td></tr>
+  <tr><td>7</td><td>Deploy Time</td><td>Kickoff→上线 h</td><td>&lt;48h</td></tr>
+  <tr><td>8</td><td>Avg Delivery</td><td>建站平均天数</td><td>&lt;7 天</td></tr>
+  <tr><td>9</td><td>Avg Revision</td><td>首月改版轮次</td><td>&lt;3 轮</td></tr>
+  <tr><td>10</td><td>CSAT</td><td>第 7 天满意度（1–5）</td><td>&gt;4.5</td></tr>
+  <tr><td>11</td><td>Referral</td><td>转介绍新 Lead 数</td><td>&gt;1 / 3 客户</td></tr>
+</table>
+<div class="callout green"><strong>单位经济</strong>：客户首年 £590+£390=£980；CAC≈0 → Conversion 与 Renew 直接决定利润。B 档年费维护成本≈0，近乎纯毛利，是 MRR 与续费引擎的载体。</div>
+
+<h3>5.5 客户旅程 + 服务蓝图（要点）</h3>
+<p class="muted"><strong>Customer Journey</strong>（<code>customer-journey.md</code>）：10 触点以客户情绪为轴，标出 3 个未设计断点——⑤ 建站等待无进度更新、⑨ SEO 价值感弱、⑩ 续费易遗忘，均由 Customer Success 补设计。<br/><strong>Service Blueprint</strong>（<code>service-blueprint.md</code>）：以「付款成功」为触发，拆出后台动作链 Create Client → Generate Folder → Generate JSON → Generate Task → Assign Sprint → Deploy Queue，其中 Deploy 已全自动，JSON/Task 可进一步脚本化，未来由 AI 编排、Founder 只做核对与关系动作。</p>
+
+<h3>5.6 客户成功（续费引擎）</h3>
+<p>£390/年 B 档的价值靠持续运营兑现（定义见 <code>customer-success.md</code>）。90 天健康度模型：</p>
+<pre><code>Deploy(上线) → Day7 满意度调研(CSAT) → Day30 SEO/流量首报 → Day60 运营Review
+            → Day90 续费提醒(价值回顾+链接) → Renew(回到 Maintenance)</code></pre>
+<p class="muted">没有这一层，客户不会续费，MRR 崩。流失预警：Day7 无回复 / Day30 简报无打开 / 改版骤降 → Founder 主动关系触达。</p>
+
+<h3>5.7 增长闭环（Growth Loop）</h3>
+<p>让每个交付客户自动变成新 Lead 来源，把 CAC 推向 0（定义见 <code>growth-loop.md</code>）：</p>
+<div class="diagram">
+<svg viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+  <defs><marker id="arg" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#39d3a6"/></marker>
+  <style>.t{fill:#e8ebf2;font-size:11.5px;font-weight:650}.s{fill:#9aa3b2;font-size:9.5px}.box{fill:#161922;stroke:#2a3142;rx:9}</style></defs>
+  <rect class="box" x="14" y="70" width="120" height="60" rx="9" stroke="#39d3a6"/><text class="t" x="28" y="96">Live</text><text class="s" x="28" y="114">上线</text>
+  <rect class="box" x="150" y="70" width="120" height="60" rx="9" stroke="#7c8cff"/><text class="t" x="164" y="96">Google Review</text><text class="s" x="164" y="114">GMB 留评</text>
+  <rect class="box" x="286" y="70" width="120" height="60" rx="9" stroke="#7c8cff"/><text class="t" x="300" y="96">Case Study</text><text class="s" x="300" y="114">AI 起草案例</text>
+  <rect class="box" x="422" y="70" width="120" height="60" rx="9" stroke="#7c8cff"/><text class="t" x="436" y="96">Portfolio</text><text class="s" x="436" y="114">进展示页</text>
+  <rect class="box" x="558" y="70" width="120" height="60" rx="9" stroke="#e0b341"/><text class="t" x="572" y="96">Referral</text><text class="s" x="572" y="114">推荐减£50</text>
+  <line x1="134" y1="100" x2="148" y2="100" stroke="#39d3a6" stroke-width="2" marker-end="url(#arg)"/>
+  <line x1="270" y1="100" x2="284" y2="100" stroke="#39d3a6" stroke-width="2" marker-end="url(#arg)"/>
+  <line x1="406" y1="100" x2="420" y2="100" stroke="#39d3a6" stroke-width="2" marker-end="url(#arg)"/>
+  <line x1="542" y1="100" x2="556" y2="100" stroke="#39d3a6" stroke-width="2" marker-end="url(#arg)"/>
+  <path d="M678,100 C720,100 720,30 430,30 C200,30 74,30 74,68" fill="none" stroke="#7c8cff" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arg)"/>
+  <text x="360" y="22" fill="#9aa3b2" font-size="9">回到获客（New Client → Lead Pipeline）</text>
+</svg>
+<div class="cap">图 · 增长闭环：Live → Review → Case Study → Portfolio → Referral → 新客户（CAC→0）</div>
+</div>
+
+<h3>5.8 产品矩阵（升级路径）</h3>
+<p>当前仅 Website（A+B），向上扩展提高客单价（定义见 <code>product-matrix.md</code>，扩展档为提案）：</p>
+<table>
+  <tr><th>套餐</th><th>包含</th><th>价格（提案）</th><th>升级触发</th></tr>
+  <tr><td>Starter（现有）</td><td>静态站+部署+交付包+首月代改+B 年护</td><td>A£590+B£390/年</td><td>—</td></tr>
+  <tr><td>Growth（提案）</td><td>Starter+月度 SEO/内容+流量简报</td><td>+£99/月</td><td>要更多流量</td></tr>
+  <tr><td>Pro（提案）</td><td>Growth+预约/下单模块</td><td>定制</td><td>要预约/下单</td></tr>
+  <tr><td>Premium（提案）</td><td>Pro+站点内 AI 客服</td><td>定制</td><td>要自动答询</td></tr>
+  <tr><td>Enterprise（提案）</td><td>多站托管+专属 SLA</td><td>定制</td><td>多店</td></tr>
+</table>
+
+<h3>5.9 运营节奏（Operating Rhythm）</h3>
+<p>把「有任务才做」变「固定节奏」（定义见 <code>operating-rhythm.md</code>）：</p>
+<table>
+  <tr><th>节奏</th><th>动作</th><th>Owner</th></tr>
+  <tr><td>每日</td><td>处理 Lead · 部署 · 回复客户（改版≤48h）</td><td>Founder + AI</td></tr>
+  <tr><td>每周</td><td>SEO Review · 健康检查 · 填 Metrics 周计数</td><td>AI + Founder</td></tr>
+  <tr><td>每月</td><td>MRR 核算 · 续费跟进 · Case Study · Roadmap</td><td>Founder</td></tr>
+</table>
+<div class="callout"><strong>退化防护</strong>：AI 承担检查类（部署/健康/简报/案例草稿）；Founder 承担关系/成交/续费/决策。连续 2 周未填 Metrics 即视为节奏退化，下周一补。</div>
+
+<!-- ============ 6. 外联获客 ============ -->
+<h2><span class="n">06</span>获客与外联流程（Track A）</h2>
+<p>当前获客主路径：用「已 rebrand 为真实商家的 demo 站」做预览，冷触达英国小商家，转化建站订单。漏斗细节见 §05.2 / <code>business/lead-pipeline.md</code>。</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+  <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#7c8cff"/></marker>
+  <style>.t{fill:#e8ebf2;font-size:12.5px;font-weight:650}.s{fill:#9aa3b2;font-size:10.5px}.box{fill:#161922;stroke:#2a3142;rx:10}.acc{stroke:#7c8cff}.grn{stroke:#39d3a6}</style></defs>
+  <rect class="box acc" x="10" y="40" width="160" height="78" rx="10"/><text class="t" x="24" y="68">20 家真实商家</text><text class="s" x="24" y="88">替换占位·带官网</text><text class="s" x="24" y="106">全部待发</text>
+  <rect class="box acc" x="200" y="40" width="160" height="78" rx="10"/><text class="t" x="214" y="68">13 站 rebrand</text><text class="s" x="214" y="88">改名/内容为真实商家</text><text class="s" x="214" y="106">CI 部署上线</text>
+  <rect class="box acc" x="390" y="40" width="160" height="78" rx="10"/><text class="t" x="404" y="62">邮箱核实</text><text class="s" x="404" y="82">18 家得真实邮箱</text><text class="s" x="404" y="100">2 家无公开邮箱</text><text class="s" x="404" y="118">→ GMB/FB 留言</text>
+  <rect class="box grn" x="580" y="40" width="170" height="78" rx="10"/><text class="t" x="594" y="68">发送 5 家/天</text><text class="s" x="594" y="88">×4 天（07-20 起）</text><text class="s" x="594" y="106">邮件 + GMB 留言</text>
+  <line x1="170" y1="79" x2="198" y2="79" stroke="#7c8cff" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="360" y1="79" x2="388" y2="79" stroke="#7c8cff" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="550" y1="79" x2="578" y2="79" stroke="#7c8cff" stroke-width="2" marker-end="url(#ar2)"/>
+  <rect class="box" x="200" y="170" width="160" height="78" rx="10" stroke="#39d3a6"/><text class="t" x="214" y="198">回复 / 咨询</text><text class="s" x="214" y="218">模板 B 第 4 天跟进</text><text class="s" x="214" y="236">模板 C 确认采集</text>
+  <rect class="box" x="390" y="170" width="160" height="78" rx="10" stroke="#e0b341"/><text class="t" x="404" y="198">成交</text><text class="s" x="404" y="218">A 档 £590 起</text><text class="s" x="404" y="236">→ 进入交付流程 §09</text>
+  <line x1="665" y1="118" x2="480" y2="168" stroke="#39d3a6" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#ar2)"/>
+  <line x1="550" y1="198" x2="550" y2="118" stroke="#39d3a6" stroke-width="2" marker-end="url(#ar2)"/>
+</svg>
+<div class="cap">图 3 · 外联漏斗：真实商家池 → rebrand → 邮箱核实（18 邮件 / 2 GMB）→ 分批发送 → 回复/成交</div>
+</div>
+
+<div class="kpi">
+  <div class="box"><div class="v">20</div><div class="l">真实英国小商家（全部待发）</div></div>
+  <div class="box"><div class="v">18</div><div class="l">已得真实邮箱·可邮件发送</div></div>
+  <div class="box"><div class="v">2</div><div class="l">无公开邮箱·走 GMB/FB 留言</div></div>
+  <div class="box"><div class="v">07-20</div><div class="l">启动发送（5 家/天 × 4 天）</div></div>
+</div>
+<div class="callout red"><strong>当前唯一发送前阻塞</strong>：SERENITY NAILS 与 PEDN OLVA 两家官网无公开邮箱，走 GMB/FB 留言渠道（需留言文案，可由 AI 起草）。其余 18 家已就绪。</div>
+
+<h3>发送排期（2026-07-20 起 · 5 家/天）</h3>
+<table>
+  <tr><th>日</th><th>日期</th><th>商家（渠道）</th></tr>
+  <tr><td>Day1</td><td>07-20</td><td>KAFFEINE(邮件) · SERENITY(GMB) · PRESTAT(邮件) · INDABA(邮件) · SEDDONS(邮件)</td></tr>
+  <tr><td>Day2</td><td>07-21</td><td>SUNDARA · RED LION · TWISTED SISTER · CLAREMONT · TABITHA'S（均邮件）</td></tr>
+  <tr><td>Day3</td><td>07-22</td><td>PEDN OLVA(GMB) · LA PIAZZA 1 · MANCHESTER PLUMBING · BLUE BIRD · BRIGHTON FLOWER（均邮件）</td></tr>
+  <tr><td>Day4</td><td>07-23</td><td>MR BEARDMORES · SIMFIT · BLUE SKY · HAIR AND HOUNDS · LITTLE APPLE（均邮件）</td></tr>
+</table>
+<p class="muted">发送为手动动作（无邮件 API）：用 <code>outreach/outreach-send-checklist.md</code> 正文 + <code>决策/01_事实/相关方笔记/商家清单.md</code> 核实邮箱配对，发一家回填一家状态。真实收件邮箱仅存 gitignored 清单，examples JSON 内仍是 <code>hello@&lt;domain&gt;</code> 占位，不可直接群发。</p>
+
+<!-- ============ 7. 变现全过程 ============ -->
+<h2><span class="n">07</span>变现全过程（端到端漏斗）</h2>
+<div class="diagram">
+<svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+  <defs><marker id="ar3" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#39d3a6"/></marker>
+  <style>.t{fill:#e8ebf2;font-size:12px;font-weight:650}.s{fill:#9aa3b2;font-size:10px}.box{fill:#161922;stroke:#2a3142;rx:10}</style></defs>
+  <!-- lifecycle loop -->
+  <rect class="box" x="14" y="30" width="120" height="64" rx="10" stroke="#7c8cff"/><text class="t" x="28" y="56">① 触达</text><text class="s" x="28" y="76">冷邮件/GMB留言</text>
+  <rect class="box" x="152" y="30" width="120" height="64" rx="10" stroke="#7c8cff"/><text class="t" x="166" y="56">② 预览站</text><text class="s" x="166" y="76">真实商家名demo</text>
+  <rect class="box" x="290" y="30" width="120" height="64" rx="10" stroke="#7c8cff"/><text class="t" x="304" y="56">③ 回复咨询</text><text class="s" x="304" y="76">模板B跟进</text>
+  <rect class="box" x="428" y="30" width="120" height="64" rx="10" stroke="#e0b341"/><text class="t" x="442" y="56">④ 成交 A</text><text class="s" x="442" y="76">£590 一次性</text>
+  <rect class="box" x="566" y="30" width="180" height="64" rx="10" stroke="#39d3a6"/><text class="t" x="580" y="56">⑤ 首月代改</text><text class="s" x="580" y="76">不限次数·建立信任</text>
+  <line x1="134" y1="62" x2="150" y2="62" stroke="#39d3a6" stroke-width="2" marker-end="url(#ar3)"/>
+  <line x1="272" y1="62" x2="288" y2="62" stroke="#39d3a6" stroke-width="2" marker-end="url(#ar3)"/>
+  <line x1="410" y1="62" x2="426" y2="62" stroke="#39d3a6" stroke-width="2" marker-end="url(#ar3)"/>
+  <line x1="548" y1="62" x2="564" y2="62" stroke="#39d3a6" stroke-width="2" marker-end="url(#ar3)"/>
+
+  <rect class="box" x="290" y="130" width="120" height="64" rx="10" stroke="#39d3a6"/><text class="t" x="304" y="156">⑥ 续费 B</text><text class="s" x="304" y="176">£390/年</text>
+  <rect class="box" x="428" y="130" width="120" height="64" rx="10" stroke="#39d3a6"/><text class="t" x="442" y="156">⑦ 年度呵护</text><text class="s" x="442" y="176">监控+小改动</text>
+  <rect class="box" x="566" y="130" width="180" height="64" rx="10" stroke="#7c8cff"/><text class="t" x="580" y="156">⑧ 转介绍</text><text class="s" x="580" y="176">口碑→新客户(回到①)</text>
+  <line x1="548" y1="94" x2="350" y2="128" stroke="#39d3a6" stroke-width="2" marker-end="url(#ar3)"/>
+  <line x1="410" y1="162" x2="426" y2="162" stroke="#39d3a6" stroke-width="2" marker-end="url(#ar3)"/>
+  <line x1="690" y1="162" x2="690" y2="92" stroke="#7c8cff" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar3)"/>
+  <line x1="690" y1="62" x2="690" y2="40" stroke="#7c8cff" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ar3)"/>
+
+  <rect class="box" x="14" y="230" width="732" height="80" rx="10" stroke="#3a4a7a"/>
+  <text class="t" x="28" y="258">收入节拍（单客户）</text>
+  <text class="s" x="28" y="280">成交月：+£590（A，含首月代改） · 之后每年：+£390（B，纯毛利，黏性续费）</text>
+  <text class="s" x="28" y="298">可选：成交时升级 C 买断 +£1,200（一次性，零后续维护）· 转介绍降低获客成本</text>
+</svg>
+<div class="cap">图 4 · 客户生命周期与变现漏斗：触达→预览→回复→成交(A)→首月代改→续费(B)→转介绍（闭环）。状态机定义见 §05.3 / <code>business/crm-lifecycle.md</code>，续费引擎见 §05.6</div>
+</div>
+<div class="callout green"><strong>为什么这个模型健康</strong>：① 静态站维护极轻，B 档年费近乎纯毛利；② A 档首月代改建立信任、自然导向 B 续费；③ 转介绍把获客成本边际压到 0；④ C 买断吃掉约 3 年 B 价值且零后续负担。一次获客，多年复利。</div>
+
+<!-- ============ 8. 交付与售后 ============ -->
+<h2><span class="n">08</span>交付与售后</h2>
+<p>交付标准化包（<code>docs/delivery-handover.md</code>，纯英文、面向 UK 客户）把一次交付变成专业 onboarding。含 7 模块：</p>
+<ol>
+  <li><strong>Welcome Email</strong>：告知上线 + 首月无限改版 + 维护指南 + 支持条款。</li>
+  <li><strong>Compliance Sign-off</strong>：隐私政策/GDPR/ECCTA 注册地址/公开信息警示/图片版权/域名 — 客户签字回收。</li>
+  <li><strong>Maintenance Guide（一页纸）</strong>：如何提修改、续费域名、联系我们——无后台、无登录。</li>
+  <li><strong>Custom Domain Handover</strong>：客户自管 registrar/DNS，我们仅协助。</li>
+  <li><strong>Support Terms</strong>：响应时间、首月无限改、年费免费小改动额度、计费改版单价、Annual Care £390/年。</li>
+  <li><strong>Invoice & Payment</strong>：发票模板（£ 金额、支付渠道）。</li>
+  <li><strong>Tier C Full Ownership Handover</strong>：源码+数据+Decap（指向客户自己仓库）移交，运维归客户。</li>
+</ol>
+<div class="grid g2">
+  <div class="card"><h3 style="margin-top:0">反馈循环（§5.10）</h3><p class="muted">上线第 7 天发满意度调研（内容准确性/速度/手机端/NPS）。记录到 <code>clients/&lt;slug&gt;/feedback.md</code>（gitignored），形成可检索知识库，反哺模板迭代。</p></div>
+  <div class="card"><h3 style="margin-top:0">监控仪表盘</h3><p class="muted"><code>health-check.mjs</code> 每日定时查全站 200/挂载点/title，失败自动开/更 GitHub Issue、恢复自动关；UptimeRobot 外部探测 SOP 由 owner 手动加监测点。</p></div>
+</div>
+<div class="callout gold"><strong>客户成功（§05.6 续费引擎）</strong>：Deploy 只是开始。上线后 Day7 满意度 → Day30 SEO 首报 → Day60 运营 Review → Day90 续费提醒，是 £390/年 B 档的价值载体，也是降低 Churn（目标 &lt;15%/年）的关键动作。</div>
+
+<!-- ============ 9. 定价/外联邮件体系 ============ -->
+<h2><span class="n">09</span>定价 / 外联邮件体系</h2>
+<p>冷触达不是「群发广告」，而是「我为你做了个站，看要不要」。三套模板构成完整节奏：</p>
+<table>
+  <tr><th>模板</th><th>时机</th><th>目的</th><th>关键点</th></tr>
+  <tr><td><strong>A · 首触</strong></td><td>发送日（Day1–4）</td><td>展示为其定制的预览站，低压力邀约</td><td>用真实商家名+专属预览链接；点出我们看到的痛点（旧站/无站）；明确 £590 起、首月无限改；Ethan Li 署名</td></tr>
+  <tr><td><strong>B · 跟进</strong></td><td>首触后第 4 天</td><td>未回者温和提醒，提供选项</td><td>不施压；给「看效果/要报价/暂不需要」三选一；可附 1–2 同行业案例</td></tr>
+  <tr><td><strong>C · 确认采集</strong></td><td>回复感兴趣后</td><td>收齐真实内容/照片，进入交付</td><td>发采集清单（文字+图）；确认套餐与上线时间；推进到 §08 交付</td></tr>
+</table>
+<div class="callout"><strong>文案铁律</strong>：① 个性化（每家不同预览链接+商家名，绝不一模一样群发）② 反网红、editorial 调性，匹配我们站点风格 ③ 合规：不替客户做法律判断；GMB/FB 留言渠道对无邮箱商家同样用 A 模板精神 ④ 真实收件邮箱从 <code>商家清单.md</code> 取，examples JSON 占位邮箱不可直发 ⑤ 发送后回填状态、观察回复率与账号限流。</div>
+
+<!-- ============ 10. 路线图 ============ -->
+<h2><span class="n">10</span>路线图与后续</h2>
+<table>
+  <tr><th>项</th><th>价值</th><th>触发/状态</th></tr>
+  <tr><td>Business Operating System 落地</td><td>补齐最上层商业闭环</td><td>✅ 2026-07-19 完成（business/ 10 文档）</td></tr>
+  <tr><td>增量构建（只重建变更站）</td><td>站点数增多后提速</td><td>站点 &gt;20 或感知变慢时做</td></tr>
+  <tr><td>Playwright 逐像素视觉回归</td><td>防 rebrand/改模板破坏视觉</td><td>站点 &gt;15 或有真实客户后上</td></tr>
+  <tr><td>C 档买断推广</td><td>一次性吃掉多年年费价值</td><td>已有 SOP，对外按需推</td></tr>
+  <tr><td>多语言 onboarding（英文版）</td><td>开放给英国直客自助填料</td><td>出现英国直客/开放工具时补（约半天）</td></tr>
+  <tr><td>第五批 demo / 更多行业</td><td>扩大外联池与展示面</td><td>外联反馈后定</td></tr>
+  <tr><td>定价复盘</td><td>基于首客工时+反馈重定</td><td>首个客户交付完成后</td></tr>
+  <tr><td>产品矩阵扩展档上线</td><td>提高客单价（SEO/Booking/AI Chat）</td><td>依 <code>business/product-matrix.md</code> 提案，客户触发时做</td></tr>
+</table>
+
+<!-- ============ 11. 命令速查 ============ -->
+<h2><span class="n">11</span>常用命令速查</h2>
+<pre><code># 进入工程（alias gs 指向 gh-pages-build）
+gs
+
+# 接入新客户（填表生成 examples/&lt;slug&gt;.json）
+node onboard.mjs
+
+# 本地构建
+node generate.mjs "./examples/&lt;site&gt;.json"   # 单站（30–60s）
+bash build-clean.sh                          # 全量 20 站
+
+# 部署（SSH 443，无需 PAT）
+git add -u && git commit -m "feat: 新增 &lt;slug&gt;"
+git push origin main
+
+# 校验 / 验证
+node validate-sites.mjs                      # 部署前闸门（含孤儿告警）
+ssh -T git@github.com                        # 验证 SSH 连通
+curl -sI https://lcclicheng.github.io/demo-sites/&lt;slug&gt;/
+
+# 本地预览
+python -m http.server 8088 --directory output/&lt;slug&gt;/dist
+
+# 外联发送清单重生（rebrand 后）
+node outreach/gen-outreach.mjs               # 输出 outreach/outreach-send-checklist.md
+
+# 业务系统文档（私有，不进公开仓库）
+ls business/                                  # BOS 定义层：lead-pipeline / crm-lifecycle / kpi-dashboard ...</code></pre>
+
+<!-- ============ 12. 风险 ============ -->
+<h2><span class="n">12</span>风险与边界</h2>
+<ul>
+  <li><strong>隐私边界</strong>：GitHub Pages 站点完全公开，电话/地址对外可见；交付前提醒客户。Tier C 客户自管仓库后由客户负责。商家清单与 business/ 含内部口径，gitignored 不进公开仓库。</li>
+  <li><strong>法律边界</strong>：不替客户选/担保注册地址合法性（ECCTA 2024「适当地址」）；隐私政策模板为占位，客户须补真实条款。AI 只做模板注入。</li>
+  <li><strong>密钥安全</strong>：SSH 私钥绝不提交 git；定期轮换；<code>GITHUB_TOKEN</code> 权限最小化（contents:read + pages:write + id-token:write）。</li>
+  <li><strong>构建坑</strong>：预览服务器锁 <code>dist/</code> 致 EBUSY 假成功（关服务再重建）；图片目录缺失静默跳过（校验闸门拦截）；单站 build 只本地、上线仍需 push。</li>
+  <li><strong>GitHub Pages 限制</strong>：仓库 &lt;1GB、月带宽 ~100GB；图片 WebP/压 &lt;300KB；构建超阈值建议 fail 部署。</li>
+  <li><strong>发送卫生</strong>：真实邮箱仅存私有清单；demo 占位邮箱不可直发；分散 5 家/天保护发件账号。</li>
+  <li><strong>商业系统缺口已补</strong>：Business Layer（business/）已建立 Lead Pipeline / CRM 状态机 / KPI / 客户成功 / 增长闭环；下一步靠真实发送数据回填 KPI 基线，并用 Customer Success 节奏拉高续费。</li>
+</ul>
+
+<footer>
+  本文档为项目内部运营手册（本地参考，未提交公开仓库）。版本 v1.1（2026-07-19）：新增 Business Operating System（business/ 10 文档），项目从 Production System 升级为完整 Business System。
+  数据与状态截至 2026-07-19：20 家真实商家待发、18 家邮箱已得 / 2 家走 GMB、07-20 起 5 家/天发送。
+  代码与合约细节以 <code>docs/workflow.md</code> · <code>docs/pricing.md</code> · <code>docs/delivery-handover.md</code> · <code>docs/monitoring.md</code> 为准；业务逻辑与运营口径以 <code>business/</code> 为准。
+  可浏览器「打印 → 另存为 PDF」导出归档。
+</footer>
+
+</div>
+</body>
+</html>
