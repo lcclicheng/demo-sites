@@ -69,17 +69,20 @@
         {
           "name": "Burrata & Peach",
           "desc": "Creamy burrata, roasted peach, basil oil, toasted sourdough.",
-          "price": 11
+          "price": 11,
+          "image": "./images/menu-1.jpg"
         },
         {
           "name": "Bruschetta di Pomodoro",
           "desc": "Sourdough, vine tomatoes, garlic, aged balsamic.",
-          "price": 8
+          "price": 8,
+          "image": "./images/menu-2.jpg"
         },
         {
           "name": "Arancini",
           "desc": "Saffron risotto balls, smoked mozzarella, lemon aioli.",
-          "price": 9
+          "price": 9,
+          "image": "./images/menu-3.jpg"
         }
       ]
     },
@@ -91,19 +94,22 @@
           "name": "Pappardelle al Ragù",
           "desc": "Slow-cooked beef & pork ragù, parmesan, parsley.",
           "price": 17,
-          "pair": "Sangiovese, Tuscany"
+          "pair": "Sangiovese, Tuscany",
+          "image": "./images/menu-4.jpg"
         },
         {
           "name": "Wood-fired Sea Bass",
           "desc": "Whole Cornish sea bass, fennel, lemon, olive oil.",
           "price": 24,
-          "pair": "Vermentino, Sardinia"
+          "pair": "Vermentino, Sardinia",
+          "image": "./images/menu-5.jpg"
         },
         {
           "name": "Pollo alla Diavola",
           "desc": "Spatchcock chicken, rosemary, chilli, charred lemon.",
           "price": 19,
-          "pair": "Negroamaro, Puglia"
+          "pair": "Negroamaro, Puglia",
+          "image": "./images/menu-6.jpg"
         }
       ]
     },
@@ -114,17 +120,20 @@
         {
           "name": "Tiramisù",
           "desc": "Mascarpone, espresso, savoiardi, cocoa.",
-          "price": 8
+          "price": 8,
+          "image": "./images/menu-7.jpg"
         },
         {
           "name": "Affogato",
           "desc": "Vanilla gelato, hot espresso, amaretto.",
-          "price": 7
+          "price": 7,
+          "image": "./images/menu-8.jpg"
         },
         {
           "name": "Olive Oil Cake",
           "desc": "Orange & almond, crème fraîche.",
-          "price": 7
+          "price": 7,
+          "image": "./images/menu-9.jpg"
         }
       ]
     }

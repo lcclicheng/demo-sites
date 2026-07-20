@@ -305,7 +305,12 @@
       "Dogs and cats are handled separately, sessions are calm and unrushed, and anxious animals get all the time they need.",
       "We’d rather take longer and send a relaxed pet home than rush a frightened one out the door."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "booking": {
     "intro": "Book Groom",

@@ -305,7 +305,12 @@
       "We work in natural light wherever we can — it’s kinder, calmer, and the pictures age better.",
       "Every booking includes full editing and the whole gallery. No hidden fees, no upsell on the day."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "booking": {
     "intro": "Send Enquiry",

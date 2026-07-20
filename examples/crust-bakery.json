@@ -305,7 +305,12 @@
       "Everything is made on site using Yorkshire flour and slow fermentation. If it isn’t good enough for our own breakfast table, it doesn’t go in the window.",
       "We work with local growers and a roaster up the road, because the short chain tastes better — and it’s the right thing to do."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "booking": {
     "intro": "Send Enquiry",

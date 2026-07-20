@@ -305,7 +305,12 @@
       "We stock what we’d actually read — new, secondhand and the occasional dusty first edition — and we’ll tell you honestly if we wouldn’t.",
       "The coffee corner at the back is free to sit in if you’re deep in a chapter. That’s the whole point."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "booking": {
     "intro": "Send Enquiry",

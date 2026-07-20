@@ -305,7 +305,12 @@
       "Every cut is done by a barber who’s been with us for years — no rotating chairs, no upsell, just a good cut and a proper shave.",
       "Walk in or book, sit down, leave looking right."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "booking": {
     "intro": "Book Appointment",

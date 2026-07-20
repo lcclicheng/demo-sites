@@ -305,7 +305,12 @@
       "We’re foam-free and as local as the season allows — no air-freighted roses, no plastic, just flowers that were in a field yesterday.",
       "Every arrangement is made by hand by the same people who’ll answer your email. That’s the whole business."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "booking": {
     "intro": "Send Enquiry",

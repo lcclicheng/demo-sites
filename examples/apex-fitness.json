@@ -305,7 +305,12 @@
       "Our coaches actually coach — they watch your form, adjust the plan, and keep classes small enough to notice.",
       "No mirrors-to-the-ceiling, no juice-bar upsell. Just training that works, with people who care."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "booking": {
     "intro": "Book Trial",
