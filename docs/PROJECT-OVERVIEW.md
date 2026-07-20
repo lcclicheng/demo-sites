@@ -12,7 +12,7 @@
 | 维度 | 结论 |
 |---|---|
 | 你是谁 | 一人公司 / 独立开发者 **Ethan Li**，面向**英国小商家**的高端建站服务 |
-| 卖什么 | 高端静态站 + 部署 + 交付标准化包 + 年维护；**不卖客户自助后台**（2026-07-16 起取消 Decap 自助交付）；**外加 ReplyLocal 声誉管家订阅（£0/£29/£79 月）作冷启动楔子**，先拿客户再 upsell 建站 |
+| 卖什么 | 高端静态站 + 部署 + 交付标准化包 + 年维护；**不卖客户自助后台**（2026-07-16 起取消 Decap 自助交付）；**外加 FifthStar 声誉管家订阅（£0/£29/£79 月）作冷启动楔子**，先拿客户再 upsell 建站 |
 | 技术栈 | Vite + React 18 + TypeScript + Tailwind CSS v3 + GitHub Pages（零服务器成本） |
 | 核心引擎 | **Section Engine**（theme-agnostic 通用 section 库 + 组合器）+ 8 套行业模板（真实商家垂直站 / 历史样板） |
 | 站点现状 | **45 个线上站点**（demo 站，主题自适应招牌 motif 全覆盖；早期 v1.1.0 为 20 站，见 §2.4） |
@@ -29,7 +29,7 @@
 ### 1.1 定位
 你一个人运营的高端建站服务，面向**英国小商家**：餐饮 / 咖啡 / 沙龙 / 瑜伽 / 律所 / 甜品 / 家装维修 / 精品酒店等。你**替客户填内容**（客户不懂开发），用模板引擎一键生成站点并部署到 GitHub Pages，零服务器成本。
 
-**双产品线（2026-07-20 并入 ReplyLocal 声誉管家）**：除建站主业务（A/B/C）外，你同时运营 **ReplyLocal 声誉管家**——用 AI 帮商户回复 Google 评价、做声誉监测，作为**零客户冷启动楔子**（£0 样例 / £29·£79 月订阅）。先用低门槛评价服务拿下客户与月现金流、建立信任，再 upsell 到建站；两条线共用同一套外联 / 部署 / 定价机器，不重造。详见 `products/reputation-manager/`。
+**双产品线（2026-07-20 并入 FifthStar 声誉管家）**：除建站主业务（A/B/C）外，你同时运营 **FifthStar 声誉管家**——用 AI 帮商户回复 Google 评价、做声誉监测，作为**零客户冷启动楔子**（£0 样例 / £29·£79 月订阅）。先用低门槛评价服务拿下客户与月现金流、建立信任，再 upsell 到建站；两条线共用同一套外联 / 部署 / 定价机器，不重造。详见 `products/fifthstar/`。
 
 ### 1.2 形态
 - **一套 Section Engine 模板引擎**（`sectioned` 组合器 + theme-agnostic 通用 section 库）+ **8 套行业模板**（`restaurant/coffee/salon/dessert/yoga/law/hotel/trades`，保留作真实商家垂直站 + 历史样板）。
@@ -137,7 +137,7 @@ examples/<site>.json  (业务数据，单一数据源)
 | `gen-seo.mjs` | sitemap.xml / robots.txt 自动生成 | ✅ 辅助 |
 | `health-check.mjs` / `setup-uptimerobot.mjs` | 自建健康检查 / UptimeRobot 批量监测点 | ✅ 监控 |
 | `docs/*.md` | 各专项文档（本文件为整合版） | — |
-| `products/reputation-manager/` | 第二条产品线：ReplyLocal 声誉管家（方案 `strategy.md` / 落地页 `replylocal-landing.html` / 外联模板 `outreach-template.md` / 案例依据 `case-research.md`） | — |
+| `products/fifthstar/` | 第二条产品线：FifthStar 声誉管家（方案 `strategy.md` / 外联模板 `outreach-template.md` / 样例生成 SOP `sample-pipeline.md` / 案例依据 `case-research.md` / 生成器 `generate_sample.py`） | — |
 
 ---
 
@@ -243,9 +243,9 @@ git add -u && git commit -m "..." && git push origin main   # 走 SSH，无需 P
 ### 6.5 定价复盘约定
 本两档 £ 为 2026-07-14 拍板初始基准，用于立刻接单报价。**首个客户交付完成后**，基于实际工时、客户反馈（§5.10）、市场对标复盘重定，结论更新 `docs/pricing.md` 并同步 `docs/workflow.md`。
 
-### 6.6 声誉管家订阅 · ReplyLocal（冷启动楔子 + 月收入层）
+### 6.6 声誉管家订阅 · FifthStar（冷启动楔子 + 月收入层）
 
-> 详细版见 `docs/pricing.md`「声誉管家订阅」节；立项方案见 `products/reputation-manager/`。
+> 详细版见 `docs/pricing.md`「声誉管家订阅」节；立项方案见 `products/fifthstar/`。
 > 2026-07-19 立项、2026-07-20 并入本项目；作为**第二条产品线**，与建站 A/B/C 构成一体业务。
 
 | 档 | 价格 | 角色 |
@@ -395,4 +395,4 @@ UPTIMEROBOT_API_KEY=urXX node setup-uptimerobot.mjs
 
 > 本整合版与 `docs/workflow.md`（系统总文档）同步至 v1.1.0；任何实现细节以 workflow.md 及各专项文档为准。
 
-- **2026-07-20 · 产品融合** — 把昨晚立项的「UK 商户 AI 声誉管家 / ReplyLocal」作为**第二条产品线（冷启动楔子）**并入本项目：`products/reputation-manager/` 资产就位；`docs/pricing.md` 新增「声誉管家订阅」档（£0/£29/£79 月）；`business/product-matrix.md` 新增「双产品线」框架；`business/README.md` + 本文件定位更新为「建站 + 声誉管家」一体业务。当前仅资产并入 + 文档同步，**未上线落地页、未改 Day1 外联钩子**（3 待定项未拍板）。详见 `CHANGELOG.md`。
+- **2026-07-20 · 产品融合（FifthStar）** — 把昨晚立项的「UK 商户 AI 声誉管家」作为**第二条产品线（冷启动楔子）**并入本项目，品牌定为 **FifthStar**（独立仓 `thefifthstar` 承载线上落地页，curl 实测 200）：`products/fifthstar/` 资产就位（含真实外联模板 / 样例生成 SOP / 生成器）；`docs/pricing.md` 新增「声誉管家订阅」档（£0/£29/£79 月）；`business/product-matrix.md` 新增「双产品线」框架；`business/README.md` + 本文件定位更新为「建站 + 声誉管家」一体业务。当前按**双管齐下 / 双轨并行**（FifthStar 先于建站）：建站轨照 `outreach/发送排期.md` 发，FifthStar 轨用 940 曼城线索另起。品牌 / 垂直+城市 / 首档已定（FifthStar / 曼城独立餐厅 / 免费+£29）。详见 `CHANGELOG.md`。
