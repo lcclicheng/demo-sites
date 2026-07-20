@@ -1,7 +1,12 @@
 {
   "template": "sectioned",
   "name": "HAIR AND HOUNDS",
-  "mood": { "deco": "balanced", "hero": "center", "sig": "on", "cta": "fill" },
+  "mood": {
+    "deco": "balanced",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
+  },
   "subtitle": "Pet Grooming · Dog & Cat Spa",
   "tagline": "Gentle, fear-free grooming for dogs and cats in Bristol — calm hands, tidy coats, happy pets.",
   "established": "2020",
@@ -225,6 +230,9 @@
       "type": "story"
     },
     {
+      "type": "gallery"
+    },
+    {
       "type": "reviews"
     },
     {
@@ -315,5 +323,19 @@
     "sunday": "Sun: 10:00—14:00",
     "closedDays": "Closed Monday"
   },
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "Grooming"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "Happy clients"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "The salon"
+    }
+  ]
 }

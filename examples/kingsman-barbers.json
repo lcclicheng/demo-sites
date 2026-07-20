@@ -1,7 +1,12 @@
 {
   "template": "sectioned",
   "name": "MR BEARDMORES",
-  "mood": { "deco": "minimal", "hero": "asym", "sig": "on", "cta": "fill" },
+  "mood": {
+    "deco": "minimal",
+    "hero": "asym",
+    "sig": "on",
+    "cta": "fill"
+  },
   "subtitle": "Barbershop · Gentlemen’s Grooming",
   "tagline": "Classic men’s barbering in Manchester’s Northern Quarter — sharp cuts, hot-towel shaves, and beards shaped by hand.",
   "established": "2016",
@@ -225,6 +230,9 @@
       "type": "story"
     },
     {
+      "type": "gallery"
+    },
+    {
       "type": "reviews"
     },
     {
@@ -316,5 +324,19 @@
     "closedDays": "Closed Monday? No — open Mon—Sat"
   },
   "_source": "real-merchant",
-  "signature": "razor"
+  "signature": "razor",
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "The chair"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "A sharp cut"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "The shop"
+    }
+  ]
 }

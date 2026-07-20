@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Scale, Shield } from 'lucide-react'
 import { lawData } from './business-data'
 import { HeroBackdrop, GradientText, Eyebrow, SquareMonogram } from './components/visual'
+import { Gallery } from './components/sections/Gallery'
 const d = lawData
 
 
@@ -198,6 +199,8 @@ export default function App() {
           <button type="submit" className="w-full py-4 rounded-sm bg-navy text-cream font-bold text-sm hover:bg-navy/90 active:scale-[0.99] transition-all flex items-center justify-center gap-2">{done?<><Check className="w-4 h-4"/>{d?.form?.success}</>:<>{d?.form?.submit}<Send className="w-4 h-4"/></>}</button>
         </motion.form>
       </div></section>
+
+      <Gallery data={d} />
 
       <footer className="bg-navy text-cream py-16"><div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-cream/10">

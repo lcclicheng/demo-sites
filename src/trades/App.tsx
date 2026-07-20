@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, MapPin, Clock, Star, ArrowRight, Send, Check, Shield, Wrench, Timer, ThumbsUp, Award, Menu, X } from 'lucide-react'
 import { tradesData } from './business-data'
 import { HeroBackdrop, GradientText, GlassCard, Eyebrow } from './components/visual'
+import { Gallery } from './components/sections/Gallery'
 const d = tradesData
 
 
@@ -182,6 +183,8 @@ export default function App() {
       </div></section>
 
       {/* FOOTER */}
+      <Gallery data={d} />
+
       <footer className="bg-slate-900 text-white py-16"><div className="max-w-7xl mx-auto px-5 sm:px-8"><div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pb-12 border-b border-white/10"><div><div className="flex items-center gap-2 mb-4"><Wrench className="w-5 h-5 text-orange"/><h3 className="text-lg font-extrabold">{d.name}</h3></div><p className="text-xs text-slate-400 leading-relaxed">{d.tagline}</p></div><div><h4 className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 mb-4">Services</h4><div className="space-y-2 text-xs text-slate-400">{(d.services || []).map(s=><p key={s.name}>{s.name}</p>)}</div></div><div><h4 className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 mb-4">Hours</h4><div className="space-y-2 text-xs text-slate-400">{(d.hours || '').split('·').map((h,i)=><p key={i}>{h.trim()}</p>)}</div></div><div><h4 className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 mb-4">Find Us</h4><div className="space-y-2 text-xs text-slate-400">{(d.street || '').split(',').map((s,i)=><p key={i}>{s.trim()}</p>)}<a href={`tel:${d.phone}`} className="block text-white hover:text-orange mt-3 font-bold">{d.phone}</a><a href={`tel:${d.emergencyPhone}`} className="block text-orange hover:text-orange-300 text-xs font-bold">{d.emergencyPhone} (Emergency)</a></div></div></div><p className="text-center text-[10px] text-slate-500 pt-8">© {new Date().getFullYear()} {d.name}. All rights reserved. {(d.certs || []).slice(0,3).join(' · ')}</p></div>
 
     <div style={{textAlign:'center',paddingTop:'22px',borderTop:'1px solid rgba(255,255,255,0.08)',marginTop:'10px'}}><a href="#privacy" style={{color:'#cbd5e1',textDecoration:'underline',fontSize:'12px',letterSpacing:'0.04em'}}>Privacy Policy</a></div>

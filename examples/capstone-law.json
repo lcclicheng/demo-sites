@@ -252,5 +252,19 @@
     "hero": "center",
     "sig": "on",
     "cta": "fill"
-  }
+  },
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "Our office"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "The team"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "Client meeting"
+    }
+  ]
 }

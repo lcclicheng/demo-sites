@@ -1,7 +1,12 @@
 {
   "template": "sectioned",
   "name": "BLUE SKY PHOTOGRAPHY",
-  "mood": { "deco": "minimal", "hero": "center", "sig": "on", "cta": "outline" },
+  "mood": {
+    "deco": "minimal",
+    "hero": "center",
+    "sig": "on",
+    "cta": "outline"
+  },
   "subtitle": "Photographer · Portrait & Event",
   "tagline": "Natural-light portraiture, weddings and brand shoots across Edinburgh — relaxed, real, and yours to keep.",
   "established": "2017",
@@ -225,6 +230,9 @@
       "type": "story"
     },
     {
+      "type": "gallery"
+    },
+    {
       "type": "reviews"
     },
     {
@@ -315,5 +323,19 @@
     "sunday": "By appointment",
     "closedDays": "Closed Sunday (enquiries welcome)"
   },
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "Studio setup"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "A session"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "Equipment"
+    }
+  ]
 }

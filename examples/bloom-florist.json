@@ -1,7 +1,12 @@
 {
   "template": "sectioned",
   "name": "THE BRIGHTON FLOWER COMPANY",
-  "mood": { "deco": "rich", "hero": "center", "sig": "on", "cta": "ghost" },
+  "mood": {
+    "deco": "rich",
+    "hero": "center",
+    "sig": "on",
+    "cta": "ghost"
+  },
   "subtitle": "Florist · Flower Studio",
   "tagline": "Seasonal, British-grown flowers arranged with a light touch — weddings, events, and the bunch you grab on the way home.",
   "established": "2018",
@@ -225,6 +230,9 @@
       "type": "story"
     },
     {
+      "type": "gallery"
+    },
+    {
       "type": "reviews"
     },
     {
@@ -315,5 +323,19 @@
     "sunday": "Sun: 10:00—14:00",
     "closedDays": "Closed Monday"
   },
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "Seasonal blooms"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "Bouquet styling"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "The workshop"
+    }
+  ]
 }

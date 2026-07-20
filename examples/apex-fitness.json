@@ -1,7 +1,12 @@
 {
   "template": "sectioned",
   "name": "SIMFIT STUDIO",
-  "mood": { "deco": "rich", "hero": "split", "sig": "on", "cta": "fill" },
+  "mood": {
+    "deco": "rich",
+    "hero": "split",
+    "sig": "on",
+    "cta": "fill"
+  },
   "subtitle": "Gym · Strength & Conditioning",
   "tagline": "A boutique strength studio in Leeds — real coaching, small classes, and no crowded gym floor.",
   "established": "2019",
@@ -225,6 +230,9 @@
       "type": "story"
     },
     {
+      "type": "gallery"
+    },
+    {
       "type": "reviews"
     },
     {
@@ -315,5 +323,19 @@
     "sunday": "Sat—Sun: 8:00—16:00",
     "closedDays": "Open 7 days"
   },
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "The floor"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "Training session"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "The studio"
+    }
+  ]
 }

@@ -2,17 +2,18 @@
 // grid 卡片：有 image 则 <img>，否则 gradient 背景 + IconByName + title。无 gallery → null。
 
 import { motion } from 'framer-motion'
-import { SectionedData } from './types'
 import { IconByName } from './shared'
 
-export function Gallery({ data }: { data: SectionedData; accent?: string }) {
+export function Gallery({ data }: { data: any; accent?: string }) {
   const d = data
-  if (!d.gallery || d.gallery.length === 0) return null
+  // 统一字段：优先 screenshots（generate.mjs 的 og:image 也认它），回退 gallery
+  const items = d.screenshots || d.gallery
+  if (!items || items.length === 0) return null
   return (
     <section id="gallery" className="bg-surface text-ink py-24 px-5">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {d.gallery.map((item, i) => (
+          {items.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}

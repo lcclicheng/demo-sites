@@ -1,7 +1,12 @@
 {
   "template": "restaurant",
   "name": "LA PIAZZA 1",
-  "mood": { "deco": "balanced", "hero": "center", "sig": "on", "cta": "fill" },
+  "mood": {
+    "deco": "balanced",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
+  },
   "tagline": "Family-run Italian cooking in the heart of Bristol — wood-fired pizza, fresh pasta, and a warm welcome since the 1990s.",
   "location": "Bristol, UK",
   "street": "Bristol",
@@ -126,28 +131,16 @@
   ],
   "screenshots": [
     {
-      "icon": "Wine",
-      "title": "The Wine Wall",
-      "sub": "40 wines by the glass",
-      "gradient": "from-stone-900 to-abyss"
+      "image": "./images/1.jpg",
+      "title": "Dining room"
     },
     {
-      "icon": "Flame",
-      "title": "The Wood Fire",
-      "sub": "Mains cooked over embers",
-      "gradient": "from-stone-900 to-abyss"
+      "image": "./images/2.jpg",
+      "title": "Signature dishes"
     },
     {
-      "icon": "Wheat",
-      "title": "Fresh Pasta",
-      "sub": "Rolled each morning",
-      "gradient": "from-stone-900 to-abyss"
-    },
-    {
-      "icon": "Lamp",
-      "title": "The Dining Room",
-      "sub": "Candlelight, low music",
-      "gradient": "from-stone-900 to-abyss"
+      "image": "./images/3.jpg",
+      "title": "The bar"
     }
   ],
   "reviews": [
