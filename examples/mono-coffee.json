@@ -18,35 +18,90 @@
   "heroLine2": "RITUAL",
   "heroBadge": "Est. 2019 · Shoreditch",
   "heroStats": [
-    { "val": "4.9", "label": "Google Rating", "stars": true },
-    { "val": "320+", "label": "Reviews" },
-    { "val": "2019", "label": "Established" }
+    {
+      "val": "4.9",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "320+",
+      "label": "Reviews"
+    },
+    {
+      "val": "2019",
+      "label": "Established"
+    }
   ],
-  "heroCta1": { "text": "Explore Our Menu", "href": "#menu" },
-  "heroCta2": { "text": "Order Ahead", "href": "#booking" },
+  "heroCta1": {
+    "text": "Explore Our Menu",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Order Ahead",
+    "href": "#booking"
+  },
   "sections": [
-    { "type": "hero" },
-    { "type": "infoBar" },
-    { "type": "menu" },
-    { "type": "story" },
-    { "type": "booking" },
-    { "type": "location" },
-    { "type": "footer" }
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "footer"
+    }
   ],
   "infoBar": [
-    { "icon": "MapPin", "text": "47 Redchurch Street, Shoreditch, London E2 7DJ" },
-    { "icon": "Clock", "text": "Every day · 7:00—19:00" },
-    { "icon": "Phone", "text": "+44 20 7123 4567" }
+    {
+      "icon": "MapPin",
+      "text": "47 Redchurch Street, Shoreditch, London E2 7DJ"
+    },
+    {
+      "icon": "Clock",
+      "text": "Every day · 7:00—19:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 20 7123 4567"
+    }
   ],
   "menu": [
     {
       "title": "Pour Over",
       "icon": "Coffee",
       "items": [
-        { "name": "Ethiopia Yirgacheffe", "desc": "Ethiopia · Jasmine · Bergamot · Honey · Washed", "price": "£4.50" },
-        { "name": "Colombia El Paraiso", "desc": "Colombia · Red Apple · Caramel · Cacao · Anaerobic", "price": "£4.20" },
-        { "name": "Sumatra Mandheling", "desc": "Indonesia · Dark Chocolate · Cedar · Spice · Wet-Hulled", "price": "£4.00" },
-        { "name": "Guatemala Antigua", "desc": "Guatemala · Toffee · Orange · Walnut · Washed", "price": "£4.30" }
+        {
+          "name": "Ethiopia Yirgacheffe",
+          "desc": "Ethiopia · Jasmine · Bergamot · Honey · Washed",
+          "price": "£4.50"
+        },
+        {
+          "name": "Colombia El Paraiso",
+          "desc": "Colombia · Red Apple · Caramel · Cacao · Anaerobic",
+          "price": "£4.20"
+        },
+        {
+          "name": "Sumatra Mandheling",
+          "desc": "Indonesia · Dark Chocolate · Cedar · Spice · Wet-Hulled",
+          "price": "£4.00"
+        },
+        {
+          "name": "Guatemala Antigua",
+          "desc": "Guatemala · Toffee · Orange · Walnut · Washed",
+          "price": "£4.30"
+        }
       ]
     }
   ],
@@ -58,9 +113,18 @@
       "Every bean is roasted in 15kg batches. 12 roast profiles. 72 hours of rest before first brew."
     ],
     "stats": [
-      { "value": "15kg", "label": "Batch Size" },
-      { "value": "12", "label": "Roast Profiles" },
-      { "value": "72h", "label": "Rest" }
+      {
+        "value": "15kg",
+        "label": "Batch Size"
+      },
+      {
+        "value": "12",
+        "label": "Roast Profiles"
+      },
+      {
+        "value": "72h",
+        "label": "Rest"
+      }
     ]
   },
   "booking": {
@@ -76,7 +140,19 @@
   },
   "footer": {
     "note": "Specialty coffee roasters. Direct trade. Small batch. Obsessive precision.",
-    "quickLinks": ["Menu", "Roastery", "Order"]
+    "quickLinks": [
+      "Menu",
+      "Roastery",
+      "Order"
+    ]
   },
-  "seo": { "description": "Specialty coffee in Shoreditch, London — single-origin, small-batch, obsessively precise." }
+  "seo": {
+    "description": "Specialty coffee in Shoreditch, London — single-origin, small-batch, obsessively precise."
+  },
+  "mood": {
+    "deco": "balanced",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
+  }
 }

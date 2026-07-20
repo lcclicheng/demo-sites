@@ -2,6 +2,14 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-20 · **feature (v0.10.1) — demo 页面全量 redesign pass（motionsites 思路启发）** — 修复「元素不搭」三类问题，全部 theme-agnostic、不引新引擎：
+  - **模板错配修正（4 站）**：`capstone-law`→`law`、`love-yoga`→`yoga`、`atelier-salon`→`salon`、`mario-pizza`→`restaurant`（与同行业其余站统一模板；`generate.mjs` 按模板导出对应 `lawData/yogaData/salonData/restaurantData`，已构建验证）。
+  - **每站招牌身份补全（19 站）**：原 `mood:{}` 的 19 个站（含上述 4 站）补 `mood:{sig:'on',...}` 按行业设 deco/hero/cta；至此全部 48 demo 站均有签名标识，统一展示体系。
+  - **hero 氛围按行业分档（仅 sectioned）**：`components/sections/Hero.tsx` 加 `deriveBackdrop(sig)`——structural 行业(law/account/estate/hotel/trades)用 `HeroBackdrop variant="grid"` 建筑网格、关呼吸环/粒子；organic/neutral 行业用默认发光+呼吸环+粒子。`d.mood.backdrop:"grid"` 可强制网格。industry 模板各自已硬编码行业签名+背景，无需改动。属借 motionsites「氛围匹配行业」思路、纯用现有工具箱。
+  - **澄清**：原审计标记的「hero 文案串味」(CLARITY/CONFIDENCE/RESULTS 出现在牙医/房产站) 为误报——该文案仅在 `heroLines` 数组（law 模板读取、对律所合适），而 sectioned 站用 `heroLine1/heroLine2`（st-giles/hampsons 已是行业合适文案），故未改动文案。
+  - 验证：6 站抽样构建（forge-trades/mono-coffee/capstone-law/love-yoga/atelier-salon/mario-pizza）均成功；无类型/模板错误。
+  - 文档同步：`docs/architecture.md` Mood 小节补 backdrop 寄存器、`AGENT-ONBOARDING.md` §4 补同述。
+
 - 2026-07-16 · **feature (v4.1)** — 落地 MDD v4 自动化四件套：Router(playbooks/router.md,叠 min-context) + state-sync 脚本 + cross-sync playbook/脚本(并修 Laws 10→13 头体漂移) + ci-contracts 校验(workflow+脚本)
 
 - 2026-07-19 · **security (约定防线 → 技术防线)** · commit `c2549a5` — 接手 agent 风险评审后，把 5 条「约定防线」升级为「技术防线」：

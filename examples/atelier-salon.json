@@ -1,5 +1,5 @@
 {
-  "template": "sectioned",
+  "template": "salon",
   "name": "ATELIER",
   "subtitle": "Hair Design Studio",
   "tagline": "A private studio in Bath for those who understand that great hair is architecture, not decoration.",
@@ -317,5 +317,11 @@
       "Team",
       "Book"
     ]
+  },
+  "mood": {
+    "deco": "rich",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
   }
 }

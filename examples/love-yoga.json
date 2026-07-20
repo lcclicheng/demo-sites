@@ -1,5 +1,5 @@
 {
-  "template": "sectioned",
+  "template": "yoga",
   "name": "LOVE YOGA",
   "subtitle": "Yoga & Wellness",
   "tagline": "A light-filled yoga studio in North Leeds — yoga for every body, every level, every journey.",
@@ -319,5 +319,11 @@
       "Book"
     ]
   },
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "mood": {
+    "deco": "balanced",
+    "hero": "center",
+    "sig": "on",
+    "cta": "ghost"
+  }
 }

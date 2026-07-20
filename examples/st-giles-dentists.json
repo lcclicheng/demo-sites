@@ -246,5 +246,11 @@
     "sunday": "Closed",
     "closedDays": "Weekends"
   },
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "mood": {
+    "deco": "minimal",
+    "hero": "center",
+    "sig": "on",
+    "cta": "outline"
+  }
 }

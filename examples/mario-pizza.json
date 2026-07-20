@@ -1,5 +1,5 @@
 {
-  "template": "sectioned",
+  "template": "restaurant",
   "name": "Mario's Pizzeria",
   "subtitle": "Wood-Fired Pizza",
   "tagline": "48-hour fermented dough, San Marzano tomatoes, and fresh mozzarella — straight from Naples to Leeds.",
@@ -365,5 +365,11 @@
       "Story",
       "Book"
     ]
+  },
+  "mood": {
+    "deco": "rich",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
   }
 }

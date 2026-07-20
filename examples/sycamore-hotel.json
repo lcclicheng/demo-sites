@@ -169,5 +169,11 @@
   ],
   "footerCopyright": "All rights reserved.",
   "slug": "sycamore-hotel",
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "mood": {
+    "deco": "balanced",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
+  }
 }

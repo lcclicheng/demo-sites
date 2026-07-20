@@ -137,5 +137,11 @@
   ],
   "footerNote": "Baked fresh in Chinatown since 1985.",
   "slug": "chinatown-bakery",
-  "_source": "osm"
+  "_source": "osm",
+  "mood": {
+    "deco": "rich",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
+  }
 }

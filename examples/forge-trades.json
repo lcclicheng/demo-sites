@@ -323,5 +323,11 @@
     "saturday": "Mon—Fri: 7:00—19:00 · Sat: 8:00—16:00 · 24/7 Emergency",
     "sunday": "Mon—Fri: 7:00—19:00 · Sat: 8:00—16:00 · 24/7 Emergency",
     "closedDays": ""
+  },
+  "mood": {
+    "deco": "minimal",
+    "hero": "center",
+    "sig": "on",
+    "cta": "outline"
   }
 }

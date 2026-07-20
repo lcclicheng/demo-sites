@@ -108,5 +108,11 @@
     }
   ],
   "slug": "now-plumbing",
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "mood": {
+    "deco": "minimal",
+    "hero": "center",
+    "sig": "on",
+    "cta": "outline"
+  }
 }

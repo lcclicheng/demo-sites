@@ -214,5 +214,11 @@
     "cta": "Visit Shop"
   },
   "slug": "vale-hardware",
-  "_source": "osm"
+  "_source": "osm",
+  "mood": {
+    "deco": "minimal",
+    "hero": "center",
+    "sig": "on",
+    "cta": "outline"
+  }
 }

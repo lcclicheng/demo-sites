@@ -1,5 +1,5 @@
 {
-  "template": "sectioned",
+  "template": "law",
   "name": "CAPSTONE",
   "subtitle": "Solicitors",
   "tagline": "Independent solicitors in Bristol since 1973 — honest, approachable legal advice for families and businesses.",
@@ -246,5 +246,11 @@
     "sunday": "Closed",
     "closedDays": "Weekends"
   },
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "mood": {
+    "deco": "minimal",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
+  }
 }

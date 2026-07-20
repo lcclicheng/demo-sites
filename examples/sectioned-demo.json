@@ -16,45 +16,108 @@
   "heroLine2": "Neighbourhood Kitchen",
   "heroBadge": "Est. 2019 · Bristol",
   "heroStats": [
-    { "val": "4.8", "label": "Google Rating", "stars": true },
-    { "val": "210+", "label": "Reviews" },
-    { "val": "2019", "label": "Established" }
+    {
+      "val": "4.8",
+      "label": "Google Rating",
+      "stars": true
+    },
+    {
+      "val": "210+",
+      "label": "Reviews"
+    },
+    {
+      "val": "2019",
+      "label": "Established"
+    }
   ],
-  "heroCta1": { "text": "View Menu", "href": "#menu" },
-  "heroCta2": { "text": "Book a Table", "href": "#booking" },
+  "heroCta1": {
+    "text": "View Menu",
+    "href": "#menu"
+  },
+  "heroCta2": {
+    "text": "Book a Table",
+    "href": "#booking"
+  },
   "sections": [
-    { "type": "hero" },
-    { "type": "infoBar" },
-    { "type": "menu" },
-    { "type": "story" },
-    { "type": "gallery" },
-    { "type": "reviews" },
-    { "type": "team" },
-    { "type": "booking" },
-    { "type": "location" },
-    { "type": "instagram" },
-    { "type": "footer" }
+    {
+      "type": "hero"
+    },
+    {
+      "type": "infoBar"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "story"
+    },
+    {
+      "type": "gallery"
+    },
+    {
+      "type": "reviews"
+    },
+    {
+      "type": "team"
+    },
+    {
+      "type": "booking"
+    },
+    {
+      "type": "location"
+    },
+    {
+      "type": "instagram"
+    },
+    {
+      "type": "footer"
+    }
   ],
   "infoBar": [
-    { "icon": "MapPin", "text": "12 Cotham Hill, Bristol" },
-    { "icon": "Clock", "text": "Tue—Sun · 12:00—22:00" },
-    { "icon": "Phone", "text": "+44 117 900 1234" }
+    {
+      "icon": "MapPin",
+      "text": "12 Cotham Hill, Bristol"
+    },
+    {
+      "icon": "Clock",
+      "text": "Tue—Sun · 12:00—22:00"
+    },
+    {
+      "icon": "Phone",
+      "text": "+44 117 900 1234"
+    }
   ],
   "menu": [
     {
       "title": "To Share",
       "icon": "UtensilsCrossed",
       "items": [
-        { "name": "Burnt Honey Leeks", "desc": "Charred leek, whipped feta, hazelnut", "price": "11" },
-        { "name": "Cromwell Lamb", "desc": "Slow shoulder, apricot, mint", "price": "14" }
+        {
+          "name": "Burnt Honey Leeks",
+          "desc": "Charred leek, whipped feta, hazelnut",
+          "price": "11"
+        },
+        {
+          "name": "Cromwell Lamb",
+          "desc": "Slow shoulder, apricot, mint",
+          "price": "14"
+        }
       ]
     },
     {
       "title": "Mains",
       "icon": "Flame",
       "items": [
-        { "name": "Day Boat Fish", "desc": "Line-caught, brown butter, samphire", "price": "22" },
-        { "name": "Cinder Valley Chicken", "desc": "Roasted on the bone, lemon, thyme", "price": "19" }
+        {
+          "name": "Day Boat Fish",
+          "desc": "Line-caught, brown butter, samphire",
+          "price": "22"
+        },
+        {
+          "name": "Cinder Valley Chicken",
+          "desc": "Roasted on the bone, lemon, thyme",
+          "price": "19"
+        }
       ]
     }
   ],
@@ -67,28 +130,66 @@
       "We work with a handful of West Country growers and fishermen, changing the menu as the weather does. Nothing arrives pre-made; everything leaves the pass within minutes of order."
     ],
     "stats": [
-      { "value": "6", "label": "Years" },
-      { "value": "40", "label": "Wines" },
-      { "value": "4.8", "label": "Google" }
+      {
+        "value": "6",
+        "label": "Years"
+      },
+      {
+        "value": "40",
+        "label": "Wines"
+      },
+      {
+        "value": "4.8",
+        "label": "Google"
+      }
     ]
   },
   "gallery": [
-    { "title": "The Pass", "icon": "Flame" },
-    { "title": "The Counter", "icon": "Wine" },
-    { "title": "The Garden", "icon": "UtensilsCrossed" }
+    {
+      "title": "The Pass",
+      "icon": "Flame"
+    },
+    {
+      "title": "The Counter",
+      "icon": "Wine"
+    },
+    {
+      "title": "The Garden",
+      "icon": "UtensilsCrossed"
+    }
   ],
   "reviews": [
-    { "name": "Olivia P.", "text": "The warmest room in Bristol. The lamb is unforgettable.", "rating": 5 },
-    { "name": "James R.", "text": "Natural wine list is a joy. Never rushed, never precious.", "rating": 5 }
+    {
+      "name": "Olivia P.",
+      "text": "The warmest room in Bristol. The lamb is unforgettable.",
+      "rating": 5
+    },
+    {
+      "name": "James R.",
+      "text": "Natural wine list is a joy. Never rushed, never precious.",
+      "rating": 5
+    }
   ],
   "team": [
-    { "name": "Mara Quinn", "role": "Head Chef", "initials": "MQ" },
-    { "name": "Tom Ellis", "role": "Sommelier", "initials": "TE" }
+    {
+      "name": "Mara Quinn",
+      "role": "Head Chef",
+      "initials": "MQ"
+    },
+    {
+      "name": "Tom Ellis",
+      "role": "Sommelier",
+      "initials": "TE"
+    }
   ],
   "booking": {
     "intro": "Tables released 30 days ahead. Weekends fill fast.",
     "note": "We hold tables 15 minutes past the booking time.",
-    "occasionOptions": ["Anniversary", "Birthday", "Business"]
+    "occasionOptions": [
+      "Anniversary",
+      "Birthday",
+      "Business"
+    ]
   },
   "hoursDetail": {
     "wedFri": "12:00—22:00",
@@ -97,11 +198,23 @@
     "closedDays": "Mon · Closed"
   },
   "footer": {
-    "quickLinks": ["Our Menu", "Private Dining", "Gift Cards"],
+    "quickLinks": [
+      "Our Menu",
+      "Private Dining",
+      "Gift Cards"
+    ],
     "note": "Small plates. Natural wine. Warm welcome."
   },
   "instagram": "https://instagram.com/thehartwell",
   "facebook": "https://facebook.com/thehartwell",
   "pageTitle": "The Hartwell — Neighbourhood Kitchen in Bristol",
-  "seo": { "description": "Seasonal neighbourhood kitchen in Bristol — small plates and natural wine." }
+  "seo": {
+    "description": "Seasonal neighbourhood kitchen in Bristol — small plates and natural wine."
+  },
+  "mood": {
+    "deco": "balanced",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
+  }
 }

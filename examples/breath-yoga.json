@@ -318,5 +318,11 @@
       "Teachers",
       "Book"
     ]
+  },
+  "mood": {
+    "deco": "minimal",
+    "hero": "center",
+    "sig": "on",
+    "cta": "ghost"
   }
 }

@@ -9,6 +9,22 @@ import { HeroBackdrop, GradientText, StatsStrip, GlassCard, SignatureMark, deriv
 import { SectionedData } from './types'
 import { CtaButtons } from './shared'
 
+/* Per-industry hero "register" — the motionsites-inspired differentiation.
+   Each business type gets an ambient backdrop matching its emotional register,
+   using ONLY the existing HeroBackdrop toolkit (no video / no new engine):
+     - structural (law / account / estate / hotel / trades) -> architectural grid,
+       no floaty particles / breathing ring (clean, editorial)
+     - organic (wellness / beauty / food / florist / dentist / coffee / pet / photo / books)
+       and neutral (restaurant / barber / fitness) -> glow + breathing ring + particles
+   `d.mood?.backdrop === 'grid'` forces the structural grid for any site. */
+function deriveBackdrop(sig: string, override?: string) {
+  const structural = ['monogram', 'ledger', 'key', 'grid', 'forge']
+  const variant: 'default' | 'grid' = override === 'grid' || structural.includes(sig) ? 'grid' : 'default'
+  const breathe = !structural.includes(sig)
+  const particles = !structural.includes(sig)
+  return { variant, breathe, particles }
+}
+
 export function Hero({
   data,
 }: {
@@ -23,6 +39,7 @@ export function Hero({
     mood.hero !== 'center' ? mood.hero : (d as any).designVariant === 'B' ? 'asym' : 'center'
 
   const sig = deriveSignature(d)
+  const bd = deriveBackdrop(sig, (d as any).mood?.backdrop)
   const divider = mood.sig === 'on' && (
     <SignatureDivider kind={sig} className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full" />
   )
@@ -32,7 +49,7 @@ export function Hero({
     return (
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-surface text-ink">
         <div className="text-accent" aria-hidden>
-          <HeroBackdrop particles={false} mood={mood.deco} signature={sig} />
+          <HeroBackdrop variant={bd.variant} breathe={bd.breathe} particles={false} mood={mood.deco} signature={sig} />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 grid lg:grid-cols-12 gap-10 items-center">
           <motion.div
@@ -94,7 +111,7 @@ export function Hero({
     return (
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-surface text-ink">
         <div className="text-accent" aria-hidden>
-          <HeroBackdrop mood={mood.deco} signature={sig} />
+          <HeroBackdrop variant={bd.variant} breathe={bd.breathe} particles={bd.particles} mood={mood.deco} signature={sig} />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full mt-16 grid lg:grid-cols-12 gap-10 items-center">
           <motion.div

@@ -170,5 +170,11 @@
   ],
   "footerCopyright": "All rights reserved.",
   "slug": "gower-hotel",
-  "_source": "osm"
+  "_source": "osm",
+  "mood": {
+    "deco": "rich",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
+  }
 }

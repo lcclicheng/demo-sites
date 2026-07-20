@@ -401,5 +401,11 @@
       "Story",
       "Book"
     ]
+  },
+  "mood": {
+    "deco": "rich",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
   }
 }

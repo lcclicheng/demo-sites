@@ -245,5 +245,11 @@
     "saturday": "Closed",
     "sunday": "Closed",
     "closedDays": "Weekends"
+  },
+  "mood": {
+    "deco": "balanced",
+    "hero": "center",
+    "sig": "on",
+    "cta": "outline"
   }
 }

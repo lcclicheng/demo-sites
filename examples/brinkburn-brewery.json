@@ -179,5 +179,11 @@
   "footerNote": "© BRINKBURN ST BREWERY. Crafted with care in Newcastle.",
   "slug": "brinkburn-brewery",
   "_source": "real-merchant",
-  "subtitle": "Microbrewery · Bar · Kitchen"
+  "subtitle": "Microbrewery · Bar · Kitchen",
+  "mood": {
+    "deco": "balanced",
+    "hero": "center",
+    "sig": "on",
+    "cta": "fill"
+  }
 }
