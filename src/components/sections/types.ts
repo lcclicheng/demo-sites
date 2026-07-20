@@ -100,7 +100,7 @@ export interface SectionedData {
   menu?: MenuCategory[]
   menuIntroTitle?: string
   menuIntroText?: string
-  story?: { title?: string; subtitle?: string; paragraphs?: string[]; stats?: { value: string; label: string }[] }
+  story?: { title?: string; subtitle?: string; paragraphs?: string[]; stats?: { value: string; label: string }[]; images?: string[] }
   gallery?: GalleryItem[]
   reviews?: Review[]
   faqs?: Faq[]
