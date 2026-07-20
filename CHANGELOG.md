@@ -23,9 +23,15 @@
   - 验证：3 站抽样构建（morris=sectioned-rich-asym、seddons=legacy-balanced-outline、foxglove=sectioned-split-ghost）成功；CSS 含 glow-blob/deco-rich/deco-minimal/sig-divider/mood-reveal；JS 编译 sig-divider+mood-reveal 入 bundle。
   - 文档同步：`AGENT-ONBOARDING.md` §4 + `docs/architecture.md` 新增 Mood 子系统小节（改动→文档映射见 §12）。
 
-- 2026-07-20 · **feature (产品融合) — ReplyLocal 声誉管家并入建站项目** · commit `5b20377` — 把昨晚立项的「UK 商户 AI 声誉管家 / ReplyLocal」作为**第二条产品线（冷启动楔子）**并入 gh-pages-build：
+- 2026-07-20 · **feature (产品融合) — ReplyLocal 声誉管家并入建站项目** · commit `5b20377` — 把昨晚立项的「UK 商户 AI 声誉管家 / ReplyLocal」（**品牌后于 `1d4bc3d` 更正为 FifthStar**）作为**第二条产品线（冷启动楔子）**并入 gh-pages-build：
   - 资产移入 `products/reputation-manager/`（strategy.md 方案 / replylocal-landing.html 落地页 / outreach-template.md 外联模板 / case-research.md 案例依据 / README.md 索引）。
   - `docs/pricing.md`：新增「声誉管家订阅」档（免费样例 £0 / Starter £29/月 / Pro £79/月），定位为零客户冷启动楔子 + 月收入层，衔接 A/B/C 建站阶梯。
   - `business/product-matrix.md`（gitignored 本地）：新增「双产品线」框架（声誉管家楔子 + 建站主业务）与上升阶梯。
   - `business/README.md` + `docs/PROJECT-OVERVIEW.md`：定位更新为「建站 + 声誉管家」一体业务；目录结构补 `products/reputation-manager/`；§6 增 §6.6 声誉管家订阅。
   - 注：本次仅并入资产 + 文档，**未上线落地页、未改 Day1 外联钩子**（方案 3 待定项：产品名 / 首发垂直+城市 / 首档位 未拍板）。公开单一事实源 = pricing.md + PROJECT-OVERVIEW.md + products/。
+
+- 2026-07-20 · **refactor (产品融合校正) — 品牌 ReplyLocal→FifthStar + 双仓独立** · commit `1d4bc3d` — 校正 `5b20377` 误用早期探索名、未含真实资产的问题：
+  - `git mv products/reputation-manager → products/fifthstar`；删除 superseded `replylocal-landing.html`；拷贝真实 FifthStar 资产（outreach-template / sample-pipeline / generate_sample.py，来自 `2026-07-19-22-23-37/`）。
+  - 修正 `strategy.md` / `README.md` 品牌与「待拍板」为已定（FifthStar / 曼城独立餐厅 / 免费+£29）。
+  - 同步 `docs/pricing.md` + `docs/PROJECT-OVERVIEW.md` 引用（ReplyLocal→FifthStar，路径→products/fifthstar）；business 本地双文档同步。
+  - 落实指令 C **双管齐下 / 双仓独立**：FifthStar 落地页由独立仓 `thefifthstar` 承载（curl 200），gh-pages-build 仅作内部策略源；建站轨照 `outreach/发送排期.md` 发，FifthStar 轨用 940 曼城线索另起。
