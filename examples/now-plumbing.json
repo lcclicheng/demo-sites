@@ -114,5 +114,19 @@
     "hero": "center",
     "sig": "on",
     "cta": "outline"
-  }
+  },
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "NOW PLUMBING"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "NOW PLUMBING"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "NOW PLUMBING"
+    }
+  ]
 }

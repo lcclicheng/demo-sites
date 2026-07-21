@@ -213,7 +213,12 @@
     "paragraphs": [
       "Private dentistry in a beautifully restored Grade II listed building on St Giles’ — check-ups, hygiene, implants and cosmetic care delivered with a calm, personal touch."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "team": [
     {
@@ -252,5 +257,19 @@
     "hero": "center",
     "sig": "on",
     "cta": "outline"
-  }
+  },
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "42 ST GILES"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "42 ST GILES"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "42 ST GILES"
+    }
+  ]
 }

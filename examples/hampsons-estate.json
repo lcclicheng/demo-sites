@@ -213,7 +213,12 @@
     "paragraphs": [
       "Independent, family-run estate agents in Leicester — honest, personal sales and lettings service built on one-to-one attention and a reputation for doing right by every vendor and buyer."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "team": [
     {
@@ -246,5 +251,19 @@
     "sunday": "Closed",
     "closedDays": "Weekends"
   },
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "HAMPSONS"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "HAMPSONS"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "HAMPSONS"
+    }
+  ]
 }

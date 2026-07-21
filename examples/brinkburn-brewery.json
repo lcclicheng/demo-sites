@@ -63,22 +63,26 @@
         {
           "name": "Byker Pale Ale",
           "desc": "Easy-drinking session pale, citrus and biscuit. 4.0%",
-          "price": 5
+          "price": 5,
+          "image": "./images/menu-1.jpg"
         },
         {
           "name": "Ouseburn IPA",
           "desc": "Bold, resinous IPA with tropical hop character. 5.8%",
-          "price": 6
+          "price": 6,
+          "image": "./images/menu-2.jpg"
         },
         {
           "name": "Ford Stout",
           "desc": "Smooth roast stout, coffee and dark chocolate. 5.2%",
-          "price": 6
+          "price": 6,
+          "image": "./images/menu-3.jpg"
         },
         {
           "name": "Valley Lager",
           "desc": "Crisp, clean lager brewed for the long NE summer. 4.3%",
-          "price": 5
+          "price": 5,
+          "image": "./images/menu-4.jpg"
         }
       ]
     },
@@ -89,17 +93,20 @@
         {
           "name": "Small Plates",
           "desc": "Northern-inspired bites to share — perfect with a pint.",
-          "price": 7
+          "price": 7,
+          "image": "./images/menu-5.jpg"
         },
         {
           "name": "Brinkburn Burger",
           "desc": "Locally sourced beef, smoked cheese, house pickles.",
-          "price": 13
+          "price": 13,
+          "image": "./images/menu-6.jpg"
         },
         {
           "name": "Sunday Roast",
           "desc": "Slow-cooked roast with all the trimmings. Sundays only.",
-          "price": 15
+          "price": 15,
+          "image": "./images/menu-7.jpg"
         }
       ]
     },
@@ -110,40 +117,30 @@
         {
           "name": "Brewery Tour",
           "desc": "Behind-the-scenes look at the microbrewery with a guide.",
-          "price": 12
+          "price": 12,
+          "image": "./images/menu-8.jpg"
         },
         {
           "name": "Beer Tasting Flight",
           "desc": "Five core and seasonal beers, explained by our brewers.",
-          "price": 10
+          "price": 10,
+          "image": "./images/menu-9.jpg"
         }
       ]
     }
   ],
   "screenshots": [
     {
-      "icon": "Beer",
-      "title": "The Taproom",
-      "sub": "16 beers on tap",
-      "gradient": "from-stone-900 to-abyss"
+      "image": "./images/1.jpg",
+      "title": "BRINKBURN ST BREWERY"
     },
     {
-      "icon": "Flame",
-      "title": "The Microbrewery",
-      "sub": "Brewed on site",
-      "gradient": "from-stone-900 to-abyss"
+      "image": "./images/2.jpg",
+      "title": "BRINKBURN ST BREWERY"
     },
     {
-      "icon": "UtensilsCrossed",
-      "title": "The Kitchen",
-      "sub": "Local, fresh scran",
-      "gradient": "from-stone-900 to-abyss"
-    },
-    {
-      "icon": "Lamp",
-      "title": "Events & Live Music",
-      "sub": "Community nights",
-      "gradient": "from-stone-900 to-abyss"
+      "image": "./images/3.jpg",
+      "title": "BRINKBURN ST BREWERY"
     }
   ],
   "reviews": [

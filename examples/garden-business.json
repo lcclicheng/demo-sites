@@ -108,5 +108,19 @@
     }
   ],
   "slug": "garden-business",
-  "_source": "real-merchant"
+  "_source": "real-merchant",
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "THE GARDEN BUSINESS"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "THE GARDEN BUSINESS"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "THE GARDEN BUSINESS"
+    }
+  ]
 }

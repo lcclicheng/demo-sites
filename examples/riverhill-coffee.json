@@ -200,6 +200,11 @@
         "value": "72h",
         "label": "Rest"
       }
+    ],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
     ]
   },
   "booking": {
@@ -220,5 +225,19 @@
       "Roastery",
       "Order"
     ]
-  }
+  },
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "RIVERHILL"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "RIVERHILL"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "RIVERHILL"
+    }
+  ]
 }

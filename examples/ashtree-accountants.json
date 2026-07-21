@@ -213,7 +213,12 @@
     "paragraphs": [
       "Independent chartered accountants in Nottingham for thirty years — proactive, plain-English advice for owner-managed businesses, families and charities, by relationship not by hard sell."
     ],
-    "stats": []
+    "stats": [],
+    "images": [
+      "./images/story-1.jpg",
+      "./images/story-2.jpg",
+      "./images/story-3.jpg"
+    ]
   },
   "team": [
     {
@@ -252,5 +257,19 @@
     "hero": "center",
     "sig": "on",
     "cta": "outline"
-  }
+  },
+  "screenshots": [
+    {
+      "image": "./images/1.jpg",
+      "title": "ASHTREE ACCOUNTANTS"
+    },
+    {
+      "image": "./images/2.jpg",
+      "title": "ASHTREE ACCOUNTANTS"
+    },
+    {
+      "image": "./images/3.jpg",
+      "title": "ASHTREE ACCOUNTANTS"
+    }
+  ]
 }
