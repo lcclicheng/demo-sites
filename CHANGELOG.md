@@ -2,6 +2,12 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-21 · **feature — FifthStar 双分线冷外联落代码（A/B 分支 + 单一事实源）** — 据 `products/fifthstar/dual-track-copy-framework.md` v0.2（已审核通过）落地：
+  - 新增 `outreach/fifthstar-leads.json` 为**单一事实源**（25 家曼城线索：19 A + 6 B 测试集），取代 `fifthstar-manchester.md` 的 markdown 表格解析；含 `track`/`hasWebsite`/`observation`/`verified` 等字段 + `autoTag()` 备用规则（§1）。
+  - 重写 `outreach/send-outreach.mjs`（v2）按 `lead.track` 分支正文：A=§4.1 建站楔子、B=§5.1 声誉引擎（站点不动 + widget）；统一 `standard P.S.`（§6）；`List-Unsubscribe` 头 + `reply STOP` 脚注（§0 #2）。
+  - **合规闸门**：Track B 发送前强制 `observation` 人工填（§0 #1 / §5.5），空则 BLOCKED（除非 `--skip-observation-check`）；每跑 `--cap` 默认 25（§0 #3 新发地址保守值）；`--track`/`--test`/`--manual`/`--dry-run`/`--self-test` 过滤与手动控制齐备。
+  - 验证：JSON 解析 25/25；`--dry-run --track A` 19 封、`--track B` 6 封全文装配通过；B 观察占位提示 + 空观察 BLOCKED 闸门确认生效。待办：真实发送需 `SMTP_PASS` + 用户手动填 B 观察；本批改动未提交（待用户 review 后 commit/push，SSH 需 dangerouslyDisableSandbox）。
+
 - 2026-07-20 · **feature (v0.10.1) — demo 页面全量 redesign pass（motionsites 思路启发）** — 修复「元素不搭」三类问题，全部 theme-agnostic、不引新引擎：
   - **模板错配修正（4 站）**：`capstone-law`→`law`、`love-yoga`→`yoga`、`atelier-salon`→`salon`、`mario-pizza`→`restaurant`（与同行业其余站统一模板；`generate.mjs` 按模板导出对应 `lawData/yogaData/salonData/restaurantData`，已构建验证）。
   - **每站招牌身份补全（19 站）**：原 `mood:{}` 的 19 个站（含上述 4 站）补 `mood:{sig:'on',...}` 按行业设 deco/hero/cta；至此全部 48 demo 站均有签名标识，统一展示体系。
