@@ -58,3 +58,9 @@
 
 - 2026-07-23 · **sync (FifthStar 落地页) — 线上仓 GSAP 动效 + 无障碍修复回灌源仓** · (待 commit) — 用户在线下改了线上仓 `thefifthstar` 的 `index.html`（3 提交 `35e462c..de52bc6`：hero GSAP timeline + SplitText 标题逐字 + scroll reveals + a11y 修复 h4→h3 / 亮色 gold 对比 #9a7416→#8a6712 / nav 点击区 min-height:2.75rem），源仓 `integrated-offer.html` 未同步，下次从源仓构建会冲掉这些优化。本次把同等改动 port 回源仓 `products/fifthstar/integrated-offer.html`（已 `diff -w` 校验与线上内容完全一致，仅行尾 CRLF/LF 差异）。GSAP 走 jsDelivr CDN 3.13.0，含 reduced-motion / CDN 失败 / try-catch 三重兜底（任何失败都不隐藏内容）。
   - 提醒：页面由此引入 GSAP 外部依赖（此前为零依赖原生 CSS 动效），偏离"零依赖"原则但属可选增强；从源仓构建部署后线上与源仓即对齐，源仓重新成为唯一事实源。
+
+- 2026-07-23 · **enhancement (FifthStar 落地页) — GSAP 动效精进 + 自托管** · (待 commit) — 在已回灌的 GSAP 版基础上做两件事：
+  - **动效精进**：① hero 入场由 `.from` 改为 `.fromTo`，并在 `<head>` 内联脚本于绘制前给 hero 目标加 `gsap-hero` 类 + CSS `opacity:0` 预隐藏，彻底消除"先可见→再隐藏→再动画"的 FOUC 闪烁；② 新增 `document.fonts.ready → ScrollTrigger.refresh()`，修复 Playfair 字体异步加载后标题逐字(char split)的回流跳动；③ 给两处签名水印 `.sig-watermark` 加 ScrollTrigger `scrub` 轻微视差（纯装饰、无 FOUC）；④ SplitText 触发点 `top 85%`→`top 90%`，使逐字与父级 `.reveal` 渐显更协调。
+  - **GSAP 自托管**：将 `gsap@3.13.0` 的 `gsap.min.js` / `ScrollTrigger.min.js` / `SplitText.min.js`（共 ~124KB）下载进 `products/fifthstar/vendor/`，页面 3 个 `<script src>` 由 jsDelivr CDN 改为本地相对路径 `vendor/...`。收益：零第三方请求、GDPR 干净、不怕 CDN 宕机、仍零服务器。三重兜底（reduced-motion / 脚本缺失 / try-catch）全保留；新增 `bail()` 在任一非动画退出路径移除 `gsap-hero` 类，确保 GSAP 失败或被禁用时 hero 始终可见（渐进增强）。
+  - **部署说明**：FifthStar 不走 demo-sites 的 `deploy.yml`（那是给 10 个 example 站的），而是手动把 `integrated-offer.html`→`thefifthstar` 仓 `index.html`、并把 `vendor/` 一并拷入。本次已同步 `thefifthstar-live` 仓（`index.html` + `integrated-offer.html` 备份 + `vendor/`，`CNAME=thefifthstar.site` 不变）。
+  - 提醒：自托管后页面仍为零运行时框架依赖，仅含 3 个静态 JS 文件；将来升级 GSAP 版本需重新下载覆盖 `vendor/` 三文件。
