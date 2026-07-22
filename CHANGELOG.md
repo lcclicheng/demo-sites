@@ -64,3 +64,7 @@
   - **GSAP 自托管**：将 `gsap@3.13.0` 的 `gsap.min.js` / `ScrollTrigger.min.js` / `SplitText.min.js`（共 ~124KB）下载进 `products/fifthstar/vendor/`，页面 3 个 `<script src>` 由 jsDelivr CDN 改为本地相对路径 `vendor/...`。收益：零第三方请求、GDPR 干净、不怕 CDN 宕机、仍零服务器。三重兜底（reduced-motion / 脚本缺失 / try-catch）全保留；新增 `bail()` 在任一非动画退出路径移除 `gsap-hero` 类，确保 GSAP 失败或被禁用时 hero 始终可见（渐进增强）。
   - **部署说明**：FifthStar 不走 demo-sites 的 `deploy.yml`（那是给 10 个 example 站的），而是手动把 `integrated-offer.html`→`thefifthstar` 仓 `index.html`、并把 `vendor/` 一并拷入。本次已同步 `thefifthstar-live` 仓（`index.html` + `integrated-offer.html` 备份 + `vendor/`，`CNAME=thefifthstar.site` 不变）。
   - 提醒：自托管后页面仍为零运行时框架依赖，仅含 3 个静态 JS 文件；将来升级 GSAP 版本需重新下载覆盖 `vendor/` 三文件。
+
+- 2026-07-23 · **enhancement (FifthStar 落地页) — noscript 兜底 + "How to pay" 段** · (待 commit) — 两项收尾：
+  - **noscript 兜底**：`<head>` 内加 `<noscript><style>.reveal{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>`。JS 禁用时所有 `.reveal` 渐显块直接可见，杜绝"无 JS 整页空白"。hero 因 `gsap-hero` 类只由 JS 添加、JS 关则不加，本就可见，无需额外处理。
+  - **"How to pay" 段**：定价区（tiers 之下、pay-when-happy 横幅之上）新增收款方式说明卡——全走 PayPal，支持任意英国卡(Visa/Mastercard)/PayPal 余额、无需注册、邮件发账单、卡信息不经手我方；Starter/Pro 月付可随时取消、£590 一次性仅在预览满意后出账单。口吻自然（英文 Ethan 风、去 AI 化），与页面其余文案一致。
