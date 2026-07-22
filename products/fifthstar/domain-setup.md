@@ -12,8 +12,9 @@
 | 项 | 状态 |
 |---|---|
 | 线上页 | `https://lcclicheng.github.io/thefifthstar/`（已部署 v3，含三批改动） |
-| 自定义域名 `thefifthstar.site` | **尚未注册**（2026-07-22 `nslookup` 返回 *Non-existent domain*） |
-| 仓库 CNAME 文件 | 无（未绑自定义域名） |
+| 自定义域名 `thefifthstar.site` | **已购**（2026-07-22 腾讯云 · 微信付），待做 NS→Cloudflare + GitHub 绑定 |
+| 仓库 CNAME 文件 | ✅ 已加（内容 `thefifthstar.site`，已推送 main） |
+| 页面 CTA 邮箱 | 已改为 `hello@thefifthstar.site`（9 处，源+live 同步） |
 | 部署形态 | 独立仓库 root 部署，无串台风险 |
 
 ---
@@ -88,6 +89,24 @@ thefifthstar.site
 
 > 二选一即可。CNAME 扁平化方案无需记四个 IP，推荐。
 
+### 3b. 域名邮箱转发（Email Routing · 选 A 必须做）
+
+页面 CTA 已用 `hello@thefifthstar.site`，但你本人收信邮箱是 `lic28790@gmail.com`。用 **Cloudflare Email Routing** 把前者免费转发到后者：
+
+1. **dash.cloudflare.com → 选中 thefifthstar.site → Email → Email Routing** → 点 **Get started / Add**。
+2. 按提示 **Add route（路由）**：
+   - **Custom address**：`hello@thefifthstar.site`
+   - **Destination address（转发到）**：`lic28790@gmail.com` → 点 Create。
+3. Cloudflare 会要求**验证目标邮箱**：向 `lic28790@gmail.com` 发一封确认信 → 打开点 **Verify**（未验证的路由不生效）。
+4. Cloudflare 会**自动在 DNS 里加好 Email Routing 所需的 MX 与 TXT 记录**（类型 `MX` 指向 `route1.mx.cloudflare.net` 等、一条 `_email` TXT 验证）。确认 DNS → Records 里出现这几条且为灰云（仅 DNS）。
+   - 若自动添加失败，手动加：
+     | 类型 | Name | 内容 |
+     |---|---|---|
+     | MX | `@` | `route1.mx.cloudflare.net`（优先级 100） |
+     | TXT | `@` | `v=spf1 include:_spf.mx.cloudflare.net ~all` |
+5. 之后客户点页面 CTA 发的信会进你 Gmail。也可在 Email Routing 里加更多别名（如 `sales@`、`support@`）。
+> 注意：Email Routing 仅转发收信，**发信用 Gmail 直接用 lic28790@gmail.com 回**（不要从 hello@ 发，否则需额外 SMTP 配置）。
+
 ---
 
 ## 4. Cloudflare SSL/TLS 设置（致命，别错）
@@ -137,14 +156,17 @@ curl -sI https://www.thefifthstar.site/ # 期望 200 或 301→根域名
 
 ## 8. 执行检查清单
 
-- [ ] 1. 腾讯云（DNSPod）注册 `thefifthstar.site`（微信付，自动续费开，已实名模板）
-- [ ] 2. 仓库加 `CNAME`（`thefifthstar.site`）并推送  **或**  Settings 填自定义域名
-- [ ] 3. Cloudflare DNS 加 A 记录（四 IP）或 apex CNAME + www CNAME（灰云）
-- [ ] 4. Cloudflare SSL/TLS 模式设为 **Full (strict)**
-- [ ] 5. `nslookup` 确认解析生效
-- [ ] 6. Settings → Pages → Custom domain 填 + Enforce HTTPS
-- [ ] 7. `curl -sI` 验证 200 HTTPS
-- [ ] 8. 浏览器硬刷新确认 v3 页 + OG 图正常
+- [ ] 1. 腾讯云（DNSPod）注册 `thefifthstar.site`（微信付，自动续费开，已实名模板）✅ 已完成
+- [ ] 2. 仓库加 `CNAME`（`thefifthstar.site`）并推送 ✅ 已完成（main 已含）
+- [ ] 2b. 页面 CTA 邮箱改 `hello@thefifthstar.site` ✅ 已完成（源+live 同步，9 处）
+- [ ] 3. Cloudflare 加 Site → 拿到两个 NS → **回腾讯云把域名 NS 改成它们**（删原厂 dnspod.net）
+- [ ] 4. Cloudflare DNS 加 A 记录（四 IP）或 apex CNAME + www CNAME（灰云）
+- [ ] 4b. **Email Routing**：加路由 `hello@thefifthstar.site` → `lic28790@gmail.com`，验证目标邮箱，确认 MX/TXT 自动加好
+- [ ] 5. Cloudflare SSL/TLS 模式设为 **Full (strict)**；可开 Always Use HTTPS
+- [ ] 6. `nslookup thefifthstar.site` 确认解析生效（Cloudflare 接管）
+- [ ] 7. Settings → Pages → Custom domain 填 `thefifthstar.site` + Enforce HTTPS
+- [ ] 8. `curl -sI` 验证 200 HTTPS
+- [ ] 9. 浏览器硬刷新确认 v3 页 + OG 图；发测试信到 hello@ 验证 Gmail 收到
 
 ---
 
