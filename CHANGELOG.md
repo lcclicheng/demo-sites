@@ -55,3 +55,6 @@
   - 修正 `strategy.md` / `README.md` 品牌与「待拍板」为已定（FifthStar / 曼城独立餐厅 / 免费+£29）。
   - 同步 `docs/pricing.md` + `docs/PROJECT-OVERVIEW.md` 引用（ReplyLocal→FifthStar，路径→products/fifthstar）；business 本地双文档同步。
   - 落实指令 C **双管齐下 / 双仓独立**：FifthStar 落地页由独立仓 `thefifthstar` 承载（curl 200），gh-pages-build 仅作内部策略源；建站轨照 `outreach/发送排期.md` 发，FifthStar 轨用 940 曼城线索另起。
+
+- 2026-07-23 · **sync (FifthStar 落地页) — 线上仓 GSAP 动效 + 无障碍修复回灌源仓** · (待 commit) — 用户在线下改了线上仓 `thefifthstar` 的 `index.html`（3 提交 `35e462c..de52bc6`：hero GSAP timeline + SplitText 标题逐字 + scroll reveals + a11y 修复 h4→h3 / 亮色 gold 对比 #9a7416→#8a6712 / nav 点击区 min-height:2.75rem），源仓 `integrated-offer.html` 未同步，下次从源仓构建会冲掉这些优化。本次把同等改动 port 回源仓 `products/fifthstar/integrated-offer.html`（已 `diff -w` 校验与线上内容完全一致，仅行尾 CRLF/LF 差异）。GSAP 走 jsDelivr CDN 3.13.0，含 reduced-motion / CDN 失败 / try-catch 三重兜底（任何失败都不隐藏内容）。
+  - 提醒：页面由此引入 GSAP 外部依赖（此前为零依赖原生 CSS 动效），偏离"零依赖"原则但属可选增强；从源仓构建部署后线上与源仓即对齐，源仓重新成为唯一事实源。
