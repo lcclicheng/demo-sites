@@ -11,8 +11,8 @@
 
 | 项 | 状态 |
 |---|---|
-| 线上页 | `https://lcclicheng.github.io/thefifthstar/`（已部署 v3，含三批改动） |
-| 自定义域名 `thefifthstar.site` | **已购**（2026-07-22 腾讯云 · 微信付），待做 NS→Cloudflare + GitHub 绑定 |
+| 线上页 | `https://thefifthstar.site/`（已部署 v3，含三批改动；旧 `lcclicheng.github.io/thefifthstar/` 仍并存） |
+| 自定义域名 `thefifthstar.site` | **已上线**（2026-07-22 腾讯云注册 + Cloudflare DNS/SSL/Email Routing 全配；实测可访问 + 邮箱转发可用）|
 | 仓库 CNAME 文件 | ✅ 已加（内容 `thefifthstar.site`，已推送 main） |
 | 页面 CTA 邮箱 | 已改为 `hello@thefifthstar.site`（9 处，源+live 同步） |
 | 部署形态 | 独立仓库 root 部署，无串台风险 |
@@ -159,14 +159,14 @@ curl -sI https://www.thefifthstar.site/ # 期望 200 或 301→根域名
 - [ ] 1. 腾讯云（DNSPod）注册 `thefifthstar.site`（微信付，自动续费开，已实名模板）✅ 已完成
 - [ ] 2. 仓库加 `CNAME`（`thefifthstar.site`）并推送 ✅ 已完成（main 已含）
 - [ ] 2b. 页面 CTA 邮箱改 `hello@thefifthstar.site` ✅ 已完成（源+live 同步，9 处）
-- [ ] 3. Cloudflare 加 Site → 拿到两个 NS → **回腾讯云把域名 NS 改成它们**（删原厂 dnspod.net）
-- [ ] 4. Cloudflare DNS 加 A 记录（四 IP）或 apex CNAME + www CNAME（灰云）
-- [ ] 4b. **Email Routing**：加路由 `hello@thefifthstar.site` → `lic28790@gmail.com`，验证目标邮箱，确认 MX/TXT 自动加好
-- [ ] 5. Cloudflare SSL/TLS 模式设为 **Full (strict)**；可开 Always Use HTTPS
-- [ ] 6. `nslookup thefifthstar.site` 确认解析生效（Cloudflare 接管）
-- [ ] 7. Settings → Pages → Custom domain 填 `thefifthstar.site` + Enforce HTTPS
-- [ ] 8. `curl -sI` 验证 200 HTTPS
-- [ ] 9. 浏览器硬刷新确认 v3 页 + OG 图；发测试信到 hello@ 验证 Gmail 收到
+- [x] 3. Cloudflare 加 Site → 拿到两个 NS → **回腾讯云把域名 NS 改成它们**（删原厂 dnspod.net）✅ 已完成（NS=ryleigh/anuj.ns.cloudflare.com，实测生效）
+- [x] 4. Cloudflare DNS 加 apex CNAME + www CNAME ✅ 已完成（apex/www 均解析到 Cloudflare，www 301→apex）
+- [x] 4b. **Email Routing**：加路由 `hello@thefifthstar.site` → `lic28790@gmail.com`，验证目标邮箱 ✅ 已完成（MX/TXT 自动加好，用户实测收信成功）
+- [x] 5. Cloudflare SSL/TLS 模式设为 **Full (strict)** ✅ 已完成（HTTPS 200 无重定向死循环，实测确认）
+- [x] 6. `nslookup thefifthstar.site` 确认解析生效（Cloudflare 接管）✅ 已完成
+- [x] 7. Settings → Pages → Custom domain 填 `thefifthstar.site` + Enforce HTTPS ✅ 已完成（证书自动签发，HTTPS 服务正常）
+- [x] 8. `curl -sI` 验证 200 HTTPS ✅ 已完成
+- [x] 9. 浏览器硬刷新确认 v3 页 + OG 图；发测试信到 hello@ 验证 Gmail 收到 ✅ 已完成（用户实测收信）
 
 ---
 
