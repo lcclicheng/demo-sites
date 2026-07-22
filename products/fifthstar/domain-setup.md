@@ -1,9 +1,9 @@
-# FifthStar 自定义域名配置指引（thefifthstar.co.uk · Cloudflare 主线）
+# FifthStar 自定义域名配置指引（thefifthstar.co.uk · 国内注册 + Cloudflare DNS）
 
 > 适用：把 FifthStar 官网从 GitHub Pages 子域 `https://lcclicheng.github.io/thefifthstar/`
 > 绑定到自有域名 `https://thefifthstar.co.uk`。
 > 仓库 `lcclicheng/thefifthstar` 已是 **main 分支 root 原生部署**（无 workflow / 无 gh-pages 分支），切换域名基本开箱即用。
-> **注册商已定为 Cloudflare**（Registrar 一条龙：注册 + 托管 DNS + 免费 SSL/隐私），以下步骤以 Cloudflare 为主线。
+> **DNS/SSL 用 Cloudflare**（免费 CDN/WAF + 自动托管）；**域名注册走国内云厂商（阿里云/腾讯云）**——当前银行卡不支持境外支付，Cloudflare/Porkbun/Namecheap 都刷不了。注册后在控制台把 NS 改到 Cloudflare 即可，DNS/SSL 配置与 Cloudflare 主线完全一致。
 
 ---
 
@@ -18,19 +18,29 @@
 
 ---
 
-## 1. 在 Cloudflare Registrar 注册 thefifthstar.co.uk（一条龙）
+## 1. 在国内云厂商注册 thefifthstar.co.uk（支付宝/微信付）
 
-1. 登录 **https://dash.cloudflare.com** → 左侧菜单 **Registrar**（或访问 https://domains.cloudflare.com ）。
-2. 点 **Register domains** → 搜索 `thefifthstar.co.uk` → 加入购物车。
-   - 可选同时注册 `thefifthstar.uk` 作备选（防止被抢 / 做重定向）。
-3. 结算信息：
-   - 注册人：**Ethan Li** / 邮箱 `lic28790@gmail.com`。
-   - 地址：填真实可联系地址（**.uk 无 residency 限制**，海外地址可接受；Nominet 要求有效地址）。
-   - **Auto-renew 默认开启**（防掉线，务必保留）。
-4. 结算后域名出现在 Cloudflare，**自动建 Zone 并由 Cloudflare 托管 DNS** —— 无需手动改 NS，直接进入 §3。
-5. WHOIS 隐私默认免费 redact（个人信息不公开）。
+> 你的卡不支持境外支付，因此**不能**在 Cloudflare / Porkbun / Namecheap 注册。改用国内平台，付款走支付宝/微信/网银。DNS 与 SSL 仍用 Cloudflare（§3/§4）。
 
-> Cloudflare Registrar 按批发价收费、无涨价续费、无追加销售，适合长期持有。
+**1a. 选平台**
+- **阿里云（万网）** `wanwang.aliyun.com` —— 支持 `.co.uk`，支付宝/微信/银联，中文界面。
+- **腾讯云（DNSPod）** `cloud.tencent.com/product/domain` —— 支持 `.co.uk`，微信支付/QQ 钱包/网银。
+
+**1b. 注册步骤（以阿里云为例，腾讯云同理）**
+1. 登录阿里云 → 万网 → 域名注册 → 搜索 `thefifthstar.co.uk`。
+   - 若 `.co.uk` 显示不可注册，备选 `thefifthstar.com`（同样支持，流程一致）。
+   - 可选同时注册 `thefifthstar.uk` 防抢。
+2. 创建/选择**域名信息模板**：主体选「个人」，填 **Ethan Li** / `lic28790@gmail.com` / 真实地址；完成**实名认证**（个人上传身份证，通常 1 个工作日内）。
+   - `.uk` 无 residency 限制，海外/中国地址均可。
+3. 结算：选年限（建议 1–3 年），**开启自动续费**，支付方式选**支付宝/微信**完成付款。
+4. 注册成功 → 进入域名控制台。
+
+**1c. 把 DNS 交给 Cloudflare（关键一步）**
+1. 先在 Cloudflare 加站点：登录 `dash.cloudflare.com` → **Add a Site** → 输入 `thefifthstar.co.uk` → 选 Free → 得到两个 NS（如 `xxx.ns.cloudflare.com` / `yyy.ns.cloudflare.com`）。
+2. 回阿里云/腾讯云域名控制台 → **域名管理 → DNS 修改 / 修改 Nameserver** → 把 NS 改成上面两个 Cloudflare NS，删掉原厂 NS。
+3. 保存。NS 全球生效通常几分钟~24h（用 `nslookup thefifthstar.co.uk` 看是否已是 Cloudflare 接管）。
+
+> 之后所有 DNS 记录、SSL、Pages 绑定都到 Cloudflare 做（§3/§4/§5），与 Cloudflare 注册主线完全一致。
 
 ---
 
@@ -122,7 +132,7 @@ curl -sI https://www.thefifthstar.co.uk/ # 期望 200 或 301→根域名
 
 ## 8. 执行检查清单
 
-- [ ] 1. Cloudflare Registrar 注册 `thefifthstar.co.uk`（记续费日，auto-renew 开）
+- [ ] 1. 国内云厂商（阿里云/腾讯云）注册 `thefifthstar.co.uk`（支付宝/微信付，自动续费开）
 - [ ] 2. 仓库加 `CNAME`（`thefifthstar.co.uk`）并推送  **或**  Settings 填自定义域名
 - [ ] 3. Cloudflare DNS 加 A 记录（四 IP）或 apex CNAME + www CNAME（灰云）
 - [ ] 4. Cloudflare SSL/TLS 模式设为 **Full (strict)**
@@ -133,11 +143,9 @@ curl -sI https://www.thefifthstar.co.uk/ # 期望 200 或 301→根域名
 
 ---
 
-### 备选：若域名在别家注册（非 Cloudflare Registrar）
+### 说明：注册商与 DNS 分离是常态
 
-1. 在 Cloudflare 加 Zone `thefifthstar.co.uk` → 得到两个 NS（如 `xxx.ns.cloudflare.com` / `yyy.ns.cloudflare.com`）。
-2. 去原注册商（Porkbun / Namecheap 等）把域名的 **Nameserver 改成 Cloudflare 给的 NS**。
-3. 回到 §3 / §4 继续（DNS 记录与 SSL 设置完全相同）。
+无论域名在阿里云、腾讯云、Cloudflare 还是别家注册，**只要把 Nameserver 指向 Cloudflare 的两个 NS（§1c）**，后续 DNS 记录（§3）、SSL（§4）、Pages 绑定（§5）都完全一样。本指引的 Cloudflare 部分不受"在哪注册"影响。
 
 ---
 
