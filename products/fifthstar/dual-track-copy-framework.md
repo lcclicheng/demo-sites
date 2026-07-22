@@ -445,7 +445,7 @@ lic28790@gmail.com · reply "STOP" to opt out
 | 4 | 商家邮箱 / 渠道 | ☐ | 邮件需邮箱；无邮箱走 GMB/FB 手动 |
 | 5 | 发送脚本接通真实线索 | ☐ | `send-outreach.mjs` 读线索 .md → 按 A/B 标填对应模板 → SMTP |
 | 6 | A/B 分流打标 | ☐ | 线索导出时算 §1 字段，决定 A/B 模板 |
-| 7 | **官网 review widget 交付 SOP** | ☐（工程层·待验证） | **早期人工+文件跑通**：给商户一段 embed 代码片段（HTML+CSS，静态展示最近 3–5 条真实公开 Google 评价）+ 截图说明放首页哪个位置；**不伪造、不删差评、仅展示真实公开评价**（§0 #6）。工程化（iframe / NiceJob 类服务）待验证可行性后做。 |
+| 7 | **官网 review widget 交付 SOP** | ✅ 已交付 | 见 `widget/review-widget.html`（自包含 embed 片段 + Light/Dark 预览）＋ `widget-delivery-sop.md`（合规 + 摆放位置 + 各平台粘贴步骤 + 失败回退）。**currentColor/color-mix 主题自适应、仅真实公开评价、不删差评**（§0 #6）。工程化（iframe / NiceJob 类服务）仍待验证可行性后做。 |
 | 8 | 人工核实记录 | ☐ | 每批发前 `[OBSERVATION]` 占位 + 样例由本人核实签字（§0 #1） |
 | 9 | *域名 thefifthstar.co.uk（可选）* | ☐ | 仅当日发送稳定 > ~50 封/天或长期品牌化时再买 |
 

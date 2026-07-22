@@ -26,7 +26,7 @@ Provider defaults to DeepSeek (model deepseek-chat). Switch with
 SAMPLE_PROVIDER=openai (model gpt-4o-mini). Override model: SAMPLE_MODEL=...
 Override key: SAMPLE_KEY=...  No third-party libs needed (urllib + stdlib).
 """
-import sys, json, os, urllib.request
+import sys, json, os, re, urllib.request
 
 # --- provider selection (DeepSeek default; OpenAI-compatible) ---
 PROVIDER = os.environ.get("SAMPLE_PROVIDER", "deepseek").lower()
@@ -58,7 +58,116 @@ SYSTEM = (
     "owner, not a bot. Output STRICTLY a JSON array of exactly N strings, no extra text."
 )
 
+def normalize_drafts(content, n):
+    """Robustly turn a model response into a clean JSON list of N strings.
+
+    Handles every shape DeepSeek/OpenAI has actually returned:
+      - a raw JSON array  ["...","...","..."]
+      - {"replies":["...",...]}  (json_object mode)
+      - {"replies":"[\"...\"]"}   (double-encoded string  ← the old bug)
+      - markdown code fences  ```json ... ```
+      - text with an embedded [...] / {...} block
+    Returns a plain Python list (of strings). Never a string, never double-encoded.
+    """
+    s = (content or "").strip()
+    if s.startswith("```"):
+        s = re.sub(r"^```[a-zA-Z]*\n?", "", s)
+        s = re.sub(r"\n?```$", "", s).strip()
+    for _ in range(5):
+        try:
+            obj = json.loads(s)
+        except Exception:
+            m = re.search(r"(\[.*\]|\{.*\})", s, re.DOTALL)
+            if not m:
+                break
+            s = m.group(1)
+            continue
+        if isinstance(obj, list):
+            out = []
+            for it in obj:
+                if isinstance(it, str):
+                    try:
+                        sub = json.loads(it)
+                        if isinstance(sub, list):
+                            out.extend(sub)
+                            continue
+                    except Exception:
+                        pass
+                out.append(it)
+            return out
+        if isinstance(obj, dict):
+            cand = None
+            for k in ("replies", "reply", "responses", "results", "drafts", "output"):
+                if k in obj:
+                    cand = obj[k]
+                    break
+            if cand is None:
+                lists = [v for v in obj.values() if isinstance(v, list)]
+                cand = lists[0] if lists else None
+            if cand is None:
+                strs = [v for v in obj.values() if isinstance(v, str)]
+                cand = strs[0] if strs else None
+            if cand is None:
+                return []
+            s = cand if isinstance(cand, str) else json.dumps(cand, ensure_ascii=False)
+            continue
+        break
+    return []
+
+
+def self_test():
+    """Offline verification of the parser — no API key / network needed.
+
+    Covers every response shape the model has actually returned (the historic
+    source of bugs): raw array, json_object, double-encoded string, markdown
+    fences, text with an embedded block, and an array-within-a-string element.
+    Returns 0 if all pass, 1 otherwise.
+    """
+    cases = [
+        ("raw JSON array",
+         '["Thanks!","Sorry about the wait.","Glad you liked it."]',
+         ["Thanks!", "Sorry about the wait.", "Glad you liked it."]),
+        ("json_object with replies list",
+         '{"replies":["a","b","c"]}',
+         ["a", "b", "c"]),
+        ("double-encoded string (old bug)",
+         '{"replies":"[\\"x\\",\\"y\\"]"}',
+         ["x", "y"]),
+        ("markdown code fence",
+         '```json\n["one","two"]\n```',
+         ["one", "two"]),
+        ("array embedded in prose",
+         'Here you go:\n["p","q","r"]\nCheers',
+         ["p", "q", "r"]),
+        ("array-inside-string element",
+         '["a", "[\\"b\\",\\"c\\"]", "d"]',
+         ["a", "b", "c", "d"]),
+        ("json_object with output string",
+         '{"output":"[\\"p\\",\\"q\\"]"}',
+         ["p", "q"]),
+        ("garbage (no json)",
+         "no json here at all",
+         []),
+        ("empty string",
+         "",
+         []),
+    ]
+    ok = 0
+    for label, raw, exp in cases:
+        got = normalize_drafts(raw, len(exp) if exp else 3)
+        if got == exp:
+            ok += 1
+            sys.stderr.write(f"  PASS  {label}\n")
+        else:
+            sys.stderr.write(f"  FAIL  {label}\n    expected={exp!r}\n    got={got!r}\n")
+    sys.stderr.write(f"\nself-test: {ok}/{len(cases)} passed\n")
+    return 0 if ok == len(cases) else 1
+
+
 def main():
+    if "--self-test" in sys.argv:
+        sys.exit(self_test())
+
     key = os.environ.get("SAMPLE_KEY") or os.environ.get(KEY_ENV)
     if not key:
         sys.stderr.write(f"ERROR: set {KEY_ENV} first (export {KEY_ENV}=...)\n")
@@ -98,12 +207,9 @@ def main():
         sys.exit(4)
 
     content = resp["choices"][0]["message"]["content"]
-    # model may wrap array in {"replies":[...]} or return raw array
-    try:
-        parsed = json.loads(content)
-        drafts = parsed.get("replies", parsed) if isinstance(parsed, dict) else parsed
-    except Exception:
-        drafts = content
+    drafts = normalize_drafts(content, len(reviews))
+    # coerce every element to a string (model rarely returns non-strings, but be safe)
+    drafts = [str(d) for d in drafts]
     print(json.dumps(drafts, ensure_ascii=False, indent=1))
 
 if __name__ == "__main__":

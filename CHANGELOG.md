@@ -2,6 +2,12 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-22 · **feature — FifthStar 工程层 D1–D3 落地（widget / 邀评 / 样例自检）** — 据 `dual-track-copy-framework.md` §10 与战略扩展「已有站→声誉层订阅」落代码：
+  - **D1 官网 review widget（§10 #7 已交付）**：新增 `products/fifthstar/widget/review-widget.html`（自包含 embed 片段 + Light/Dark 预览，`currentColor`/`color-mix` 主题自适应、仅真实公开评价、不删差评）+ `widget-delivery-sop.md`（合规 + 首页摆放位置 + Wix/Squarespace/WordPress/Shopify 等粘贴步骤 + 失败回退）。嵌入 JS 语法校验通过。
+  - **D2 邀评系统（半自动文件版）**：新增 `products/fifthstar/review-request/templates.md`（9 行业话术 + 合规 + QR 卡规范）+ `gen-request.mjs`（输入 商家名/城市/行业/GBP 链接 → 输出 个性化求评邮件 + 短信 + 可打印 QR 卡 HTML；行业语气表 + 别名映射；SMS 超 160 字告警）。样例跑通（email 371B / SMS 151B / QR 卡生成）。
+  - **D3 样例生成工程化验证**：为 `generate_sample.py` 加 `--self-test` 离线模式，覆盖 `normalize_drafts` 全部历史畸形返回形状（raw / json_object / 双编码字符串 / markdown fence / 内嵌 prose / 数组内字符串元素 / 垃圾 / 空串）9/9 通过；真实 API 调用仍待 `DEEPSEEK_API_KEY` 实跑验证。
+  - 合规：三者均守住 §0 红线（真实评价、不 incentivize、人工发送、退订/GDPR 由发送脚本承担）。
+
 - 2026-07-21 · **feature — FifthStar 双分线冷外联落代码（A/B 分支 + 单一事实源）** — 据 `products/fifthstar/dual-track-copy-framework.md` v0.2（已审核通过）落地：
   - 新增 `outreach/fifthstar-leads.json` 为**单一事实源**（25 家曼城线索：19 A + 6 B 测试集），取代 `fifthstar-manchester.md` 的 markdown 表格解析；含 `track`/`hasWebsite`/`observation`/`verified` 等字段 + `autoTag()` 备用规则（§1）。
   - 重写 `outreach/send-outreach.mjs`（v2）按 `lead.track` 分支正文：A=§4.1 建站楔子、B=§5.1 声誉引擎（站点不动 + widget）；统一 `standard P.S.`（§6）；`List-Unsubscribe` 头 + `reply STOP` 脚注（§0 #2）。
