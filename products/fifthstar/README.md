@@ -1,6 +1,6 @@
 # FifthStar · 声誉管家产品线（并入建站项目）
 
-> 并入日期：2026-07-20 ｜ 品牌：**FifthStar**（"Lift your business to its fifth star"，hello@thefifthstar.co.uk）
+> 并入日期：2026-07-20 ｜ 品牌：**FifthStar**（"Lift your business to its fifth star"，hello@thefifthstar.site）
 > 定位：**第二条产品线 / 冷启动楔子**——与 Website 建站共用一套获客与部署机器，先用「免费帮商户回 Google 评价」拿下零客户与现金流，再 upsell 到建站。
 > **双仓独立（2026-07-20 决策）**：线上落地页由独立仓 `lcclicheng/thefifthstar` 承载（已部署，curl 实测 HTTP 200）；本目录仅作 gh-pages-build 内部策略源，不部署、不污染公开 demo 仓。
 
@@ -18,7 +18,7 @@
 | `case-research.md` | 立项依据（80 例 Starter Story 数据深挖） |
 
 ## 外部真实资产（不进公开仓）
-- 线上落地页：`https://lcclicheng.github.io/thefifthstar/`（独立仓 `lcclicheng/thefifthstar`）
+- 线上落地页：`https://thefifthstar.site/`（独立仓 `lcclicheng/thefifthstar`）
 - 940 曼城线索：`2026-07-19-22-23-37/FifthStar_Manchester_leads.csv`（本地，gitignored）
 - 样例演示页：`2026-07-19-22-23-37/FifthStar_样例演示.html`
 

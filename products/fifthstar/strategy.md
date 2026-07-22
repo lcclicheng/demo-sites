@@ -153,7 +153,7 @@
 
 ## 9. 已拍板事项（2026-07-20 双管齐下决策）
 
-1. **产品名**：**已定 = FifthStar**（"Lift your business to its fifth star"，hello@thefifthstar.co.uk；线上落地页 thefifthstar.co.uk，独立仓承载）。
+1. **产品名**：**已定 = FifthStar**（"Lift your business to its fifth star"，hello@thefifthstar.site；线上落地页 thefifthstar.site，独立仓承载）。
 2. **首个垂直 + 城市**：默认 = **曼城独立餐厅**（城市饱和打法：Manchester→Birmingham→Leeds→Bristol→Liverpool→Edinburgh；940 家曼城线索已就绪）。
 3. **起步档位**：先上「免费样例 + £29/月 Starter」（已锁定），Pro £79 与建站 upsell 在对客户信任建立后推。
 

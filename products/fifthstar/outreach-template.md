@@ -1,6 +1,6 @@
 # Fifth Star · 英文冷外联模板 + 城市饱和打法（零客户冷启动版）
 
-> 品牌：**Fifth Star** — "Lift your business to its fifth star." 发送身份用现有邮箱账号 **`lic28790@gmail.com`**（£0，无需新申请）；域名 thefifthstar.co.uk 为可选/后续项，试点不必买。
+> 品牌：**Fifth Star** — "Lift your business to its fifth star." 发送身份用现有邮箱账号 **`lic28790@gmail.com`**（£0，无需新申请）；域名 thefifthstar.site 已购并上线（对外邮箱 **`hello@thefifthstar.site`**，Cloudflare Email Routing 转发到 Gmail）。
 > 框架严格沿用 `uk-biz-outreach` 的 **6 段转化结构**，钩子=免费 3 条评价回复样例。
 > 原则不变：钩子 100% 真实诚实、文案克制反网红、付费档放文末不施压、纯英文外联绝不混入中文。
 > 起步档：**£29/月 Starter**（已锁定）。默认垂直：独立餐厅（可整套换美发/美甲/牙医/trades）。
@@ -136,7 +136,7 @@ just reply "yes". — [YourName], Fifth Star
 
 1. **首城 100 家线索清单**（默认 Manchester 独立餐厅；OSM 导出：名/地址/评分/评价数/核实邮箱或 GMB 链接）— 当前清洗后已核验 25 家（见 `outreach/fifthstar-manchester.md`）。
 2. **免费样例真实生成流程（已跑通）**：抓商户公开评价（WebSearch 摘要，GDPR 安全）→ DeepSeek 生成 3 条回复稿 → 内联进模板 A / 备份 one-pager。当前已为 25 家中的 **25 家**全部生成 one-pager（5 份 pilot 演示 + 20 份清洗 leads），样例链接列已全填。
-3. **落地页（可选/后续）**：想有公开"门面"时，用 Vite+React 引擎 + GitHub Pages（或 Supabase/Netlify 免费档）部署，挂自定义域名 thefifthstar.co.uk（约 £10/年，试点可暂缓）。首触邮件不依赖落地页，样例已内联。
+3. **落地页（已上线）**：公开"门面"已部署在 `https://thefifthstar.site/`（Vite+React 引擎 + GitHub Pages + 自定义域名 thefifthstar.site，约 £10/年）。首触邮件不依赖落地页，样例已内联。
 
 ---
 
@@ -151,6 +151,6 @@ just reply "yes". — [YourName], Fifth Star
 | 3 | **退订提示（合规）** | ☐ | 每封正文末含 `reply "STOP" to opt out`，且 `send-outreach.mjs` 加 `List-Unsubscribe` 头（PECR/GDPR 要求）。 |
 | 4 | **商家邮箱 / 渠道** | ☐ | 邮件发送需商家邮箱：先抓 25 家 GMB/官网邮箱；无邮箱的走模板 B（GMB/FB 手动）。 |
 | 5 | **发送脚本接通真实线索** | ☐ | `send-outreach.mjs` 读 `fifthstar-manchester.md` 的 25 家 → 逐家填模板 A（内联 3 条草稿）→ 走 SMTP。25 家 one-pager 已全部生成。 |
-| 6 | *域名 thefifthstar.co.uk（可选/后续）* | ☐ | 仅当日发送稳定 > ~50 封/天或要长期品牌化时再买（约 £10/年）+ 配 SPF/DKIM/DMARC。Supabase/Netlify 免费档可做落地页，但**不是邮件发送服务**。 |
+| 6 | *域名 thefifthstar.site（已购并上线）* | ☐ | 已购 thefifthstar.site 并配 DNS/Email Routing（对外邮箱 hello@thefifthstar.site，Cloudflare 转发到 Gmail）+ SPF/DKIM/DMARC。Supabase/Netlify 免费档可做落地页，但**不是邮件发送服务**。 |
 
 > 资产 1–3、5 均 £0、用户 5 分钟内可自设；完成后即可按"每天 15–25 家"节奏真实群发。Supabase 等仅用于后续公开落地/候补名单页，不参与外联发送。

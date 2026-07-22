@@ -73,7 +73,7 @@
 ## 非占位（已为真实内容，无需替换）
 
 - 定价：£590（建站）/ £390·yr（Care）/ £980（首年合计）—— 见行 418 / 536 / 547，真实定价。
-- 所有 CTA：`mailto:hello@thefifthstar.co.uk?subject=My%20free%20review%20replies` —— 真实对外邮箱（域名待配 DNS，见待办④）。
+- 所有 CTA：`mailto:hello@thefifthstar.site?subject=My%20free%20review%20replies` —— 真实对外邮箱（域名已上线 thefifthstar.site，DNS+Email Routing 已配，见 domain-setup.md）。
 - 风险逆转：No signup / No card / No obligation / Replies within 48h —— 行 638–644，真实承诺。
 - 创始人第一人称文案（行 598–599）—— 真实 Ethan Li 口吻，非占位。
 

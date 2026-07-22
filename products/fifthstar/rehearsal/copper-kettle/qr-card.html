@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review card · The Copper Kettle</title>
+<style>
+  @page { size: A6; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .card { width: 105mm; height: 148mm; margin: 0 auto; padding: 14mm 10mm;
+          display: flex; flex-direction: column; align-items: center; justify-content: center;
+          text-align: center; background: #fff; color: #1a1a1a; }
+  .biz { font-size: 22px; font-weight: 800; letter-spacing: -.01em; margin: 0 0 6px; }
+  .prompt { font-size: 14px; line-height: 1.35; margin: 0 0 16px; max-width: 78mm; color: #333; }
+  .qr { width: 64mm; height: 64mm; border: 6px solid #fff; box-shadow: 0 0 0 1px #e3e3e3; }
+  .qr img { width: 100%; height: 100%; display: block; }
+  .url { font-size: 10.5px; margin-top: 14px; color: #555; word-break: break-all; max-width: 82mm; }
+  .foot { font-size: 9px; margin-top: 8px; color: #999; }
+  @media print { body { -webkit-print-color-adjust: exact; } }
+</style></head>
+<body>
+  <div class="card">
+    <p class="biz">The Copper Kettle</p>
+    <p class="prompt">Loved your visit? Tap to leave us a Google review — it takes a minute and means the world to a small Manchester business.</p>
+    <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=8&data=https%3A%2F%2Fg.page%2Fthe-copper-kettle%2Freview" alt="QR code to leave a Google review"></div>
+    <p class="url">https://g.page/the-copper-kettle/review</p>
+    <p class="foot">Reputation help by Fifth Star · thefifthstar.site</p>
+  </div>
+</body></html>
