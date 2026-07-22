@@ -65,6 +65,6 @@
   - **部署说明**：FifthStar 不走 demo-sites 的 `deploy.yml`（那是给 10 个 example 站的），而是手动把 `integrated-offer.html`→`thefifthstar` 仓 `index.html`、并把 `vendor/` 一并拷入。本次已同步 `thefifthstar-live` 仓（`index.html` + `integrated-offer.html` 备份 + `vendor/`，`CNAME=thefifthstar.site` 不变）。
   - 提醒：自托管后页面仍为零运行时框架依赖，仅含 3 个静态 JS 文件；将来升级 GSAP 版本需重新下载覆盖 `vendor/` 三文件。
 
-- 2026-07-23 · **enhancement (FifthStar 落地页) — noscript 兜底 + "How to pay" 段** · (待 commit) — 两项收尾：
+- 2026-07-23 · **enhancement (FifthStar 落地页) — noscript 兜底 + "How to pay" 段** · 源仓 `a3037fa` / 线上仓 `3ce4d4f` — 两项收尾：
   - **noscript 兜底**：`<head>` 内加 `<noscript><style>.reveal{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>`。JS 禁用时所有 `.reveal` 渐显块直接可见，杜绝"无 JS 整页空白"。hero 因 `gsap-hero` 类只由 JS 添加、JS 关则不加，本就可见，无需额外处理。
   - **"How to pay" 段**：定价区（tiers 之下、pay-when-happy 横幅之上）新增收款方式说明卡——全走 PayPal，支持任意英国卡(Visa/Mastercard)/PayPal 余额、无需注册、邮件发账单、卡信息不经手我方；Starter/Pro 月付可随时取消、£590 一次性仅在预览满意后出账单。口吻自然（英文 Ethan 风、去 AI 化），与页面其余文案一致。
