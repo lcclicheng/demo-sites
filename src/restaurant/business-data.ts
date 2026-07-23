@@ -183,7 +183,7 @@ export const businessData: BusinessData = {
   aboutTitle: 'Three Generations',
   aboutSubtitle: 'of Passion',
   aboutParagraphs: [
-    'Since 2014, Noir has been the intimate jewel of Bath\'s dining scene — a 24-seat room where every table is the best table.',
+    'Since 2014, Noir has been the intimate jewel of Bath’s dining scene — a 24-seat room where every table is the best table.',
     'Our kitchen is led by Chef Marcus Delacour, who trained under three Michelin-starred chefs before returning to his Somerset roots.',
     'We work directly with 14 local farms and foragers across the West Country, changing our tasting menus every six weeks to follow the seasons.',
   ],

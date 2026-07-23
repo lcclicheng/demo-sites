@@ -113,7 +113,7 @@ export const businessData: BusinessData = {
 
   reviews: [
     { name: 'James Whitfield', text: 'The best Italian food outside of Florence. The osso buco was melt-in-your-mouth perfection.', rating: 5 },
-    { name: 'Elena Rossi', text: 'As an Italian, I\'m very particular about pasta. This place gets it right — tastes exactly like my nonna\'s.', rating: 5 },
+    { name: 'Elena Rossi', text: 'As an Italian, I’m very particular about pasta. This place gets it right — tastes exactly like my nonna’s.', rating: 5 },
     { name: 'Michael & Sarah', text: 'We celebrated our anniversary here. The terrace at sunset is pure magic. Unforgettable.', rating: 5 },
   ],
 

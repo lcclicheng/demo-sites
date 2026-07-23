@@ -47,8 +47,8 @@ export const tradesData = {
   // About
   aboutTitle: 'Three generations of getting it right.',
   aboutParagraphs: [
-    'ProFix started in 2005 when Dave Thompson left the corporate plumbing world to serve his local community. What began as a single van and a reputation for showing up on time has grown into West Yorkshire\'s most trusted trades team.',
-    'We don\'t do call-out fees. We don\'t do hidden charges. We do clear quotes, clean work, and a 12-month guarantee on every job — no exceptions.',
+    'ProFix started in 2005 when Dave Thompson left the corporate plumbing world to serve his local community. What began as a single van and a reputation for showing up on time has grown into West Yorkshire’s most trusted trades team.',
+    'We don’t do call-out fees. We don’t do hidden charges. We do clear quotes, clean work, and a 12-month guarantee on every job — no exceptions.',
     'Every engineer on our team is fully qualified, background-checked, and trained to explain the work in plain English. No jargon, no upsells, no surprises.',
   ],
 

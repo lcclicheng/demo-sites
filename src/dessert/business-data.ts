@@ -57,7 +57,7 @@ export const dessertData = {
   orderTitle: 'Pre-Order',
   orderSubtitle: 'Reserve your favourites for collection.',
   orderSuccessTitle: 'Order Confirmed',
-  orderSuccessMessage: 'We\'ll confirm within 2 hours. Merci.',
+  orderSuccessMessage: 'We’ll confirm within 2 hours. Merci.',
   orderButtonText: 'Place Pre-Order',
   orderFields: {
     item: { label: 'Selection', placeholder: 'Choose your cake' },
