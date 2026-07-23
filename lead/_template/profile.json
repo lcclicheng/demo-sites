@@ -1,0 +1,48 @@
+{
+  "id": "PXX",
+  "name": "<Business Name>",
+  "industry": "law",
+  "template": null,
+  "slug": null,
+  "location": {
+    "city": "",
+    "area": "",
+    "country": "GB",
+    "postcode": ""
+  },
+  "online_presence": {
+    "hasWebsite": false,
+    "websiteUrl": null,
+    "widgetPresent": false,
+    "channels": {
+      "googleBusinessProfile": true,
+      "facebook": false,
+      "instagram": "",
+      "email": ""
+    }
+  },
+  "reputation": {
+    "googleRating": null,
+    "reviewCount": null,
+    "lastOwnerReplyDays": null,
+    "sentiment": "unknown"
+  },
+  "sales": {
+    "track": "A",
+    "leadScore": null,
+    "status": "lead",
+    "channel": "email",
+    "onePager": "",
+    "observation": null,
+    "verified": "",
+    "source": "manual"
+  },
+  "stage": "lead",
+  "website": null,
+  "customer": null,
+  "_source": {
+    "origin": "manual",
+    "osmId": null,
+    "fetchedAt": null
+  }
+}

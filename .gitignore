@@ -38,6 +38,13 @@ clients/**
 # 外联 CRM 系统（含 30 家真实商家邮箱/外联状态/策略，整目录不进公开仓库；参照 clients/** 范式）
 outreach/
 
+# Lead Memory（长期线索资产，含真实商家邮箱/GBP 数据；实例化目录不进公开仓库，_template/与脚本作为系统骨架入库）
+lead/*
+!lead/_template/
+!lead/_template/**
+!lead/README.md
+!lead/init-lead.mjs
+
 # Business Operating System（含定价/KPI/CRM 内部口径与运营节奏，不进公开仓库）
 business/
 

@@ -50,13 +50,16 @@
 
 **关系**：FifthStar 是获客前端（先拿到客户 + 月订阅），建站是 upsell（已信任客户自然升级）。两条线共享：冷外联框架、GitHub Pages 部署经验、SSH 443 推送、反网红高端调性、MDD 文档纪律。
 
+> **战略总纲（2026-07-23 升级）**：本项目已从"建站工具 + 获客脚本"演进为 **FifthStar OS —— 面向英国本地商家的 AI 增长操作系统**（五引擎：Growth / Service / Customer / AI OS / Data Contracts）。完整经营架构、Sales SOP、Customer Journey、KPI Dashboard、Delivery/Renewal/Learning Loop、Client Portal 设计、70/30 验证指令，见 **`FifthStar-Business-Operating-System-v1.0.md`**（本仓根目录，主交付物）。本文件是"接手操作总纲"，BOS 是"经营战略总纲"，两者配合。
+
 ---
 
 ## 2. 目录地图（只看有意义的，已排除构建产物）
 
 ```
 gh-pages-build/
-├── AGENT-ONBOARDING.md      ← 本文件（agent 接手总纲）
+├── AGENT-ONBOARDING.md      ← 本文件（agent 接手操作总纲）
+├── FifthStar-Business-Operating-System-v1.0.md  ★ 经营战略总纲（五引擎 + SOP + KPI + 验证指令）
 ├── generate.mjs             ★ 模板引擎主入口：node generate.mjs ./examples/<slug>.json 单站构建
 ├── build-clean.sh           ★ 全量构建脚本：PROJS 唯一事实源，循环构建 + dist 校验 + 失败闸门
 ├── validate-sites.mjs       部署前校验门（本地先跑，EXIT=0 才 push）
@@ -73,6 +76,10 @@ gh-pages-build/
 ├── outreach/ 🔒 外联 CRM（fifthstar-leads.json 事实源 + 商家清单.md CRM + send-outreach.mjs，整目录 gitignored）
 ├── uk-biz-finder/           英国商家批量搜索（Overpass/OSM，leads_scan2.py 已扫八城 937 家）
 ├── products/fifthstar/      ★★ FifthStar 资产（策略源 + 线上源，详见 §4）
+├── contracts/                ★ 统一数据契约（business-profile/lead/customer 三 schema + DATA-MODEL.md，P0 数据模型）
+├── lead/                     ★ Lead Memory（_template + init-lead.mjs；实例化 lead/<slug>/ gitignored，含真实 PII）
+├── metrics/                  ★ KPI 指标层（sales/delivery/retention/growth，P0）
+├── customer-system/          ★ Customer Lifecycle 中段（onboarding/renewal/referral/feedback-loop，P1）
 └── .ai/ .githooks/ decisions/ memory/ state/ tasks/ playbooks/ contracts/ knowledge/ checklists/ templates/ blog/  （MDD v4 骨架）
 
 thefifthstar-live/           （同级，独立仓克隆，线上事实源镜像）main 分支 root 部署 thefifthstar.site
@@ -191,6 +198,18 @@ git commit -m "..." && git push origin main   # 调用时 dangerouslyDisableSand
 
 ---
 
+### 4.7 经营系统层（BOS v1.0 · P0/P1 已落地 2026-07-23）
+
+原系统"只有获客+交付、没有经营中段"。v1.0 补齐为闭环操作系统，详见 `FifthStar-Business-Operating-System-v1.0.md`：
+
+- **统一数据模型（P0）**：`contracts/business-profile.schema.json` 为唯一事实源，收编旧三格式（examples JSON / lead-schema.md / fifthstar-leads.json），`DATA-MODEL.md` 映射表零破坏适配。纠正旧文档"有 lead_score 字段"错误（真实数据无）。
+- **Lead Memory（P0）**：`lead/_template/`(6 文件) + `init-lead.mjs`，为 6 家 P0x 热线索实例化 `lead/<slug>/` 长期资产（已被 gitignore 保护 PII）。
+- **KPI Metrics（P0）**：`metrics/{sales,delivery,retention,growth}.md` + README，定义商业漏斗 Free→£29→£79→£590→£149/mo 与 Delivery Automation Ratio（资料90/生成95/SEO80/修改50）。
+- **Customer Lifecycle（P1）**：`customer-system/` 补齐成交→交付→续费→推荐→再获客中段（onboarding/renewal/referral/feedback-loop）。
+- **Client Portal / AI Learning Loop（P1 设计）**：零服务器静态仪表盘设计 + 五层记忆学习闭环，见 BOS §9/§10。
+
+> ⚠️ **定价冲突待拍板**：BOS 漏斗写 Care = **£149/mo**（按用户 BOS 指令）；此前 `docs/pricing.md` / 项目记忆记 Care = **£390/年**。上线前须用户确认并同步 `docs/pricing.md` + 本文件 §4.1。
+
 ## 5. 视觉系统（建站引擎，theme-agnostic）
 
 `src/components/visual.tsx` 是共享视觉核心，**所有组件不得硬编码品牌色**：用 `currentColor` + `color-mix` 跟随主题（每站 THEMES 覆盖 `accent`）。**招牌签名系统**（本项目 IP）：17 个行业 SVG motif（全部 `stroke="currentColor"`），`deriveSignature(d)` 自动映射，`HeroBackdrop` 有签名水印层。**Mood 系统**（v0.10，数据驱动）：example JSON 可加 `"mood":{deco,hero,sig,cta}` 调装饰密度/构图/**绝不调色**；`getMood(d)` 兜底默认不报错。
@@ -225,7 +244,13 @@ src/
 
 ## 8. 当前状态（2026-07-23）
 
-**✅ 已完成**
+**✅ 已完成（2026-07-23 · BOS v1.0 落地）**
+- **经营系统升级**：项目从"建站工具+获客脚本"演进为 **FifthStar OS（AI 增长操作系统，五引擎）**。主交付物 `FifthStar-Business-Operating-System-v1.0.md`（五引擎架构 + Sales SOP + Customer Journey + KPI Dashboard + Delivery/Renewal/Learning Loop + Client Portal 设计 + 70/30 验证指令）。综合评分 8.2→9.0。
+- **P0 三件套 DONE**：
+  - 统一数据契约 `contracts/`：`business-profile.schema.json`(唯一事实源) + `lead.schema.json` + `customer.schema.json`(draft2020-12) + `DATA-MODEL.md`（纠正旧 lead-schema.md 与真实数据不符：真实 fifthstar-leads.json **无 lead_score**，键名 name/stars/reviews 非 business_name/google_rating/review_count）。
+  - Lead Memory `lead/`：`_template/`(6 文件) + `init-lead.mjs`；为 6 家 P0x 热线索（P01–P06，Track A 无官网）实例化 `lead/<slug>/`；`.gitignore` 已保护真实 PII。
+  - KPI Metrics `metrics/`：sales/delivery/retention/growth + README，定义商业漏斗 + Delivery Automation Ratio。
+- **P1 中段 DONE**：`customer-system/`（customer-profile/onboarding/success-metrics/renewal/referral/feedback-loop + README），补齐成交→续费→推荐闭环。
 - **建站引擎**：45 个 demo 站全部主题自适应 + 招牌 motif，已部署（sitemap 46 条全 200）。MDD v4 文档体系（docs/ 27 篇 + 项目运营手册.html）。
 - **安全加固**（commit `c2549a5`）：safe-delete 守卫 / build-clean 失败闸门 / outreach 泄漏双防线 / validate 重复 slug / deploy 回滚产物保留。
 - **FifthStar 全链路上线**：
@@ -246,6 +271,7 @@ src/
 - **自动注入**：`.workbuddy/memory/MEMORY.md`（项目长期记忆，含铁律/定价/视觉系统/部署坑）。
 - **每日日志**：`.workbuddy/memory/2026-MM-DD.md`（追加式，不可覆盖）。
 - **跨项目偏好**：`~/.workbuddy/MEMORY.md`（Ethan Li 署名、SSH 443 沙箱坑、文件全放 D 盘、国内卡支付约束、MDD v4 等）。
+- **AI 五层记忆（BOS 目标）**：`system/project/business/customer/learning`（升级自当前 `memory/core/`+`memory/runtime/` 两层）。当前仓库 `memory/` 仍为 core/runtime，迁移待办见 BOS §9；`.workbuddy/memory/MEMORY.md` 已含项目级长期记忆。
 - 新 agent 第一件事：读 `MEMORY.md` + 今日日志 + 本文件，再动手。
 
 ---

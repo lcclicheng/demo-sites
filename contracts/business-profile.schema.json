@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thefifthstar.site/contracts/business-profile.schema.json",
+  "title": "FifthStar Business Profile",
+  "description": "FIFTHSTAR OS — 唯一业务数据事实源 (Single Source of Truth)。本 Schema 统一了历史上三套互不匹配的格式：(a) website-factory 摄入文件 examples/<slug>.json 的扁平字段；(b) sales-engine/lead-schema.md 描述的 CRM 字段；(c) outreach/fifthstar-leads.json 的真实键名。任何新脚本/页面/AI 生成都应读写本契约，旧格式通过 contracts/DATA-MODEL.md 的映射表适配，不强行改写存量数据。宽松契约：id + name 为必填，其余全可选（与现有 contracts 哲学一致——缺字段不报错，仅不渲染）。",
+  "type": "object",
+  "required": ["id", "name"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "全局唯一业务 ID。= fifthstar-leads.json 的 id（如 P01 / A01 / B03）。Website Factory 侧用 slug 作站点 key，但业务主档一律以本 id 为外键。",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "商家法定/招牌名。= leads.json 的 name = examples JSON 的 name。"
+    },
+    "industry": {
+      "type": "string",
+      "description": "行业/菜系垂直标签。= leads.json 的 industry（restaurant/cafe/law/salon/trades/yoga/hotel/indian/sushi...）。用于 '[trade] near me' 文案与模板选择。",
+      "examples": ["restaurant", "cafe", "salon", "law", "trades", "yoga", "hotel", "indian", "sushi"]
+    },
+    "template": {
+      "type": "string",
+      "description": "Website Factory 行业模板（仅当要建站时使用）。= examples JSON 的 template（sectioned / restaurant / coffee / salon / dessert / yoga / law / hotel / trades）。无站线索可留空。",
+      "examples": ["sectioned", "restaurant", "law", "salon"]
+    },
+    "slug": {
+      "type": "string",
+      "description": "网站输出目录名 / URL 段。= examples JSON 的 slug（仅 [a-z0-9-]）。无站时为 null。线上 URL 用 slug 而非 PROJS key（铁律 A1）。",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "location": {
+      "type": "object",
+      "description": "地理位置。聚合 leads.json 的 city + area。",
+      "additionalProperties": true,
+      "properties": {
+        "city": { "type": "string", "description": "城市。= leads.json city（Manchester/Edinburgh/Leeds...）。" },
+        "area": { "type": "string", "description": "社区/街区。= leads.json area（Ancoats/Chorlton...）。" },
+        "country": { "type": "string", "const": "GB", "description": "固定 GB（英国本地商家）。" },
+        "postcode": { "type": "string", "description": "邮编（examples JSON 有，leads 一般无）。" }
+      }
+    },
+    "online_presence": {
+      "type": "object",
+      "description": "线上存在度。聚合 leads.json 的 hasWebsite/widgetPresent + 渠道。",
+      "additionalProperties": true,
+      "properties": {
+        "hasWebsite": { "type": "boolean", "description": "是否有独立官网。= leads.json hasWebsite。无站(Track A)为 false。" },
+        "websiteUrl": { "type": ["string", "null"], "format": "uri", "description": "官网 URL（有站时填）。" },
+        "widgetPresent": { "type": "boolean", "description": "其官网是否已嵌入 FifthStar 评价 widget。= leads.json widgetPresent。" },
+        "channels": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "googleBusinessProfile": { "type": "boolean", "description": "是否有 Google Business Profile（几乎都有，评分来源）。" },
+            "facebook": { "type": "boolean", "description": "Facebook 页是否活跃（Stage2 +10 分）。" },
+            "instagram": { "type": "string", "description": "Instagram handle（可选）。" },
+            "email": { "type": ["string", "null"], "format": "email", "description": "公开业务邮箱。= leads.json ownerEmail。空串表示无公开邮箱→走 GMB/FB 手动路由。" }
+          }
+        }
+      }
+    },
+    "reputation": {
+      "type": "object",
+      "description": "声誉数据。聚合 leads.json 的 stars/reviews/lastReplyDays。",
+      "additionalProperties": true,
+      "properties": {
+        "googleRating": { "type": ["number", "null"], "minimum": 0, "maximum": 5, "description": "真实 Google 评分（X.X）。= leads.json stars。严禁虚构。" },
+        "reviewCount": { "type": ["integer", "null"], "minimum": 0, "description": "真实评价数。= leads.json reviews（别名 reviewCount）。" },
+        "lastOwnerReplyDays": { "type": ["integer", "null"], "description": "距上次店主回评天数。= leads.json lastReplyDays。null=未知。Stage2 有未回评 +25。" },
+        "sentiment": {
+          "type": "string",
+          "description": "近期评价情绪人工/AI 标注。",
+          "enum": ["positive", "mixed", "negative", "unknown"]
+        }
+      }
+    },
+    "sales": {
+      "type": "object",
+      "description": "销售/CRM 状态。聚合 leads.json 的 track/status/ownerEmail/onePager/verified/channel + 评分。",
+      "additionalProperties": true,
+      "properties": {
+        "track": {
+          "type": ["string", "null"],
+          "description": "双轨：A=无官网建站楔子 / B=有官网声誉订阅。= leads.json track。显式值优先；缺失时按 hasWebsite 推算。",
+          "enum": ["A", "B", null]
+        },
+        "leadScore": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "maximum": 100,
+          "description": "两阶段综合评分（Stage1 自动 + Stage2 发送时人工扫 GBP）。进池阈值 >70。注意：真实 leads.json 当前【无】此字段，由 send-outreach.mjs / scoring-rules 计算后回写此处。"
+        },
+        "status": {
+          "type": "string",
+          "description": "线索状态机。= leads.json status。",
+          "enum": ["lead", "sent", "replied", "paid", "dead", "excluded"]
+        },
+        "channel": {
+          "type": ["string", "null"],
+          "description": "触达渠道。= leads.json channel（email / gmb）。空邮箱→gmb 手动路由。",
+          "enum": ["email", "gmb", null]
+        },
+        "onePager": { "type": ["string", "null"], "description": "3 条评价回复草稿样例文件名（fifthstar-samples/）。= leads.json onePager。" },
+        "observation": { "type": ["string", "null"], "description": "Track B 发送前必填的人工网站观察（合规闸门）。= leads.json observation。" },
+        "verified": { "type": ["string", "null"], "description": "谁/何时核实样本+数据（如 07-23）。= leads.json verified。" },
+        "source": { "type": ["string", "null"], "description": "线索来源（osm / companies-house / manual）。= leads.json meta.source 派生。" }
+      }
+    },
+    "stage": {
+      "type": "string",
+      "description": "FIFTHSTAR OS 经营生命周期阶段（Customer Lifecycle Layer 主干）。营销→线索→销售→成交→交付→续费→推荐→再获客。单一字段打通三模块。",
+      "enum": [
+        "market", "lead", "contacted", "replied", "qualified",
+        "won", "delivered", "retained", "referred", "churned", "lost"
+      ],
+      "default": "lead"
+    },
+    "website": {
+      "type": ["object", "null"],
+      "description": "Website Factory 建站产物链接（仅成交建站后填）。",
+      "additionalProperties": true,
+      "properties": {
+        "slug": { "type": "string", "description": "= 顶层 slug。" },
+        "generated": { "type": "boolean", "description": "是否已用 generate.mjs 生成。" },
+        "deployedUrl": { "type": ["string", "null"], "format": "uri", "description": "线上 URL（/demo-sites/<slug>/ 或客户自有域）。" },
+        "status": { "type": "string", "enum": ["planned", "building", "live", "maintenance"] }
+      }
+    },
+    "customer": {
+      "type": ["object", "null"],
+      "description": "成交后客户档案（FK 到 customer.schema.json）。成交前为 null。详见 customer.schema.json。",
+      "additionalProperties": true,
+      "properties": {
+        "tier": {
+          "type": ["string", "null"],
+          "description": "商业漏斗层：free(£0 样例) / starter(£29/mo) / pro(£79/mo) / site(£590 一次性) / care(£390/yr)。",
+          "enum": ["free", "starter", "pro", "site", "care", null]
+        },
+        "mrrGbp": { "type": ["number", "null"], "minimum": 0, "description": "月度经常性收入（GBP）。site 一次性折算月均或记一次性。" },
+        "renewalDate": { "type": ["string", "null"], "format": "date", "description": "续费/年护到期日（care/订阅）。" }
+      }
+    },
+    "_source": {
+      "type": ["object", "null"],
+      "description": "来源元数据（OSM/Companies House 抓取溯源）。= examples JSON 的 _source。",
+      "additionalProperties": true,
+      "properties": {
+        "origin": { "type": "string", "enum": ["osm", "companies-house", "manual", null] },
+        "osmId": { "type": ["string", "null"] },
+        "fetchedAt": { "type": ["string", "null"], "format": "date-time" }
+      }
+    }
+  },
+  "$defs": {
+    "BusinessId": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" }
+  }
+}

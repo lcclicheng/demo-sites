@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thefifthstar.site/contracts/customer.schema.json",
+  "title": "FifthStar Customer (post-sale record)",
+  "description": "成交后客户档案契约。FK 到 business-profile.schema.json 的 id。填补原系统'只有线索没有客户'的缺口（Customer Lifecycle Layer 中段）。每当一个 lead 进入 stage=won，就从 business-profile 派生一条 customer 记录写入 customer-system/ 或 CRM。本契约定义其字段。佣金/续费/推荐/成功指标/自动化率均在此。",
+  "type": "object",
+  "required": ["customerId", "businessId", "name", "tier"],
+  "additionalProperties": true,
+  "properties": {
+    "customerId": {
+      "type": "string",
+      "pattern": "^CUS-[A-Za-z0-9_-]+$",
+      "description": "客户唯一 ID（CUS-<businessId> 或 CUS-序号）。"
+    },
+    "businessId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "description": "外键 → business-profile.schema.json 的 id（如 P01）。"
+    },
+    "name": { "type": "string", "description": "商家名（冗余自 business-profile，便于独立读取）。" },
+    "tier": {
+      "type": "string",
+      "description": "商业漏斗层（当前主套餐）。",
+      "enum": ["free", "starter", "pro", "site", "care"]
+    },
+    "mrrGbp": {
+      "type": "number",
+      "minimum": 0,
+      "description": "月度经常性收入 GBP（starter=29 / pro=79 / care 月均=32.5 / site 一次性记 0 月常但记 oneTimeGbp）。"
+    },
+    "oneTimeGbp": {
+      "type": "number",
+      "minimum": 0,
+      "description": "一次性收入 GBP（site=590 建站 + 首月改）。"
+    },
+    "contractStart": { "type": "string", "format": "date", "description": "成交/合同开始日。" },
+    "renewalDate": { "type": ["string", "null"], "format": "date", "description": "续费/年护到期日（care/订阅层必填）。" },
+    "services": {
+      "type": "array",
+      "description": "已购服务清单。",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "type": { "type": "string", "enum": ["website", "care", "reply-service", "review-widget", "seo"] },
+          "status": { "type": "string", "enum": ["active", "paused", "cancelled"] },
+          "startedAt": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "description": "交付自动化率（Delivery Automation Ratio，铁律指标）。",
+      "additionalProperties": true,
+      "properties": {
+        "infoCollectPct": { "type": "number", "minimum": 0, "maximum": 100, "description": "资料收集自动化率，目标 90%。" },
+        "siteGenPct": { "type": "number", "minimum": 0, "maximum": 100, "description": "网站生成自动化率，目标 95%。" },
+        "seoPct": { "type": "number", "minimum": 0, "maximum": 100, "description": "SEO 自动化率，目标 80%。" },
+        "revisionPct": { "type": "number", "minimum": 0, "maximum": 100, "description": "修改自动化率，目标 50%。" }
+      }
+    },
+    "success": {
+      "type": "object",
+      "description": "客户成功指标（续费/推荐的前提）。",
+      "additionalProperties": true,
+      "properties": {
+        "reviewsReplied30d": { "type": ["integer", "null"], "description": "近 30 天已回评数。" },
+        "ratingTrend": { "type": ["string", "null"], "enum": ["up", "flat", "down", "unknown"] },
+        "nps": { "type": ["integer", "null"], "minimum": -100, "maximum": 100 },
+        "lastTouchAt": { "type": ["string", "null"], "format": "date" }
+      }
+    },
+    "referral": {
+      "type": "object",
+      "description": "推荐状态（再获客来源）。",
+      "additionalProperties": true,
+      "properties": {
+        "status": { "type": "string", "enum": ["none", "asked", "promised", "given", "rewarded"] },
+        "referredBusinessIds": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

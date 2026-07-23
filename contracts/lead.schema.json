@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thefifthstar.site/contracts/lead.schema.json",
+  "title": "FifthStar Lead (CRM record)",
+  "description": "outreach/fifthstar-leads.json 中单条线索的【真实】字段契约。本文件纠正了 sales-engine/lead-schema.md 与真实数据不符的问题：真实数据用 name（非 business_name）、stars/reviews（非 google_rating/review_count），且【没有】lead_score 字段（评分由 scoring-rules 计算后写入 business-profile.sales.leadScore）。send-outreach.mjs 校验每条 lead 是否符合本契约。顶层为 { meta, leads[] }；本契约校验 leads[] 的元素。",
+  "type": "object",
+  "required": ["id", "name", "city", "industry", "stars", "reviews", "track", "hasWebsite", "status", "verified"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$", "description": "唯一线索 ID（P01/A01/B03...）。" },
+    "srcId": { "type": ["integer", "null"], "description": "legacy fifthstar-manchester.md 行号（可追溯性）。" },
+    "name": { "type": "string", "description": "商家名。" },
+    "city": { "type": "string", "description": "城市。" },
+    "area": { "type": "string", "description": "社区/街区（可为空串）。" },
+    "industry": { "type": "string", "description": "行业/菜系。" },
+    "stars": { "type": ["number", "null"], "minimum": 0, "maximum": 5, "description": "真实 Google 评分。严禁虚构。" },
+    "reviews": { "type": ["integer", "null"], "minimum": 0, "description": "真实评价数（别名 reviewCount）。" },
+    "track": {
+      "type": ["string", "null"],
+      "description": "双轨：A=无官网建站楔子 / B=有官网声誉订阅。显式值优先；缺省 autoTag() 按 hasWebsite 推算。",
+      "enum": ["A", "B", null]
+    },
+    "hasWebsite": { "type": "boolean", "description": "是否有独立官网。" },
+    "lastReplyDays": { "type": ["integer", "null"], "description": "距上次店主回评天数；null=未知。" },
+    "reviewCount": { "type": ["integer", "null"], "description": "reviews 的别名（autoTag 备用）。" },
+    "widgetPresent": { "type": "boolean", "description": "其官网是否已有评价 widget。" },
+    "ownerEmail": {
+      "type": "string",
+      "description": "公开业务邮箱，或空串''（=> GMB/FB 手动路由）。严禁填假邮箱。"
+    },
+    "channel": {
+      "type": ["string", "null"],
+      "description": "触达渠道（email / gmb）。空邮箱自动为 gmb。",
+      "enum": ["email", "gmb", null]
+    },
+    "onePager": { "type": ["string", "null"], "description": "3 条评价回复样例文件名（fifthstar-samples/）。" },
+    "observation": {
+      "type": "string",
+      "description": "Track B 发送前【必填】的人工网站观察（合规闸门，空则 BLOCKED）。Track A 可为空。"
+    },
+    "status": {
+      "type": "string",
+      "description": "线索状态机。",
+      "enum": ["lead", "sent", "replied", "paid", "dead", "excluded"]
+    },
+    "verified": { "type": "string", "description": "谁/何时核实（如 07-23）。" },
+    "note": { "type": ["string", "null"], "description": "人工备注（如 GMB 路由原因、暂停发送原因）。" },
+    "sentAt": { "type": ["string", "null"], "description": "实际发送日期（ISO）。" },
+    "emailFound": { "type": ["string", "null"], "description": "邮箱发现日期（ISO）。" },
+    "emailSrc": { "type": ["string", "null"], "description": "邮箱来源（bizseek directory / 官网 / ...）。" }
+  }
+}
