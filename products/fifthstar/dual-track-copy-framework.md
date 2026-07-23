@@ -1,14 +1,14 @@
-# FifthStar 双分线冷外联文案框架（文案层 · v0.2）
+# FifthStar 融合获客文案框架（文案层 · v0.3 · fusion）
 
-> **版本**：v0.2（2026-07-21，基于 v0.1 审核反馈全面修订）
-> **本文档定位**：双分线冷外联「文案层」完整骨架，供审核与落地。不部署、不改线上，直到拍板。
-> **v0.1→v0.2 修订清单（对应审核反馈）**：
-> 1. 新增 §0《Legal & Compliance Guardrails》合规红线（人工痕迹/频率上限/退款终止/GDPR/Google 政策）；
-> 2. 分线 B 首触邮件去 AI 味（缩短 Subject、换掉 "Proper job" 重复、改文学化表达）+ 新增 §5.5 个性化观察模板库；
-> 3. A/B 分流加自动打标规则（§1）；
-> 4. 统一 £29/£79 写法（英文稿 £29/month，中文注 £29/月）+ 统一 P.S. 标准版（§6）；
-> 5. 补全跟进序列模板 day4/day10/day14（§7）+ 成功案例插入位（§8）+ 测试 KPI 目标值（§9）+ widget 交付 SOP（§10）；
-> 6. 文档管理建议写进 §11（单文件当前可用，未来可拆 4 文件）。
+> **版本**：v0.3（2026-07-22，按拍板「融合方案」重构首触）
+> **本文档定位**：融合获客「文案层」完整骨架，供审核与落地。不部署、不改线上，直到拍板。
+> **v0.2 → v0.3 重构清单（对应 2026-07-22 拍板）**：
+> 1. **首触冷钩子统一**：不再分 A/B 两套首触 Subject/开场。冷启动钩子对全体商户统一为「免费 3 条 Google 评价回复草稿」（内联正文，不托管、GDPR 安全）。
+> 2. **A/B 分叉后移**：有无官网的分叉（A=无站→建站楔子；B=有站→声誉订阅+widget）从首触移到**回信后 / 跟进阶段**（§5、§7）。首触不再提建站/订阅差异。
+> 3. **统一首触模板（§4）**：合并原 §4/§5 首触为一份，开场按 track 仅差一句话（有站=网站观察；无站=无站事实），其余 6 段共享。
+> 4. **跟进 A/B 分叉（§5 重构）**：原 §5 首触模板改为「回信后分叉话术」——Track A 信任后推 £590 建站；Track B 推 £29/£79 订阅+widget。
+> 5. **线索打标保留作跟进路由（§1）**：`has_website` 等字段仍导出，但仅用于回信后的分叉与追踪，不再决定首触用哪套模板。
+> 6. **获客更 lean**：单钩子 + 单路由（has-site?→A/B），同批商户首触文案同源、合规更稳、A/B 转化率可在跟进阶段干净对比。
 
 ---
 
@@ -27,125 +27,141 @@
 | 7 | **「满意再付钱」终止/退款条款** | 配套明确：**任何时候可取消，下月不扣；已付当月若不满意可全额退**（降低纠纷）。此条款写进服务条款 + 首触/跟进文案可见处。 |
 | 8 | **GMB/FB 不自动化批量发** | 无官网/无邮箱商户走 GMB/FB —— **AI 不代发**，用本人账号手动粘贴，避免封号。 |
 
+> **外联写作硬标准（每批自检，未达标重写）**：①去 AI 化 ②每家独有风格 ③日常口语化 ④专业化 ⑤不僵硬 ⑥开头有抓眼球钩子 ⑦自带 "咱们"（Ethan）口吻。落款 Ethan Li。所有外联纯英文，绝不混中文。
+
 ---
 
-## 1. 双分线总览
+## 1. 融合模型总览（统一冷钩子 + 回信后 A/B 分叉）
 
 ```
-            免费 3 条 Google 评价回复样例（双线共同冷启动钩子 · 真实·诚实·人工核）
+            免费 3 条 Google 评价回复草稿（统一冷启动钩子 · 全体商户 · 真实·诚实·人工核）
                                   │
-            ┌─────────────────────┴─────────────────────┐
-            │                                           │
-   分线 A · 商家无官网 / 官网残破            分线 B · 商家已有官网（但评价荒废）
-            │                                           │
-   声誉楔子建立信任 → £29→£79/月 订阅       声誉引擎独立订阅（官网一动不动）
-            │                                           │
-   信任后 upsell：£590 建站 + £390/年 Care   终点=已有站 + 官网 review widget 代码片段
-            │                                   不强制建站；订阅即交付
-            ▼
-   客单价更高、转化更顺（建站是「已信任客户的自然升级」）
+                      同一封首触邮件发出（钩子相同，开场按 track 仅差一句）
+                                  │
+                        ┌─────────┴──────────┐
+                  商户回信 / 有互动             商户沉默（走 §7 跟进，不强行分叉）
+                        │
+                  ┌─────┴─────┐
+          有站 (has-site=Y)        无站 (has-site=N)
+          ── Track B ──            ── Track A ──
+          声誉引擎独立订阅           建站楔子（先信任，后 upsell）
+          £29→£79/月 + widget       £590 建站 + £390/年 Care
+          站点一动不动               "满意再付钱"先建站
 ```
 
-**双线共同地基（一套资产复用）**
+**融合前后对照**
+
+| 维度 | v0.2（双线平行） | v0.3（融合 · 本版） |
+|---|---|---|
+| 首触钩子 | A/B 两套（建站楔子 / 评价沉默） | **统一一套**（免费 3 条评价回复草稿） |
+| 首触 Subject | A、B 不同 | **统一**（`I drafted replies to your 3 latest Google reviews — free, [Name]`） |
+| 有无站差异何时出现 | 首触即分 | **回信后 / 跟进阶段才分**（§5、§7） |
+| 线索 `has_website` 字段用途 | 决定首触用哪套模板 | 仅作**跟进路由 + 追踪**，不影响首触 |
+| 获客效率 | 两套模板并行维护、A/B 打开率互相干扰 | 单钩子更 lean；A/B 转化率在跟进阶段干净对比 |
+| 产品层 | 单品牌 FifthStar、阶梯 免费→£29→£79→£590→£390 | 同左（未变） |
+
+**统一地基（一套资产复用，双 track 共享）**
 
 | 共同项 | 说明 |
 |---|---|
 | 冷启动钩子 | 免费 3 条评价 AI 回复草稿（内联正文，不托管、GDPR 安全） |
 | 起步档 | £29/month Starter（已锁定）→ £79/month Pro |
 | 城市饱和打法 | 1 垂直 + 1 城扫透再换（Manchester→Birmingham→Leeds→Bristol→Liverpool→Edinburgh） |
-| 6 段转化结构 | ①来由真实 ②痛点定位 ③已代做免费样例 ④所得 bullet ⑤市场对比 ⑥付费不伤钩子 |
+| 6 段转化结构 | ①来由真实 ②痛点定位 ③已代做免费样例 ④所得 bullet ⑤市场对比 ⑥付费不伤钩子（首触共享，§3） |
 | 合规红线 | §0 全部；纯英文外联绝不混入中文；符合邮件七标准 |
 | 风险逆转 | 「先做好、满意再付钱」统一话术（§6），双线共用 |
 
-**双线分化点对照**
+**线索打标字段（保留作跟进路由，见 §10 #6）**
 
-| 维度 | 分线 A（无站 → 建站） | 分线 B（有站 → 声誉引擎） |
-|---|---|---|
-| 目标商户 | 无官网 / 官网残破 / 只有 FB 页 | 有官网但评价荒废 / 无 review widget / 不回评 |
-| 首触钩子核心 | "你连个像样的门面都没有，顾客搜不到你" | "你网站挺好，但 Google 上评价一片沉默，白瞎了你的站" |
-| 交付终点 | 信任后 upsell £590 建站 + £390 Care | £29/£79 订阅即终点；给「官网评价 widget 代码片段」嵌入现有站 |
-| 建站角色 | 是 upsell、是北极星 | 不提 / 仅作"以后想焕新再聊"软钩子 |
-| 渠道侧重 | 有邮箱走邮件；无邮箱走 GMB/FB | 多数有站商家有邮箱 → 邮件为主；GMB/FB 为辅 |
-| 话术情绪 | 帮你"补上缺失的门面" | 帮你"守住已有门面的口碑漏洞" |
-
-**A/B 分流自动打标规则（线索导出时计算，决定用哪套模板）**
-
-导出字段：`has_website`(Y/N) · `review_count` · `last_reply_days`（最近一条回复距今天数）· `reply_rate`（近 10 条回了几条）· `widget_present`(Y/N)。
-
-| 条件 | 打标 | 说明 |
-|---|---|---|
-| `has_website == N` | **A** | 无站，主推建站楔子 |
-| `has_website == Y` 且 (`last_reply_days > 45` 或 `reply_rate < 30%`) | **B** | 有站但评价沉默 |
-| `has_website == Y` 且 `review_count >= 10` 且 `widget_present == N` | **B** | 有站、评价多、但首页无 widget，给 widget 钩子 |
-| `has_website == Y` 且 `reply_rate >= 60%` 且 `widget_present == Y` | **低优先** | 已认真运营，仅 Pro 监测轻触，不占首批量 |
-| `has_website == Y` 但 `review_count < 5` 且无站感 | **A（可）** | 评价极少，建站+回评一起推更顺 |
+导出字段：`has_website`(Y/N) · `review_count` · `last_reply_days`（最近一条回复距今天数）· `reply_rate`（近 10 条回了几条）· `widget_present`(Y/N)。`send-outreach.mjs` 的 `autoTag()` 仍按这些字段算 track，但**仅用于跟进路由与追踪**，首触永远走 `buildBodyUnified()`（见 §4 / `send-outreach.mjs`）。
 
 > 判定来源：复用 `uk-biz-finder` 商家批量搜索脚手架，导出时多抓上述字段；`reply_rate`/`last_reply_days` 抽样成本较高，可用「最近 3 条评价里有几条回了 + 最近回复日期」粗估。
 
-**小范围测试建议（落地第一步）**：同城同垂直，**10 家 A + 10 家 B** 手动发（非脚本），记录分线转化率，对比哪条线更顺。详见 §9 KPI。
+**小范围测试建议（落地第一步）**：同城同垂直，**10 家 A + 10 家 B** 用统一首触发（非脚本），记录首触打开/回信率（应一致，因钩子相同），再在回信后分叉追踪 A/B 的付费转化率，对比哪条线更顺。详见 §9 KPI。
 
 ---
 
-## 2. 城市饱和打法（双线共用，按线分池）
+## 2. 城市饱和打法（统一扫，A/B 仅作跟进路由）
 
 ```
 选定 1 垂直（如独立餐厅）
         │
         ▼
-锁 1 座城市（如 Manchester）→ 导出全城该垂直商户（带 §1 字段）
+锁 1 座城市（如 Manchester）→ 导出全城该垂直商户（带 §1 字段，has-site 两批一起抓）
         │
-        ├─ 按 §1 规则拆池：A（无站）/ B（有站评价荒）/ 低优先
+        ├─ 按 §1 字段打 A/B 标（仅用于回信后分叉 + 追踪，首触不分）
         │
         ▼
-双线并行扫（每天 ≤30–40 封，A/B 混排；同城互相看得见 → 口碑/转介城内扩散最快）
+统一首触扫（每天 ≤30–40 封，A/B 混排；同城互相看得见 → 口碑/转介城内扩散最快）
+        │
+        ▼
+回信商户按 has-site 分叉：A→建站楔子 / B→声誉订阅
         │
         ▼
 出 3–5 个付费 + 2–3 个真实成效案例（A/B 各沉淀）
         │
         ▼
-整套（线索脚本 + 双线模板 + 交付 SOP + 城内案例）原样复制到下一城
+整套（线索脚本 + 统一首触 + 跟进分叉 + 交付 SOP + 城内案例）原样复制到下一城
 ```
 
 **城市推进顺序**：Manchester → Birmingham → Leeds → Bristol → Liverpool → Edinburgh（每城扫完沉淀案例再进下一城）。
 
----
-
-## 3. 6 段转化结构（双线共用骨架 + 每段的"双线变量"）
-
-| 段 | 作用 | 分线 A 变量 | 分线 B 变量 |
-|---|---|---|---|
-| ①来由真实 | 开场即具体观察，证明做过功课 | "Google 上看到你家 [店名] 有 [N] 条评价、[X.X]★" | "看到你家网站 [具体观察]，但 Google 上最近 [M] 条评价没回" |
-| ②痛点定位 | 痛点当下、零风险 | 无站 → 顾客搜不到你 / 显得不正规 | 有站但评价沉默 → 入口星级冷清、流失点击 |
-| ③已代做免费样例 | 降门槛，内联 3 条草稿 | 3 条评价回复稿 | 3 条评价回复稿（含差评） |
-| ④所得 bullet | 价值清单 | 像你 / 差评转机 / 每周一分钟 | 像你 / 差评转机 / **官网可挂 live review widget 一段代码** |
-| ⑤市场对比 | 同城竞品压力 | "隔壁 4.3★ 条条回评，你 4.5★ 没回显冷清" | "同城对手站上挂了评价 widget，你最好的一条评价埋在 Google 里" |
-| ⑥付费不伤钩子 | 文末轻推，免费白拿 | £29/month；信任后提 £590 建站 | £29/month；**站点不动、给 widget 代码片段**；不提建站（或软钩） |
+**扩线索池（融合要点）**：曼城餐厅里「有 GBP 但网站弱/没有」(Track A) 与「有站但评价参差」(Track B) 两批**一起抓、统一打 `has-site`/`no-site` 标签**，进同一冷投队列；首触文案同源，分叉只在回信后。线索源：`outreach/fifthstar-leads.json`（canonical single source，当前 25 家 = 19A + 6B，已体现融合捕获）。
 
 ---
 
-## 4. 分线 A 文案资产（无站 → 建站 upsell）
+## 3. 转化结构（首触共享 6 段 + 跟进分叉）
 
-> 以下为现有 `outreach-template.md` 的完整搬运（已审可用），列为双线体系的 A 侧，便于你在一份文档里统审。notation 已统一为 £29/month、£79/month。
+**首触 6 段（全体商户共享，v0.3 统一）**
 
-### 4.1 模板 A · 首触邮件（有核实邮箱 → `send-outreach.mjs`）
+| 段 | 作用 | 统一内容（首触共享） |
+|---|---|---|
+| ①来由真实 | 开场即具体观察，证明做过功课 | 引真实 `[N] 条评价、[X.X]★`；有站追加网站观察 `[OBSERVATION]`，无站点出「无站、点击没处落」 |
+| ②痛点定位 | 痛点当下、零风险 | 评价不回 → 入口星级冷清、流失点击（有站）/ 无站 → 搜索只有地图没落地页 |
+| ③已代做免费样例 | 降门槛，内联 3 条草稿 | 3 条评价回复稿（含差评），粘贴即用 |
+| ④所得 bullet | 价值清单 | 像你 / 差评转机 / 每周一分钟 |
+| ⑤市场对比 | 同城竞品压力 | 「同城对手条条回评/挂了 widget，你最好的一条评价埋在 Google 里」 |
+| ⑥付费不伤钩子 | 文末轻推，免费白拿 | £29/month；免费草稿白拿；**不提建站/订阅差异**（分叉留跟进） |
+
+**跟进分叉（回信后，按 track，见 §5 / §7）**
+
+| 阶段 | Track A（无站） | Track B（有站） |
+|---|---|---|
+| 回信后首推 | 先信任；后续推 £590 建站 + £390 Care（"满意再付钱"先建站） | 推 £29/£79 订阅 + 官网 review widget 代码片段（站点不动） |
+| 话术情绪 | 帮你"补上缺失的门面" | 帮你"守住已有门面的口碑漏洞" |
+
+---
+
+## 4. 统一首触模板（v0.3 fusion · 全体商户共享）
+
+> 合并原 §4/§5 首触为一份。开场按 track 仅差一句（有站=网站观察；无站=无站事实），其余 6 段（§3）共享。`send-outreach.mjs` 的 `buildBodyUnified()` 即本模板的程序实现。
+
+### 4.1 模板 · 首触邮件（有核实邮箱 → `send-outreach.mjs` · 统一冷钩子）
 
 **Subject:** I drafted replies to your 3 latest Google reviews — free, [BusinessName]
 
 ```
 Hi [BusinessName],
 
-Saw your Google reviews last night — [N] of them, sat at [X.X]★. That's
-the kind of record that keeps a place busy.
+[开场 · 按 track 二选一]
+  • 有站 (Track B): Spotted your place on Google and clicked through to your site —
+    [OBSERVATION]. Whoever did it knew what they were doing. Then I looked at your
+    reviews. [X.X]★, [N] of them — and the last few haven't had a reply from you.
+    Bit of a shame, next to a site that clearly took effort.
+  • 无站 (Track A): Saw you don't have a website yet — so when someone searches
+    "[trade] near me", Google shows your star rating and a map, but there's nowhere
+    for them to land. That click just drifts to a competitor who does have a site.
+    Your [N] reviews at [X.X]★ are the kind of record that keeps a place busy, though.
 
-Here's what I do: I write replies to Google reviews for [City] restaurants,
-in the owner's own voice. The places that answer their reviews look far
-more alive to someone deciding where to eat — and Google gives a quiet nod
-to businesses that engage. Most owners never get round to it — fair
-enough, you're running a kitchen, not a comms desk.
+Here's what I do: I write replies to Google reviews for [City] businesses, in the
+owner's own voice. The places that answer their reviews look far more alive to
+someone deciding where to spend — and Google gives a quiet nod to businesses that
+engage. Most owners never get round to it — fair enough, you're running a business,
+not a comms desk.
 
 So I went ahead and wrote replies to your 3 most recent reviews
-[ — including that [min★] one][, including the trickier ones]. No sign-up,
-no card — they're yours to paste straight into your Google Business Profile:
+[ — including that [min★] one][, including the trickier ones]. No sign-up, no card —
+they're yours to paste straight into your Google Business Profile:
 
   ── Your 3 free reply drafts (Fifth Star) ──────────────
   Review 1 · [5★] "[short excerpt of their review]"
@@ -163,8 +179,10 @@ Why it's worth a minute:
 • [The awkward/tricky ★] turned into a calm, "we'd love to put this right" note
 • About a minute a week instead of an hour you don't have
 
-If you'd rather not think about it at all, there's a £29/month option where
-I handle it every week. Either way, the drafts above are free — no catch.
+If you'd like to see the kind of thing I do, there's a showcase at https://thefifthstar.site.
+
+If you'd rather not think about it at all, there's a £29/month option where I handle
+replies every week. Either way, the drafts above are free — no catch.
 
 [standard P.S.]
 
@@ -174,21 +192,21 @@ Fifth Star — lift your business to its fifth star
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
-### 4.2 模板 B · GMB 留言 / FB 私信（半自动，你本人账号粘贴）
+### 4.2 模板 · GMB 留言 / FB 私信（半自动，你本人账号粘贴）
 
-> 无官网 / 无核实邮箱的商户走这条。AI 不代发，避免封号。
+> 无官网 / 无核实邮箱的商户走这条。AI 不代发，避免封号。钩子统一为「免费 3 条评价回复草稿」。
 
 ```
-Hi [FirstName] — I found [BusinessName] on Google and saw you've got
-[X.X]★ from [N] reviews. Lovely work.
+Hi [FirstName] — I found [BusinessName] on Google and saw you've got [X.X]★ from
+[N] reviews. Lovely work.
 
-I'm Fifth Star — I draft replies to Google reviews for local restaurants
-in [City]. I've already written 3 free reply drafts for your latest
-reviews (including the tricky one). Happy to send them over, no strings —
-just reply "yes". — Ethan Li, Fifth Star
+I'm Fifth Star — I draft replies to Google reviews for local [trade]s in [City].
+I've already written 3 free reply drafts for your latest reviews (including the
+tricky one). Happy to send them over, no strings — just reply "yes".
+— Ethan Li, Fifth Star
 ```
 
-### 4.3 行业价值钩子句（套进模板 A 第②/⑤段）
+### 4.3 行业价值钩子句（套进模板第②/⑤段 · 双 track 通用）
 
 | 行业 | 痛点钩子（第②段） | 市场对比（第⑤段） |
 |---|---|---|
@@ -199,105 +217,38 @@ just reply "yes". — Ethan Li, Fifth Star
 | 瑜伽 / 健身 | "New students pick a studio by feel — a warm reply to a 5★ review is the cheapest word-of-mouth you'll get." | "Studios a few streets over surface their best reviews on the homepage; that social proof books trials." |
 | 家装 / 室内 | "Clients choose a fitter by trust — a calm reply to a tricky review is what wins the next job." | "Local fitters who answer reviews rank above quieter rivals on 'kitchen fitter near me'." |
 
-### 4.4 付费不伤钩子句（第⑥段，多档备选）
+### 4.4 付费不伤钩子句（第⑥段 · 首触统一，双 track 相同）
+
+> 首触**不区分** A/B —— 都只轻推 £29/month 回评服务。建站 vs 订阅的分叉在回信后（§5）。
 
 - 轻：「If you'd like this done for you every week, there's a £29/month plan — no pressure.」
 - 中：「Most owners move to the £29/month plan once they see replies landing weekly; the free drafts are yours either way.」
-- 重（已信任后）：「When you're ready, the £79/month plan adds a dashboard + weekly report + review-request links — and we can look at a proper website while we're at it.」
-- > 建站 upsell（£590）只对已成订阅、信任建立的客户提，不进首触。
+- > 建站 upsell（£590）与声誉订阅（£79）**都不进首触**；只在回信后按 track 分叉推（§5）。
 
 ---
 
-## 5. 分线 B 文案资产（有站 → 声誉引擎独立订阅）★ v0.2 修订
+## 5. 跟进阶段 A/B 分叉（回信后 · v0.3 重构）
 
-> 核心话术逻辑：**先夸他网站（证明看过、建立好感），再点出"评价沉默"这个具体漏洞（钩子），强调"你站我一动不动、只跑声誉引擎 + 给一段 widget 代码"**。全程不碰建站话题（或仅作软钩）。
+> 原 §5 首触模板整体后移为本节。逻辑：**商户先被统一钩子（免费样例）转化、建立信任，回信后再按 has-site 分叉**——无站推建站楔子，有站推声誉订阅+widget。全程不强行跨线。
 
-### 5.1 模板 B·首触邮件（有站 · 有核实邮箱）★ 去 AI 味修订
+### 5.1 Track A 跟进 · 建站楔子（无站 → £590 建站 + £390 Care）
 
-**Subject:** Your Google reviews are sitting unanswered, [BusinessName]
+> 信任建立后推。话术核心："你没站，搜索只有地图没落地页；我先把站建好你满意再付钱"。
 
-```
-Hi [BusinessName],
+- 轻（回信首推）：「Since you've no site yet — I can put up a simple one-pager (hours, location, photos, your story) and send you the link. No card, it's yours to look at. Pay only when you're happy with it.」
+- 中（信任后）：「When you're ready, the £590 build is one invoice — sent only after you've seen and liked the preview. Then the £390/year care keeps it live + monitored.」
+- > 建站只在已成订阅 / 已信任的客户提，不进首触（§4.4）。
 
-Spotted your place on Google last night and clicked through to your site —
-[OBSERVATION]. Whoever did the site knew what they were doing.
+### 5.2 Track B 跟进 · 声誉订阅 + widget（有站 → £29/£79 + 代码片段）
 
-Then I scrolled to your reviews. [X.X]★, [N] of them — and the last few
-haven't had a reply from you. Bit of a shame, next to a site that clearly
-took effort.
-
-Here's the thing: when someone's searching "[trade] near me", Google shows
-your star rating before it shows your site. A 4.5★ that's gone quiet reads
-colder than a 4.3★ where the owner answers everyone. Your site wins them on
-the way in; the silent reviews lose a few on the way out.
-
-So I wrote replies to your 3 latest reviews — including that [min★] one.
-Free, no sign-up, paste them straight into your Google Business Profile.
-Your site stays exactly as it is, I don't touch it:
-
-  ── Your 3 free reply drafts (Fifth Star) ──────────────
-  Review 1 · [5★] "[excerpt]"
-  Draft: "[draft]"
-
-  Review 2 · [5★] "[excerpt]"
-  Draft: "[draft]"
-
-  Review 3 · [3★] "[excerpt]"
-  Draft: "[draft — turns the tricky one into a calm reply]"
-  ──────────────────────────────────────────────────────
-
-Why bother:
-• Replies that sound like you, not a bot
-• That [tricky ★] turned into a calm "we'd love to put this right" note
-• Your best reviews can sit on your homepage too — I'll give you one
-  snippet to drop in. No rebuild, your site stays yours.
-
-If you'd rather not do it yourself, there's a £29/month option where I
-handle replies every week and add a live review widget to your site. Either
-way, the drafts above are free — no catch.
-
-[standard P.S.]
-
-Cheers,
-Ethan Li
-Fifth Star — lift your business to its fifth star
-lic28790@gmail.com · reply "STOP" to opt out
-```
-
-**对照 6 段（分线 B 变量）**：①来由 = **网站具体观察 `[OBSERVATION]` + 评价沉默事实**（双钩子）②痛点 = 入口星级冷清、流失点击 ③已代做样例（内联 3 条，站点不动承诺）④所得 = 像你 / 差评转机 / **官网可挂 live widget** ⑤市场对比 = 同城对手站上挂了评价 widget ⑥付费不伤 = £29/month、站点不动、给 widget 代码。
-**去 AI 味要点（v0.2）**：删掉原 "Proper job. You've clearly put proper thought into it." 的重复 "proper"；把文学化 "the one patch of your online presence that's gone quiet" 换成口语 "the last few haven't had a reply from you. Bit of a shame, next to a site that clearly took effort."；Subject 从长句缩短为直白陈述。
-
-### 5.2 模板 B·GMB 留言 / FB 私信（有站变体）
-
-> 有站但无核实邮箱 → 走这条。AI 不代发。
-
-```
-Hi [FirstName] — found [BusinessName] on Google. Your site's lovely
-([OBSERVATION]), but the last [M] Google reviews are unanswered, which is a
-shame next to such a polished site. I'm Fifth Star — I draft replies to
-Google reviews for [City] [trade]. Already wrote 3 free drafts for your
-latest reviews. Happy to send, no strings — just reply "yes". — Ethan Li, Fifth Star
-```
-
-### 5.3 分线 B 行业钩子句（有站角度，套 ②⑤段）
-
-| 行业 | 痛点钩子（第②段 · 已有站但评价沉默） | 市场对比（第⑤段） |
-|---|---|---|
-| 独立餐厅 | "Your menu page sells the food; your unanswered reviews undersell the experience." | "A couple of [City] rivals have their best reviews living right on the homepage — yours are buried in Google." |
-| 美发 / 美甲 | "Your portfolio's gorgeous — but a 5★ review with no reply is a free testimonial left hanging." | "Salons a street away show a live review feed on their site; that social proof is money left on the table." |
-| 牙医 / 诊所 | "Your site builds confidence — but a nervous patient who reads an unanswered 2★ review hesitates to call." | "Local practices that surface reviews on-site convert more enquiry calls." |
-| Trades | "Your site shows the work; silent reviews let a neighbour pick the rival who talks back." | "Top 'roofer near me' results show reviews on the page — that's the edge." |
-| 酒店 / B&B | "Your photos book the room; an unanswered review makes a wary guest second-guess." | "Guesthouses up the road wear their 5★ reviews on the homepage — you should too." |
-| 瑜伽 / 健身 | "Your site sells the vibe; silent reviews let a curious first-timer pick the studio that talks back." | "Studios nearby surface their 5★ reviews on the homepage — that books trial sessions." |
-
-### 5.4 分线 B 付费不伤钩子句（独立订阅，不绑建站）
+> 站点一动不动，只跑声誉引擎 + 给一段 widget 代码。
 
 - 轻：「If you'd like this run for you every week, there's a £29/month plan — your site stays exactly as it is. No pressure.」
 - 中：「Most owners move to the £29/month plan once they see replies landing weekly; the free drafts are yours either way. I'll also drop a review widget snippet into your site — one copy-paste, no rebuild.」
 - 重（已信任后）：「When you're ready, the £79/month plan adds a dashboard + weekly report + review-request links + the widget kept live. （And if one day you fancy a site refresh, we can talk — but that's miles off, no rush.）」
-- > 分线 B **不把建站当 upsell 主推**；仅重档末尾一句软钩，绝不进首触。
+- > Track B **不把建站当 upsell 主推**；仅重档末尾一句软钩，绝不强推。
 
-### 5.5 个性化观察模板库（[OBSERVATION] 占位 · 必须人工填）
+### 5.3 个性化观察模板库（[OBSERVATION] 占位 · 首触 Track B 开场用 · 必须人工填）
 
 > 审核反馈 #1：批量生成时 "genuine specific" 易生硬。**规则：每封首触必须 ≥1 处真实个性化观察，[OBSERVATION] 占位由人工核实后填写，禁止全自动。** 以下为各垂直可套的具体观察示例（发前按实际站点挑 1 条）：
 
@@ -316,19 +267,19 @@ latest reviews. Happy to send, no strings — just reply "yes". — Ethan Li, Fi
 
 > 审核反馈 #2/#4：承诺要显眼 + 需配套终止/退款条款 + P.S. 统一成一版。
 
-- **统一标准 P.S.（双线首触 + 所有跟进都加，冷邮件 P.S. 阅读率最高）**：
+- **统一标准 P.S.（首触 + 所有跟进都加，冷邮件 P.S. 阅读率最高）**：
   > "P.S. Even if you ever want more than this free one — I do the work first and you only pay once you're happy with it. Never any money up front."
 - **终止/退款条款（写进服务条款 + 首触/定价可见处）**：「任何时候可取消，下月不扣；已付当月若不满意，全额退。」降低纠纷，契合「只文字/文件交流、不视频」。
 - **叙事页 Hero 承诺条**：✓ "I do the work first — you only pay once you're happy with it."
-- **£29 卡片 li（双线共用）**："Pay only when you're happy."
+- **£29 卡片 li（共用）**："Pay only when you're happy."
 - **风险逆转末条**："Replies drafted first — pay only when you're happy."
-- **范围**：承诺仅限"回评/声誉服务先做好满意再付"；£590 建站 upsell 的"先建站再谈钱"在分线 A 信任后阶段体现，不进分线 B 首触。
+- **范围**：承诺仅限"回评/声誉服务先做好满意再付"；£590 建站 upsell 的"先建站再谈钱"在 Track A 信任后阶段体现（§5.1），不进首触。
 
 ---
 
-## 7. 跟进序列模板（FifthStar · day4 / day10 / day14，双线通用 + B 变体）★ 新增
+## 7. 跟进序列模板（FifthStar · day4 / day10 / day14，统一 + A/B 分叉）★ v0.3 加 A/B 分支
 
-> 节奏：发后第 4 天轻问样例是否收到 → 第 10 天问要不要每周自动版 → 第 14 天最后轻触。双线共用 base；分线 B 在第 10 天加 widget 句。每天发送遵守 §0 #3 频率上限。
+> 节奏：发后第 4 天轻问样例是否收到 → 第 10 天问要不要每周自动版 → 第 14 天最后轻触。第 10 天起**已回信商户按 track 分叉**（§5.1 / §5.2）；未回信商户走统一温和版。每天发送遵守 §0 #3 频率上限。
 
 ### 7.1 跟进 1（发后第 4 天 · 轻问是否收到）
 
@@ -353,7 +304,7 @@ Fifth Star
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
-### 7.2 跟进 2（发后第 10 天 · 问要不要每周自动版）
+### 7.2 跟进 2（发后第 10 天 · 已回信商户按 track 分叉）
 
 **Subject:** Re: your 3 free reply drafts, [BusinessName]
 
@@ -364,9 +315,16 @@ Following up properly this time. The drafts were a taster — most owners who
 start replying to reviews see their Google listing look alive within a few
 weeks, before we even talk about the ranking nudge.
 
-If you'd rather not do it yourself every week, the £29/month plan has me
-handle replies [Track B: + drop a review widget on your site]. No contract,
-cancel anytime, pay only when you're happy.
+[分叉 · 按 track]
+  • Track A（无站）:
+    If you'd rather not do it yourself every week, the £29/month plan has me
+    handle replies. And since you've no site yet — I can put up a simple
+    one-pager and send you the link; pay only when you're happy with it.
+    No contract, cancel anytime.
+  • Track B（有站）:
+    If you'd rather not do it yourself every week, the £29/month plan has me
+    handle replies and drop a review widget on your site. Your site stays
+    exactly as it is. No contract, cancel anytime, pay only when you're happy.
 
 Either way — the free drafts are still yours.
 
@@ -398,11 +356,11 @@ Fifth Star
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
-> 微调提示：按业态换语气（理发店可痞一点、律所稳一点、花店柔一点）；若商户已回/已转化，跟进 2/3 不发。每封发前过 §4/§5 七标准 + §6 承诺可见。
+> 微调提示：按业态换语气（理发店可痞一点、律所稳一点、花店柔一点）；若商户已回/已转化，跟进 2/3 不发。每封发前过邮件七标准 + §6 承诺可见。未回信商户的跟进 2 用统一温和版（不强行分叉，避免显得"我已经给你贴了标签"）。
 
 ---
 
-## 8. 成功案例 / 社会证明插入位置 ★ 新增
+## 8. 成功案例 / 社会证明插入位置 ★ 保留
 
 > 审核反馈 #5：案例插入位置未明确。**规则：零客户冷启动期不虚构；有首个真实付费/成效后立即补。**
 
@@ -414,20 +372,21 @@ lic28790@gmail.com · reply "STOP" to opt out
 
 ## 9. 发送检查清单 + 追踪 + 测试 KPI ★ 扩展 KPI
 
-每家一行：商家名 · 城市 · **分线(A/B)** · 渠道(邮箱/GMB/FB) · 评分/评价数 · 样例链接 · 状态 ☐待发/☐已发/☐已回/☐付费/☐死信 · **核实人/核实时间**（§0 #1）。
-**新增字段 `分线`**：决定用 §4（A）还是 §5（B）模板；同一商家不跨线重复发。
+每家一行：商家名 · 城市 · **track(A/B，仅跟进路由用)** · 渠道(邮箱/GMB/FB) · 评分/评价数 · 样例链接 · 状态 ☐待发/☐已发/☐已回/☐付费/☐死信 · **核实人/核实时间**（§0 #1）。
+**track 字段用途变更**：v0.3 起 `track` 不再决定首触模板（首触统一），仅用于回信后分叉（§5）与 A/B 付费转化追踪（§9 KPI）。
 
-**跟进节奏（双线统一）**：第 4 天 → 第 10 天 → 第 14 天（§7）。
+**跟进节奏（统一）**：第 4 天 → 第 10 天（分叉）→ 第 14 天（§7）。
 
 **整城 / 小范围测试 KPI（目标值，供基准对比）**
 
 | 指标 | 目标值 | 说明 |
 |---|---|---|
-| 发送量（小范围） | 10A + 10B 同城同垂直 | 先手动发，观察分线差异 |
-| 打开率 | 40–60% | 低则 Subject/发件名问题 |
+| 发送量（小范围） | 10A + 10B 同城同垂直 | 统一首触发，观察首触一致性 |
+| 打开率 | 40–60% | 低则 Subject/发件名问题（A/B 应接近，因钩子同） |
 | 回复率 | 10–20% | 低则钩子/观察不真 |
 | 免费样例领取率 | 回复者中 ≥60% | 衡量钩子价值 |
-| £29 转化率 | 回复者中 5–10%（全量 1–2%） | A/B 分线分别统计对比 |
+| £29 转化率 | 回复者中 5–10%（全量 1–2%） | 首触后统一推 £29；A/B 订阅 vs 建站分别在跟进阶段统计 |
+| A/B 分叉付费率 | 回信 A 中建站转化 / 回信 B 中订阅转化 | **v0.3 核心对比**：哪条线更顺 |
 | 90 天续费率 | ≥70% | 留存健康度 |
 | spam / 退订率 | <0.1% / <2% | 超则降速（§0 #3） |
 
@@ -435,18 +394,18 @@ lic28790@gmail.com · reply "STOP" to opt out
 
 ---
 
-## 10. 发送前资产清单（双线）+ widget 交付 SOP ★ 扩展 widget SOP
+## 10. 发送前资产清单（统一首触）+ widget 交付 SOP ★ 扩展 widget SOP
 
 | # | 资产 | 状态 | 说明 |
 |---|---|---|---|
-| 1 | 发送邮箱 | ☐ | `lic28790@gmail.com`，发件名 "Ethan Li at Fifth Star" |
+| 1 | 发送邮箱 | ☐ | `lic28790@gmail.com`，发件名 "Ethan Li at Fifth Star"（对外可见 From 走 hello@thefifthstar.site，经 Cloudflare 转发） |
 | 2 | SMTP App Password | ☐ | Gmail `smtp.gmail.com:587` + STARTTLS |
 | 3 | 退订提示（合规） | ☐ | 正文末 `reply "STOP"` + `List-Unsubscribe` 头（§0 #2） |
 | 4 | 商家邮箱 / 渠道 | ☐ | 邮件需邮箱；无邮箱走 GMB/FB 手动 |
-| 5 | 发送脚本接通真实线索 | ☐ | `send-outreach.mjs` 读线索 .md → 按 A/B 标填对应模板 → SMTP |
-| 6 | A/B 分流打标 | ☐ | 线索导出时算 §1 字段，决定 A/B 模板 |
+| 5 | 发送脚本接通真实线索 | ☐ | `send-outreach.mjs` 读线索 .json → **统一 `buildBodyUnified()` 首触** → SMTP |
+| 6 | track 打标（仅跟进路由） | ☐ | 线索 `has_website` 等字段算 track，决定回信后分叉（§5）+ A/B 追踪，不影响首触 |
 | 7 | **官网 review widget 交付 SOP** | ✅ 已交付 | 见 `widget/review-widget.html`（自包含 embed 片段 + Light/Dark 预览）＋ `widget-delivery-sop.md`（合规 + 摆放位置 + 各平台粘贴步骤 + 失败回退）。**currentColor/color-mix 主题自适应、仅真实公开评价、不删差评**（§0 #6）。工程化（iframe / NiceJob 类服务）仍待验证可行性后做。 |
-| 8 | 人工核实记录 | ☐ | 每批发前 `[OBSERVATION]` 占位 + 样例由本人核实签字（§0 #1） |
+| 8 | 人工核实记录 | ☐ | 每批发前 `[OBSERVATION]` 占位（Track B 首触开场）+ 样例由本人核实签字（§0 #1） |
 | 9 | *域名 thefifthstar.site（已购并上线）* | ☐ | 已购 thefifthstar.site 并配 DNS/Email Routing，对外邮箱 hello@thefifthstar.site 可用 |
 
 ---
@@ -454,28 +413,28 @@ lic28790@gmail.com · reply "STOP" to opt out
 ## 11. 文档管理建议
 
 > 审核反馈「文档管理建议」：当前单文件已可用（自包含、便于统审）。**未来可拆 4 文件**维护，降低单文件膨胀：
-> - `dual-track-framework.md`（本文件 · 总骨架 + 合规 + 分流 + KPI）
-> - `outreach-template-A.md`（分线 A 全套模板 + 行业钩子）
-> - `outreach-template-B.md`（分线 B 全套模板 + 观察库）
-> - `follow-up-templates.md`（跟进序列 day4/10/14，双线变体）
+> - `dual-track-framework.md`（本文件 · 总骨架 + 合规 + 融合模型 + KPI）
+> - `outreach-template-unified.md`（统一首触全套模板 + 行业钩子）
+> - `follow-up-track-A.md`（Track A 建站楔子跟进话术）
+> - `follow-up-track-B.md`（Track B 声誉订阅 + widget 跟进话术）
 >
-> **当前决策**：v0.2 仍保持单文件（便于你统审 + 小范围测试）；测试跑顺、内容稳定后再拆。每次重大修改更新顶部版本号 + 修订清单（本文件已遵循）。
+> **当前决策**：v0.3 仍保持单文件（便于你统审 + 小范围测试）；测试跑顺、内容稳定后再拆。每次重大修改更新顶部版本号 + 修订清单（本文件已遵循）。
 
 ---
 
-## 12. 已采纳修订小结（对应审核反馈）
+## 12. 已采纳修订小结（对应审核反馈 + v0.3 融合）
 
-| 审核点 | v0.2 处理 |
+| 审核点 | 处理 |
 |---|---|
-| #1 分线 B 话术 AI 味 | §5.1 重写（去 "Proper job" 重复 / 文学化表达，缩短 Subject）+ §5.5 观察模板库（人工填） |
+| #1 分线 B 话术 AI 味 | §4.1 统一首触吸收「去 AI 味」写法 + §5.3 观察模板库（人工填） |
 | #2 合规需强化 | §0 合规红线专章（频率上限 / 退款终止 / GDPR / Google widget 政策） |
-| #3 A/B 分流细化 | §1 自动打标规则（last_reply>45天→B / review<10无站→优先A 等） |
-| #4 小问题 | 统一 £29/month 写法；统一 P.S. 标准版（§6）；缩短 B Subject；强化 Trades 钩子 + 增瑜伽/家装 |
-| #5 缺失内容 | §7 跟进模板（day4/10/14）；§8 案例插入位；§9 KPI 目标值；§10 widget SOP |
+| #3 A/B 分流细化 | §1 打标字段保留，但**用途改为跟进路由 + 追踪**，不再决定首触 |
+| #4 小问题 | 统一 £29/month 写法；统一 P.S. 标准版（§6）；强化 Trades 钩子 + 增瑜伽/家装 |
+| #5 缺失内容 | §7 跟进模板（day4/10/14，含 A/B 分叉）；§8 案例插入位；§9 KPI 目标值；§10 widget SOP |
 | 后续·合规优先 | §0 置于文档最前，第一优先级 |
-| 后续·技术落地 | `send-outreach.mjs` A/B 分支 + 线索字段扩展（§1/§10 #5/#6）标注为落地项 |
-| 后续·文案迭代 | 每封 ≥1 处个性化观察（§5.5）；A/B Subject 测试留待小范围（§9） |
-| 后续·测试数据 | 10A+10B 小范围测试 + KPI 表（§9） |
-| 后续·文档管理 | §11 单文件当前 + 未来拆 4 文件建议 |
+| 后续·技术落地 | `send-outreach.mjs` 改 `buildBodyUnified()` 统一首触，track 仅驱动跟进分叉（§5/§7） |
+| 后续·文案迭代 | 每封 ≥1 处个性化观察（§5.3）；Subject 统一测试留待小范围（§9） |
+| 后续·测试数据 | 10A+10B 小范围测试（统一首触）+ A/B 分叉付费率 KPI（§9） |
+| **v0.3 融合重构** | 首触统一冷钩子（免费 3 条评价回复草稿）；A/B 分叉后移至回信后/跟进（§5/§7）；线索打标降为跟进路由；获客更 lean |
 
-> 本文档通过审核后，再据拍板结果落到 `send-outreach.mjs` 的 A/B 模板分支 + 线索打标，并补工程层 widget 代码片段（待办③的后续）。待办④域名 DNS / ⑤遗留清理 / thefifthstar 仓重新部署仍不在本文档范围。
+> 本文档通过审核后，再据拍板结果落到 `send-outreach.mjs` 的 `buildBodyUnified()` + 跟进分叉路由，并补工程层 widget 代码片段（待办③的后续）。待办④域名 DNS / ⑤遗留清理 / thefifthstar 仓重新部署仍不在本文档范围。

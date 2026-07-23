@@ -2,6 +2,14 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-22 · **feature — FifthStar 获客融合重构（v0.3 统一冷钩子 + A/B 分叉后移）** — 据用户拍板「融合方案」重构 `products/fifthstar/dual-track-copy-framework.md`（v0.2→v0.3）+ `outreach/send-outreach.mjs`（v2→v3）：
+  - **首触冷钩子统一**：全体商户（无论有无官网）首触走同一封邮件——钩子统一为「免费 3 条 Google 评价回复草稿」（内联正文）；Subject 统一 `I drafted replies to your 3 latest Google reviews — free, [Name]`；原 A/B 两套首触合并为 §4 统一首触，开场仅按 track 差一句（有站=网站观察 `[OBSERVATION]` / 无站=「无站、点击没处落」）。
+  - **A/B 分叉后移**：有无官网的分叉（A=无站→£590 建站楔子；B=有站→£29/£79 订阅+widget）从首触移到**回信后/跟进阶段**（§5 重构为「跟进阶段 A/B 分叉」+ §7 跟进序列 day10 加 A/B 分支）；首触不再提建站/订阅差异。
+  - **线索打标降级为跟进路由**：`has_website` 等字段仍导出，但 `autoTag()` 算出的 `track` 仅用于回信后分叉与 A/B 付费转化追踪（§9 KPI 新增「A/B 分叉付费率」），不再决定首触模板。
+  - **脚本落地**：`send-outreach.mjs` 删 `buildBodyA/buildBodyB` 分支，新增 `buildBodyUnified()/buildSubjectUnified()`（全体商户走统一首触）；保留 Track B 人工 `observation` 闸门（§0 #1 / §5.3）；语法校验 + `--dry-run` 双 track 渲染验证通过（Track A 无站开场 / Track B 真实观察开场均正确，复数字 `europeans`→`businesses` 修正）。
+  - **获客更 lean**：单钩子 + 单路由（has-site?→A/B），同批商户首触文案同源、合规更稳、A/B 转化率可在跟进阶段干净对比；现有 25 家线索池（19A+6B）已体现融合捕获，无需重构。
+  - 待办：真实发送需 `SMTP_PASS` + 用户手动填 B 观察；`outreach/` 整目录 gitignored，源仓仅 `dual-track-copy-framework.md` 跟踪并随本次提交，脚本留本地。
+
 - 2026-07-22 · **feature — FifthStar 工程层 D1–D3 落地（widget / 邀评 / 样例自检）** — 据 `dual-track-copy-framework.md` §10 与战略扩展「已有站→声誉层订阅」落代码：
   - **D1 官网 review widget（§10 #7 已交付）**：新增 `products/fifthstar/widget/review-widget.html`（自包含 embed 片段 + Light/Dark 预览，`currentColor`/`color-mix` 主题自适应、仅真实公开评价、不删差评）+ `widget-delivery-sop.md`（合规 + 首页摆放位置 + Wix/Squarespace/WordPress/Shopify 等粘贴步骤 + 失败回退）。嵌入 JS 语法校验通过。
   - **D2 邀评系统（半自动文件版）**：新增 `products/fifthstar/review-request/templates.md`（9 行业话术 + 合规 + QR 卡规范）+ `gen-request.mjs`（输入 商家名/城市/行业/GBP 链接 → 输出 个性化求评邮件 + 短信 + 可打印 QR 卡 HTML；行业语气表 + 别名映射；SMS 超 160 字告警）。样例跑通（email 371B / SMS 151B / QR 卡生成）。
