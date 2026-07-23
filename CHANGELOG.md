@@ -2,6 +2,12 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-23 · **feature — FifthStar 线索池扩张（C20–C30，11 家 Track B）+ 回信付款话术模板** — 据用户"跑一批线索池 + 回信付款话术模板"指令：
+  - 从 Overpass 231 条曼城候选经 WebSearch 核实精选 11 家真实独立餐厅（全部有站→Track B），生成 `fifthstar-samples/<slug>.reviews.json`(3 真实评价) + `<slug>.drafts.json`(3 owner-voice 回复草稿) + `<Display Name>.onepager.md` 三件套，并入 `fifthstar-leads.json`（总数 25→36，id C20–C30，status=lead，observation 已填，verified=07-23）。
+  - `send-outreach.mjs --dry-run --track B` 验证：11 封渲染正确，Track B 人工 `observation` 闸门无 BLOCKED（均已填），GMB 路由（`ownerEmail` 空）显示 `(no email — GMB/FB manual route)`，正文含统一冷钩子 + 3 草稿 + £29/月 CTA + standard P.S. + STOP 脚注。
+  - 新增 `products/fifthstar/payment-reply-template.md`：回信付款 4 场景话术（A £29/月 / B Track A £590 建站 / C Track B £29·£79+widget / D reassurance）+ 支付事实速查（PayPal 中国收 GBP→CNY、无境外卡限制仅限往外付）+ 七标准自检（去 AI 味/独有风格/口语化/专业/不僵硬/钩子/自有口吻）。
+  - 注意：OSM `website` 字段不可靠（Don Tacos / The Olive Press 标 no-site 实际有站），故本批统一 Track B 合理；`outreach/` 整目录 gitignored，新线索与样本仅本地留存（含真实商家数据/GDPR），不进公开仓（本次提交仅含本模板 + 本条目）。
+
 - 2026-07-22 · **feature — FifthStar 获客融合重构（v0.3 统一冷钩子 + A/B 分叉后移）** — 据用户拍板「融合方案」重构 `products/fifthstar/dual-track-copy-framework.md`（v0.2→v0.3）+ `outreach/send-outreach.mjs`（v2→v3）：
   - **首触冷钩子统一**：全体商户（无论有无官网）首触走同一封邮件——钩子统一为「免费 3 条 Google 评价回复草稿」（内联正文）；Subject 统一 `I drafted replies to your 3 latest Google reviews — free, [Name]`；原 A/B 两套首触合并为 §4 统一首触，开场仅按 track 差一句（有站=网站观察 `[OBSERVATION]` / 无站=「无站、点击没处落」）。
   - **A/B 分叉后移**：有无官网的分叉（A=无站→£590 建站楔子；B=有站→£29/£79 订阅+widget）从首触移到**回信后/跟进阶段**（§5 重构为「跟进阶段 A/B 分叉」+ §7 跟进序列 day10 加 A/B 分支）；首触不再提建站/订阅差异。
