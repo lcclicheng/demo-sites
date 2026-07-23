@@ -88,3 +88,7 @@
 - 2026-07-23 · **enhancement (FifthStar 落地页) — noscript 兜底 + "How to pay" 段** · 源仓 `a3037fa` / 线上仓 `3ce4d4f` — 两项收尾：
   - **noscript 兜底**：`<head>` 内加 `<noscript><style>.reveal{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>`。JS 禁用时所有 `.reveal` 渐显块直接可见，杜绝"无 JS 整页空白"。hero 因 `gsap-hero` 类只由 JS 添加、JS 关则不加，本就可见，无需额外处理。
   - **"How to pay" 段**：定价区（tiers 之下、pay-when-happy 横幅之上）新增收款方式说明卡——全走 PayPal，支持任意英国卡(Visa/Mastercard)/PayPal 余额、无需注册、邮件发账单、卡信息不经手我方；Starter/Pro 月付可随时取消、£590 一次性仅在预览满意后出账单。口吻自然（英文 Ethan 风、去 AI 化），与页面其余文案一致。
+
+- 2026-07-23 · **docs (项目总纲) — AGENT-ONBOARDING.md 重写为双产品线完整文档** · 用户要求把"项目文档"更新为覆盖完整流程架构 + 细枝末节。原文件仅覆盖建站 demo 引擎（状态停 2026-07-19），缺 FifthStar 获客系统全貌。
+  - 重写为单一 master 项目总纲：§0 铁律（**A 组建站引擎 5 条 + B 组 FifthStar 10 条**，含 SSH 443 / safe-delete / _preview 组装 / 显式 index.html 链接 / 真实数据零失真 / 品牌金恒定 / 邮箱转发 / SSL Full strict / PayPal 收款等细枝末节）→ §1 双产品线定位 → §2 目录地图 → §3 建站构建部署 → §4 FifthStar 完整架构（双轨模型 / Sales Engine 六层+两阶段评分+final-pool 7 家 / 线上 8 页架构 / 6 家族视觉差异化 / 手动部署流程 / 域名收款）→ §5–§7 视觉系统+src+skill → §8 当前状态(2026-07-23) → §9–§13 记忆/命令/红线/回滚/文档同步纪律。
+  - 本地 commit 留痕（未 push，文档上线非本次要求）。
