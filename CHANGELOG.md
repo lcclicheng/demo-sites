@@ -2,6 +2,12 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-23 · **feature — FifthStar 落地页融入曼城本地价值观文案（local-values-landing-copy skill 首次复用）** — 据用户"调研曼城价值观/环保落地页面 + 做成 skill 复用"指令：
+  - 新增 `products/fifthstar/manchester-values-brief.md`：一手来源调研（市民身份 "This Is The Place" 诗/Forever Manchester、环保 2038 碳中和/#PlasticFreeGM/第2素食城、合作社 Rochdale 1844）+ 6 角度 A–F（A 独立小店/合作社、B 曼城式欢迎、C 低炭、D 小人物互挺、E 社区回馈可选、F 人人 welcome）+ 红线护栏（不碰党派/不抄原诗/不冒充出身/主张真实/捐款须真做）。
+  - 落地 `products/fifthstar/integrated-offer.html` 三处：Hero 副标加 "Built for Manchester's independents — the cafés, trattorias and curry houses… sound like the welcoming Manc you already are"（A+B）；Why-one-partner 加 "Manchester invented the co‑operative in 1844 — fair pricing, honest measure… one flat price, no lock‑in, pay when you're happy"（B+D）；Footer 加低炭 "static, zero‑server site — about as low‑carbon as software gets" + 包容 "every culture at the table; our replies welcome all of them"（C+F）。E 捐款类未确认跳过。全英文 + 七标准。
+  - 新增 user-level skill `local-values-landing-copy`（可复用调研→落地方法：铁律红线→并行 WebSearch 4 路→提取 5–7 角度→护栏审查→产出+落地；含曼城示范）。
+  - 同步部署仓 `thefifthstar-live`（`index.html`+`integrated-offer.html`）并 push `9f030f4`；GitHub Pages 从 `main`/root 自动部署（CDN 1–3 分钟刷新）。CTA 邮箱 `hello@thefifthstar.site` + CNAME 已就位。
+
 - 2026-07-23 · **feature — FifthStar 线索池扩张（C20–C30，11 家 Track B）+ 回信付款话术模板** — 据用户"跑一批线索池 + 回信付款话术模板"指令：
   - 从 Overpass 231 条曼城候选经 WebSearch 核实精选 11 家真实独立餐厅（全部有站→Track B），生成 `fifthstar-samples/<slug>.reviews.json`(3 真实评价) + `<slug>.drafts.json`(3 owner-voice 回复草稿) + `<Display Name>.onepager.md` 三件套，并入 `fifthstar-leads.json`（总数 25→36，id C20–C30，status=lead，observation 已填，verified=07-23）。
   - `send-outreach.mjs --dry-run --track B` 验证：11 封渲染正确，Track B 人工 `observation` 闸门无 BLOCKED（均已填），GMB 路由（`ownerEmail` 空）显示 `(no email — GMB/FB manual route)`，正文含统一冷钩子 + 3 草稿 + £29/月 CTA + standard P.S. + STOP 脚注。
