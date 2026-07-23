@@ -69,10 +69,10 @@
 ### 3.1 商业漏斗（单一事实源，用于所有收入换算）
 
 ```
-Free(£0 样例) → Starter(£29/mo) → Pro(£79/mo) → Site(£590 一次性) → Care(£149/mo)
+Free(£0 样例) → Starter(£29/mo) → Pro(£79/mo) → Site(£590 一次性) → Care(£390/yr)
 ```
 
-> ⚠️ **定价待用户拍板**：本漏斗按 BOS 指令填写。此前 `docs/pricing.md` / 项目记忆记 Care = **£390/年**（首年合计 £980）。`£149/mo` 与 `£390/yr` 相差 ~4.5×，属重大变更。**落地前须确认并同步** `docs/pricing.md` + `AGENT-ONBOARDING.md` §4.1。
+> ✅ **定价已拍板（2026-07-24）**：Care = **£390/年**（与 `docs/pricing.md` / 项目记忆统一；首年合计 £980 = £590 建站 + £390 年护）。旧 `£149/mo` 已废弃。`AGENT-ONBOARDING.md` §4.1 已同步。
 
 ### 3.2 统一数据模型（Data Contracts，P0 核心）
 
@@ -153,7 +153,7 @@ Free(£0 样例) → Starter(£29/mo) → Pro(£79/mo) → Site(£590 一次性)
 | 资料收集 | 90% | ~70% |
 | 网站生成 | 95% | ~95% |
 | SEO | 80% | ~80% |
-| 修改 | 50% | ~20% |
+| 修改 | 50%（已承诺目标） | ~20%（AI 改稿工具链待建） |
 
 ### 7.2 交付节奏（onboarding.md）
 - D0 欢迎+账单 → D1 资料自动 → D2 生成 → D3 打磨 → D5 验收 → D7 上线。
@@ -209,7 +209,7 @@ Free(£0 样例) → Starter(£29/mo) → Pro(£79/mo) → Site(£590 一次性)
 - ❌ 不提前做 Client Portal 全功能（§10 仅设计）。
 - ❌ 不重写存量数据（Data-MODEL 映射表已解决）。
 
-**30% 系统优化**仅限：把 Delivery 修改自动化率 20%→50%；把线索评分回写 `business-profile`；周报自动化。
+**30% 系统优化**仅限：把 Delivery 修改自动化率 20%→50%（已批准，工具链见 feedback-loop.md）；把线索评分回写 `business-profile`；周报自动化。
 
 ---
 
@@ -217,9 +217,9 @@ Free(£0 样例) → Starter(£29/mo) → Pro(£79/mo) → Site(£590 一次性)
 
 | 风险 | 影响 | 缓解 |
 |---|---|---|
-| 定价冲突（£149/mo vs £390/yr） | 报价混乱 | 用户拍板后同步 pricing.md |
+| 定价冲突（已解决） | Care=£390/yr 已统一 | — |
 | 成交为 0 | 验证无数据 | 推 P0x 回信；周报跟踪斜率 |
-| 修改自动化率仅 20% | 单位经济差 | AI 改稿闭环（30% 优化项） |
+| 修改自动化率仅 20%（承诺拉到 50%） | 单位经济差 | AI 改稿闭环（30% 优化项，已批准） |
 | 真实 leads.json 无 lead_score | 评分断链 | scoring-rules 计算后写 business-profile |
 | 公开仓泄漏 PII | 合规 | lead/ + customer-system/ gitignored |
 

@@ -11,7 +11,7 @@
   "businessId": "P01",                   // FK → business-profile.id / lead/<slug>/profile.json
   "name": "McEwan Fraser Legal",
   "tier": "site",                        // free|starter|pro|site|care
-  "mrrGbp": 0,                           // 月常（site 计 0，Care 计 149）
+  "mrrGbp": 0,                           // 月常（site 计 0；Care=£390/yr ≈ £32.5/mo MRR）
   "oneTimeGbp": 590,                     // 一次性（site 建站）
   "contractStart": "2026-08-01",
   "renewalDate": null,                   // Care/订阅填

@@ -204,11 +204,11 @@ git commit -m "..." && git push origin main   # 调用时 dangerouslyDisableSand
 
 - **统一数据模型（P0）**：`contracts/business-profile.schema.json` 为唯一事实源，收编旧三格式（examples JSON / lead-schema.md / fifthstar-leads.json），`DATA-MODEL.md` 映射表零破坏适配。纠正旧文档"有 lead_score 字段"错误（真实数据无）。
 - **Lead Memory（P0）**：`lead/_template/`(6 文件) + `init-lead.mjs`，为 6 家 P0x 热线索实例化 `lead/<slug>/` 长期资产（已被 gitignore 保护 PII）。
-- **KPI Metrics（P0）**：`metrics/{sales,delivery,retention,growth}.md` + README，定义商业漏斗 Free→£29→£79→£590→£149/mo 与 Delivery Automation Ratio（资料90/生成95/SEO80/修改50）。
+- **KPI Metrics（P0）**：`metrics/{sales,delivery,retention,growth}.md` + README，定义商业漏斗 Free→£29→£79→£590→£390/yr 与 Delivery Automation Ratio（资料90/生成95/SEO80/修改50）。
 - **Customer Lifecycle（P1）**：`customer-system/` 补齐成交→交付→续费→推荐→再获客中段（onboarding/renewal/referral/feedback-loop）。
 - **Client Portal / AI Learning Loop（P1 设计）**：零服务器静态仪表盘设计 + 五层记忆学习闭环，见 BOS §9/§10。
 
-> ⚠️ **定价冲突待拍板**：BOS 漏斗写 Care = **£149/mo**（按用户 BOS 指令）；此前 `docs/pricing.md` / 项目记忆记 Care = **£390/年**。上线前须用户确认并同步 `docs/pricing.md` + 本文件 §4.1。
+> ✅ **定价已统一（2026-07-24）**：Care = **£390/年**（与 `docs/pricing.md` / 项目记忆一致，首年合计 £980）。BOS 漏斗旧 `£149/mo` 已更正为 `£390/yr`。
 
 ## 5. 视觉系统（建站引擎，theme-agnostic）
 

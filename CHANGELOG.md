@@ -2,14 +2,19 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-24 · **fix — BOS 两项拍板：Care 定价统一 £390/yr + 修改自动化率承诺 50%** — 据用户指令修正本仓 BOS 落地遗留的两处待决项：
+  - **Care 定价统一为 £390/年**：`FifthStar-Business-Operating-System-v1.0.md`(§3.1 漏斗 + 冲突提示)、`AGENT-ONBOARDING.md`(§4.1/§8 冲突提示)、`CHANGELOG.md`(BOS 条目)、`customer-system/renewal.md`、`customer-system/customer-profile.md` 中 `£149/mo` 全部更正为 `£390/yr`（与 `business/` 既有文档 + 项目记忆一致；首年合计 £980）。旧 £149/mo 废弃。
+  - **修改自动化率承诺 50%**：`metrics/delivery.md` + `FifthStar-Business-Operating-System-v1.0.md` 将"修改"环节从基线 ~20% 的 50% 目标，升级为用户已批准的承诺目标（工具链=AI 改稿闭环，属 30% 系统优化交付项，见 feedback-loop.md）。
+  - 纪律：本地 commit 不 push，待用户拍板是否上线。
+
 - 2026-07-23 · **feature (战略) — FifthStar OS v1.0 经营系统落地（P0 三件套 + P1 中段）** — 据用户"项目已是 AI 增长操作系统，但还缺经营中段"审查，从 8.2/10 补到 9.0/10，批准进入商业验证：
   - **P0 统一数据契约** `contracts/`：新增 `business-profile.schema.json`（唯一事实源，draft2020-12，收编旧三格式）+ `lead.schema.json`（纠正旧 lead-schema.md 与真实 fifthstar-leads.json 不符：真实数据**无 lead_score**，键名 name/stars/reviews 非 business_name/google_rating/review_count）+ `customer.schema.json` + `DATA-MODEL.md`（映射表零破坏迁移）。`README.md` 注册三 schema + 机器校验说明。
   - **P0 Lead Memory** `lead/`：新增 `_template/`(profile.json + website/review/outreach/conversation/opportunity 5 md) + `init-lead.mjs`（读 fifthstar-leads.json 实例化 P0x）+ `README.md`；为 6 家 P0x 热线索（P01–P06，Track A 无官网，全部 sent）实例化 `lead/<slug>/`；`.gitignore` 加规则保护真实 PII（仅 _template/README/init-lead.mjs 入库）。
-  - **P0 KPI Metrics** `metrics/`：sales/delivery/retention/growth + README，定义商业漏斗 Free→£29→£79→£590→£149/mo 与 Delivery Automation Ratio（资料90/生成95/SEO80/修改50）。
+  - **P0 KPI Metrics** `metrics/`：sales/delivery/retention/growth + README，定义商业漏斗 Free→£29→£79→£590→£390/yr 与 Delivery Automation Ratio（资料90/生成95/SEO80/修改50）。
   - **P1 Customer Lifecycle** `customer-system/`：customer-profile/onboarding/success-metrics/renewal/referral/feedback-loop + README，补齐成交→交付→续费→推荐→再获客中段。
   - **主交付物** `FifthStar-Business-Operating-System-v1.0.md`：五引擎架构 + Sales SOP（双轨融合/两阶段评分/合规闸门）+ Customer Journey + KPI Dashboard + Delivery SOP + Renewal System + AI Learning Loop + Client Portal 设计 + 70/30 验证指令 + 评分/批准/开放风险。
   - **总纲同步** `AGENT-ONBOARDING.md`：§1 升 FifthStar OS 视角 + 引 BOS 主文档；§2 目录图加 contracts/lead/metrics/customer-system/BOS 文件；§4.7 经营系统层说明；§8 当前状态补 BOS 落地；§9 记忆五层目标。
-  - ⚠️ **定价冲突待拍板**：BOS 漏斗 Care=£149/mo（按用户 BOS 指令）与 `docs/pricing.md`/项目记忆 Care=£390/年 不符，上线前须确认并同步。
+  - ✅ **定价已统一（2026-07-24）**：Care = **£390/年**（首年合计 £980）。BOS 漏斗 `£149/mo` 已更正为 `£390/yr`；`AGENT-ONBOARDING.md` §4.1 / §8 已同步。修改自动化率 20%→50% 已承诺（工具链为 30% 系统优化项）。
   - 纪律：全部本地 commit 不 push，待用户拍板是否上线（公开仓仅含模板/脚本/文档，真实 PII 已 gitignored）。
 
 
