@@ -2,6 +2,13 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-24 · **feat (定价 v2.1) — 多周期付款 + 新户首年欢迎价** — 据用户「商家要季付/半年付/年付，首年优惠，新户优惠仅一次、任选周期任一档」：
+  - **周期标准价**（倍数，周期=付款节奏、不额外打折）：Reputation £39/mo · Q £117 · 6-mo £234 · Yr £468；Growth Partner £79/mo · Q £237 · 6-mo £474 · Yr £948；Growth Plus £149/mo · Q £447 · 6-mo £894 · Yr £1,788。
+  - **新户首年欢迎价（一次性，每商家限一次，任选档+任选周期）**：Reputation £29/mo · Growth Partner £59/mo · Growth Plus £119/mo（首 12 个月；之后回标准价）。
+  - **落地页**：付费档卡片加 `.t-cadence` 周期价行；新增 `.welcome-banner` 横幅说明首年欢迎价与"每商家限一次"；"How you pay" 改述支持月/季/半年/年付。
+  - **外联邮件** `outreach/send-outreach.mjs`（gitignored 本地）：冷邮件正文加"季付/半年付/年付 + 新户首年欢迎价"一句（£39 标准价不变）。
+  - 双仓 commit+SSH443 push：gh-pages-build `9d04cc9`、thefifthstar-live `7d5b483`，thefifthstar.site 已生效（curl 复核 t-cadence×3 / welcome-banner×1 / 全价就位）。
+
 - 2026-07-24 · **refactor (枢纽页) — 内联 CSS/JS 外置为共享设计系统（P2）** — 据用户「重构吧」指令，将 `products/fifthstar/integrated-offer.html` 从内联 CSS/JS 分叉版重构为 `<link>` 共享系统：
   - 内联 `<style>`（head 主块 + widget 块）逐字外置 → `assets/hub.css`；内联 JS 分两类：widget config/render + capture 表单 → `assets/hub.js`，reveal+GSAP 内联 → 替换为共享 `assets/site.js`（超集）；站点 968→568 行。
   - `<head>` 改 `<link base.css>` + `<link hub.css>`，FOUC head `<script>` 与 `<noscript><style>` 兜底保留 inline。

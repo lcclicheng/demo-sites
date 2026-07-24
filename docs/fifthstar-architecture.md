@@ -75,6 +75,9 @@ thefifthstar.site/
 **免费建站交付边界**（防一人公司时间被吃）：template-based / ≤5 pages / 1 revision·月 / 7 天标准交付；超出按需收费。
 **话术红线**：对外不写 "Free website — £79/mo"，改 "Build your online presence without upfront website costs" / "Your reputation, website and local growth — managed in one place"。
 
+**付款周期（v2.1 · 2026-07-24）**：月/季(3mo)/半年(6mo)/年(12mo) 四周期可选，周期=付款节奏、标准价按倍数（季=3×月、半年=6×、年=12×），不额外打折。
+**新户首年欢迎价（v2.1 · 一次性，每商家限一次，任选档+任选周期）**：首 12 个月 Reputation £29/mo · Growth Partner £59/mo · Growth Plus £119/mo，之后回标准价。落地页 `.welcome-banner` 横幅 + 各付费档 `.t-cadence` 周期价行；外联冷邮件提及「季付/半年付/年付 + 新户首年欢迎价」。
+
 ---
 
 ## 6. 部署流程（手动 port）
