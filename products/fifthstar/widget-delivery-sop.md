@@ -1,9 +1,9 @@
-# Fifth Star · Review Widget Delivery SOP
+# FifthStar · Review Widget Delivery SOP
 
 > **Purpose.** This is the early (manual, file-based) delivery playbook for the Track-B
 > "reputation engine" offer. It produces a self-contained code snippet a merchant pastes
 > into their **existing** website to show their real public Google reviews on the homepage.
-> No Fifth Star account, login, or monthly widget fee is required at this stage — it is a
+> No FifthStar account, login, or monthly widget fee is required at this stage — it is a
 > one-time deliverable included with the reputation setup.
 >
 > **Source file:** `products/fifthstar/widget/review-widget.html`
@@ -119,4 +119,4 @@ It will be a fixed snapshot; refresh it for the merchant every ~6 weeks.
 
 - Live auto-sync from Google (would need the Places API + a backend). Not built yet.
 - A hosted iframe / NiceJob-style managed widget. Parked until manual deliveries prove demand.
-- Reply-to-review inside the widget. Replies stay a separate Fifth Star service.
+- Reply-to-review inside the widget. Replies stay a separate FifthStar service.

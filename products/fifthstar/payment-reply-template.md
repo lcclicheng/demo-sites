@@ -34,7 +34,7 @@ Want me to fire the first invoice over so you can see how it feels?
 
 Cheers,
 Ethan Li
-Fifth Star
+FifthStar
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
@@ -64,7 +64,7 @@ drafts are still yours either way.
 
 Cheers,
 Ethan Li
-Fifth Star
+FifthStar
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
@@ -95,7 +95,7 @@ the widget in?
 
 Cheers,
 Ethan Li
-Fifth Star
+FifthStar
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
@@ -123,7 +123,7 @@ No surprises, no lock-in. The free drafts are yours regardless.
 
 Cheers,
 Ethan Li
-Fifth Star
+FifthStar
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 

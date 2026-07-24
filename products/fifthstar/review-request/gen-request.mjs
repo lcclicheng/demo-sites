@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * gen-request.mjs — Fifth Star review-request generator (early, file-based)
+ * gen-request.mjs — FifthStar review-request generator (early, file-based)
  *
  * Turns a merchant's details into three hand-off assets:
  *   request-email.md   personalised ask email (industry tone applied)
@@ -204,7 +204,7 @@ function qrCard(d) {
     <p class="prompt">Loved your visit? Tap to leave us a Google review — it takes a minute and means the world to a small ${d.city} business.</p>
     <div class="qr"><img src="${qr}" alt="QR code to leave a Google review"></div>
     <p class="url">${d.reviewUrl}</p>
-    <p class="foot">Reputation help by Fifth Star · thefifthstar.site</p>
+    <p class="foot">Reputation help by FifthStar · thefifthstar.site</p>
   </div>
 </body></html>`
 }

@@ -1,4 +1,4 @@
-# Fifth Star · Review-Request Template Bank (early, file-based)
+# FifthStar · Review-Request Template Bank (early, file-based)
 
 > **What this is.** A semi-manual system to help a merchant *ask* their own customers
 > for Google reviews — the other half of the reputation engine (the widget *shows* reviews;

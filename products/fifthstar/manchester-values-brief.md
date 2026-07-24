@@ -43,7 +43,7 @@
 ### C. 「低炭 / 生态」（FifthStar 真属性）
 - **为什么买账**：#PlasticFreeGM、2038 碳中和、植物基场景——餐饮商家普遍有环保叙事；FifthStar 帮他们把「本地供应商/素食/减塑」写进回复。
 - **文案（Values / Footer）**：
-> "Fifth Star runs on a static, zero‑server site — about as low‑carbon as software gets. And we help eco‑minded Mancunian diners see your story: local suppliers, veg & vegan options, plastic‑free moves. Reviews are where that reputation lives."
+> "FifthStar runs on a static, zero‑server site — about as low‑carbon as software gets. And we help eco‑minded Mancunian diners see your story: local suppliers, veg & vegan options, plastic‑free moves. Reviews are where that reputation lives."
 - ✅ 真实：静态站零服务器、GDPR 干净，确属低足迹。
 
 ### D. 「小人物互挺 / 同行情谊」（underdog solidarity）
@@ -77,7 +77,7 @@
 
 ## 四、建议落点（页面区块）
 - **Hero 副标**：角度 B（欢迎）或 D（同行情谊）一句钩子。
-- **"Why Fifth Star" / About 区块**：角度 A（合作社公平）+ D（一人帮小店）。
+- **"Why FifthStar" / About 区块**：角度 A（合作社公平）+ D（一人帮小店）。
 - **Values 短条 / Footer**：角度 C（低炭）+ F（包容）；E（回馈）可选。
 - 与现有「don't pay until you're happy」承诺条 + Ethan 头像**风格一致**，不另起视觉语言。
 

@@ -1,4 +1,4 @@
-# Fifth Star · 免费样例生成流程（外联钩子生产 SOP）
+# FifthStar · 免费样例生成流程（外联钩子生产 SOP）
 
 > 目的：把"免费帮你写 3 条评价回复稿"这个冷外联钩子，**低成本、可复制**地生产出来，接进 `FifthStar_冷外联模板.md` 模板 A 的 `→ [link]`。
 > 全程零客户依赖：商户还没付钱，你先拿出真东西。
@@ -54,7 +54,7 @@ python generate_sample.py reviews.json > drafts.json
 ## Step 3 · 渲染 one-pager
 
 - 把 3 条"评价 + 回复草稿"排成一页（参考 `FifthStar_样例演示.html`）。
-- 顶部：商户名 + "3 free reply drafts from Fifth Star"。
+- 顶部：商户名 + "3 free reply drafts from FifthStar"。
 - 每条约：原始评价（星 + 文）→ 下方你的草稿。
 - 导出 PDF 或存成网页链接，挂进模板 A 的 `→ [link]`。
 

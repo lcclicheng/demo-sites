@@ -1,6 +1,6 @@
-# Fifth Star · 英文冷外联模板 + 城市饱和打法（零客户冷启动版）
+# FifthStar · 英文冷外联模板 + 城市饱和打法（零客户冷启动版）
 
-> 品牌：**Fifth Star** — "Lift your business to its fifth star." 发送身份用现有邮箱账号 **`lic28790@gmail.com`**（£0，无需新申请）；域名 thefifthstar.site 已购并上线（对外邮箱 **`hello@thefifthstar.site`**，Cloudflare Email Routing 转发到 Gmail）。
+> 品牌：**FifthStar** — "Lift your business to its fifth star." 发送身份用现有邮箱账号 **`lic28790@gmail.com`**（£0，无需新申请）；域名 thefifthstar.site 已购并上线（对外邮箱 **`hello@thefifthstar.site`**，Cloudflare Email Routing 转发到 Gmail）。
 > 框架严格沿用 `uk-biz-outreach` 的 **6 段转化结构**，钩子=免费 3 条评价回复样例。
 > 原则不变：钩子 100% 真实诚实、文案克制反网红、付费档放文末不施压、纯英文外联绝不混入中文。
 > 起步档：**£39/月 Reputation**（v2 取代 Starter；对外讲声誉托管，不作"Free website — £79/mo"）。默认垂直：独立餐厅（可整套换美发/美甲/牙医/trades）。
@@ -18,7 +18,7 @@
 锁 1 座城市（如 Manchester）→ OSM/GMB 导出全城该垂直商户（含评分/评价数）
         │
         ▼
-用 Fifth Star 6 段冷外联「整城批量扫」（每天 15–25 家，1–2 周扫完全城）
+用 FifthStar 6 段冷外联「整城批量扫」（每天 15–25 家，1–2 周扫完全城）
         │  同城商户互相看得见 → 口碑/转介在城内扩散最快（案例规律：口碑 61%）
         ▼
 出 3–5 个付费 + 2–3 个真实成效案例
@@ -54,7 +54,7 @@ So I went ahead and wrote replies to your 3 most recent reviews
 [ — including that [min★] one][, including the trickier ones]. No sign-up,
 no card — they're yours to paste straight into your Google Business Profile:
 
-  ── Your 3 free reply drafts (Fifth Star) ──────────────
+  ── Your 3 free reply drafts (FifthStar) ──────────────
   Review 1 · [5★] "[short excerpt of their review]"
   Draft: "[draft 1 text]"
 
@@ -75,7 +75,7 @@ I handle it every week. Either way, the drafts above are free — no catch.
 
 Cheers,
 [YourName]
-Fifth Star — lift your business to its fifth star
+FifthStar — lift your business to its fifth star
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
@@ -93,10 +93,10 @@ lic28790@gmail.com · reply "STOP" to opt out
 Hi [FirstName] — I found [BusinessName] on Google and saw you've got
 [X.X]★ from [N] reviews. Lovely work.
 
-I'm Fifth Star — I draft replies to Google reviews for local restaurants
+I'm FifthStar — I draft replies to Google reviews for local restaurants
 in [City]. I've already written 3 free reply drafts for your latest
 reviews (including the tricky one). Happy to send them over, no strings —
-just reply "yes". — [YourName], Fifth Star
+just reply "yes". — [YourName], FifthStar
 ```
 
 ---
@@ -146,7 +146,7 @@ just reply "yes". — [YourName], Fifth Star
 
 | # | 资产 | 状态 | 说明 |
 |---|---|---|---|
-| 1 | **发送邮箱** | ☐ | 用现有账号 **`lic28790@gmail.com`**（£0，免新申请）。发件显示名设 "Fifth Star" 或 "Ethan Li at Fifth Star"。 |
+| 1 | **发送邮箱** | ☐ | 用现有账号 **`lic28790@gmail.com`**（£0，免新申请）。发件显示名设 "FifthStar" 或 "Ethan Li at FifthStar"。 |
 | 2 | **SMTP 凭据（App Password）** | ☐ | Gmail 用 App Password 走 `smtp.gmail.com:587` + STARTTLS；Outlook 类似。25 封 1 对 1 个性化邮件从免费地址发完全可行。 |
 | 3 | **退订提示（合规）** | ☐ | 每封正文末含 `reply "STOP" to opt out`，且 `send-outreach.mjs` 加 `List-Unsubscribe` 头（PECR/GDPR 要求）。 |
 | 4 | **商家邮箱 / 渠道** | ☐ | 邮件发送需商家邮箱：先抓 25 家 GMB/官网邮箱；无邮箱的走模板 B（GMB/FB 手动）。 |

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fifth Star — Free sample generator
+FifthStar — Free sample generator
 ==================================
 Takes a merchant's 3 latest Google reviews and produces 3 on-brand,
 British-tone reply drafts (one per review). Output is a JSON array of
@@ -46,7 +46,7 @@ else:
     sys.exit(2)
 
 SYSTEM = (
-    "You are Fifth Star, a UK-local specialist who writes Google review "
+    "You are FifthStar, a UK-local specialist who writes Google review "
     "replies for small British businesses (restaurants, salons, clinics, trades). "
     "You write in warm, natural British English — never corporate, never robotic. "
     "Rules: (1) One reply per review provided, in the same order. "

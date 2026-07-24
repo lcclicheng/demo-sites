@@ -163,7 +163,7 @@ So I went ahead and wrote replies to your 3 most recent reviews
 [ — including that [min★] one][, including the trickier ones]. No sign-up, no card —
 they're yours to paste straight into your Google Business Profile:
 
-  ── Your 3 free reply drafts (Fifth Star) ──────────────
+  ── Your 3 free reply drafts (FifthStar) ──────────────
   Review 1 · [5★] "[short excerpt of their review]"
   Draft: "[draft 1 text]"
 
@@ -188,7 +188,7 @@ replies every week. Either way, the drafts above are free — no catch.
 
 Cheers,
 Ethan Li
-Fifth Star — lift your business to its fifth star
+FifthStar — lift your business to its fifth star
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
@@ -200,10 +200,10 @@ lic28790@gmail.com · reply "STOP" to opt out
 Hi [FirstName] — I found [BusinessName] on Google and saw you've got [X.X]★ from
 [N] reviews. Lovely work.
 
-I'm Fifth Star — I draft replies to Google reviews for local [trade]s in [City].
+I'm FifthStar — I draft replies to Google reviews for local [trade]s in [City].
 I've already written 3 free reply drafts for your latest reviews (including the
 tricky one). Happy to send them over, no strings — just reply "yes".
-— Ethan Li, Fifth Star
+— Ethan Li, FifthStar
 ```
 
 ### 4.3 行业价值钩子句（套进模板第②/⑤段 · 双 track 通用）
@@ -300,7 +300,7 @@ Either way, hope [City]'s busy.
 
 Best,
 Ethan Li
-Fifth Star
+FifthStar
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
@@ -332,7 +332,7 @@ Either way — the free drafts are still yours.
 
 Best,
 Ethan Li
-Fifth Star
+FifthStar
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
@@ -352,7 +352,7 @@ and I'll do one more free.
 
 All the best,
 Ethan Li
-Fifth Star
+FifthStar
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
@@ -398,7 +398,7 @@ lic28790@gmail.com · reply "STOP" to opt out
 
 | # | 资产 | 状态 | 说明 |
 |---|---|---|---|
-| 1 | 发送邮箱 | ☐ | `lic28790@gmail.com`，发件名 "Ethan Li at Fifth Star"（对外可见 From 走 hello@thefifthstar.site，经 Cloudflare 转发） |
+| 1 | 发送邮箱 | ☐ | `lic28790@gmail.com`，发件名 "Ethan Li at FifthStar"（对外可见 From 走 hello@thefifthstar.site，经 Cloudflare 转发） |
 | 2 | SMTP App Password | ☐ | Gmail `smtp.gmail.com:587` + STARTTLS |
 | 3 | 退订提示（合规） | ☐ | 正文末 `reply "STOP"` + `List-Unsubscribe` 头（§0 #2） |
 | 4 | 商家邮箱 / 渠道 | ☐ | 邮件需邮箱；无邮箱走 GMB/FB 手动 |
