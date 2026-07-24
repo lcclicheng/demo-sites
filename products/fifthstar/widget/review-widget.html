@@ -37,6 +37,51 @@
   the page's own text colour (theme-adaptive) — no brand colour is hard-coded. The snippet the
   merchant pastes is delimited below.</p>
 
+<!-- CONFIG: MUST run BEFORE the embed snippet below — the IIFE reads
+     window.FIFTHSTAR_REVIEW_WIDGET synchronously, so if this sits after the
+     snippet the widget renders empty. Replace the sample data with the
+     merchant's REAL public Google reviews (verbatim) before delivery. -->
+<script>
+  window.FIFTHSTAR_REVIEW_WIDGET = {
+    title: "What our customers say",
+    businessName: "The Copper Kettle",
+    googleUrl: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID",
+    accent: "",                       // optional fixed star colour, e.g. "#c9a227". Leave "" to follow page text.
+    maxReviews: 4,                    // show 3–5
+    showAttribution: true,
+    reviews: [
+      {
+        author: "Sarah M.",
+        rating: 5,
+        text: "Absolutely lovely Sunday roast — generous portions and the staff remembered our names. We'll be back.",
+        date: "2026-03-14",
+        url: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID"
+      },
+      {
+        author: "James T.",
+        rating: 4,
+        text: "Great coffee and a calm corner to work from. Only wish they opened an hour earlier on weekends.",
+        date: "2026-02-02",
+        url: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID"
+      },
+      {
+        author: "Priya K.",
+        rating: 5,
+        text: "Took my mum for her birthday and they made her a wee card on the house. Lovely touch.",
+        date: "2025-11-20",
+        url: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID"
+      },
+      {
+        author: "Daniel O.",
+        rating: 4,
+        text: "Solid brunch spot. Busy on Saturdays so book ahead, but worth it.",
+        date: "2025-10-08",
+        url: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID"
+      }
+    ]
+  };
+</script>
+
 <!-- ═════════════════════ EMBED SNIPPET START ═════════════════════ -->
 <!--
   FIFTH STAR REVIEW WIDGET
@@ -142,49 +187,6 @@
 })();
 </script>
 <!-- ═════════════════════ EMBED SNIPPET END ═════════════════════ -->
-
-<!-- ── CONFIG: place this script BEFORE the snippet above, or anywhere on the page.
-     Replace the sample data with the merchant's REAL public Google reviews. ── -->
-<script>
-  window.FIFTHSTAR_REVIEW_WIDGET = {
-    title: "What our customers say",
-    businessName: "The Copper Kettle",
-    googleUrl: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID",
-    accent: "",                       // optional fixed star colour, e.g. "#c9a227". Leave "" to follow page text.
-    maxReviews: 4,                    // show 3–5
-    showAttribution: true,
-    reviews: [
-      {
-        author: "Sarah M.",
-        rating: 5,
-        text: "Absolutely lovely Sunday roast — generous portions and the staff remembered our names. We'll be back.",
-        date: "2026-03-14",
-        url: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID"
-      },
-      {
-        author: "James T.",
-        rating: 4,
-        text: "Great coffee and a calm corner to work from. Only wish they opened an hour earlier on weekends.",
-        date: "2026-02-02",
-        url: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID"
-      },
-      {
-        author: "Priya K.",
-        rating: 5,
-        text: "Took my mum for her birthday and they made her a wee card on the house. Lovely touch.",
-        date: "2025-11-20",
-        url: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID"
-      },
-      {
-        author: "Daniel O.",
-        rating: 4,
-        text: "Solid brunch spot. Busy on Saturdays so book ahead, but worth it.",
-        date: "2025-10-08",
-        url: "https://www.google.com/maps/place/?q=place_id:REPLACE_WITH_REAL_PLACE_ID"
-      }
-    ]
-  };
-</script>
 
 </div>
 </body>

@@ -44,8 +44,10 @@ These are non-negotiable. A breach violates Google's review-display policy and e
    - `accent` → leave `""` so stars follow the page text colour. Only set a hex if the
      merchant explicitly wants fixed gold stars.
 4. Copy **everything between** `EMBED SNIPPET START` and `EMBED SNIPPET END` (the `<div>` +
-   `<style>` + `<script>`). This is what they paste. The config `<script>` goes on the same
-   page (above or below the snippet).
+   `<style>` + `<script>`). This is what they paste. **The config `<script>` MUST go BEFORE
+   the snippet** (i.e. earlier in the page) — the embed's IIFE reads
+   `window.FIFTHSTAR_REVIEW_WIDGET` synchronously on load, so if the config sits *after* the
+   snippet the widget renders empty. (Do not rely on "above or below" — it must be above.)
 
 > **Tip:** keep the merchant's raw review text in `clients/<slug>/feedback.md` (gitignored)
 > so you can re-issue the snippet if they change platforms.

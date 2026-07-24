@@ -47,6 +47,26 @@
   the page's own text colour (theme-adaptive) — no brand colour is hard-coded. The snippet the
   merchant pastes is delimited below.</p>
 
+<!-- CONFIG: MUST run BEFORE the embed snippet below — the IIFE reads
+     window.FIFTHSTAR_REVIEW_WIDGET synchronously, so if this sits after the
+     snippet the widget renders empty. REPLACE THE PLACEHOLDER REVIEWS with
+     Jadugar's REAL public Google reviews (verbatim) before delivery. -->
+<script>
+  window.FIFTHSTAR_REVIEW_WIDGET = {
+    title: "What our customers say",
+    businessName: "Jadugar",
+    googleUrl: "https://www.google.com/maps/place/?q=place_id:JADUGAR_REAL_PLACE_ID",
+    accent: "",                       // optional fixed star colour, e.g. "#c9a227". Leave "" to follow page text.
+    maxReviews: 4,
+    showAttribution: true,
+    reviews: [
+      { author:"REPLACE — real reviewer name", rating:5, text:"REPLACE WITH Jadugar's real public review #1 (verbatim).", date:"2026-01-01", url:"https://www.google.com/maps/place/?q=place_id:JADUGAR_REAL_PLACE_ID" },
+      { author:"REPLACE — real reviewer name", rating:4, text:"REPLACE WITH Jadugar's real public review #2 (verbatim, keep honest mix).", date:"2025-12-01", url:"https://www.google.com/maps/place/?q=place_id:JADUGAR_REAL_PLACE_ID" },
+      { author:"REPLACE — real reviewer name", rating:5, text:"REPLACE WITH Jadugar's real public review #3 (verbatim).", date:"2025-11-01", url:"https://www.google.com/maps/place/?q=place_id:JADUGAR_REAL_PLACE_ID" }
+    ]
+  };
+</script>
+
 <!-- ═════════════════════ EMBED SNIPPET START ═════════════════════ -->
 <!--
   FIFTH STAR REVIEW WIDGET — Jadugar
@@ -152,42 +172,6 @@
 })();
 </script>
 <!-- ═════════════════════ EMBED SNIPPET END ═════════════════════ -->
-
-<!-- ── CONFIG: place this script BEFORE the snippet above, or anywhere on the page.
-     REPLACE THE PLACEHOLDER REVIEWS with Jadugar's REAL public Google reviews. ── -->
-<script>
-  window.FIFTHSTAR_REVIEW_WIDGET = {
-    title: "What our customers say",
-    businessName: "Jadugar",
-    googleUrl: "https://www.google.com/maps/place/?q=place_id:JADUGAR_REAL_PLACE_ID",  // ← replace with Jadugar's real GBP Place ID
-    accent: "",                       // optional fixed star colour, e.g. "#c9a227". Leave "" to follow page text.
-    maxReviews: 4,                    // show 3–5
-    showAttribution: true,
-    reviews: [
-      {
-        author: "REPLACE — real reviewer name",
-        rating: 5,
-        text: "REPLACE WITH Jadugar's real public review #1 (verbatim).",
-        date: "2026-01-01",
-        url: "https://www.google.com/maps/place/?q=place_id:JADUGAR_REAL_PLACE_ID"
-      },
-      {
-        author: "REPLACE — real reviewer name",
-        rating: 4,
-        text: "REPLACE WITH Jadugar's real public review #2 (verbatim, keep honest mix).",
-        date: "2025-12-01",
-        url: "https://www.google.com/maps/place/?q=place_id:JADUGAR_REAL_PLACE_ID"
-      },
-      {
-        author: "REPLACE — real reviewer name",
-        rating: 5,
-        text: "REPLACE WITH Jadugar's real public review #3 (verbatim).",
-        date: "2025-11-01",
-        url: "https://www.google.com/maps/place/?q=place_id:JADUGAR_REAL_PLACE_ID"
-      }
-    ]
-  };
-</script>
 
 </div>
 </body>
