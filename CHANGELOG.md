@@ -2,6 +2,13 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-24 · **fix (定价终检 #431) — 年付折扣回归 + 首年欢迎价并存厘清** — 枢纽页 Pricing v2 文案终检（无 £590 残留✅、四档一致✅、红线话术✅）：
+  - **年付折扣回归**：卡片年付从 v2.1 的「月费×12（£468/£948/£1,788，不额外打折）」改为规范价年付折扣 **£390/£790/£1,490（≈省17%）**，每档附 `save ~17%` 标注。即推翻 v2.1「不额外打折」那条，重新与 MEMORY.md 年付折扣对齐。季付/半年付维持月费×N（规范仅年付打折）。
+  - **首年欢迎价与年付折扣并存厘清**：合并原 line 422 独立句与 `.welcome-banner`，统一一段讲清「首年欢迎价 £29/£59/£119（低于标准年付价）→ 次年回标准价 £39/£79/£149/mo → 年付再省17% 至 £390/£790/£1,490/yr」。
+  - **修术语不一致**：pillar GP bullet 的「weekly report」改为全站统一的「monthly insights」。
+  - **运营待办（非文案）**：line 436 承诺「一切走 PayPal、英国卡可付」需确认 FifthStar 收 GBP 的 PayPal Business 账户已就绪。
+  - 双仓同步：源 `integrated-offer.html` + 预览 `_preview/index.html` + 生产 `thefifthstar-live/index.html`；报告 `products/fifthstar/PRICING-AUDIT-2026-07-24.md`。
+
 - 2026-07-24 · **feat (定价 v2.1) — 多周期付款 + 新户首年欢迎价** — 据用户「商家要季付/半年付/年付，首年优惠，新户优惠仅一次、任选周期任一档」：
   - **周期标准价**（倍数，周期=付款节奏、不额外打折）：Reputation £39/mo · Q £117 · 6-mo £234 · Yr £468；Growth Partner £79/mo · Q £237 · 6-mo £474 · Yr £948；Growth Plus £149/mo · Q £447 · 6-mo £894 · Yr £1,788。
   - **新户首年欢迎价（一次性，每商家限一次，任选档+任选周期）**：Reputation £29/mo · Growth Partner £59/mo · Growth Plus £119/mo（首 12 个月；之后回标准价）。
