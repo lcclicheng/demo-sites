@@ -49,6 +49,7 @@ thefifthstar.site/
 
 - `assets/base.css`：统一设计语言（主题自适应 + 所有组件）。用 `currentColor` + `color-mix` 实现亮暗主题自适应，避免硬编码。
 - `assets/site.js`：共享脚本（reveal 动画 + GSAP 共享，含三重兜底）。
+- `assets/hub.css` / `assets/hub.js`：**枢纽页专属**（2026-07-24 P2 重构从内联抽取）。`<head>` 先 `<link base.css>` 再 `<link hub.css>`（hub.css 胜出）；hub.css 末段含两处守卫：①`.hero::before{content:none}` 中和 base.css-only 径向光晕；②图标版 `.cat-card` override 守卫（base.css 图标版 `.cat-card` 复合选择器特异性高于 hub 编辑版单类规则，会压扁标题/变灰 `.cat-why`/错位箭头，故用等于/高于特异性重述 hub 原值）。
 - `vendor/`：GSAP 三件套（仅 CDN 本地化 min.js，离线可用）。
 - 视觉一致 + 角色辨识，反网红化。
 

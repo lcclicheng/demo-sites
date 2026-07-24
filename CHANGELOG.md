@@ -2,6 +2,12 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-24 · **refactor (枢纽页) — 内联 CSS/JS 外置为共享设计系统（P2）** — 据用户「重构吧」指令，将 `products/fifthstar/integrated-offer.html` 从内联 CSS/JS 分叉版重构为 `<link>` 共享系统：
+  - 内联 `<style>`（head 主块 + widget 块）逐字外置 → `assets/hub.css`；内联 JS 分两类：widget config/render + capture 表单 → `assets/hub.js`，reveal+GSAP 内联 → 替换为共享 `assets/site.js`（超集）；站点 968→568 行。
+  - `<head>` 改 `<link base.css>` + `<link hub.css>`，FOUC head `<script>` 与 `<noscript><style>` 兜底保留 inline。
+  - **防回归**：hub.css 末加两守卫——`.hero::before{content:none}` 中和 base.css-only 光晕；图标版 `.cat-card` override 守卫（base.css 复合选择器特异性高于 hub 编辑版单类规则，会压扁标题/变灰 `.cat-why`/错位箭头，用等于/高于特异性重述 hub 原值）。P0/P1/P3 文案修复全部在位（curl 复核通过）。
+  - 双仓 commit+SSH443 push：gh-pages-build `9335f9e`、thefifthstar-live `767e04e`，thefifthstar.site 已生效。
+
 - 2026-07-24 · **feat (战略优化) — Pricing v2：四档重新定位 + 交付边界 + 保守单位经济** — 据用户审查纯订阅制 v1（8.5/10）后"调整约 20% 非推翻"指令：
   - **四档重构**：Free(£0) → **Reputation £39/mo**（原 Starter £29 提价，去"小工具感"）→ **Growth Partner £79/mo**（原 Growth 改名，避"网站租赁"感，标 Most Popular，含免费建站+托管+更新+基础SEO）→ **Growth Plus £149/mo**（新增高阶档，SEO 内容+更多更新+优先支持，接住高端溢出）。
   - **免费建站交付边界（时间护城河）**：template-based / ≤5 pages / 1 revision·月 / 7 天标准交付，超出收费（防一人公司时间被吃）。
