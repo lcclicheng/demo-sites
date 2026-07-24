@@ -62,7 +62,7 @@ Blog 是英国小商家做长尾 SEO 与内容营销的抓手（"how to choose a
 要点提要：
 - 每篇文章一个 Markdown 文件，构建时转静态 HTML，套用该站主题样式。
 - 文章页自动进 `sitemap.xml`，带 canonical + og。
-- 作为 B 档「年度呵护」的增值内容服务卖点（见 `docs/pricing.md`）。
+- 作为 Growth Partner / Growth Plus 订阅的增值内容服务卖点（基础 SEO 含在 Growth Partner，SEO 内容在 Growth Plus；见 `docs/pricing.md`）。
 
 ---
 

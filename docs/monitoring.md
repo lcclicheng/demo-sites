@@ -1,7 +1,7 @@
 # 站点健康监控（Monitoring）
 
 > 版本：v0.9.3（站点清单同步至 v1.1.0：20 站）｜ 落地：2026-07-14 ｜ 作者：lcclicheng（一人公司 / 独立开发者）
-> 配套：`health-check.mjs`、`.github/workflows/health-check.yml`、`docs/workflow.md` §11、`docs/pricing.md`（B 年度呵护档含监控）
+> 配套：`health-check.mjs`、`.github/workflows/health-check.yml`、`docs/workflow.md` §11、`docs/pricing.md`（Growth Partner / Growth Plus 含站点健康监控）
 
 监控分**两层**，互补使用：
 
@@ -48,7 +48,7 @@
 4. Monitoring Interval：5 minutes。
 5. 每个上线站点重复一次（可用 UptimeRobot 的批量导入）。
 6. **Alert Contacts**：绑邮箱（默认）；可选加 Telegram / Slack / Webhook。
-7. （可选）开启 UptimeRobot 免费 **Status Page**：给客户一个公开的“运行状态”页，专业感加分，也可作为 B 档“年度呵护”的可视交付物。
+7. （可选）开启 UptimeRobot 免费 **Status Page**：给客户一个公开的“运行状态”页，专业感加分，也可作为 Growth Partner / Growth Plus 订阅的可见交付物（含站点健康监控 + 异常主动告警）。
 
 ### 监测点清单（可直接复制添加）
 
@@ -99,7 +99,7 @@
 
 ### 与定价挂钩
 - `docs/pricing.md` v2 的 **Growth Partner £79/mo（含免费建站 + 托管 + 监控）** 已含“站点健康监控 + 异常主动告警”。
-- 交付 B 档客户时：把该客户站点 URL 加进 UptimeRobot，并（可选）把其纳入一个公开 Status Page 链接写进交付包。
+- 交付 Growth Partner / Growth Plus 客户时（两档含站点健康监控）：把该客户站点 URL 加进 UptimeRobot，并（可选）把其纳入一个公开 Status Page 链接写进交付包。
 
 ---
 

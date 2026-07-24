@@ -57,7 +57,7 @@
 
 **问题**：真实客户上线后，想改菜单 / 照片 / 地址 / 营业时间，怎么操作？
 
-**当前机制**：由**你（owner）手动改 JSON + rebuild + 部署**，客户不直接碰代码（A 档「首月内不限次数修改」由你代改；首月后走 B 档年度呵护额度，见 `docs/pricing.md`、`decisions/ADR006-no-cms-selfservice.md`）。
+**当前机制**：由**你（owner）手动改 JSON + rebuild + 部署**，客户不直接碰代码。内容更新按订阅档覆盖——Growth Partner / Growth Plus 含的「内容更新」额度由订阅覆盖（`docs/pricing.md` 免费建站交付边界）；超出边界（扩页、超 1 revision·月、超频改版）走增项计费。详见 `docs/pricing.md`、`decisions/ADR006-no-cms-selfservice.md`。
 1. 客户通过微信 / 邮件把变更发你（新文案、新照片文件）
 2. 你改对应 `examples/<slug>.json`（或图片覆盖 `assets/<slug>/`）
 3. 重建并部署：
