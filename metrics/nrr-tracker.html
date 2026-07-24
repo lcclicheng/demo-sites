@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FifthStar · NRR & 单位经济追踪表</title>
+<style>
+  :root{
+    --bg:#0f1117; --panel:#161922; --panel2:#1d2230; --ink:#e8ebf2; --muted:#9aa3b2;
+    --line:#2a3142; --accent:#7c8cff; --accent2:#39d3a6; --gold:#e0b341; --red:#ff6b6b;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.6;font-size:14.5px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:40px 26px 90px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+  .eyebrow{letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--accent);font-weight:600}
+  h1{font-size:27px;margin:8px 0 4px;font-weight:700}
+  h2{font-size:19px;margin:38px 0 12px;padding-top:16px;border-top:1px solid var(--line);font-weight:700}
+  h2 .n{color:var(--accent);margin-right:8px}
+  h3{font-size:15px;margin:18px 0 8px;color:var(--ink);font-weight:650}
+  p{margin:8px 0;color:#cdd3df}
+  .muted{color:var(--muted)}
+  code{background:var(--panel2);padding:1px 6px;border-radius:5px;font-size:12.5px;color:#cfe0ff;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13px}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:middle}
+  th{background:var(--panel2);font-weight:650}
+  td input,td select{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--ink);
+    border-radius:6px;padding:4px 6px;font-size:12.5px;font-family:inherit}
+  tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .callout{border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+  .callout.gold{border-left-color:var(--gold)}
+  .callout.green{border-left-color:var(--accent2)}
+  .callout.red{border-left-color:var(--red)}
+  .grid{display:grid;gap:12px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .kpi{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+  .kpi .box{flex:1;min-width:140px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px 14px}
+  .kpi .v{font-size:22px;font-weight:700}
+  .kpi .l{font-size:11.5px;color:var(--muted);margin-top:2px}
+  .v.good{color:var(--accent2)} .v.warn{color:var(--gold)} .v.bad{color:var(--red)} .v.acc{color:var(--accent)}
+  button{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:8px;
+    padding:7px 13px;font-size:13px;cursor:pointer;font-family:inherit;margin:3px 4px 3px 0}
+  button:hover{border-color:var(--accent)}
+  button.primary{background:var(--accent);color:#0b0d13;border-color:var(--accent);font-weight:650}
+  button.danger{border-color:var(--red);color:var(--red)}
+  .assume{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+  .assume label{display:block;font-size:11.5px;color:var(--muted);margin-bottom:4px}
+  .assume input{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--ink);
+    border-radius:7px;padding:6px 8px;font-size:13px;font-family:inherit}
+  .bar{height:9px;background:var(--panel2);border-radius:999px;overflow:hidden;margin-top:4px}
+  .bar > i{display:block;height:100%;background:var(--accent2)}
+  .nrr-chart{display:flex;align-items:flex-end;gap:8px;height:120px;padding:8px 0;border-bottom:1px solid var(--line);margin-top:8px}
+  .nrr-chart .col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+  .nrr-chart .col .bar2{width:70%;background:var(--accent);border-radius:4px 4px 0 0;position:relative}
+  .nrr-chart .col .lbl{font-size:9.5px;color:var(--muted);margin-top:3px;white-space:nowrap}
+  .target-line{font-size:11px;color:var(--gold);margin-top:4px}
+  .pill{display:inline-block;font-size:10.5px;padding:1px 8px;border-radius:999px;background:var(--panel2);
+    border:1px solid var(--line);color:var(--muted);margin-left:6px}
+  .pill.g{color:#bff0dd;border-color:#2c5d4d}
+  .pill.w{color:#f6e0a6;border-color:#6b5a25}
+  .pill.r{color:#ffb3b3;border-color:#6b2c2c}
+  .refline{font-size:12px;color:var(--muted);margin:6px 0}
+  footer{margin-top:50px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:12px}
+  @media(max-width:780px){.g2,.g3,.g4{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">FifthStar · Internal Ops Tool</div>
+  <h1>NRR &amp; 单位经济追踪表</h1>
+  <p class="muted">对外署名 <strong>Ethan Li</strong> · 配套模型 <code>metrics/pure-subscription-model.md</code> v2（含保守 Churn / NRR）· 工具版本 v1 · 2026-07-24</p>
+  <p class="muted">内部运营资产（<strong>不部署</strong>到 thefifthstar.site）。所有输入存浏览器 localStorage，可 CSV 导出备份 / 导入。换浏览器或清缓存会丢数据——<strong>每月底导一份 CSV</strong>。</p>
+</header>
+
+<!-- ===== A. 模型与假设 ===== -->
+<h2><span class="n">A</span>单位经济模型（v2 口径）</h2>
+<p>四档定价取自 <code>docs/pricing.md</code> v2（年付为 #431 校正的折扣价）。下列假设按钮一键载入模型文档的<strong>保守基准</strong>；你也可手改，工具实时重算。</p>
+
+<div class="assume">
+  <div><label>月流失率 %（默认 5.5 = 年化≈50% 推导）</label><input id="churnMonthly" type="number" step="0.1" value="5.5" /></div>
+  <div><label>毛利率 %（纯订阅≈100）</label><input id="margin" type="number" step="1" value="100" /></div>
+  <div><label>规划口径月数（Cohort LTV 窗口，默认 18）</label><input id="horizon" type="number" step="1" value="18" /></div>
+  <div><label>CAC £（冷邮件≈0）</label><input id="cac" type="number" step="1" value="0" /></div>
+</div>
+<button class="primary" onclick="loadCanonical()">载入 v2 保守基准</button>
+<button onclick="recomputeModel()">重算模型</button>
+
+<h3>Cohort LTV（用保守留存曲线 100→70→50→40 加权，规划窗口内）</h3>
+<table id="ltvTable">
+  <tr><th>档</th><th>月费 £</th><th>年费 £</th><th>Cohort LTV（£）</th><th>稳态 LTV（£，无限期）</th><th>£800–1,000 区间</th></tr>
+</table>
+<p class="refline">Cohort LTV = Σ<sub>月=1..窗口</sub> [ 留存(t)/100 × 月费 × 毛利率 ]。稳态 LTV = 月费×毛利率÷月流失率（假设永久留存，作上限参考）。</p>
+
+<div class="kpi" id="modelKpis"></div>
+
+<!-- ===== B. 月度 NRR 追踪 ===== -->
+<h2><span class="n">B</span>月度 NRR / GRR 追踪（核心追踪表）</h2>
+<p>每行 = 一个自然月。填<strong>月初 MRR、新增、扩展、收缩、流失</strong>五项，工具算<strong>月底 MRR、GRR、NRR</strong>。<code>顺延</code>按钮把上月月底 MRR 自动填入本月月初。</p>
+<div class="callout gold">
+  <strong>口径</strong>：GRR =（月初 + 收缩 + 流失）÷ 月初 ；NRR =（月初 + 扩展 + 收缩 + 流失）÷ 月初。扩展/收缩/流失填<strong>带符号数</strong>（流失、收缩为负）。目标 <strong>NRR ≥ 110%</strong>（扩档增量 &gt; 流失减量）。
+</div>
+<button class="primary" onclick="addMonth()">+ 新增月份</button>
+<button onclick="carryForward()">顺延上月 MRR → 新月份</button>
+<button onclick="loadExample()">载入示例（6 个月，NRR≈110%）</button>
+<button class="danger" onclick="clearLog()">清空月度表</button>
+
+<table id="nrrLog">
+  <tr>
+    <th>月份 (YYYY-MM)</th><th>月初 MRR £</th><th>新增 £</th><th>扩展 £</th>
+    <th>收缩 £</th><th>流失 £</th><th>月底 MRR £</th><th>GRR %</th><th>NRR %</th><th></th>
+  </tr>
+</table>
+
+<h3>NRR 走势（绿线=目标 110%，金线=100%）</h3>
+<div class="nrr-chart" id="nrrChart"></div>
+<div class="target-line" id="nrrSummary"></div>
+
+<!-- ===== C. 客户台账（背景，不自动算 NRR） ===== -->
+<h2><span class="n">C</span>客户台账（背景信息）</h2>
+<p>纯记录用：谁、落哪个档、何时起、当前档/月费、状态。NRR 以上方月度表为准，避免重复记账。状态用 <code>活跃 / 已升档 / 已降级 / 已流失</code>。</p>
+<button class="primary" onclick="addCust()">+ 新增客户</button>
+<button class="danger" onclick="clearLedger()">清空台账</button>
+<table id="ledger">
+  <tr><th>商家</th><th>起始档</th><th>起始月</th><th>当前档</th><th>月费 £</th><th>状态</th><th>备注</th><th></th></tr>
+</table>
+
+<!-- ===== D. 目标仪表盘 ===== -->
+<h2><span class="n">D</span>目标仪表盘（vs 模型文档口径）</h2>
+<div class="kpi" id="targetDash"></div>
+<p class="muted">目标值取自 <code>metrics/pure-subscription-model.md</code> §5 / §6 与 <code>metrics/retention.md</code>。随你填入的数据实时对比；标 n/a 表示还需更多月份数据。</p>
+
+<!-- ===== E. 导入导出 ===== -->
+<h2><span class="n">E</span>导入 / 导出</h2>
+<button class="primary" onclick="exportCSV()">导出 CSV（含假设+月度+台账）</button>
+<button onclick="document.getElementById('importFile').click()">导入 CSV</button>
+<input id="importFile" type="file" accept=".csv" style="display:none" onchange="importCSV(event)" />
+<button class="danger" onclick="resetAll()">恢复出厂（清空全部）</button>
+<p class="muted">CSV 是备份与跨设备迁移用；localStorage 仍是日常存储。</p>
+
+<div class="callout">
+  <strong>使用节奏</strong>：每月底填一行月度 NRR（从上月月底顺延），有升档/流失当天记台账。连续 2 月未填即视为节奏退化，下月补。首个客户成交后，用真实 churn / 扩展数据<strong>复盘重定</strong>假设与文档（见 <code>docs/pricing.md</code> 定价复盘约定）。
+</div>
+
+<footer>
+  FifthStar NRR &amp; 单位经济追踪表 v1 · 内部工具，依 <code>metrics/pure-subscription-model.md</code> v2 口径构建，不与线上站点一同部署。<br/>
+  模型口径若有调整，以 <code>metrics/</code> 下文档为准；本工具仅做计算与记录。
+</footer>
+
+</div>
+
+<script>
+"use strict";
+const LS_KEY = "fifthstar_nrr_v1";
+const CANON = {
+  churnMonthly:5.5, margin:100, horizon:18, cac:0,
+  tiers:[
+    {name:"Reputation", monthly:39, annual:390},
+    {name:"Growth Partner", monthly:79, annual:790},
+    {name:"Growth Plus", monthly:149, annual:1490}
+  ]
+};
+let state = {
+  churnMonthly:5.5, margin:100, horizon:18, cac:0,
+  tiers: CANON.tiers.map(t=>({...t})),
+  log:[], ledger:[]
+};
+
+/* ---- 留存曲线：cohort 100 起点，M1=100 / M6=70 / M12=50 / M18=40，之后稳定 40 ---- */
+function retainedAt(m){
+  if(m<=1) return 100;
+  if(m>=18) return 40;
+  const pts=[[1,100],[6,70],[12,50],[18,40]];
+  for(let i=0;i<pts.length-1;i++){
+    const [m0,r0]=pts[i], [m1,r1]=pts[i+1];
+    if(m>=m0 && m<=m1){
+      const t=(m-m0)/(m1-m0);
+      return r0 + t*(r1-r0);
+    }
+  }
+  return 40;
+}
+function cohortLTV(monthly){
+  const H=state.horizon, mg=state.margin/100;
+  let sum=0;
+  for(let m=1;m<=H;m++) sum += retainedAt(m);
+  return sum/100 * monthly * mg;
+}
+function steadyLTV(monthly){
+  const c=state.churnMonthly/100;
+  if(c<=0) return Infinity;
+  return monthly * (state.margin/100) / c;
+}
+function ltvCac(){
+  if(state.cac>0) return steadyLTV(79)/state.cac;
+  return Infinity;
+}
+
+/* ---- 渲染：模型 ---- */
+function renderModel(){
+  state.churnMonthly=+document.getElementById("churnMonthly").value||0;
+  state.margin=+document.getElementById("margin").value||0;
+  state.horizon=+document.getElementById("horizon").value||0;
+  state.cac=+document.getElementById("cac").value||0;
+  const tb=document.getElementById("ltvTable");
+  tb.querySelectorAll("tr.r").forEach(r=>r.remove());
+  state.tiers.forEach(t=>{
+    const cl=cohortLTV(t.monthly), sl=steadyLTV(t.monthly);
+    let band = cl>=800 && cl<=1000 ? '<span class="pill g">达标 £800–1k</span>'
+             : cl<800 ? '<span class="pill r">偏低 &lt;£800</span>'
+             : '<span class="pill w">高于规划 &gt;£1k</span>';
+    const tr=document.createElement("tr"); tr.className="r";
+    tr.innerHTML=`<td>${t.name}</td>
+      <td><input value="${t.monthly}" onchange="tierChange('${t.name}',this.value)" style="max-width:70px"></td>
+      <td>£${t.annual}</td>
+      <td><b>£${Math.round(cl)}</b></td>
+      <td class="muted">£${Math.round(sl)}</td>
+      <td>${band}</td>`;
+    tb.appendChild(tr);
+  });
+  const ratio=ltvCac();
+  document.getElementById("modelKpis").innerHTML=`
+    <div class="box"><div class="v acc">£${Math.round(cohortLTV(79))}</div><div class="l">Growth Partner Cohort LTV（基准档）</div></div>
+    <div class="box"><div class="v ${cohortLTV(79)>=800&&cohortLTV(79)<=1000?'good':'warn'}">${cohortLTV(79)>=800&&cohortLTV(79)<=1000?'£800–1k 达标':'区间外'}</div><div class="l">vs 模型目标 £800–1,000</div></div>
+    <div class="box"><div class="v ${ratio>=10?'good':'acc'}">${(isFinite(ratio)?ratio.toFixed(0)+':1':'≥10:1')}</div><div class="l">LTV : CAC（冷邮件≈£0）</div></div>
+    <div class="box"><div class="v good">${state.churnMonthly}%</div><div class="l">月流失（年化≈${Math.round((1-Math.pow(1-state.churnMonthly/100,12))*100)}%）</div></div>`;
+  renderTargets();
+}
+function tierChange(name,val){
+  const t=state.tiers.find(x=>x.name===name); if(t) t.monthly=+val||0;
+  renderModel(); save();
+}
+function recomputeModel(){ renderModel(); save(); }
+function loadCanonical(){
+  state.churnMonthly=CANON.churnMonthly; state.margin=CANON.margin;
+  state.horizon=CANON.horizon; state.cac=CANON.cac;
+  state.tiers=CANON.tiers.map(t=>({...t}));
+  document.getElementById("churnMonthly").value=state.churnMonthly;
+  document.getElementById("margin").value=state.margin;
+  document.getElementById("horizon").value=state.horizon;
+  document.getElementById("cac").value=state.cac;
+  renderModel(); save();
+}
+
+/* ---- 月度 NRR 日志 ---- */
+function addMonth(month){
+  state.log.push({month: month||nextMonthPlaceholder(), start:0, neu:0, exp:0, con:0, ch:0});
+  renderLog(); save();
+}
+function nextMonthPlaceholder(){
+  if(state.log.length===0) return "2026-08";
+  const last=state.log[state.log.length-1].month;
+  const [y,m]=last.split("-").map(Number);
+  const nm=m===12?1:m+1; const ny=m===12?y+1:y;
+  return `${ny}-${String(nm).padStart(2,"0")}`;
+}
+function carryForward(){
+  if(state.log.length===0){ addMonth(); return; }
+  const last=state.log[state.log.length-1];
+  const end = last.start + last.neu + last.exp + last.con + last.ch;
+  addMonth();
+  const cur=state.log[state.log.length-1];
+  cur.start=end; renderLog(); save();
+}
+function delMonth(i){ state.log.splice(i,1); renderLog(); save(); }
+function rowVal(i,key,el){ state.log[i][key]=+el.value||0; renderLog(); save(); }
+function renderLog(){
+  const tb=document.getElementById("nrrLog");
+  tb.querySelectorAll("tr.r").forEach(r=>r.remove());
+  let prevEnd=null, nrrs=[];
+  state.log.forEach((r,i)=>{
+    const end=r.start+r.neu+r.exp+r.con+r.ch;
+    const grr = r.start>0 ? (r.start+r.con+r.ch)/r.start*100 : null;
+    const nrr = r.start>0 ? (r.start+r.exp+r.con+r.ch)/r.start*100 : null;
+    if(nrr!==null) nrrs.push(nrr);
+    const tr=document.createElement("tr"); tr.className="r";
+    tr.innerHTML=`
+      <td><input value="${r.month}" onchange="rowVal(${i},'month',this)"></td>
+      <td><input value="${r.start}" onchange="rowVal(${i},'start',this)"></td>
+      <td><input value="${r.neu}" onchange="rowVal(${i},'neu',this)"></td>
+      <td><input value="${r.exp}" onchange="rowVal(${i},'exp',this)"></td>
+      <td><input value="${r.con}" onchange="rowVal(${i},'con',this)"></td>
+      <td><input value="${r.ch}" onchange="rowVal(${i},'ch',this)"></td>
+      <td><b>£${Math.round(end)}</b></td>
+      <td class="muted">${grr===null?'–':grr.toFixed(0)+'%'}</td>
+      <td><b style="color:${nrr===null?'var(--muted)':nrr>=110?'var(--accent2)':nrr>=100?'var(--gold)':'var(--red)'}">${nrr===null?'–':nrr.toFixed(0)+'%'}</td></td>
+      <td><button class="danger" onclick="delMonth(${i})">删</button></td>`;
+    tb.appendChild(tr);
+    prevEnd=end;
+  });
+  renderChart(nrrs);
+}
+function renderChart(nrrs){
+  const chart=document.getElementById("nrrChart");
+  chart.innerHTML="";
+  const max=Math.max(130, ...nrrs);
+  nrrs.forEach(v=>{
+    const col=document.createElement("div"); col.className="col";
+    const h=Math.max(4, v/max*100);
+    col.innerHTML=`<div class="bar2" style="height:${h}%;background:${v>=110?'var(--accent2)':v>=100?'var(--gold)':'var(--red)'}"></div><div class="lbl">${v.toFixed(0)}%</div>`;
+    chart.appendChild(col);
+  });
+  const latest=nrrs.length?nrrs[nrrs.length-1]:null;
+  const avg=nrrs.length?nrrs.reduce((a,b)=>a+b,0)/nrrs.length:null;
+  document.getElementById("nrrSummary").innerHTML = nrrs.length
+    ? `最新 NRR <b>${latest.toFixed(0)}%</b> ｜ 平均 <b>${avg.toFixed(0)}%</b> ｜ 目标 ≥110% ｜ 共 ${nrrs.length} 个月`
+    : "暂无数据。点「载入示例」看效果，或开始填你的真实月份。";
+}
+
+/* ---- 客户台账 ---- */
+function addCust(){ state.ledger.push({name:"",tier0:"",m0:"",tier1:"",fee:0,status:"活跃",note:""}); renderLedger(); save(); }
+function delCust(i){ state.ledger.splice(i,1); renderLedger(); save(); }
+function custVal(i,k,el){ state.ledger[i][k]=el.value; save(); }
+function renderLedger(){
+  const tb=document.getElementById("ledger");
+  tb.querySelectorAll("tr.r").forEach(r=>r.remove());
+  state.ledger.forEach((c,i)=>{
+    const tr=document.createElement("tr"); tr.className="r";
+    tr.innerHTML=`
+      <td><input value="${c.name}" onchange="custVal(${i},'name',this)"></td>
+      <td><input value="${c.tier0}" onchange="custVal(${i},'tier0',this)"></td>
+      <td><input value="${c.m0}" onchange="custVal(${i},'m0',this)"></td>
+      <td><input value="${c.tier1}" onchange="custVal(${i},'tier1',this)"></td>
+      <td><input value="${c.fee}" onchange="custVal(${i},'fee',this)"></td>
+      <td><input value="${c.status}" onchange="custVal(${i},'status',this)"></td>
+      <td><input value="${c.note}" onchange="custVal(${i},'note',this)"></td>
+      <td><button class="danger" onclick="delCust(${i})">删</button></td>`;
+    tb.appendChild(tr);
+  });
+}
+
+/* ---- 目标仪表盘 ---- */
+function renderTargets(){
+  const dash=document.getElementById("targetDash");
+  const gpCohort=cohortLTV(79);
+  const ratio=ltvCac();
+  // 月 churn 目标 ≤5%；年 churn 底线 ≤50% 目标 ≤35%
+  const annualChurn=Math.round((1-Math.pow(1-state.churnMonthly/100,12))*100);
+  const latestNrr = state.log.length ? (()=>{const r=state.log[state.log.length-1];
+    return r.start>0?(r.start+r.exp+r.con+r.ch)/r.start*100:null;})() : null;
+  const items=[
+    ["NRR ≥110%", latestNrr===null?'n/a':latestNrr.toFixed(0)+'%', latestNrr===null?'w':latestNrr>=110?'g':latestNrr>=100?'w':'r'],
+    ["月 Churn ≤5%", state.churnMonthly+'%', state.churnMonthly<=5?'g':state.churnMonthly<=7?'w':'r'],
+    ["年化 Churn ≤50% (底线)", annualChurn+'%', annualChurn<=50?'g':annualChurn<=65?'w':'r'],
+    ["Cohort LTV £800–1k", '£'+Math.round(gpCohort), gpCohort>=800&&gpCohort<=1000?'g':gpCohort<800?'r':'w'],
+    ["LTV:CAC ≥10:1", isFinite(ratio)?ratio.toFixed(0)+':1':'≥10:1', isFinite(ratio)&&ratio>=10?'g':'g'],
+    ["升档率 ≥40% (6mo)", 'n/a', 'w']
+  ];
+  dash.innerHTML=items.map(([l,v,s])=>{
+    const cls=s==='g'?'good':s==='r'?'bad':'warn';
+    const pill=s==='g'?'<span class="pill g">达标</span>':s==='r'?'<span class="pill r">未达标</span>':'<span class="pill w">观察/n.a</span>';
+    return `<div class="box"><div class="v ${cls}">${v}</div><div class="l">${l} ${pill}</div></div>`;
+  }).join("");
+}
+
+/* ---- 示例 ---- */
+function loadExample(){
+  state.log=[
+    {month:"2026-08",start:0, neu:237, exp:0, con:0, ch:0},
+    {month:"2026-09",start:237, neu:158, exp:0, con:0, ch:-12},
+    {month:"2026-10",start:383, neu:158, exp:79, con:0, ch:-12},
+    {month:"2026-11",start:608, neu:118, exp:79, con:-39, ch:-20},
+    {month:"2026-12",start:746, neu:118, exp:149, con:0, ch:-20},
+    {month:"2027-01",start:993, neu:79, exp:149, con:0, ch:-39}
+  ];
+  renderLog(); save(); renderTargets();
+}
+
+/* ---- 持久化 ---- */
+function save(){
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){}
+}
+function load(){
+  try{
+    const raw=localStorage.getItem(LS_KEY);
+    if(raw){ state=JSON.parse(raw); }
+  }catch(e){}
+  document.getElementById("churnMonthly").value=state.churnMonthly;
+  document.getElementById("margin").value=state.margin;
+  document.getElementById("horizon").value=state.horizon;
+  document.getElementById("cac").value=state.cac;
+  renderModel(); renderLog(); renderLedger();
+}
+function resetAll(){
+  if(!confirm("清空全部数据（假设/月度/台账）？此操作不可撤销，建议先导出 CSV。")) return;
+  state={churnMonthly:5.5,margin:100,horizon:18,cac:0,tiers:CANON.tiers.map(t=>({...t})),log:[],ledger:[]};
+  save(); load();
+}
+function clearLog(){ if(confirm("清空月度 NRR 表？")){ state.log=[]; renderLog(); save(); } }
+function clearLedger(){ if(confirm("清空客户台账？")){ state.ledger=[]; renderLedger(); save(); } }
+
+/* ---- CSV ---- */
+function exportCSV(){
+  const lines=[];
+  lines.push("SECTION,ASSUMPTIONS");
+  lines.push("churnMonthly,"+state.churnMonthly);
+  lines.push("margin,"+state.margin);
+  lines.push("horizon,"+state.horizon);
+  lines.push("cac,"+state.cac);
+  lines.push("tier,"+state.tiers.map(t=>`${t.name}|${t.monthly}|${t.annual}`).join(";"));
+  lines.push("");
+  lines.push("SECTION,MONTHLY_LOG,month,start,new,expansion,contraction,churned");
+  state.log.forEach(r=>lines.push(`,${r.month},${r.start},${r.neu},${r.exp},${r.con},${r.ch}`));
+  lines.push("");
+  lines.push("SECTION,LEDGER,name,tier0,m0,tier1,fee,status,note");
+  state.ledger.forEach(c=>lines.push(`,${c.name},${c.tier0},${c.m0},${c.tier1},${c.fee},${c.status},${c.note}`));
+  const blob=new Blob([lines.join("\n")],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="fifthstar-nrr-"+new Date().toISOString().slice(0,10)+".csv";
+  a.click();
+}
+function importCSV(e){
+  const f=e.target.files[0]; if(!f) return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    try{
+      const txt=ev.target.result; const secs=txt.split(/^SECTION,/m).map(s=>s.trim()).filter(Boolean);
+      secs.forEach(sec=>{
+        const lines=sec.split("\n"); const head=lines[0];
+        if(head.startsWith("ASSUMPTIONS")){
+          lines.slice(1).forEach(l=>{const [k,v]=l.split(","); if(k==="churnMonthly")state.churnMonthly=+v; if(k==="margin")state.margin=+v; if(k==="horizon")state.horizon=+v; if(k==="cac")state.cac=+v; if(k==="tier"){const ts=v.split(";");ts.forEach((p,i)=>{const [n,mo,an]=p.split("|");if(state.tiers[i]){state.tiers[i].name=n;state.tiers[i].monthly=+mo;state.tiers[i].annual=+an;}});}});
+        } else if(head.startsWith("MONTHLY_LOG")){
+          state.log=lines.slice(1).filter(l=>l.trim()).map(l=>{const p=l.split(",");return {month:p[1],start:+p[2]||0,neu:+p[3]||0,exp:+p[4]||0,con:+p[5]||0,ch:+p[6]||0};});
+        } else if(head.startsWith("LEDGER")){
+          state.ledger=lines.slice(1).filter(l=>l.trim()).map(l=>{const p=l.split(",");return {name:p[1],tier0:p[2],m0:p[3],tier1:p[4],fee:+p[5]||0,status:p[6],note:p[7]||""};});
+        }
+      });
+      document.getElementById("churnMonthly").value=state.churnMonthly;
+      document.getElementById("margin").value=state.margin;
+      document.getElementById("horizon").value=state.horizon;
+      document.getElementById("cac").value=state.cac;
+      renderModel(); renderLog(); renderLedger(); save();
+      alert("CSV 导入成功。");
+    }catch(err){ alert("导入失败："+err.message); }
+  };
+  reader.readAsText(f);
+  e.target.value="";
+}
+
+/* init */
+load();
+</script>
+</body>
+</html>

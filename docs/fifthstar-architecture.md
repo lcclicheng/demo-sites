@@ -42,7 +42,7 @@ thefifthstar.site/  (线上仓 thefifthstar-live/ root)
 └── CNAME                      ← thefifthstar.site（Cloudflare + GitHub Pages）
 
 > 源仓内部、不进线上仓的目录/文件：`rehearsal/`（排练预览）、`widget-delivery-sop.md`（交付 SOP）、
-> `DESIGN-LANGUAGE-v1.0.md`、各类 `*_AUDIT*.md` / `*_REPORT*.md`（审计/测试报告）。线上仓已含 `widget/`（公开 snippet）。
+> `DESIGN-LANGUAGE-v1.0.md`、各类 `*_AUDIT*.md` / `*_REPORT*.md`（审计/测试报告）、`metrics/nrr-tracker.html`（NRR & 单位经济追踪工具，#433）+ `metrics/NRR-TRACKER-README.md`。线上仓已含 `widget/`（公开 snippet）。
 ```
 
 - **枢纽页**是生产 `index.html` 的源，承载收费 / 承诺 / Ethan / widget + 6 品类卡片。
