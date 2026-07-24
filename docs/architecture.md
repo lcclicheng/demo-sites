@@ -8,6 +8,7 @@
 
 > MDD 主题文件 · 索引见 `docs/index.md` · 一册通读见 `docs/PROJECT-OVERVIEW.md`
 > 相关：部署见 `docs/deployment.md`｜Section Engine 见 `docs/section-engine.md`｜决策见 `decisions/`
+> 🅕 **FifthStar OS（B 组领先产品）架构单独成文**：见 [`docs/fifthstar-architecture.md`](./fifthstar-architecture.md)（多页落地页 / 双仓 / 手动部署）。
 
 ---
 

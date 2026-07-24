@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fifth Star · Industry site directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --surface:#FAF8F4; --ink:#1C1814; --muted:#6E665B; --hair:color-mix(in srgb,var(--ink) 14%,transparent);
+  --spice:#C8772A; --ink-blue:#0F1622; --brass:#B8893B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--surface);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin-inline:auto;padding:0 24px}
+
+.mast{text-align:center;padding:74px 0 22px}
+.eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--spice);
+  border:1px solid color-mix(in srgb,var(--spice) 45%,transparent);border-radius:999px;padding:6px 15px;margin-bottom:20px}
+.mast h1{font-family:Fraunces,Georgia,serif;font-size:clamp(30px,5vw,46px);font-weight:600;letter-spacing:-.01em}
+.mast p{color:var(--muted);max-width:42rem;margin:14px auto 0;font-size:16px}
+.rule{height:1px;background:var(--hair);border:0;margin:46px 0}
+
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding-bottom:30px}
+@media(max-width:760px){.gallery{grid-template-columns:1fr}}
+.tile{background:#fff;border:1px solid var(--hair);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease}
+.tile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(28,24,20,.10)}
+.tile .thumb{aspect-ratio:16/10;background:#1E1407;overflow:hidden;position:relative}
+.tile .thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.tile.law .thumb{background:var(--ink-blue)}
+.tile .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tile .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tile .t{font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:600}
+.tile.law .t{font-family:"Playfair Display",Georgia,serif}
+.tile .d{color:var(--muted);font-size:14px;flex:1}
+.tile .go{margin-top:12px;align-self:flex-start;font-weight:600;font-size:14px;
+  border:1px solid var(--hair);border-radius:9px;padding:9px 16px;color:var(--ink)}
+.tile.warm .go{color:var(--spice);border-color:color-mix(in srgb,var(--spice) 40%,transparent)}
+.tile.law .go{color:var(--brass);border-color:color-mix(in srgb,var(--brass) 40%,transparent)}
+
+.diff{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:26px}
+.note{background:#fff;border:1px solid var(--hair);border-radius:14px;padding:18px 20px}
+.note h4{font-size:15px;margin-bottom:8px}
+.note.warm h4{color:var(--spice)}
+.note.law h4{color:var(--brass)}
+.note ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px}
+.note li{margin:4px 0}
+
+footer{padding:46px 0 60px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--hair);margin-top:30px}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <span class="eyebrow">Fifth Star · Industry site directions</span>
+    <h1>One product, two industries — built on real data</h1>
+    <p>Both are Fifth Star–branded demo sites (English, same promise, same pricing). The difference is structural, not just colour: each is grounded in that merchant's <b>real Google review data</b> from our outreach list.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="gallery">
+    <a class="tile warm" href="indian-restaurant.html">
+      <div class="thumb"><img src="_shot_indian.png" alt="Indian restaurant direction"></div>
+      <div class="body">
+        <span class="k">Food &amp; drink · Indian restaurant</span>
+        <span class="t">Warm, immersive, appetite-first</span>
+        <span class="d">Delhi Wala, Leeds — 1,017 real Google reviews. Leads with a 4★ complaint turned into a gracious reply. Fraunces serif, saffron palette.</span>
+        <span class="go">Open full page →</span>
+      </div>
+    </a>
+
+    <a class="tile law" href="law-firm.html">
+      <div class="thumb"><img src="_shot_law.png" alt="Law firm direction"></div>
+      <div class="body">
+        <span class="k">Professional services · Law firm</span>
+        <span class="t">Restrained, editorial, name-led</span>
+        <span class="d">McEwan Fraser Legal, Edinburgh — 934 real Google reviews. Leads with 5★ reviews naming actual solicitors. Playfair serif, brass palette.</span>
+        <span class="go">Open full page →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="diff">
+    <div class="note warm">
+      <h4>Why the restaurant reads differently</h4>
+      <ul>
+        <li>Immersive stacked layout, food-forward hero</li>
+        <li>Fraunces display serif → artisanal, appetising</li>
+        <li>Warm saffron/ember palette, soft breathe-ring</li>
+        <li>Proof point: a 4★ complaint replied to with grace</li>
+        <li>Menu highlights pulled from real reviews</li>
+      </ul>
+    </div>
+    <div class="note law">
+      <h4>Why the law firm reads differently</h4>
+      <ul>
+        <li>Two-column editorial layout, document feel</li>
+        <li>Playfair Display serif → gravitas, precision</li>
+        <li>Cool brass/ink palette, tighter, calmer</li>
+        <li>Proof point: 5★ reviews naming real people</li>
+        <li>Practice areas derived from what clients wrote</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="rule">
+  <p style="text-align:center;color:var(--muted);font-size:14px;max-width:42rem;margin-inline:auto">
+    Next: if the directions land, extend the matrix by cuisine (Italian / Japanese / Chinese / Spanish / Mediterranean…) and wire <code>theme</code> / <code>signature</code> into the build engine so each is one click away.
+  </p>
+</div>
+
+<footer>Demo preview · internal review only, not a live deliverable — Fifth Star</footer>
+</body>
+</html>

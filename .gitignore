@@ -50,3 +50,9 @@ business/
 
 # 客户交付模板工具包（合同/提案/隐私政策/获客话术/定价模板，随 business/ 同规则不进公开仓库）
 business-kit/
+
+# 项目本地记忆（含私有 memory/ 与 automations/，不进公开仓库）
+.workbuddy/
+
+# FifthStar 多页架构的本地预览/组装产物（事实源在 products/fifthstar/；_preview 仅为 CloudStudio 部署暂存，可能滞后，不入库）
+products/fifthstar/_preview/

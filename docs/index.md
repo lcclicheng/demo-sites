@@ -57,6 +57,7 @@ gh-pages-build/
 |---|---|---|
 | ⭐ 一册通读 | `docs/PROJECT-OVERVIEW.md` | 最终整合版项目说明（架构 + 订阅付费全景，总入口） |
 | 技术架构 | `docs/architecture.md` | 技术栈 / 核心管线 / 8 模板 + Section Engine / GitHub Pages 限制 / 目录结构 / PROJS 单一事实源 |
+| 🅕 FifthStar OS 架构 | `docs/fifthstar-architecture.md` | 双仓（源 products/fifthstar → 镜像 thefifthstar-live）/ 多页结构（1 枢纽+6 品类+2 商户）/ 共享设计系统 / 链接策略 / v2 定价 / 手动部署 |
 | 部署认证 | `docs/deployment.md` | 本地开发 / push→Actions / SSH 443 / FAQ 坑 / 质量闸门 / 安全清单 / 命令速查 |
 | 客户接入 | `docs/onboarding.md` | 接入 SOP 8 步 / 交付后维护 / 第 7 天满意度 / 合规与注册地址 / 新增模板 SOP / slug 约定 |
 | SEO / 内容 | `docs/seo.md` | SEO 基础自动注入 / checklist / JSON-LD 结构化数据 / Blog（指向 blog-pipeline.md） |

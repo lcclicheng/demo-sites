@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>McEwan Fraser Legal — Solicitors, Edinburgh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#b9965a;            /* cool brass */
+  --gold-2:#d8bd86;
+  --ink:#0c1116;
+  --bg:#0a0e12;
+  --bg-2:#0e141a;
+  --card:rgba(216,189,134,.045);
+  --card-brd:rgba(185,150,90,.26);
+  --text:#dfe4e8;
+  --muted:#8c97a1;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Playfair Display",serif}
+.gradient-text{background:linear-gradient(100deg,var(--gold-2),#7d6640 60%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.breathe{position:absolute;border-radius:50%;filter:blur(70px);opacity:.42;background:radial-gradient(circle,var(--gold),transparent 70%);animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.34}50%{transform:scale(1.1);opacity:.5}}
+
+.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(10,14,18,.78);border-bottom:1px solid var(--card-brd)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.4px}
+.sig-mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--gold-2),#7d6640);display:grid;place-items:center;color:#0a0e12;font-weight:800;font-size:14px;font-family:"Playfair Display",serif}
+.nav-links{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--gold-2)}
+.btn{display:inline-block;padding:11px 22px;border-radius:6px;font-weight:600;font-size:14px;background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#0a0e12;border:none;cursor:pointer;transition:.25s;letter-spacing:.3px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(185,150,90,.3)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--card-brd)}
+
+.hero{position:relative;padding:84px 0 60px;border-bottom:1px solid var(--card-brd);overflow:hidden}
+.hero .breathe{width:480px;height:480px;top:-180px;right:-120px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-2);margin-bottom:16px}
+.hero h1{font-size:clamp(36px,5.5vw,60px);line-height:1.05;font-weight:700;margin-bottom:16px}
+.hero p.lead{color:var(--muted);font-size:17px;max-width:460px;margin-bottom:26px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.stat-card{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:22px}
+.stat-card .num{font-family:"Playfair Display",serif;font-size:34px;font-weight:700;color:var(--gold-2)}
+.stat-card .lbl{font-size:13px;color:var(--muted);margin-top:2px}
+.stat-card + .stat-card{margin-top:14px}
+
+section{padding:68px 0}
+.sec-head{margin-bottom:42px;max-width:640px}
+.sec-head .tag{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-2)}
+.sec-head h2{font-size:clamp(28px,4vw,42px);font-weight:700;margin:10px 0 12px}
+.sec-head p{color:var(--muted)}
+
+.practice{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pa{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:24px}
+.pa h4{font-family:"Playfair Display",serif;font-size:21px;font-weight:500;margin-bottom:8px}
+.pa p{font-size:14px;color:var(--muted)}
+
+/* reviews — named people */
+.feed{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.review{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:24px}
+.review .stars{color:var(--gold-2);letter-spacing:2px;font-size:14px;margin-bottom:12px}
+.review blockquote{font-family:"Playfair Display",serif;font-style:italic;font-size:17px;line-height:1.5;margin-bottom:16px}
+.review .who{font-size:13px;color:var(--gold-2);font-weight:600;margin-bottom:10px}
+.reply-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.reply-label .sig-mark{width:18px;height:18px;border-radius:5px;font-size:10px}
+.reply{font-size:14px;background:rgba(185,150,90,.07);border-left:3px solid var(--gold);padding:12px 14px;border-radius:0 8px 8px 0}
+
+.fs{background:linear-gradient(180deg,var(--bg-2),var(--bg));border-top:1px solid var(--card-brd);border-bottom:1px solid var(--card-brd)}
+.fs-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.steps{display:flex;flex-direction:column;gap:16px}
+.step{display:flex;gap:14px;align-items:flex-start}
+.step .n{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--card-brd);display:grid;place-items:center;color:var(--gold-2);font-weight:700;font-size:13px;font-family:"Playfair Display",serif}
+.step h4{font-size:15px;margin-bottom:2px}
+.step p{font-size:13px;color:var(--muted)}
+.price-chip{display:inline-block;margin-top:8px;font-size:13px;color:var(--gold-2);border:1px solid var(--card-brd);padding:4px 12px;border-radius:999px}
+
+.promise{text-align:center;padding:60px 0}
+.promise .big{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(24px,3.6vw,38px);font-weight:500;max-width:720px;margin:0 auto 14px}
+.promise .big .gradient-text{font-style:normal}
+.ethan{display:flex;gap:14px;align-items:center;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.ethan .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),#7d6640);display:grid;place-items:center;color:#0a0e12;font-weight:800;font-family:"Playfair Display",serif}
+.ethan .meta{text-align:left;font-size:14px}
+.ethan .meta b{display:block}
+.ethan .meta span{color:var(--muted)}
+.pricing{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.tier{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:18px 24px;text-align:center;min-width:155px}
+.tier .amt{font-family:"Playfair Display",serif;font-size:28px;font-weight:700}
+.tier .lbl{font-size:13px;color:var(--muted)}
+.fineprint{text-align:center;color:var(--muted);font-size:12px;margin-top:28px;padding-bottom:46px}
+.fineprint a{color:var(--gold-2);border-bottom:1px solid var(--card-brd)}
+@media(max-width:760px){.hero .wrap,.practice,.feed,.fs-grid{grid-template-columns:1fr}.nav-links{display:none}.stat-card+.stat-card{margin-top:0;margin-top:14px}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <div class="brand"><span class="sig-mark">M</span> McEwan Fraser</div>
+  <div class="nav-links"><a href="#practice">Practice</a><a href="#reviews">Reviews</a><a href="#fifthstar">Fifth Star</a><a href="#consult">Consult</a></div>
+  <a href="#consult" class="btn">Free consultation</a>
+</div></nav>
+
+<header class="hero">
+  <div class="breathe"></div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Edinburgh · Property & Private Client</div>
+      <h1 class="serif">Your name is<br><span class="gradient-text">your firm's reputation.</span></h1>
+      <p class="lead">When a client names the solicitor who helped them, that's the firm's worth made visible. We make sure every review says it back.</p>
+      <div class="hero-cta">
+        <a href="#consult" class="btn">Free consultation</a>
+        <a href="#reviews" class="btn ghost">Read the reviews</a>
+      </div>
+    </div>
+    <div>
+      <div class="stat-card"><div class="num">934</div><div class="lbl">Google reviews for the firm</div></div>
+      <div class="stat-card"><div class="num">5★</div><div class="lbl">Average sentiment across cited reviews</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="practice">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Practice areas</div>
+      <h2 class="serif">Where clients say we helped</h2>
+      <p>Drawn from what real clients wrote — buying a home, selling one, and the advice that took the stress out of it.</p>
+    </div>
+    <div class="practice">
+      <div class="pa"><h4 class="serif">Residential purchase</h4><p>First-time buyers and movers guided step by step, questions answered without the fuss.</p></div>
+      <div class="pa"><h4 class="serif">Selling & marketing</h4><p>Photography and presentation advice that got vendors the price they wanted.</p></div>
+      <div class="pa"><h4 class="serif">Private client</h4><p>The calm, thorough kind of care that makes people choose us over the cheaper option.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Real reviews, real names</div>
+      <h2 class="serif">Clients name the people who helped</h2>
+      <p>Three genuine 5★ Google reviews for McEwan Fraser. The replies are drafted by Fifth Star — and they name the person too.</p>
+    </div>
+    <div class="feed">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <div class="who">— on Andrew Clark</div>
+        <blockquote>"Andrew Clark was absolutely FANTASTIC! He answered all our questions and never lost patience no matter how many we asked. Kept us updated every step of the way."</blockquote>
+        <div class="reply-label"><span class="sig-mark">★</span> Fifth Star draft reply</div>
+        <div class="reply">Andrew will be chuffed to see this — thank you. Buying a home throws up a lot of questions and he's brilliant at talking people through every step without making anyone feel daft for asking. We'll pass your kind words straight to him.</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <div class="who">— on Dianne Kerr</div>
+        <blockquote>"Dianne Kerr was exceptional — valuable advice on the photography and marketing. I was kept fully informed, and the stresses of selling were removed."</blockquote>
+        <div class="reply-label"><span class="sig-mark">★</span> Fifth Star draft reply</div>
+        <div class="reply">This is lovely to read, thank you. Selling a family home is emotional at the best of times, and Dianne takes real pride in lifting that weight off people's shoulders. We'll make sure she sees it. Delighted you got the price you wanted.</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <div class="who">— on Jane</div>
+        <blockquote>"Jane visited us and straight away we both felt relaxed. She went over everything, missing nothing out, and answered all our questions. We went with her even though others were cheaper."</blockquote>
+        <div class="reply-label"><span class="sig-mark">★</span> Fifth Star draft reply</div>
+        <div class="reply">Thank you — Jane will be made up. She's got a real gift for putting people at ease and explaining things properly, which is exactly what you want when you're trusting someone with your home. We're so glad you felt that from the first visit.</div>
+      </div>
+      <div class="review" style="display:flex;flex-direction:column;justify-content:center;background:rgba(185,150,90,.06);border-style:dashed">
+        <div class="stars" style="color:var(--gold-2)">★★★★★ × 931</div>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:18px;line-height:1.5">And 931 more like them — every one answered by Fifth Star in the firm's voice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fifthstar" class="fs">
+  <div class="wrap">
+    <div class="fs-grid">
+      <div>
+        <div class="tag" style="font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-2)">Protected by Fifth Star</div>
+        <h2 class="serif" style="font-size:clamp(26px,3.6vw,40px);font-weight:700;margin:10px 0 16px">Every review, answered like it's your own name on it</h2>
+        <p style="color:var(--muted);max-width:440px">A firm's reputation lives in its reviews. Fifth Star drafts a reply to each one — naming the client's solicitor, matching the care they actually got — so the firm's name stays spotless without a paralegal's afternoon.</p>
+        <div class="price-chip">From £29 / month · cancel anytime</div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div><h4>Fifth Star monitors Google</h4><p>A new review cites Andrew, Dianne or Jane — you're alerted.</p></div></div>
+        <div class="step"><div class="n">2</div><div><h4>We draft it in the firm's voice</h4><p>Names the person, keeps the tone measured and warm.</p></div></div>
+        <div class="step"><div class="n">3</div><div><h4>You publish — name protected</h4><p>The firm's reputation compounds, review by review.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="consult" class="promise">
+  <div class="wrap">
+    <div class="big serif">We build the site first. <span class="gradient-text">You only pay once you're happy with it.</span></div>
+    <p style="color:var(--muted);max-width:540px;margin:0 auto">The Fifth Star promise on every site we make — including this one for McEwan Fraser Legal.</p>
+    <div class="ethan">
+      <div class="av">E</div>
+      <div class="meta"><b>Ethan Li</b><span>Fifth Star · hello@thefifthstar.site</span></div>
+    </div>
+    <div class="pricing">
+      <div class="tier"><div class="amt">£590</div><div class="lbl">Site built + first month of edits</div></div>
+      <div class="tier"><div class="amt">£29<span style="font-size:14px">/mo</span></div><div class="lbl">Fifth Star review replies</div></div>
+    </div>
+    <div class="fineprint">Demo site prepared by Fifth Star (thefifthstar.site) · Real Google review data shown for McEwan Fraser Legal, Edinburgh · <a href="#consult">Start your site →</a></div>
+  </div>
+</section>
+
+</body>
+</html>
