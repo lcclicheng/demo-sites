@@ -4,7 +4,7 @@
 > 角色：architect（定模板）→ frontend（填数据/视觉）→ backend（构建部署）→ seo（内容/JSON-LD）。
 
 ## 步骤
-1. **定档**：确认套餐（A 建站+首月无忧改版 £590 / B 年度呵护 £390/年 + 分行业微调）。定价见 `docs/pricing.md`。
+1. **定档**：确认套餐（Free £0 / Starter £29/mo 声誉管理 / Growth £79/mo 含免费建站 + 托管 + 更新 + 基础 SEO）。定价见 `docs/pricing.md` v1.0。
 2. **选模板**：新客户优先 `sectioned`（统一契约）；需要强行业辨识度且 8 套模板已覆盖该行业时可选行业模板。见 `state/current-template.md`。
 3. **录入**：复制 `examples/sectioned-demo.json` → `examples/<slug>.json`，填 `SectionedData`（必填 `template/slug/name`）。可跑 `node onboard.mjs` 开录入助手。
    - 真实商家：用 uk-biz-finder 取 OSM 真实数据，导出含 `_source` 对象；**禁止编造 hours / googleRating**。

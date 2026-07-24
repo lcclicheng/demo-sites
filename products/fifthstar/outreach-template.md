@@ -118,7 +118,7 @@ just reply "yes". — [YourName], Fifth Star
 - 中：「Most owners move to the £29/mo plan once they see replies landing weekly; the free drafts are yours either way.」
 - 重（已信任后）：「When you're ready, the £79/mo plan adds a dashboard + weekly report + review-request links — and we can look at a proper website while we're at it.」
 
-> 建站 upsell（£590）只对已成订阅、信任建立的客户提，不进首触。
+> 免费建站（Growth £79/mo 内含）只对已成订阅、信任建立的客户提，不进首触。
 
 ---
 

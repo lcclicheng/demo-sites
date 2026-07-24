@@ -5,7 +5,7 @@
 > **双仓独立（2026-07-20 决策）**：线上落地页由独立仓 `lcclicheng/thefifthstar` 承载（已部署，curl 实测 HTTP 200）；本目录仅作 gh-pages-build 内部策略源，不部署、不污染公开 demo 仓。
 
 ## 双管齐下模型（2026-07-20 指令 C）
-- **轨 A · FifthStar（战略主线 / 冷启动楔子）**：用 940 家曼城独立餐厅线索（本地 CSV，不进公开仓），钩子=免费 3 条评价回复样例 → £29/月 Starter → £79/月 Pro → 信任后 upsell £590 建站 + £390/年 Care。城市饱和打法：Manchester→Birmingham→Leeds→Bristol→Liverpool→Edinburgh。
+- **轨 A · FifthStar（战略主线 / 冷启动楔子）**：用 940 家曼城独立餐厅线索（本地 CSV，不进公开仓），钩子=免费 3 条评价回复样例 → £29/月 Starter → £79/月 Growth（含免费建站 + 托管 + 更新 + 基础 SEO）。城市饱和打法：Manchester→Birmingham→Leeds→Bristol→Liverpool→Edinburgh。
 - **轨 B · 建站 demo（并行）**：`outreach/发送排期.md` 的 20 家 UK 商家，已建好 demo，按原排期发（Day1=5 家）；在双管齐下下作为建站 upsell 池 / 并行展示。
 
 ## 本目录资产（真实 FifthStar 资产）

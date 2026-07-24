@@ -2,7 +2,7 @@
 
 > AI / CI 复用。执行见 `playbooks/new-client.md`。
 
-- [ ] **Plan** — 套餐定档（A £590 / B £390/年 + 分行业微调），见 `docs/pricing.md`
+- [ ] **Plan** — 套餐定档（Free £0 / Starter £29/mo / Growth £79/mo 含免费建站），见 `docs/pricing.md` v1.0
 - [ ] **Template** — 选 `sectioned`（优先）或 8 套行业模板之一，见 `state/current-template.md`
 - [ ] **Intake** — `examples/<slug>.json` 必填 `template/slug/name` 齐全；真实商家含 `_source`，无编造 hours/rating
 - [ ] **PROJS** — slug 已写入 `build-clean.sh` 的 `PROJS`

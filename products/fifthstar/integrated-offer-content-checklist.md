@@ -72,7 +72,7 @@
 
 ## 非占位（已为真实内容，无需替换）
 
-- 定价：£590（建站）/ £390·yr（Care）/ £980（首年合计）—— 见行 418 / 536 / 547，真实定价。
+- 定价（纯订阅制 · 2026-07-24 起）：Free £0（评价草稿）/ Starter £29·mo / Growth £79·mo（含免费建站 + 托管 + 更新 + 基础 SEO）—— 见 `docs/pricing.md` / `metrics/pure-subscription-model.md`。旧 £590/£390/£980 已废弃。
 - 所有 CTA：`mailto:hello@thefifthstar.site?subject=My%20free%20review%20replies` —— 真实对外邮箱（域名已上线 thefifthstar.site，DNS+Email Routing 已配，见 domain-setup.md）。
 - 风险逆转：No signup / No card / No obligation / Replies within 48h —— 行 638–644，真实承诺。
 - 创始人第一人称文案（行 598–599）—— 真实 Ethan Li 口吻，非占位。

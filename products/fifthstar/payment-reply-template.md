@@ -1,11 +1,11 @@
 # FifthStar — Reply-Payment Copy Templates（回信付款话术 · 对外"咱们怎么付"口语版）
 
-> **用途**：商户回信后问"怎么付钱"时的话术模板。覆盖四种高频场景：① 周更服务签约（£29/月）② Track A 建站付款（£590）③ Track B 订阅+widget（£29/£79）④ "安全吗 / 收什么卡" reassurance。
+> **用途**：商户回信后问"怎么付钱"时的话术模板。覆盖四种高频场景：① 周更服务签约（£29/月）② Track A 建站付款（Growth £79/月 含免费建站）③ Track B 订阅+widget（£29/£79）④ "安全吗 / 收什么卡" reassurance。
 > **风格**：Ethan 口语、亲切、不官方。所有外联纯英文（§0 红线 + 邮件七标准）。落款 Ethan Li，从不提视频/电话（只文字交流）。
 > **核心支付事实（写前先背熟，别写错）**：
 > - 全走 **PayPal（中国贝宝账户）**，按 **GBP** 计；支持任意英国 Visa/Mastercard 或 PayPal 余额，**无需注册**。
 > - **卡号不经手我方**——我发账单邮件(invoice)，商户点链接用卡或 PayPal 付。
-> - 档位：£29/月 Starter · £79/月 Pro · £590 建站(一次性) · £390/年 Care。
+> - 档位：£29/月 Starter · £79/月 Growth（含免费建站 + 托管 + 更新 + 基础 SEO）。
 > - 风险逆转统一：**先做好、满意再付钱**——建站先看预览再发账单；订阅按月、随时取消下月不扣、不满意退。
 
 ---
@@ -40,7 +40,7 @@ lic28790@gmail.com · reply "STOP" to opt out
 
 ---
 
-## B. Track A 商户"想建站，怎么付？"（£590 建站）
+## B. Track A 商户"想建站，怎么付？"（Growth £79/月 含免费建站）
 
 **Subject:** Re: your 3 free reply drafts, [BusinessName]
 
@@ -49,11 +49,13 @@ Hi [BusinessName],
 
 For the site, here's how I keep it risk-free: I build the one-pager first —
 your hours, your location, a few photos, your story — and send you the link to
-look at. Only once you've seen it and like it do I send the £590 invoice. No
-deposit, no card details up front.
+look at. No upfront build fee — the site is free to build, it's part of the
+£79/month Growth plan. You only start the monthly once you've seen it and like
+it. No deposit, no card details up front.
 
 If you're not happy with the preview, we just don't proceed. You owe nothing.
-That's the whole "pay only when you're happy" promise, in writing.
+That's the whole "pay only when you're happy" promise, in writing — and the
+build itself never costs you a penny.
 
 Shall I put a first draft together this week? No pressure — the free reply
 drafts are still yours either way.
@@ -134,8 +136,8 @@ lic28790@gmail.com · reply "STOP" to opt out
 | 渠道 | PayPal（中国贝宝账户），GBP 计价 |
 | 卡 | 任意英国 Visa/Mastercard，或 PayPal 余额；无需注册 |
 | 卡号安全 | 我方不收卡号；账单邮件发，商户点链接付 |
-| 档位 | £29/月 · £79/月 · £590 建站(一次性) · £390/年 Care |
-| 退款/终止 | 订阅随时取消、下月不扣；建站先看预览再账单；不满意全额退 |
+| 档位 | £29/月 · £79/月（含免费建站 + 托管 + 更新 + 基础 SEO） |
+| 退款/终止 | 订阅随时取消、下月不扣；Growth 含的建站先看预览满意再启订阅；不满意全额退 |
 | 风险逆转 | "先做好、满意再付钱"——所有付费前都有已交付的可见成果 |
 
 **七标准自检（每封回信前）**：①去 AI 味 ②每家独有风格 ③日常口语化 ④专业化 ⑤不僵硬 ⑥抓眼球钩子 ⑦自有"咱们"(Ethan)口吻。

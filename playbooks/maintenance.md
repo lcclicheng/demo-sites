@@ -3,12 +3,12 @@
 > 执行型 SOP。详细见 `docs/onboarding.md` §5.9 + `docs/monitoring.md`。
 > 角色：backend（监控）+ architect（改动）。状态见 `state/current-build.md` / `current-deploy.md`。
 
-## A 档（首月内）
-- 客户任何修改由 owner **代改**（改 `examples/<slug>.json` → 重建上线），不限次数。
+## 首月内（Growth 含）
+- 客户任何修改由 owner **代改**（改 `examples/<slug>.json` → 重建上线），不限次数（含于 Growth £79/mo）。
 - 改完跑 `playbooks/deploy.md` 推送。
 
-## B 档（年费 £390/年）
-- 监控 + 优先响应 + 免费小改动额度（年）+ 域名续费协助 + 模板升级折扣。
+## Growth 档（£79/mo，含免费建站 + 托管 + 监控）
+- 监控 + 优先响应 + 免费小改动额度 + 域名续费协助 + 模板升级折扣（均含于 Growth 订阅）。
 - 域名续费：提前 30 天提醒客户；协助 DNS/SSL（见 `docs/custom-domain.md`）。
 
 ## 监控（自动化）
@@ -23,4 +23,4 @@
 ## 退出标准（每次改动）
 - [ ] 改动经 `validate-sites` 闸门
 - [ ] 部署成功且 health 绿
-- [ ] 客户确认（B 档计入年额度）
+- [ ] 客户确认（计入 Growth 订阅额度）

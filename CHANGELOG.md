@@ -2,6 +2,14 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-24 · **feat (战略) — 纯订阅制升级：免费建站 + 月订阅（取消一次性 £590 与 £390/年 Care）** — 据用户"国外订阅制是大头，能否直接免费建站、只收订阅"调研后拍板：
+  - **新套餐结构**：Free(£0 评价草稿钩子) → Starter(£29/mo 声誉管理) → Growth(£79/mo，含免费建站 + GitHub Pages 托管 + 内容更新 + 基础 SEO)。Track A 无站商家落 Growth；Track B 有站落 Starter，按需升 Growth。
+  - **取消**一次性 £590 建站费与 £390/年 Care；旧 C 档 £1,200 买断降为个案源码移交 off-ramp。
+  - **单位经济模型** `metrics/pure-subscription-model.md`（新增）：证明纯订阅可行——边际成本≈£0、CAC 回收≤1月、同等漏斗下靠 2–3× 转化率放大 1.9–2.9× 营收、LTV:CAC≥17:1。
+  - **文档同步**：`docs/pricing.md` 全改写为纯订阅三档 + 年付折扣(£790/年) + off-ramp；`FifthStar-Business-Operating-System-v1.0.md` §1/§3.1/§4.1/§8/§12 漏斗与双轨改 Free→£29→£79(含免费建站)；`AGENT-ONBOARDING.md` §4.1/§4.7/§8 同步；`metrics/{README,sales,retention}.md` 漏斗/LTV/管道同步；`products/fifthstar/dual-track-copy-framework.md` + `payment-reply-template.md` Track A 改免费建站+£79/mo；`outreach/p0x-followup-2026-07-24.md` 6 封 P0x 邮件改写。
+  - **调研证据**：英国 WaaS/订阅建站已成熟拥挤（CurrantWeb/Design Einstein/VisibleMe/Refrakt/Agile/Durable/Sitiamo 等），护城河在声誉/AI 回评而非网站本身。
+  - 纪律：本地 commit 不 push，待用户拍板是否上线（FifthStar 落地页 pricing 文案需手动 cp 同步 thefifthstar-live）。
+
 - 2026-07-24 · **fix — BOS 两项拍板：Care 定价统一 £390/yr + 修改自动化率承诺 50%** — 据用户指令修正本仓 BOS 落地遗留的两处待决项：
   - **Care 定价统一为 £390/年**：`FifthStar-Business-Operating-System-v1.0.md`(§3.1 漏斗 + 冲突提示)、`AGENT-ONBOARDING.md`(§4.1/§8 冲突提示)、`CHANGELOG.md`(BOS 条目)、`customer-system/renewal.md`、`customer-system/customer-profile.md` 中 `£149/mo` 全部更正为 `£390/yr`（与 `business/` 既有文档 + 项目记忆一致；首年合计 £980）。旧 £149/mo 废弃。
   - **修改自动化率承诺 50%**：`metrics/delivery.md` + `FifthStar-Business-Operating-System-v1.0.md` 将"修改"环节从基线 ~20% 的 50% 目标，升级为用户已批准的承诺目标（工具链=AI 改稿闭环，属 30% 系统优化交付项，见 feedback-loop.md）。
