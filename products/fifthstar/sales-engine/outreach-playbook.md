@@ -42,7 +42,7 @@ Ethan
 | **Day 7** | 网站/声誉建议 | 按 Track 给承接：A=建站楔子 / B=声誉订阅+widget |
 | **Day 14** | 最后提醒 | 软收尾，留门，带退订 |
 
-> Track A/B 分叉在 **Day 7** 显化（A 无官网→£79/mo Growth 免费建站；B 有官网→£29/£79 订阅 + 评价 widget）。
+> Track A/B 分叉在 **Day 7** 显化（A 无官网→£79/mo Growth Partner 免费建站；B 有官网→£39/£79/£149 订阅 + 评价 widget（Reputation / Growth Partner / Growth Plus））。
 
 ## 合规底线
 

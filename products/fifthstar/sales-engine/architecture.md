@@ -63,5 +63,5 @@ INPUT ── Lead Collector Layer ──┐
 
 ```
 日 50 leads → 筛 10 优质 → 发 10 封 → 回复率 10% → 周 5 回复 → 月 2–4 成交
-收入：2 × £79/mo Growth = £158/mo recurring + 续费，再规模化。
+收入：2 × £79/mo Growth Partner = £158/mo recurring + 续费（Reputation £39 / Growth Plus £149 按单客档位），再规模化。
 ```

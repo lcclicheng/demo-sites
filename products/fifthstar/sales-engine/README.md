@@ -17,7 +17,7 @@ AI寻找客户 → AI分析客户 → AI生成销售触达 → 客户回复 → 
 FifthStar OS
 ├── sales-engine       获客（本模块）
 ├── website-factory    交付（gh-pages-build 模板引擎）
-├── reputation-engine  服务（£29/£79 订阅 + 评价 widget）
+├── reputation-engine  服务（£39/£79/£149 订阅 + 评价 widget）
 └── client-system      管理（fifthstar-leads.json + 商家清单.md）
 ```
 
@@ -57,6 +57,6 @@ Website Factory 解决"如何低成本交付网站"；Sales Engine 解决"如何
 Top 10 / 天
   ↓  outreach-playbook（3 条免费评价回复）
   ↓  Day0/3/7/14 跟进 + A/B 分叉
-回复 → 月 3–5 客户（£79/mo Growth 含免费建站）
+回复 → 月 3–5 客户（£79/mo Growth Partner 含免费建站，部分升 £149 Growth Plus）
   ↓  Feedback Loop：成交数据回流优化评分
 ```

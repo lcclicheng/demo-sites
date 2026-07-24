@@ -61,7 +61,7 @@ gh-pages-build/
 | 客户接入 | `docs/onboarding.md` | 接入 SOP 8 步 / 交付后维护 / 第 7 天满意度 / 合规与注册地址 / 新增模板 SOP / slug 约定 |
 | SEO / 内容 | `docs/seo.md` | SEO 基础自动注入 / checklist / JSON-LD 结构化数据 / Blog（指向 blog-pipeline.md） |
 | Section Engine | `docs/section-engine.md` | theme-agnostic 12 section 组合器 + SectionedData 数据契约 |
-| 定价 | `docs/pricing.md` | 纯订阅：Free £0 / Starter £29/mo / Growth £79/mo（含免费建站） |
+| 定价 | `docs/pricing.md` v2 | 纯订阅：Free £0 / Reputation £39/mo / Growth Partner £79/mo（Most Popular，含免费建站）/ Growth Plus £149/mo（高阶） |
 | 监控 | `docs/monitoring.md` | health-check + UptimeRobot 看板 |
 | 路线图 | `docs/v2-roadmap.md` | 增量构建 / Playwright / 真实商家替换等 |
 

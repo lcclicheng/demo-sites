@@ -21,17 +21,17 @@
     "tier": {
       "type": "string",
       "description": "商业漏斗层（当前主套餐）。",
-      "enum": ["free", "starter", "pro", "site", "care"]
+      "enum": ["free", "reputation", "growth-partner", "growth-plus"]
     },
     "mrrGbp": {
       "type": "number",
       "minimum": 0,
-      "description": "月度经常性收入 GBP（starter=29 / pro=79 / care 月均=32.5 / site 一次性记 0 月常但记 oneTimeGbp）。"
+      "description": "月度经常性收入 GBP（reputation=39 / growth-partner=79 / growth-plus=149）。"
     },
     "oneTimeGbp": {
       "type": "number",
       "minimum": 0,
-      "description": "一次性收入 GBP（site=590 建站 + 首月改）。"
+      "description": "一次性收入 GBP。v2 纯订阅制无一次性建站费（站点含于 Growth Partner 订阅），通常记 0；仅记录非常规一次性（如源码移交 off-ramp）。"
     },
     "contractStart": { "type": "string", "format": "date", "description": "成交/合同开始日。" },
     "renewalDate": { "type": ["string", "null"], "format": "date", "description": "续费/年护到期日（care/订阅层必填）。" },
@@ -42,7 +42,7 @@
         "type": "object",
         "additionalProperties": true,
         "properties": {
-          "type": { "type": "string", "enum": ["website", "care", "reply-service", "review-widget", "seo"] },
+          "type": { "type": "string", "enum": ["website", "reply-service", "review-widget", "seo"] },
           "status": { "type": "string", "enum": ["active", "paused", "cancelled"] },
           "startedAt": { "type": "string", "format": "date" }
         }

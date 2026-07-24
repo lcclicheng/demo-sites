@@ -4,10 +4,10 @@
 > 角色：backend（监控）+ architect（改动）。状态见 `state/current-build.md` / `current-deploy.md`。
 
 ## 首月内（Growth 含）
-- 客户任何修改由 owner **代改**（改 `examples/<slug>.json` → 重建上线），不限次数（含于 Growth £79/mo）。
+- 客户任何修改由 owner **代改**（改 `examples/<slug>.json` → 重建上线），不限次数（含于 Growth Partner £79/mo，受 1 revision·月边界约束）。
 - 改完跑 `playbooks/deploy.md` 推送。
 
-## Growth 档（£79/mo，含免费建站 + 托管 + 监控）
+## Growth Partner 档（£79/mo，含免费建站 + 托管 + 监控，Most Popular）
 - 监控 + 优先响应 + 免费小改动额度 + 域名续费协助 + 模板升级折扣（均含于 Growth 订阅）。
 - 域名续费：提前 30 天提醒客户；协助 DNS/SSL（见 `docs/custom-domain.md`）。
 

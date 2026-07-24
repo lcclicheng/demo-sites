@@ -15,10 +15,10 @@
 ## 商业漏斗（单一事实源，用于所有指标换算）
 
 ```
-Free(£0 样例) → Starter(£29/mo) → Growth(£79/mo, 含免费建站 + 托管 + 更新 + 基础 SEO)
+Free(£0 样例) → Reputation(£39/mo) → Growth Partner(£79/mo, 含免费建站 + 托管 + 更新 + 基础 SEO) → Growth Plus(£149/mo, 高阶增长)
 ```
 
-> ✅ **定价已定为纯订阅制（2026-07-24）**：取消一次性 £590 建站与 £390/年 Care；改为 Free→£29→£79（Growth 含免费建站）。单位经济模型见 `metrics/pure-subscription-model.md`；定价细则见 `docs/pricing.md`。旧 `£149/mo` / `£590` / `£390/yr` 全部废弃。
+> ✅ **定价已定为纯订阅制 v2（2026-07-24 Pricing v2）**：取消一次性 £590 建站与 £390/年 Care；改为 Free→£39 Reputation→£79 Growth Partner→£149 Growth Plus（Growth Partner 含免费建站）。单位经济模型见 `metrics/pure-subscription-model.md` v2（含保守 Churn + NRR）；定价细则见 `docs/pricing.md` v2。Starter 改名 Reputation（£39，去小工具感），新增 Growth Plus（£149，接住高端溢出）。
 
 ## 当前真实基线（2026-07-23）
 

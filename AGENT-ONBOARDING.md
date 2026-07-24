@@ -110,9 +110,9 @@ thefifthstar-live/           （同级，独立仓克隆，线上事实源镜像
 ### 4.1 产品定义 + 双轨模型
 
 **产品**：FifthStar「声誉管家」——给英国本地实体商户（餐厅/咖啡/沙龙/律所/瑜伽/家装/酒店…）做 AI Google 评价回复 + 声誉监测 + 主动求评。
-**楔子→订阅 上升阶梯（纯订阅制 · 2026-07-24）**：`免费 3 条评价回复样例` → `£29/月 Starter` → `£79/月 Growth（含免费建站 + 托管 + 更新 + 基础 SEO）`。无站商家信任后自然落 Growth（站免费建，只付订阅）；不再收一次性 £590 建站费。
+**楔子→订阅 上升阶梯（纯订阅制 v2 · 2026-07-24 Pricing v2）**：`免费 3 条评价回复样例` → `£39/月 Reputation` → `£79/月 Growth Partner（含免费建站 + 托管 + 更新 + 基础 SEO，Most Popular）` → `£149/月 Growth Plus（高阶增长）`。无站商家信任后自然落 Growth Partner（站免费建，只付订阅）；不再收一次性 £590 建站费。Starter 改名 Reputation（£39，去小工具感），新增 Growth Plus（£149，接住高端溢出）。
 
-**双轨获客（2026-07-23 融合 v0.3，2026-07-24 订阅化）**：首触统一冷钩子 = **「免费 3 条 Google 评价回复草稿」**；A/B 分叉（A=无站→**£79/mo Growth 免费建站** / B=有站→£29/£79 订阅 + widget）移到**回信后**跟进阶段，不在首触区分。
+**双轨获客（2026-07-23 融合 v0.3，2026-07-24 订阅化 v2）**：首触统一冷钩子 = **「免费 3 条 Google 评价回复草稿」**；A/B 分叉（A=无站→**£79/mo Growth Partner 免费建站** / B=有站→£39 Reputation / £79 Growth Partner / £149 Growth Plus 订阅 + widget）移到**回信后**跟进阶段，不在首触区分。
 - **轨 A（无官网，建站楔子）**：痛点最强，Stage1 +30。
 - **轨 B（有官网，声誉订阅）**：痛点弱，Stage1 −20，走订阅 + 评价 widget。
 
@@ -204,11 +204,11 @@ git commit -m "..." && git push origin main   # 调用时 dangerouslyDisableSand
 
 - **统一数据模型（P0）**：`contracts/business-profile.schema.json` 为唯一事实源，收编旧三格式（examples JSON / lead-schema.md / fifthstar-leads.json），`DATA-MODEL.md` 映射表零破坏适配。纠正旧文档"有 lead_score 字段"错误（真实数据无）。
 - **Lead Memory（P0）**：`lead/_template/`(6 文件) + `init-lead.mjs`，为 6 家 P0x 热线索实例化 `lead/<slug>/` 长期资产（已被 gitignore 保护 PII）。
-- **KPI Metrics（P0）**：`metrics/{sales,delivery,retention,growth}.md` + README，定义商业漏斗 Free→£29→£79（含免费建站）与 Delivery Automation Ratio（资料90/生成95/SEO80/修改50）；`metrics/pure-subscription-model.md` 为单位经济模型。
+- **KPI Metrics（P0）**：`metrics/{sales,delivery,retention,growth}.md` + README，定义商业漏斗 Free→£39 Reputation→£79 Growth Partner→£149 Growth Plus（含免费建站）与 Delivery Automation Ratio（资料90/生成95/SEO80/修改50）；`metrics/pure-subscription-model.md` v2（含保守 Churn + NRR）为单位经济模型。
 - **Customer Lifecycle（P1）**：`customer-system/` 补齐成交→交付→续费→推荐→再获客中段（onboarding/renewal/referral/feedback-loop）。
 - **Client Portal / AI Learning Loop（P1 设计）**：零服务器静态仪表盘设计 + 五层记忆学习闭环，见 BOS §9/§10。
 
-> ✅ **定价已升级为纯订阅制（2026-07-24）**：取消一次性 £590 与 £390/年 Care；改为 Free(£0) → Starter(£29/mo) → Growth(£79/mo 含免费建站 + 托管 + 更新 + 基础 SEO)。详见 `docs/pricing.md` / `metrics/pure-subscription-model.md`。BOS 漏斗旧 `£149/mo` / `£590` / `£390/yr` 全部废弃。
+> ✅ **定价已升级为纯订阅制 v2（2026-07-24 Pricing v2）**：取消一次性 £590 与 £390/年 Care；改为 Free(£0) → Reputation(£39/mo) → Growth Partner(£79/mo 含免费建站 + 托管 + 更新 + 基础 SEO, Most Popular) → Growth Plus(£149/mo 高阶增长)。详见 `docs/pricing.md` v2 / `metrics/pure-subscription-model.md` v2。Starter 提价改名 Reputation（去小工具感），Growth 改名 Growth Partner（避"网站租赁"感），新增 Growth Plus（接住高端溢出）；免费建站交付边界 template-based/≤5 pages/1 revision·月/7 天；单位经济补保守 Churn + NRR。
 
 ## 5. 视觉系统（建站引擎，theme-agnostic）
 

@@ -3,7 +3,7 @@
 > 品牌：**Fifth Star** — "Lift your business to its fifth star." 发送身份用现有邮箱账号 **`lic28790@gmail.com`**（£0，无需新申请）；域名 thefifthstar.site 已购并上线（对外邮箱 **`hello@thefifthstar.site`**，Cloudflare Email Routing 转发到 Gmail）。
 > 框架严格沿用 `uk-biz-outreach` 的 **6 段转化结构**，钩子=免费 3 条评价回复样例。
 > 原则不变：钩子 100% 真实诚实、文案克制反网红、付费档放文末不施压、纯英文外联绝不混入中文。
-> 起步档：**£29/月 Starter**（已锁定）。默认垂直：独立餐厅（可整套换美发/美甲/牙医/trades）。
+> 起步档：**£39/月 Reputation**（v2 取代 Starter；对外讲声誉托管，不作"Free website — £79/mo"）。默认垂直：独立餐厅（可整套换美发/美甲/牙医/trades）。
 
 ---
 
@@ -70,7 +70,7 @@ Why it's worth a minute:
 • [The awkward/tricky ★] turned into a calm, "we'd love to put this right" note
 • About a minute a week instead of an hour you don't have
 
-If you'd rather not think about it at all, there's a £29/month option where
+If you'd rather not think about it at all, there's a £39/month option where
 I handle it every week. Either way, the drafts above are free — no catch.
 
 Cheers,
@@ -79,7 +79,7 @@ Fifth Star — lift your business to its fifth star
 lic28790@gmail.com · reply "STOP" to opt out
 ```
 
-**对照 6 段**：①来由真实（Google 评价数 + 真实评分，开场即具体观察）②服务定位（代写评价回复→商家发声→本地搜索更活）③已代做免费样例（降门槛，内联 3 条草稿）④所得 bullet（不像机器人 / 差评变冷静回应 / 每周一分钟）⑤市场对比（"多数老板没空回评→显得冷清吃亏"）⑥付费不伤钩子（£29 文末、免费样例白拿）。文案去 AI 味：口语化、用缩略（don't/you're/we'd）、短句错落、收尾 Cheers，不堆砌泛夸形容词与"tends to / genuinely strong"等 AI 痕迹。
+**对照 6 段**：①来由真实（Google 评价数 + 真实评分，开场即具体观察）②服务定位（代写评价回复→商家发声→本地搜索更活）③已代做免费样例（降门槛，内联 3 条草稿）④所得 bullet（不像机器人 / 差评变冷静回应 / 每周一分钟）⑤市场对比（"多数老板没空回评→显得冷清吃亏"）⑥付费不伤钩子（£39 文末、免费样例白拿）。文案去 AI 味：口语化、用缩略（don't/you're/we'd）、短句错落、收尾 Cheers，不堆砌泛夸形容词与"tends to / genuinely strong"等 AI 痕迹。
 
 > **样例交付方式（默认 = 正文内联，不托管）**：免费样例的 3 条草稿**直接粘贴进邮件正文**（见上方虚线块），不挂公开链接。原因：①评价是商家自己的公开 Google 文本，草稿由商家本人从自己 GBP 发布 —— 内联最稳、零托管风险、GDPR 安全；②完整 one-pager（`outreach/fifthstar-samples/<slug>.onepager.md`，含逐字评价 + 草稿）仅作**内部构建产物**，发送前可一并作为附件/pdf 备份，但**不公开部署**。生成器双编码 bug 已修（`generate_sample.py` 的 `normalize_drafts()`），批量跑已验证稳定。
 
@@ -114,11 +114,11 @@ just reply "yes". — [YourName], Fifth Star
 
 ## 4. 付费不伤钩子句（第⑥段，多档备选）
 
-- 轻：「If you'd like this done for you every week, there's a £29/month plan — no pressure.」
-- 中：「Most owners move to the £29/mo plan once they see replies landing weekly; the free drafts are yours either way.」
+- 轻：「If you'd like this done for you every week, there's a £39/month plan — no pressure.」
+- 中：「Most owners move to the £39/mo plan once they see replies landing weekly; the free drafts are yours either way.」
 - 重（已信任后）：「When you're ready, the £79/mo plan adds a dashboard + weekly report + review-request links — and we can look at a proper website while we're at it.」
 
-> 免费建站（Growth £79/mo 内含）只对已成订阅、信任建立的客户提，不进首触。
+> 免费建站（Growth Partner £79/mo 内含）只对已成订阅、信任建立的客户提，不进首触。
 
 ---
 
@@ -126,7 +126,7 @@ just reply "yes". — [YourName], Fifth Star
 
 每家一行：商家名 · 城市 · 渠道(邮箱/GMB/FB) · 评分/评价数 · 样例链接 · 状态 ☐待发/☐已发/☐已回/☐付费/☐死信。
 跟进节奏：**第 4 天**轻问样例是否收到 → **第 10 天**问要不要每周自动版 → **第 14 天**最后轻触。
-整城指标：扫完统计 发送数 / 打开 / 回复 / 免费样例领取 / £29 转化，作为下一城基准。
+整城指标：扫完统计 发送数 / 打开 / 回复 / 免费样例领取 / £39 转化，作为下一城基准。
 
 > 合规红线：引用的评分/评价必须真实；GMB/FB 不自动化批量发；邮件带 `List-Unsubscribe` 退订头（脚本已加）；不虚构商户授权/邮箱。
 

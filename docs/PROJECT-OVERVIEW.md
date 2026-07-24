@@ -12,12 +12,12 @@
 | 维度 | 结论 |
 |---|---|
 | 你是谁 | 一人公司 / 独立开发者 **Ethan Li**，面向**英国小商家**的高端建站服务 |
-| 卖什么 | 高端静态站 + 部署 + 交付标准化包 + 年维护；**不卖客户自助后台**（2026-07-16 起取消 Decap 自助交付）；**外加 FifthStar 声誉管家订阅（£0/£29/£79 月）作冷启动楔子**，先拿客户再 upsell 建站 |
+| 卖什么 | 高端静态站 + 部署 + 交付标准化包 + 年维护；**不卖客户自助后台**（2026-07-16 起取消 Decap 自助交付）；**外加 FifthStar 声誉管家订阅（£0/£39/£79/£149 月）作冷启动楔子**，先拿客户再 upsell 建站 |
 | 技术栈 | Vite + React 18 + TypeScript + Tailwind CSS v3 + GitHub Pages（零服务器成本） |
 | 核心引擎 | **Section Engine**（theme-agnostic 通用 section 库 + 组合器）+ 8 套行业模板（真实商家垂直站 / 历史样板） |
 | 站点现状 | **45 个线上站点**（demo 站，主题自适应招牌 motif 全覆盖；早期 v1.1.0 为 20 站，见 §2.4） |
 | 事实源 | `build-clean.sh` 的 `PROJS` 数组（唯一权威，校验闸门与监控都读它） |
-| 怎么收费 | **纯订阅：Free £0（评价草稿）/ Starter £29/mo（声誉管理）/ Growth £79/mo（含免费建站 + 托管 + 更新 + 基础 SEO）**；详见 `docs/pricing.md` v1.0（2026-07-24 取消一次性 £590/£390） |
+| 怎么收费 | **纯订阅 v2：Free £0（评价草稿）/ Reputation £39/mo（声誉管理）/ Growth Partner £79/mo（含免费建站 + 托管 + 更新 + 基础 SEO，Most Popular）/ Growth Plus £149/mo（高阶）**；详见 `docs/pricing.md` v2（2026-07-24 Pricing v2：Starter 改名 Reputation、新增 Growth Plus；取消一次性 £590/£390） |
 | 部署 | SSH（443 通道）→ push `main` → GitHub Actions 自动「校验→构建→组装→部署」 |
 | 监控 | 自建 health-check（每天 1 次，失败开 Issue）+ UptimeRobot（5 分钟，你手动加），共 **22 监测点** |
 | 已收录风险 | 真实商家站展示占位/臆测数据（H1 高危，已加免责横幅过渡）、署名缺失（H3 已修）等，详见 §10 |
@@ -29,7 +29,7 @@
 ### 1.1 定位
 你一个人运营的高端建站服务，面向**英国小商家**：餐饮 / 咖啡 / 沙龙 / 瑜伽 / 律所 / 甜品 / 家装维修 / 精品酒店等。你**替客户填内容**（客户不懂开发），用模板引擎一键生成站点并部署到 GitHub Pages，零服务器成本。
 
-**双产品线（2026-07-20 并入 FifthStar 声誉管家）**：除建站主业务（A/B/C）外，你同时运营 **FifthStar 声誉管家**——用 AI 帮商户回复 Google 评价、做声誉监测，作为**零客户冷启动楔子**（£0 样例 / £29·£79 月订阅）。先用低门槛评价服务拿下客户与月现金流、建立信任，再 upsell 到建站；两条线共用同一套外联 / 部署 / 定价机器，不重造。详见 `products/fifthstar/`。
+**双产品线（2026-07-20 并入 FifthStar 声誉管家）**：除建站主业务（A/B/C）外，你同时运营 **FifthStar 声誉管家**——用 AI 帮商户回复 Google 评价、做声誉监测，作为**零客户冷启动楔子**（£0 样例 / £39·£79·£149 月订阅）。先用低门槛评价服务拿下客户与月现金流、建立信任，再 upsell 到建站；两条线共用同一套外联 / 部署 / 定价机器，不重造。详见 `products/fifthstar/`。
 
 ### 1.2 形态
 - **一套 Section Engine 模板引擎**（`sectioned` 组合器 + theme-agnostic 通用 section 库）+ **8 套行业模板**（`restaurant/coffee/salon/dessert/yoga/law/hotel/trades`，保留作真实商家垂直站 + 历史样板）。
@@ -210,7 +210,7 @@ git add -u && git commit -m "..." && git push origin main   # 走 SSH，无需 P
 
 > **差价值（2026-07-16 重构）**：取消 Decap CMS 自助后台，改为「首月你代改 + 之后走年度呵护」——客户零后台学习成本，你也省去为每个客户配 OAuth / 培训 / 维护后台的隐性负担；首月后改动自然导向 B 档续费，黏性更强。
 
-#### B — 年度呵护（年费）**£390 / 年**（已归档 · 纯订阅制并入 Growth £79/mo）
+#### B — 年度呵护（年费）**£390 / 年**（已归档 · 纯订阅制并入 Growth Partner £79/mo）
 在 A 基础上按年续费：
 - 站点健康监控（UptimeRobot + GitHub Issues 看板，异常主动告警）
 - **优先响应**：支持请求 48 小时内响应（SLA 见支持条款）
@@ -218,11 +218,11 @@ git add -u && git commit -m "..." && git push origin main   # 走 SSH，无需 P
 - 年度域名 / DNS 续费协助（若用自定义域名）
 - 模板小幅升级享折扣
 
-> **（历史参考）客户旧首年总支出 = £590 + £390 = £980**。纯订阅制下为 £79/mo = £948/年，详见 `docs/pricing.md` v1.0。对比市场 freelancer（一次性 £1,000–£3,000 + 维护 £300–£1,200/年），总价更低、你利润更好——静态站维护极轻，Growth 近乎纯毛利。
+> **（历史参考）客户旧首年总支出 = £590 + £390 = £980**。纯订阅制 v2 下为 £79/mo Growth Partner = £948/年（或 £39 Reputation / £149 Growth Plus），详见 `docs/pricing.md` v2。对比市场 freelancer（一次性 £1,000–£3,000 + 维护 £300–£1,200/年），总价更低、你利润更好——静态站维护极轻，Growth Partner 近乎纯毛利。
 > **首月后改动归口**：A 档「首月无忧改版」结束后，任何内容修改走 B 档（或单次付费改版），**不再提供客户自助后台**——所有改动由你经 GitHub Pages 重建上线，可控、可回滚。
 
 ### 6.3 分行业定价调整（按层次微调）
-（以下分行业三档微调已于 2026-07-24 纯订阅制后**归档**，改为单一 Free/Starter/Growth 结构，见 `docs/pricing.md` v1.0；保留作历史参考）：
+（以下分行业三档微调已于 2026-07-24 纯订阅制后**归档**，改为四档 Free/Reputation/Growth Partner/Growth Plus 结构，见 `docs/pricing.md` v2；保留作历史参考）：
 
 | 档位 | 行业（`template`） | A 一次性 | B 年费 | 首年合计 |
 |---|---|---|---|---|
@@ -251,12 +251,13 @@ git add -u && git commit -m "..." && git push origin main   # 走 SSH，无需 P
 | 档 | 价格 | 角色 |
 |---|---|---|
 | 免费样例 | £0 | 冷外联钩子（3 条评价 AI 回复稿） |
-| Starter | **£29/月** | 低门槛入门、建现金流 |
-| Pro | **£79/月** | 主力利润档（仪表盘 + 周报 + 求评 + SEO 体检） |
-| （建站已含于 Growth） | 免费建（AI 模板 + GitHub Pages） | 无站客户自然落 Growth |
-| （Care/AI 接待已并入 Growth） | — | 含于 £79/mo |
+| Reputation | **£39/月** | 低门槛入门、建现金流（Track B 主落） |
+| Growth Partner | **£79/月** ★ Most Popular | 主力利润档（含免费建站 + 仪表盘 + 周报 + 求评 + SEO 体检） |
+| Growth Plus | **£149/月** | 高阶增长档（SEO 内容 + 更多更新 + 优先支持） |
+| （建站已含于 Growth Partner） | 免费建（AI 模板 + GitHub Pages，≤5 页 / 7 天交付） | 无站客户自然落 Growth Partner |
+| （Care/AI 接待已并入 Growth Partner） | — | 含于 £79/mo |
 
-**阶梯（纯订阅制 · 2026-07-24）**：免费样例 → £29/月 Starter（信任+现金流）→ £79/月 Growth（含免费建站，无站客户顺理成章落此档）。当前资产并入 + 文档同步；落地页 pricing 文案需手动 cp 同步 thefifthstar-live。
+**阶梯（纯订阅制 v2 · 2026-07-24 Pricing v2）**：免费样例 → £39/月 Reputation（信任+现金流）→ £79/月 Growth Partner（含免费建站，无站客户顺理成章落此档，Most Popular）→ £149/月 Growth Plus（高阶溢出）。当前资产并入 + 文档同步；落地页 pricing 文案需手动 cp 同步 thefifthstar-live。
 
 ---
 
@@ -291,7 +292,7 @@ git add -u && git commit -m "..." && git push origin main   # 走 SSH，无需 P
 
 - 自建层做**内容级校验**（不只 200，还查挂载点/title 真渲染）+ 用 Issue 留痕成「看板」（筛 `label:health-alert`，空=全绿）。
 - 监测点清单（取自 `PROJS`）：门户 + CMS admin + **45 站** = **47 个监测点**（见 `docs/monitoring.md` 可直接复制的清单）；或跑 `UPTIMEROBOT_API_KEY=urXX node setup-uptimerobot.mjs` 批量创建（幂等）。
-- **与定价挂钩**：Growth £79/mo（含免费建站 + 托管 + 监控）已含监控；交付 Growth 客户时把其站点加进 UptimeRobot，可选纳入公开 Status Page 写进交付包。
+- **与定价挂钩**：Growth Partner £79/mo（含免费建站 + 托管 + 监控）已含监控；交付 Growth Partner 客户时把其站点加进 UptimeRobot，可选纳入公开 Status Page 写进交付包。
 
 ---
 
@@ -395,4 +396,4 @@ UPTIMEROBOT_API_KEY=urXX node setup-uptimerobot.mjs
 
 > 本整合版与 `docs/workflow.md`（系统总文档）同步至 v1.1.0；任何实现细节以 workflow.md 及各专项文档为准。
 
-- **2026-07-20 · 产品融合（FifthStar）** — 把昨晚立项的「UK 商户 AI 声誉管家」作为**第二条产品线（冷启动楔子）**并入本项目，品牌定为 **FifthStar**（独立仓 `thefifthstar` 承载线上落地页，curl 实测 200）：`products/fifthstar/` 资产就位（含真实外联模板 / 样例生成 SOP / 生成器）；`docs/pricing.md` 新增「声誉管家订阅」档（£0/£29/£79 月）；`business/product-matrix.md` 新增「双产品线」框架；`business/README.md` + 本文件定位更新为「建站 + 声誉管家」一体业务。当前按**双管齐下 / 双轨并行**（FifthStar 先于建站）：建站轨照 `outreach/发送排期.md` 发，FifthStar 轨用 940 曼城线索另起。品牌 / 垂直+城市 / 首档已定（FifthStar / 曼城独立餐厅 / 免费+£29）。详见 `CHANGELOG.md`。
+- **2026-07-20 · 产品融合（FifthStar）** — 把昨晚立项的「UK 商户 AI 声誉管家」作为**第二条产品线（冷启动楔子）**并入本项目，品牌定为 **FifthStar**（独立仓 `thefifthstar` 承载线上落地页，curl 实测 200）：`products/fifthstar/` 资产就位（含真实外联模板 / 样例生成 SOP / 生成器）；`docs/pricing.md` 新增「声誉管家订阅」档（£0/£39/£79/£149 月）；`business/product-matrix.md` 新增「双产品线」框架；`business/README.md` + 本文件定位更新为「建站 + 声誉管家」一体业务。当前按**双管齐下 / 双轨并行**（FifthStar 先于建站）：建站轨照 `outreach/发送排期.md` 发，FifthStar 轨用 940 曼城线索另起。品牌 / 垂直+城市 / 首档已定（FifthStar / 曼城独立餐厅 / 免费+£39）。详见 `CHANGELOG.md`。

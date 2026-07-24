@@ -2,6 +2,14 @@
 
 > 自动化维护（state-sync 回写），不抄进 docs（Fact only once）。
 
+- 2026-07-24 · **feat (战略优化) — Pricing v2：四档重新定位 + 交付边界 + 保守单位经济** — 据用户审查纯订阅制 v1（8.5/10）后"调整约 20% 非推翻"指令：
+  - **四档重构**：Free(£0) → **Reputation £39/mo**（原 Starter £29 提价，去"小工具感"）→ **Growth Partner £79/mo**（原 Growth 改名，避"网站租赁"感，标 Most Popular，含免费建站+托管+更新+基础SEO）→ **Growth Plus £149/mo**（新增高阶档，SEO 内容+更多更新+优先支持，接住高端溢出）。
+  - **免费建站交付边界（时间护城河）**：template-based / ≤5 pages / 1 revision·月 / 7 天标准交付，超出收费（防一人公司时间被吃）。
+  - **单位经济 v2（保守）** `metrics/pure-subscription-model.md`：Churn 100→70→50→40（M6/M12/M18），LTV 修正为 **£800–1,000**（非 £79×18）；核心从"价格怎么定"转向 **NRR / 客户成功**（Reputation→Growth Partner→Growth Plus 扩档 + 低 churn > 100%）。
+  - **落地页 repositioning** `products/fifthstar/integrated-offer.html`：hero 改 "Your reputation, website and local growth — managed in one place"；pricing 区去 £590/£390 旧模型，升级为 v2 四档 + "Most Popular" 标注 + 交付边界注；**不讲** "Free website — £79/mo"，改 "Build your online presence without upfront website costs"。
+  - **文档全同步**：`docs/pricing.md`(v2 全改写) / BOS §1·§3.1·§4.1·§8·§12 / `AGENT-ONBOARDING.md` §4.1·§4.7·§8 / `metrics/{README,sales,retention}.md` / `products/fifthstar/{strategy,dual-track-copy-framework,payment-reply-template,outreach-template,README,integrated-offer-content-checklist}.md` / `sales-engine/*.md` / `docs/{index,real-merchant-outreach,monitoring,PROJECT-OVERVIEW}.md` + `checklists/`+`playbooks/` / `outreach/p0x-followup-2026-07-24.md`(gitignored)。
+  - 评分预期 8.5→9.3/10。纪律：本地改未 commit 未 push，待用户拍板是否上线（含双仓 push + 手动 cp 到 thefifthstar-live）。
+
 - 2026-07-24 · **feat (战略) — 纯订阅制升级：免费建站 + 月订阅（取消一次性 £590 与 £390/年 Care）** — 据用户"国外订阅制是大头，能否直接免费建站、只收订阅"调研后拍板：
   - **新套餐结构**：Free(£0 评价草稿钩子) → Starter(£29/mo 声誉管理) → Growth(£79/mo，含免费建站 + GitHub Pages 托管 + 内容更新 + 基础 SEO)。Track A 无站商家落 Growth；Track B 有站落 Starter，按需升 Growth。
   - **取消**一次性 £590 建站费与 £390/年 Care；旧 C 档 £1,200 买断降为个案源码移交 off-ramp。

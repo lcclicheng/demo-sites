@@ -98,7 +98,7 @@
 > 该脚本只创建监测点，不含 Alert Contacts 绑定——首次仍建议在 UI 里绑邮箱 / Telegram 才能收到告警推送。
 
 ### 与定价挂钩
-- `docs/pricing.md` 的 **Growth £79/mo（含免费建站 + 托管 + 监控）** 已含“站点健康监控 + 异常主动告警”。
+- `docs/pricing.md` v2 的 **Growth Partner £79/mo（含免费建站 + 托管 + 监控）** 已含“站点健康监控 + 异常主动告警”。
 - 交付 B 档客户时：把该客户站点 URL 加进 UptimeRobot，并（可选）把其纳入一个公开 Status Page 链接写进交付包。
 
 ---

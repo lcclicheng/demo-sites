@@ -6,7 +6,7 @@
 > 1. **首触冷钩子统一**：不再分 A/B 两套首触 Subject/开场。冷启动钩子对全体商户统一为「免费 3 条 Google 评价回复草稿」（内联正文，不托管、GDPR 安全）。
 > 2. **A/B 分叉后移**：有无官网的分叉（A=无站→建站楔子；B=有站→声誉订阅+widget）从首触移到**回信后 / 跟进阶段**（§5、§7）。首触不再提建站/订阅差异。
 > 3. **统一首触模板（§4）**：合并原 §4/§5 首触为一份，开场按 track 仅差一句话（有站=网站观察；无站=无站事实），其余 6 段共享。
-> 4. **跟进 A/B 分叉（§5 重构）**：原 §5 首触模板改为「回信后分叉话术」——Track A 信任后推 £79/mo Growth（免费建站）；Track B 推 £29/£79 订阅+widget。
+> 4. **跟进 A/B 分叉（§5 重构）**：原 §5 首触模板改为「回信后分叉话术」——Track A 信任后推 £79/mo Growth Partner（免费建站）；Track B 推 £39/£79/£149 订阅+widget（Reputation / Growth Partner / Growth Plus 按需求升档）。
 > 5. **线索打标保留作跟进路由（§1）**：`has_website` 等字段仍导出，但仅用于回信后的分叉与追踪，不再决定首触用哪套模板。
 > 6. **获客更 lean**：单钩子 + 单路由（has-site?→A/B），同批商户首触文案同源、合规更稳、A/B 转化率可在跟进阶段干净对比。
 
@@ -45,7 +45,7 @@
           有站 (has-site=Y)        无站 (has-site=N)
           ── Track B ──            ── Track A ──
           声誉引擎独立订阅           建站楔子（先信任，后 upsell）
-          £29→£79/月 + widget       £79/月 Growth（含免费建站 + 托管 + 更新 + SEO）
+          £39→£79/月 + widget       £79/月 Growth Partner（含免费建站 + 托管 + 更新 + SEO）
           站点一动不动               "满意再付钱"先建站
 ```
 
@@ -58,14 +58,14 @@
 | 有无站差异何时出现 | 首触即分 | **回信后 / 跟进阶段才分**（§5、§7） |
 | 线索 `has_website` 字段用途 | 决定首触用哪套模板 | 仅作**跟进路由 + 追踪**，不影响首触 |
 | 获客效率 | 两套模板并行维护、A/B 打开率互相干扰 | 单钩子更 lean；A/B 转化率在跟进阶段干净对比 |
-| 产品层 | 单品牌 FifthStar、阶梯 免费→£29→£79（含免费建站） | 同左（2026-07-24 升级为纯订阅制，取消 £590/£390） |
+| 产品层 | 单品牌 FifthStar、四档阶梯 免费→£39 Reputation→£79 Growth Partner（含免费建站，Most Popular）→£149 Growth Plus（高阶） | 同左（2026-07-24 Pricing v2：Starter 改名 Reputation £39、Growth 改名 Growth Partner £79、新增 Growth Plus £149；取消 £590/£390） |
 
 **统一地基（一套资产复用，双 track 共享）**
 
 | 共同项 | 说明 |
 |---|---|
 | 冷启动钩子 | 免费 3 条评价 AI 回复草稿（内联正文，不托管、GDPR 安全） |
-| 起步档 | £29/month Starter → £79/month Growth（含免费建站 + 托管 + 更新 + 基础 SEO） |
+| 起步档 | £39/month Reputation → £79/month Growth Partner（含免费建站 + 托管 + 更新 + 基础 SEO） |
 | 城市饱和打法 | 1 垂直 + 1 城扫透再换（Manchester→Birmingham→Leeds→Bristol→Liverpool→Edinburgh） |
 | 6 段转化结构 | ①来由真实 ②痛点定位 ③已代做免费样例 ④所得 bullet ⑤市场对比 ⑥付费不伤钩子（首触共享，§3） |
 | 合规红线 | §0 全部；纯英文外联绝不混入中文；符合邮件七标准 |
@@ -121,13 +121,13 @@
 | ③已代做免费样例 | 降门槛，内联 3 条草稿 | 3 条评价回复稿（含差评），粘贴即用 |
 | ④所得 bullet | 价值清单 | 像你 / 差评转机 / 每周一分钟 |
 | ⑤市场对比 | 同城竞品压力 | 「同城对手条条回评/挂了 widget，你最好的一条评价埋在 Google 里」 |
-| ⑥付费不伤钩子 | 文末轻推，免费白拿 | £29/month；免费草稿白拿；**不提建站/订阅差异**（分叉留跟进） |
+| ⑥付费不伤钩子 | 文末轻推，免费白拿 | £39/month；免费草稿白拿；**不提建站/订阅差异**（分叉留跟进） |
 
 **跟进分叉（回信后，按 track，见 §5 / §7）**
 
 | 阶段 | Track A（无站） | Track B（有站） |
 |---|---|---|
-| 回信后首推 | 先信任；后续推 **£79/mo Growth（免费建站，"满意再付钱"先建站、不收一次性费）** | 推 £29/£79 订阅 + 官网 review widget 代码片段（站点不动） |
+| 回信后首推 | 先信任；后续推 **£79/mo Growth Partner（免费建站，"满意再付钱"先建站、不收一次性费）** | 推 £39/£79 订阅 + 官网 review widget 代码片段（站点不动） |
 | 话术情绪 | 帮你"补上缺失的门面" | 帮你"守住已有门面的口碑漏洞" |
 
 ---
@@ -181,7 +181,7 @@ Why it's worth a minute:
 
 If you'd like to see the kind of thing I do, there's a showcase at https://thefifthstar.site.
 
-If you'd rather not think about it at all, there's a £29/month option where I handle
+If you'd rather not think about it at all, there's a £39/month option where I handle
 replies every week. Either way, the drafts above are free — no catch.
 
 [standard P.S.]
@@ -219,11 +219,11 @@ tricky one). Happy to send them over, no strings — just reply "yes".
 
 ### 4.4 付费不伤钩子句（第⑥段 · 首触统一，双 track 相同）
 
-> 首触**不区分** A/B —— 都只轻推 £29/month 回评服务。建站 vs 订阅的分叉在回信后（§5）。
+> 首触**不区分** A/B —— 都只轻推 £39/month 回评服务。建站 vs 订阅的分叉在回信后（§5）。
 
-- 轻：「If you'd like this done for you every week, there's a £29/month plan — no pressure.」
-- 中：「Most owners move to the £29/month plan once they see replies landing weekly; the free drafts are yours either way.」
-- > 免费建站（Growth £79/mo 内含）与声誉订阅（£79）**都不进首触**；只在回信后按 track 分叉推（§5）。
+- 轻：「If you'd like this done for you every week, there's a £39/month plan — no pressure.」
+- 中：「Most owners move to the £39/month plan once they see replies landing weekly; the free drafts are yours either way.」
+- > 免费建站（Growth Partner £79/mo 内含）与声誉订阅（£79）**都不进首触**；只在回信后按 track 分叉推（§5）。
 
 ---
 
@@ -231,20 +231,20 @@ tricky one). Happy to send them over, no strings — just reply "yes".
 
 > 原 §5 首触模板整体后移为本节。逻辑：**商户先被统一钩子（免费样例）转化、建立信任，回信后再按 has-site 分叉**——无站推建站楔子，有站推声誉订阅+widget。全程不强行跨线。
 
-### 5.1 Track A 跟进 · 建站楔子（无站 → £79/mo Growth 免费建站）
+### 5.1 Track A 跟进 · 建站楔子（无站 → £79/mo Growth Partner 免费建站）
 
 > 信任建立后推。话术核心："你没站，搜索只有地图没落地页；我先把站免费建好你满意再启订阅——没有一次性建站费，你只按月付 £79"。
 
 - 轻（回信首推）：「Since you've no site yet — I can put up a simple one-pager (hours, location, photos, your story) and send you the link. Free build, no card — it's yours to look at. You only start the £79/month once you're happy with it.」
-- 中（信任后）：「When you're ready, the £79/month Growth plan covers the site build + hosting on GitHub Pages + updates + basic SEO — all included, nothing extra. The build goes up first; you only pay the monthly once you've seen and liked the preview.」
-- > 建站只在已成订阅 / 已信任的客户提，且作为 Growth 订阅内含项（不再收 £590 一次性），不进首触（§4.4）。
+- 中（信任后）：「When you're ready, the £79/month Growth Partner plan covers the site build + hosting on GitHub Pages + updates + basic SEO — all included, nothing extra. The build goes up first; you only pay the monthly once you've seen and liked the preview.」
+- > 建站只在已成订阅 / 已信任的客户提，且作为 Growth Partner 订阅内含项（不再收 £590 一次性），不进首触（§4.4）。
 
-### 5.2 Track B 跟进 · 声誉订阅 + widget（有站 → £29/£79 + 代码片段）
+### 5.2 Track B 跟进 · 声誉订阅 + widget（有站 → £39/£79 + 代码片段）
 
 > 站点一动不动，只跑声誉引擎 + 给一段 widget 代码。
 
-- 轻：「If you'd like this run for you every week, there's a £29/month plan — your site stays exactly as it is. No pressure.」
-- 中：「Most owners move to the £29/month plan once they see replies landing weekly; the free drafts are yours either way. I'll also drop a review widget snippet into your site — one copy-paste, no rebuild.」
+- 轻：「If you'd like this run for you every week, there's a £39/month plan — your site stays exactly as it is. No pressure.」
+- 中：「Most owners move to the £39/month plan once they see replies landing weekly; the free drafts are yours either way. I'll also drop a review widget snippet into your site — one copy-paste, no rebuild.」
 - 重（已信任后）：「When you're ready, the £79/month plan adds a dashboard + weekly report + review-request links + the widget kept live. （And if one day you fancy a site refresh, we can talk — but that's miles off, no rush.）」
 - > Track B **不把建站当 upsell 主推**；仅重档末尾一句软钩，绝不强推。
 
@@ -271,9 +271,9 @@ tricky one). Happy to send them over, no strings — just reply "yes".
   > "P.S. Even if you ever want more than this free one — I do the work first and you only pay once you're happy with it. Never any money up front."
 - **终止/退款条款（写进服务条款 + 首触/定价可见处）**：「任何时候可取消，下月不扣；已付当月若不满意，全额退。」降低纠纷，契合「只文字/文件交流、不视频」。
 - **叙事页 Hero 承诺条**：✓ "I do the work first — you only pay once you're happy with it."
-- **£29 卡片 li（共用）**："Pay only when you're happy."
+- **£39 卡片 li（共用）**："Pay only when you're happy."
 - **风险逆转末条**："Replies drafted first — pay only when you're happy."
-- **范围**：承诺覆盖全部付费项（回评订阅"先回评满意再付"；Growth 含的免费建站"先建站满意再启订阅"，不收一次性建站费）；Track A 的建站作为 Growth 订阅内含项在信任后阶段体现（§5.1），不进首触。
+- **范围**：承诺覆盖全部付费项（回评订阅"先回评满意再付"；Growth Partner 含的免费建站"先建站满意再启订阅"，不收一次性建站费）；Track A 的建站作为 Growth Partner 订阅内含项在信任后阶段体现（§5.1），不进首触。
 
 ---
 
@@ -317,12 +317,12 @@ weeks, before we even talk about the ranking nudge.
 
 [分叉 · 按 track]
   • Track A（无站）:
-    If you'd rather not do it yourself every week, the £29/month plan has me
+    If you'd rather not do it yourself every week, the £39/month plan has me
     handle replies. And since you've no site yet — I can put up a simple
     one-pager and send you the link; pay only when you're happy with it.
     No contract, cancel anytime.
   • Track B（有站）:
-    If you'd rather not do it yourself every week, the £29/month plan has me
+    If you'd rather not do it yourself every week, the £39/month plan has me
     handle replies and drop a review widget on your site. Your site stays
     exactly as it is. No contract, cancel anytime, pay only when you're happy.
 
@@ -385,8 +385,8 @@ lic28790@gmail.com · reply "STOP" to opt out
 | 打开率 | 40–60% | 低则 Subject/发件名问题（A/B 应接近，因钩子同） |
 | 回复率 | 10–20% | 低则钩子/观察不真 |
 | 免费样例领取率 | 回复者中 ≥60% | 衡量钩子价值 |
-| £29 转化率 | 回复者中 5–10%（全量 1–2%） | 首触后统一推 £29；A/B 订阅 vs 建站分别在跟进阶段统计 |
-| A/B 分叉付费率 | 回信 A 中 Growth(免费建站)转化 / 回信 B 中订阅转化 | **v0.3 核心对比**：哪条线更顺 |
+| £39 转化率 | 回复者中 5–10%（全量 1–2%） | 首触后统一推 £39；A/B 订阅 vs 建站分别在跟进阶段统计 |
+| A/B 分叉付费率 | 回信 A 中 Growth Partner(免费建站)转化 / 回信 B 中订阅转化 | **v0.3 核心对比**：哪条线更顺 |
 | 90 天续费率 | ≥70% | 留存健康度 |
 | spam / 退订率 | <0.1% / <2% | 超则降速（§0 #3） |
 
@@ -429,7 +429,7 @@ lic28790@gmail.com · reply "STOP" to opt out
 | #1 分线 B 话术 AI 味 | §4.1 统一首触吸收「去 AI 味」写法 + §5.3 观察模板库（人工填） |
 | #2 合规需强化 | §0 合规红线专章（频率上限 / 退款终止 / GDPR / Google widget 政策） |
 | #3 A/B 分流细化 | §1 打标字段保留，但**用途改为跟进路由 + 追踪**，不再决定首触 |
-| #4 小问题 | 统一 £29/month 写法；统一 P.S. 标准版（§6）；强化 Trades 钩子 + 增瑜伽/家装 |
+| #4 小问题 | 统一 £39/month 写法；统一 P.S. 标准版（§6）；强化 Trades 钩子 + 增瑜伽/家装 |
 | #5 缺失内容 | §7 跟进模板（day4/10/14，含 A/B 分叉）；§8 案例插入位；§9 KPI 目标值；§10 widget SOP |
 | 后续·合规优先 | §0 置于文档最前，第一优先级 |
 | 后续·技术落地 | `send-outreach.mjs` 改 `buildBodyUnified()` 统一首触，track 仅驱动跟进分叉（§5/§7） |

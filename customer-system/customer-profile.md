@@ -10,9 +10,9 @@
   "customerId": "CUS-P01",              // CUS-<businessId>
   "businessId": "P01",                   // FK → business-profile.id / lead/<slug>/profile.json
   "name": "McEwan Fraser Legal",
-  "tier": "site",                        // free|starter|pro|site|care
-  "mrrGbp": 0,                           // 月常（site 计 0；Care=£390/yr ≈ £32.5/mo MRR）
-  "oneTimeGbp": 590,                     // 一次性（site 建站）
+  "tier": "growth-partner",              // free|reputation|growth-partner|growth-plus
+  "mrrGbp": 79,                          // 月常（reputation=39 / growth-partner=79 / growth-plus=149）
+  "oneTimeGbp": 0,                       // 一次性：v2 无建站费（站含于 Growth Partner）；仅非常规 off-ramp 记
   "contractStart": "2026-08-01",
   "renewalDate": null,                   // Care/订阅填
   "services": [ { "type": "website", "status": "active", "startedAt": "2026-08-01" } ],

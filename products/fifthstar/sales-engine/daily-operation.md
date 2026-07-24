@@ -6,7 +6,7 @@
 
 ```
 日 50 leads → AI 筛 10 优质 → 发 10 封高个性 → 拿 1 回复 → 月 3–5 客户
-收入：2 × £79/mo Growth = £158/mo recurring + 续费
+收入：2 × £79/mo Growth Partner = £158/mo recurring + 续费（Reputation £39 / Growth Plus £149 按单客档位）
 ```
 
 ## 每日 Checklist
@@ -38,7 +38,7 @@ Qualified:    23
 Emails sent:  15
 Replies:       3
 Meetings:      1
-Revenue:    £79/mo (Growth)
+Revenue:    £79/mo (Growth Partner) — or £39 Reputation / £149 Growth Plus
 ```
 
 ## 周/月节奏

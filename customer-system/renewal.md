@@ -1,6 +1,6 @@
 # Renewal · 续费系统
 
-> 订阅层（Starter/Pro/Care）的收入全靠续费。本文件定义续费节奏与挽回。
+> 订阅层（Reputation / Growth Partner / Growth Plus）的收入全靠续费。本文件定义续费节奏与挽回。
 > 衔接：`metrics/retention.md`（续费率 ≥ 85% / Churn ≤ 5%）。
 
 ## 续费日历
@@ -18,7 +18,7 @@
 
 - 不绑死长期：可月付、可随时取消（"pay when you're happy" 一贯承诺）。
 - 涨价/降级透明：提前 60 天通知，不沉默扣费。
-- Care 年护（£390/yr，已确认）：到期前强调"年护省心 + SEO 持续"。
+- 订阅续费：到期前强调"持续声誉管理 + 站点持续更新 + SEO 推进"，按档位做价值回顾（Reputation / Growth Partner / Growth Plus）。
 
 ## 流失挽回（Churn Save）
 

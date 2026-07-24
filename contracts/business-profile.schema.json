@@ -136,8 +136,8 @@
       "properties": {
         "tier": {
           "type": ["string", "null"],
-          "description": "商业漏斗层：free(£0 样例) / starter(£29/mo) / pro(£79/mo) / site(£590 一次性) / care(£390/yr)。",
-          "enum": ["free", "starter", "pro", "site", "care", null]
+          "description": "商业漏斗层（纯订阅制 v2）：free(£0 评价草稿) / reputation(£39/mo) / growth-partner(£79/mo 含免费建站) / growth-plus(£149/mo)。",
+          "enum": ["free", "reputation", "growth-partner", "growth-plus", null]
         },
         "mrrGbp": { "type": ["number", "null"], "minimum": 0, "description": "月度经常性收入（GBP）。site 一次性折算月均或记一次性。" },
         "renewalDate": { "type": ["string", "null"], "format": "date", "description": "续费/年护到期日（care/订阅）。" }
